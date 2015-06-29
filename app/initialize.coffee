@@ -1,4 +1,4 @@
-ENV = 'development'
+window.ENV = 'development'
 require('stores')
 
 initialize = ->

@@ -12,8 +12,13 @@ module.exports = class API
     @send(url, "DELETE", {}, options)
 
   @send: (url, method, data = {}, options = {}) ->
+    if ENV is 'development'
+      url = "/#{url}.json"
+    else
+      url = "/api/#{url}"
+
     options = $.extend {
-      url: "/api/#{url}"
+      url: url
       method: method
       # uncomment if rails for CSRF protection
       # beforeSend: (xhr) =>
