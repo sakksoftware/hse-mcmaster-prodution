@@ -1,3 +1,7 @@
+Button = ReactBootstrap.Button
+
 module.exports = React.createClass
   render: ->
-    <div>Hello world</div>
+    <div id="app">
+      <Button>Press Me Down</Button>
+    </div>
