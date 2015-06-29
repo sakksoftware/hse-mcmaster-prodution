@@ -5,7 +5,9 @@
   "dependencies": {
     "react": "~0.13.3",
     "bootstrap-sass": "~3.3.5",
-    "react-bootstrap": "~0.23.5"
+    "react-bootstrap": "~0.23.5",
+    "reflux": "~0.2.8",
+    "jquery": "~2.1.4"
   },
   "overrides": {}
 }

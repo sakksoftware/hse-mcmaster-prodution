@@ -1,3 +1,6 @@
+ENV = 'development'
+require('stores')
+
 initialize = ->
   # Start application
   Application = require('application')
