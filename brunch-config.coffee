@@ -19,6 +19,9 @@ exports.config =
         .replace(/app\//, '')
         .replace(/\.cjsx/, '')
 
+  paths:
+    watched: ['app', 'vendor']
+
   plugins:
     # react:
     #   harmony: yes # include es6 transforms
@@ -31,5 +34,7 @@ exports.config =
       mode: 'ruby'
       options:
         includePaths: ['bower_components/bootstrap-sass/assets/stylesheets']
-  paths:
-    watched: ['app', 'vendor']
+
+    assetsmanager:
+      copyTo:
+        'fake_api/': ['spec/fixtures/requests/*']

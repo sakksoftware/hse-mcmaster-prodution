@@ -13,7 +13,7 @@ module.exports = class API
 
   @send: (url, method, data = {}, options = {}) ->
     if ENV is 'development'
-      url = "/#{url}.json"
+      url = "/fake_api/#{url}.json"
     else
       url = "/api/#{url}"
 
