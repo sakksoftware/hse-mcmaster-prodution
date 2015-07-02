@@ -12,10 +12,14 @@ module.exports = class API
     @send(url, "DELETE", {}, options)
 
   @send: (url, method, data = {}, options = {}) ->
+    parser = document.createElement('a')
+    parser.href = url
+
     if ENV is 'development'
-      url = "/fake_api/#{url}.json"
+      url = "/fake_api" + parser.pathname + ".json" + parser.search + parser.hash
     else
-      url = "/api/#{url}"
+      url = parser.pathname + parser.search + parser.hash
+      url = "/api#{url}"
 
     options = $.extend {
       url: url
