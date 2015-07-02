@@ -4,18 +4,17 @@ SearchBar = require('components/search/search_bar')
 
 module.exports = React.createClass
   displayName: 'SearchBox'
+  propTypes:
+    guideQuestions: React.PropTypes.array.isRequired
+    onSearch: React.PropTypes.func.isRequired
+
   render: ->
-    guideQuestion = {
-      text: "Narrow your search by selecting one of the options below."
-      filters: [
-        {name: 'All of them', id: 1234, count: 350 }
-        {name: 'Option A', id: 1235, count: 200 }
-        {name: 'Option B', id: 1236, count: 100 }
-      ]
-    }
+    filterBox =
+      if @props.guideQuestions.length > 0
+        <FilterBox guideQuestions={@props.guideQuestions} />
 
     <div className="SearchBox">
-      <SearchBar />
+      <SearchBar onSearch={@props.onSearch} />
       <AppliedFilters />
-      <FilterBox guideQuestion={guideQuestion}/>
+      {filterBox}
     </div>

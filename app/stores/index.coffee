@@ -1,2 +1,2 @@
 module.exports =
-  UsersStore: require('stores/users_store')
+  SearchStore: require('stores/search_store')

@@ -1,4 +1,3 @@
 module.exports = Reflux.createActions [
-  'loadUser'
-  'loadUsers'
+  'search'
 ]
