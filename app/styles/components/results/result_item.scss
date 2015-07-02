@@ -1,0 +1,17 @@
+.result-item {
+  max-width: 500px;
+
+  .results-item-header {
+    overflow: auto;
+  }
+
+  .result-item-header-left {
+    float: left;
+    width: 80%;
+  }
+
+  .result-item-header-right {
+    float: left;
+    width: 20%;
+  }
+}
