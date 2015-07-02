@@ -1,5 +1,7 @@
 Button = ReactBootstrap.Button
 UserActions = require('actions/user_actions')
+SearchHeader = require('components/search/search_header')
+SearchBox = require('components/search/search_box')
 
 module.exports = React.createClass
   componentWillMount: ->
@@ -13,5 +15,6 @@ module.exports = React.createClass
 
   render: ->
     <div id="app">
-      <Button>Press Me Down</Button>
+      <SearchHeader />
+      <SearchBox />
     </div>
