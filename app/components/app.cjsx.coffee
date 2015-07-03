@@ -7,7 +7,10 @@ ResultBox = require('components/results/result_box')
 module.exports = React.createClass
   displayName: 'App'
   getInitialState: ->
-    search: null
+    search:
+      query: ''
+      sort_by: 'relevance'
+      results: null
 
   handleSearch: (query) ->
     SearchActions.search(query, @handleLoad, @handleError)
@@ -24,8 +27,8 @@ module.exports = React.createClass
 
   render: ->
     results =
-      if @state.search != null
-        <ResultBox results={@state.search.results} onSortChange={@handleSortChange} />
+      if @state.search.results != null
+        <ResultBox sortBy={@state.search.sort_by} results={@state.search.results} onSortChange={@handleSortChange} />
 
     <div id="app">
       <SearchHeader />

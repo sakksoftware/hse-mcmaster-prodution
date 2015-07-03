@@ -13,14 +13,14 @@ module.exports = React.createClass
 
   render: ->
     filterBox =
-      if @props.search?.questions.length > 0
+      if @props.search.questions?.length > 0
         <FilterBox guideQuestions={@props.search.questions} />
     appliedFilters =
-      if @props.search?.filters.length > 0
+      if @props.search.filters?.length > 0
         <AppliedFilters filters={@getAppliedFilters()}/>
 
     <div className="SearchBox">
-      <SearchBar onSearch={@props.onSearch} />
+      <SearchBar query={@props.search.query} onSearch={@props.onSearch} />
       {appliedFilters}
       {filterBox}
     </div>
