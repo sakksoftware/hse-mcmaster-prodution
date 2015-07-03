@@ -11,7 +11,7 @@
   "scripts": {
     "start": "brunch watch --server",
     "test": "brunch test",
-    "postinstall": "brunch build --optimize"
+    "postinstall": "brunch build --production"
   },
   "dependencies": {
     "assetsmanager-brunch": "^1.8.1",
@@ -22,6 +22,7 @@
     "coffee-script-brunch": "^1.8.1",
     "css-brunch": ">= 1.0 < 1.8",
     "javascript-brunch": ">= 1.0 < 1.8",
+    "node-sass": "^3.2.0",
     "sass-brunch": "^1.8.10",
     "statik": "^1.4.6",
     "uglify-js-brunch": ">= 1.0 < 1.8"
