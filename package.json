@@ -11,7 +11,7 @@
   "scripts": {
     "start": "brunch watch --server",
     "test": "brunch test",
-    "postinstall": "brunch build --production"
+    "postinstall": "gem install sass && brunch build --production"
   },
   "dependencies": {
     "assetsmanager-brunch": "^1.8.1",
