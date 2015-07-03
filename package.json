@@ -15,6 +15,7 @@
   "dependencies": {
     "assetsmanager-brunch": "^1.8.1",
     "auto-reload-brunch": "^1.7.5",
+    "brunch": "^1.8.3",
     "cjsx-react-brunch": "0.0.2",
     "clean-css-brunch": ">= 1.0 < 1.8",
     "coffee-script-brunch": "^1.8.1",
