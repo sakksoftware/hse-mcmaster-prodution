@@ -28,5 +28,12 @@
         {"name": "Option B", "id": "1236", "count": "100" }
       ]
     }
+  ],
+  "filters": [
+    {"name": "All of them", "id": "1234", "count": 350, "applied": false },
+    {"name": "Option A", "id": "1235", "count": 200, "applied": false },
+    {"name": "Option B", "id": "1236", "count": 100, "applied": false },
+    {"name": "Governance", "id": "1236", "count": 100, "applied": true },
+    {"name": "Human Studies", "id": "1236", "count": 135, "applied": true }
   ]
 }

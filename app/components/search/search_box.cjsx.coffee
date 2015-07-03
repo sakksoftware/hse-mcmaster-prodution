@@ -5,16 +5,22 @@ SearchBar = require('components/search/search_bar')
 module.exports = React.createClass
   displayName: 'SearchBox'
   propTypes:
-    guideQuestions: React.PropTypes.array.isRequired
+    search: React.PropTypes.object
     onSearch: React.PropTypes.func.isRequired
+
+  getAppliedFilters: ->
+    @props.search.filters.filter((e) => e.applied)
 
   render: ->
     filterBox =
-      if @props.guideQuestions.length > 0
-        <FilterBox guideQuestions={@props.guideQuestions} />
+      if @props.search?.questions.length > 0
+        <FilterBox guideQuestions={@props.search.questions} />
+    appliedFilters =
+      if @props.search?.filters.length > 0
+        <AppliedFilters filters={@getAppliedFilters()}/>
 
     <div className="SearchBox">
       <SearchBar onSearch={@props.onSearch} />
-      <AppliedFilters />
+      {appliedFilters}
       {filterBox}
     </div>

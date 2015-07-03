@@ -25,6 +25,6 @@ module.exports = React.createClass
 
     <div id="app">
       <SearchHeader />
-      <SearchBox guideQuestions={@state.search && @state.search.questions || []} onSearch={@handleSearch} />
+      <SearchBox search={@state.search} onSearch={@handleSearch} />
       {results}
     </div>
