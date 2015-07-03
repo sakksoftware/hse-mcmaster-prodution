@@ -10,7 +10,8 @@
   },
   "scripts": {
     "start": "brunch watch --server",
-    "test": "brunch test"
+    "test": "brunch test",
+    "postinstall": "brunch build --optimize"
   },
   "dependencies": {
     "assetsmanager-brunch": "^1.8.1",
@@ -22,6 +23,7 @@
     "css-brunch": ">= 1.0 < 1.8",
     "javascript-brunch": ">= 1.0 < 1.8",
     "sass-brunch": "^1.8.10",
+    "statik": "^1.4.6",
     "uglify-js-brunch": ">= 1.0 < 1.8"
   }
 }
