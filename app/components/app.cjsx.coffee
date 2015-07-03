@@ -11,13 +11,33 @@ module.exports = React.createClass
       query: ''
       sort_by: 'relevance'
       results: null
+      filters: null
+
+  fetchResults: ->
+    SearchActions.search @state.search.query,
+      @handleLoad,
+      @handleError,
+        sortBy: @state.search.sort_by,
+        filters: @state.search.filters?.filter((e) -> e.applied) || []
 
   handleSearch: (query) ->
-    SearchActions.search(query, @handleLoad, @handleError)
+    @state.search.query = query
+    @fetchResults()
 
   handleSortChange: (sortBy) ->
-    SearchActions.search @state.search.query, @handleLoad, @handleError,
-      sortBy: sortBy
+    @state.search.sort_by = sortBy
+    @fetchResults()
+
+  changeFilterValue: (filter, value) ->
+    filter = _(@state.search.filters).find (f) -> f.id == filter.id
+    filter.applied = value
+    @fetchResults()
+
+  handleFilterAdded: (filter) ->
+    @changeFilterValue(filter, true)
+
+  handleFilterRemove: (filter) ->
+    @changeFilterValue(filter, false)
 
   handleLoad: (search, statusCode, xhr) ->
     @setState(search: search)
@@ -32,6 +52,6 @@ module.exports = React.createClass
 
     <div id="app">
       <SearchHeader />
-      <SearchBox search={@state.search} onSearch={@handleSearch} />
+      <SearchBox search={@state.search} onSearch={@handleSearch} onAddFilter={@handleFilterAdded} onRemoveFilter={@handleFilterRemove} />
       {results}
     </div>

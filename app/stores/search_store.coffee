@@ -5,8 +5,9 @@ module.exports = Reflux.createStore
   listenables: [SearchActions]
 
   search: (query, success, error, options = {}) ->
-    options = _.extend {sortBy: 'relevance'}, options
+    options = _.extend {sortBy: 'relevance', filters: []}, options
+    filters = _(options.filters).pluck('id').join(";")
 
-    API.read "search?q=#{query}&sort_by=#{options.sortBy}",
+    API.read "search?q=#{query}&sort_by=#{options.sortBy}&filters=#{filters}",
       success: success,
       error: error

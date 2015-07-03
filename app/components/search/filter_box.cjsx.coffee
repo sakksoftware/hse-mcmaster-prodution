@@ -3,6 +3,7 @@ GuideQuestion = require('components/search/guide_question')
 module.exports = React.createClass
   displayName: 'FilterBox'
   propTypes:
+    onAddFilter: React.PropTypes.func.isRequired
     guideQuestions: React.PropTypes.array.isRequired
 
   getInitialState: ->
@@ -17,6 +18,6 @@ module.exports = React.createClass
 
   render: ->
     <div className="filter-box">
-      <GuideQuestion guideQuestion={@getQuestion()}/>
+      <GuideQuestion guideQuestion={@getQuestion()} onAddFilter={@props.onAddFilter} />
       <button onClick={@nextQuestion}>Skip</button>
     </div>
