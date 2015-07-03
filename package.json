@@ -11,11 +11,12 @@
   "scripts": {
     "start": "brunch watch --server",
     "test": "brunch test",
-    "postinstall": "gem install sass && brunch build --production"
+    "postinstall": "gem install sass && bower install && brunch build --production"
   },
   "dependencies": {
     "assetsmanager-brunch": "^1.8.1",
     "auto-reload-brunch": "^1.7.5",
+    "bower": "^1.4.1",
     "brunch": "^1.8.3",
     "cjsx-react-brunch": "0.0.2",
     "clean-css-brunch": ">= 1.0 < 1.8",
