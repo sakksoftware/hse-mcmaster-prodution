@@ -1,6 +1,8 @@
 {
+  "query": "HIV",
   "page": 1,
   "results_count": 1500,
+  "sort_by": "relevance",
   "results": [
     {
       "title": "Article Title A",

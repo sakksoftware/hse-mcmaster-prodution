@@ -12,6 +12,10 @@ module.exports = React.createClass
   handleSearch: (query) ->
     SearchActions.search(query, @handleLoad, @handleError)
 
+  handleSortChange: (sortBy) ->
+    SearchActions.search @state.search.query, @handleLoad, @handleError,
+      sortBy: sortBy
+
   handleLoad: (search, statusCode, xhr) ->
     @setState(search: search)
 
@@ -21,7 +25,7 @@ module.exports = React.createClass
   render: ->
     results =
       if @state.search != null
-        <ResultBox results={@state.search.results} />
+        <ResultBox results={@state.search.results} onSortChange={@handleSortChange} />
 
     <div id="app">
       <SearchHeader />

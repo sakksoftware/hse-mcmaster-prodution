@@ -5,9 +5,10 @@ module.exports = React.createClass
   displayName: 'ResultBox'
   propTypes:
     results: React.PropTypes.array.isRequired
+    onSortChange: React.PropTypes.func.isRequired
 
   render: ->
     <div className="result-box">
-      <SortOrder />
+      <SortOrder onChange={@props.onSortChange} />
       <ResultList results={@props.results} />
     </div>
