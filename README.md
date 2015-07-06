@@ -1,7 +1,6 @@
 # HSE Frontend
 Front end search
 
-
 ## Installation
 
 1. Clone project
