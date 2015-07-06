@@ -11,7 +11,7 @@
   "scripts": {
     "start": "brunch watch --server",
     "test": "brunch test",
-    "postinstall": "gem install sass && bower install && brunch build --production"
+    "postinstall": "npm install -g node-sass && bower install && brunch build --production"
   },
   "dependencies": {
     "assetsmanager-brunch": "^1.8.1",
