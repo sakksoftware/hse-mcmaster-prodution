@@ -5,10 +5,9 @@ port = process.env.PORT || 3000
 
 var koa = require('koa');
 var app = koa();
+var serve = require('koa-static');
 
-app.use(function *(){
-  this.body = 'Hello World';
-});
+app.use(serve('public'));
 
 app.listen(process.env.PORT || 3000);
 console.log("starting server on port ", port)
