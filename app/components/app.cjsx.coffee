@@ -34,7 +34,7 @@ module.exports = React.createClass
     query = @state.search.query || ""
     filters = @getAppliedFilters() || ""
     sortBy = @state.search.sort_by || ""
-    Router.update("search?q=#{query}&sort_by=#{sortBy}&filters=#{_(filters).pluck('id').join(";")}")
+    Router.update("?q=#{query}&sort_by=#{sortBy}&filters=#{_(filters).pluck('id').join(";")}")
 
   handleSearch: (query) ->
     @state.search.query = query
