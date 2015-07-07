@@ -16,6 +16,9 @@ module.exports = React.createClass
     handleError = -> console.log('Error: cannot load suggestions')
     SearchActions.suggestions query, handleLoadSuggestions, handleError
 
+  getSuggestionValue: (suggestion, input) ->
+    suggestion.query
+
   renderSuggestion: (suggestion, input) ->
     <span>
       <strong>{suggestion.query.slice(0, input.length)}</strong>
@@ -23,7 +26,11 @@ module.exports = React.createClass
     </span>
 
   render: ->
+    inputAttributes =
+      placeholder: "Search..."
+      value: @props.query
+
     <form action="#" onSubmit={@handleSubmit} className="search-bar">
-      <Autosuggest suggestions={@fetchSuggestions} suggestionRenderer={@renderSuggestion} ref="search" />
+      <Autosuggest suggestions={@fetchSuggestions} suggestionValue={@getSuggestionValue} suggestionRenderer={@renderSuggestion} inputAttributes={inputAttributes} ref="search" />
       <button>Search</button>
     </form>

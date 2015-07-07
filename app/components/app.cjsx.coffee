@@ -3,34 +3,53 @@ SearchActions = require('actions/search_actions')
 SearchHeader = require('components/search/search_header')
 SearchBox = require('components/search/search_box')
 ResultBox = require('components/results/result_box')
+Url = require('lib/url')
+Router = require('lib/router')
 
 module.exports = React.createClass
   displayName: 'App'
   getInitialState: ->
+    params = Url.params()
     search:
-      query: ''
-      sort_by: 'relevance'
+      query: params.q || ''
+      sort_by: params.sort_by || 'relevance'
       results: null
-      filters: null
+      filters: params.filters?.split(';') || null
+
+  componentWillMount: ->
+    # TODO: remove when passing results as an attribute from server a bit hacky now
+    @fetchResults() unless _.isEmpty(@state.search.query)
 
   fetchResults: ->
     SearchActions.search @state.search.query,
       @handleLoad,
       @handleError,
         sortBy: @state.search.sort_by,
-        filters: @state.search.filters?.filter((e) -> e.applied) || []
+        filters: @getAppliedFilters() || []
+
+  getAppliedFilters: ->
+    @state.search.filters?.filter((e) -> e.applied)
+
+  updateUrl: ->
+    query = @state.search.query || ""
+    filters = @getAppliedFilters() || ""
+    sortBy = @state.search.sort_by || ""
+    Router.update("search?q=#{query}&sort_by=#{sortBy}&filters=#{_(filters).pluck('id').join(";")}")
 
   handleSearch: (query) ->
     @state.search.query = query
+    @updateUrl()
     @fetchResults()
 
   handleSortChange: (sortBy) ->
     @state.search.sort_by = sortBy
+    @updateUrl()
     @fetchResults()
 
   changeFilterValue: (filter, value) ->
     filter = _(@state.search.filters).find (f) -> f.id == filter.id
     filter.applied = value
+    @updateUrl()
     @fetchResults()
 
   handleFilterAdded: (filter) ->
