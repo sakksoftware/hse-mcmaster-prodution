@@ -11,3 +11,8 @@ module.exports = Reflux.createStore
     API.read "search?q=#{query}&sort_by=#{options.sortBy}&filters=#{filters}",
       success: success,
       error: error
+
+  suggestions: (query, success, error, options = {}) ->
+    API.read "search/suggestions?q=#{query}",
+      success: success,
+      error: error

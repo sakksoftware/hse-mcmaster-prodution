@@ -1,0 +1,8 @@
+{
+  "suggestions": [
+    {"query": "Parkinson’s disease", "count": 12345},
+    {"query": "Parkinson’s treatment", "count": 678},
+    {"query": "Parkinson’s patient", "count": 987},
+    {"query": "Parkinsons’s freezing", "count": 543}
+  ]
+}

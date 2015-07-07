@@ -26,6 +26,7 @@
     "clean-css-brunch": ">= 1.0 < 1.8",
     "coffee-script-brunch": "^1.8.1",
     "css-brunch": ">= 1.0 < 1.8",
+    "es6-module-transpiler-brunch": "0.0.6",
     "javascript-brunch": ">= 1.0 < 1.8",
     "koa": "^0.21.0",
     "koa-static": "^1.4.9",
