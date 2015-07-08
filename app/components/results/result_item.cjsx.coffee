@@ -1,3 +1,5 @@
+Link = require('components/shared/link')
+
 module.exports = React.createClass
   displayName: 'ResultItem'
   propTypes:
@@ -7,7 +9,9 @@ module.exports = React.createClass
     <article className="result-item">
       <header className="result-item-header">
         <div className="result-item-header-left">
-          <h2 className="result-item-title">{@props.result.title}</h2>
+          <h2 className="result-item-title">
+            <Link to={"/articles/#{@props.result.id}"}>{@props.result.title}</Link>
+          </h2>
           <p className="result-item-category">{@props.result.category}</p>
         </div>
         <div className="result-item-header-right">

@@ -1,5 +1,5 @@
-App = require('components/app')
+SearchPage = require('components/search/search_page')
 
 module.exports = class Application
   constructor: ->
-    React.render(<App />, document.getElementById('react-root'))
+    React.render(<SearchPage />, document.getElementById('react-root'))
