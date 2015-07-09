@@ -1,9 +1,9 @@
-ArticlePage = require('components/article/article_page')
+DocumentPage = require('components/documents/document_page')
 
 class Router
   routes:
-    'articles/:id': (id) ->
-      React.render <ArticlePage id={id} />, document.getElementById('react-root')
+    'documents/:id': (id) ->
+      React.render <DocumentPage id={id} />, document.getElementById('react-root')
 
   visit: (url) ->
     @update(url)

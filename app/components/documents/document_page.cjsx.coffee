@@ -1,5 +1,5 @@
 module.exports = React.createClass
-  displayName: 'ArticlePage'
+  displayName: 'DocumentPage'
   propTypes:
     id: React.PropTypes.string.isRequired
 
