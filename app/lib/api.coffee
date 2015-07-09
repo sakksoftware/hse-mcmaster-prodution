@@ -13,6 +13,9 @@ module.exports = class API
 
   @send: (url, method, data = {}, options = {}) ->
     parser = document.createElement('a')
+    if url[0] != '/' and url.substr(0, 5) != 'http:' and url.substr(0, 3) != 'ws:'
+      url = '/' + url
+
     parser.href = url
 
     if ENV is 'development'
