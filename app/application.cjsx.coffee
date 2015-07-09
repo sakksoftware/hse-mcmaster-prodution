@@ -1,5 +1,5 @@
-SearchPage = require('components/search/search_page')
+router = require('lib/router')
 
 module.exports = class Application
   constructor: ->
-    React.render(<SearchPage />, document.getElementById('react-root'))
+    router.start()

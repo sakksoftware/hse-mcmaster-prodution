@@ -1,9 +1,15 @@
-DocumentPage = require('components/documents/document_page')
-
 class Router
   routes:
+    '': ->
+      SearchPage = require('components/search/search_page')
+      React.render(<SearchPage />, document.getElementById('react-root'))
+
     'documents/:id': (id) ->
+      DocumentPage = require('components/documents/document_page')
       React.render <DocumentPage id={id} />, document.getElementById('react-root')
+
+  start: ->
+    @handleRouteChange()
 
   visit: (url) ->
     @update(url)
