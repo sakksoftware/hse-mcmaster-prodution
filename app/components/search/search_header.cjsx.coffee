@@ -1,5 +1,5 @@
 module.exports = React.createClass
   render: ->
     <div className="search-header">
-      <p>Some info about what we are seraching for</p>
+      <h1 className="search-header-title">HSE</h1>
     </div>

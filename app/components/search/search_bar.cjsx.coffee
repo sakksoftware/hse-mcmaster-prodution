@@ -9,7 +9,7 @@ module.exports = React.createClass
 
   handleSubmit: (e) ->
     e.preventDefault()
-    @props.onSearch?(@refs.search.lastSuggestionsInputValue)
+    @props.onSearch?(document.getElementById('search').value)
 
   fetchSuggestions: (query, callback) ->
     handleLoadSuggestions = (data) -> callback(null, data.suggestions)
@@ -29,8 +29,15 @@ module.exports = React.createClass
     inputAttributes =
       placeholder: "Search..."
       value: @props.query
+      id: 'search'
+      ref: 'search'
 
     <form action="#" onSubmit={@handleSubmit} className="search-bar">
-      <Autosuggest suggestions={@fetchSuggestions} suggestionValue={@getSuggestionValue} suggestionRenderer={@renderSuggestion} inputAttributes={inputAttributes} ref="search" />
+      <Autosuggest
+        suggestions={@fetchSuggestions}
+        suggestionValue={@getSuggestionValue}
+        suggestionRenderer={@renderSuggestion}
+        inputAttributes={inputAttributes}
+        ref={(=> document.getElementById('search').focus())} />
       <button>Search</button>
     </form>

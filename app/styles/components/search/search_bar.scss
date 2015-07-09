@@ -1,0 +1,11 @@
+.search-bar {
+  overflow: auto;
+
+  .react-autosuggest, button {
+    float: left;
+  }
+
+  button {
+    clear: right;
+  }
+}

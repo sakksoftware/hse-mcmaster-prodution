@@ -1,6 +1,14 @@
 @import 'bootstrap';
+@import 'base';
+
 @import 'components/app';
+
 @import 'components/results/result_item';
+
 @import 'components/search/filter_box';
 @import 'components/search/applied_filters';
 @import 'components/search/applied_filter_item';
+@import 'components/search/search_bar';
+@import 'components/search/search_header';
+
+@import 'components/shared/react_autosuggest';
