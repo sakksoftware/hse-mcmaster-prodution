@@ -27,11 +27,11 @@ module.exports = React.createClass
 
   nextButton: ->
     if @state.questionIndex < @props.guideQuestions.length - 1
-      <a href="#" className="btn-next" onClick={@nextQuestion}>Next</a>
+      <a href="#" key="next" className="btn-next" onClick={@nextQuestion}>Next</a>
 
   prevButton: ->
     if @state.questionIndex > 0
-      <a href="#" className="btn-prev" onClick={@prevQuestion}>prev</a>
+      <a href="#" key="prev" className="btn-prev" onClick={@prevQuestion}>prev</a>
 
   render: ->
     <div className="filter-box">
