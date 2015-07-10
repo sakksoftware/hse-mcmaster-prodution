@@ -5,6 +5,7 @@ module.exports = React.createClass
   propTypes:
     to: React.PropTypes.string.isRequired
     children: React.PropTypes.node.isRequired
+    className: React.PropTypes.string
 
   handleClick: (e) ->
     e.preventDefault()
@@ -14,6 +15,6 @@ module.exports = React.createClass
       router.visit(@props.to)
 
   render: ->
-    <a href={@props.to} onClick={@handleClick}>
+    <a href={@props.to} onClick={@handleClick} className={@props.className}>
       {@props.children}
     </a>

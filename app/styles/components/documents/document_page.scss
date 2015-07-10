@@ -1,0 +1,7 @@
+.document-page {
+  .btn-back {
+    @include btn-default;
+    color: black;
+    text-decoration: underline;
+  }
+}

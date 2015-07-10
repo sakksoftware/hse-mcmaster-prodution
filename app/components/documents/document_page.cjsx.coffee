@@ -26,9 +26,9 @@ module.exports = React.createClass
     body =
       if @state.document
         [
-          <Link to="back">Return to search results</Link>
+          <Link to="back" className="btn-back">Return to search results</Link>
           <DocumentItem document={@state.document} />
-          <Link to="back">Return to search results</Link>
+          <Link to="back" className="btn-back">Return to search results</Link>
         ]
 
     <div className="document-page">
