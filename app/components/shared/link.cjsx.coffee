@@ -8,7 +8,10 @@ module.exports = React.createClass
 
   handleClick: (e) ->
     e.preventDefault()
-    router.visit(@props.to)
+    if @props.to == 'back'
+      router.back()
+    else
+      router.visit(@props.to)
 
   render: ->
     <a href={@props.to} onClick={@handleClick}>

@@ -7,6 +7,9 @@ class Router
     'documents/:id': (id) ->
       DocumentPage = require('components/documents/document_page')
       React.render <DocumentPage id={id} />, document.getElementById('react-root')
+  history: []
+
+  back: -> @visit(@history.pop())
 
   start: ->
     @handleRouteChange()
@@ -17,8 +20,10 @@ class Router
 
   update: (url) ->
     if (window.history?.pushState?)
+      @history.push(window.location.pathname + window.location.search)
       window.history.pushState(null, "HSE", url)
     else
+      @history.push(window.location.hash)
       window.location.hash = url
 
   handleRouteChange: ->
