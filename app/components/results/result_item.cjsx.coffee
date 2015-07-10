@@ -15,7 +15,7 @@ module.exports = React.createClass
           <p className="result-item-category">{@props.result.category}</p>
         </div>
         <div className="result-item-header-right">
-          <p className="result-item-created">{moment(@props.result.created_at).format('MMMM Do, YYYY')}</p>
+          <p className="result-item-created">{moment(@props.result.created_at).format('MMM D, YYYY')}</p>
           <p className="result-item-quality">quality {@props.result.quality}/10</p>
         </div>
       </header>

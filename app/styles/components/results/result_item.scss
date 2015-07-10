@@ -1,5 +1,5 @@
 .result-item {
-  max-width: 500px;
+  margin-bottom: 25px;
 
   .result-item-header {
     overflow: auto;
@@ -11,7 +11,7 @@
   }
 
   .result-item-title {
-    margin-bottom: 5px;
+    margin-bottom: 0;
   }
 
   .result-item-category {
@@ -21,10 +21,21 @@
   .result-item-header-left {
     float: left;
     width: 80%;
+
+    h2 {
+      margin-top: 0;
+    }
   }
 
   .result-item-header-right {
     float: left;
     width: 20%;
+    text-align: right;
+    font-size: 0.9em;
+    padding-top: 5px;
+
+    p {
+      margin: 0;
+    }
   }
 }
