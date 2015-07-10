@@ -1,3 +1,26 @@
 .applied-filter-item {
-  // @extend .badge;
+  background-color: lightgray;
+  vertical-align: middle;
+  display: inline-block;
+
+  span {
+    padding: 5px 10px;
+    display: inline-block;
+  }
+
+  .applied-filter-item-remove {
+    border-left: 1px solid darkgrey;
+    padding: 0 10px;
+    color: black;
+    font-size: 15px;
+    line-height: 31px;
+    height: 31px;
+    display: inline-block;
+    color: darkgrey;
+
+    &:hover, &:visited {
+      text-decoration: none;
+      color: black;
+    }
+  }
 }

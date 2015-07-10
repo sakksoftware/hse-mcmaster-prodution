@@ -1,3 +1,8 @@
 .applied-filters {
+  list-style: none;
+  padding-left: 0;
 
+  .applied-filter-item + .applied-filter-item {
+    margin-left: 10px;
+  }
 }

@@ -21,7 +21,7 @@ module.exports = React.createClass
       if @props.search.filters?.length > 0
         <AppliedFilters filters={@getAppliedFilters()} onRemoveFilter={@props.onRemoveFilter} />
 
-    <div className="SearchBox">
+    <div className="search-box">
       <SearchBar query={@props.search.query} onSearch={@props.onSearch} />
       {appliedFilters}
       {filterBox}
