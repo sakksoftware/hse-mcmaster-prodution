@@ -25,11 +25,12 @@
   ],
   "questions": [
     {
-      "text": "Q1: Narrow your search by selecting one of the options below.",
+      "text": "Do you want to know about particular types of health system arrangements?",
       "filters": [
-        {"name": "All of them", "id": 1234, "count": "350", "applied": false },
-        {"name": "Option A", "id": 1235, "count": "200", "applied": false },
-        {"name": "Option B", "id": 1236, "count": "100", "applied": false }
+        {"name": "How decisions (about care) are made", "id": 1234, "count": "350", "applied": false },
+        {"name": "How care is paid for", "id": 1235, "count": "200", "applied": false },
+        {"name": "How care is organized", "id": 1236, "count": "100", "applied": false },
+        {"name": "How change can be brought about", "id": 1236, "count": "100", "applied": false }
       ]
     },
     {
