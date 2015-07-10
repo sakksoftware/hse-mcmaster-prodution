@@ -1,8 +1,21 @@
 .result-item {
   max-width: 500px;
 
-  .results-item-header {
+  .result-item-header {
     overflow: auto;
+    a {
+      color: black;
+      text-decoration: underline;
+      font-size: 20px;
+    }
+  }
+
+  .result-item-title {
+    margin-bottom: 5px;
+  }
+
+  .result-item-category {
+    font-style: italic;
   }
 
   .result-item-header-left {

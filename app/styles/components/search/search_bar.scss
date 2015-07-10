@@ -1,11 +1,22 @@
 .search-bar {
   overflow: auto;
+  position: relative;
 
-  .react-autosuggest, button {
-    float: left;
+  .react-autosuggest {
+    width: 80%;
+  }
+  .react-autosuggest input {
+    width: 100%;
   }
 
   button {
-    clear: right;
+    position: absolute;
+    right: 0;
+    width: 18%;
+    margin-left: 2%;
+  }
+
+  .react-autosuggest, button {
+    display: inline-block;
   }
 }
