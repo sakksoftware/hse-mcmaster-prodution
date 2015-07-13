@@ -1,4 +1,8 @@
-#react-root {
+body, #react-root, #app {
+  width: 100%;
+}
+
+#content {
   max-width: 500px;
   margin: 0 auto;
   padding: 25px;

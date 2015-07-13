@@ -10,11 +10,15 @@
     "jquery": "~2.1.4",
     "moment": "~2.10.3",
     "underscore": "~1.8.3",
-    "react-autosuggest": "~1.18.2"
+    "react-autosuggest": "~1.18.2",
+    "bootstrap-offcanvas": "git@github.com:yagudaev/Bootstrap-Offcanvas#master"
   },
   "overrides": {
-    "moment": {
-      "main": "moment.js"
+    "bootstrap-offcanvas": {
+      "main": [
+        "dist/js/bootstrap.offcanvas.js",
+        "src/sass/bootstrap.offcanvas.scss"
+      ]
     }
   }
 }

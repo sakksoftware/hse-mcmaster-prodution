@@ -33,7 +33,10 @@ exports.config =
     sass:
       mode: 'ruby'
       options:
-        includePaths: ['bower_components/bootstrap-sass/assets/stylesheets']
+        includePaths: [
+          'bower_components/bootstrap-sass/assets/stylesheets'
+          'bower_components/bootstrap-offcanvas/src/sass'
+        ]
 
     assetsmanager:
       copyTo:
