@@ -4,7 +4,6 @@ SearchHeader = require('components/search/search_header')
 SearchBox = require('components/search/search_box')
 ResultBox = require('components/results/result_box')
 Url = require('lib/url')
-Router = require('lib/router')
 
 module.exports = React.createClass
   displayName: 'SearchPage'
@@ -34,6 +33,7 @@ module.exports = React.createClass
     query = @state.search.query || ""
     filters = @getAppliedFilters() || ""
     sortBy = @state.search.sort_by || ""
+    Router = require('lib/router')
     Router.update("?q=#{query}&sort_by=#{sortBy}&filters=#{_(filters).pluck('id').join(";")}")
 
   handleSearch: (query) ->

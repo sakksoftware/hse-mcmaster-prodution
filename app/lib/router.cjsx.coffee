@@ -1,12 +1,12 @@
+App = require('components/app')
 class Router
   routes:
     '': ->
-      SearchPage = require('components/search/search_page')
-      React.render(<SearchPage />, document.getElementById('react-root'))
+      React.render <App page="SearchPage" />, document.getElementById('react-root')
 
     'documents/:id': (id) ->
-      DocumentPage = require('components/documents/document_page')
-      React.render <DocumentPage id={id} />, document.getElementById('react-root')
+      args = {id: id}
+      React.render <App page="DocumentPage" args={args} />, document.getElementById('react-root')
   history: []
 
   back: -> @visit(@history.pop())
