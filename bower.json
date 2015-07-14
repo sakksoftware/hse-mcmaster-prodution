@@ -11,7 +11,7 @@
     "moment": "~2.10.3",
     "underscore": "~1.8.3",
     "react-autosuggest": "~1.18.1",
-    "bootstrap-offcanvas": "git://github.com/yagudaev/Bootstrap-Offcanvas.git#master"
+    "bootstrap-offcanvas": "git://github.com/yagudaev/Bootstrap-Offcanvas.git#d7249875c049b6cce3c8fbdbda9d7b8ced296030"
   },
   "overrides": {
     "bootstrap-offcanvas": {
