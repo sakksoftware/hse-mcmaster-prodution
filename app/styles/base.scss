@@ -26,3 +26,23 @@ select {
   -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
+
+.page-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+  display: block;
+}
+
+.page-enter.page-enter-active {
+  opacity: 1;
+  display: block;
+}
+
+.page-leave {
+  opacity: 1;
+  transition: opacity .2s ease-out;
+}
+
+.page-leave.page-leave-active {
+  opacity: 0.01;
+}

@@ -25,12 +25,11 @@ module.exports = React.createClass
   render: ->
     body =
       if @state.document
-        [
-          <Link to="back" className="btn-back">Return to search results</Link>
-          <DocumentItem document={@state.document} />
-          <Link to="back" className="btn-back">Return to search results</Link>
-        ]
+        id = @state.document.id
+        <DocumentItem key={"document-item-#{id}"} document={@state.document} />
 
     <div className="document-page">
+      <Link to="back" className="btn-back">Return to search results</Link>
       {body}
+      <Link to="back" className="btn-back">Return to search results</Link>
     </div>

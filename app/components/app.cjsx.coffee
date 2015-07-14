@@ -1,5 +1,6 @@
 SearchPage = require('components/search/search_page')
 DocumentPage = require('components/documents/document_page')
+ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
 module.exports = React.createClass
   displayName: 'App'
@@ -38,9 +39,10 @@ module.exports = React.createClass
     # and passing the arguments
     switch @props.page
       when 'SearchPage'
-        <SearchPage />
+        <SearchPage key="search-page" />
       when 'DocumentPage'
-        <DocumentPage id={@props.args.id} />
+        id = @props.args.id
+        <DocumentPage id={id} key={"document-page-#{id}"} />
       else
         throw new Error("Page not found! Please check the URL")
 
@@ -49,6 +51,8 @@ module.exports = React.createClass
       {@renderHeader()}
       {@renderSideBar()}
       <div id="content">
-        {@renderPage()}
+        <ReactCSSTransitionGroup transitionName="page" component="div">
+          {@renderPage()}
+        </ReactCSSTransitionGroup>
       </div>
     </div>

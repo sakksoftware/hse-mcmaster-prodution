@@ -5,20 +5,20 @@ module.exports = React.createClass
 
   topicList: ->
     items =
-      for topic in @props.document.topics
-        <li className="topic-item">{topic}</li>
+      for topic, i in @props.document.topics
+        <li key={"topic-item-#{i}"} className="topic-item">{topic}</li>
     <ul>{items}</ul>
 
   countryList: ->
     items =
-      for country in @props.document.countries
-        <li className="country-item">{country.name_abbreviation} ({country.conducted_count})</li>
+      for country, i in @props.document.countries
+        <li key={"country-item-#{i}"} className="country-item">{country.name_abbreviation} ({country.conducted_count})</li>
     <ul>{items}</ul>
 
   summaryList: ->
     items =
-      for link in @props.document.summary_links
-        <li className="summary-link-item">
+      for link, i in @props.document.summary_links
+        <li key={"summary-link-#{i}"} className="summary-link-item">
           <a href={link.url} target="_blank">{link.source_name}</a>
         </li>
     <ul>{items}</ul>

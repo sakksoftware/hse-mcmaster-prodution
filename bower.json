@@ -14,6 +14,9 @@
     "bootstrap-offcanvas": "git://github.com/yagudaev/Bootstrap-Offcanvas.git#master"
   },
   "overrides": {
+    "react": {
+      "main": "react-with-addons.js"
+    },
     "bootstrap-offcanvas": {
       "main": [
         "dist/js/bootstrap.offcanvas.js",
