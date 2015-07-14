@@ -31,7 +31,7 @@ module.exports = React.createClass
 
   prevButton: ->
     if @state.questionIndex > 0
-      <a href="#" key="prev" className="btn-prev" onClick={@prevQuestion}>prev</a>
+      <a href="#" key="prev" className="btn-prev" onClick={@prevQuestion}>Prev</a>
 
   render: ->
     <div className="filter-box">
