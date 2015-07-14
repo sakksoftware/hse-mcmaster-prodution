@@ -1,5 +1,3 @@
-router = require('lib/router')
-
 module.exports = React.createClass
   displayName: 'Link'
   propTypes:
@@ -9,6 +7,7 @@ module.exports = React.createClass
 
   handleClick: (e) ->
     e.preventDefault()
+    router = require('lib/router')
     if @props.to == 'back'
       router.back()
     else
