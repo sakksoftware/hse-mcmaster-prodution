@@ -75,7 +75,9 @@ module.exports = React.createClass
   render: ->
     results =
       if @state.step == 'searching'
-        <Loader loaded={@state.step == 'results'} />
+        <div className="result-box">
+          <Loader loaded={@state.step == 'results'} />
+        </div>
       else if @state.step == 'results'
         <ResultBox sortBy={@state.search.sort_by} results={@state.search.results} onSortChange={@handleSortChange} />
 
