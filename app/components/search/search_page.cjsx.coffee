@@ -7,6 +7,11 @@ Url = require('lib/url')
 
 module.exports = React.createClass
   displayName: 'SearchPage'
+
+  # steps
+  # pending_search
+  # searching
+  # results
   getInitialState: ->
     params = Url.params()
     search:
@@ -14,12 +19,14 @@ module.exports = React.createClass
       sort_by: params.sort_by || 'relevance'
       results: null
       filters: params.filters?.split(';') || null
+    step: 'pending_search'
 
   componentWillMount: ->
     # TODO: remove when passing results as an attribute from server a bit hacky now
     @fetchResults() unless _.isEmpty(@state.search.query)
 
   fetchResults: ->
+    @setState(step: 'searching', search: @state.search)
     SearchActions.search @state.search.query,
       @handleLoad,
       @handleError,
@@ -59,17 +66,19 @@ module.exports = React.createClass
     @changeFilterValue(filter, false)
 
   handleLoad: (search, statusCode, xhr) ->
-    @setState(search: search)
+    @setState(search: search, step: 'results')
 
   handleError: (xhr, statusCode, statusText) ->
     console.log("error", xhr, statusCode, statusText)
 
   render: ->
     results =
-      if @state.search.results != null
+      if @state.step == 'searching'
+        <Loader loaded={@state.step == 'results'} />
+      else if @state.step == 'results'
         <ResultBox sortBy={@state.search.sort_by} results={@state.search.results} onSortChange={@handleSortChange} />
 
-    <div id="app">
+    <div className="search-page">
       <SearchHeader />
       <SearchBox search={@state.search} onSearch={@handleSearch} onAddFilter={@handleFilterAdded} onRemoveFilter={@handleFilterRemove} />
       {results}

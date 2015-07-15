@@ -26,6 +26,8 @@ class Router
       @history.push(window.location.hash)
       window.location.hash = url
 
+  hasHistory: -> @history.length > 0
+
   handleRouteChange: ->
     path = @getPath()
     [action, params] = @findActionFor(path)

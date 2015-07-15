@@ -22,14 +22,21 @@ module.exports = React.createClass
   handleError: (xhr, statusCode, response) ->
     console.log("Failed to load document #{id}")
 
+  backLink: ->
+    router = require('lib/router')
+    if router.hasHistory()
+      <Link to="back" className="btn-back">Return to search results</Link>
+
   render: ->
     body =
       if @state.document
         id = @state.document.id
         <DocumentItem key={"document-item-#{id}"} document={@state.document} />
+      else
+        <Loader loaded={false} />
 
     <div className="document-page">
-      <Link to="back" className="btn-back">Return to search results</Link>
+      {@backLink()}
       {body}
-      <Link to="back" className="btn-back">Return to search results</Link>
+      {@state.document && @backLink()}
     </div>
