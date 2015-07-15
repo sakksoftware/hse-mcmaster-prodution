@@ -4,8 +4,8 @@ module.exports = ->
     $html = $("""
       <div class="alert alert-#{type} alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        #{msg}
+        <span>#{msg}</span>
       </div>
       """)
     $html.alert()
-    $('body').append($html)
+    $('body').prepend($html)

@@ -21,7 +21,7 @@ module.exports = React.createClass
 
   handleError: (xhr, statusCode, response) ->
     console.log("Failed to load document #{@props.id}")
-    flash('error', 'we could not load the document results. Check your internet connection.')
+    flash('error', 'Opps, could not load data. Check your internet connection.')
 
   backLink: ->
     router = require('lib/router')

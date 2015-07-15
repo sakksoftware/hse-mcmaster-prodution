@@ -70,7 +70,7 @@ module.exports = React.createClass
 
   handleError: (xhr, statusCode, statusText) ->
     console.log("error", xhr, statusCode, statusText)
-    flash('error', 'we could not load the search results. Check your internet connection.')
+    flash('error', 'Opps, could not load data. Check your internet connection.')
 
   render: ->
     results =

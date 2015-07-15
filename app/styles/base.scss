@@ -46,3 +46,12 @@ select {
 .page-leave.page-leave-active {
   opacity: 0.01;
 }
+
+.alet {
+  position: fixed;
+  width: 100%;
+}
+
+.alert-dismissible .close {
+  top: -8px;
+}
