@@ -1,5 +1,5 @@
 .search-bar {
-  overflow: auto;
+  overflow: visible;
   position: relative;
 
   .react-autosuggest {
@@ -11,6 +11,7 @@
 
   button {
     position: absolute;
+    top: 0;
     right: 0;
     width: 18%;
     margin-left: 2%;
