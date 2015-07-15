@@ -47,9 +47,11 @@ select {
   opacity: 0.01;
 }
 
-.alet {
+.alert {
   position: fixed;
   width: 100%;
+  z-index: 1000;
+  height: 40px;
 }
 
 .alert-dismissible .close {
