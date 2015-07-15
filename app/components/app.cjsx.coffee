@@ -23,7 +23,7 @@ module.exports = React.createClass
     </button>
 
   renderSideBar: ->
-    <nav className="navbar navbar-default navbar-offcanvas navbar-offcanvas-touch navbar-offcanvas-right" role="navigation" id="js-bootstrap-offcanvas">
+    <nav className="col-xs-6 col-sm-3 navbar navbar-default navbar-offcanvas navbar-offcanvas-touch navbar-offcanvas-right" role="navigation" id="js-bootstrap-offcanvas">
       <div className="container-fluid">
         <div className="navbar-header">
           <a className="navbar-brand" href="#">Brand</a>
@@ -48,11 +48,13 @@ module.exports = React.createClass
 
   render: ->
     <div className="app" id="app">
-      {@renderHeader()}
-      {@renderSideBar()}
-      <div id="content">
-        <ReactCSSTransitionGroup transitionName="page" component="div">
-          {@renderPage()}
-        </ReactCSSTransitionGroup>
+      <div className="col-xs-6 col-sm-9 content-wrapper">
+        {@renderHeader()}
+        <div id="content">
+          <ReactCSSTransitionGroup transitionName="page" component="div">
+            {@renderPage()}
+          </ReactCSSTransitionGroup>
+        </div>
       </div>
+      {@renderSideBar()}
     </div>
