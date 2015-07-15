@@ -9,10 +9,10 @@ module.exports = React.createClass
     page: React.PropTypes.string.isRequired
 
   componentDidMount: ->
-    @oc = new Offcanvas($(@refs.btnOffcanvas.getDOMNode()))
+    @offcanvasMenu = new Offcanvas($(@refs.btnOffcanvas.getDOMNode()))
 
   componentWillUnmount: ->
-    @oc = null
+    @offcanvasMenu = null
 
   renderHeader: ->
     <button ref="btnOffcanvas" type="button" className="navbar-toggle offcanvas-toggle" data-toggle="offcanvas" data-target="#js-bootstrap-offcanvas">
