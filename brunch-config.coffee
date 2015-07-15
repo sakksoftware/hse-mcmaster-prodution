@@ -12,6 +12,11 @@ exports.config =
     templates:
       joinTo: 'scripts/app.js'
 
+  conventions:
+    # this prevents bower package from being included in assets copy:
+    # https://github.com/brunch/brunch/issues/893
+    assets: /^app\/assets\//
+
   modules:
     nameCleaner: (path) ->
       path
