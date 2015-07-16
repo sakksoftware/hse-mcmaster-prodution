@@ -1,2 +1,8 @@
 #app {
+  .navbar {
+    @media (min-width: 768px) {
+      width: 200px;
+      float: right;
+    }
+  }
 }
