@@ -17,12 +17,14 @@ module.exports = React.createClass
   componentWillUnmount: ->
     @offcanvasMenu = null
 
-  handleClick: ->
+  toggleMenu: ->
     @setState(menuToggled: !@state.menuToggled)
-    console.log(@state.menuToggled)
+
+  dismissMenu: ->
+    @state.menuToggled && @toggleMenu()
 
   renderHeader: ->
-    <button ref="btnOffcanvas" type="button" onClick={@handleClick} className="navbar-toggle offcanvas-toggle" data-toggle="offcanvas" data-target="#sidebar-wrapper">
+    <button ref="btnOffcanvas" type="button" onClick={@toggleMenu} className="navbar-toggle offcanvas-toggle" data-toggle="offcanvas" data-target="#sidebar-wrapper">
       <span className="sr-only">Toggle navigation</span>
       <span className="icon-bar"></span>
       <span className="icon-bar"></span>
@@ -61,7 +63,7 @@ module.exports = React.createClass
     className = "app #{@state.menuToggled && ('menu-toggled' || '')}"
     <div className={className} id="app">
       {@renderSideBar()}
-      <div id="page-content-wrapper">
+      <div id="page-content-wrapper" onClick={@dismissMenu}>
         {@renderHeader()}
         <div id="page-content">
           <ReactCSSTransitionGroup transitionName="page" component="div">
