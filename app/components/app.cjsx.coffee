@@ -1,4 +1,5 @@
 SearchPage = require('components/search/search_page')
+Sidebar = require('components/shared/sidebar')
 DocumentPage = require('components/documents/document_page')
 ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
@@ -31,22 +32,6 @@ module.exports = React.createClass
       <span className="icon-bar"></span>
     </button>
 
-  renderSideBar: ->
-    <nav id="sidebar-wrapper" role="navigation">
-      <div className="sidebar">
-        <div className="sidebar-header">
-          <a className="sidebar-header-brand" href="#">HSE</a>
-        </div>
-        <ul className="sidebar-nav">
-          <li>Home</li>
-          <li>Select Language</li>
-          <li>About HSE</li>
-          <li>Sign Up</li>
-          <li>Login</li>
-        </ul>
-      </div>
-    </nav>
-
   renderPage: ->
     # TODO: can be generalized by invoking the right factory based on page name passed in
     # and passing the arguments
@@ -62,7 +47,7 @@ module.exports = React.createClass
   render: ->
     className = "app #{@state.menuToggled && ('menu-toggled' || '')}"
     <div className={className} id="app">
-      {@renderSideBar()}
+      <Sidebar onClose={@dismissMenu} />
       <div id="page-content-wrapper" onClick={@dismissMenu}>
         {@renderHeader()}
         <div id="page-content">

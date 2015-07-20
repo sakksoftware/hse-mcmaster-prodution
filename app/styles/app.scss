@@ -7,6 +7,9 @@ $border-radius-small: 0px;
 @import 'mixins';
 @import 'base';
 
+@import 'components/shared/react_autosuggest';
+@import 'components/shared/sidebar';
+
 @import 'components/app';
 
 @import 'components/results/result_item';
@@ -25,5 +28,3 @@ $border-radius-small: 0px;
 @import 'components/search/search_box';
 @import 'components/search/search_header';
 @import 'components/search/search_page';
-
-@import 'components/shared/react_autosuggest';

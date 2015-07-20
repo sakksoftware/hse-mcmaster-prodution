@@ -1,0 +1,62 @@
+@import 'bootstrap';
+
+#sidebar-wrapper {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  right: 0;
+  z-index: 1000;
+  background-color: #999;
+  color: white;
+  transition: 500ms ease;
+
+  .sidebar-header {
+    background-color: #ccc;
+    vertical-align: middle;
+    padding: 10px;
+  }
+
+  .sidebar-header-close {
+    float: right;
+  }
+
+  .menu-list {
+    margin-top: 5px;
+    list-style: none;
+    padding-left: 10px;
+  }
+
+  .menu-item {
+    padding: 7px 0;
+    border-bottom: 1px solid black;
+
+    a {
+      color: white;
+      margin-left: 7px;
+    }
+  }
+
+  .menu-item-icon {
+    @extend .glyphicon;
+  }
+
+  .menu-item-home .menu-item-icon {
+    @extend .glyphicon-home;
+  }
+
+  .menu-item-language .menu-item-icon {
+    @extend .glyphicon-globe;
+  }
+
+  .menu-item-about .menu-item-icon {
+    @extend .glyphicon-book;
+  }
+
+  .menu-item-sign-up .menu-item-icon {
+    @extend .glyphicon-user;
+  }
+
+  .menu-item-login .menu-item-icon {
+    @extend .glyphicon-home;
+  }
+}
