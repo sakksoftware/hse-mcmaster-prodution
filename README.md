@@ -14,9 +14,18 @@ Front end search
 - `public/` dir is fully auto-generated and served by HTTP server.  Write your code in `app/` dir.
 - Place static files you want to be copied from `app/assets/` to `public/`.
 
+## Deployment
+
+For deployment we use a `koa` server on heroku. It will eventually be integrated to a .NET project.
+
+If you want to try it out run: `node --harmony server.js`.
+
+username: hse
+password: withgreatpower
+
 ## Troubleshooting
 
-### Deployment
+### Deployment Issues
 
 If you deploy to heroku or do an `npm install` and get the following error:
 
