@@ -15,7 +15,7 @@ module.exports = React.createClass
     @offcanvasMenu = null
 
   renderHeader: ->
-    <button ref="btnOffcanvas" type="button" className="navbar-toggle offcanvas-toggle" data-toggle="offcanvas" data-target="#js-bootstrap-offcanvas">
+    <button ref="btnOffcanvas" type="button" className="navbar-toggle offcanvas-toggle" data-toggle="offcanvas" data-target=".sidebar-wrapper">
       <span className="sr-only">Toggle navigation</span>
       <span className="icon-bar"></span>
       <span className="icon-bar"></span>
@@ -23,13 +23,17 @@ module.exports = React.createClass
     </button>
 
   renderSideBar: ->
-    <nav className="navbar navbar-default navbar-offcanvas navbar-offcanvas-touch navbar-offcanvas-right" role="navigation" id="js-bootstrap-offcanvas">
-      <div className="container-fluid">
-        <div className="navbar-header">
-          <a className="navbar-brand" href="#">Brand</a>
+    <nav id="sidebar-wrapper" role="navigation">
+      <div className="sidebar">
+        <div className="sidebar-header">
+          <a className="sidebar-header-brand" href="#">HSE</a>
         </div>
-        <ul className="nav navbar-nav">
-          <li>Item #1</li>
+        <ul className="sidebar-nav">
+          <li>Home</li>
+          <li>Select Language</li>
+          <li>About HSE</li>
+          <li>Sign Up</li>
+          <li>Login</li>
         </ul>
       </div>
     </nav>
@@ -48,11 +52,13 @@ module.exports = React.createClass
 
   render: ->
     <div className="app" id="app">
-      {@renderHeader()}
       {@renderSideBar()}
-      <div id="content">
-        <ReactCSSTransitionGroup transitionName="page" component="div">
-          {@renderPage()}
-        </ReactCSSTransitionGroup>
+      <div id="page-content-wrapper">
+        {@renderHeader()}
+        <div id="page-content">
+          <ReactCSSTransitionGroup transitionName="page" component="div">
+            {@renderPage()}
+          </ReactCSSTransitionGroup>
+        </div>
       </div>
     </div>
