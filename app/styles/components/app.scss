@@ -1,4 +1,6 @@
 #app {
+  transition: 500ms ease;
+
   #sidebar-wrapper {
     height: 100%;
     width: 250px;
@@ -7,6 +9,7 @@
     z-index: 1000;
     background-color: #999;
     color: white;
+    transition: 500ms ease;
 
     @media (max-width: 768px) {
       margin: 0 -250px 0 0;
