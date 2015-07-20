@@ -30,4 +30,14 @@
     margin: 0 auto;
     padding: 25px;
   }
+
+  @media (max-width: 768px) {
+    &.menu-toggled {
+      margin-left: -250px;
+    }
+
+    &.menu-toggled #sidebar-wrapper {
+      margin: 0;
+    }
+  }
 }

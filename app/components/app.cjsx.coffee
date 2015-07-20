@@ -8,14 +8,21 @@ module.exports = React.createClass
   propTypes:
     page: React.PropTypes.string.isRequired
 
+  getInitialState: ->
+    menuToggled: false
+
   componentDidMount: ->
     @offcanvasMenu = new Offcanvas($(@refs.btnOffcanvas.getDOMNode()))
 
   componentWillUnmount: ->
     @offcanvasMenu = null
 
+  handleClick: ->
+    @setState(menuToggled: !@state.menuToggled)
+    console.log(@state.menuToggled)
+
   renderHeader: ->
-    <button ref="btnOffcanvas" type="button" className="navbar-toggle offcanvas-toggle" data-toggle="offcanvas" data-target=".sidebar-wrapper">
+    <button ref="btnOffcanvas" type="button" onClick={@handleClick} className="navbar-toggle offcanvas-toggle" data-toggle="offcanvas" data-target="#sidebar-wrapper">
       <span className="sr-only">Toggle navigation</span>
       <span className="icon-bar"></span>
       <span className="icon-bar"></span>
@@ -51,7 +58,8 @@ module.exports = React.createClass
         throw new Error("Page not found! Please check the URL")
 
   render: ->
-    <div className="app" id="app">
+    className = "app #{@state.menuToggled && ('menu-toggled' || '')}"
+    <div className={className} id="app">
       {@renderSideBar()}
       <div id="page-content-wrapper">
         {@renderHeader()}
