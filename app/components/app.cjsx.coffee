@@ -1,7 +1,11 @@
 SearchPage = require('components/search/search_page')
-Sidebar = require('components/shared/sidebar')
 DocumentPage = require('components/documents/document_page')
+
+Sidebar = require('components/menus/sidebar')
+MenuToggle = require('components/menus/menu_toggle')
 MainMenu = require('components/menus/main_menu')
+HelpMenu = require('components/menus/help_menu')
+
 ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
 module.exports = React.createClass
@@ -12,6 +16,7 @@ module.exports = React.createClass
 
   getInitialState: ->
     menuToggled: false
+    menuName: 'main'
 
   componentDidMount: ->
     # @offcanvasMenu = new Offcanvas($(@refs.btnOffcanvas.getDOMNode()))
@@ -19,39 +24,49 @@ module.exports = React.createClass
   componentWillUnmount: ->
     # @offcanvasMenu = null
 
-  toggleMenu: ->
-    @setState(menuToggled: !@state.menuToggled)
+  toggleMenu: (menuName) ->
+    @setState(menuToggled: !@state.menuToggled, menuName: menuName)
 
   dismissMenu: ->
-    @state.menuToggled && @toggleMenu()
+    @state.menuToggled && @toggleMenu(@state.menuName)
     return # avoid warning message from react by return undefined
 
   renderHeader: ->
-    <button ref="btnOffcanvas" type="button" onClick={@toggleMenu} className="toggle-main-menu">
-      <span className="sr-only">Toggle navigation</span>
+    <MenuToggle menu="main" onToggle={@toggleMenu}>
       <span className="icon-bar"></span>
       <span className="icon-bar"></span>
       <span className="icon-bar"></span>
-    </button>
+    </MenuToggle>
 
   renderPage: ->
     # TODO: can be generalized by invoking the right factory based on page name passed in
     # and passing the arguments
     switch @props.page
       when 'SearchPage'
-        <SearchPage key="search-page" />
+        <SearchPage key="search-page" onShowHelp={@toggleMenu} />
       when 'DocumentPage'
         id = @props.args.id
         <DocumentPage id={id} key={"document-page-#{id}"} />
       else
         throw new Error("Page not found! Please check the URL")
 
+  renderSidebar: ->
+    switch @state.menuName
+      when 'main'
+        title = "Menu"
+        content = <MainMenu />
+      when 'help'
+        title = "Help"
+        content = <HelpMenu />
+
+    <Sidebar onClose={@dismissMenu} title={title}>
+      {content}
+    </Sidebar>
+
   render: ->
     className = "app #{@state.menuToggled && ('menu-toggled' || '')}"
     <div className={className} id="app">
-      <Sidebar onClose={@dismissMenu}>
-        <MainMenu />
-      </Sidebar>
+      {@renderSidebar()}
       <div id="page-content-wrapper" onClick={@dismissMenu}>
         {@renderHeader()}
         <div id="page-content">

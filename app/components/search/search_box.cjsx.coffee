@@ -1,6 +1,7 @@
 AppliedFilters = require('components/search/applied_filters')
 FilterBox = require('components/search/filter_box')
 SearchBar = require('components/search/search_bar')
+MenuToggle = require('components/menus/menu_toggle')
 
 module.exports = React.createClass
   displayName: 'SearchBox'
@@ -9,6 +10,7 @@ module.exports = React.createClass
     onSearch: React.PropTypes.func.isRequired
     onAddFilter: React.PropTypes.func.isRequired
     onRemoveFilter: React.PropTypes.func.isRequired
+    onShowHelp: React.PropTypes.func.isRequired
 
   getAppliedFilters: ->
     @props.search.filters.filter((e) => e.applied)
@@ -25,4 +27,5 @@ module.exports = React.createClass
       <SearchBar query={@props.search.query} onSearch={@props.onSearch} />
       {appliedFilters}
       {filterBox}
+      <MenuToggle menu="help" onToggle={@props.onShowHelp}>?</MenuToggle>
     </div>

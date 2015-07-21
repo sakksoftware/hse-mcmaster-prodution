@@ -83,6 +83,12 @@ module.exports = React.createClass
 
     <div className="search-page">
       <SearchHeader />
-      <SearchBox search={@state.search} onSearch={@handleSearch} onAddFilter={@handleFilterAdded} onRemoveFilter={@handleFilterRemove} />
+      <SearchBox
+        search={@state.search}
+        onSearch={@handleSearch}
+        onAddFilter={@handleFilterAdded}
+        onRemoveFilter={@handleFilterRemove}
+        onShowHelp={@props.onShowHelp}
+      />
       {results}
     </div>
