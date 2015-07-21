@@ -23,6 +23,7 @@ module.exports = React.createClass
 
   dismissMenu: ->
     @state.menuToggled && @toggleMenu()
+    return # avoid warning message from react by return undefined
 
   renderHeader: ->
     <button ref="btnOffcanvas" type="button" onClick={@toggleMenu} className="navbar-toggle offcanvas-toggle" data-toggle="offcanvas" data-target="#sidebar-wrapper">
