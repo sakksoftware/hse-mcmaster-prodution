@@ -45,3 +45,9 @@ npm ERR! There is likely additional logging output above.
 ```
 
 This probably means one of the scss or coffeescript files failed to compile. Check out and try running it locally again.
+
+## Known Issues
+
+`app/styles/components/search/guide_question.scss compiled, but not written. Check your stylesheets.joinTo config.`
+
+This warning will appear during compile time. We still don't know how to get rid of those. If you do, please do!
