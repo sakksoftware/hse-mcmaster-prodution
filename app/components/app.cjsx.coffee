@@ -1,6 +1,7 @@
 SearchPage = require('components/search/search_page')
 Sidebar = require('components/shared/sidebar')
 DocumentPage = require('components/documents/document_page')
+MainMenu = require('components/menus/main_menu')
 ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
 module.exports = React.createClass
@@ -13,10 +14,10 @@ module.exports = React.createClass
     menuToggled: false
 
   componentDidMount: ->
-    @offcanvasMenu = new Offcanvas($(@refs.btnOffcanvas.getDOMNode()))
+    # @offcanvasMenu = new Offcanvas($(@refs.btnOffcanvas.getDOMNode()))
 
   componentWillUnmount: ->
-    @offcanvasMenu = null
+    # @offcanvasMenu = null
 
   toggleMenu: ->
     @setState(menuToggled: !@state.menuToggled)
@@ -26,7 +27,7 @@ module.exports = React.createClass
     return # avoid warning message from react by return undefined
 
   renderHeader: ->
-    <button ref="btnOffcanvas" type="button" onClick={@toggleMenu} className="navbar-toggle offcanvas-toggle" data-toggle="offcanvas" data-target="#sidebar-wrapper">
+    <button ref="btnOffcanvas" type="button" onClick={@toggleMenu} className="toggle-main-menu">
       <span className="sr-only">Toggle navigation</span>
       <span className="icon-bar"></span>
       <span className="icon-bar"></span>
@@ -48,7 +49,9 @@ module.exports = React.createClass
   render: ->
     className = "app #{@state.menuToggled && ('menu-toggled' || '')}"
     <div className={className} id="app">
-      <Sidebar onClose={@dismissMenu} />
+      <Sidebar onClose={@dismissMenu}>
+        <MainMenu />
+      </Sidebar>
       <div id="page-content-wrapper" onClick={@dismissMenu}>
         {@renderHeader()}
         <div id="page-content">

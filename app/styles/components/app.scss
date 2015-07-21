@@ -15,6 +15,11 @@
     padding: 25px;
   }
 
+  .toggle-main-menu {
+    @extend .navbar-toggle;
+    @extend .offcanvas-toggle;
+  }
+
   @media (max-width: 768px) {
     &.menu-toggled {
       margin-left: -250px;

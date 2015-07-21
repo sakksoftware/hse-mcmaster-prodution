@@ -1,9 +1,9 @@
-Link = require('components/shared/link')
-
 module.exports = React.createClass
   displayName: 'Sidebar'
   propTypes:
     onClose: React.PropTypes.func.isRequired
+    title: React.PropTypes.string
+    children: React.PropTypes.node.isRequired
 
   handleClose: (e) ->
     e.preventDefault()
@@ -13,30 +13,9 @@ module.exports = React.createClass
     <nav id="sidebar-wrapper" role="navigation">
       <div className="sidebar">
         <div className="sidebar-header">
-          <span className="sidebar-header-title">Menu</span>
+          <span className="sidebar-header-title">{@props.title || "Menu"}</span>
           <a className="sidebar-header-close" href="#" onClick={@handleClose}>x</a>
         </div>
-        <ul className="sidebar-nav menu-list">
-          <li className="menu-item menu-item-home">
-            <span className="menu-item-icon"></span>
-            <Link to="/">Home</Link>
-          </li>
-          <li className="menu-item menu-item-language">
-            <span className="menu-item-icon"></span>
-            <Link to="language">Select Language</Link>
-          </li>
-          <li className="menu-item menu-item-about">
-            <span className="menu-item-icon"></span>
-            <Link to="/about">About HSE</Link>
-          </li>
-          <li className="menu-item menu-item-sign-up">
-            <span className="menu-item-icon"></span>
-            <Link to="/signup">Sign Up</Link>
-          </li>
-          <li className="menu-item menu-item-login">
-            <span className="menu-item-icon"></span>
-            <Link to="/login">Login</Link>
-          </li>
-        </ul>
+        {@props.children}
       </div>
     </nav>
