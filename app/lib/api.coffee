@@ -1,3 +1,5 @@
+config = require('config')
+
 module.exports = class API
   @read: (url, options = {}) ->
     @send(url, "GET", {}, options)
@@ -22,7 +24,7 @@ module.exports = class API
       url = "/fake_api" + parser.pathname + ".json" + parser.search + parser.hash
     else
       url = parser.pathname + parser.search + parser.hash
-      url = "/api#{url}"
+      url = config.api_base + "/api#{url}"
 
     options = $.extend {
       url: url

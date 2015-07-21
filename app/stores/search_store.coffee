@@ -13,6 +13,8 @@ module.exports = Reflux.createStore
       error: error
 
   suggestions: (query, success, error, options = {}) ->
-    API.read "search/suggestions?q=#{query}",
+    # TODO: UPDATE BACK TO THIS VERSION ONCE BOSE IMPLEMENTS IT ON THE API
+    #API.read "search/suggestions?q=#{query}",
+    API.read "suggestions?q=#{query}",
       success: success,
       error: error

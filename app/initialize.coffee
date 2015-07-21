@@ -1,4 +1,8 @@
-window.ENV = 'development'
+if false #window.location.hostname == "localhost"
+  window.ENV = 'development'
+else
+  window.ENV = 'production'
+
 require('stores')
 
 initialize = ->
