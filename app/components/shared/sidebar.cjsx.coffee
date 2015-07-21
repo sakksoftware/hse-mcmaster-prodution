@@ -9,8 +9,8 @@ module.exports = React.createClass
     <nav id="sidebar-wrapper" role="navigation">
       <div className="sidebar">
         <div className="sidebar-header">
-          <a className="sidebar-header-title" href="#">Menu</a>
-          <a className="sidebar-header-close">x</a>
+          <span className="sidebar-header-title">Menu</span>
+          <a className="sidebar-header-close" href="#">x</a>
         </div>
         <ul className="sidebar-nav menu-list">
           <li className="menu-item menu-item-home">

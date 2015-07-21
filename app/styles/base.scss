@@ -8,9 +8,6 @@ body, #react-root, #app {
   background-color: white;
 }
 
-body {
-  background: #ccc;
-}
 
 button {
   @include btn-default;
