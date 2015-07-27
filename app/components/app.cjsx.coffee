@@ -32,11 +32,14 @@ module.exports = React.createClass
     return # avoid warning message from react by return undefined
 
   renderHeader: ->
-    <MenuToggle menu="main" onToggle={@toggleMenu}>
-      <span className="icon-bar"></span>
-      <span className="icon-bar"></span>
-      <span className="icon-bar"></span>
-    </MenuToggle>
+    <nav className="top-nav">
+      <h1>Health System Evidence</h1>
+      <MenuToggle menu="main" onToggle={@toggleMenu}>
+        <span className="icon-bar"></span>
+        <span className="icon-bar"></span>
+        <span className="icon-bar"></span>
+      </MenuToggle>
+    </nav>
 
   renderPage: ->
     # TODO: can be generalized by invoking the right factory based on page name passed in

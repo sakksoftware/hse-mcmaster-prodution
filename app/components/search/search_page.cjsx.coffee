@@ -1,6 +1,5 @@
 Button = ReactBootstrap.Button
 SearchActions = require('actions/search_actions')
-SearchHeader = require('components/search/search_header')
 SearchBox = require('components/search/search_box')
 ResultBox = require('components/results/result_box')
 Url = require('lib/url')
@@ -82,7 +81,6 @@ module.exports = React.createClass
         <ResultBox sortBy={@state.search.sort_by} results={@state.search.results} onSortChange={@handleSortChange} />
 
     <div className="search-page">
-      <SearchHeader />
       <SearchBox
         search={@state.search}
         onSearch={@handleSearch}

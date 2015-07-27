@@ -21,9 +21,38 @@
   .toggle-main-menu {
     @extend .navbar-toggle;
     @extend .offcanvas-toggle;
+    background: transparent;
+    display: none;
+    padding: 0;
+    margin: 0;
+
+    .icon-bar {
+      background: white;
+    }
+  }
+
+  .top-nav {
+    width: auto;
+    overflow: auto;
+    background: #3C3C3C;
+    color: white;
+    padding: 7px 25px;
+    line-height: 30px;
+
+    h1 {
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+      font-size: 21px;
+      text-transform: uppercase;
+    }
   }
 
   @media (max-width: 768px) {
+    .toggle-main-menu {
+      display: inline-block;
+    }
+
     &.menu-toggled {
       margin-left: -250px;
     }
