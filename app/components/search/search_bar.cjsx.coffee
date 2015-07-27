@@ -7,9 +7,11 @@ module.exports = React.createClass
     query: React.PropTypes.string.isRequired
     onSearch: React.PropTypes.func.isRequired
 
+  dismissKeyboard: -> document.activeElement.blur()
   handleSubmit: (e) ->
     e.preventDefault()
     @props.onSearch?(document.getElementById('search').value)
+    @dismissKeyboard()
 
   fetchSuggestions: (query, callback) ->
     handleLoadSuggestions = (data) -> callback(null, data.suggestions)
