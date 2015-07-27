@@ -44,15 +44,23 @@ All requests are preceded with `/api/` omitted here for brevity.
 
 * `GET /documents/:id`
   returns the requested document in a json format [as shown here](https://hse-frontend.herokuapp.com/fake_api/documents/0df62f0040ffd8ecd725c9a602056034.json).
+  params:
+    lang - the language the results should be in
 
 * `GET /questions/`
   returns a list of guide questions and their results.
+  params:
+    lang - the language the results should be in
 
 * `GET /user`
   returns information about the currently signed up user.
+  params:
+    lang - the language the results should be in
 
 * `GET /user/profile`
   return the user profile information for the currently signed in user.
+  params:
+    lang - the language the results should be in
 
 * `POST /user/login`
   allows user to signin into the service.
