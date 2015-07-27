@@ -1,5 +1,6 @@
 @import 'bootstrap';
 @import 'bootstrap.offcanvas';
+@import 'mixins';
 
 #app {
   transition: 500ms ease;
@@ -19,12 +20,9 @@
   }
 
   .toggle-main-menu {
-    @extend .navbar-toggle;
-    @extend .offcanvas-toggle;
+    @include hamburger-icon;
     background: transparent;
     display: none;
-    padding: 0;
-    margin: 0;
 
     .icon-bar {
       background: white;
@@ -43,14 +41,17 @@
       display: inline-block;
       padding: 0;
       margin: 0;
-      font-size: 21px;
+      font-size: 16px;
       text-transform: uppercase;
+      line-height: 30px;
     }
   }
 
   @media (max-width: 768px) {
     .toggle-main-menu {
       display: inline-block;
+      padding: 0;
+      margin: 0;
     }
 
     &.menu-toggled {

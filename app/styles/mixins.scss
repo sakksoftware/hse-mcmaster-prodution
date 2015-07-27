@@ -4,3 +4,27 @@
   border: none;
   height: 30px;
 }
+
+@mixin hamburger-icon {
+  position: relative;
+  float: right;
+  margin-right: 0;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: none;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 0px;
+
+  .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+  }
+
+  .icon-bar + .icon-bar {
+    margin-top: 4px;
+  }
+}
