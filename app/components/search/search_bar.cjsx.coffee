@@ -38,6 +38,5 @@ module.exports = React.createClass
         suggestionValue={@getSuggestionValue}
         suggestionRenderer={@renderSuggestion}
         inputAttributes={inputAttributes}
-        ref={(=> document.getElementById('search').focus())} />
-      <button>Search</button>
+      />
     </form>
