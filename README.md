@@ -27,8 +27,8 @@ password: withgreatpower
 
 All requests are preceded with `/api/` omitted here for brevity.
 
-GET /search
-  returns search results in a json format [as shown here](hse-frontend.herokuapp.com/fake_api/search.json).
+* `GET /search`
+  returns search results in a json format [as shown here](https://hse-frontend.herokuapp.com/fake_api/search.json).
   params:
     q - search query
     filters - semi-colon separated list of IDs of the applied filters
@@ -36,22 +36,22 @@ GET /search
     page - the result page to be returned
     lang - the language in which the search is to be performed
 
-GET /search/suggestions
+* `GET /search/suggestions`
   returns suggestions for autocomplete controls in a json format [as shown here](https://hse-frontend.herokuapp.com/fake_api/search/suggestions.json).
   params:
     q - search query
     lang - the language in which the search is to be performed
 
-GET /documents/:id
+* `GET /documents/:id`
   returns the requested document in a json format [as shown here](https://hse-frontend.herokuapp.com/fake_api/documents/0df62f0040ffd8ecd725c9a602056034.json).
 
-GET /questions/
+* `GET /questions/`
   returns a list of guide questions and their results.
 
-GET /user
+* `GET /user`
   returns information about the currently signed up user.
 
-POST /users
+* `POST /users`
   create a new user (as a result from a user sign up)
   params:
     email - user email
