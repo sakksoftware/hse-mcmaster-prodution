@@ -51,6 +51,16 @@ All requests are preceded with `/api/` omitted here for brevity.
 * `GET /user`
   returns information about the currently signed up user.
 
+* `GET /user/profile`
+  return the user profile information for the currently signed in user.
+
+* `POST /user/login`
+  allows user to signin into the service.
+  params:
+    username - the chosen username
+    password - the chosen password
+
+
 * `POST /users`
   create a new user (as a result from a user sign up)
   params:
