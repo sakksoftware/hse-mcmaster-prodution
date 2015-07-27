@@ -23,6 +23,40 @@ If you want to try it out run: `node --harmony server.js`.
 username: hse
 password: withgreatpower
 
+## API END POINTS
+
+All requests are preceded with `/api/` omitted here for brevity.
+
+GET /search
+  returns search results in a json format [as shown here](hse-frontend.herokuapp.com/fake_api/search.json).
+  params:
+    q - search query
+    filters - semi-colon separated list of IDs of the applied filters
+    sort_by - order of search results
+    page - the result page to be returned
+    lang - the language in which the search is to be performed
+
+GET /search/suggestions
+  returns suggestions for autocomplete controls in a json format [as shown here](https://hse-frontend.herokuapp.com/fake_api/search/suggestions.json).
+  params:
+    q - search query
+    lang - the language in which the search is to be performed
+
+GET /documents/:id
+  returns the requested document in a json format [as shown here](https://hse-frontend.herokuapp.com/fake_api/documents/0df62f0040ffd8ecd725c9a602056034.json).
+
+GET /questions/
+  returns a list of guide questions and their results.
+
+GET /user
+  returns information about the currently signed up user.
+
+POST /users
+  create a new user (as a result from a user sign up)
+  params:
+    email - user email
+    password - user password
+
 ## Troubleshooting
 
 ### Deployment Issues
