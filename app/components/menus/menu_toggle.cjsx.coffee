@@ -6,7 +6,7 @@ module.exports = React.createClass
     children: React.PropTypes.node
 
   render: ->
-    <button ref="btnOffcanvas" type="button" onClick={=> @props.onToggle(@props.menu)} className="toggle-main-menu">
+    <button ref="btnOffcanvas" type="button" onClick={=> @props.onToggle(@props.menu)} className={"toggle-#{@props.menu}-menu"}>
       <span className="sr-only">Toggle navigation</span>
       {@props.children}
     </button>

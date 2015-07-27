@@ -16,6 +16,8 @@ module.exports = React.createClass
           <span className="sidebar-header-title">{@props.title || "Menu"}</span>
           <a className="sidebar-header-close" href="#" onClick={@handleClose}>x</a>
         </div>
-        {@props.children}
+        <div className="sidebar-content">
+          {@props.children}
+        </div>
       </div>
     </nav>

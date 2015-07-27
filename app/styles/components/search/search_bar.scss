@@ -2,22 +2,7 @@
   overflow: visible;
   position: relative;
 
-  .react-autosuggest {
-    width: 80%;
-  }
   .react-autosuggest input {
     width: 100%;
-  }
-
-  button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 18%;
-    margin-left: 2%;
-  }
-
-  .react-autosuggest, button {
-    display: inline-block;
   }
 }

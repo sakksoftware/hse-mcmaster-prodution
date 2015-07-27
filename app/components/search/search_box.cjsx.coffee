@@ -25,7 +25,9 @@ module.exports = React.createClass
 
     <div className="search-box">
       <SearchBar query={@props.search.query} onSearch={@props.onSearch} />
-      {appliedFilters}
+      <MenuToggle menu="help" onToggle={@props.onShowHelp}>
+        <span className="icon"></span>Tips for more powerful serach
+      </MenuToggle>
+      <hr />
       {filterBox}
-      <MenuToggle menu="help" onToggle={@props.onShowHelp}>?</MenuToggle>
     </div>

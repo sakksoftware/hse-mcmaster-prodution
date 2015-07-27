@@ -1,5 +1,16 @@
 .search-box {
-  .applied-filters {
-    margin-top: 10px;
+  button {
+    background: transparent;
+    margin-top: 7px;
+
+    .icon {
+      @extend .glyphicon;
+      @extend .glyphicon-exclamation-sign;
+      margin-right: 5px;
+    }
+  }
+
+  hr {
+    margin-top: 2px;
   }
 }
