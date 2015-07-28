@@ -1,4 +1,4 @@
-config = require('config')
+config = require('config')[window.ENV]
 
 module.exports = class API
   @read: (url, options = {}) ->
@@ -24,7 +24,7 @@ module.exports = class API
       url = "/fake_api" + parser.pathname + ".json" + parser.search + parser.hash
     else
       url = parser.pathname + parser.search + parser.hash
-      url = config.api_base + "/api#{url}"
+      url = config.apiBase + "/api#{url}"
 
     options = $.extend {
       url: url

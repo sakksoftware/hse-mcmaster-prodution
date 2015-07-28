@@ -3,7 +3,12 @@ if window.location.hostname == "localhost"
 else
   window.ENV = 'production'
 
-require('stores')
+config = require('config')[window.ENV]
+if config.useMockStores
+  console.log("using mock stores")
+  store = require('mocks/stores')
+else
+  store = require('stores')
 
 initialize = ->
   # Start application
