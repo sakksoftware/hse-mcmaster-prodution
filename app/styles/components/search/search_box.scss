@@ -1,18 +1,25 @@
-@import "bootstrap";
+@import 'bootstrap';
 
 .search-box {
-  button {
-    background: transparent;
+  .menu-toggles {
+    overflow: auto;
     margin-top: 7px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid darkgray;
+    margin-bottom: 15px;
+  }
+
+  .toggle-help-menu {
+    background: transparent;
+
 
     .icon {
       @extend .glyphicon;
       @extend .glyphicon-exclamation-sign;
-      margin-right: 5px;
     }
   }
 
-  hr {
-    margin-top: 2px;
+  .toggle-filters-menu {
+    float: right;
   }
 }

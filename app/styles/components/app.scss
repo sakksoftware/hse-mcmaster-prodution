@@ -1,13 +1,14 @@
+@import '../variables';
 @import 'bootstrap';
 @import '../mixins';
 
 #app {
-  transition: 500ms ease;
+  transition: $menu-animation-time $menu-animation-type;
 
   #page-content-wrapper {
     width: 100%;
     padding: 0 250px 0 0;
-    transition: 500ms ease;
+    transition: $menu-animation-time $menu-animation-type;
     position: relative;
     min-height: 100vh;
   }

@@ -7,6 +7,10 @@ Url = require('lib/url')
 module.exports = React.createClass
   displayName: 'SearchPage'
 
+  propTypes:
+    onShowHelp: React.PropTypes.func.isRequired
+    onShowFilters: React.PropTypes.func.isRequired
+
   # steps
   # pending_search
   # searching
@@ -87,6 +91,7 @@ module.exports = React.createClass
         onAddFilter={@handleFilterAdded}
         onRemoveFilter={@handleFilterRemove}
         onShowHelp={@props.onShowHelp}
+        onShowFilters={@props.onShowFilters}
       />
       {results}
     </div>

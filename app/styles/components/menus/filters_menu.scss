@@ -1,0 +1,25 @@
+.filters-menu {
+  h2 {
+    font-size: 13px;
+
+    &:first-child {
+      margin-top: 10px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    padding: 5px 10px;
+    background-color: lightgray;
+    color: gray;
+  }
+
+  li + li {
+    margin-top: 1px;
+  }
+}

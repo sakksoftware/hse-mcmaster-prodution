@@ -5,6 +5,7 @@ Sidebar = require('components/menus/sidebar')
 MenuToggle = require('components/menus/menu_toggle')
 MainMenu = require('components/menus/main_menu')
 HelpMenu = require('components/menus/help_menu')
+FiltersMenu = require('components/menus/filters_menu')
 
 ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
@@ -40,7 +41,7 @@ module.exports = React.createClass
     # and passing the arguments
     switch @props.page
       when 'SearchPage'
-        <SearchPage key="search-page" onShowHelp={@toggleMenu} />
+        <SearchPage key="search-page" onShowHelp={@toggleMenu} onShowFilters={@toggleMenu} />
       when 'DocumentPage'
         id = @props.args.id
         <DocumentPage id={id} key={"document-page-#{id}"} />
@@ -55,6 +56,11 @@ module.exports = React.createClass
       when 'help'
         title = "Help"
         content = <HelpMenu />
+      when 'filters'
+        title = "Filter documents by..."
+        content = <FiltersMenu />
+      else
+        throw new Error("Unknown menu requested!")
 
     <Sidebar onClose={@dismissMenu} title={title}>
       {content}

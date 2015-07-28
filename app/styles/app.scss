@@ -1,9 +1,4 @@
-$border-radius-base:  0px;
-$border-radius-large: 0px;
-$border-radius-small: 0px;
-$body-bg: #E8E8E8;
-$input-border: #D7D7D7;
-
+@import 'variables';
 @import 'bootstrap';
 @import 'mixins';
 @import 'base';
@@ -18,6 +13,8 @@ $input-border: #D7D7D7;
 
 @import 'components/documents/document_item';
 @import 'components/documents/document_page';
+
+@import 'components/menus/filters_menu';
 
 @import 'components/search/applied_filters';
 @import 'components/search/applied_filter_item';
