@@ -18,12 +18,6 @@ module.exports = React.createClass
     menuToggled: false
     menuName: 'main'
 
-  componentDidMount: ->
-    # @offcanvasMenu = new Offcanvas($(@refs.btnOffcanvas.getDOMNode()))
-
-  componentWillUnmount: ->
-    # @offcanvasMenu = null
-
   toggleMenu: (menuName) ->
     @setState(menuToggled: !@state.menuToggled, menuName: menuName)
 

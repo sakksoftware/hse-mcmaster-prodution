@@ -11,18 +11,11 @@
     "moment": "~2.10.3",
     "underscore": "~1.8.3",
     "react-autosuggest": "~1.18.1",
-    "bootstrap-offcanvas": "git://github.com/yagudaev/Bootstrap-Offcanvas.git#master",
     "react-loader": "~1.2.0"
   },
   "overrides": {
     "react": {
       "main": "react-with-addons.js"
-    },
-    "bootstrap-offcanvas": {
-      "main": [
-        "dist/js/bootstrap.offcanvas.js",
-        "src/sass/bootstrap.offcanvas.scss"
-      ]
     }
   }
 }

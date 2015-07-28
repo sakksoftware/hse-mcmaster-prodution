@@ -40,7 +40,6 @@ exports.config =
       options:
         includePaths: [
           'bower_components/bootstrap-sass/assets/stylesheets'
-          'bower_components/bootstrap-offcanvas/src/sass'
         ]
 
     assetsmanager:
