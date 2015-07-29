@@ -20,6 +20,9 @@ module.exports = React.createClass
     menus: ['main']
 
   toggleMenu: (menuName) ->
+    # move focus away from button used to bring up the menu
+    document.activeElement.blur()
+
     menus = _.clone(@state.menus)
     menus.push(menuName) unless menus.indexOf(menuName) >= 0
     @setState(menus: menus)
@@ -60,7 +63,6 @@ module.exports = React.createClass
   renderSidebars: ->
     menus = @state.menus
     level = -1
-    # TODO: when a new menu enters focus on the menu
     for menu in menus
       level += 1
       switch menu
