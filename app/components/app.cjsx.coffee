@@ -17,14 +17,20 @@ module.exports = React.createClass
     page: React.PropTypes.string.isRequired
 
   getInitialState: ->
-    menuToggled: false
-    menuName: 'main'
+    menus: ['main']
 
   toggleMenu: (menuName) ->
-    @setState(menuToggled: !@state.menuToggled, menuName: menuName)
+    menus = _.clone(@state.menus)
+    menus.push(menuName) if _.last(menus) != menuName
+    console.log("menus:", menus)
+    @setState(menus: menus)
 
   dismissMenu: ->
-    @state.menuToggled && @toggleMenu(@state.menuName)
+    # TODO: reimplement dismiss
+    menus = _.clone(@state.menus)
+    menus.pop()
+    console.log("menus:", menus)
+    @setState(menus: menus)
     return # avoid warning message from react by return undefined
 
   renderHeader: ->
@@ -49,31 +55,34 @@ module.exports = React.createClass
       else
         throw new Error("Page not found! Please check the URL")
 
-  renderSidebar: ->
-    switch @state.menuName
-      when 'main'
-        title = "Menu"
-        content = <MainMenu />
-      when 'help'
-        title = "Help"
-        content = <HelpMenu />
-      when 'filters'
-        title = "Filter documents by..."
-        content = <FiltersMenu onFilterClick={@toggleMenu} />
-      when 'countries'
-        title = "Countries"
-        content = <CountriesMenu />
-      else
-        throw new Error("Unknown menu requested!")
-
+  renderSidebar: (content, title) ->
     <Sidebar onClose={@dismissMenu} title={title}>
       {content}
     </Sidebar>
 
+  renderSidebars: ->
+    menus = @state.menus
+    sidebars = []
+    if menus.indexOf('main') >= 0
+      title = "Menu"
+      sidebars.push @renderSidebar(<MainMenu />, title)
+    if menus.indexOf('help') >= 0
+      title = "Help"
+      sidebars.push @renderSidebar(<HelpMenu />, title)
+    if menus.indexOf('filters') >= 0
+      title = "Filter documents by..."
+      sidebars.push @renderSidebar(<FiltersMenu onFilterClick={@toggleMenu} />, title)
+    if menus.indexOf('countries') >= 0
+      title = "Countries"
+      sidebars.push @renderSidebar(<CountriesMenu />, title)
+
+    sidebars
+
   render: ->
-    className = "app #{@state.menuToggled && ('menu-toggled' || '')}"
+    className = "app"
+    className += " menu-toggled" if @state.menus.length > 0
     <div className={className} id="app">
-      {@renderSidebar()}
+      {@renderSidebars()}
       <div id="page-content-wrapper" onClick={@dismissMenu}>
         {@renderHeader()}
         <div id="page-content">
