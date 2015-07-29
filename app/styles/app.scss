@@ -3,6 +3,7 @@
 @import 'mixins';
 @import 'base';
 
+@import 'components/shared/menu_list';
 @import 'components/shared/react_autosuggest';
 @import 'components/shared/sidebar';
 
@@ -15,6 +16,7 @@
 @import 'components/documents/document_page';
 
 @import 'components/menus/filters_menu';
+@import 'components/menus/desktop_main_menu';
 
 @import 'components/search/applied_filters';
 @import 'components/search/applied_filter_item';

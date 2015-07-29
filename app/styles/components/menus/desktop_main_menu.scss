@@ -1,0 +1,23 @@
+@import '../../variables';
+
+.desktop-main-menu {
+  float: right;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  .menu-list {
+  }
+
+  .menu-item {
+    display: inline-block;
+    padding: 0 5px 0 12px;
+    margin: 0 7px;
+    border-left: 1px solid darken($menu-text-color, 10%);
+
+    &:first-child {
+      border-left: none;
+    }
+  }
+}

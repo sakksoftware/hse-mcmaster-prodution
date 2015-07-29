@@ -4,6 +4,7 @@ DocumentPage = require('components/documents/document_page')
 Sidebar = require('components/menus/sidebar')
 MenuToggle = require('components/menus/menu_toggle')
 MainMenu = require('components/menus/main_menu')
+DesktopMainMenu = require('components/menus/desktop_main_menu')
 HelpMenu = require('components/menus/help_menu')
 FiltersMenu = require('components/menus/filters_menu')
 CountriesMenu = require('components/menus/countries_menu')
@@ -43,6 +44,7 @@ module.exports = React.createClass
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>
       </MenuToggle>
+      <DesktopMainMenu />
     </nav>
 
   renderPage: ->
