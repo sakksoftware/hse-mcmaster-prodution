@@ -6,6 +6,7 @@ MenuToggle = require('components/menus/menu_toggle')
 MainMenu = require('components/menus/main_menu')
 HelpMenu = require('components/menus/help_menu')
 FiltersMenu = require('components/menus/filters_menu')
+CountriesMenu = require('components/menus/countries_menu')
 
 ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
@@ -58,7 +59,10 @@ module.exports = React.createClass
         content = <HelpMenu />
       when 'filters'
         title = "Filter documents by..."
-        content = <FiltersMenu />
+        content = <FiltersMenu onFilterClick={@toggleMenu} />
+      when 'countries'
+        title = "Countries"
+        content = <CountriesMenu />
       else
         throw new Error("Unknown menu requested!")
 
