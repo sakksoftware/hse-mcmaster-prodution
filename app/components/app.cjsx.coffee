@@ -17,14 +17,16 @@ module.exports = React.createClass
     page: React.PropTypes.string.isRequired
 
   getInitialState: ->
-    menus: ['main']
+    menus: []
 
   toggleMenu: (menuName) ->
+    menus = _.clone(@state.menus)
+    return if menus.indexOf(menuName) >= 0
+
     # move focus away from button used to bring up the menu
     document.activeElement.blur()
 
-    menus = _.clone(@state.menus)
-    menus.push(menuName) unless menus.indexOf(menuName) >= 0
+    menus.push(menuName)
     @setState(menus: menus)
 
   dismissMenu: ->
