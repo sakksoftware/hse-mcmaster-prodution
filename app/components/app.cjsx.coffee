@@ -55,28 +55,33 @@ module.exports = React.createClass
       else
         throw new Error("Page not found! Please check the URL")
 
-  renderSidebar: (content, title) ->
-    <Sidebar onClose={@dismissMenu} title={title}>
+  renderSidebar: (content, title, level) ->
+    <Sidebar key="sidebar-#{level + 1}" onClose={@dismissMenu} title={title} level={level}>
       {content}
     </Sidebar>
 
   renderSidebars: ->
     menus = @state.menus
-    sidebars = []
-    if menus.indexOf('main') >= 0
-      title = "Menu"
-      sidebars.push @renderSidebar(<MainMenu />, title)
-    if menus.indexOf('help') >= 0
-      title = "Help"
-      sidebars.push @renderSidebar(<HelpMenu />, title)
-    if menus.indexOf('filters') >= 0
-      title = "Filter documents by..."
-      sidebars.push @renderSidebar(<FiltersMenu onFilterClick={@toggleMenu} />, title)
-    if menus.indexOf('countries') >= 0
-      title = "Countries"
-      sidebars.push @renderSidebar(<CountriesMenu />, title)
-
-    sidebars
+    level = -1
+    # TODO: use transition groups to transition menus out
+    # TODO: when a new menu enters focus on the menu
+    for menu in menus
+      level += 1
+      switch menu
+        when 'main'
+          title = "Menu"
+          @renderSidebar(<MainMenu />, title, level)
+        when 'help'
+          title = "Help"
+          @renderSidebar(<HelpMenu />, title, level)
+        when 'filters'
+          title = "Filter documents by..."
+          @renderSidebar(<FiltersMenu onFilterClick={@toggleMenu} />, title, level)
+        when 'countries'
+          title = "Countries"
+          @renderSidebar(<CountriesMenu />, title, level)
+        else
+          throw new Error("Unknown menu requested")
 
   render: ->
     className = "app"

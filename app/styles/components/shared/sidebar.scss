@@ -1,7 +1,7 @@
 @import 'bootstrap';
 @import '../../variables';
 
-#sidebar-wrapper {
+.sidebar-wrapper {
   height: 100%;
   width: 250px;
   position: fixed;
@@ -12,6 +12,7 @@
   transition: $menu-animation-time ease;
   font-weight: 300;
   overflow-y: scroll;
+  background-clip: content-box;
 
   a:hover {
     text-decoration: none;

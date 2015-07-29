@@ -12,7 +12,7 @@ module.exports = React.createClass
       countries = allCountries
     else
       countries = _(@state.countries).filter (country) ->
-        country.name.toLowerCase().indexOf(query) >= 0
+        country.name.toLowerCase().indexOf(query.toLowerCase()) >= 0
     @setState(countries: countries)
 
   renderCountries: ->
