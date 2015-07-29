@@ -21,15 +21,12 @@ module.exports = React.createClass
 
   toggleMenu: (menuName) ->
     menus = _.clone(@state.menus)
-    menus.push(menuName) if _.last(menus) != menuName
-    console.log("menus:", menus)
+    menus.push(menuName) unless menus.indexOf(menuName) >= 0
     @setState(menus: menus)
 
   dismissMenu: ->
-    # TODO: reimplement dismiss
     menus = _.clone(@state.menus)
     menus.pop()
-    console.log("menus:", menus)
     @setState(menus: menus)
     return # avoid warning message from react by return undefined
 
@@ -63,7 +60,6 @@ module.exports = React.createClass
   renderSidebars: ->
     menus = @state.menus
     level = -1
-    # TODO: use transition groups to transition menus out
     # TODO: when a new menu enters focus on the menu
     for menu in menus
       level += 1
@@ -87,7 +83,9 @@ module.exports = React.createClass
     className = "app"
     className += " menu-toggled" if @state.menus.length > 0
     <div className={className} id="app">
-      {@renderSidebars()}
+      <ReactCSSTransitionGroup transitionName="sidebar"  component="div">
+        {@renderSidebars()}
+      </ReactCSSTransitionGroup>
       <div id="page-content-wrapper" onClick={@dismissMenu}>
         {@renderHeader()}
         <div id="page-content">
