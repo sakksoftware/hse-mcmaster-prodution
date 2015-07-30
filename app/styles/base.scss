@@ -44,7 +44,7 @@ select {
 }
 
 .page-leave.page-leave-active {
-  margin: 0 -250px 0 0;
+  opacity: 0.01;
 }
 
 // TODO: refactor into a mixin for react animation group (both sidebar and page)
