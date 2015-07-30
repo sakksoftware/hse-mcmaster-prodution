@@ -1,7 +1,8 @@
-if window.location.hostname == "localhost"
-  window.ENV = 'development'
-else
-  window.ENV = 'production'
+window.ENV = 'development'
+# if window.location.hostname == "localhost"
+#   window.ENV = 'development'
+# else
+#   window.ENV = 'production'
 
 config = require('config')[window.ENV]
 if config.useMockStores
