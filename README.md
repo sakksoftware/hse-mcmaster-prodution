@@ -57,6 +57,9 @@ All requests are preceded with `/api/` omitted here for brevity.
   params:
     lang - the language the results should be in
 
+* `UPDATE /users/:id`
+  allows user details to be updated
+
 * `GET /user/profile`
   return the user profile information for the currently signed in user.
   params:
@@ -68,12 +71,23 @@ All requests are preceded with `/api/` omitted here for brevity.
     username - the chosen username
     password - the chosen password
 
-
 * `POST /users`
   create a new user (as a result from a user sign up)
   params:
     email - user email
     password - user password
+
+* `GET /user/searches`
+  return of saved searches for the currently logged in user
+
+* `POST /user/searches/`
+  creates a new saved search for the currently logged in user
+
+* `GET /user/documetns`
+  returns a list of saved documents for the currently logged in user
+
+* `POST /user/documents`
+  creates a new saved document
 
 ## Troubleshooting
 
