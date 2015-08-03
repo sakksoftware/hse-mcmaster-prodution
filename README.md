@@ -32,7 +32,7 @@ All requests are preceded with `/api/` omitted here for brevity.
 
   params:
   * `q` - search query
-  * `filters` - semi-colon separated list of IDs of the applied filters  
+  * `filters` - semi-colon separated list of IDs of the applied filters
   * `sort_by` - order of search results
   * `page` - the result page to be returned
   * `lang` - the language in which the search is to be performed
@@ -68,7 +68,7 @@ All requests are preceded with `/api/` omitted here for brevity.
     `lang` - the language the results should be in
 
 
-* `UPDATE /users/:id
+* `UPDATE /users/:id`
     allows user details to be updated
 
 * `GET /user/profile`
