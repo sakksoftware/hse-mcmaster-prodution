@@ -1,10 +1,11 @@
-allCountries = require('constants/countries_list')
-
 module.exports = React.createClass
   displayName: 'CountriesMenu'
 
+  propTypes:
+    countries: React.PropTypes.array.isRequired
+
   getInitialState: ->
-    countries: allCountries
+    countries: @props.countries
 
   filterCountries: ->
     query = @refs.countryFilter.getDOMNode().value
@@ -15,9 +16,23 @@ module.exports = React.createClass
         country.name.toLowerCase().indexOf(query.toLowerCase()) >= 0
     @setState(countries: countries)
 
+  handleCountryToggle: (country) ->
+    # optimistic update, need to do a server call
+    country.applied = !country.applied
+    @setState(countries: @state.countries)
+
+  renderCheckMark: (country) ->
+    if country.applied
+      <i className="checkmark"></i>
+
   renderCountries: ->
-    _.map @state.countries, (country) ->
-      <li data-value={country.code} className="coutnry-item menu-item" key={country.code}>{country.name}</li>
+    handleClick = (country) =>
+      (e) => e.preventDefault(); @handleCountryToggle(country)
+    _.map @state.countries, (country) =>
+      <li data-value={country.code} className="coutnry-item menu-item" key={country.code}>
+        <a href="#" onClick={handleClick(country)}>{country.name}</a>
+        {@renderCheckMark(country)}
+      </li>
 
   render: ->
     <div className="countries-menu">

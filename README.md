@@ -32,7 +32,7 @@ All requests are preceded with `/api/` omitted here for brevity.
 
   params:
   * `q` - search query
-  * `filters` - semi-colon separated list of IDs of the applied filters
+  * `applied_filters` - semi-colon separated list of IDs of the applied filters
   * `sort_by` - order of search results
   * `page` - the result page to be returned
   * `lang` - the language in which the search is to be performed
@@ -59,6 +59,9 @@ All requests are preceded with `/api/` omitted here for brevity.
   params:
   * `lang` - the language the results should be in
 
+
+* `GET /filters`
+  returns a list of all available filters
 
 * `GET /user`
   returns information about the currently signed up user.
@@ -104,6 +107,7 @@ All requests are preceded with `/api/` omitted here for brevity.
 
 * `POST /user/documents`
   creates a new saved document
+
 
 ## Troubleshooting
 

@@ -20,14 +20,14 @@ module.exports = React.createClass
   getInitialState: ->
     menus: []
 
-  toggleMenu: (menuName) ->
+  toggleMenu: (menuName, menuContext = {}) ->
     menus = _.clone(@state.menus)
-    return if menus.indexOf(menuName) >= 0
+    return if _.find(menus, (menu) -> menu.name == menuName)
 
     # move focus away from button used to bring up the menu
     document.activeElement.blur()
 
-    menus.push(menuName)
+    menus.push({name: menuName, context: menuContext})
     @setState(menus: menus)
 
   dismissMenu: ->
@@ -69,7 +69,7 @@ module.exports = React.createClass
     level = -1
     for menu in menus
       level += 1
-      switch menu
+      switch menu.name
         when 'main'
           title = "Menu"
           @renderSidebar(<MainMenu />, title, level)
@@ -78,16 +78,19 @@ module.exports = React.createClass
           @renderSidebar(<HelpMenu />, title, level)
         when 'filters'
           title = "Filter documents by..."
-          @renderSidebar(<FiltersMenu onFilterClick={@toggleMenu} />, title, level)
+          @renderSidebar(<FiltersMenu filters={menu.context.filters} onFilterClick={@toggleMenu} />, title, level)
         when 'countries'
           title = "Countries"
-          @renderSidebar(<CountriesMenu />, title, level)
+          @renderSidebar(<CountriesMenu countries={menu.context.countries} onToggleCountry={@toggleCountry} />, title, level)
         else
           throw new Error("Unknown menu requested")
 
   render: ->
     className = "app"
     className += " menu-toggled" if @state.menus.length > 0
+    # TODO: in order to generalize the menu toggle the proper way is the wrap the whole application
+    # with a menu toggle component. Think of UIScrollbar and how things work in iOS, it is the same concept for
+    # off canvas. It is similar to a master-view layout.
     <div className={className} id="app">
       <ReactCSSTransitionGroup transitionName="sidebar"  component="div">
         {@renderSidebars()}

@@ -59,6 +59,7 @@ module.exports = React.createClass
   changeFilterValue: (filter, value) ->
     filter = _(@state.search.filters).find (f) -> f.id == filter.id
     filter.applied = value
+    # TOOD: if we want to add optimistic updating, this is the place to do it!
     @updateUrl()
     @fetchResults()
 

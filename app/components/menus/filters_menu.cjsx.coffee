@@ -3,7 +3,11 @@ MenuToggle = require('components/menus/menu_toggle')
 module.exports = React.createClass
   displayName: 'FiltersMenu'
   propTypes:
+    filters: React.PropTypes.array.isRequired
     onFilterClick: React.PropTypes.func.isRequired
+
+  getCountries: ->
+    countries_filters = _.filter @props.filters, (filter) -> filter.type == 'country'
 
   render: ->
     <div className="filters-menu">
@@ -26,7 +30,7 @@ module.exports = React.createClass
       <h2>Area of Focus</h2>
       <ul className="menu-list">
         <li className="menu-item">
-          <MenuToggle menu="countries" onToggle={@props.onFilterClick}>Countries</MenuToggle>
+          <MenuToggle menu="countries" context={countries: @getCountries()} onToggle={@props.onFilterClick}>Countries</MenuToggle>
         </li>
         <li className="menu-item"><span>Country Groupings</span></li>
         <li className="menu-item"><span>WHO Regions</span></li>

@@ -29,7 +29,7 @@ module.exports = React.createClass
         <MenuToggle menu="help" onToggle={@props.onShowHelp}>
           <span className="icon"></span>Tips for more powerful serach
         </MenuToggle>
-        <MenuToggle menu="filters" onToggle={@props.onShowFilters}>Filters</MenuToggle>
+        <MenuToggle menu="filters" context={filters: @props.search.filters} onToggle={@props.onShowFilters}>Filters</MenuToggle>
       </div>
       {filterBox}
     </div>

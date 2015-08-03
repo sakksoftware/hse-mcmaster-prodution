@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'mixins';
+@import 'bootstrap';
 
 body, #react-root, #app {
   width: 100%;
@@ -79,4 +80,9 @@ select {
 
 .alert-dismissible .close {
   top: -8px;
+}
+
+.checkmark {
+  @extend .glyphicon;
+  @extend .glyphicon-ok;
 }

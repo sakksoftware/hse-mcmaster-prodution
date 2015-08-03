@@ -1,6 +1,7 @@
 API = require('lib/api')
 config = require('config')[window.ENV]
 SearchActions = require('actions/search_actions')
+allCountries = require('constants/countries_list')
 
 console.log('loaded mock search')
 
@@ -9,10 +10,20 @@ module.exports = Reflux.createStore
 
   search: (query, success, error, options = {}) ->
     options = _.extend {sortBy: 'relevance', filters: []}, options
-    filters = _(options.filters).pluck('id').join(";")
+    filters = searchData.filters
+    applied_filters = _(options.applied_filters)
+
+    countries = _.map allCountries, (country) ->
+      id: country.id
+      code: country.code
+      name: country.name
+      type: 'country'
+    filters = filters.concat(countries)
+    _(filters).each (f) ->
+      f.applied = applied_filters.indexOf(f.id) >= 0
 
     res = searchData
-    res.filters = _.filter searchData.filters, (f) => filters.indexOf(f.id) >= 0
+    res.filters = filters
     res.query = query
     res.sort_by = options.sortBy
     setTimeout (=> success(res)), config.mockResponseTime
@@ -54,10 +65,10 @@ searchData = {
     {
       "text": "Do you want to know about particular types of health system arrangements?",
       "filters": [
-        {"name": "How decisions (about care) are made", "id": 1234, "count": "350", "applied": false },
-        {"name": "How care is paid for", "id": 1235, "count": "200", "applied": false },
-        {"name": "How care is organized", "id": 1236, "count": "100", "applied": false },
-        {"name": "How change can be brought about", "id": 1236, "count": "100", "applied": false }
+        {"name": "How decisions (about care) are made", "type": "document", "id": 1234, "count": "350", "applied": false },
+        {"name": "How care is paid for", "type": "document", "id": 1235, "count": "200", "applied": false },
+        {"name": "How care is organized", "type": "document", "id": 1236, "count": "100", "applied": false },
+        {"name": "How change can be brought about", "type": "document", "id": 1236, "count": "100", "applied": false }
       ]
     },
     {
@@ -70,11 +81,11 @@ searchData = {
     }
   ],
   "filters": [
-    {"name": "All of them", "id": 1234, "count": 350, "applied": false },
-    {"name": "Option A", "id": 1235, "count": 200, "applied": false },
-    {"name": "Option B", "id": 1236, "count": 100, "applied": false },
-    {"name": "Governance", "id": 1237, "count": 100, "applied": true },
-    {"name": "Human Studies", "id": 1238, "count": 135, "applied": true }
+    {"name": "All of them", "id": 1234, "count": 350, "type": "document", "applied": false },
+    {"name": "Option A", "id": 1235, "count": 200, "type": "document", "applied": false },
+    {"name": "Option B", "id": 1236, "count": 100, "type": "document", "applied": false },
+    {"name": "Governance", "id": 1237, "count": 100, "type": "document", "applied": true },
+    {"name": "Human Studies", "id": 1238, "count": 135, "type": "document", "applied": true }
   ]
 }
 

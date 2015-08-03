@@ -9,17 +9,16 @@
     margin-bottom: 15px;
   }
 
-  .toggle-help-menu {
+  .menu-toggle-help {
     background: transparent;
-
-
+    
     .icon {
       @extend .glyphicon;
       @extend .glyphicon-exclamation-sign;
     }
   }
 
-  .toggle-filters-menu {
+  .menu-toggle-filters {
     float: right;
   }
 }
