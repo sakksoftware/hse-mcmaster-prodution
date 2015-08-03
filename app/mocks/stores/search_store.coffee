@@ -20,7 +20,7 @@ module.exports = Reflux.createStore
       type: 'country'
     for f in countries
       filters.push(f) unless _(filters).findWhere({id: f.id})
-    console.log('applied_filters', applied_filters)
+
     _(filters).each (f) ->
       f.applied = applied_filters.indexOf(f.id) >= 0
 
