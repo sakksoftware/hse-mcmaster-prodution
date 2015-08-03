@@ -78,10 +78,22 @@ module.exports = React.createClass
           @renderSidebar(<HelpMenu />, title, level)
         when 'filters'
           title = "Filter documents by..."
-          @renderSidebar(<FiltersMenu filters={menu.context.filters} onFilterClick={@toggleMenu} />, title, level)
+          filters = menu.context.filters
+          onFilterToggle = menu.context.onFilterToggle
+          @renderSidebar <FiltersMenu
+            filters={filters}
+            onFilterToggle={onFilterToggle}
+            onFilterGroupClick={@toggleMenu} />, title, level
         when 'countries'
           title = "Countries"
-          @renderSidebar(<CountriesMenu countries={menu.context.countries} onToggleCountry={@toggleCountry} />, title, level)
+          countries = menu.context.countries
+          console.log('menu context', menu.context)
+          onFilterToggle = (filter) =>
+            menu.context.onFilterToggle(filter)
+            # must do a force update since context is updated in a child as a state
+            # but we want to re-render the menu with the updated context too
+            @forceUpdate()
+          @renderSidebar(<CountriesMenu countries={countries} onFilterToggle={onFilterToggle} />, title, level)
         else
           throw new Error("Unknown menu requested")
 

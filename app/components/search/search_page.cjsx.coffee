@@ -21,7 +21,8 @@ module.exports = React.createClass
       query: params.q || ''
       sort_by: params.sort_by || 'relevance'
       results: null
-      filters: params.filters?.split(';') || null
+      applied_filters: params.applied_filters?.split(';') || null
+      filters: null
     step: 'pending_search'
 
   componentWillMount: ->
@@ -34,17 +35,18 @@ module.exports = React.createClass
       @handleLoad,
       @handleError,
         sortBy: @state.search.sort_by,
-        filters: @getAppliedFilters() || []
+        applied_filters: @getAppliedFilters() || []
 
   getAppliedFilters: ->
     @state.search.filters?.filter((e) -> e.applied)
 
   updateUrl: ->
     query = @state.search.query || ""
-    filters = @getAppliedFilters() || ""
+    applied_filters = @getAppliedFilters() || []
+    applied_filters = _(applied_filters).pluck('id').join(";")
     sortBy = @state.search.sort_by || ""
     Router = require('lib/router')
-    Router.update("?q=#{query}&sort_by=#{sortBy}&filters=#{_(filters).pluck('id').join(";")}")
+    Router.update("?q=#{query}&sort_by=#{sortBy}&applied_filters=#{applied_filters}")
 
   handleSearch: (query) ->
     @state.search.query = query
@@ -58,8 +60,8 @@ module.exports = React.createClass
 
   changeFilterValue: (filter, value) ->
     filter = _(@state.search.filters).find (f) -> f.id == filter.id
+    # optimistic update
     filter.applied = value
-    # TOOD: if we want to add optimistic updating, this is the place to do it!
     @updateUrl()
     @fetchResults()
 

@@ -10,15 +10,17 @@ module.exports = Reflux.createStore
 
   search: (query, success, error, options = {}) ->
     options = _.extend {sortBy: 'relevance', filters: []}, options
-    filters = searchData.filters
-    applied_filters = _(options.applied_filters)
+    filters = _.clone(searchData.filters)
+    applied_filters = _(options.applied_filters).pluck('id')
 
     countries = _.map allCountries, (country) ->
       id: country.id
       code: country.code
       name: country.name
       type: 'country'
-    filters = filters.concat(countries)
+    for f in countries
+      filters.push(f) unless _(filters).findWhere({id: f.id})
+    console.log('applied_filters', applied_filters)
     _(filters).each (f) ->
       f.applied = applied_filters.indexOf(f.id) >= 0
 
@@ -26,6 +28,7 @@ module.exports = Reflux.createStore
     res.filters = filters
     res.query = query
     res.sort_by = options.sortBy
+    console.log("response from search:", res)
     setTimeout (=> success(res)), config.mockResponseTime
 
   suggestions: (query, success, error, options = {}) ->

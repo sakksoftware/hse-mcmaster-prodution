@@ -15,13 +15,16 @@ module.exports = React.createClass
   getAppliedFilters: ->
     @props.search.filters.filter((e) => e.applied)
 
+  handleFilterToggle: (filter) ->
+    if filter.applied
+      @props.onRemoveFilter(filter)
+    else
+      @props.onAddFilter(filter)
+
   render: ->
     filterBox =
       if @props.search.questions?.length > 0
         <FilterBox guideQuestions={@props.search.questions} onAddFilter={@props.onAddFilter} />
-    appliedFilters =
-      if @props.search.filters?.length > 0
-        <AppliedFilters filters={@getAppliedFilters()} onRemoveFilter={@props.onRemoveFilter} />
 
     <div className="search-box">
       <SearchBar query={@props.search.query} onSearch={@props.onSearch} />
@@ -29,7 +32,12 @@ module.exports = React.createClass
         <MenuToggle menu="help" onToggle={@props.onShowHelp}>
           <span className="icon"></span>Tips for more powerful serach
         </MenuToggle>
-        <MenuToggle menu="filters" context={filters: @props.search.filters} onToggle={@props.onShowFilters}>Filters</MenuToggle>
+        <MenuToggle
+          menu="filters"
+          context={filters: @props.search.filters, onFilterToggle: @handleFilterToggle}
+          onToggle={@props.onShowFilters}>
+          Filters
+        </MenuToggle>
       </div>
       {filterBox}
     </div>

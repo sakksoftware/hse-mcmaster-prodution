@@ -3,6 +3,7 @@ module.exports = React.createClass
 
   propTypes:
     countries: React.PropTypes.array.isRequired
+    onFilterToggle: React.PropTypes.func.isRequired
 
   getInitialState: ->
     countries: @props.countries
@@ -16,18 +17,13 @@ module.exports = React.createClass
         country.name.toLowerCase().indexOf(query.toLowerCase()) >= 0
     @setState(countries: countries)
 
-  handleCountryToggle: (country) ->
-    # optimistic update, need to do a server call
-    country.applied = !country.applied
-    @setState(countries: @state.countries)
-
   renderCheckMark: (country) ->
     if country.applied
       <i className="checkmark"></i>
 
   renderCountries: ->
     handleClick = (country) =>
-      (e) => e.preventDefault(); @handleCountryToggle(country)
+      (e) => e.preventDefault(); @props.onFilterToggle(country)
     _.map @state.countries, (country) =>
       <li data-value={country.code} className="coutnry-item menu-item" key={country.code}>
         <a href="#" onClick={handleClick(country)}>{country.name}</a>
