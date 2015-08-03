@@ -13,12 +13,12 @@ module.exports = Reflux.createStore
     filters = _.clone(searchData.filters)
     applied_filters = _(options.applied_filters).pluck('id')
 
-    countries = _.map allCountries, (country) ->
+    countryFilters = _.map allCountries, (country) ->
       id: country.id
       code: country.code
       name: country.name
       type: 'country'
-    for f in countries
+    for f in countryFilters
       filters.push(f) unless _(filters).findWhere({id: f.id})
 
     _(filters).each (f) ->
