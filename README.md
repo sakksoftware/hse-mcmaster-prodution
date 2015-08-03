@@ -28,39 +28,45 @@ password: withgreatpower
 All requests are preceded with `/api/` omitted here for brevity.
 
 * `GET /search`
-    returns search results in a json format [as shown here](https://hse-frontend.herokuapp.com/fake_api/search.json).
+  returns search results in a json format as shown here](https://hse-frontend.herokuapp.com/fake_api/search.json).
 
-    params:
-    `q` - search query
-    `filters` - semi-colon separated list of IDs of the applied filters
-    `sort_by` - order of search results
-    `page` - the result page to be returned
-    `lang` - the language in which the search is to be performed
+  params:
+  * `q` - search query
+  * `filters` - semi-colon separated list of IDs of the applied filters  
+  * `sort_by` - order of search results
+  * `page` - the result page to be returned
+  * `lang` - the language in which the search is to be performed
+
 
 * `GET /search/suggestions`
     returns suggestions for autocomplete controls in a json format [as shown here](https://hse-frontend.herokuapp.com/fake_api/search/suggestions.json).
 
     params:
-    `q` - search query
-    `lang` - the language in which the search is to be performed
+
+    * `q` - search query
+    * `lang` - the language in which the search is to be performed
+
 
 * `GET /documents/:id`
     returns the requested document in a json format [as shown here](https://hse-frontend.herokuapp.com/fake_api/documents/0df62f0040ffd8ecd725c9a602056034.json).
 
     params:
-    `lang` - the language the results should be in
+    * `lang` - the language the results should be in
+
 
 * `GET /questions/`
     returns a list of guide questions and their results.
 
     params:
-    `lang` - the language the results should be in
+    * `lang` - the language the results should be in
+
 
 * `GET /user`
     returns information about the currently signed up user.
 
     params:
     `lang` - the language the results should be in
+
 
 * `UPDATE /users/:id
     allows user details to be updated
@@ -69,21 +75,24 @@ All requests are preceded with `/api/` omitted here for brevity.
     return the user profile information for the currently signed in user.
 
     params:
-    `lang` - the language the results should be in
+    * `lang` - the language the results should be in
+
 
 * `POST /user/login`
     allows user to signin into the service.
 
     params:
-    `username` - the chosen username
-    `password` - the chosen password
+    * `username` - the chosen username
+    * `password` - the chosen password
 
-* `POST /users
+
+* `POST /users`
     create a new user (as a result from a user sign up)
 
     params:
-    `email` - user email
-    `password` - user password
+    * `email` - user email
+    * `password` - user password
+
 
 * `GET /user/searches`
     return of saved searches for the currently logged in user
@@ -107,7 +116,7 @@ If you deploy to heroku or do an `npm install` and get the following error:
 npm ERR! code ELIFECYCLE
 npm ERR! hse-frontend@0.0.1 postinstall: `gem install sass && bower install && brunch build --production`
 npm ERR! Exit status 1
-npm ERR! 
+npm ERR!
 npm ERR! Failed at the hse-frontend@0.0.1 postinstall script 'gem install sass && bower install && brunch build --production'.
 npm ERR! This is most likely a problem with the hse-frontend package,
 npm ERR! not with npm itself.
