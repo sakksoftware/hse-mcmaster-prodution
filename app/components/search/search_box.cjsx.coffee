@@ -13,13 +13,18 @@ module.exports = React.createClass
     onShowHelp: React.PropTypes.func.isRequired
 
   getAppliedFilters: ->
-    @props.search.filters.filter((e) => e.applied)
+    @props.search.filters?.filter((e) => e.applied)
 
   handleFilterToggle: (filter) ->
     if filter.applied
       @props.onRemoveFilter(filter)
     else
       @props.onAddFilter(filter)
+
+  renderFilterCount: ->
+    count = @getAppliedFilters()?.length || 0
+    if count > 0
+      <span className="badge">{count}</span>
 
   render: ->
     filterBox =
@@ -37,6 +42,7 @@ module.exports = React.createClass
           context={filters: @props.search.filters, onFilterToggle: @handleFilterToggle}
           onToggle={@props.onShowFilters}>
           Filters
+          {@renderFilterCount()}
         </MenuToggle>
       </div>
       {filterBox}
