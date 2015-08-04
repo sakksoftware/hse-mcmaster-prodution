@@ -11,7 +11,7 @@ module.exports = React.createClass
   filterCountries: ->
     query = @refs.countryFilter.getDOMNode().value
     if _.isEmpty(query)
-      countries = allCountries
+      countries = @props.countries
     else
       countries = _(@state.countries).filter (country) ->
         country.name.toLowerCase().indexOf(query.toLowerCase()) >= 0

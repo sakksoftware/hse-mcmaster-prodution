@@ -1,0 +1,9 @@
+{
+  "filters": [
+    {"name": "All of them", "id": 1234, "count": 350, "type": "document", "applied": false },
+    {"name": "Option A", "id": 1235, "count": 200, "type": "document", "applied": false },
+    {"name": "Option B", "id": 1236, "count": 100, "type": "document", "applied": false },
+    {"name": "Governance", "id": 1237, "count": 100, "type": "document", "applied": true },
+    {"name": "Human Studies", "id": 1238, "count": 135, "type": "document", "applied": true }
+  ]
+}

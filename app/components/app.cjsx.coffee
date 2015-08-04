@@ -52,7 +52,10 @@ module.exports = React.createClass
     # and passing the arguments
     switch @props.page
       when 'SearchPage'
-        <SearchPage key="search-page" onShowHelp={@toggleMenu} onShowFilters={@toggleMenu} />
+        <SearchPage key="search-page"
+          onShowHelp={@toggleMenu}
+          onShowFilters={@toggleMenu}
+         />
       when 'DocumentPage'
         id = @props.args.id
         <DocumentPage id={id} key={"document-page-#{id}"} />
@@ -87,7 +90,6 @@ module.exports = React.createClass
         when 'countries'
           title = "Countries"
           countries = menu.context.countries
-          console.log('menu context', menu.context)
           onFilterToggle = (filter) =>
             menu.context.onFilterToggle(filter)
             # must do a force update since context is updated in a child as a state

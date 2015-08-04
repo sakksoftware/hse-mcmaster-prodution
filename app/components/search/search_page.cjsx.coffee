@@ -1,4 +1,5 @@
 Button = ReactBootstrap.Button
+FilterActions = require('actions/filter_actions')
 SearchActions = require('actions/search_actions')
 SearchBox = require('components/search/search_box')
 ResultBox = require('components/results/result_box')
@@ -17,17 +18,26 @@ module.exports = React.createClass
   # results
   getInitialState: ->
     params = Url.params()
+    applied_filters = params.applied_filters?.split(';')
+    # set applied filters until we fetch filers from search
+    filters = applied_filters?.map (f) -> id: parseInt(f, 10), applied: true
     search:
-      query: params.q || ''
+      query: if params.q? then params.q else null
       sort_by: params.sort_by || 'relevance'
       results: null
-      applied_filters: params.applied_filters?.split(';') || null
-      filters: null
+      applied_filters: applied_filters || null
+      filters: filters || []
     step: 'pending_search'
 
   componentWillMount: ->
     # TODO: remove when passing results as an attribute from server a bit hacky now
-    @fetchResults() unless _.isEmpty(@state.search.query)
+    if @state.search.query == null
+      @fetchFilters()
+    else
+      @fetchResults()
+
+  fetchFilters: ->
+    FilterActions.loadFilters @handleLoadFilters, @handleError
 
   fetchResults: ->
     @setState(step: 'searching', search: @state.search)
@@ -73,6 +83,9 @@ module.exports = React.createClass
 
   handleLoad: (search, statusCode, xhr) ->
     @setState(search: search, step: 'results')
+
+  handleLoadFilters: (data) ->
+    @state.search.filters = data.filters
 
   handleError: (xhr, statusCode, statusText) ->
     console.log("error", xhr, statusCode, statusText)
