@@ -1,25 +1,20 @@
 API = require('lib/api')
 config = require('config')[window.ENV]
 SearchActions = require('actions/search_actions')
-allCountries = require('constants/countries_list')
+StoreMock = require('mocks/support/store_mock')
 
 console.log('loaded mock search')
 
 module.exports = Reflux.createStore
   listenables: [SearchActions]
+  mixins: [StoreMock]
 
   search: (query, success, error, options = {}) ->
     options = _.extend {sortBy: 'relevance', filters: []}, options
     filters = _.clone(searchData.filters)
     applied_filters = _(options.applied_filters).pluck('id')
 
-    countryFilters = _.map allCountries, (country) ->
-      id: country.id
-      code: country.code
-      name: country.name
-      type: 'country'
-    for f in countryFilters
-      filters.push(f) unless _(filters).findWhere({id: f.id})
+    filters = @addCountryFilters(filters)
 
     _(filters).each (f) ->
       f.applied = applied_filters.indexOf(f.id) >= 0
@@ -28,8 +23,8 @@ module.exports = Reflux.createStore
     res.filters = filters
     res.query = query
     res.sort_by = options.sortBy
-    console.log("response from search:", res)
-    setTimeout (=> success(res)), config.mockResponseTime
+
+    @send(res, success)
 
   suggestions: (query, success, error, options = {}) ->
     console.log('using mock suggestions')
