@@ -6,6 +6,7 @@ MenuToggle = require('components/menus/menu_toggle')
 MainMenu = require('components/menus/main_menu')
 DesktopMainMenu = require('components/menus/desktop_main_menu')
 HelpMenu = require('components/menus/help_menu')
+FilterGroupsMenu = require('components/menus/filter_groups_menu')
 FiltersMenu = require('components/menus/filters_menu')
 CountriesMenu = require('components/menus/countries_menu')
 
@@ -79,23 +80,32 @@ module.exports = React.createClass
         when 'help'
           title = "Help"
           @renderSidebar(<HelpMenu />, title, level)
-        when 'filters'
+        when 'filterGroups'
           title = "Filter documents by..."
           filters = menu.context.filters
           onFilterToggle = menu.context.onFilterToggle
-          @renderSidebar <FiltersMenu
+          @renderSidebar <FilterGroupsMenu
             filters={filters}
             onFilterToggle={onFilterToggle}
             onFilterGroupClick={@toggleMenu} />, title, level
-        when 'countries'
-          title = "Countries"
-          countries = menu.context.countries
+        when 'filters', 'countries'
+          if menu.name is 'countries'
+            title = "Countries"
+            Menu = CountriesMenu
+          else # menu.name is subFilters
+            section = menu.context.section
+            filterGroup = menu.context.filterGroup
+            title = "Select #{section}: #{filterGroup}"
+            Menu = FiltersMenu
+
+          filters = menu.context.filters
+          # TODO: remove duplication
           onFilterToggle = (filter) =>
             menu.context.onFilterToggle(filter)
             # must do a force update since context is updated in a child as a state
             # but we want to re-render the menu with the updated context too
             @forceUpdate()
-          @renderSidebar(<CountriesMenu countries={countries} onFilterToggle={onFilterToggle} />, title, level)
+          @renderSidebar(<Menu filters={filters} onFilterToggle={onFilterToggle} />, title, level)
         else
           throw new Error("Unknown menu requested")
 

@@ -41,7 +41,7 @@ module.exports = React.createClass
           <span className="icon"></span>Tips for more powerful serach
         </MenuToggle>
         <MenuToggle
-          menu="filters"
+          menu="filterGroups"
           context={filters: @props.search.filters, onFilterToggle: @handleFilterToggle}
           onToggle={@props.onShowFilters}>
           Filters

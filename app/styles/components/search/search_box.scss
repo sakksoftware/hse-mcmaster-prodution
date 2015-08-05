@@ -11,14 +11,14 @@
 
   .menu-toggle-help {
     background: transparent;
-    
+
     .icon {
       @extend .glyphicon;
       @extend .glyphicon-exclamation-sign;
     }
   }
 
-  .menu-toggle-filters {
+  .menu-toggle-filter-groups {
     float: right;
   }
 }

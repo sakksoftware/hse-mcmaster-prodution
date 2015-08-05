@@ -1,43 +1,25 @@
-MenuToggle = require('components/menus/menu_toggle')
-
 module.exports = React.createClass
-  displayName: 'FiltersMenu'
+  displayName: 'SubFiltersMenu'
+
   propTypes:
     filters: React.PropTypes.array.isRequired
-    onFilterToggle: React.PropTypes.func.isRequired
-    onFilterGroupClick: React.PropTypes.func.isRequired
 
-  renderMenu: (filterGroup) ->
-    if filterGroup.name == "Countries"
-      console.log("countries", filterGroup)
-      <MenuToggle
-        menu="countries"
-        context={countries: filterGroup.filters, onFilterToggle: @props.onFilterToggle}
-        onToggle={@props.onFilterGroupClick}>
-        {filterGroup.name}
-      </MenuToggle>
-    else
-      <span>{filterGroup.name}</span>
-
-  renderSection: (section) ->
-    menuItems =
-      for filterGroup in section.filters
-        <li className="menu-item" key={filterGroup.name}>
-          {@renderMenu(filterGroup)}
+  renderItems: (items)->
+    result = []
+    for item in items
+      result.push <li className="menu-item">{item.name}</li>
+      if item.filters
+        result.push <li className="menu-item">
+          <ul className="menu-list">
+            {@renderItems(item.filters)}
+          </ul>
         </li>
 
-    [
-      <h2>{section.name}</h2>
-      <ul className="menu-list">
-        {menuItems}
-      </ul>
-    ]
-
-  renderSections: ->
-    for section in @props.filters
-      @renderSection(section)
+    result
 
   render: ->
-    <div className="filters-menu">
-      {@renderSections()}
+    <div className="filters-menu nested-menu">
+      <ul className="menu-list">
+        {@renderItems(@props.filters)}
+      </ul>
     </div>

@@ -2,16 +2,16 @@ module.exports = React.createClass
   displayName: 'CountriesMenu'
 
   propTypes:
-    countries: React.PropTypes.array.isRequired
+    filters: React.PropTypes.array.isRequired
     onFilterToggle: React.PropTypes.func.isRequired
 
   getInitialState: ->
-    countries: @props.countries
+    countries: @props.filters
 
   filterCountries: ->
     query = @refs.countryFilter.getDOMNode().value
     if _.isEmpty(query)
-      countries = @props.countries
+      countries = @props.filters
     else
       countries = _(@state.countries).filter (country) ->
         country.name.toLowerCase().indexOf(query.toLowerCase()) >= 0
