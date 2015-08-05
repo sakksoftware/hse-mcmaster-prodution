@@ -11,7 +11,8 @@ module.exports = React.createClass
     @props.onToggle(@props.menu, @props.context)
 
   render: ->
-    <button ref="btnOffcanvas" type="button" onClick={@handleClick} className={"menu-toggle menu-toggle-#{@props.menu}"}>
+    menu = @props.menu.replace(/([A-Z])/g, "-$1").toLowerCase()
+    <button ref="btnOffcanvas" type="button" onClick={@handleClick} className={"menu-toggle menu-toggle-#{menu}"}>
       <span className="sr-only">Toggle navigation</span>
       {@props.children}
     </button>
