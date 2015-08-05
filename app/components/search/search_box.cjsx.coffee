@@ -2,9 +2,11 @@ AppliedFilters = require('components/search/applied_filters')
 FilterBox = require('components/search/filter_box')
 SearchBar = require('components/search/search_bar')
 MenuToggle = require('components/menus/menu_toggle')
+FilterNormalizationService = require('services/filter_normalization_service')
 
 module.exports = React.createClass
   displayName: 'SearchBox'
+  mixins: [FilterNormalizationService]
   propTypes:
     search: React.PropTypes.object
     onSearch: React.PropTypes.func.isRequired
@@ -13,7 +15,8 @@ module.exports = React.createClass
     onShowHelp: React.PropTypes.func.isRequired
 
   getAppliedFilters: ->
-    @props.search.filters?.filter((e) => e.applied)
+    filters = @getFiltersArray(@props.search.filters || [])
+    filters.filter((e) => e.applied)
 
   handleFilterToggle: (filter) ->
     if filter.applied

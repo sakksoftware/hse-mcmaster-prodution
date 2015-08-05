@@ -3,10 +3,13 @@ FilterActions = require('actions/filter_actions')
 SearchActions = require('actions/search_actions')
 SearchBox = require('components/search/search_box')
 ResultBox = require('components/results/result_box')
+FilterNormalizationService = require('services/filter_normalization_service')
 Url = require('lib/url')
 
 module.exports = React.createClass
   displayName: 'SearchPage'
+
+  mixins: [FilterNormalizationService]
 
   propTypes:
     onShowHelp: React.PropTypes.func.isRequired
@@ -48,7 +51,8 @@ module.exports = React.createClass
         applied_filters: @getAppliedFilters() || []
 
   getAppliedFilters: ->
-    @state.search.filters?.filter((e) -> e.applied)
+    filters = @getFiltersArray(@state.search.filters)
+    filters.filter((e) -> e.applied)
 
   updateUrl: ->
     query = @state.search.query || ""
@@ -69,7 +73,6 @@ module.exports = React.createClass
     @fetchResults()
 
   changeFilterValue: (filter, value) ->
-    filter = _(@state.search.filters).find (f) -> f.id == filter.id
     # optimistic update
     filter.applied = value
     @updateUrl()

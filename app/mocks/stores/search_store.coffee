@@ -2,36 +2,41 @@ API = require('lib/api')
 config = require('config')[window.ENV]
 SearchActions = require('actions/search_actions')
 StoreMock = require('mocks/support/store_mock')
+FilterNormalizationService = require('services/filter_normalization_service')
 
 console.log('loaded mock search')
 
 module.exports = Reflux.createStore
   listenables: [SearchActions]
-  mixins: [StoreMock]
+  mixins: [StoreMock, FilterNormalizationService]
+
+  _addAppliedProperty: (filters, applied_filters) ->
+    _(filters).each (f) =>
+      if f.id
+        f.applied = applied_filters.indexOf(f.id) >= 0
+      if f.filters
+        @_addAppliedProperty(f.filters, applied_filters)
 
   search: (query, success, error, options = {}) ->
     options = _.extend {sortBy: 'relevance', filters: []}, options
-    filters = _.clone(searchData.filters)
+    filters = @getFilters()
     applied_filters = _(options.applied_filters).pluck('id')
 
-    filters = @addCountryFilters(filters)
-
-    _(filters).each (f) ->
-      f.applied = applied_filters.indexOf(f.id) >= 0
+    @_addAppliedProperty(filters, applied_filters)
 
     res = searchData
     res.filters = filters
     res.query = query
     res.sort_by = options.sortBy
 
-    @send(res, success)
+    @send(res, success, '/search')
 
   suggestions: (query, success, error, options = {}) ->
     console.log('using mock suggestions')
 
     res = _.clone(suggestionData)
     res.suggestions = _.filter suggestionData.suggestions, (s) => s.query.toLowerCase().match(query.toLowerCase())
-    setTimeout (=> success(res)), 100
+    @send(res, success, '/search/suggestions')
 
 searchData = {
   "query": "HIV",
@@ -78,16 +83,8 @@ searchData = {
       ]
     }
   ],
-  "filters": [
-    {"name": "All of them", "id": 1234, "count": 350, "type": "document", "applied": false },
-    {"name": "Option A", "id": 1235, "count": 200, "type": "document", "applied": false },
-    {"name": "Option B", "id": 1236, "count": 100, "type": "document", "applied": false },
-    {"name": "Governance", "id": 1237, "count": 100, "type": "document", "applied": true },
-    {"name": "Human Studies", "id": 1238, "count": 135, "type": "document", "applied": true }
-  ]
+  "filters": {}
 }
-
-
 
 suggestionData = {
   "suggestions": [
