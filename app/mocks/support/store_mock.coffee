@@ -44,15 +44,15 @@ filterData =
         {"name": "All of them", "id": 1234, "count": 350, "applied": false },
         {"name": "Option A", "id": 1235, "count": 200, "applied": false },
         {"name": "Option B", "id": 1236, "count": 100, "applied": false },
-        {"name": "Governance", "id": 1237, "count": 100, "applied": true },
-        {"name": "Human Studies", "id": 1238, "count": 135, "applied": true }
+        {"name": "Governance", "id": 1237, "count": 100, "applied": false },
+        {"name": "Human Studies", "id": 1238, "count": 135, "applied": false }
       ]},
       {"name": "Providers", "filters": [
         {"name": "All of them", "id": 2011, "count": 350, "applied": false },
         {"name": "Option A", "id": 2012, "count": 200, "applied": false },
         {"name": "Option B", "id": 2013, "count": 100, "applied": false },
-        {"name": "Governance", "id": 2014, "count": 100, "applied": true },
-        {"name": "Human Studies", "id": 2015, "count": 135, "applied": true }
+        {"name": "Governance", "id": 2014, "count": 100, "applied": false },
+        {"name": "Human Studies", "id": 2015, "count": 135, "applied": false }
       ]}
     ]},
     {"name": "Areas of Focus", "filters": [
