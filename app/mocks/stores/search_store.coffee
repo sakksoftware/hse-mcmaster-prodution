@@ -44,6 +44,7 @@ searchData = {
   "results_per_page": 50,
   "results_count": 1500,
   "sort_by": "relevance",
+  "saved": false,
   "results": [
     {
       "id": "0df62f0040ffd8ecd725c9a602056034",
