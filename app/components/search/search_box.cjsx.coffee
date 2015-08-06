@@ -42,7 +42,7 @@ module.exports = React.createClass
         </MenuToggle>
         <MenuToggle
           menu="filterGroups"
-          context={filters: @props.search.filters, onFilterToggle: @handleFilterToggle}
+          context={filters: @props.search.filters, onToggleFilter: @handleFilterToggle}
           onToggle={@props.onShowFilters}>
           Filters
           {@renderFilterCount()}

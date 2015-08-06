@@ -4,7 +4,7 @@ module.exports = React.createClass
   displayName: 'FilterGroupsMenu'
   propTypes:
     filters: React.PropTypes.array.isRequired
-    onFilterToggle: React.PropTypes.func.isRequired
+    onToggleFilter: React.PropTypes.func.isRequired
     onFilterGroupClick: React.PropTypes.func.isRequired
 
   renderMenu: (section, filterGroup) ->
@@ -14,7 +14,7 @@ module.exports = React.createClass
 
     <MenuToggle
       menu={menu}
-      context={filters: filterGroup.filters, onFilterToggle: @props.onFilterToggle, section: section.name, filterGroup: filterGroup.name}
+      context={filters: filterGroup.filters, onToggleFilter: @props.onToggleFilter, section: section.name, filterGroup: filterGroup.name}
       onToggle={@props.onFilterGroupClick}>
       {filterGroup.name}
     </MenuToggle>

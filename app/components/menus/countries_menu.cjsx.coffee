@@ -1,9 +1,11 @@
+MenuFilterItem = require('components/menus/menu_filter_item')
+
 module.exports = React.createClass
   displayName: 'CountriesMenu'
 
   propTypes:
     filters: React.PropTypes.array.isRequired
-    onFilterToggle: React.PropTypes.func.isRequired
+    onToggleFilter: React.PropTypes.func.isRequired
 
   getInitialState: ->
     countries: @props.filters
@@ -17,18 +19,9 @@ module.exports = React.createClass
         country.name.toLowerCase().indexOf(query.toLowerCase()) >= 0
     @setState(countries: countries)
 
-  renderCheckMark: (country) ->
-    if country.applied
-      <i className="checkmark"></i>
-
   renderCountries: ->
-    handleClick = (country) =>
-      (e) => e.preventDefault(); @props.onFilterToggle(country)
-    _.map @state.countries, (country) =>
-      <li data-value={country.code} className="coutnry-item menu-item" key={country.code}>
-        <a href="#" onClick={handleClick(country)}>{country.name}</a>
-        {@renderCheckMark(country)}
-      </li>
+    _.map @state.countries, (filter) =>
+      <FilterItem filter={filter} key="filter-#{filter.id}" onToggle={@props.onToggleFilter} />
 
   render: ->
     <div className="countries-menu">

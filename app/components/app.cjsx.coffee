@@ -83,10 +83,10 @@ module.exports = React.createClass
         when 'filterGroups'
           title = "Filter documents by..."
           filters = menu.context.filters
-          onFilterToggle = menu.context.onFilterToggle
+          onToggleFilter = menu.context.onToggleFilter
           @renderSidebar <FilterGroupsMenu
             filters={filters}
-            onFilterToggle={onFilterToggle}
+            onToggleFilter={onToggleFilter}
             onFilterGroupClick={@toggleMenu} />, title, level
         when 'filters', 'countries'
           if menu.name is 'countries'
@@ -99,13 +99,12 @@ module.exports = React.createClass
             Menu = FiltersMenu
 
           filters = menu.context.filters
-          # TODO: remove duplication
-          onFilterToggle = (filter) =>
-            menu.context.onFilterToggle(filter)
+          onToggleFilter = (filter) =>
+            menu.context.onToggleFilter(filter)
             # must do a force update since context is updated in a child as a state
             # but we want to re-render the menu with the updated context too
             @forceUpdate()
-          @renderSidebar(<Menu filters={filters} onFilterToggle={onFilterToggle} />, title, level)
+          @renderSidebar(<Menu filters={filters} onToggleFilter={onToggleFilter} />, title, level)
         else
           throw new Error("Unknown menu requested")
 

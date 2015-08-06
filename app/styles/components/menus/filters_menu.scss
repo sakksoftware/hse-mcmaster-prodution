@@ -17,9 +17,13 @@
     padding: 5px 10px;
     background-color: lightgray;
     color: gray;
+    .checkmark {
+      margin-left: 5px;
+    }
 
     & > ul {
       & > li {
+        position: relative;
         padding-left: 12px;
         &::before{
           content: "\21B3";
