@@ -1,5 +1,5 @@
 SearchPage = require('components/search/search_page')
-DocumentPage = require('components/documents/document_page')
+ArticlesPage = require('components/articles/articles_page')
 
 Sidebar = require('components/menus/sidebar')
 MenuToggle = require('components/menus/menu_toggle')
@@ -57,9 +57,9 @@ module.exports = React.createClass
           onShowHelp={@toggleMenu}
           onShowFilters={@toggleMenu}
          />
-      when 'DocumentPage'
+      when 'ArticlesPage'
         id = @props.args.id
-        <DocumentPage id={id} key={"document-page-#{id}"} />
+        <ArticlesPage id={id} key={"article-page-#{id}"} />
       else
         throw new Error("Page not found! Please check the URL")
 

@@ -1,26 +1,26 @@
-DocumentActions = require('actions/document_actions')
-DocumentItem = require('components/documents/document_item')
+ArticleActions = require('actions/article_actions')
+ArticleItem = require('components/articles/article_item')
 Link = require('components/shared/link')
 
 module.exports = React.createClass
-  displayName: 'DocumentPage'
+  displayName: 'ArticlePage'
   propTypes:
     id: React.PropTypes.string.isRequired
 
   getInitialState: ->
-    document: null
+    article: null
 
   componentWillMount: ->
     # TODO: remove hardcoded id after API has been implemented
     # id = @props.id
     id = "0df62f0040ffd8ecd725c9a602056034"
-    DocumentActions.loadDocument(id, @handleLoad, @handleError)
+    ArticleActions.loadArticle(id, @handleLoad, @handleError)
 
-  handleLoad: (document) ->
-    @setState(document: document)
+  handleLoad: (article) ->
+    @setState(article: article)
 
   handleError: (xhr, statusCode, response) ->
-    console.log("Failed to load document #{@props.id}")
+    console.log("Failed to load article #{@props.id}")
     flash('error', 'Opps, could not load data. Check your internet connection.')
 
   backLink: ->
@@ -30,14 +30,14 @@ module.exports = React.createClass
 
   render: ->
     body =
-      if @state.document
-        id = @state.document.id
-        <DocumentItem key={"document-item-#{id}"} document={@state.document} />
+      if @state.article
+        id = @state.article.id
+        <ArticleItem key={"article-item-#{id}"} article={@state.article} />
       else
         <Loader loaded={false} />
 
-    <div className="document-page">
+    <div className="article-page">
       {@backLink()}
       {body}
-      {@state.document && @backLink()}
+      {@state.article && @backLink()}
     </div>

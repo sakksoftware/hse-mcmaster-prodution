@@ -10,7 +10,7 @@ module.exports = React.createClass
       <header className="result-item-header">
         <div className="result-item-header-left">
           <h2 className="result-item-title">
-            <Link to={"/documents/#{@props.result.id}"}>{@props.result.title}</Link>
+            <Link to={"/articles/#{@props.result.id}"}>{@props.result.title}</Link>
           </h2>
           <p className="result-item-category">{@props.result.category}</p>
         </div>

@@ -4,9 +4,9 @@ class Router
     '': ->
       React.render <App page="SearchPage" />, document.getElementById('react-root')
 
-    'documents/:id': (id) ->
+    'articles/:id': (id) ->
       args = {id: id}
-      React.render <App page="DocumentPage" args={args} />, document.getElementById('react-root')
+      React.render <App page="ArticlesPage" args={args} />, document.getElementById('react-root')
   history: []
 
   back: -> @visit(@history.pop())

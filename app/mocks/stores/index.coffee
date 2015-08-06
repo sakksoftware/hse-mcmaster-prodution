@@ -1,4 +1,4 @@
 module.exports =
-  DocumentStore: require('mocks/stores/document_store')
+  ArticlesStore: require('mocks/stores/article_store')
   SearchStore: require('mocks/stores/search_store')
   FiltersStore: require('mocks/stores/filters_store')
