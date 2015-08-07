@@ -9,6 +9,7 @@ HelpMenu = require('components/menus/help_menu')
 FilterGroupsMenu = require('components/menus/filter_groups_menu')
 FiltersMenu = require('components/menus/filters_menu')
 CountriesMenu = require('components/menus/countries_menu')
+SignupMenu = require('components/menus/signup_menu')
 
 ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
@@ -75,11 +76,9 @@ module.exports = React.createClass
       level += 1
       switch menu.name
         when 'main'
-          title = "Menu"
-          @renderSidebar(<MainMenu />, title, level)
+          @renderSidebar(<MainMenu onSubMenuClick={@toggleMenu} />, "Menu", level)
         when 'help'
-          title = "Help"
-          @renderSidebar(<HelpMenu />, title, level)
+          @renderSidebar(<HelpMenu />, "Help", level)
         when 'filterGroups'
           title = "Filter documents by..."
           filters = menu.context.filters
@@ -105,6 +104,8 @@ module.exports = React.createClass
             # but we want to re-render the menu with the updated context too
             @forceUpdate()
           @renderSidebar(<Menu filters={filters} onToggleFilter={onToggleFilter} />, title, level)
+        when 'signup'
+          @renderSidebar(<SignupMenu />, "Signup",level)
         else
           throw new Error("Unknown menu requested")
 

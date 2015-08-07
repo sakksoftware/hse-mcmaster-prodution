@@ -1,7 +1,11 @@
 Link = require('components/shared/link')
+MenuToggle = require('components/menus/menu_toggle')
 
 module.exports = React.createClass
   displayName: 'MainMenu'
+  propTypes:
+    onSubMenuClick: React.PropTypes.func.isRequired
+
   render: ->
     <ul className="sidebar-nav menu-list">
       <li className="menu-item menu-item-home">
@@ -18,7 +22,7 @@ module.exports = React.createClass
       </li>
       <li className="menu-item menu-item-sign-up">
         <span className="menu-item-icon"></span>
-        <Link to="/signup">Sign Up</Link>
+        <MenuToggle menu="signup" onToggle={@props.onSubMenuClick}>Sign Up</MenuToggle>
       </li>
       <li className="menu-item menu-item-login">
         <span className="menu-item-icon"></span>
