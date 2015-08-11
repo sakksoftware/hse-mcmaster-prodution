@@ -14,7 +14,8 @@ module.exports = React.createClass
   render: ->
     <Form className="signup-menu"
       afterSaveContent={@afterSaveContent}
-      replaceContent=true onSubmit={UserActions.createUser}>
+      replaceContent=true
+      onSubmit={UserActions.createUser}>
       <input label="Email" name="email" type="email" />
       <input label="Password" name="password" type="password" />
       <input label="Confirm password" name="confirm_password" type="password" />
