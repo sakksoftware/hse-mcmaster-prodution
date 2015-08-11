@@ -21,7 +21,7 @@ module.exports = React.createClass
 
   renderCountries: ->
     _.map @state.countries, (filter) =>
-      <FilterItem filter={filter} key="filter-#{filter.id}" onToggle={@props.onToggleFilter} />
+      <MenuFilterItem filter={filter} key="filter-#{filter.id}" onToggle={@props.onToggleFilter} />
 
   render: ->
     <div className="countries-menu">
