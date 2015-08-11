@@ -7,7 +7,7 @@ module.exports = React.createClass
     onSubmit: React.PropTypes.func.isRequired
     afterSave: React.PropTypes.func
     afterSaveContent: React.PropTypes.node
-    replaceContent: React.PropTypes.boolean
+    replaceContent: React.PropTypes.bool
 
   getInitialState: ->
     {errors: {}, saved: false, submitted: false}
