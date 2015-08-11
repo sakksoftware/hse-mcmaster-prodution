@@ -1,9 +1,11 @@
 Input = ReactBootstrap.Input
 Button = ReactBootstrap.Button
 Util = require('lib/util')
-UserActions = require('actions/user_actions')
 
 module.exports = React.createClass
+  propTypes:
+    onSubmit: React.PropTypes.func.isRequired
+
   getInitialState: ->
     {errors: {}, saved: false, submitted: false}
 
@@ -13,8 +15,10 @@ module.exports = React.createClass
     @setState errors: errors
 
   handleSubmit: (e) ->
+    console.log('form submitted')
+    e.preventDefault()
     user = $(@refs['form'].getDOMNode()).serializeObject()
-    UserActions.createUser(user, @handleSaved, @handleError)
+    @props.onSubmit(user, @handleSaved, @handleError)
 
   handleSaved: ->
     @setState(errors: {}, saved: true, submitted: true)
@@ -34,9 +38,9 @@ module.exports = React.createClass
     }, options
 
     if options.type == 'checkbox'
-      <Input type={options.type} label={label} key={options.name} name={options.name} ref={options.name}  bsStyle={@getFieldStyle(options.name)} hasFeedback onChange={@handleChange} help={@state.errors[options.name]}>{label}</Input>
+      <Input type={options.type} label={label} key={options.name} name={options.name} ref={options.name} bsStyle={@getFieldStyle(options.name)} hasFeedback onChange={@handleChange} help={@state.errors[options.name]}>{label}</Input>
     else
-      <Input type={options.type} placeholder={label} key={options.name} name={options.name} ref={options.name}  bsStyle={@getFieldStyle(options.name)} hasFeedback onChange={@handleChange} help={@state.errors[options.name]} />
+      <Input type={options.type} placeholder={label} key={options.name} name={options.name} ref={options.name} bsStyle={@getFieldStyle(options.name)} hasFeedback onChange={@handleChange} help={@state.errors[options.name]} />
 
   render: ->
     fields =
@@ -50,9 +54,8 @@ module.exports = React.createClass
       <div>
         <h3 className='confirmation-msg'>A conformation email has been sent to you. Pleaes confirm your registration to activate your account!</h3>
         <small>Didn&#39;t receive an emai? <a href="#">Send Again</a></small>
-        <Button bsStyle='default' block disabled>Confirm Account</Button>
       </div>
     else
-      <form ref='form'>
+      <form ref='form' onSubmit={@handleSubmit}>
         {fields}
       </form>
