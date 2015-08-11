@@ -5,9 +5,15 @@ Util = require('lib/util')
 module.exports = React.createClass
   propTypes:
     onSubmit: React.PropTypes.func.isRequired
+    afterSave: React.PropTypes.func
+    afterSaveContent: React.PropTypes.node
+    replaceContent: React.PropTypes.boolean
 
   getInitialState: ->
     {errors: {}, saved: false, submitted: false}
+
+  componentDidUpdate: ->
+    @state.saved == true && @props.afterSave?()
 
   handleChange: (e) ->
     errors = @state.errors
@@ -50,11 +56,8 @@ module.exports = React.createClass
         else
           field
 
-    if @state.saved
-      <div>
-        <h3 className='confirmation-msg'>A conformation email has been sent to you. Pleaes confirm your registration to activate your account!</h3>
-        <small>Didn&#39;t receive an emai? <a href="#">Send Again</a></small>
-      </div>
+    if @props.replaceContent && @state.saved
+      @props.afterSaveContent?() || <div></div>
     else
       <form ref='form' onSubmit={@handleSubmit}>
         {fields}

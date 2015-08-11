@@ -80,14 +80,16 @@ module.exports = React.createClass
     for menu in menus
       level += 1
       switch menu.name
+        # TODO: after the refactoring on the top it should be easy to refactor things
+        # to use the menu name in an else statement of the switch
         when 'main'
           @renderSidebar(<MainMenu onSubMenuClick={@toggleMenu} />, "Menu", level)
         when 'help'
           @renderSidebar(<HelpMenu />, "Help", level)
         when 'signup'
-          @renderSidebar(<SignupMenu />, "Signup",level)
+          @renderSidebar(<SignupMenu dismissMenu={@dismissMenu} />, "Signup", level)
         when 'login'
-          @renderSidebar(<LoginMenu />, "Login",level)
+          @renderSidebar(<LoginMenu dismissMenu={@dismissMenu} />, "Login", level)
         when 'filterGroups'
           title = "Filter documents by..."
           filters = menu.context.filters
