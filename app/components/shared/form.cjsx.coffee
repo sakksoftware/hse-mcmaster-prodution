@@ -3,6 +3,7 @@ Button = ReactBootstrap.Button
 Util = require('lib/util')
 
 module.exports = React.createClass
+  displayName: 'Form'
   propTypes:
     onSubmit: React.PropTypes.func.isRequired
     afterSave: React.PropTypes.func
@@ -13,7 +14,7 @@ module.exports = React.createClass
     {errors: {}, saved: false, submitted: false}
 
   componentDidUpdate: ->
-    @state.saved == true && @props.afterSave?()
+    @state.saved == true && @props.afterSave?(@model())
 
   handleChange: (e) ->
     errors = @state.errors
@@ -23,8 +24,7 @@ module.exports = React.createClass
   handleSubmit: (e) ->
     console.log('form submitted')
     e.preventDefault()
-    user = $(@refs['form'].getDOMNode()).serializeObject()
-    @props.onSubmit(user, @handleSaved, @handleError)
+    @props.onSubmit(@model(), @handleSaved, @handleError)
 
   handleSaved: ->
     @setState(errors: {}, saved: true, submitted: true)
@@ -36,6 +36,8 @@ module.exports = React.createClass
   getFieldStyle: (field) ->
     return if !@state[field] && !@state.submitted
     if @state.errors[field] then 'error' else 'success'
+
+  model: -> $(@refs['form'].getDOMNode()).serializeObject()
 
   renderInput: (label, options = {}) ->
     options = $.extend {

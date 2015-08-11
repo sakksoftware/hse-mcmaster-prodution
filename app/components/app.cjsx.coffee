@@ -26,6 +26,17 @@ module.exports = React.createClass
 
   getInitialState: ->
     menus: []
+    currentUser: null
+
+  login: (user) ->
+    # TODO: cheat won't be necessary after refactor
+    @dismissMenu()
+    _.defer => @setState(menus: @state.menus, currentUser: user)
+
+  logout: ->
+    @setState(menus: @state.menus, currentUser: null)
+    # TODO: cheat won't be necessary after refactor
+    _.defer(@dismissMenu)
 
   toggleMenu: (menuName, menuContext = {}) ->
     menus = _.clone(@state.menus)
@@ -35,12 +46,12 @@ module.exports = React.createClass
     document.activeElement.blur()
 
     menus.push({name: menuName, context: menuContext})
-    @setState(menus: menus)
+    @setState(menus: menus, currentUser: @state.currentUser)
 
   dismissMenu: ->
     menus = _.clone(@state.menus)
     menus.pop()
-    @setState(menus: menus)
+    @setState(menus: menus, currentUser: @state.currentUser)
     return # avoid warning message from react by return undefined
 
   renderHeader: ->
@@ -83,13 +94,16 @@ module.exports = React.createClass
         # TODO: after the refactoring on the top it should be easy to refactor things
         # to use the menu name in an else statement of the switch
         when 'main'
-          @renderSidebar(<MainMenu onSubMenuClick={@toggleMenu} />, "Menu", level)
+          @renderSidebar(<MainMenu currentUser={@state.currentUser}
+            onSubMenuClick={@toggleMenu}
+            onLogout={@logout}
+            />, "Menu", level)
         when 'help'
           @renderSidebar(<HelpMenu />, "Help", level)
         when 'signup'
-          @renderSidebar(<SignupMenu dismissMenu={@dismissMenu} />, "Signup", level)
+          @renderSidebar(<SignupMenu />, "Signup", level)
         when 'login'
-          @renderSidebar(<LoginMenu dismissMenu={@dismissMenu} />, "Login", level)
+          @renderSidebar(<LoginMenu onLogin={@login} />, "Login", level)
         when 'filterGroups'
           title = "Filter documents by..."
           filters = menu.context.filters

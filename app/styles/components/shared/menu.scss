@@ -66,3 +66,11 @@
 .menu-item-login .menu-item-icon {
   @extend .glyphicon-log-in;
 }
+
+.menu-item-logout .menu-item-icon {
+  @extend .glyphicon-log-out;
+}
+
+.menu-item-profile .menu-item-icon {
+  @extend .glyphicon-user;
+}
