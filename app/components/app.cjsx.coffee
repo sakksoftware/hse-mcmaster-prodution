@@ -1,12 +1,10 @@
-SearchPage = require('components/search/search_page')
+AboutPage = require('components/about/about_page')
 ArticlesPage = require('components/articles/articles_page')
+SearchPage = require('components/search/search_page')
 
 Sidebar = require('components/menus/sidebar')
 MenuToggle = require('components/menus/menu_toggle')
 
-# TODO: refactor we can just require all the things that end with _menu under the
-# menus folder instead of explicit requires
-# menus = require('components/menus')
 MainMenu = require('components/menus/main_menu')
 DesktopMainMenu = require('components/menus/desktop_main_menu')
 HelpMenu = require('components/menus/help_menu')
@@ -15,6 +13,7 @@ FiltersMenu = require('components/menus/filters_menu')
 CountriesMenu = require('components/menus/countries_menu')
 SignupMenu = require('components/menus/signup_menu')
 LoginMenu = require('components/menus/login_menu')
+LanguagesMenu = require('components/menus/languages_menu')
 
 ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
@@ -54,6 +53,11 @@ module.exports = React.createClass
     @setState(menus: menus, currentUser: @state.currentUser)
     return # avoid warning message from react by return undefined
 
+  selectLanguage: (language) ->
+    console.log('language selected', language)
+    @dismissMenu()
+    # TODO: implement
+
   renderHeader: ->
     <nav className="top-nav">
       <h1>Health System Evidence</h1>
@@ -69,14 +73,16 @@ module.exports = React.createClass
     # TODO: can be generalized by invoking the right factory based on page name passed in
     # and passing the arguments
     switch @props.page
-      when 'SearchPage'
+      when 'search'
         <SearchPage key="search-page"
           onShowHelp={@toggleMenu}
           onShowFilters={@toggleMenu}
          />
-      when 'ArticlesPage'
+      when 'articles'
         id = @props.args.id
         <ArticlesPage id={id} key={"article-page-#{id}"} />
+      when 'about'
+        <AboutPage key="about-page" />
       else
         throw new Error("Page not found! Please check the URL")
 
@@ -97,6 +103,7 @@ module.exports = React.createClass
           @renderSidebar(<MainMenu currentUser={@state.currentUser}
             onSubMenuClick={@toggleMenu}
             onLogout={@logout}
+            onLinkClick={@dismissMenu}
             />, "Menu", level)
         when 'help'
           @renderSidebar(<HelpMenu />, "Help", level)
@@ -104,6 +111,8 @@ module.exports = React.createClass
           @renderSidebar(<SignupMenu />, "Signup", level)
         when 'login'
           @renderSidebar(<LoginMenu onLogin={@login} />, "Login", level)
+        when 'languages'
+          @renderSidebar(<LanguagesMenu onSelectLanguage={@selectLanguage} />, "Languages", level)
         when 'filterGroups'
           title = "Filter documents by..."
           filters = menu.context.filters

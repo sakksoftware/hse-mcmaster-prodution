@@ -6,6 +6,7 @@ module.exports = React.createClass
   propTypes:
     currentUser: React.PropTypes.object
     onSubMenuClick: React.PropTypes.func.isRequired
+    onLinkClick: React.PropTypes.func.isRequired
     onLogout: React.PropTypes.func.isRequired
 
   fullName: ->
@@ -45,15 +46,15 @@ module.exports = React.createClass
     <ul className="sidebar-nav menu-list">
       <li className="menu-item menu-item-home">
         <span className="menu-item-icon"></span>
-        <Link to="/">Home</Link>
+        <Link onClick={@props.onLinkClick} to="/">Home</Link>
       </li>
       <li className="menu-item menu-item-language">
         <span className="menu-item-icon"></span>
-        <Link to="language">Select Language</Link>
+        <MenuToggle menu="languages" onToggle={@props.onSubMenuClick}>Select Language</MenuToggle>
       </li>
       <li className="menu-item menu-item-about">
         <span className="menu-item-icon"></span>
-        <Link to="/about">About HSE</Link>
+        <Link onClick={@props.onLinkClick} to="/about">About HSE</Link>
       </li>
       {@renderUserLinks()}
     </ul>
