@@ -26,6 +26,6 @@ module.exports = React.createClass
       </li>
       <li className="menu-item menu-item-login">
         <span className="menu-item-icon"></span>
-        <Link to="/login">Login</Link>
+        <MenuToggle menu="login" onToggle={@props.onSubMenuClick}>Login</MenuToggle>
       </li>
     </ul>

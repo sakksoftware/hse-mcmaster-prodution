@@ -3,6 +3,10 @@ ArticlesPage = require('components/articles/articles_page')
 
 Sidebar = require('components/menus/sidebar')
 MenuToggle = require('components/menus/menu_toggle')
+
+# TODO: refactor we can just require all the things that end with _menu under the
+# menus folder instead of explicit requires
+# menus = require('components/menus')
 MainMenu = require('components/menus/main_menu')
 DesktopMainMenu = require('components/menus/desktop_main_menu')
 HelpMenu = require('components/menus/help_menu')
@@ -10,6 +14,7 @@ FilterGroupsMenu = require('components/menus/filter_groups_menu')
 FiltersMenu = require('components/menus/filters_menu')
 CountriesMenu = require('components/menus/countries_menu')
 SignupMenu = require('components/menus/signup_menu')
+LoginMenu = require('components/menus/login_menu')
 
 ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
@@ -79,6 +84,10 @@ module.exports = React.createClass
           @renderSidebar(<MainMenu onSubMenuClick={@toggleMenu} />, "Menu", level)
         when 'help'
           @renderSidebar(<HelpMenu />, "Help", level)
+        when 'signup'
+          @renderSidebar(<SignupMenu />, "Signup",level)
+        when 'login'
+          @renderSidebar(<LoginMenu />, "Login",level)
         when 'filterGroups'
           title = "Filter documents by..."
           filters = menu.context.filters
@@ -104,8 +113,6 @@ module.exports = React.createClass
             # but we want to re-render the menu with the updated context too
             @forceUpdate()
           @renderSidebar(<Menu filters={filters} onToggleFilter={onToggleFilter} />, title, level)
-        when 'signup'
-          @renderSidebar(<SignupMenu />, "Signup",level)
         else
           throw new Error("Unknown menu requested")
 
