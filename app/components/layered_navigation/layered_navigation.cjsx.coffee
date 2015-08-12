@@ -2,8 +2,14 @@ Layer = require('components/layered_navigation/layer')
 ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
 module.exports = React.createClass
+  displayName: "LayeredNavigation"
   propTypes:
+    id: React.PropTypes.string
+    className: React.PropTypes.string
     children: React.PropTypes.node.isRequired
+
+  getDefaultProps: ->
+    className: ''
 
   getInitialState: ->
     menus: []
@@ -60,12 +66,13 @@ module.exports = React.createClass
       @renderLayer(content, title, level)
 
   render: ->
-    className = "menu-toggled" if @state.menus.length > 0
+    className = @props.className + " layered-navigation"
+    className += " menu-toggled" if @state.menus.length > 0
     <div id={@props.id} className={className}>
       <ReactCSSTransitionGroup transitionName="layer" component="div">
         {@renderLayers()}
       </ReactCSSTransitionGroup>
-      <div id="page-content-wrapper" onClick={@dismissMenu}>
+      <div className="layered-navigation-content" onClick={@dismissMenu}>
         {@props.children}
       </div>
     </div>

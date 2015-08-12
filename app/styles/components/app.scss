@@ -2,16 +2,6 @@
 @import '../mixins';
 
 #app {
-  transition: $menu-animation-time $menu-animation-type;
-
-  #page-content-wrapper {
-    width: 100%;
-    padding: 0;
-    transition: $menu-animation-time $menu-animation-type;
-    position: relative;
-    min-height: 100vh;
-  }
-
   #page-content {
     max-width: 500px;
     margin: 0 auto;
@@ -55,19 +45,8 @@
       margin: 0;
     }
 
-    &.menu-toggled {
-      margin-left: -250px;
-    }
 
-    &.menu-toggled .layer {
-      margin: 0;
-    }
-
-    .layer {
-      margin: 0 -250px 0 0;
-    }
-
-    #page-content-wrapper {
+    .layered-navigation-content {
       padding: 0;
     }
   }

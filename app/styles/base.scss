@@ -10,7 +10,6 @@ body, #react-root, #app {
   background-color: white;
 }
 
-
 button {
   @include btn-default;
 }
@@ -47,7 +46,6 @@ select {
 .page-leave.page-leave-active {
   opacity: 0.01;
 }
-
 
 .alert {
   position: fixed;
