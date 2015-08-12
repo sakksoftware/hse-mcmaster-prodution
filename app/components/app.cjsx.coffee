@@ -3,7 +3,9 @@ ArticlesPage = require('components/articles/articles_page')
 SearchPage = require('components/search/search_page')
 
 Sidebar = require('components/menus/sidebar')
+SidebarGroup = require('components/menus/sidebar_group')
 MenuToggle = require('components/menus/menu_toggle')
+Offcanvas = require('components/menus/offcanvas')
 
 MainMenu = require('components/menus/main_menu')
 DesktopMainMenu = require('components/menus/desktop_main_menu')
@@ -24,39 +26,26 @@ module.exports = React.createClass
     page: React.PropTypes.string.isRequired
 
   getInitialState: ->
-    menus: []
     currentUser: null
 
   login: (user) ->
-    # TODO: cheat won't be necessary after refactor
     @dismissMenu()
-    _.defer => @setState(menus: @state.menus, currentUser: user)
+    @setState(currentUser: user)
 
   logout: ->
-    @setState(menus: @state.menus, currentUser: null)
-    # TODO: cheat won't be necessary after refactor
-    _.defer(@dismissMenu)
-
-  toggleMenu: (menuName, menuContext = {}) ->
-    menus = _.clone(@state.menus)
-    return if _.find(menus, (menu) -> menu.name == menuName)
-
-    # move focus away from button used to bring up the menu
-    document.activeElement.blur()
-
-    menus.push({name: menuName, context: menuContext})
-    @setState(menus: menus, currentUser: @state.currentUser)
-
-  dismissMenu: ->
-    menus = _.clone(@state.menus)
-    menus.pop()
-    @setState(menus: menus, currentUser: @state.currentUser)
-    return # avoid warning message from react by return undefined
+    @setState(currentUser: null)
+    @dismissMenu()
 
   selectLanguage: (language) ->
     console.log('language selected', language)
     @dismissMenu()
     # TODO: implement
+
+  toggleMenu: (menuName) ->
+    @refs.offcanvas.toggleMenu(menuName)
+
+  dismissMenu: ->
+    @refs.offcanvas.dismissMenu(menuName)
 
   renderHeader: ->
     <nav className="top-nav">
@@ -86,77 +75,73 @@ module.exports = React.createClass
       else
         throw new Error("Page not found! Please check the URL")
 
-  renderSidebar: (content, title, level) ->
-    <Sidebar key="sidebar-#{level + 1}" onClose={@dismissMenu} title={title} level={level}>
-      {content}
-    </Sidebar>
+  renderFilterGroups: ->
+    filters = menu.context.filters
+    onToggleFilter = menu.context.onToggleFilter
+    @renderSidebar <FilterGroupsMenu
+      filters={filters}
+      onToggleFilter={onToggleFilter}
+      onFilterGroupClick={@toggleMenu} />, title, level
 
-  renderSidebars: ->
-    menus = @state.menus
-    level = -1
-    for menu in menus
-      level += 1
-      switch menu.name
-        # TODO: after the refactoring on the top it should be easy to refactor things
-        # to use the menu name in an else statement of the switch
-        when 'main'
-          @renderSidebar(<MainMenu currentUser={@state.currentUser}
-            onSubMenuClick={@toggleMenu}
-            onLogout={@logout}
-            onLinkClick={@dismissMenu}
-            />, "Menu", level)
-        when 'help'
-          @renderSidebar(<HelpMenu />, "Help", level)
-        when 'signup'
-          @renderSidebar(<SignupMenu />, "Signup", level)
-        when 'login'
-          @renderSidebar(<LoginMenu onLogin={@login} />, "Login", level)
-        when 'languages'
-          @renderSidebar(<LanguagesMenu onSelectLanguage={@selectLanguage} />, "Languages", level)
-        when 'filterGroups'
-          title = "Filter documents by..."
-          filters = menu.context.filters
-          onToggleFilter = menu.context.onToggleFilter
-          @renderSidebar <FilterGroupsMenu
-            filters={filters}
-            onToggleFilter={onToggleFilter}
-            onFilterGroupClick={@toggleMenu} />, title, level
-        when 'filters', 'countries'
-          if menu.name is 'countries'
-            title = "Countries"
-            Menu = CountriesMenu
-          else # menu.name is subFilters
-            section = menu.context.section
-            filterGroup = menu.context.filterGroup
-            title = "Select #{section}: #{filterGroup}"
-            Menu = FiltersMenu
+  # renderFiltersOrCountries: (menuName) ->
+  #   if menuName is 'countries'
+  #     name = "countries"
+  #     title = "Countries"
+  #     Menu = CountriesMenu
+  #   else # menu.name is subFilters
+  #     name = "filters"
+  #     section = menu.context.section
+  #     filterGroup = menu.context.filterGroup
+  #     title = "Select #{section}: #{filterGroup}"
+  #     Menu = FiltersMenu
+  #
+  #   filters = menu.context.filters
+  #   onToggleFilter = (filter) =>
+  #     menu.context.onToggleFilter(filter)
+  #     # must do a force update since context is updated in a child as a state
+  #     # but we want to re-render the menu with the updated context too
+  #     @forceUpdate()
+  #
+  #   <Sidebar name={name} title={title}>
+  #     <Menu filters={filters} onToggleFilter={onToggleFilter} />
+  #   </Sidebar>
 
-          filters = menu.context.filters
-          onToggleFilter = (filter) =>
-            menu.context.onToggleFilter(filter)
-            # must do a force update since context is updated in a child as a state
-            # but we want to re-render the menu with the updated context too
-            @forceUpdate()
-          @renderSidebar(<Menu filters={filters} onToggleFilter={onToggleFilter} />, title, level)
-        else
-          throw new Error("Unknown menu requested")
+  renderSidebarGroup: ->
+    # <Sidebar name="filters" title="Filter documents by...">
+    #   {@renderFilterGroups()}
+    # </Sidebar>
+    # {@renderFiltersOrCountries('filters')}
+    # {@renderFiltersOrCountries('countries')}
+    <SidebarGroup>
+      <Sidebar name="help" title="Help">
+        <HelpMenu />
+      </Sidebar>
+      <Sidebar name="signup" title="Signup">
+        <SignupMenu />
+      </Sidebar>
+      <Sidebar name="main" title="Menu">
+        <MainMenu currentUser={@state.currentUser}
+          onSubMenuClick={@toggleMenu}
+          onLogout={@logout}
+          onLinkClick={@dismissMenu}
+          />
+      </Sidebar>
+      <Sidebar name="login" title="Login">
+        <LoginMenu onLogin={@login} />
+      </Sidebar>
+      <Sidebar name="languages" title="Languages">
+        <LanguagesMenu onSelectLanguage={@selectLanguage} />
+      </Sidebar>
+
+    </SidebarGroup>
 
   render: ->
-    className = "app"
-    className += " menu-toggled" if @state.menus.length > 0
-    # TODO: in order to generalize the menu toggle the proper way is the wrap the whole application
-    # with a menu toggle component. Think of UIScrollbar and how things work in iOS, it is the same concept for
-    # off canvas. It is similar to a master-view layout.
-    <div className={className} id="app">
-      <ReactCSSTransitionGroup transitionName="sidebar"  component="div">
-        {@renderSidebars()}
-      </ReactCSSTransitionGroup>
-      <div id="page-content-wrapper" onClick={@dismissMenu}>
-        {@renderHeader()}
-        <div id="page-content">
-          <ReactCSSTransitionGroup transitionName="page" component="div">
-            {@renderPage()}
-          </ReactCSSTransitionGroup>
-        </div>
+    <Offcanvas ref="offcanvas">
+      {@renderSidebarGroup()}
+      {@renderHeader()}
+      <div id="page-content">
+        <ReactCSSTransitionGroup transitionName="page" component="div">
+          {@renderPage()}
+        </ReactCSSTransitionGroup>
       </div>
-    </div>
+    </Offcanvas>
