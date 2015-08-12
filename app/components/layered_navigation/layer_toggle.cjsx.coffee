@@ -1,5 +1,5 @@
 module.exports = React.createClass
-  displayName: 'MenuToggle'
+  displayName: 'LayerToggle'
   propTypes:
     menu: React.PropTypes.string.isRequired
     onToggle: React.PropTypes.func.isRequired

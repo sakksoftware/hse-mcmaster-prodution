@@ -2,10 +2,10 @@ AboutPage = require('components/about/about_page')
 ArticlesPage = require('components/articles/articles_page')
 SearchPage = require('components/search/search_page')
 
-Sidebar = require('components/menus/sidebar')
-SidebarGroup = require('components/menus/sidebar_group')
-MenuToggle = require('components/menus/menu_toggle')
-Offcanvas = require('components/menus/offcanvas')
+Layer = require('components/layered_navigation/layer')
+LayerGroup = require('components/layered_navigation/layer_group')
+LayerToggle = require('components/layered_navigation/layer_toggle')
+LayeredNavigation = require('components/layered_navigation/layered_navigation')
 
 MainMenu = require('components/menus/main_menu')
 DesktopMainMenu = require('components/menus/desktop_main_menu')
@@ -50,11 +50,11 @@ module.exports = React.createClass
   renderHeader: ->
     <nav className="top-nav">
       <h1>Health System Evidence</h1>
-      <MenuToggle menu="main" onToggle={@toggleMenu}>
+      <LayerToggle menu="main" onToggle={@toggleMenu}>
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>
-      </MenuToggle>
+      </LayerToggle>
       <DesktopMainMenu />
     </nav>
 
@@ -74,45 +74,45 @@ module.exports = React.createClass
       else
         throw new Error("Page not found! Please check the URL")
 
-  renderSidebarGroup: ->
-    <SidebarGroup>
-      <Sidebar name="help" title="Help">
+  renderLayerGroup: ->
+    <LayerGroup>
+      <Layer name="help" title="Help">
         <HelpMenu />
-      </Sidebar>
-      <Sidebar name="signup" title="Signup">
+      </Layer>
+      <Layer name="signup" title="Signup">
         <SignupMenu />
-      </Sidebar>
-      <Sidebar name="main" title="Menu">
+      </Layer>
+      <Layer name="main" title="Menu">
         <MainMenu currentUser={@state.currentUser}
           onSubMenuClick={@toggleMenu}
           onLogout={@logout}
           onLinkClick={@dismissMenu}
           />
-      </Sidebar>
-      <Sidebar name="login" title="Login">
+      </Layer>
+      <Layer name="login" title="Login">
         <LoginMenu onLogin={@login} />
-      </Sidebar>
-      <Sidebar name="languages" title="Languages">
+      </Layer>
+      <Layer name="languages" title="Languages">
         <LanguagesMenu onSelectLanguage={@selectLanguage} />
-      </Sidebar>
-      <Sidebar name="filterGroups" title="Filter documents by...">
+      </Layer>
+      <Layer name="filterGroups" title="Filter documents by...">
         <FilterGroupsMenu />
-      </Sidebar>
-      <Sidebar name="filters" title="Filters">
+      </Layer>
+      <Layer name="filters" title="Filters">
         <FiltersMenu />
-      </Sidebar>
-      <Sidebar name="countries" title="Countries">
+      </Layer>
+      <Layer name="countries" title="Countries">
         <CountriesMenu />
-      </Sidebar>
-    </SidebarGroup>
+      </Layer>
+    </LayerGroup>
 
   render: ->
-    <Offcanvas ref="offcanvas">
-      {@renderSidebarGroup()}
+    <LayeredNavigation ref="offcanvas" className="app" id="app">
+      {@renderLayerGroup()}
       {@renderHeader()}
       <div id="page-content">
         <ReactCSSTransitionGroup transitionName="page" component="div">
           {@renderPage()}
         </ReactCSSTransitionGroup>
       </div>
-    </Offcanvas>
+    </LayeredNavigation>

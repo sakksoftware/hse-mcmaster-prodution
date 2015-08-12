@@ -1,0 +1,21 @@
+.layer-enter {
+  margin: 0 -250px 0 0;
+  transition: $menu-animation-time $menu-animation-type;
+  display: block;
+}
+
+.layer-enter.layer-enter-active {
+  margin: 0;
+  border-left: none !important;
+  display: block;
+}
+
+.layer-leave {
+  margin: 0;
+  transition: $menu-animation-time $menu-animation-type;
+}
+
+.layer-leave.layer-leave-active {
+  margin: 0 -250px 0 0;
+  border-left: none !important;
+}

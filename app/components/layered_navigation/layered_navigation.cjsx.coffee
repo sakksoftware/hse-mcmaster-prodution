@@ -1,4 +1,4 @@
-Sidebar = require('components/menus/sidebar')
+Layer = require('components/layered_navigation/layer')
 ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
 module.exports = React.createClass
@@ -26,25 +26,25 @@ module.exports = React.createClass
     @setState(menus: menus)
     return # avoid warning message from react by return undefined
 
-  findSidebarGroup: ->
-    _.find @props.children, (sidebar) =>
-      sidebar.type.displayName == "SidebarGroup"
+  findLayerGroup: ->
+    _.find @props.children, (child) =>
+      child.type.displayName == "LayerGroup"
 
   findMenu: (menuName) ->
-    menu = _.find @findSidebarGroup().props.children, (menu) =>
-      menu.type.displayName == "Sidebar" and menu.props.name == menuName
+    menu = _.find @findLayerGroup().props.children, (menu) =>
+      menu.type.displayName == "Layer" and menu.props.name == menuName
 
     unless menu
       throw new Error("Unknown menu requested #{menuName}")
 
     [menu.props.children, menu.props.title]
 
-  renderSidebar: (content, title, level) ->
-    <Sidebar key="sidebar-#{level + 1}" onClose={@dismissMenu} title={title} level={level}>
+  renderLayer: (content, title, level) ->
+    <Layer key="layer-#{level + 1}" onClose={@dismissMenu} title={title} level={level}>
       {content}
-    </Sidebar>
+    </Layer>
 
-  renderSidebars: ->
+  renderLayers: ->
     menus = @state.menus
     level = -1
     for menu in menus
@@ -57,14 +57,13 @@ module.exports = React.createClass
 
       content = React.cloneElement(content, props)
 
-      @renderSidebar(content, title, level)
+      @renderLayer(content, title, level)
 
   render: ->
-    className = "app"
-    className += " menu-toggled" if @state.menus.length > 0
-    <div className={className} id="app">
-      <ReactCSSTransitionGroup transitionName="sidebar" component="div">
-        {@renderSidebars()}
+    className = "menu-toggled" if @state.menus.length > 0
+    <div id={@props.id} className={className}>
+      <ReactCSSTransitionGroup transitionName="layer" component="div">
+        {@renderLayers()}
       </ReactCSSTransitionGroup>
       <div id="page-content-wrapper" onClick={@dismissMenu}>
         {@props.children}

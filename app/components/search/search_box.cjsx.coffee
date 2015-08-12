@@ -1,7 +1,7 @@
 AppliedFilters = require('components/search/applied_filters')
 FilterBox = require('components/search/filter_box')
 SearchBar = require('components/search/search_bar')
-MenuToggle = require('components/menus/menu_toggle')
+LayerToggle = require('components/layered_navigation/layer_toggle')
 FilterNormalizationService = require('services/filter_normalization_service')
 
 module.exports = React.createClass
@@ -37,16 +37,16 @@ module.exports = React.createClass
     <div className="search-box">
       <SearchBar query={@props.search.query} onSearch={@props.onSearch} />
       <div className="menu-toggles">
-        <MenuToggle menu="help" onToggle={@props.onShowMenu}>
+        <LayerToggle menu="help" onToggle={@props.onShowMenu}>
           <span className="icon"></span>Tips for more powerful serach
-        </MenuToggle>
-        <MenuToggle
+        </LayerToggle>
+        <LayerToggle
           menu="filterGroups"
           context={filters: @props.search.filters, onShowFilterGroup: @props.onShowMenu, onToggleFilter: @handleFilterToggle}
           onToggle={@props.onShowMenu}>
           Filters
           {@renderFilterCount()}
-        </MenuToggle>
+        </LayerToggle>
       </div>
       {filterBox}
     </div>

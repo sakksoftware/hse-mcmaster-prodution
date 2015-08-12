@@ -1,4 +1,4 @@
-MenuToggle = require('components/menus/menu_toggle')
+LayerToggle = require('components/layered_navigation/layer_toggle')
 
 module.exports = React.createClass
   displayName: 'FilterGroupsMenu'
@@ -16,13 +16,13 @@ module.exports = React.createClass
     menu = "countries" if filterGroup.name == "Countries"
     title = "Select #{section.name}: #{filterGroup.name}"
 
-    <MenuToggle
+    <LayerToggle
       menu={menu}
       title={title}
       context={filters: filterGroup.filters, onToggleFilter: @onToggleFilter }
       onToggle={@onShowFilterGroup}>
       {filterGroup.name}
-    </MenuToggle>
+    </LayerToggle>
 
   renderSection: (section) ->
     menuItems =

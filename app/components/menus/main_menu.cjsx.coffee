@@ -1,5 +1,5 @@
 Link = require('components/shared/link')
-MenuToggle = require('components/menus/menu_toggle')
+LayerToggle = require('components/layered_navigation/layer_toggle')
 
 module.exports = React.createClass
   displayName: 'MainMenu'
@@ -34,23 +34,23 @@ module.exports = React.createClass
       [
         <li key="menu-item-signup" className="menu-item menu-item-sign-up">
           <span className="menu-item-icon"></span>
-          <MenuToggle menu="signup" onToggle={@props.onSubMenuClick}>Sign Up</MenuToggle>
+          <LayerToggle menu="signup" onToggle={@props.onSubMenuClick}>Sign Up</LayerToggle>
         </li>
         <li key="menu-item-login" className="menu-item menu-item-login">
           <span className="menu-item-icon"></span>
-          <MenuToggle menu="login" onToggle={@props.onSubMenuClick}>Login</MenuToggle>
+          <LayerToggle menu="login" onToggle={@props.onSubMenuClick}>Login</LayerToggle>
         </li>
       ]
 
   render: ->
-    <ul className="sidebar-nav menu-list">
+    <ul className="main-menu menu-list">
       <li className="menu-item menu-item-home">
         <span className="menu-item-icon"></span>
         <Link onClick={@props.onLinkClick} to="/">Home</Link>
       </li>
       <li className="menu-item menu-item-language">
         <span className="menu-item-icon"></span>
-        <MenuToggle menu="languages" onToggle={@props.onSubMenuClick}>Select Language</MenuToggle>
+        <LayerToggle menu="languages" onToggle={@props.onSubMenuClick}>Select Language</LayerToggle>
       </li>
       <li className="menu-item menu-item-about">
         <span className="menu-item-icon"></span>

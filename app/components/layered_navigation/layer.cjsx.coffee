@@ -1,5 +1,5 @@
 module.exports = React.createClass
-  displayName: 'Sidebar'
+  displayName: 'Layer'
   propTypes:
     onClose: React.PropTypes.func
     title: React.PropTypes.string
@@ -12,23 +12,23 @@ module.exports = React.createClass
 
   render: ->
     baseZIndex = 1000
-    sidebarWidth = 250
+    layerWidth = 250
     levelOffset = 20
     offset = @props.level * levelOffset
     style = {}
     if offset != 0
       style =
         "borderLeft": "#{levelOffset}px solid rgba(0, 0, 0, 0.2)"
-        "width": "#{sidebarWidth - offset + levelOffset}px"
+        "width": "#{layerWidth - offset + levelOffset}px"
         "zIndex": baseZIndex + @props.level
 
-    <nav className="sidebar-wrapper" role="navigation" style={style}>
-      <div className="sidebar">
-        <div className="sidebar-header">
-          <span className="sidebar-header-title">{@props.title || "Menu"}</span>
-          <a className="sidebar-header-close" href="#" onClick={@handleClose}>x</a>
+    <nav className="layer" role="navigation" style={style}>
+      <div className="layer-inner">
+        <div className="layer-header">
+          <span className="layer-header-title">{@props.title || "Menu"}</span>
+          <a className="layer-header-close" href="#" onClick={@handleClose}>x</a>
         </div>
-        <div className="sidebar-content">
+        <div className="layer-content">
           {@props.children}
         </div>
       </div>
