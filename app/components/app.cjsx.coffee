@@ -45,7 +45,7 @@ module.exports = React.createClass
     @refs.offcanvas.toggleMenu(menuName, title, menuContext)
 
   dismissMenu: ->
-    @refs.offcanvas.dismissMenu(menuName)
+    @refs.offcanvas.dismissMenu()
 
   renderHeader: ->
     <nav className="top-nav">
