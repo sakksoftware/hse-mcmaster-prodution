@@ -41,8 +41,8 @@ module.exports = React.createClass
     @dismissMenu()
     # TODO: implement
 
-  toggleMenu: (menuName) ->
-    @refs.offcanvas.toggleMenu(menuName)
+  toggleMenu: (menuName, title, menuContext = {}) ->
+    @refs.offcanvas.toggleMenu(menuName, title, menuContext)
 
   dismissMenu: ->
     @refs.offcanvas.dismissMenu(menuName)
@@ -64,8 +64,7 @@ module.exports = React.createClass
     switch @props.page
       when 'search'
         <SearchPage key="search-page"
-          onShowHelp={@toggleMenu}
-          onShowFilters={@toggleMenu}
+          onShowMenu={@toggleMenu}
          />
       when 'articles'
         id = @props.args.id
@@ -75,43 +74,7 @@ module.exports = React.createClass
       else
         throw new Error("Page not found! Please check the URL")
 
-  renderFilterGroups: ->
-    filters = menu.context.filters
-    onToggleFilter = menu.context.onToggleFilter
-    @renderSidebar <FilterGroupsMenu
-      filters={filters}
-      onToggleFilter={onToggleFilter}
-      onFilterGroupClick={@toggleMenu} />, title, level
-
-  # renderFiltersOrCountries: (menuName) ->
-  #   if menuName is 'countries'
-  #     name = "countries"
-  #     title = "Countries"
-  #     Menu = CountriesMenu
-  #   else # menu.name is subFilters
-  #     name = "filters"
-  #     section = menu.context.section
-  #     filterGroup = menu.context.filterGroup
-  #     title = "Select #{section}: #{filterGroup}"
-  #     Menu = FiltersMenu
-  #
-  #   filters = menu.context.filters
-  #   onToggleFilter = (filter) =>
-  #     menu.context.onToggleFilter(filter)
-  #     # must do a force update since context is updated in a child as a state
-  #     # but we want to re-render the menu with the updated context too
-  #     @forceUpdate()
-  #
-  #   <Sidebar name={name} title={title}>
-  #     <Menu filters={filters} onToggleFilter={onToggleFilter} />
-  #   </Sidebar>
-
   renderSidebarGroup: ->
-    # <Sidebar name="filters" title="Filter documents by...">
-    #   {@renderFilterGroups()}
-    # </Sidebar>
-    # {@renderFiltersOrCountries('filters')}
-    # {@renderFiltersOrCountries('countries')}
     <SidebarGroup>
       <Sidebar name="help" title="Help">
         <HelpMenu />
@@ -132,7 +95,15 @@ module.exports = React.createClass
       <Sidebar name="languages" title="Languages">
         <LanguagesMenu onSelectLanguage={@selectLanguage} />
       </Sidebar>
-
+      <Sidebar name="filterGroups" title="Filter documents by...">
+        <FilterGroupsMenu />
+      </Sidebar>
+      <Sidebar name="filters" title="Filters">
+        <FiltersMenu />
+      </Sidebar>
+      <Sidebar name="countries" title="Countries">
+        <CountriesMenu />
+      </Sidebar>
     </SidebarGroup>
 
   render: ->

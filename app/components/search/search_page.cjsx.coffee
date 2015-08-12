@@ -12,8 +12,7 @@ module.exports = React.createClass
   mixins: [FilterNormalizationService]
 
   propTypes:
-    onShowHelp: React.PropTypes.func.isRequired
-    onShowFilters: React.PropTypes.func.isRequired
+    onShowMenu: React.PropTypes.func.isRequired
 
   # steps
   # pending_search
@@ -89,6 +88,7 @@ module.exports = React.createClass
 
   handleLoadFilters: (data) ->
     @state.search.filters = data.filters
+    @forceUpdate()
 
   handleError: (xhr, statusCode, statusText) ->
     console.log("error", xhr, statusCode, statusText)
@@ -109,8 +109,7 @@ module.exports = React.createClass
         onSearch={@handleSearch}
         onAddFilter={@handleFilterAdded}
         onRemoveFilter={@handleFilterRemove}
-        onShowHelp={@props.onShowHelp}
-        onShowFilters={@props.onShowFilters}
+        onShowMenu={@props.onShowMenu}
       />
       {results}
     </div>

@@ -12,7 +12,7 @@ module.exports = React.createClass
     onSearch: React.PropTypes.func.isRequired
     onAddFilter: React.PropTypes.func.isRequired
     onRemoveFilter: React.PropTypes.func.isRequired
-    onShowHelp: React.PropTypes.func.isRequired
+    onShowMenu: React.PropTypes.func.isRequired
 
   getAppliedFilters: ->
     filters = @getFiltersArray(@props.search.filters || [])
@@ -37,13 +37,13 @@ module.exports = React.createClass
     <div className="search-box">
       <SearchBar query={@props.search.query} onSearch={@props.onSearch} />
       <div className="menu-toggles">
-        <MenuToggle menu="help" onToggle={@props.onShowHelp}>
+        <MenuToggle menu="help" onToggle={@props.onShowMenu}>
           <span className="icon"></span>Tips for more powerful serach
         </MenuToggle>
         <MenuToggle
           menu="filterGroups"
-          context={filters: @props.search.filters, onToggleFilter: @handleFilterToggle}
-          onToggle={@props.onShowFilters}>
+          context={filters: @props.search.filters, onShowFilterGroup: @props.onShowMenu, onToggleFilter: @handleFilterToggle}
+          onToggle={@props.onShowMenu}>
           Filters
           {@renderFilterCount()}
         </MenuToggle>

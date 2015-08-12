@@ -3,19 +3,24 @@ MenuToggle = require('components/menus/menu_toggle')
 module.exports = React.createClass
   displayName: 'FilterGroupsMenu'
   propTypes:
-    filters: React.PropTypes.array.isRequired
-    onToggleFilter: React.PropTypes.func.isRequired
-    onFilterGroupClick: React.PropTypes.func.isRequired
+    context: React.PropTypes.object
+
+  componentWillMount: ->
+    @filters = @props.context.filters
+    @onToggleFilter = @props.context.onToggleFilter
+    @onShowFilterGroup = @props.context.onShowFilterGroup
 
   renderMenu: (section, filterGroup) ->
     menu="filters"
     # TODO: would not work when we do translations
     menu = "countries" if filterGroup.name == "Countries"
+    title = "Select #{section.name}: #{filterGroup.name}"
 
     <MenuToggle
       menu={menu}
-      context={filters: filterGroup.filters, onToggleFilter: @props.onToggleFilter, section: section.name, filterGroup: filterGroup.name}
-      onToggle={@props.onFilterGroupClick}>
+      title={title}
+      context={filters: filterGroup.filters, onToggleFilter: @onToggleFilter }
+      onToggle={@onShowFilterGroup}>
       {filterGroup.name}
     </MenuToggle>
 
@@ -34,7 +39,7 @@ module.exports = React.createClass
     ]
 
   renderSections: ->
-    for section in @props.filters
+    for section in @filters
       @renderSection(section)
 
   render: ->

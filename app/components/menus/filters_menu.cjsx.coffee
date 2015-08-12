@@ -3,13 +3,16 @@ module.exports = React.createClass
   displayName: 'FiltersMenu'
 
   propTypes:
-    filters: React.PropTypes.array.isRequired
-    onToggleFilter: React.PropTypes.func.isRequired
+    context: React.PropTypes.object
 
-  renderItems: (items)->
+  componentWillMount: ->
+    @filters = @props.context.filters
+    @onToggleFilter = @props.context.onToggleFilter
+
+  renderItems: (items) ->
     result = []
     for item in items
-      result.push <MenuFilterItem key={item.name} filter={item} onToggle={@props.onToggleFilter} />
+      result.push <MenuFilterItem key={item.name} filter={item} onToggle={@onToggleFilter} />
       if item.filters
         result.push <li className="menu-item" key="#{item.name}-filters">
           <ul className="menu-list">
@@ -22,6 +25,6 @@ module.exports = React.createClass
   render: ->
     <div className="filters-menu nested-menu">
       <ul className="menu-list">
-        {@renderItems(@props.filters)}
+        {@renderItems(@filters)}
       </ul>
     </div>

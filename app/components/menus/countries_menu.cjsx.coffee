@@ -4,16 +4,22 @@ module.exports = React.createClass
   displayName: 'CountriesMenu'
 
   propTypes:
-    filters: React.PropTypes.array.isRequired
-    onToggleFilter: React.PropTypes.func.isRequired
+    context: React.PropTypes.object
+
+  componentWillMount: ->
+    @filters = @props.context.filters
+    @onToggleFilter = (filter) =>
+      @props.context.onToggleFilter(filter)
+      @forceUpdate()
+    @setState(countries: @filters)
 
   getInitialState: ->
-    countries: @props.filters
+    countries: []
 
   filterCountries: ->
     query = @refs.countryFilter.getDOMNode().value
     if _.isEmpty(query)
-      countries = @props.filters
+      countries = @filters
     else
       countries = _(@state.countries).filter (country) ->
         country.name.toLowerCase().indexOf(query.toLowerCase()) >= 0
@@ -21,7 +27,7 @@ module.exports = React.createClass
 
   renderCountries: ->
     _.map @state.countries, (filter) =>
-      <MenuFilterItem filter={filter} key="filter-#{filter.id}" onToggle={@props.onToggleFilter} />
+      <MenuFilterItem filter={filter} key="filter-#{filter.id}" onToggle={@onToggleFilter} />
 
   render: ->
     <div className="countries-menu">

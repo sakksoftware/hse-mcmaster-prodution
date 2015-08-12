@@ -1,7 +1,7 @@
 module.exports = React.createClass
   displayName: 'Sidebar'
   propTypes:
-    onClose: React.PropTypes.func.isRequired
+    onClose: React.PropTypes.func
     title: React.PropTypes.string
     level: React.PropTypes.number
     children: React.PropTypes.node.isRequired

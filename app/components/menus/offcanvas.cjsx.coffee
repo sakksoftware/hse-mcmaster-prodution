@@ -8,20 +8,22 @@ module.exports = React.createClass
   getInitialState: ->
     menus: []
 
-  toggleMenu: (menuName, menuContext = {}) ->
+  toggleMenu: (menuName, title, menuContext) ->
+    menuContext = title unless menuContext
+
     menus = _.clone(@state.menus)
     return if _.find(menus, (menu) -> menu.name == menuName)
 
     # move focus away from button used to bring up the menu
     document.activeElement.blur()
 
-    menus.push({name: menuName, context: menuContext})
-    @setState(menus: menus, currentUser: @state.currentUser)
+    menus.push({name: menuName, title: title, context: menuContext})
+    @setState(menus: menus)
 
   dismissMenu: ->
     menus = _.clone(@state.menus)
     menus.pop()
-    @setState(menus: menus, currentUser: @state.currentUser)
+    @setState(menus: menus)
     return # avoid warning message from react by return undefined
 
   findSidebarGroup: ->
@@ -48,13 +50,20 @@ module.exports = React.createClass
     for menu in menus
       level += 1
       [content, title] = @findMenu(menu.name)
+      title = menu.title if menu.title
+
+      props = _.clone(content.props)
+      props.context = menu.context
+
+      content = React.cloneElement(content, props)
+
       @renderSidebar(content, title, level)
 
   render: ->
     className = "app"
     className += " menu-toggled" if @state.menus.length > 0
     <div className={className} id="app">
-      <ReactCSSTransitionGroup transitionName="sidebar"  component="div">
+      <ReactCSSTransitionGroup transitionName="sidebar" component="div">
         {@renderSidebars()}
       </ReactCSSTransitionGroup>
       <div id="page-content-wrapper" onClick={@dismissMenu}>

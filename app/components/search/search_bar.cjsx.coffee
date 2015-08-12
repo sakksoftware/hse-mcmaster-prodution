@@ -4,7 +4,7 @@ SearchActions = require('actions/search_actions')
 module.exports = React.createClass
   displayName: 'SearchBar'
   propTypes:
-    query: React.PropTypes.string.isRequired
+    query: React.PropTypes.string
     onSearch: React.PropTypes.func.isRequired
 
   dismissKeyboard: -> document.activeElement.blur()
