@@ -1,5 +1,7 @@
-$layer-width: 250px;
-$menu-text-color: #7E7E7E;
-$menu-background-color: #EAEAEA;
-$menu-animation-time: 500ms;
-$menu-animation-type: ease;
+$layer-width: 250px !default;
+$menu-text-color: #7E7E7E !default;
+$menu-background-color: #F2F2F2 !default;
+$menu-animation-time: 500ms !default;
+$menu-animation-type: ease !default;
+$menu-header-background-color: #ccc !default;
+$menu-header-color: white !default;

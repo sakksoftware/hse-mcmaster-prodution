@@ -1,6 +1,3 @@
-@import '../variables';
-@import '../mixins';
-
 #app {
   #page-content {
     max-width: 500px;
@@ -8,38 +5,43 @@
     padding: 25px;
   }
 
-  .menu-toggle-main {
+  .layer-toggle-main {
     @include hamburger-icon;
     background: transparent;
     display: none;
 
     .icon-bar {
-      background: white;
+      background: $menu-header-color;
     }
   }
 
   .top-nav {
     width: auto;
     overflow: auto;
-    background: #3C3C3C;
-    color: white;
-    padding: 7px 25px;
-    line-height: 30px;
+    background: linear-gradient(to right, $background-gradient-start, $background-gradient-end);
+    color: $menu-header-color;
+    padding: $medium-size;
+    line-height: $medium-size;
+    height: $x-large-size;
 
     h1 {
       display: none;
       padding: 0;
       margin: 0;
-      font-size: 16px;
+      font-size: $medium-size;
+      line-height: $medium-size;
       text-transform: uppercase;
-      line-height: 30px;
+    }
+
+    button {
+      height: $medium-size;
     }
   }
 
   @media (max-width: 768px) {
     .top-nav h1 { display: inline-block; }
 
-    .menu-toggle-main {
+    .layer-toggle-main {
       display: inline-block;
       padding: 0;
       margin: 0;

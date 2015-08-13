@@ -1,7 +1,5 @@
-@import 'bootstrap';
-
 .search-box {
-  .menu-toggles {
+  .layer-toggles {
     overflow: auto;
     margin-top: 7px;
     padding-bottom: 7px;
@@ -9,8 +7,9 @@
     margin-bottom: 15px;
   }
 
-  .menu-toggle-help {
+  .layer-toggle-help {
     background: transparent;
+    color: $primary-color;
 
     .icon {
       @extend .glyphicon;
@@ -18,7 +17,8 @@
     }
   }
 
-  .menu-toggle-filter-groups {
+  .layer-toggle-filter-groups {
     float: right;
+    text-transform: uppercase;
   }
 }

@@ -48,13 +48,13 @@ module.exports = React.createClass
         <span className="menu-item-icon"></span>
         <Link onClick={@props.onLinkClick} to="/">Home</Link>
       </li>
-      <li className="menu-item menu-item-language">
-        <span className="menu-item-icon"></span>
-        <LayerToggle menu="languages" onToggle={@props.onSubMenuClick}>Select Language</LayerToggle>
-      </li>
       <li className="menu-item menu-item-about">
         <span className="menu-item-icon"></span>
         <Link onClick={@props.onLinkClick} to="/about">About HSE</Link>
+      </li>
+      <li className="menu-item menu-item-language">
+        <span className="menu-item-icon"></span>
+        <LayerToggle menu="languages" onToggle={@props.onSubMenuClick}>Select Language</LayerToggle>
       </li>
       {@renderUserLinks()}
     </ul>

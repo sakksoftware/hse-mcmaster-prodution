@@ -1,5 +1,36 @@
 .main-menu {
+  margin: 0;
+
   .menu-item {
-    border-bottom: 1px solid lighten($menu-text-color, 35%);
+    border-bottom: 1px solid #E5E5E5;
+  }
+
+  .menu-item-home .menu-item-icon {
+    top: 2px;
+    @extend .glyphicon-home;
+  }
+
+  .menu-item-language .menu-item-icon {
+    @extend .glyphicon-globe;
+  }
+
+  .menu-item-about .menu-item-icon {
+    @extend .glyphicon-book;
+  }
+
+  .menu-item-sign-up .menu-item-icon {
+    @extend .glyphicon-user;
+  }
+
+  .menu-item-login .menu-item-icon {
+    @extend .glyphicon-log-in;
+  }
+
+  .menu-item-logout .menu-item-icon {
+    @extend .glyphicon-log-out;
+  }
+
+  .menu-item-profile .menu-item-icon {
+    @extend .glyphicon-user;
   }
 }

@@ -36,7 +36,7 @@ module.exports = React.createClass
 
     <div className="search-box">
       <SearchBar query={@props.search.query} onSearch={@props.onSearch} />
-      <div className="menu-toggles">
+      <div className="layer-toggles">
         <LayerToggle menu="help" onToggle={@props.onShowMenu}>
           <span className="icon"></span>Tips for more powerful serach
         </LayerToggle>

@@ -13,7 +13,7 @@ module.exports = React.createClass
 
   render: ->
     menu = @props.menu.replace(/([A-Z])/g, "-$1").toLowerCase()
-    <button ref="btnOffcanvas" type="button" onClick={@handleClick} className={"menu-toggle menu-toggle-#{menu}"}>
+    <button ref="btnOffcanvas" type="button" onClick={@handleClick} className={"layer-toggle layer-toggle-#{menu}"}>
       <span className="sr-only">Toggle navigation</span>
       {@props.children}
     </button>

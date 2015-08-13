@@ -16,14 +16,17 @@
   }
 
   .layer-header {
-    background-color: darken($menu-background-color, 10%);
+    color: $menu-header-color;
+    background-color: $menu-header-background-color;
     vertical-align: middle;
-    padding: 10px;
+    padding: $medium-size;
+    font-size: $medium-size;
+    height: $x-large-size;
   }
 
   .layer-header-close {
     float: right;
-    color: $menu-text-color;
+    color: $menu-header-color;
     display: none;
 
     @media (max-width: 768px) {
@@ -32,7 +35,7 @@
   }
 
   .layer-content {
-    padding: 10px;
+    padding: $medium-size;
   }
 }
 

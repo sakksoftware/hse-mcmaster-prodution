@@ -20,6 +20,7 @@
   "dependencies": {
     "assetsmanager-brunch": "^1.8.1",
     "auto-reload-brunch": "^1.7.5",
+    "autoprefixer-brunch": "^1.8.5",
     "bower": "^1.4.1",
     "brunch": "^1.8.3",
     "cjsx-react-brunch": "0.0.2",

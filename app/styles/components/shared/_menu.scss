@@ -1,13 +1,16 @@
 .menu-list {
-  margin-top: 5px;
   list-style: none;
   padding: 0;
 }
 
 .menu-item {
-  padding: 7px 0;
+  padding: $tiny-size 0;
   position: relative;
   cursor: pointer;
+
+  &:first-child {
+    padding-top: 0;
+  }
 
   a, button {
     color: $menu-text-color;
@@ -16,11 +19,9 @@
     height: 100%;
     text-align: left;
     background-color: transparent;
-    padding-left: 20px;
 
-    &.menu-toggle{
+    &.layer-toggle{
       padding: 0;
-      padding-left: 20px;
 
       &:after {
         content: '>';
@@ -31,43 +32,25 @@
         color: darken($menu-text-color, 10%);
       }
     }
+
+    &.layer-toggle {
+      color: $menu-text-color;
+    }
   }
 
   .menu-item-icon {
     position: absolute;
-    top: 9px;
+    width: $medium-size;
+    top: $tiny-size + 2;
     left: 0;
   }
+
+  .menu-item-icon + a, .menu-item-icon + button {
+    padding-left: $medium-size + $small-size;
+  }
+
 }
 
 .menu-item-icon {
   @extend .glyphicon;
-}
-
-.menu-item-home .menu-item-icon {
-  @extend .glyphicon-home;
-}
-
-.menu-item-language .menu-item-icon {
-  @extend .glyphicon-globe;
-}
-
-.menu-item-about .menu-item-icon {
-  @extend .glyphicon-book;
-}
-
-.menu-item-sign-up .menu-item-icon {
-  @extend .glyphicon-user;
-}
-
-.menu-item-login .menu-item-icon {
-  @extend .glyphicon-log-in;
-}
-
-.menu-item-logout .menu-item-icon {
-  @extend .glyphicon-log-out;
-}
-
-.menu-item-profile .menu-item-icon {
-  @extend .glyphicon-user;
 }

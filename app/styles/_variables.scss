@@ -1,6 +1,25 @@
+$primary-color: #178EEE;
+$primary-complementary-color: white;
+$primary-text-color: black;
+$link-color: #D9783E;
+$background-gradient-start: $primary-color; // or #1925E3
+$background-gradient-end: #1925E3;
+$icon-font-path: '/fonts/';
+
 // bootstrap override
 $border-radius-base:  0px;
 $border-radius-large: 0px;
 $border-radius-small: 0px;
 $body-bg: #E8E8E8;
 $input-border: #D7D7D7;
+$icon-font-bootstrap-path: $icon-font-path + 'bootstrap/';
+
+// layered navigation overrides
+$menu-header-color: $primary-complementary-color;
+$menu-header-background-color: $primary-color;
+
+$tiny-size: 8px;
+$small-size: 12px;
+$medium-size: 16px;
+$large-size: 32px;
+$x-large-size: 48px;
