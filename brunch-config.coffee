@@ -36,7 +36,6 @@ exports.config =
         max_line_length: {level: 'ignore'}
 
     sass:
-      mode: 'ruby'
       options:
         includePaths: [
           'bower_components/bootstrap-sass/assets/stylesheets'
