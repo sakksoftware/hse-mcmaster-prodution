@@ -58,8 +58,8 @@ searchData = {
     {
       "id": "40e3343c159defef46c266410a1a9059",
       "title": "Article Title B",
-      "created_at": "2014-02-30 11:00:00Z",
-      "updated_at": "2014-02-30 11:00:00Z",
+      "created_at": "2013-08-20 11:33:00Z",
+      "updated_at": "2013-08-20 11:33:00Z",
       "quality": 7.0,
       "description": "Lots of stuff goes here! Very Interesting right?.....",
       "category": "Superhero Marvel Movies"

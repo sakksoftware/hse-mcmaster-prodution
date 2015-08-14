@@ -10,9 +10,9 @@ module.exports = React.createClass
       return <p className="no-results">No results found.</p>
 
     for result, i in @props.results
-      <ResultItem result={result} key="result-#{i}" />
+      <ResultItem result={result} resultNumber={i + 1} key="result-#{i}" />
 
   render: ->
-    <div className="result-list">
+    <ol className="result-list">
       {@renderList()}
-    </div>
+    </ol>

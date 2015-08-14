@@ -1,4 +1,8 @@
 .result-list {
+  list-style: none;
+  padding: 0;
+  margin: $large-size 0;
+
   .no-results {
     margin-top: 10px;
     font-weight: 500;
