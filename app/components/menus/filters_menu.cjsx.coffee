@@ -16,7 +16,9 @@ module.exports = React.createClass
 
   componentWillMount: ->
     @filters = @props.context.filters
-    @onToggleFilter = @props.context.onToggleFilter
+    @onToggleFilter = (filter) =>
+      @props.context.onToggleFilter(filter)
+      @forceUpdate()
     @currentColorIndex = 0
 
   nextColor: ->
@@ -41,6 +43,7 @@ module.exports = React.createClass
     result
 
   render: ->
+    @currentColorIndex = 0
     <div className="filters-menu nested-menu">
       <ul className="menu-list">
         {@renderItems(@filters)}
