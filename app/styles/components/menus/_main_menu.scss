@@ -1,11 +1,19 @@
 .layer-main {
   background-color: #F2F2F2;
+
+  .layer-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .main-menu {
   margin: 0;
 
   .menu-item {
+    padding-left: $x-small-size;
+    padding-right: $x-small-size;
+
     border-bottom: 1px solid #E5E5E5;
     a, .layer-toggle {
       padding: $tiny-size;
@@ -14,6 +22,14 @@
 
     &:first-child {
       padding-top: 0;
+    }
+
+    &:active {
+      background-color: $primary-color;
+    }
+
+    .menu-item-icon {
+      left: $x-small-size;
     }
   }
 
