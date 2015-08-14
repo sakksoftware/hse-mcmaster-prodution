@@ -17,7 +17,7 @@ module.exports = React.createClass
     baseZIndex = 1000
     # TODO: get layer width from css
     layerWidth = 250
-    levelOffset = 20
+    levelOffset = 8
     layerPadding = 16
     closeButtonWidth = 16
 

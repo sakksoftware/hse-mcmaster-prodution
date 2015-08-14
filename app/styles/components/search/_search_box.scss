@@ -1,16 +1,18 @@
 .search-box {
   .layer-toggles {
     overflow: auto;
-    margin-top: 7px;
-    padding-bottom: 7px;
-    border-bottom: 1px solid darkgray;
-    margin-bottom: 15px;
+    margin-top: $small-size;
+    padding-bottom: $small-size;
+    border-bottom: 1px solid lighten($primary-text-color, 90%);
+    margin-bottom: $large-size;
+    overflow: visible;
   }
 
   .layer-toggle-help {
     background: transparent;
     color: $primary-color;
     padding-left: 0;
+    font-weight: 300;
 
     .icon {
       margin-right: $x-tiny-size;
@@ -22,5 +24,17 @@
   .layer-toggle-filter-groups {
     float: right;
     text-transform: uppercase;
+    position: relative;
+    overflow: visible;
+  }
+
+  .filter-count {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    top: -10px;
+    background-color: $link-color;
+    border-radius: 3px;
   }
 }

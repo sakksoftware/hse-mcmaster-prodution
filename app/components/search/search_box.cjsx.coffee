@@ -27,7 +27,7 @@ module.exports = React.createClass
   renderFilterCount: ->
     count = @getAppliedFilters()?.length || 0
     if count > 0
-      <span className="badge">{count}</span>
+      <span className="filter-count">{count}</span>
 
   render: ->
     filterBox =

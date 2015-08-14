@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'layer';
+@import 'layer_toggle';
 
 .layered-navigation {
   transition: $menu-animation-time $menu-animation-type;

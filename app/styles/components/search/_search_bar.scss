@@ -4,5 +4,8 @@
 
   .react-autosuggest input {
     width: 100%;
+    padding: $small-size;
+    font-size: $small-size;
+    height: $xx-large-size;
   }
 }
