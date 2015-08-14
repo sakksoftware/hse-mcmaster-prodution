@@ -4,49 +4,51 @@
 }
 
 .menu-item {
-  padding: $tiny-size 0;
+  padding: 0;
   position: relative;
   cursor: pointer;
 
-  &:first-child {
-    padding-top: 0;
-  }
-
-  a, button {
+  a, .layer-toggle {
     color: $menu-text-color;
     display: inline-block;
     width: 100%;
     height: 100%;
     text-align: left;
     background-color: transparent;
+    padding: $x-small-size;
+  }
 
-    &.layer-toggle{
-      padding: 0;
+  .layer-toggle{
+    color: $menu-text-color;
 
-      &:after {
-        content: '>';
-        font-weight: 600;
-        position: absolute;
-        right: 10px;
-        display: inline-block;
-        color: darken($menu-text-color, 10%);
-      }
+    &:active {
+      color: $primary-complementary-color;
+      background-color: $primary-color;
     }
 
-    &.layer-toggle {
-      color: $menu-text-color;
+    &:focus {
+      outline: none;
+    }
+
+    &:after {
+      content: '>';
+      font-weight: 600;
+      position: absolute;
+      right: 10px;
+      display: inline-block;
+      color: darken($menu-text-color, 10%);
     }
   }
 
   .menu-item-icon {
     position: absolute;
-    width: $medium-size;
+    width: $small-size;
     top: $tiny-size + 2;
     left: 0;
   }
 
-  .menu-item-icon + a, .menu-item-icon + button {
-    padding-left: $medium-size + $small-size;
+  .menu-item-icon + a, .menu-item-icon + .layer-toggle {
+    padding-left: $small-size + $x-small-size;
   }
 
 }

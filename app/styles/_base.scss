@@ -10,7 +10,7 @@ button {
   @include btn-default;
   background-color: $primary-color;
   color: $primary-complementary-color;
-  padding: $tiny-size $medium-size;
+  padding: $tiny-size $small-size;
 }
 
 select {

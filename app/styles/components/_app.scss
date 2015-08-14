@@ -20,21 +20,21 @@
     overflow: auto;
     background: linear-gradient(to right, $background-gradient-start, $background-gradient-end);
     color: $menu-header-color;
-    padding: $medium-size;
-    line-height: $medium-size;
-    height: $x-large-size;
+    padding: $small-size;
+    line-height: $small-size;
+    height: $xx-large-size;
 
     h1 {
       display: none;
       padding: 0;
       margin: 0;
-      font-size: $medium-size;
-      line-height: $medium-size;
+      font-size: $small-size;
+      line-height: $small-size;
       text-transform: uppercase;
     }
 
     button {
-      height: $medium-size;
+      height: $small-size;
     }
   }
 

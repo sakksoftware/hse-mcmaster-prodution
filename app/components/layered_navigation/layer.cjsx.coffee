@@ -1,9 +1,12 @@
 module.exports = React.createClass
   displayName: 'Layer'
   propTypes:
+    # TODO: all are required but, there a problem since we over-write the layer
+    # think of another appraoch... Layer vs ConcreteLayer?
     onClose: React.PropTypes.func
     title: React.PropTypes.string
     level: React.PropTypes.number
+    name: React.PropTypes.string
     children: React.PropTypes.node.isRequired
 
   handleClose: (e) ->
@@ -22,12 +25,12 @@ module.exports = React.createClass
         "width": "#{layerWidth - offset + levelOffset}px"
         "zIndex": baseZIndex + @props.level
 
-    <nav className="layer" role="navigation" style={style}>
+    <nav className="layer layer-#{@props.name}" role="navigation" style={style}>
+      <div className="layer-header">
+        <span className="layer-header-title">{@props.title || "Menu"}</span>
+        <a className="layer-header-close" href="#" onClick={@handleClose}>x</a>
+      </div>
       <div className="layer-inner">
-        <div className="layer-header">
-          <span className="layer-header-title">{@props.title || "Menu"}</span>
-          <a className="layer-header-close" href="#" onClick={@handleClose}>x</a>
-        </div>
         <div className="layer-content">
           {@props.children}
         </div>

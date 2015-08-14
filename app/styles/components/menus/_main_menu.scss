@@ -1,12 +1,23 @@
+.layer-main {
+  background-color: #F2F2F2;
+}
+
 .main-menu {
   margin: 0;
 
   .menu-item {
     border-bottom: 1px solid #E5E5E5;
+    a, .layer-toggle {
+      padding: $tiny-size;
+      padding-left: $x-small-size + $small-size;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
   }
 
   .menu-item-home .menu-item-icon {
-    top: 2px;
     @extend .glyphicon-home;
   }
 

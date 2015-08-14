@@ -17,9 +17,13 @@ $icon-font-bootstrap-path: $icon-font-path + 'bootstrap/';
 // layered navigation overrides
 $menu-header-color: $primary-complementary-color;
 $menu-header-background-color: $primary-color;
+$menu-background-color: white;
 
+$x-tiny-size: 4px;
 $tiny-size: 8px;
-$small-size: 12px;
-$medium-size: 16px;
+$x-small-size: 12px;
+$small-size: 16px;
+$medium-size: 20px;
 $large-size: 32px;
-$x-large-size: 48px;
+$x-large-size: 36px;
+$xx-large-size: 48px;

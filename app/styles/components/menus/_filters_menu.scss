@@ -1,10 +1,10 @@
 .nested-menu {
   h2 {
-    font-size: 13px;
-
-    &:first-child {
-      margin-top: 10px;
-    }
+    font-size: $x-small-size;
+    line-height: $x-small-size;
+    text-transform: uppercase;
+    color: #818181;
+    margin: $x-large-size 0 $tiny-size 0;
   }
 
   ul {
@@ -14,8 +14,7 @@
   }
 
   li {
-    padding: 5px 10px;
-    background-color: lightgray;
+    background-color: #F7F7F7;
     color: gray;
     .checkmark {
       margin-left: 5px;

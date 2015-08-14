@@ -43,6 +43,6 @@ module.exports = React.createClass
       @renderSection(section)
 
   render: ->
-    <div className="filters-menu-groups nested-menu">
+    <div className="filter-groups-menu nested-menu">
       {@renderSections()}
     </div>

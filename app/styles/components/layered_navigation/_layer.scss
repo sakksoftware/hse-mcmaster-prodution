@@ -8,7 +8,6 @@
   color: $menu-text-color;
   transition: $menu-animation-time ease;
   font-weight: 300;
-  overflow-y: scroll;
   background-clip: content-box;
 
   a:hover {
@@ -19,9 +18,9 @@
     color: $menu-header-color;
     background-color: $menu-header-background-color;
     vertical-align: middle;
-    padding: $medium-size;
-    font-size: $medium-size;
-    height: $x-large-size;
+    padding: $small-size;
+    font-size: $small-size;
+    height: $menu-header-height;
   }
 
   .layer-header-close {
@@ -34,8 +33,17 @@
     }
   }
 
+  .layer-inner {
+    height: 100%;
+    // need the bottom padding to prevent content from cuttin off when scrolling
+    // 100% refers to the entire window and doesn't account for the height of the
+    // layer header
+    padding-bottom: $menu-header-height;
+    overflow-y: scroll;
+  }
+
   .layer-content {
-    padding: $medium-size;
+    padding: $small-size;
   }
 }
 

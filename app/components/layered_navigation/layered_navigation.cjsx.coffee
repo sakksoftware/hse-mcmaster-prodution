@@ -45,8 +45,8 @@ module.exports = React.createClass
 
     [menu.props.children, menu.props.title]
 
-  renderLayer: (content, title, level) ->
-    <Layer key="layer-#{level + 1}" onClose={@dismissMenu} title={title} level={level}>
+  renderLayer: (name, content, title, level) ->
+    <Layer key="layer-#{level + 1}" onClose={@dismissMenu} name={name} title={title} level={level}>
       {content}
     </Layer>
 
@@ -63,7 +63,7 @@ module.exports = React.createClass
 
       content = React.cloneElement(content, props)
 
-      @renderLayer(content, title, level)
+      @renderLayer(menu.name, content, title, level)
 
   render: ->
     className = @props.className + " layered-navigation"

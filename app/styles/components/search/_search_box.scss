@@ -10,8 +10,10 @@
   .layer-toggle-help {
     background: transparent;
     color: $primary-color;
+    padding-left: 0;
 
     .icon {
+      margin-right: $x-tiny-size;
       @extend .glyphicon;
       @extend .glyphicon-exclamation-sign;
     }
