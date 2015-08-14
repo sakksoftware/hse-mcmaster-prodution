@@ -5,6 +5,7 @@ $link-color: #D9783E;
 $background-gradient-start: $primary-color; // or #1925E3
 $background-gradient-end: #1925E3;
 $icon-font-path: '/fonts/';
+$seperator-color: lighten($primary-text-color, 90%);
 
 // bootstrap override
 $border-radius-base:  0px;

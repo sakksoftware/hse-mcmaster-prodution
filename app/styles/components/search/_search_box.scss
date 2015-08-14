@@ -3,7 +3,7 @@
     overflow: auto;
     margin-top: $small-size;
     padding-bottom: $small-size;
-    border-bottom: 1px solid lighten($primary-text-color, 90%);
+    border-bottom: 1px solid $seperator-color;
     margin-bottom: $large-size;
     overflow: visible;
   }

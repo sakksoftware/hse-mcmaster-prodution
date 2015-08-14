@@ -11,7 +11,7 @@ module.exports = React.createClass
     <div className="sort-order">
       <span className="sort-order-label">Results sorted by</span>
       <select className="sort-order-control" onChange={@handleChange} defaultValue={@props.sortBy}>
-        <option value="relevance">Relevance</option>
+        <option value="relevance">Best Match</option>
         <option value="most_recent">Most Recent</option>
         <option value="most_popular">Most Popular</option>
       </select>
