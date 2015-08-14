@@ -18,12 +18,17 @@
     color: $menu-header-color;
     background-color: $menu-header-background-color;
     vertical-align: middle;
-    padding: $small-size;
+    padding: $layer-padding;
     font-size: $small-size;
     height: $menu-header-height;
   }
 
+  .layer-header-title {
+    @include ellipsis($layer-width - $layer-btn-close-width - $layer-padding * 2.5);
+  }
+
   .layer-header-close {
+    width: $layer-btn-close-width;
     float: right;
     color: $menu-header-color;
     display: none;

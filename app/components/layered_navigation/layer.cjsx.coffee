@@ -15,19 +15,27 @@ module.exports = React.createClass
 
   render: ->
     baseZIndex = 1000
+    # TODO: get layer width from css
     layerWidth = 250
     levelOffset = 20
+    layerPadding = 16
+    closeButtonWidth = 16
+
+    width = layerWidth
     offset = @props.level * levelOffset
     style = {}
     if offset != 0
+      width = layerWidth - offset + levelOffset
       style =
         "borderLeft": "#{levelOffset}px solid rgba(0, 0, 0, 0.2)"
-        "width": "#{layerWidth - offset + levelOffset}px"
+        "width": "#{width}px"
         "zIndex": baseZIndex + @props.level
+
+    titleWidth = width - (layerPadding * 2.5 + closeButtonWidth + levelOffset)
 
     <nav className="layer layer-#{@props.name}" role="navigation" style={style}>
       <div className="layer-header">
-        <span className="layer-header-title">{@props.title || "Menu"}</span>
+        <span className="layer-header-title" style={width: "#{titleWidth}px"}>{@props.title || "Menu"}</span>
         <a className="layer-header-close" href="#" onClick={@handleClose}>x</a>
       </div>
       <div className="layer-inner">

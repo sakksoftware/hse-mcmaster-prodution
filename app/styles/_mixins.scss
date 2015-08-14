@@ -28,3 +28,11 @@
     margin-top: 4px;
   }
 }
+
+@mixin ellipsis($width) {
+  display: inline-block;
+  width: $width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
