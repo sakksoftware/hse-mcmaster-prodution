@@ -14,7 +14,7 @@ module.exports = React.createClass
     for item in items
       result.push <MenuFilterItem key={item.name} filter={item} onToggle={@onToggleFilter} />
       if item.filters
-        result.push <li className="menu-item" key="#{item.name}-filters">
+        result.push <li className="menu-item nested-filters" key="#{item.name}-filters">
           <ul className="menu-list">
             {@renderItems(item.filters)}
           </ul>

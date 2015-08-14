@@ -15,26 +15,43 @@
 
   li {
     background-color: #F7F7F7;
-    color: gray;
+    min-height: $large-size;
+    font-size: $x-small-size + 1;
+    font-weight: 400;
+    vertical-align: middle;
+    color: $menu-text-color;
+    position: relative;
+
+    a {
+      padding-right: $tiny-size + $small-size;
+    }
+
     .checkmark {
-      margin-left: 5px;
+      position: absolute;
+      right: $tiny-size;
+      top: $x-small-size;
     }
 
     & > ul {
       & > li {
         position: relative;
-        padding-left: 12px;
+        padding-left: $x-small-size;
         &::before{
           content: "\21B3";
           position: absolute;
-          top: 5px;
-          left: -5px;
+          top: $small-size - 4;
+          left: $tiny-size - 2;
         }
       }
     }
+
   }
 
   li + li {
     margin-top: 1px;
+  }
+
+  li + .nested-filters {
+    margin-bottom: $tiny-size;
   }
 }

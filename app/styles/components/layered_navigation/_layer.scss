@@ -10,7 +10,7 @@
   font-weight: 300;
   background-clip: content-box;
 
-  a:hover {
+  a:hover, a:focus {
     text-decoration: none;
   }
 
@@ -49,6 +49,7 @@
 
   .layer-content {
     padding: $small-size;
+    word-wrap: break-word;
   }
 }
 
