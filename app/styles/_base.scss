@@ -2,6 +2,10 @@ body, #react-root, #app {
   width: 100%;
 }
 
+body {
+  color: #8D8D8D;
+}
+
 #react-root {
   background-color: white;
 }
@@ -24,6 +28,11 @@ select {
   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+h1 {
+  color: $primary-color;
+  font-size: $large-size;
 }
 
 .page-enter {

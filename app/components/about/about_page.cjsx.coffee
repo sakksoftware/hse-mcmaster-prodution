@@ -1,9 +1,21 @@
 module.exports = React.createClass
   displayName: 'AboutPage'
-  render: ->
-    <div className="about-page">
-      <h1>About HSE</h1>
+  markdown: """
+    #About HSE
 
-      <p>Lots of awesome conent goes here</p>
-      <p>More content goes here</p>
+    Health Systems Evidence is a continuously updated repository of syntheses of research evidence about governance, financial and delivery arrangements within health systems, and about implementation strategies that can support change in health systems. The types of syntheses include evidence briefs for policy, overviews of systematic reviews, systematic reviews, systematic reviews in progress (i.e. protocols for systematic reviews), and systematic reviews being planned (i.e. registered titles for systematic reviews). Health Systems Evidence also contains a continuously updated repository of economic evaluations in these same domains, descriptions of health system reforms (with links to syntheses and economic evaluations when possible), and descriptions of health systems (to assist with assessments of the local applicability of research evidence and of how reforms are embedded within health systems). For all types of documents, Health Systems Evidence provides links to user-friendly summaries, scientific abstracts, and full-text reports (if applicable and when freely available). For each systematic review, Health Systems Evidence also provides links to the studies contained in the review.
+
+    Health Systems Evidence has been endorsed by a diverse range of organizations interested in evidence-informed decision-making. For example:
+
+    * WHO’s Evidence Informed Policy Networks (EVIPNet) integrated HSE into the EVIPNet Virtual Health Library.
+    * The World Health Organization’s (WHO) Advisory Group on Health Systems Research Synthesis singled out HSE as the key resource for a broad array of research evidence about health systems.
+    * Vox (a web-based media company focused on interpreting, rather than just reporting on, the news) promoted HSE as one of six ‘best evidence’ databases, and the only one focused on health systems.
+    * The American University of Beirut’s Knowledge to Policy Center for Health (K2P Center) and its Center for Systematic Reviews on Health Policy and Systems Research (SPARK) use and promote the use of HSE.
+    * The Ontario Ministry of Health and Long-Term Care identifies HSE as one of the few databases (and the only one focused on health systems) that should be searched to inform ministerial and cabinet submissions if they address health system issues. Other Canadian organizations also promote HSE: 1) the Canadian Institutes of Health Research is a partner in the Evidence-Informed Healthcare Renewal Portal, which is embedded in HSE; 2) the Canadian Patient Safety Institute includes HSE as a key resource for learning more about patient safety; and 3) the Nova Scotia Health Research Foundation lists HSE as a valuable external knowledge resource.
+
+    Health Systems Evidence can save health system policymakers and stakeholders a great deal of time by helping them to rapidly identify: a synthesis of the best available research evidence on a given topic that has been prepared in a systematic and transparent way, how recently the search for studies was conducted, the quality of the synthesis, the countries in which the studies included in the synthesis were conducted, and the key findings from the synthesis. Health Systems Evidence can also help them to rapidly identify: economic evaluations in these same domains, descriptions of health system reforms and descriptions of health systems, both as the focus of a search and as a prompt when searching for other types of documents. For example, policymakers often want to know what reforms have been introduced in another country. If a search retrieves a reform of interest, Health Systems Evidence will now provide a prompt to read an available systematic review that addresses that type of reform (to learn about whether it has been shown to be effective, among other things), an available economic evaluation that addresses that type of reform (to learn about whether it has been shown to be cost-effective), and an available health system description (to learn about the health system where the reform was introduced).
+  """
+
+  render: ->
+    <div className="about-page" dangerouslySetInnerHTML={__html: markdown.toHTML(@markdown)}>
     </div>

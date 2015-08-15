@@ -11,11 +11,15 @@
     "moment": "~2.10.3",
     "underscore": "~1.8.3",
     "react-autosuggest": "~1.18.1",
-    "react-loader": "~1.2.0"
+    "react-loader": "~1.2.0",
+    "markdown": "~0.5.0"
   },
   "overrides": {
     "react": {
       "main": "react-with-addons.js"
+    },
+    "markdown": {
+      "main": "lib/markdown.js"
     }
   }
 }
