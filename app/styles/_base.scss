@@ -35,6 +35,11 @@ h1 {
   font-size: $large-size;
 }
 
+h2 {
+  color: $primary-color;
+  font-size: $medium-size;
+}
+
 .page-enter {
   opacity: 0.01;
   transition: opacity .5s ease-in;

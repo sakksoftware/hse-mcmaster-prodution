@@ -1,6 +1,7 @@
 AboutPage = require('components/about/about_page')
 ArticlesPage = require('components/articles/articles_page')
 SearchPage = require('components/search/search_page')
+TermsPage = require('components/terms/terms_page')
 
 Layer = require('components/layered_navigation/layer')
 LayerGroup = require('components/layered_navigation/layer_group')
@@ -73,7 +74,10 @@ module.exports = React.createClass
         <ArticlesPage id={id} key={"article-page-#{id}"} />
       when 'about'
         <AboutPage key="about-page" />
+      when 'terms'
+        <TermsPage key="terms-page" />
       else
+        # TODO: display a 4040 here!
         throw new Error("Page not found! Please check the URL")
 
   renderLayerGroup: ->

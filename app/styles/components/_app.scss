@@ -32,7 +32,12 @@
       line-height: $small-size;
       text-transform: uppercase;
 
-      a { color: $primary-complementary-color; }
+      a {
+        color: $primary-complementary-color;
+        &:hover, &:focus {
+          text-decoration: none;
+        }
+      }
     }
 
     button {

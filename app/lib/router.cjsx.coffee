@@ -7,12 +7,16 @@ class Router
     '': ->
       React.render <App page="search" />, @el
 
-    'about': ->
-      React.render <App page="about" />, @el
-
     'articles/:id': (id) ->
       args = {id: id}
       React.render <App page="articles" args={args} />, @el
+
+    'about': ->
+      React.render <App page="about" />, @el
+
+    'terms': ->
+      React.render <App page="terms" />, @el
+
 
 
   history: []
