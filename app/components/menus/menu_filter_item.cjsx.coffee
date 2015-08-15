@@ -18,9 +18,9 @@ module.exports = React.createClass
     style = {}
     if @props.indicatorColor
       style =
-        "border-color": @props.indicatorColor
-        "border-left-width": "4px"
-        "border-left-style": "solid"
+        borderColor: @props.indicatorColor
+        borderLeftWidth: "4px"
+        borderLeftStyle: "solid"
 
     <li className="menu-item menu-filter-item" style={style}>
       <a href="#" onClick={@handleToggle}>{filter.name}</a>
