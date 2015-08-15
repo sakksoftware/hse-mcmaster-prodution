@@ -26,7 +26,7 @@ module.exports = React.createClass
   backLink: ->
     router = require('lib/router')
     if router.hasHistory()
-      <Link to="back" className="btn-back">Return to search results</Link>
+      <Link to="back" className="btn-back">Back to results</Link>
 
   render: ->
     body =
@@ -37,7 +37,6 @@ module.exports = React.createClass
         <Loader loaded={false} />
 
     <div className="article-page">
-      {@backLink()}
       {body}
-      {@state.article && @backLink()}
+      {@backLink()}
     </div>

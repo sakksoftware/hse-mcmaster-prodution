@@ -1,4 +1,3 @@
-
 @import 'variables';
 @import 'bootstrap';
 @import 'fonts';
@@ -16,8 +15,8 @@
 @import 'components/results/result_list';
 @import 'components/results/sort_order';
 
-@import 'components/documents/document_item';
-@import 'components/documents/document_page';
+@import 'components/articles/article_item';
+@import 'components/articles/article_page';
 
 @import 'components/menus/main_menu';
 @import 'components/menus/filter_groups_menu';

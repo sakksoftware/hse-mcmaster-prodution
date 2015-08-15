@@ -1,0 +1,21 @@
+.article-page {
+  padding-bottom: $xx-large-size * 2;
+
+  .btn-back {
+    color: $primary-complementary-color;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.6);
+    left: 0;
+    right: 0;
+    padding: $x-small-size;
+    font-size: $small-size;
+    text-align: center;
+    height: $xx-large-size;
+    bottom: 0;
+    font-weight: 300;
+
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+}

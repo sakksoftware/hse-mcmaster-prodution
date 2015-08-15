@@ -36,3 +36,20 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@mixin inline-list-with($space, $seperator) {
+  li {
+    display: inline-block;
+    &:after {
+      content: $seperator;
+    }
+
+    &:last-child {
+      &:after { content: none;}
+    }
+  }
+
+  li + li {
+    margin-left: $space;
+  }
+}

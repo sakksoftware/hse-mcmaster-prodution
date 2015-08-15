@@ -61,3 +61,7 @@ select {
   @extend .glyphicon;
   @extend .glyphicon-ok;
 }
+
+.layered-navigation {
+  overflow: hidden;
+}

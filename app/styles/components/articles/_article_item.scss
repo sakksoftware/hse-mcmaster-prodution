@@ -1,0 +1,58 @@
+.article-item {
+
+  h1 {
+    color: $primary-color;
+    font-size: $medium-size + 4;
+  }
+
+  h2 {
+    color: $link-color;
+    font-size: $x-small-size + 2;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: $x-tiny-size;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 0;
+
+    & > li > ul {
+      margin-left: $small-size;
+
+      & > li > ul {
+        list-style: disc;
+      }
+    }
+  }
+
+  .article-item-countries {
+    @include inline-list-with($x-tiny-size, ';');
+  }
+
+  .article-item-country-groupings {
+    @include inline-list-with($x-tiny-size, ',');
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  .highlighted-section {
+    background-color: #F3F3F3;
+    width: 300%;
+    margin-left: -100%;
+    padding: $medium-size 100%;
+    margin-top: $medium-size;
+
+    h2:first-child {
+      margin-top: 0;
+    }
+
+    h2:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
