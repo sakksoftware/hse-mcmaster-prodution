@@ -1,0 +1,15 @@
+.countries-menu {
+  position: relative;
+  .country-filter {
+    padding: $small-size;
+    margin-top: -$small-size;
+    margin-left: -$small-size;
+    margin-bottom: $small-size;
+    width: $layer-width - $layer-offset + $small-size * 2;
+    font-size: $small-size;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

@@ -40,6 +40,12 @@ h2 {
   font-size: $medium-size;
 }
 
+@include placeholder {
+  font-style: italic;
+}
+
+
+////////////////////////////////////////
 .page-enter {
   opacity: 0.01;
   transition: opacity .5s ease-in;
@@ -59,6 +65,7 @@ h2 {
 .page-leave.page-leave-active {
   opacity: 0.01;
 }
+/////////////////////////////////////////
 
 .alert {
   position: fixed;

@@ -1,7 +1,10 @@
 MenuFilterItem = require('components/menus/menu_filter_item')
+ViewHelpers = require('mixins/view_helpers')
 
 module.exports = React.createClass
   displayName: 'CountriesMenu'
+
+  mixins: [ViewHelpers]
 
   propTypes:
     context: React.PropTypes.object
@@ -30,13 +33,13 @@ module.exports = React.createClass
       <MenuFilterItem filter={filter} key="filter-#{filter.id}" onToggle={@onToggleFilter} />
 
   render: ->
-    <div className="countries-menu">
-      <input placeholder="Type country name" onChange={@filterCountries} ref="countryFilter" />
-      <ul className="countries-menu-predicate menu-list">
-        <li data-value="target" className="menu-item">Target of document</li>
-        <li data-value="contains" className="menu-item">At least one study from are</li>
+    <div className="countries-menu filters-menu">
+      <input placeholder="Type country name" onChange={@filterCountries} className="country-filter" ref="countryFilter" />
+      <ul className="countries-menu-predicate menu-list nested-menu">
+        <li data-value="target" className="menu-item menu-filter-item"><a href="#">Target of document</a></li>
+        <li data-value="contains" className="menu-item menu-filter-item"><a href="#">At least one study from are</a></li>
       </ul>
-      <ul className="countries-list menu-list">
-        {@renderCountries()}
+      <ul className="countries-list menu-list nested-menu">
+        {@ifEmpty(@renderCountries(), "No countries found.")}
       </ul>
     </div>
