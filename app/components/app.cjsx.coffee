@@ -7,6 +7,8 @@ LayerGroup = require('components/layered_navigation/layer_group')
 LayerToggle = require('components/layered_navigation/layer_toggle')
 LayeredNavigation = require('components/layered_navigation/layered_navigation')
 
+Link = require('components/shared/link')
+
 MainMenu = require('components/menus/main_menu')
 DesktopMainMenu = require('components/menus/desktop_main_menu')
 HelpMenu = require('components/menus/help_menu')
@@ -49,7 +51,7 @@ module.exports = React.createClass
 
   renderHeader: ->
     <nav className="top-nav">
-      <h1>Health System Evidence</h1>
+      <h1><Link to="/">Health System Evidence</Link></h1>
       <LayerToggle menu="main" onToggle={@toggleMenu}>
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>
@@ -115,4 +117,11 @@ module.exports = React.createClass
           {@renderPage()}
         </ReactCSSTransitionGroup>
       </div>
+      <footer>
+        <div className="logo-wrapper">
+          <img src="/images/mcmaster_logo.svg" className="logo" />
+          <img src="/images/mcmaster_forum_logo.svg" className="forum-logo" />
+        </div>
+        <Link className="terms" to="terms">Terms of use</Link>
+      </footer>
     </LayeredNavigation>

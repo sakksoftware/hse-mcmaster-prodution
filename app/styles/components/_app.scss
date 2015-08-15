@@ -31,11 +31,47 @@
       font-size: $small-size;
       line-height: $small-size;
       text-transform: uppercase;
-      color: $primary-complementary-color;
+
+      a { color: $primary-complementary-color; }
     }
 
     button {
       height: $small-size;
+    }
+  }
+
+  footer {
+    text-align: center;
+    margin-bottom: $x-large-size;
+
+    .logo, .forum-logo {
+      display: inline-block;
+
+    }
+
+    .forum-logo {
+      height: $x-large-size;
+    }
+
+    .logo {
+      height: $xx-large-size - 6;
+      border-right: 1px solid lighten($primary-text-color, 20%);
+      padding-right: $tiny-size;
+      margin-right: $tiny-size;
+    }
+
+    .logo-wrapper {
+      display: block;
+      margin: $medium-size auto;
+    }
+
+    a {
+      color: $link-color;
+      text-decoration: underline;
+    }
+
+    .terms {
+      display: inline-block;
     }
   }
 
