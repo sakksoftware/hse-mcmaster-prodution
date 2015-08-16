@@ -3,37 +3,42 @@ config = require('config')[window.ENV]
 SearchActions = require('actions/search_actions')
 StoreMock = require('mocks/support/store_mock')
 FilterNormalizationService = require('services/filter_normalization_service')
+SearchSerializationService = require('services/search_serialization_service')
+FiltersHelper = require('mocks/support/filters_helper')
 
 console.log('loaded mock search')
 
 module.exports = Reflux.createStore
   listenables: [SearchActions]
-  mixins: [StoreMock, FilterNormalizationService]
+  mixins: [StoreMock, FiltersHelper]
 
-  _addAppliedProperty: (filters, applied_filters) ->
+  _addAppliedProperty: (filters, applied_filters_ids) ->
     _(filters).each (f) =>
       if f.id
-        f.applied = applied_filters.indexOf(f.id) >= 0
+        f.applied = applied_filters_ids.indexOf(f.id) >= 0
       if f.filters
-        @_addAppliedProperty(f.filters, applied_filters)
+        @_addAppliedProperty(f.filters, applied_filters_ids)
 
-  search: (query, success, error, options = {}) ->
-    options = _.extend {sortBy: 'relevance', filters: []}, options
+  _getAppliedFilters: (filters) ->
+    filters = FilterNormalizationService.getFiltersArray(filters)
+    filters.filter((e) -> e.applied)
+
+  search: (search, success, error, options = {}) ->
     filters = @getFilters()
-    applied_filters = _(options.applied_filters).pluck('id')
-
-    @_addAppliedProperty(filters, applied_filters)
+    applied_filters = @_getAppliedFilters(FilterNormalizationService.getFiltersArray(filters))
+    applied_filters_ids = _(applied_filters).pluck('id')
+    @_addAppliedProperty(filters, applied_filters_ids)
+    query = SearchSerializationService.serializeSearchUrl(search)
 
     res = searchData
+    res.applied_filters = applied_filters
     res.filters = filters
-    res.query = query
-    res.sort_by = options.sortBy
+    res.query = search.query
+    res.sort_by = search.sort_by
 
-    @send(res, success, '/search')
+    @send(res, success, "/search#{query}")
 
   suggestions: (query, success, error, options = {}) ->
-    console.log('using mock suggestions')
-
     res = _.clone(suggestionData)
     res.suggestions = _.filter suggestionData.suggestions, (s) => s.query.toLowerCase().match(query.toLowerCase())
     @send(res, success, '/search/suggestions')

@@ -1,14 +1,13 @@
 API = require('lib/api')
 SearchActions = require('actions/search_actions')
+SearchSerializationService = require('services/search_serialization_service')
 
 module.exports = Reflux.createStore
   listenables: [SearchActions]
+  mixins: [SearchSerializationService]
 
   search: (query, success, error, options = {}) ->
-    options = _.extend {sortBy: 'relevance', filters: []}, options
-    applied_filters = _(options.applied_filters).pluck('id').join(";")
-
-    API.read "search?q=#{query}&sort_by=#{options.sortBy}&applied_filters=#{applied_filters}",
+    API.read "search#{@serializeSearchUrl()}",
       success: success,
       error: error
 

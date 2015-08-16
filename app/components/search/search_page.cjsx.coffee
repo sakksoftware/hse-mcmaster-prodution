@@ -4,12 +4,13 @@ SearchActions = require('actions/search_actions')
 SearchBox = require('components/search/search_box')
 ResultBox = require('components/results/result_box')
 FilterNormalizationService = require('services/filter_normalization_service')
+SearchSerializationService = require('services/search_serialization_service')
 Url = require('lib/url')
 
 module.exports = React.createClass
   displayName: 'SearchPage'
 
-  mixins: [FilterNormalizationService]
+  mixins: [FilterNormalizationService, SearchSerializationService]
 
   propTypes:
     onShowMenu: React.PropTypes.func.isRequired
@@ -23,6 +24,7 @@ module.exports = React.createClass
     applied_filters = params.applied_filters?.split(';')
     # set applied filters until we fetch filers from search
     filters = applied_filters?.map (f) -> id: parseInt(f, 10), applied: true
+    # TODO: this can be refactored into a deseralization service
     search:
       query: if params.q? then params.q else null
       sort_by: params.sort_by || 'relevance'
@@ -43,23 +45,13 @@ module.exports = React.createClass
 
   fetchResults: ->
     @setState(step: 'searching', search: @state.search)
-    SearchActions.search @state.search.query,
+    SearchActions.search @state.search,
       @handleLoad,
-      @handleError,
-        sortBy: @state.search.sort_by,
-        applied_filters: @getAppliedFilters() || []
-
-  getAppliedFilters: ->
-    filters = @getFiltersArray(@state.search.filters)
-    filters.filter((e) -> e.applied)
+      @handleError
 
   updateUrl: ->
-    query = @state.search.query || ""
-    applied_filters = @getAppliedFilters() || []
-    applied_filters = _(applied_filters).pluck('id').join(";")
-    sortBy = @state.search.sort_by || ""
     Router = require('lib/router')
-    Router.update("?q=#{query}&sort_by=#{sortBy}&applied_filters=#{applied_filters}")
+    Router.update(@serializeSearchUrl(@state.search))
 
   handleSearch: (query) ->
     @state.search.query = query
