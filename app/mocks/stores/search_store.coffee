@@ -24,15 +24,15 @@ module.exports = Reflux.createStore
     filters.filter((e) -> e.applied)
 
   search: (search, success, error, options = {}) ->
-    filters = @getFilters()
-    applied_filters = @_getAppliedFilters(FilterNormalizationService.getFiltersArray(filters))
+    allFilters = @getFilters()
+    applied_filters = @_getAppliedFilters(search.filters)
     applied_filters_ids = _(applied_filters).pluck('id')
-    @_addAppliedProperty(filters, applied_filters_ids)
+    @_addAppliedProperty(allFilters, applied_filters_ids)
     query = SearchSerializationService.serializeSearchUrl(search)
 
     res = searchData
     res.applied_filters = applied_filters
-    res.filters = filters
+    res.filters = allFilters
     res.query = search.query
     res.sort_by = search.sort_by
 
