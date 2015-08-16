@@ -16,7 +16,11 @@ module.exports = React.createClass
 
   getAppliedFilters: ->
     filters = @getFiltersArray(@props.search.filters || [])
-    filters.filter((e) => e.applied)
+    filters = filters.filter((e) => e.applied)
+
+    # delete coutnries filter fro
+    filters = _.reject filters, (f) -> f.name == "Countries"
+    filters
 
   handleFilterToggle: (filter) ->
     if filter.applied

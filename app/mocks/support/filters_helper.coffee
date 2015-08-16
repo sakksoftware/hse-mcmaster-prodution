@@ -48,7 +48,7 @@ filterData =
       ]}
     ]},
     {"name": "Areas of Focus", "filters": [
-      {"name": "Countries", "filters": countryFilters }
+      {"name": "Countries", "id": 3044, "mode": "at_least_one", "filters": countryFilters }
     ]},
     {"name": "Document Features", "filters": [
       {"name": "Date range", "filters": [

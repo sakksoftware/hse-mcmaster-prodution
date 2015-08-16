@@ -19,7 +19,7 @@ module.exports = React.createClass
     <LayerToggle
       menu={menu}
       title={title}
-      context={filters: filterGroup.filters, onToggleFilter: @onToggleFilter }
+      context={filterGroup: filterGroup, filters: filterGroup.filters, onToggleFilter: @onToggleFilter }
       onToggle={@onShowFilterGroup}>
       {filterGroup.name}
     </LayerToggle>
