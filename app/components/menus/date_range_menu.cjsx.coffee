@@ -14,6 +14,10 @@ module.exports = React.createClass
     @onToggleFilter = @props.context.onToggleFilter
     @setState(start: @filterGroup.start, end: @filterGroup.end)
 
+  applyOnEnter: (ev) ->
+    if ev.keyCode == 13
+      @applyFilter(ev)
+
 
   applyFilter: ->
     start = @refs.start.getDOMNode().value
@@ -32,8 +36,8 @@ module.exports = React.createClass
   render: ->
     <form className="date-range-menu">
       Published
-      <input ref="start" name="start" onBlur={@applyFilter} value={@state.start} />
-      <input ref="end" name="end" onBlur={@applyFilter} value={@state.end} />
+      <input ref="start" name="start" onBlur={@applyFilter} onKeyDown={@applyOnEnter} defaultValue={@state.start} />
+      <input ref="end" name="end" onBlur={@applyFilter} onKeyDown={@applyOnEnter} defaultValue={@state.end} />
       <p className="instructions">
         (Please include two four-digit years, such as 2008 and 2009, or leave them blank to include
         publications from any year)
