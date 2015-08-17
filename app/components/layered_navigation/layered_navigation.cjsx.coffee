@@ -45,6 +45,13 @@ module.exports = React.createClass
 
     [menu.props.children, menu.props.title]
 
+  getOverlayContent: ->
+    if @state.menus.length > 0
+      if topLayerOverlay = @state.menus[@state.menus.length - 1].context.overlayContent
+        <div className="layered-navigation-overlay-content">
+          {topLayerOverlay}
+        </div>
+
   renderLayer: (name, content, title, level) ->
     <Layer key="layer-#{level + 1}" onClose={@dismissMenu} name={name} title={title} level={level}>
       {content}
@@ -68,12 +75,13 @@ module.exports = React.createClass
   render: ->
     className = @props.className + " layered-navigation"
     className += " layer-toggled" if @state.menus.length > 0
+
     <div id={@props.id} className={className}>
       <ReactCSSTransitionGroup transitionName="layer" component="div">
         {@renderLayers()}
       </ReactCSSTransitionGroup>
       <div className="layered-navigation-content" onClick={@dismissMenu}>
-        <div className="layered-navigation-overlay"></div>
+        <div className="layered-navigation-overlay">{@getOverlayContent()}</div>
         {@props.children}
       </div>
     </div>

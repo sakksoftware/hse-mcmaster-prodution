@@ -37,4 +37,31 @@
     background-color: $link-color;
     border-radius: 3px;
   }
+
+  .result-count {
+    display: none;
+  }
+}
+
+.layer-toggled {
+  .result-count {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: $x-small-size;
+    display: inline-block;
+    font-size: $small-size;
+    text-align: center;
+    z-index: 2000;
+
+    a {
+      color: $primary-complementary-color;
+      text-decoration: none;
+      &:hover, &:focus {
+        text-decoration: none;
+      }
+    }
+  }
 }

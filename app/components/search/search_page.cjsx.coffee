@@ -14,6 +14,7 @@ module.exports = React.createClass
 
   propTypes:
     onShowMenu: React.PropTypes.func.isRequired
+    dismissMenu: React.PropTypes.func.isRequired
 
   # steps
   # pending_search
@@ -92,6 +93,7 @@ module.exports = React.createClass
         onAddFilter={@handleFilterAdded}
         onRemoveFilter={@handleFilterRemove}
         onShowMenu={@props.onShowMenu}
+        dismissMenu={@props.dismissMenu}
       />
       {results}
     </div>

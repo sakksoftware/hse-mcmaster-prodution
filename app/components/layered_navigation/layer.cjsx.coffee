@@ -7,6 +7,7 @@ module.exports = React.createClass
     title: React.PropTypes.string
     level: React.PropTypes.number
     name: React.PropTypes.string
+    contentOverlay: React.PropTypes.string
     children: React.PropTypes.node.isRequired
 
   handleClose: (e) ->

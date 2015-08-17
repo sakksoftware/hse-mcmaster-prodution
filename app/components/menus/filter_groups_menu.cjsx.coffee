@@ -9,6 +9,7 @@ module.exports = React.createClass
     @filters = @props.context.filters
     @onToggleFilter = @props.context.onToggleFilter
     @onShowFilterGroup = @props.context.onShowFilterGroup
+    @overlayContent = @props.context.overlayContent
 
   renderMenu: (section, filterGroup) ->
     menu="filters"
@@ -19,7 +20,12 @@ module.exports = React.createClass
     <LayerToggle
       menu={menu}
       title={title}
-      context={filterGroup: filterGroup, filters: filterGroup.filters, onToggleFilter: @onToggleFilter }
+      context={
+        filterGroup: filterGroup
+        filters: filterGroup.filters
+        onToggleFilter: @onToggleFilter
+        overlayContent: @overlayContent
+      }
       onToggle={@onShowFilterGroup}>
       {filterGroup.title}
     </LayerToggle>

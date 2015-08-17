@@ -69,6 +69,7 @@ module.exports = React.createClass
       when 'search'
         <SearchPage key="search-page"
           onShowMenu={@toggleMenu}
+          dismissMenu={@dismissMenu}
          />
       when 'articles'
         id = @props.args.id
@@ -78,7 +79,7 @@ module.exports = React.createClass
       when 'terms'
         <TermsPage key="terms-page" />
       else
-        # TODO: display a 4040 here!
+        # TODO: display a 404 here!
         throw new Error("Page not found! Please check the URL")
 
   renderLayerGroup: ->

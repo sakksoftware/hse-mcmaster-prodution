@@ -19,14 +19,29 @@
     right: 0;
     position: absoulte;
     width: 100%;
-    // display: none;
+    text-align: center;
+    vertical-align: middle;
+
+    .layered-navigation-overlay-content {
+      display: none;
+      padding: $medium-size;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: $primary-complementary-color;
+      margin-top: 50vh;
+      font-size: $large-size;
+      z-index: 10002;
+
+      @media (min-width: 767px) {
+        display: inline-block;
+      }
+    }
   }
 
   &.layer-toggled {
     .layered-navigation-overlay {
-      opacity: 0.5;
       z-index: 1000;
-      background-color: black;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 1.0;
       height: 100%;
       width: 100%;
       display: block;
