@@ -32,8 +32,6 @@ module.exports = Reflux.createStore
   search: (search, success, error, options = {}) ->
     allFilters = @getFilters()
     applied_filters = @_getAppliedFilters(search.filters)
-    console.log('search.filters', search.filters)
-    console.log(applied_filters)
     @_addAppliedProperty(allFilters, applied_filters)
     query = SearchSerializationService.serializeSearchUrl(search)
 
