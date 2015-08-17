@@ -15,7 +15,7 @@ module.exports = React.createClass
     menu="filters"
     menu = "countries" if filterGroup.name == "countries"
     menu = "dateRange" if filterGroup.name == "date_range"
-    title = "Select #{section.name}: #{filterGroup.name}"
+    title = "Select #{section.title}: #{filterGroup.name}"
 
     <LayerToggle
       menu={menu}
@@ -38,7 +38,7 @@ module.exports = React.createClass
         </li>
 
     [
-      <h2>{section.name}</h2>
+      <h2>{section.title}</h2>
       <ul className="menu-list">
         {menuItems}
       </ul>
