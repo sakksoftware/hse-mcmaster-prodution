@@ -12,8 +12,7 @@ module.exports = React.createClass
 
   renderMenu: (section, filterGroup) ->
     menu="filters"
-    # TODO: would not work when we do translations
-    menu = "countries" if filterGroup.name == "Countries"
+    menu = "countries" if filterGroup.name == "countries"
     title = "Select #{section.name}: #{filterGroup.name}"
 
     <LayerToggle
@@ -21,7 +20,7 @@ module.exports = React.createClass
       title={title}
       context={filterGroup: filterGroup, filters: filterGroup.filters, onToggleFilter: @onToggleFilter }
       onToggle={@onShowFilterGroup}>
-      {filterGroup.name}
+      {filterGroup.title}
     </LayerToggle>
 
   renderSection: (section) ->

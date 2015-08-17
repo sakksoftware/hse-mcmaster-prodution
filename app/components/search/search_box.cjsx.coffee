@@ -19,7 +19,7 @@ module.exports = React.createClass
     filters = filters.filter((e) => e.applied)
 
     # delete coutnries filter fro
-    filters = _.reject filters, (f) -> f.name == "Countries"
+    filters = _.reject filters, (f) -> f.name == "countries"
     filters
 
   handleFilterToggle: (filter) ->

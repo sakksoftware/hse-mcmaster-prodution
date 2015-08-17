@@ -23,6 +23,6 @@ module.exports = React.createClass
         borderLeftStyle: "solid"
 
     <li className="menu-item menu-filter-item" style={style}>
-      <a href="#" onClick={@handleToggle}>{filter.name}</a>
+      <a href="#" onClick={@handleToggle}>{filter.title}</a>
       {@renderCheckMark(filter)}
     </li>
