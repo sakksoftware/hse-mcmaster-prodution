@@ -63,5 +63,9 @@
         text-decoration: none;
       }
     }
+
+    @media (min-width: 767px) {
+      display: none;
+    }
   }
 }
