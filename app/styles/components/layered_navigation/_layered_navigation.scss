@@ -15,7 +15,11 @@
 
   .layered-navigation-overlay {
     opacity: 0;
-    display: none;
+    height: 0;
+    right: 0;
+    position: absoulte;
+    width: 100%;
+    // display: none;
   }
 
   &.layer-toggled {
@@ -27,7 +31,7 @@
       width: 100%;
       display: block;
       position: fixed;
-      transition: 700ms ease-in;
+      transition: 150ms ease-in;
     }
   }
 
