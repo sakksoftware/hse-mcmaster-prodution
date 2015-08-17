@@ -16,7 +16,8 @@ serializeAppliedFilters = (filters) ->
     if filter.name == "countries"
       result.push "[#{filter.id},#{filter.mode}]"
     else if filter.name == "date_range"
-      result.push "[#{filter.id},#{filter.start},#{filter.end}]"
+      end = if filter.end then ",#{filter.end}" else ""
+      result.push "[#{filter.id},#{filter.start}#{end}]"
     else
       result.push filter.id
 

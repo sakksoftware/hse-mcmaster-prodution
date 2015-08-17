@@ -16,6 +16,7 @@ HelpMenu = require('components/menus/help_menu')
 FilterGroupsMenu = require('components/menus/filter_groups_menu')
 FiltersMenu = require('components/menus/filters_menu')
 CountriesMenu = require('components/menus/countries_menu')
+DateRangeMenu = require('components/menus/date_range_menu')
 SignupMenu = require('components/menus/signup_menu')
 LoginMenu = require('components/menus/login_menu')
 LanguagesMenu = require('components/menus/languages_menu')
@@ -109,6 +110,9 @@ module.exports = React.createClass
       </Layer>
       <Layer name="countries" title="Countries">
         <CountriesMenu />
+      </Layer>
+      <Layer name="dateRange" title="Date Range">
+        <DateRangeMenu />
       </Layer>
     </LayerGroup>
 

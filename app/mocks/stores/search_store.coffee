@@ -12,12 +12,18 @@ module.exports = Reflux.createStore
   listenables: [SearchActions]
   mixins: [StoreMock, FiltersHelper]
 
-  _addAppliedProperty: (filters, applied_filters_ids) ->
+  _addAppliedProperty: (filters, appliedFilters) ->
     _(filters).each (f) =>
       if f.id
-        f.applied = applied_filters_ids.indexOf(f.id) >= 0
+        appliedFilter = _(appliedFilters).find (af) -> af.id == f.id
+        f.applied = appliedFilter?.applied || false
+        if appliedFilter?.name == "countries"
+          f.mode = appliedFilter.mode
+        if appliedFilter?.name == "date_range"
+          f.start = appliedFilter.start
+          f.end = appliedFilter.end
       if f.filters
-        @_addAppliedProperty(f.filters, applied_filters_ids)
+        @_addAppliedProperty(f.filters, appliedFilters)
 
   _getAppliedFilters: (filters) ->
     filters = FilterNormalizationService.getFiltersArray(filters)
@@ -26,8 +32,9 @@ module.exports = Reflux.createStore
   search: (search, success, error, options = {}) ->
     allFilters = @getFilters()
     applied_filters = @_getAppliedFilters(search.filters)
-    applied_filters_ids = _(applied_filters).pluck('id')
-    @_addAppliedProperty(allFilters, applied_filters_ids)
+    console.log('search.filters', search.filters)
+    console.log(applied_filters)
+    @_addAppliedProperty(allFilters, applied_filters)
     query = SearchSerializationService.serializeSearchUrl(search)
 
     res = searchData

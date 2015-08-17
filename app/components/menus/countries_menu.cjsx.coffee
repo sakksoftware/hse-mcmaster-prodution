@@ -37,7 +37,7 @@ module.exports = React.createClass
 
       # foce search if there are country filters already applied
       if appliedFilters.length > 0
-        @onToggleFilter(@filterGroups)
+        @onToggleFilter(@filterGroup)
 
   filterCountries: ->
     query = @refs.countryFilter.getDOMNode().value

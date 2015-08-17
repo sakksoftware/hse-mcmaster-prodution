@@ -5,12 +5,12 @@ SearchBox = require('components/search/search_box')
 ResultBox = require('components/results/result_box')
 FilterNormalizationService = require('services/filter_normalization_service')
 SearchSerializationService = require('services/search_serialization_service')
-Url = require('lib/url')
+SearchDeserializationService = require('services/search_deserialization_service')
 
 module.exports = React.createClass
   displayName: 'SearchPage'
 
-  mixins: [FilterNormalizationService, SearchSerializationService]
+  mixins: [FilterNormalizationService, SearchSerializationService, SearchDeserializationService]
 
   propTypes:
     onShowMenu: React.PropTypes.func.isRequired
@@ -20,17 +20,7 @@ module.exports = React.createClass
   # searching
   # results
   getInitialState: ->
-    params = Url.params()
-    applied_filters = params.applied_filters?.split(';')
-    # set applied filters until we fetch filers from search
-    filters = applied_filters?.map (f) -> id: parseInt(f, 10), applied: true
-    # TODO: this can be refactored into a deseralization service
-    search:
-      query: if params.q? then params.q else null
-      sort_by: params.sort_by || 'relevance'
-      results: null
-      applied_filters: applied_filters || null
-      filters: filters || []
+    search: @deserializeSearchUrl()
     step: 'pending_search'
 
   componentWillMount: ->

@@ -13,6 +13,7 @@ module.exports = React.createClass
   renderMenu: (section, filterGroup) ->
     menu="filters"
     menu = "countries" if filterGroup.name == "countries"
+    menu = "dateRange" if filterGroup.name == "date_range"
     title = "Select #{section.name}: #{filterGroup.name}"
 
     <LayerToggle
