@@ -67,12 +67,13 @@ module.exports = React.createClass
 
   render: ->
     className = @props.className + " layered-navigation"
-    className += " menu-toggled" if @state.menus.length > 0
+    className += " layer-toggled" if @state.menus.length > 0
     <div id={@props.id} className={className}>
       <ReactCSSTransitionGroup transitionName="layer" component="div">
         {@renderLayers()}
       </ReactCSSTransitionGroup>
       <div className="layered-navigation-content" onClick={@dismissMenu}>
+        <div className="layered-navigation-overlay"></div>
         {@props.children}
       </div>
     </div>

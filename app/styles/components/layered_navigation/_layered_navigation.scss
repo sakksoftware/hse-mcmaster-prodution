@@ -13,8 +13,26 @@
     min-height: 100vh;
   }
 
+  .layered-navigation-overlay {
+    opacity: 0;
+    display: none;
+  }
+
+  &.layer-toggled {
+    .layered-navigation-overlay {
+      opacity: 0.5;
+      z-index: 1000;
+      background-color: black;
+      height: 100%;
+      width: 100%;
+      display: block;
+      position: fixed;
+      transition: 700ms ease-in;
+    }
+  }
+
   @media (max-width: 768px) {
-    &.menu-toggled {
+    &.layer-toggled {
       margin-left: -$layer-width;
     }
   }
