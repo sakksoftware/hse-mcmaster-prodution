@@ -35,9 +35,10 @@ module.exports = React.createClass
 
   render: ->
     <form className="date-range-menu">
-      Published
-      <input ref="start" name="start" onBlur={@applyFilter} onKeyDown={@applyOnEnter} defaultValue={@state.start} />
-      <input ref="end" name="end" onBlur={@applyFilter} onKeyDown={@applyOnEnter} defaultValue={@state.end} />
+      <span className="label">Published</span>
+      <input ref="start" name="start" onBlur={@applyFilter} onKeyDown={@applyOnEnter} defaultValue={@state.start} placeholder="YYYY" />
+      <span className="seperator">-</span>
+      <input ref="end" name="end" onBlur={@applyFilter} onKeyDown={@applyOnEnter} defaultValue={@state.end} placeholder="YYYY" />
       <p className="instructions">
         (Please include two four-digit years, such as 2008 and 2009, or leave them blank to include
         publications from any year)

@@ -1,0 +1,31 @@
+.date-range-menu {
+  .seperator {
+    margin: 0 $tiny-size;
+  }
+
+  .label {
+    color: $primary-text-color;
+    font-size: $small-size - 1;
+    text-align: left;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    margin-right: $tiny-size;
+  }
+
+  input {
+    display: inline-block;
+    width: 75px;
+    background-color: #F3F3F3;
+    border: none;
+    text-align: center;
+    color: $primary-text-color;
+    padding: $tiny-size;
+    font-size: $small-size;
+  }
+
+  .instructions {
+    margin-top: $medium-size;
+    color: lighten($primary-text-color, 15%);
+  }
+}
