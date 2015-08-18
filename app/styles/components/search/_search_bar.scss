@@ -4,13 +4,7 @@ $search-bar-line: 1px solid darken($border-color, 10%);
   overflow: visible;
   position: relative;
 
-
   .react-autosuggest input {
-    width: 100%;
-    padding: $small-size;
-    font-size: $small-size;
-    height: $xx-large-size;
-
     @include desktop {
       border-bottom: $search-bar-line;
     }

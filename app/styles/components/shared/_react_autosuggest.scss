@@ -2,9 +2,10 @@
   position: relative;
 
   input {
-    height: 30px;
-    padding: 10px 10px;
-    font-size: 18px;
+    width: 100%;
+    height: $xx-large-size;
+    padding: $small-size;
+    font-size: $small-size;
     border: 1px solid $input-border;
 
     &:focus {
@@ -14,14 +15,14 @@
 
   .react-autosuggest__suggestions {
     position: absolute;
-    top: 30px;
+    top: $xx-large-size;
     left: 0;
     margin: 0;
-    padding: 5px;
+    padding: $x-tiny-size;
     list-style-type: none;
     border: 1px solid $input-border;
     background-color: #fff;
-    font-size: 18px;
+    font-size: $small-size;
     z-index: 2;
     width: 100%;
   }
