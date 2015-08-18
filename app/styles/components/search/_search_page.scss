@@ -3,4 +3,35 @@
     min-height: 200px;
     position: relative;
   }
+
+  .filter-groups-menu-wrapper {
+    display: none;
+    position: absolute;
+    right: $tiny-size;
+    top: $xx-large-size + $desktop-x-large-size - $tiny-size;
+    width: 288px;
+
+    .filter-groups-menu-title {
+      padding-bottom: $small-size;
+      color: $primary-color;
+      font-size: $small-size;
+    }
+
+    li {
+      border-top: 1px solid $border-color;
+      background-color: transparent;
+
+      .layer-toggle {
+        background-color: transparent;
+
+        &:active {
+          color: $primary-text-color;
+        }
+      }
+    }
+
+    @include desktop {
+      display: block;
+    }
+  }
 }

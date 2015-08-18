@@ -26,6 +26,10 @@
     text-transform: uppercase;
     position: relative;
     overflow: visible;
+
+    @include desktop {
+      display: none;
+    }
   }
 
   .filter-count {

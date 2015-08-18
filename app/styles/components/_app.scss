@@ -80,8 +80,11 @@
     }
   }
 
+  // mobile
   @media (max-width: 768px) {
-    .top-nav h1 { display: inline-block; }
+    .top-nav {
+      h1 { display: inline-block; }
+    }
 
     .layer-toggle-main {
       display: inline-block;
@@ -92,6 +95,22 @@
 
     .layered-navigation-content {
       padding: 0;
+    }
+  }
+
+  // desktop
+  @media (min-width: 767px) {
+    .top-nav {
+      z-index: 3000;
+      position: fixed;
+      left: 0;
+      right: 0;
+    }
+
+    #page-content {
+      max-width: 648px + $layer-width + $small-size;
+      padding-right: $layer-width + $small-size;
+      padding-top: $xx-large-size + $xx-large-size;
     }
   }
 }

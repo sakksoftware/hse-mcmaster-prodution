@@ -10,8 +10,8 @@ module.exports = React.createClass
   propTypes:
     search: React.PropTypes.object
     onSearch: React.PropTypes.func.isRequired
+    onToggleFilter: React.PropTypes.func.isRequired
     onAddFilter: React.PropTypes.func.isRequired
-    onRemoveFilter: React.PropTypes.func.isRequired
     onShowMenu: React.PropTypes.func.isRequired
 
   getInitialState: ->
@@ -28,12 +28,6 @@ module.exports = React.createClass
   handleClickFiltersButton: ->
     @props.onShowMenu.apply(@, arguments)
     @setState(showingFiltersMenu: true)
-
-  handleFilterToggle: (filter) ->
-    if filter.applied
-      @props.onRemoveFilter(filter)
-    else
-      @props.onAddFilter(filter)
 
   handleBackToSearchResults: (ev) ->
     ev.preventDefault()
@@ -66,7 +60,7 @@ module.exports = React.createClass
           context={
             filters: @props.search.filters
             onShowFilterGroup: @props.onShowMenu
-            onToggleFilter: @handleFilterToggle
+            onToggleFilter: @props.onToggleFilter
             overlayContent: "#{@props.search.results_count} results"
           }
           onToggle={@handleClickFiltersButton}

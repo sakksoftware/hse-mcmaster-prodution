@@ -6,6 +6,7 @@ $background-gradient-start: $primary-color; // or #1925E3
 $background-gradient-end: #1925E3;
 $icon-font-path: '/fonts/';
 $seperator-color: lighten($primary-text-color, 90%);
+$border-color: lighten($primary-text-color, 35%);
 
 // bootstrap override
 $border-radius-base:  0px;
@@ -20,6 +21,7 @@ $menu-header-color: $primary-complementary-color;
 $menu-header-background-color: $primary-color;
 $menu-background-color: white;
 
+// sizes for fonts/margin/padding, etc
 $x-tiny-size: 4px;
 $tiny-size: 8px;
 $x-small-size: 12px;
@@ -33,3 +35,6 @@ $xx-large-size: 48px;
 $desktop-large-size: 60px;
 $desktop-x-large-size: 72px;
 $desktop-xx-large-size: 108px;
+
+// $tablet-width: 768px;
+$desktop-width: 768px;

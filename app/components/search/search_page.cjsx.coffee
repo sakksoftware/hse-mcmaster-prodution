@@ -6,6 +6,7 @@ ResultBox = require('components/results/result_box')
 FilterNormalizationService = require('services/filter_normalization_service')
 SearchSerializationService = require('services/search_serialization_service')
 SearchDeserializationService = require('services/search_deserialization_service')
+FilterGroupsMenu = require('components/menus/filter_groups_menu')
 
 module.exports = React.createClass
   displayName: 'SearchPage'
@@ -22,6 +23,7 @@ module.exports = React.createClass
   # results
   getInitialState: ->
     search: @deserializeSearchUrl()
+    filtersLoaded: false
     step: 'pending_search'
 
   componentWillMount: ->
@@ -60,6 +62,12 @@ module.exports = React.createClass
     @updateUrl()
     @fetchResults()
 
+  handleFilterToggle: (filter) ->
+    if filter.applied
+      @handleFilterRemove(filter)
+    else
+      @handleFilterAdded(filter)
+
   handleFilterAdded: (filter) ->
     @changeFilterValue(filter, true)
 
@@ -67,15 +75,30 @@ module.exports = React.createClass
     @changeFilterValue(filter, false)
 
   handleLoad: (search, statusCode, xhr) ->
-    @setState(search: search, step: 'results')
+    @setState(search: search, step: 'results', filtersLoaded: true)
 
   handleLoadFilters: (data) ->
     @state.search.filters = data.filters
+    @setState(search: @state.search, step: @state.step, filtersLoaded: true)
     @forceUpdate()
 
   handleError: (xhr, statusCode, statusText) ->
     console.log("error", xhr, statusCode, statusText)
     flash('error', 'Opps, could not load data. Check your internet connection.')
+
+  renderDesktopFiltersMenu: ->
+    if @state.filtersLoaded
+      <div className="filter-groups-menu-wrapper">
+        <div className="filter-groups-menu-title">
+          Filter documents by...
+        </div>
+        <FilterGroupsMenu context={
+          filters: @state.search.filters
+          onToggleFilter: @handleFilterToggle
+          onShowFilterGroup: @props.onShowMenu
+          overlayContent: "#{@state.search.results_count} results"
+        } />
+      </div>
 
   render: ->
     results =
@@ -90,10 +113,11 @@ module.exports = React.createClass
       <SearchBox
         search={@state.search}
         onSearch={@handleSearch}
+        onToggleFilter={@handleFilterToggle}
         onAddFilter={@handleFilterAdded}
-        onRemoveFilter={@handleFilterRemove}
         onShowMenu={@props.onShowMenu}
         dismissMenu={@props.dismissMenu}
       />
+      {@renderDesktopFiltersMenu()}
       {results}
     </div>

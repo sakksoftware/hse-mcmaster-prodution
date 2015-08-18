@@ -1,11 +1,32 @@
+$search-bar-line: 1px solid darken($border-color, 10%);
+
 .search-bar {
   overflow: visible;
   position: relative;
+
 
   .react-autosuggest input {
     width: 100%;
     padding: $small-size;
     font-size: $small-size;
     height: $xx-large-size;
+
+    @include desktop {
+      border-bottom: $search-bar-line;
+    }
   }
+
+  @include desktop {
+    &:after {
+      content: " ";
+      display: block;
+      border: none;
+      border-bottom: $search-bar-line;
+      height: 0px;
+      width: 300%;
+      margin: 0 -100%;
+      margin-top: -1px;
+    }
+  }
+
 }
