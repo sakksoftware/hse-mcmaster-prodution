@@ -6,8 +6,8 @@ module.exports = Reflux.createStore
   listenables: [SearchActions]
   mixins: [SearchSerializationService]
 
-  search: (query, success, error, options = {}) ->
-    API.read "search#{@serializeSearchUrl()}",
+  search: (search, success, error) ->
+    API.read "search#{@serializeSearchUrl(search)}",
       success: success,
       error: error
 
