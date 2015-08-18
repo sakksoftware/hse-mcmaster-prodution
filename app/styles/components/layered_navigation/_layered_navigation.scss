@@ -31,13 +31,15 @@
       font-size: $large-size;
       z-index: 10002;
 
-      @media (min-width: 767px) {
+      @include desktop {
         display: inline-block;
       }
     }
   }
 
   &.layer-toggled {
+    margin-left: -$layer-width;
+
     .layered-navigation-overlay {
       z-index: 1000;
       background-color: rgba(0, 0, 0, 0.5);
@@ -48,11 +50,10 @@
       position: fixed;
       transition: 150ms ease-in;
     }
-  }
 
-  @media (max-width: 768px) {
-    &.layer-toggled {
-      margin-left: -$layer-width;
+    @include desktop {
+        margin-left: 0;
     }
   }
+
 }

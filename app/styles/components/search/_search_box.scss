@@ -68,7 +68,7 @@
       }
     }
 
-    @media (min-width: 767px) {
+    @include desktop {
       display: none;
     }
   }

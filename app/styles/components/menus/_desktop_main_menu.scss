@@ -53,8 +53,4 @@
   .menu-item-login .menu-item-icon {
     @extend .glyphicon-log-in;
   }
-
-  @include desktop {
-    display: block;
-  }
 }

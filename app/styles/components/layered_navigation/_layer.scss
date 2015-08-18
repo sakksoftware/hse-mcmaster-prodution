@@ -31,10 +31,10 @@
     width: $layer-btn-close-width;
     float: right;
     color: $menu-header-color;
-    display: none;
+    display: block;
 
-    @media (max-width: 768px) {
-      display: block;
+    @include desktop {
+      display: none;
     }
   }
 
