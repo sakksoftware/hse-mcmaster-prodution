@@ -59,7 +59,7 @@ module.exports = React.createClass
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>
       </LayerToggle>
-      <DesktopMainMenu />
+      <DesktopMainMenu onToggle={@toggleMenu} />
     </nav>
 
   renderPage: ->

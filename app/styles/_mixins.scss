@@ -72,3 +72,43 @@
     @content;
   }
 }
+
+@mixin flyout-menu($background-color) {
+  $flyout-menu-zindex: 9999;
+  ul {
+    position: relative;
+    z-index: $flyout-menu-zindex;
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+
+  ul li {
+    min-height: $small-size;
+    line-height: $small-size;
+
+    vertical-align: middle;
+  }
+  ul li:hover {
+    position: relative;
+    z-index: $flyout-menu-zindex;
+    cursor: auto;
+    background-color: lighten($background-color, 10%);
+  }
+  ul ul {
+    visibility: hidden; /* hide sub menus by default */
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background-color: $background-color;
+    left: 0;
+    z-index: $flyout-menu-zindex - 1;
+  }
+  ul ul ul {
+    top: 0px;
+    left: 99%;
+  }
+  ul li:hover > ul {
+    visibility: visible; /* show sub menu */
+  }
+}

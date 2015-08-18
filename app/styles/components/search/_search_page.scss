@@ -9,7 +9,7 @@
     position: absolute;
     right: $tiny-size;
     top: $xx-large-size + $desktop-x-large-size - $tiny-size;
-    width: 288px;
+    width: $layer-width;
 
     .filter-groups-menu-title {
       padding-bottom: $small-size;

@@ -8,40 +8,62 @@
   .layer-toggle-main {
     @include hamburger-icon;
     background: transparent;
-    display: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    margin-top: $small-size;
+    margin-right: $small-size;
+    height: $small-size;
 
     .icon-bar {
       background: $menu-header-color;
     }
   }
 
+  .layered-navigation-content {
+    padding: 0;
+  }
+
   .top-nav {
     width: auto;
-    overflow: auto;
+    overflow: visible;
     background: linear-gradient(to right, $background-gradient-start, $background-gradient-end);
     color: $menu-header-color;
-    padding: $small-size;
     line-height: $small-size;
     height: $xx-large-size;
 
     h1 {
-      display: none;
+      display: inline-block;
       padding: 0;
+      padding-top: $small-size;
+      padding-left: $small-size;
       margin: 0;
       font-size: $small-size;
       line-height: $small-size;
       text-transform: uppercase;
+    }
 
-      a {
-        color: $primary-complementary-color;
-        &:hover, &:focus {
-          text-decoration: none;
-        }
+    button, a {
+      color: $primary-complementary-color;
+
+      &:hover, &:focus {
+        text-decoration: none;
       }
     }
 
-    button {
-      height: $small-size;
+    .desktop-main-menu {
+      display: none;
+      & > li:last-child .layer-toggle {
+        padding-right: $small-size + $tiny-size;
+      }
+
+      @include desktop {
+        display: inline-block;
+      }
+    }
+
+    @include desktop {
+      @include flyout-menu($primary-color);
     }
   }
 
@@ -80,26 +102,8 @@
     }
   }
 
-  // mobile
-  @media (max-width: 768px) {
-    .top-nav {
-      h1 { display: inline-block; }
-    }
-
-    .layer-toggle-main {
-      display: inline-block;
-      padding: 0;
-      margin: 0;
-    }
-
-
-    .layered-navigation-content {
-      padding: 0;
-    }
-  }
-
   // desktop
-  @media (min-width: 767px) {
+  @include desktop {
     .top-nav {
       z-index: 3000;
       position: fixed;
@@ -111,6 +115,10 @@
       max-width: 648px + $layer-width + $small-size;
       padding-right: $layer-width + $small-size;
       padding-top: $xx-large-size + $xx-large-size;
+    }
+
+    .layer-toggle-main {
+      display: none;
     }
   }
 }
