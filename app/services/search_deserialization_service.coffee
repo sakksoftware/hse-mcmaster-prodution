@@ -1,7 +1,7 @@
 Url = require('lib/url')
 
-dateRangePattern = /^\[(\d+-\d+-\d+),(\d{4})?,?(\d{4})?\]/
-countriesPattern = /^\[(\d+-\d+-\d+),([a-z_]+)\]/
+dateRangePattern = /^\[(\d+-\d+),(\d{4})?,?(\d{4})?\]/
+countriesPattern = /^\[(\d+-\d+),([a-z_]+)\]/
 
 module.exports =
   deserializeSearchUrl: ->
