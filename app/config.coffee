@@ -8,7 +8,7 @@ module.exports =
 
   production:
     apiBase: '//hse.functionalimperative.com'
-    useMockStores: true
+    useMockStores: false
     mockResponseTime: 500
     # TODO: implement
     # mockAlwaysSucceed: true
