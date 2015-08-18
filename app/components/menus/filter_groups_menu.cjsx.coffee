@@ -12,9 +12,9 @@ module.exports = React.createClass
     @overlayContent = @props.context.overlayContent
 
   renderMenu: (section, filterGroup) ->
-    menu="filters"
-    menu = "countries" if filterGroup.name == "countries"
-    menu = "dateRange" if filterGroup.name == "date_range"
+    menu = "filters"
+    menu = "countries" if filterGroup.type == "countries"
+    menu = "dateRange" if filterGroup.type == "date_range"
     title = "Select #{section.title}: #{filterGroup.name}"
 
     <LayerToggle
@@ -32,10 +32,13 @@ module.exports = React.createClass
 
   renderSection: (section) ->
     menuItems =
-      for filterGroup in section.filters
-        <li className="menu-item" key={filterGroup.name}>
-          {@renderMenu(section, filterGroup)}
-        </li>
+      if section.filters
+        for filterGroup in section.filters
+          className = "menu-item"
+          className += " filter-group-#{filterGroup.type.replace('_', '-')}" if filterGroup.type
+          <li className={className} key="filter-group-#{filterGroup.id}">
+            {@renderMenu(section, filterGroup)}
+          </li>
 
     [
       <h2>{section.title}</h2>
