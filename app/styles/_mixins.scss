@@ -31,7 +31,7 @@
 
 @mixin ellipsis($width) {
   display: inline-block;
-  width: $width;
+  max-width: $width;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

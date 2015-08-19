@@ -10,15 +10,15 @@ module.exports = React.createClass
   getChildFiltersText: ->
     _(@getFiltersArray(@props.filter.filters)).pluck('title').join(', ').substring(0, 30)
 
-  getFilterText: ->
-    "#{@props.filter.title}: #{@getChildFiltersText()}"
-
   handleRemove: (e) ->
     e.preventDefault()
     @props.onRemoveFilter(@props.filter)
 
   render: ->
     <li className="applied-filter-item">
-      {@getFilterText()}
+      <div className="applied-filter-item-content">
+        <span className="applied-filter-item-section">{"#{@props.filter.title}:"}</span>
+        <span className="applied-filter-item-filters">{@getChildFiltersText()}</span>
+      </div>
       <a href="#" className="applied-filter-item-remove" onClick={@handleRemove}>x</a>
     </li>

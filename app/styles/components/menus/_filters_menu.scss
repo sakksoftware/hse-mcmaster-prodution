@@ -7,6 +7,14 @@
     margin: $x-large-size 0 $tiny-size 0;
   }
 
+  .applied-filters {
+    margin-top: $small-size;
+  }
+
+  .applied-filters + h2 {
+    margin-top: $medium-size;
+  }
+
   ul {
     list-style: none;
     margin: 0;

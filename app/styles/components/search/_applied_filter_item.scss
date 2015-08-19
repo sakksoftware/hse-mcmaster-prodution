@@ -1,22 +1,52 @@
 .applied-filter-item {
-  background-color: lightgray;
+  $section-width: 115px;
+  $remove-button-width: $large-size;
+
   vertical-align: middle;
   display: inline-block;
+  height: $large-size;
+  position: relative;
+  // important needed since parent has styling for other menu items
+  background-color: #E8F4FD !important;
+
+  .applied-filter-item-content {
+    padding-top: $tiny-size;
+    padding-bottom: $tiny-size;
+    padding-left: $tiny-size;
+    padding-right: $large-size + $tiny-size;
+  }
+
+  .applied-filter-item-section {
+    max-width: $section-width;
+    margin-right: $x-tiny-size;
+
+    @include ellipsis($section-width);
+  }
+
+  .applied-filter-item-filters {
+    color: $primary-color;
+    @include ellipsis($layer-width - $section-width - $large-size - $tiny-size - $large-size)
+  }
 
   span {
-    padding: 5px 10px;
     display: inline-block;
+    overflow: hidden;
   }
 
   .applied-filter-item-remove {
-    border-left: 1px solid darkgrey;
-    padding: 0 10px;
+    border-left: 1px solid white;
+    padding: 0 $tiny-size;
     color: black;
-    font-size: 15px;
-    line-height: 31px;
-    height: 31px;
+    font-size: $small-size - 1;
+    width: $remove-button-width;
     display: inline-block;
-    color: darkgrey;
+    overflow: hidden;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    padding-top: $x-tiny-size;
+    text-align: center;
 
     &:hover, &:visited {
       text-decoration: none;
