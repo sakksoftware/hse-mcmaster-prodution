@@ -33,10 +33,10 @@ module.exports = React.createClass
   renderSection: (section) ->
     menuItems =
       if section.filters
-        for filterGroup in section.filters
+        for filterGroup, i in section.filters
           className = "menu-item"
           className += " filter-group-#{filterGroup.type.replace('_', '-')}" if filterGroup.type
-          <li className={className} key="filter-group-#{filterGroup.id}">
+          <li className={className} key="filter-group-#{i}">
             {@renderMenu(section, filterGroup)}
           </li>
 

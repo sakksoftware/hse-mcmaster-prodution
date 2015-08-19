@@ -13,6 +13,7 @@ module.exports = React.createClass
     onToggleFilter: React.PropTypes.func.isRequired
     onAddFilter: React.PropTypes.func.isRequired
     onShowMenu: React.PropTypes.func.isRequired
+    overlayContent: React.PropTypes.string
 
   getInitialState: ->
     showingFiltersMenu: false
@@ -22,7 +23,7 @@ module.exports = React.createClass
     filters = filters.filter((e) => e.applied)
 
     # delete coutnries filter fro
-    filters = _.reject filters, (f) -> f.name == "countries"
+    filters = _.reject filters, (f) -> f.type == "countries"
     filters
 
   handleClickFiltersButton: ->
@@ -39,7 +40,7 @@ module.exports = React.createClass
       <span className="filter-count">{count}</span>
 
   renderResultCountFooter: ->
-    if @state.showingFiltersMenu
+    if @state.showingFiltersMenu && @props.search?.results_count
       <div className="result-count">
         <a href="#" onClick={@handleBackToSearchResults}>View {@props.search.results_count} results</a>
       </div>
@@ -61,7 +62,7 @@ module.exports = React.createClass
             filters: @props.search.filters
             onShowFilterGroup: @props.onShowMenu
             onToggleFilter: @props.onToggleFilter
-            overlayContent: "#{@props.search.results_count} results"
+            overlayContent: @props.overlayContent
           }
           onToggle={@handleClickFiltersButton}
         >

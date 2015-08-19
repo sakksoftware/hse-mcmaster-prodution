@@ -8,8 +8,8 @@ module.exports = React.createClass
     onToggle: React.PropTypes.func.isRequired
 
   renderLanguages: ->
-    for language in languages
-      <li value={language.name}>
+    for language, i in languages
+      <li key="language-#{i}" value={language.name}>
         <a href="#">{language.title}</a>
       </li>
 

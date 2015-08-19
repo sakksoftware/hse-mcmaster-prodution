@@ -1,5 +1,43 @@
 .filter-groups-menu {
+  padding-bottom: $x-large-size;
+
   h2:first-child {
     margin-top: $medium-size;
+  }
+
+  .filter-group-complamentary-1, .filter-group-complamentary-2, .filter-group-complamentary-3 {
+
+    .layer-toggle {
+      padding-left: $large-size + $tiny-size;
+      &:before {
+        content: '';
+        height: $large-size;
+        width: $large-size;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: $x-small-size;
+      }
+    }
+  }
+
+  .filter-group-complamentary-2, .filter-group-complamentary-3 {
+    line-height: $large-size;
+  }
+
+  .filter-group-complamentary-1 .layer-toggle:before {
+    background: transparent url(/images/global_icon.svg);
+  }
+
+  .filter-group-complamentary-2 .layer-toggle:before {
+    background: transparent url(/images/canadian_icon.svg);
+  }
+
+  .filter-group-complamentary-3 .layer-toggle:before {
+    background: transparent url(/images/ontario_icon.svg);
+  }
+
+  .filter-group-icon + .layer-toggle {
+    padding-left: $small-size + $tiny-size;
   }
 }

@@ -30,10 +30,10 @@ module.exports = React.createClass
   renderItems: (items) ->
     result = []
     for item in items
-      result.push <MenuFilterItem key={item.name} indicatorColor={@currentColor()}
+      result.push <MenuFilterItem key="filter-#{item.id}" indicatorColor={@currentColor()}
         filter={item} onToggle={@onToggleFilter} />
       if item.filters
-        result.push <li className="menu-item nested-filters" key="#{item.name}-filters">
+        result.push <li className="menu-item nested-filters" key="filters-list-#{item.id}">
           <ul className="menu-list">
             {@renderItems(item.filters)}
           </ul>

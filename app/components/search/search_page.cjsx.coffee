@@ -86,6 +86,10 @@ module.exports = React.createClass
     console.log("error", xhr, statusCode, statusText)
     flash('error', 'Opps, could not load data. Check your internet connection.')
 
+  getOverylayContent: ->
+    if @props.search?.results_count
+      "#{@props.search.results_count} results"
+
   renderDesktopFiltersMenu: ->
     if @state.filtersLoaded
       <div className="filter-groups-menu-wrapper">
@@ -96,7 +100,7 @@ module.exports = React.createClass
           filters: @state.search.filters
           onToggleFilter: @handleFilterToggle
           onShowFilterGroup: @props.onShowMenu
-          overlayContent: "#{@state.search.results_count} results"
+          overlayContent: @getOverylayContent()
         } />
       </div>
 
@@ -117,6 +121,7 @@ module.exports = React.createClass
         onAddFilter={@handleFilterAdded}
         onShowMenu={@props.onShowMenu}
         dismissMenu={@props.dismissMenu}
+        overlayContent={@getOverylayContent()}
       />
       {@renderDesktopFiltersMenu()}
       {results}
