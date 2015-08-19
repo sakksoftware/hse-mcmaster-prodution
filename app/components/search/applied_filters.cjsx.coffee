@@ -5,6 +5,11 @@ module.exports = React.createClass
   propTypes:
     filters: React.PropTypes.array.isRequired
     onRemoveFilter: React.PropTypes.func.isRequired
+    onShowFilterGroup: React.PropTypes.func.isRequired
+
+  onShowFilterGroup: (filter) ->
+    filter = _.find @props.filters, (f) -> f.id == filter.id
+    @props.onShowFilterGroup(filter, filter.filters[0])
 
   onRemoveFilter: (filter) ->
     filter = _.find @props.filters, (f) -> f.id == filter.id
@@ -26,7 +31,9 @@ module.exports = React.createClass
 
   renderFilters: ->
     for filter, index in @getAppliedFilterGroups(@props.filters)
-      <AppliedFilterItem filter={filter} key="filter-#{index}" onRemoveFilter={@onRemoveFilter} />
+      <AppliedFilterItem filter={filter} key="filter-#{index}"
+        onShowFilterGroup={@onShowFilterGroup}
+        onRemoveFilter={@onRemoveFilter} />
 
   render: ->
     <ul className="applied-filters">

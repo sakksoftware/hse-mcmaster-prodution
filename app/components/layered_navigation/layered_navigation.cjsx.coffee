@@ -27,6 +27,8 @@ module.exports = React.createClass
     @setState(menus: menus)
 
   dismissMenu: ->
+    return if @state.menus.length == 0
+
     menus = _.clone(@state.menus)
     menus.pop()
     @setState(menus: menus)

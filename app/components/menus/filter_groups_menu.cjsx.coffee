@@ -17,21 +17,36 @@ module.exports = React.createClass
     filter.applied = true
     @onToggleFilter(filter)
 
-  renderMenu: (section, filterGroup) ->
+  getTitle: (section, filterGroup) ->
+    "Select #{section.title}: #{filterGroup.title}"
+
+  getMenuContext: (filterGroup) ->
+    filterGroup: filterGroup
+    filters: filterGroup.filters
+    onToggleFilter: @onToggleFilter
+    overlayContent: @overlayContent
+
+  getMenuName: (filterGroup) ->
     menu = "filters"
     menu = "countries" if filterGroup.type == "countries"
     menu = "dateRange" if filterGroup.type == "date_range"
-    title = "Select #{section.title}: #{filterGroup.name}"
+    menu
 
+  # TODO: a little bit dirty, maybe should re-think the
+  # * option 1: use references to trigger "toggle" method on the LayerToggle,
+  #   will need to find the right reference
+  # * option 2: pass a layer toggle into AppliedFilters component
+  onShowFilterGroupWrapper: (section, filterGroup) ->
+    menu = @getMenuName(filterGroup)
+    title = @getTitle(section, filterGroup)
+
+    @onShowFilterGroup(menu, title, @getMenuContext(filterGroup))
+
+  renderMenu: (section, filterGroup) ->
     <LayerToggle
-      menu={menu}
-      title={title}
-      context={
-        filterGroup: filterGroup
-        filters: filterGroup.filters
-        onToggleFilter: @onToggleFilter
-        overlayContent: @overlayContent
-      }
+      menu={@getMenuName(filterGroup)}
+      title={@getTitle(section, filterGroup)}
+      context={@getMenuContext(filterGroup)}
       onToggle={@onShowFilterGroup}>
       {filterGroup.title}
     </LayerToggle>
@@ -59,6 +74,6 @@ module.exports = React.createClass
 
   render: ->
     <div className="filter-groups-menu nested-menu">
-      <AppliedFilters filters={@filters} onRemoveFilter={@onRemoveFilterGroup} />
+      <AppliedFilters filters={@filters} onRemoveFilter={@onRemoveFilterGroup} onShowFilterGroup={@onShowFilterGroupWrapper} />
       {@renderSections()}
     </div>

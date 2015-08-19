@@ -6,9 +6,14 @@ module.exports = React.createClass
   propTypes:
     filter: React.PropTypes.object.isRequired
     onRemoveFilter: React.PropTypes.func.isRequired
+    onShowFilterGroup: React.PropTypes.func.isRequired
 
   getChildFiltersText: ->
     _(@getFiltersArray(@props.filter.filters)).pluck('title').join(', ').substring(0, 30)
+
+  handleShowFilterGroup: (e) ->
+    e.preventDefault()
+    @props.onShowFilterGroup(@props.filter)
 
   handleRemove: (e) ->
     e.preventDefault()
@@ -16,9 +21,9 @@ module.exports = React.createClass
 
   render: ->
     <li className="applied-filter-item">
-      <div className="applied-filter-item-content">
+      <a className="applied-filter-item-content" href="#" onClick={@handleShowFilterGroup}>
         <span className="applied-filter-item-section">{"#{@props.filter.title}:"}</span>
         <span className="applied-filter-item-filters">{@getChildFiltersText()}</span>
-      </div>
+      </a>
       <a href="#" className="applied-filter-item-remove" onClick={@handleRemove}>x</a>
     </li>

@@ -14,9 +14,11 @@
     padding-bottom: $tiny-size;
     padding-left: $tiny-size;
     padding-right: $large-size + $tiny-size;
+    display: block;
   }
 
   .applied-filter-item-section {
+    color: $primary-text-color;
     max-width: $section-width;
     margin-right: $x-tiny-size;
 
