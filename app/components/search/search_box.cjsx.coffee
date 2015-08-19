@@ -1,4 +1,3 @@
-AppliedFilters = require('components/search/applied_filters')
 FilterBox = require('components/search/filter_box')
 SearchBar = require('components/search/search_bar')
 LayerToggle = require('components/layered_navigation/layer_toggle')

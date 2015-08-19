@@ -27,12 +27,12 @@ filterData =
         ]}
       ]},
       {"type": "financial_arrangements", "title": "Financial arrangements", "id": "1_4100", "filters": [
-        {"type": "policy_authority", "title": "Policy authority", "filters": [
+        {"type": "policy_authority", "title": "Policy authority", "id": "1_4110", "filters": [
           {"type": "centralization_decentralization_of_policy_authority", "title": "Centralization/decentralization of policy authority", "id": "1_1022", "count": 1027, "applied": false }
         ]}
       ]}
     ]},
-    {"type": "domains", "title": "Domains", "filters": [
+    {"type": "domains", "title": "Domains", "id": "1_4400", "filters": [
       {"type": "sectors", "title": "Sectors", "id": "1_4200", "filters": [
         {"type": "all_of_them", "title": "All of them", "id": "1_1234", "count": 350, "applied": false },
         {"type": "option_a", "title": "Option A", "id": "1_1235", "count": 200, "applied": false },
@@ -48,13 +48,13 @@ filterData =
         {"type": "human_studies", "title": "Human Studies", "id": "1_2015", "count": 135, "applied": false }
       ]}
     ]},
-    {"type": "areas_of_focus", "title": "Areas of Focus", "filters": [
+    {"type": "areas_of_focus", "title": "Areas of Focus", "id": "1_4500", "filters": [
       {"type": "countries", "title": "Countries", "id": "1_3044", "mode": "at_least_one", "filters": countryFilters }
     ]},
-    {"type": "document_features", "title": "Document Features", "filters": [
+    {"type": "document_features", "title": "Document Features", "id": "1_4600", "filters": [
       {"type": "date_range", "title": "Date range", "id": "1_3045", "start": null, "end": null, "applied": false }
     ]},
-    {"title": "Complamentary Content", "filters": [
+    {"title": "Complamentary Content", "id": "1_4500", "filters": [
       {"type": "complamentary-1", "title": "Intergovermental Organizations' System Health Documents", "id": "1_3046", "applied": false, "filters": [
         {"type": "option_a", "title": "Option A", "id": "1_2112", "count": 200, "applied": false },
         {"type": "option_b", "title": "Option B", "id": "1_2113", "count": 100, "applied": false }

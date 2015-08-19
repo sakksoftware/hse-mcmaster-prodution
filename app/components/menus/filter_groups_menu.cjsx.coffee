@@ -1,3 +1,4 @@
+AppliedFilters = require('components/search/applied_filters')
 LayerToggle = require('components/layered_navigation/layer_toggle')
 
 module.exports = React.createClass
@@ -10,6 +11,11 @@ module.exports = React.createClass
     @onToggleFilter = @props.context.onToggleFilter
     @onShowFilterGroup = @props.context.onShowFilterGroup
     @overlayContent = @props.context.overlayContent
+
+  onRemoveFilterGroup: (filter) ->
+    # temporary toggle on so we can toggle it off!
+    filter.applied = true
+    @onToggleFilter(filter)
 
   renderMenu: (section, filterGroup) ->
     menu = "filters"
@@ -53,5 +59,6 @@ module.exports = React.createClass
 
   render: ->
     <div className="filter-groups-menu nested-menu">
+      <AppliedFilters filters={@filters} onRemoveFilter={@onRemoveFilterGroup} />
       {@renderSections()}
     </div>

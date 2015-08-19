@@ -1,8 +1,17 @@
+FilterNormalizationService = require('services/filter_normalization_service')
+
 module.exports = React.createClass
   displayName: 'AppliedFiltersItem'
+  mixins: [FilterNormalizationService]
   propTypes:
     filter: React.PropTypes.object.isRequired
     onRemoveFilter: React.PropTypes.func.isRequired
+
+  getChildFiltersText: ->
+    _(@getFiltersArray(@props.filter.filters)).pluck('title').join(', ').substring(0, 30)
+
+  getFilterText: ->
+    "#{@props.filter.title}: #{@getChildFiltersText()}"
 
   handleRemove: (e) ->
     e.preventDefault()
@@ -10,6 +19,6 @@ module.exports = React.createClass
 
   render: ->
     <li className="applied-filter-item">
-      {@props.filter.name}
+      {@getFilterText()}
       <a href="#" className="applied-filter-item-remove" onClick={@handleRemove}>x</a>
     </li>
