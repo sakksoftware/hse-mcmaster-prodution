@@ -62,7 +62,22 @@ module.exports = React.createClass
     @updateUrl()
     @fetchResults()
 
+  changeParentFilterValue: (parentFilter, value) ->
+    parentFilter.applied = value
+    for filter in parentFilter.filters
+      filter.applied = value
+      if filter.filters
+        @changeParentFilterValue(filter, value)
+
+  handleNestedFilterToggle: (filter) ->
+    @changeParentFilterValue(filter, !filter.applied)
+    @updateUrl()
+    @fetchResults()
+
   handleFilterToggle: (filter) ->
+    if filter.filters
+      return @handleNestedFilterToggle(filter)
+
     if filter.applied
       @handleFilterRemove(filter)
     else
