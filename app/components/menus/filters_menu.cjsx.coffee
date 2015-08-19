@@ -16,9 +16,11 @@ module.exports = React.createClass
 
   componentWillMount: ->
     @filters = @props.context.filters
-    @filterGroup = _.clone(@props.context.filterGroup)
-    @filterGroup.title = "All " + @filterGroup.title
+    @filterGroup = @props.context.filterGroup
+
     @onToggleFilter = (filter) =>
+      # send real object instead of clone
+      filter = @filterGroup if filter.id == @allFilter.id
       @props.context.onToggleFilter(filter)
       @forceUpdate()
     @currentColorIndex = 0
@@ -48,7 +50,7 @@ module.exports = React.createClass
   renderAllFilter: ->
     result =
       <MenuFilterItem className="all-filters" key="all-filter-#{@filterGroup.id}" indicatorColor={@currentColor()}
-        filter={@filterGroup} onToggle={@onToggleFilter} />
+        filter={@allFilter} onToggle={@onToggleFilter} />
 
     @nextColor()
 
@@ -56,6 +58,9 @@ module.exports = React.createClass
 
   render: ->
     @currentColorIndex = 0
+    @allFilter = _.clone(@filterGroup)
+    @allFilter.title = "All " + @filterGroup.title[0].toLowerCase() + @filterGroup.title.substring(1)
+
     <div className="filters-menu nested-menu">
       <ul className="menu-list">
         {@renderAllFilter()}
