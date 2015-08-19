@@ -4,6 +4,7 @@ module.exports = React.createClass
     filter: React.PropTypes.object.isRequired
     onToggle: React.PropTypes.func.isRequired
     indicatorColor: React.PropTypes.string
+    className: React.PropTypes.string
 
   handleToggle: (e) ->
     e.preventDefault()
@@ -22,7 +23,7 @@ module.exports = React.createClass
         borderLeftWidth: "4px"
         borderLeftStyle: "solid"
 
-    <li className="menu-item menu-filter-item" style={style}>
+    <li className="menu-item menu-filter-item #{@props.className}" style={style}>
       <a href="#" onClick={@handleToggle}>{filter.title}</a>
       {@renderCheckMark(filter)}
     </li>

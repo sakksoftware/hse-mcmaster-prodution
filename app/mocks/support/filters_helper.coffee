@@ -14,33 +14,33 @@ countryFilters = _.map allCountries, (country) ->
 filterData =
   "filters": [
     {"type": "topics_of_interest", "title": "Topics of Intrest", "filters": [
-      {"type": "goverance_arrangements", "title": "Goverance arrangements", "filters": [
+      {"type": "goverance_arrangements", "title": "Goverance arrangements", "id": "1_1000", "filters": [
         {"type": "policy_authority", "title": "Policy authority", "count": 2095, "id": "1_1001", "applied": false, "filters": [
           {"type": "centralization_decentralization_of_policy_authority", "title": "Centralization/decentralization of policy authority", "id": "1_1002", "count": 1027, "applied": false },
           {"type": "accountability_of_the_state_sectors_role_in_financing_delivery", "title": "Accountability of the state sector's role in financing & delivery", "id": "1_1003", "count": 1027, "applied": false },
           {"type": "stewardship_of_the_non_state_sectors_role_in_financing_delivery", "title": "Stewardship of the non-state sector's role in financing & delivery", "id": "1_1004", "count": 1298, "applied": false }
         ]},
-        {"type": "organizational_authority", "title": "Organizational authority", "filters": [
+        {"type": "organizational_authority", "title": "Organizational authority", "id": "1_4000", "filters": [
           {"type": "ownership", "title": "Ownership", "id": "1_1011", "count": 1027, "applied": false },
           {"type": "management_approaches", "title": "Management approaches", "id": "1_1012", "count": 524, "applied": false },
           {"type": "accreditation", "title": "Accreditation", "id": "1_1013", "count": 881, "applied": false }
         ]}
       ]},
-      {"type": "financial_arrangements", "title": "Financial arrangements", "filters": [
+      {"type": "financial_arrangements", "title": "Financial arrangements", "id": "1_4100", "filters": [
         {"type": "policy_authority", "title": "Policy authority", "filters": [
           {"type": "centralization_decentralization_of_policy_authority", "title": "Centralization/decentralization of policy authority", "id": "1_1022", "count": 1027, "applied": false }
         ]}
       ]}
     ]},
     {"type": "domains", "title": "Domains", "filters": [
-      {"type": "sectors", "title": "Sectors", "filters": [
+      {"type": "sectors", "title": "Sectors", "id": "1_4200", "filters": [
         {"type": "all_of_them", "title": "All of them", "id": "1_1234", "count": 350, "applied": false },
         {"type": "option_a", "title": "Option A", "id": "1_1235", "count": 200, "applied": false },
         {"type": "option_b", "title": "Option B", "id": "1_1236", "count": 100, "applied": false },
         {"type": "governanace", "title": "Governance", "id": "1_1237", "count": 100, "applied": false },
         {"type": "human_studies", "title": "Human Studies", "id": "1_1238", "count": 135, "applied": false }
       ]},
-      {"type": "providers", "title": "Providers", "filters": [
+      {"type": "providers", "title": "Providers", "id": "1_4300",  "filters": [
         {"type": "all_of_them", "title": "All of them", "id": "1_2011", "count": 350, "applied": false },
         {"type": "option_a", "title": "Option A", "id": "1_2012", "count": 200, "applied": false },
         {"type": "option_b", "title": "Option B", "id": "1_2013", "count": 100, "applied": false },

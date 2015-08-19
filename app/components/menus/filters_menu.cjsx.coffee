@@ -16,6 +16,8 @@ module.exports = React.createClass
 
   componentWillMount: ->
     @filters = @props.context.filters
+    @filterGroup = _.clone(@props.context.filterGroup)
+    @filterGroup.title = "All " + @filterGroup.title
     @onToggleFilter = (filter) =>
       @props.context.onToggleFilter(filter)
       @forceUpdate()
@@ -29,6 +31,7 @@ module.exports = React.createClass
 
   renderItems: (items) ->
     result = []
+
     for item in items
       result.push <MenuFilterItem key="filter-#{item.id}" indicatorColor={@currentColor()}
         filter={item} onToggle={@onToggleFilter} />
@@ -42,10 +45,20 @@ module.exports = React.createClass
 
     result
 
+  renderAllFilter: ->
+    result =
+      <MenuFilterItem className="all-filters" key="all-filter-#{@filterGroup.id}" indicatorColor={@currentColor()}
+        filter={@filterGroup} onToggle={@onToggleFilter} />
+
+    @nextColor()
+
+    result
+
   render: ->
     @currentColorIndex = 0
     <div className="filters-menu nested-menu">
       <ul className="menu-list">
+        {@renderAllFilter()}
         {@renderItems(@filters)}
       </ul>
     </div>
