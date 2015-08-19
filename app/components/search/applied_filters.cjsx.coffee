@@ -24,7 +24,7 @@ module.exports = React.createClass
       if filter.filters
         filter.filters = @getAppliedFilterGroups(filter.filters)
 
-      if filter.applied == true || filter.filters?.length > 0
+      if filter.applied || filter.filters?.length > 0
         appliedFilters.push filter
 
     appliedFilters
