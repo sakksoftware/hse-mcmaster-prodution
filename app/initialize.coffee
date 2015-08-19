@@ -1,7 +1,12 @@
+params = require('lib/url').params()
+
 if window.location.hostname == "localhost"
-  window.ENV = 'development'
+  window.ENV = params.ENV || 'development'
 else
-  window.ENV = 'production'
+  # TODO: remvoe temporary measure for setting env
+  window.ENV = params.ENV || 'production'
+
+console.log('ENV =', window.ENV)
 
 config = require('config')[window.ENV]
 if config.useMockStores
