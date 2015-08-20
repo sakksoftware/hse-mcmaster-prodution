@@ -43,7 +43,14 @@
   ],
   "who_regions": "At least one study was conducted in a low- or middle- income country",
   "lmic_focus": "At least one study was conducted in a low- or middle- income country",
-  "domain": "Delivery arrangements by whom care is provided",
+  "domains": [
+    {
+      "title": "Delivery arrangements by whom care is provided", "domains": [
+        {
+          "title": "Some other arrangements"
+        }
+    ]}
+  ],
   "summary_links": [
     {
       "title": "Australasian Cochrane Centre Policy Liaison Initiative",

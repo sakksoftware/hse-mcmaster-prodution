@@ -21,10 +21,15 @@ SignupMenu = require('components/menus/signup_menu')
 LoginMenu = require('components/menus/login_menu')
 LanguagesMenu = require('components/menus/languages_menu')
 
+TranslationHelper = require('mixins/translation_helper')
+
 ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
 module.exports = React.createClass
   displayName: 'App'
+
+  mixins: [TranslationHelper]
+  baseTranslation: ''
 
   propTypes:
     page: React.PropTypes.string.isRequired
@@ -83,35 +88,35 @@ module.exports = React.createClass
 
   renderLayerGroup: ->
     <LayerGroup>
-      <Layer name="help" title="Help">
+      <Layer name="help" title={@t('menus.help.title')}>
         <HelpMenu />
       </Layer>
-      <Layer name="signup" title="Signup">
+      <Layer name="signup" title={@t('menus.signup.title')}>
         <SignupMenu />
       </Layer>
-      <Layer name="main" title="Menu">
+      <Layer name="main" title={@t('menus.main.title')}>
         <MainMenu currentUser={@state.currentUser}
           onSubMenuClick={@toggleMenu}
           onLogout={@logout}
           onLinkClick={@dismissMenu}
           />
       </Layer>
-      <Layer name="login" title="Login">
+      <Layer name="login" title={@t('menus.login.title')}>
         <LoginMenu onLogin={@login} />
       </Layer>
-      <Layer name="languages" title="Languages">
+      <Layer name="languages" title={@t('menus.languages.title')}>
         <LanguagesMenu onSelectLanguage={@selectLanguage} />
       </Layer>
-      <Layer name="filterGroups" title="Filter documents by...">
+      <Layer name="filterGroups" title={@t('menus.filter_groups.title')}>
         <FilterGroupsMenu />
       </Layer>
-      <Layer name="filters" title="Filters">
+      <Layer name="filters" title={@t('menus.filters.title')}>
         <FiltersMenu />
       </Layer>
-      <Layer name="countries" title="Countries">
+      <Layer name="countries" title={@t('menus.countries.title')}>
         <CountriesMenu />
       </Layer>
-      <Layer name="dateRange" title="Date Range">
+      <Layer name="dateRange" title={@t('menus.date_range.date_range')}>
         <DateRangeMenu />
       </Layer>
     </LayerGroup>
@@ -130,6 +135,6 @@ module.exports = React.createClass
           <img src="/images/mcmaster_logo.svg" className="logo" />
           <img src="/images/mcmaster_forum_logo.svg" className="forum-logo" />
         </div>
-        <Link className="terms" to="terms">Terms of use</Link>
+        <Link className="terms" to="terms">{@t('terms_of_use')}</Link>
       </footer>
     </LayeredNavigation>

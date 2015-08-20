@@ -1,10 +1,12 @@
 MenuFilterItem = require('components/menus/menu_filter_item')
 ViewHelpers = require('mixins/view_helpers')
+TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
   displayName: 'CountriesMenu'
 
-  mixins: [ViewHelpers]
+  mixins: [ViewHelpers, TranslationHelper]
+  baseTranslation: 'menus.countries'
 
   propTypes:
     context: React.PropTypes.object
@@ -58,22 +60,22 @@ module.exports = React.createClass
 
   render: ->
     <div className="countries-menu filters-menu">
-      <input placeholder="Type country name" onChange={@filterCountries} className="country-filter" ref="countryFilter" />
+      <input placeholder={@t('placeholder')} onChange={@filterCountries} className="country-filter" ref="countryFilter" />
       <ul className="countries-menu-predicate menu-list nested-menu">
         <li data-value="target" className="menu-item menu-filter-item">
           <a onClick={@setMode('target')}>
-            Target of document
+            {@t('predicates.target')}
             {@renderCheckMark('target')}
           </a>
         </li>
         <li data-value="contains" className="menu-item menu-filter-item">
-          <a onClick={@setMode('at_least_one')}>
-            At least one study from are
-            {@renderCheckMark('at_least_one')}
+          <a onClick={@setMode('at_least_one_study')}>
+            {@t('predicates.at_least_one_study')}
+            {@renderCheckMark('at_least_one_study')}
           </a>
         </li>
       </ul>
       <ul className="countries-list menu-list nested-menu">
-        {@ifEmpty(@renderCountries(), "No countries found.")}
+        {@ifEmpty(@renderCountries(), @t('no_countries_found'))}
       </ul>
     </div>

@@ -1,8 +1,13 @@
 AppliedFilters = require('components/search/applied_filters')
 LayerToggle = require('components/layered_navigation/layer_toggle')
+TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
   displayName: 'FilterGroupsMenu'
+
+  mixins: [TranslationHelper]
+  baseTranslation: ''
+
   propTypes:
     context: React.PropTypes.object
 
@@ -18,7 +23,7 @@ module.exports = React.createClass
     @onToggleFilter(filter)
 
   getTitle: (section, filterGroup) ->
-    "Select #{section.title}: #{filterGroup.title}"
+    @t('menus.filters.title', section_title: section.title, filter_group_title: filterGroup.title)
 
   getMenuContext: (filterGroup) ->
     filterGroup: filterGroup

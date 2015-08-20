@@ -1,10 +1,71 @@
 {
+  "terms_of_use": "Terms of use",
   "main_menu": {
+    "home": "Home",
     "about": "About HSE",
     "walkthrough": "Walk through",
     "guided_search": "Guided Search",
     "select_language": "Select language",
     "create_account": "Create Account",
-    "login": "Login"
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "menus": {
+    "help": {
+      "title": "Help",
+      "instructions": [
+        "You can add \"and\" \"or\" \"nor\" to improve them.",
+        "",
+        "For example: you can search for *(\"Wins WorldCup\" OR \"Wins Champions Leauge\") AND (football OR soccer) -American -beach -women's*",
+        "",
+        "The results would show who won the Champions Leauge and the WorldCup lately."
+      ]
+    },
+    "signup": {
+      "title": "Signup",
+      "password": "Password",
+      "confirm_password": "Confrim password",
+      "i_accept": "I accept the",
+      "terms": "Terms of Use",
+      "signup_button": "Create account",
+      "did_not_recieve": "Didn't receive an emai?",
+      "send_again": "Send Again",
+      "confirmation_msg": "A conformation email has been sent to you. Pleaes confirm your registration to activate your account!"
+    },
+    "main": {
+      "title": "Menu"
+    },
+    "login": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "login_button": "Login",
+      "forgot_password": "Forgot your password?"
+    },
+    "languages": {
+      "title": "Languages"
+    },
+    "filter_groups": {
+      "title": "Filter documents by..."
+    },
+    "filters": {
+      "title": "Select %{section_title}: %{filter_group_title}",
+      "all_filters": "All %{filter_title}"
+    },
+    "countries": {
+      "title": "Countries",
+      "placeholder": "Type country name",
+      "no_countries_found": "No countries found.",
+      "predicates": {
+        "target": "Target of document",
+        "at_least_one_study": "At least one study from are"
+      }
+    },
+    "date_range": {
+      "title": "Date Range",
+      "published": "Published",
+      "instructions": "(Please include two four-digit years, such as 2008 and 2009, or leave them blank to include publications from any year)",
+      "placeholder": "YYYY"
+    }
   }
 }

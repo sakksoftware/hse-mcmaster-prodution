@@ -1,14 +1,17 @@
 Button = ReactBootstrap.Button
 Form = require('components/shared/form')
 UserActions = require('actions/user_actions')
+TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
   displayName: "SignupMenu"
+  mixins: [TranslationHelper]
+  baseTranslation: 'menus.signup'
 
   afterSaveContent: ->
     <div>
-      <h3 className='confirmation-msg'>A conformation email has been sent to you. Pleaes confirm your registration to activate your account!</h3>
-      <small>Didn&#39;t receive an emai? <a href="#">Send Again</a></small>
+      <h3 className='confirmation-msg'>{@t('confirmation_msg')}</h3>
+      <small>{@t('did_not_recieve')}<a href="#">{@t('send_again')}</a></small>
     </div>
 
   render: ->
@@ -16,10 +19,10 @@ module.exports = React.createClass
       afterSaveContent={@afterSaveContent}
       replaceContent=true
       onSubmit={UserActions.createUser}>
-      <input label="Email" name="email" type="email" />
-      <input label="Password" name="password" type="password" />
-      <input label="Confirm password" name="confirm_password" type="password" />
-      <input label='I accept the' type='checkbox' name="accept_terms" />
-      <a href="/terms-of-use" target="_blank">Terms of Use</a>
-      <button className='btn-primary'>Create account</button>
+      <input label={@t('email')} name="email" type="email" />
+      <input label={@t('password')} name="password" type="password" />
+      <input label={@t('confirm_password')} name="confirm_password" type="password" />
+      <input label={@t('i_accept')} type='checkbox' name="accept_terms" />
+      <a href="/terms" target="_blank">{@t('terms')}</a>
+      <button className='btn-primary'>{@t('signup_button')}</button>
     </Form>

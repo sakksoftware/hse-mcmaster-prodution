@@ -1,9 +1,14 @@
 # TODO: can probalby combine the main menu and the desktop menu
 Link = require('components/shared/link')
 LayerToggle = require('components/layered_navigation/layer_toggle')
+TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
   displayName: 'MainMenu'
+
+  mixins: [TranslationHelper]
+  baseTranslation: 'main_menu'
+
   propTypes:
     currentUser: React.PropTypes.object
     onSubMenuClick: React.PropTypes.func.isRequired
@@ -28,18 +33,18 @@ module.exports = React.createClass
         </li>
         <li key="menu-item-logout" className="menu-item menu-item-logout">
           <span className="menu-item-icon"></span>
-          <a href="#" onClick={@handleLogout}>Logout</a>
+          <a href="#" onClick={@handleLogout}>{@t('logout')}</a>
         </li>
       ]
     else
       [
         <li key="menu-item-signup" className="menu-item menu-item-sign-up">
           <span className="menu-item-icon"></span>
-          <LayerToggle menu="signup" onToggle={@props.onSubMenuClick}>Sign Up</LayerToggle>
+          <LayerToggle menu="signup" onToggle={@props.onSubMenuClick}>{@t('create_account')}</LayerToggle>
         </li>
         <li key="menu-item-login" className="menu-item menu-item-login">
           <span className="menu-item-icon"></span>
-          <LayerToggle menu="login" onToggle={@props.onSubMenuClick}>Login</LayerToggle>
+          <LayerToggle menu="login" onToggle={@props.onSubMenuClick}>{@t('login')}</LayerToggle>
         </li>
       ]
 
@@ -47,15 +52,15 @@ module.exports = React.createClass
     <ul className="main-menu menu-list">
       <li className="menu-item menu-item-home">
         <span className="menu-item-icon"></span>
-        <Link onClick={@props.onLinkClick} to="/">Home</Link>
+        <Link onClick={@props.onLinkClick} to="/">{@t('home')}</Link>
       </li>
       <li className="menu-item menu-item-about">
         <span className="menu-item-icon"></span>
-        <Link onClick={@props.onLinkClick} to="/about">About HSE</Link>
+        <Link onClick={@props.onLinkClick} to="/about">{@t('about')}</Link>
       </li>
       <li className="menu-item menu-item-language">
         <span className="menu-item-icon"></span>
-        <LayerToggle menu="languages" onToggle={@props.onSubMenuClick}>Select Language</LayerToggle>
+        <LayerToggle menu="languages" onToggle={@props.onSubMenuClick}>{@t('select_language')}</LayerToggle>
       </li>
       {@renderUserLinks()}
     </ul>

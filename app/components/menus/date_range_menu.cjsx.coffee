@@ -1,7 +1,11 @@
-# Form = require('components/shared/form')
+TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
   displayName: 'DateRangeMenu'
+
+  mixins: [TranslationHelper]
+  baseTranslation: 'menus.date_range'
+
   propTypes:
     context: React.PropTypes.object
 
@@ -17,7 +21,6 @@ module.exports = React.createClass
   applyOnEnter: (ev) ->
     if ev.keyCode == 13
       @applyFilter(ev)
-
 
   applyFilter: ->
     start = @refs.start.getDOMNode().value
@@ -35,12 +38,11 @@ module.exports = React.createClass
 
   render: ->
     <form className="date-range-menu">
-      <span className="label">Published</span>
-      <input ref="start" name="start" onBlur={@applyFilter} onKeyDown={@applyOnEnter} defaultValue={@state.start} placeholder="YYYY" />
+      <span className="label">{@t('published')}</span>
+      <input ref="start" name="start" onBlur={@applyFilter} onKeyDown={@applyOnEnter} defaultValue={@state.start} placeholder={@t('placeholder')} />
       <span className="seperator">-</span>
-      <input ref="end" name="end" onBlur={@applyFilter} onKeyDown={@applyOnEnter} defaultValue={@state.end} placeholder="YYYY" />
+      <input ref="end" name="end" onBlur={@applyFilter} onKeyDown={@applyOnEnter} defaultValue={@state.end} placeholder={@t('placeholder')} />
       <p className="instructions">
-        (Please include two four-digit years, such as 2008 and 2009, or leave them blank to include
-        publications from any year)
+        {@t('instructions')}
       </p>
     </form>

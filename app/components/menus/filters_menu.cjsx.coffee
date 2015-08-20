@@ -1,6 +1,11 @@
 MenuFilterItem = require('components/menus/menu_filter_item')
+TranslationHelper = require('mixins/translation_helper')
+
 module.exports = React.createClass
   displayName: 'FiltersMenu'
+
+  mixins: [TranslationHelper]
+  baseTranslation: 'menus.filters'
 
   propTypes:
     context: React.PropTypes.object
@@ -59,7 +64,7 @@ module.exports = React.createClass
   render: ->
     @currentColorIndex = 0
     @allFilter = _.clone(@filterGroup)
-    @allFilter.title = "All " + @filterGroup.title[0].toLowerCase() + @filterGroup.title.substring(1)
+    @allFilter.title = @t('all_filters', filter_title: @filterGroup.title[0].toLowerCase() + @filterGroup.title.substring(1))
 
     <div className="filters-menu nested-menu">
       <ul className="menu-list">
