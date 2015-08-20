@@ -1,5 +1,11 @@
+TranslationHelper = require('mixins/translation_helper')
+
 module.exports = React.createClass
   displayName: 'SortOrder'
+
+  mixins: [TranslationHelper]
+  baseTranslation: 'search_page.sort_order'
+
   propTypes:
     sortBy: React.PropTypes.string.isRequired
     onChange: React.PropTypes.func.isRequired
@@ -9,10 +15,10 @@ module.exports = React.createClass
 
   render: ->
     <div className="sort-order">
-      <span className="sort-order-label">Results sorted by</span>
+      <span className="sort-order-label">{@t('sorted_by')}</span>
       <select className="sort-order-control" onChange={@handleChange} defaultValue={@props.sortBy}>
-        <option value="relevance">Best Match</option>
-        <option value="most_recent">Most Recent</option>
-        <option value="most_popular">Most Popular</option>
+        <option value="relevance">{@t('relevance')}</option>
+        <option value="most_recent">{@t('most_recent')}</option>
+        <option value="most_popular">{@t('most_popular')}</option>
       </select>
     </div>

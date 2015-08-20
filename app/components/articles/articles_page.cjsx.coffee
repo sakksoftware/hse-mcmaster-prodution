@@ -1,9 +1,14 @@
 ArticleActions = require('actions/article_actions')
 ArticleItem = require('components/articles/article_item')
 Link = require('components/shared/link')
+TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
   displayName: 'ArticlePage'
+
+  mixins: [TranslationHelper]
+  baseTranslation: ''
+
   propTypes:
     id: React.PropTypes.string.isRequired
 
@@ -21,12 +26,12 @@ module.exports = React.createClass
 
   handleError: (xhr, statusCode, response) ->
     console.log("Failed to load article #{@props.id}")
-    flash('error', 'Opps, could not load data. Check your internet connection.')
+    flash('error', @t('errors.connection_error'))
 
   backLink: ->
     router = require('lib/router')
     if router.hasHistory()
-      <Link to="back" className="btn-back">Back to results</Link>
+      <Link to="back" className="btn-back">{@t('back_to_results')}</Link>
 
   render: ->
     body =

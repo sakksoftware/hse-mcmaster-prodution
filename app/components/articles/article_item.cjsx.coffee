@@ -1,5 +1,11 @@
+TranslationHelper = require('mixins/translation_helper')
+
 module.exports = React.createClass
   displayName: "ArticleItem"
+
+  mixins: [TranslationHelper]
+  baseTranslation: 'articles_page'
+
   propTypes:
     article: React.PropTypes.object.isRequired
 
@@ -42,62 +48,63 @@ module.exports = React.createClass
   render: ->
     article = @props.article
 
+    # TOODO: modify rendering of article domains
     <div className="article-item">
       <h1>{article.title}</h1>
 
-      <h2>Type of Document</h2>
+      <h2>{@t('document_type')}</h2>
       {article.document_type}
 
-      <h2>Last year litereature searched or year published</h2>
+      <h2>{@t('last_published')}</h2>
       {article.last_published}
 
-      <h2>Quality rating</h2>
+      <h2>{@t('quality_rating')}</h2>
       {article.quality}/10 ({article.quality_note})
 
-      <h2>Countries in which studies (included in the synthesis) were conducted</h2>
+      <h2>{@t('countries')}</h2>
       {@renderCountryList()}
 
       <div className="highlighted-section">
-        <h2>Domain</h2>
-        {article.domain}
+        <h2>{@t('domains')}</h2>
+        {article.domains}
 
-        <h2>Health system topics</h2>
+        <h2>{@t('topics')}</h2>
         <ul>{@renderTopicList(@props.article.topics)}</ul>
       </div>
 
-      <h2>Country groupings</h2>
+      <h2>{@t('country_groupings')}</h2>
       {@renderCountryGroupingsList()}
 
-      <h2>World health organization regions</h2>
+      <h2>{@t('who_regions')}</h2>
       {article.who_regions}
 
-      <h2>Low- and middle-income regions (LMIC) focus</h2>
+      <h2>{@t('lmic_focus')}</h2>
       {article.lmic_focus}
 
       <div className="highlighted-section">
-        <h2>User Friendly Summary</h2>
+        <h2>{@t('summary_links')}</h2>
         {@renderLinksList('summary-link', article.summary_links)}
 
-        <h2>Scentific abstract</h2>
+        <h2>{@t('abstract_links')}</h2>
         {@renderLinksList('abstract-links', article.abstract_links)}
 
-        <h2>Full-Text report</h2>
-        {article.full_text_link || "No free full text search report available"}
+        <h2>{@t('full_text_link')}</h2>
+        {article.full_text_link || @t('full_text_link')}
 
-        <h2>Citation</h2>
+        <h2>{@t('citation')}</h2>
         {article.citation}
 
-        <h2>DOI</h2>
+        <h2>{@t('doi')}</h2>
         {article.doi || "Not yet available"}
       </div>
 
-      <h2>Type of question</h2>
+      <h2>{@t('question_type')}</h2>
       {article.question_type}
 
-      <h2>Focus</h2>
+      <h2>{@t('focus')}</h2>
       {article.focus}
 
-      <h2>Target</h2>
+      <h2>{@t('target')}</h2>
       {article.target}
 
     </div>

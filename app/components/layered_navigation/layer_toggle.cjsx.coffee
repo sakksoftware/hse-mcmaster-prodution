@@ -1,5 +1,13 @@
+# TODO: remove dependency on the helper here and let user pass argument
+# for the text instead
+TranslationHelper = require('mixins/translation_helper')
+
 module.exports = React.createClass
   displayName: 'LayerToggle'
+
+  mixins: [TranslationHelper]
+  baseTranslation: ''
+
   propTypes:
     menu: React.PropTypes.string.isRequired
     onToggle: React.PropTypes.func.isRequired
@@ -14,6 +22,6 @@ module.exports = React.createClass
   render: ->
     menu = @props.menu.replace(/([A-Z])/g, "-$1").toLowerCase()
     <button ref="btnOffcanvas" type="button" onClick={@handleClick} className={"layer-toggle layer-toggle-#{menu}"}>
-      <span className="sr-only">Toggle navigation</span>
+      <span className="sr-only">{@t('toggle_navigation')}</span>
       {@props.children}
     </button>
