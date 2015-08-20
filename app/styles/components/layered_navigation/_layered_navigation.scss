@@ -4,11 +4,15 @@
 
 .layered-navigation {
   transition: $menu-animation-time $menu-animation-type;
+  // hardware accelerate on mobile device
+  transform: translate3d(0,0,0);
 
   .layered-navigation-content {
     width: 100%;
     padding: 0;
     transition: $menu-animation-time $menu-animation-type;
+    // hardware accelerate on mobile device
+    transform: translate3d(0,0,0);
     position: relative;
     min-height: 100vh;
   }
@@ -49,6 +53,8 @@
       display: block;
       position: fixed;
       transition: 150ms ease-in;
+      // hardware accelerate on mobile device
+      transform: translate3d(0,0,0);
     }
 
     @include desktop {
