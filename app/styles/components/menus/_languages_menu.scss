@@ -1,0 +1,16 @@
+.languages-menu {
+  a {
+    padding-right: $small-size + $tiny-size * 2 !important;
+  }
+
+  .menu-item {
+    position: relative;
+    width: 100%;
+  }
+
+  .checkmark {
+    position: absolute;
+    right: $small-size;
+    top: $small-size;
+  }
+}

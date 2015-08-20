@@ -41,9 +41,8 @@ module.exports = React.createClass
     @dismissMenu()
 
   selectLanguage: (language) ->
-    console.log('language selected', language)
-    @dismissMenu()
-    # TODO: implement
+    Cookies.set('lng', language)
+    window.location.reload()
 
   toggleMenu: (menuName, title, menuContext = {}) ->
     @refs.offcanvas.toggleMenu(menuName, title, menuContext)
@@ -59,7 +58,7 @@ module.exports = React.createClass
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>
       </LayerToggle>
-      <DesktopMainMenu onToggle={@toggleMenu} />
+      <DesktopMainMenu onToggle={@toggleMenu} onSelectLanguage={@selectLanguage} />
     </nav>
 
   renderPage: ->

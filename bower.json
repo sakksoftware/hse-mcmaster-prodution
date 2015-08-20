@@ -12,7 +12,9 @@
     "underscore": "~1.8.3",
     "react-autosuggest": "~1.18.1",
     "react-loader": "~1.2.0",
-    "markdown": "~0.5.0"
+    "markdown": "~0.5.0",
+    "i18next": "~1.10.2",
+    "js-cookie": "~2.0.3"
   },
   "overrides": {
     "react": {

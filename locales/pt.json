@@ -1,0 +1,10 @@
+{
+  "main_menu": {
+    "about": "PT_About HSE",
+    "walkthrough": "PT_Walk through",
+    "guided_search": "PT_Guided Search",
+    "select_language": "PT_Select language",
+    "create_account": "PT_Create Account",
+    "login": "PT_Login"
+  }
+}

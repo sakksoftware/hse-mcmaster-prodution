@@ -45,3 +45,4 @@ exports.config =
       copyTo:
         'fonts/': ['bower_components/bootstrap-sass/assets/fonts/*']
         'fake_api/': ['spec/fixtures/requests/*']
+        'locales/': ['locales/*']

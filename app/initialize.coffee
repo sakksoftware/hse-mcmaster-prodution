@@ -16,9 +16,17 @@ else
   store = require('stores')
 
 initialize = ->
-  # Start application
-  Application = require('application')
-  new Application
+  language = Cookies.get('lng') || 'en'
+  $.i18n.init
+    lng: language
+    fallbackLng: 'en'
+    resGetPath: '/locales/%{lng}.json'
+    interpolationPrefix: '%{'
+    interpolationSuffix: '}',
+    ->
+      # Start application
+      Application = require('application')
+      new Application
 
 # Initialize application on DOM ready
 document.addEventListener 'DOMContentLoaded', initialize, true # use capture

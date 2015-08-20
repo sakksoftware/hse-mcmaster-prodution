@@ -1,3 +1,4 @@
+# TODO: can probalby combine the main menu and the desktop menu
 Link = require('components/shared/link')
 LayerToggle = require('components/layered_navigation/layer_toggle')
 

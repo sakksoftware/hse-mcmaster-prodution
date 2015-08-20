@@ -1,0 +1,10 @@
+{
+  "main_menu": {
+    "about": "About HSE",
+    "walkthrough": "Walk through",
+    "guided_search": "Guided Search",
+    "select_language": "Select language",
+    "create_account": "Create Account",
+    "login": "Login"
+  }
+}
