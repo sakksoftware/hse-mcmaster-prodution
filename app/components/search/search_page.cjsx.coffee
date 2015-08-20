@@ -102,8 +102,8 @@ module.exports = React.createClass
     flash('error', 'Opps, could not load data. Check your internet connection.')
 
   getOverylayContent: ->
-    if @props.search?.results_count
-      "#{@props.search.results_count} results"
+    if @state.search?.results_count
+      "#{@state.search.results_count} results"
 
   renderDesktopFiltersMenu: ->
     if @state.filtersLoaded
