@@ -15,12 +15,16 @@ if config.useMockStores
 else
   store = require('stores')
 
+localesUrl = config.localesUrl
+if params.remote_locales == "false"
+  localesUrl = require('config')['development'].localesUrl
+
 initialize = ->
   language = Cookies.get('lng') || 'en'
   $.i18n.init
     lng: language
     fallbackLng: 'en'
-    resGetPath: '/locales/%{lng}.json'
+    resGetPath: "#{localesUrl}?cacheBuster=#{Math.random()}"
     interpolationPrefix: '%{'
     interpolationSuffix: '}',
     ->
