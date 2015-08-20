@@ -7,11 +7,13 @@ FilterNormalizationService = require('services/filter_normalization_service')
 SearchSerializationService = require('services/search_serialization_service')
 SearchDeserializationService = require('services/search_deserialization_service')
 FilterGroupsMenu = require('components/menus/filter_groups_menu')
+TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
   displayName: 'SearchPage'
 
-  mixins: [FilterNormalizationService, SearchSerializationService, SearchDeserializationService]
+  mixins: [FilterNormalizationService, SearchSerializationService, SearchDeserializationService, TranslationHelper]
+  baseTranslation: ''
 
   propTypes:
     onShowMenu: React.PropTypes.func.isRequired
@@ -99,7 +101,7 @@ module.exports = React.createClass
 
   handleError: (xhr, statusCode, statusText) ->
     console.log("error", xhr, statusCode, statusText)
-    flash('error', 'Opps, could not load data. Check your internet connection.')
+    flash('error', @t('errors.no_connection'))
 
   getOverylayContent: ->
     if @state.search?.results_count
@@ -109,7 +111,7 @@ module.exports = React.createClass
     if @state.filtersLoaded
       <div className="filter-groups-menu-wrapper">
         <div className="filter-groups-menu-title">
-          Filter documents by...
+          {@t('menus.filter_groups.title')}
         </div>
         <FilterGroupsMenu context={
           filters: @state.search.filters

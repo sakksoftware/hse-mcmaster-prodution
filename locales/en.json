@@ -107,6 +107,11 @@
     "target": "Target"
   },
   "search_page": {
+    "search_box": {
+      "view_results_count": "View %{results_count} results",
+      "tips": "Tips for more powerful serach",
+      "filters": "Filters"
+    },
     "result_item": {
       "year": "Year:",
       "quality": "Quality:",
@@ -123,7 +128,7 @@
     }
   },
   "errors": {
-    "connectoin_error": "Opps, could not load data. Check your internet connection."
+    "no_connection": "Opps, could not load data. Check your internet connection."
   },
   "terms_page": {
     "content": [

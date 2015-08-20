@@ -2,10 +2,12 @@ FilterBox = require('components/search/filter_box')
 SearchBar = require('components/search/search_bar')
 LayerToggle = require('components/layered_navigation/layer_toggle')
 FilterNormalizationService = require('services/filter_normalization_service')
+TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
   displayName: 'SearchBox'
-  mixins: [FilterNormalizationService]
+  mixins: [FilterNormalizationService, TranslationHelper]
+  baseTranslation: 'search_page.search_box'
   propTypes:
     search: React.PropTypes.object
     onSearch: React.PropTypes.func.isRequired
@@ -41,7 +43,7 @@ module.exports = React.createClass
   renderResultCountFooter: ->
     if @state.showingFiltersMenu && @props.search?.results_count
       <div className="result-count">
-        <a href="#" onClick={@handleBackToSearchResults}>View {@props.search.results_count} results</a>
+        <a href="#" onClick={@handleBackToSearchResults}>{@t('view_results_count', results_count: @props.search.results_count)}</a>
       </div>
 
   render: ->
@@ -53,7 +55,7 @@ module.exports = React.createClass
       <SearchBar query={@props.search.query} onSearch={@props.onSearch} />
       <div className="layer-toggles">
         <LayerToggle menu="help" onToggle={@props.onShowMenu}>
-          <span className="icon"></span>Tips for more powerful serach
+          <span className="icon"></span>{@t('tips')}
         </LayerToggle>
         <LayerToggle
           menu="filterGroups"
@@ -65,7 +67,7 @@ module.exports = React.createClass
           }
           onToggle={@handleClickFiltersButton}
         >
-          Filters
+          {@t('filters')}
           {@renderFilterCount()}
         </LayerToggle>
       </div>
