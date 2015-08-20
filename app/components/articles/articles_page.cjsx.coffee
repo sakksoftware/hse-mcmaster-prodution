@@ -16,17 +16,14 @@ module.exports = React.createClass
     article: null
 
   componentWillMount: ->
-    # TODO: remove hardcoded id after API has been implemented
-    # id = @props.id
-    id = "0df62f0040ffd8ecd725c9a602056034"
-    ArticleActions.loadArticle(id, @handleLoad, @handleError)
+    ArticleActions.loadArticle(@props.id, @handleLoad, @handleError)
 
   handleLoad: (article) ->
     @setState(article: article)
 
   handleError: (xhr, statusCode, response) ->
     console.log("Failed to load article #{@props.id}")
-    flash('error', @t('errors.connection_error'))
+    flash('error', @t('errors.no_connection'))
 
   backLink: ->
     router = require('lib/router')
