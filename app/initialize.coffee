@@ -4,7 +4,7 @@ if window.location.hostname == "localhost"
   window.ENV = params.ENV || 'development'
 else
   # TODO: remvoe temporary measure for setting env
-  window.ENV = params.ENV || 'production'
+  window.ENV = params.ENV || 'development'
 
 console.log('ENV =', window.ENV)
 
