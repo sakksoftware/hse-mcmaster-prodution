@@ -1,8 +1,13 @@
 Input = ReactBootstrap.Input
 SearchActions = require('actions/search_actions')
+TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
   displayName: 'SearchBar'
+
+  mixins: [TranslationHelper]
+  baseTranslation: 'search_page.search_box'
+
   propTypes:
     query: React.PropTypes.string
     onSearch: React.PropTypes.func.isRequired
@@ -29,7 +34,7 @@ module.exports = React.createClass
 
   render: ->
     inputAttributes =
-      placeholder: "Search..."
+      placeholder: @t('placeholder')
       value: @props.query
       id: 'search'
       ref: 'search'

@@ -25,6 +25,7 @@
     },
     "signup": {
       "title": "Signup",
+      "email": "Email",
       "password": "Password",
       "confirm_password": "Confrim password",
       "i_accept": "I accept the",
@@ -110,7 +111,8 @@
     "search_box": {
       "view_results_count": "View %{results_count} results",
       "tips": "Tips for more powerful serach",
-      "filters": "Filters"
+      "filters": "Filters",
+      "placeholder": "Serach..."
     },
     "result_item": {
       "year": "Year:",
