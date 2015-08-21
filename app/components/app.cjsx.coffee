@@ -1,7 +1,6 @@
-AboutPage = require('components/about/about_page')
 ArticlesPage = require('components/articles/articles_page')
 SearchPage = require('components/search/search_page')
-TermsPage = require('components/terms/terms_page')
+StaticPage = require('components/static_page/static_page')
 
 Layer = require('components/layered_navigation/layer')
 LayerGroup = require('components/layered_navigation/layer_group')
@@ -79,9 +78,9 @@ module.exports = React.createClass
         id = @props.args.id
         <ArticlesPage id={id} key={"article-page-#{id}"} />
       when 'about'
-        <AboutPage key="about-page" />
+        <StaticPage name="about" key="about-page" />
       when 'terms'
-        <TermsPage key="terms-page" />
+        <StaticPage name="terms" key="terms-page" />
       else
         # TODO: display a 404 here!
         throw new Error("Page not found! Please check the URL")

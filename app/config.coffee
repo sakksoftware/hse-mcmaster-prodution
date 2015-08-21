@@ -3,7 +3,7 @@ module.exports =
     apiBase: '//hse.functionalimperative.com'
     useMockStores: true
     mockResponseTime: 500
-    localesUrl: '/locales/%{lng}.json'
+    localesUrl: '/locales/'
     # TODO: implement
     # mockAlwaysSucceed: true
 
@@ -11,6 +11,6 @@ module.exports =
     apiBase: '//hse.functionalimperative.com'
     useMockStores: false
     mockResponseTime: 500
-    localesUrl: '//s3.amazonaws.com/my-hse-staging/locales/%{lng}.json'
+    localesUrl: '//s3.amazonaws.com/my-hse-staging/locales/'
     # TODO: implement
     # mockAlwaysSucceed: true

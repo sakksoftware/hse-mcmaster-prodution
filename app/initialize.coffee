@@ -24,7 +24,7 @@ initialize = ->
   $.i18n.init
     lng: language
     fallbackLng: 'en'
-    resGetPath: "#{localesUrl}?cacheBuster=#{Math.random()}"
+    resGetPath: "#{localesUrl}%{lng}.json?cacheBuster=#{Math.random()}"
     interpolationPrefix: '%{'
     interpolationSuffix: '}',
     ->
