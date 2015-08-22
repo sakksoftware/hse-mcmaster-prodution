@@ -3,3 +3,5 @@ module.exports =
   SearchStore: require('stores/search_store')
   FiltersStore: require('stores/filter_store')
   UserStore: require('stores/user_store')
+  ContentStore: require('stores/content_store')
+  QuestionStore: require('stores/question_store')

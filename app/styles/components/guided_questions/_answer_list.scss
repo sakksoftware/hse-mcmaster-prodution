@@ -1,8 +1,8 @@
-.filter-list {
+.answer-list {
   list-style: none;
   padding-left: 0;
 
   .filter-item + .filter-item {
-    padding-top: 7px;
+    padding-top: $tiny-size;
   }
 }

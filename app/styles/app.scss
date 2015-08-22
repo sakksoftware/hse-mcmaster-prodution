@@ -26,12 +26,13 @@
 @import 'components/menus/date_range_menu';
 @import 'components/menus/languages_menu';
 
+@import 'components/guided_questions/guide_question';
+@import 'components/guided_questions/guided_questions_box';
+@import 'components/guided_questions/answer_item';
+@import 'components/guided_questions/answer_list';
+
 @import 'components/search/applied_filters';
 @import 'components/search/applied_filter_item';
-@import 'components/search/guide_question';
-@import 'components/search/filter_box';
-@import 'components/search/filter_item';
-@import 'components/search/filter_list';
 @import 'components/search/search_bar';
 @import 'components/search/search_box';
 @import 'components/search/search_page';

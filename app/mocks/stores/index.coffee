@@ -4,3 +4,4 @@ module.exports =
   FilterStore: require('mocks/stores/filter_store')
   UserStore: require('mocks/stores/user_store')
   ContentStore: require('stores/content_store') # load the real store, since no mocking is needed
+  QuestionStore: require('stores/question_store')
