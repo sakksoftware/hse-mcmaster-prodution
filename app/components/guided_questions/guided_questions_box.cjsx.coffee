@@ -1,4 +1,5 @@
 GuidedQuestion = require('components/guided_questions/guided_question')
+CarouselIndicators = require('components/shared/carousel_indicators')
 QuestionActions = require('actions/question_actions')
 
 module.exports = React.createClass
@@ -37,17 +38,29 @@ module.exports = React.createClass
     if @state.questionIndex > 0
       @setState(questionIndex: @state.questionIndex - 1)
 
+  setQuestion: (questionIndex) ->
+    @setState(questionIndex: questionIndex)
+
   nextButton: ->
     className = "btn-next"
-    className += " disabled" if @state.questionIndex < @state.questions.length - 1
+    className += " disabled" if @state.questionIndex >= @state.questions.length - 1
 
     <a href="#" key="next" className={className} onClick={@nextQuestion}><i></i></a>
 
   prevButton: ->
     className = "btn-prev"
-    className += " disabled" if @state.questionIndex > 0
+    className += " disabled" if @state.questionIndex <= 0
 
     <a href="#" key="prev" className={className} onClick={@prevQuestion}><i></i></a>
+
+  handleKeyDown: (e) ->
+    leftArrowKey = 37
+    rightArrowKey = 39
+
+    if e.keyCode == leftArrowKey
+      @prevQuestion(e)
+    if e.keyCode == rightArrowKey
+      @nextQuestion(e)
 
   render: ->
     body =
@@ -55,11 +68,12 @@ module.exports = React.createClass
         <Loader loaded={false} />
       else
         [
+          <CarouselIndicators key="carousel-indicators" onClick={@setQuestion} index={@state.questionIndex} length={@state.questions.length} />
           @prevButton()
           <GuidedQuestion key="guided-question" question={@getQuestion()} onAddFilter={@props.onAddFilter} />
           @nextButton()
         ]
 
-    <div className="guided-questions-box">
+    <div className="guided-questions-box" tabIndex={1} onKeyDown={@handleKeyDown}>
       {body}
     </div>

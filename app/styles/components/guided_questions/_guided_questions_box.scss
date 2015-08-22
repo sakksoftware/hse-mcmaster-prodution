@@ -1,8 +1,27 @@
 $guided-questions-box-background: #F2F2F2;
 
 .guided-questions-box {
-  overflow: auto;
+  overflow: visible;
   position: relative;
+
+  &:focus {
+    outline: none;
+  }
+
+  .carousel-indicators {
+    top: -$medium-size;
+    .carousel-indicator-item {
+      border: none;
+      background-color: $border-color;
+
+      &.active {
+        background-color: darken($border-color, 20%);
+        height: $tiny-size + 2;
+        width: $tiny-size + 2;
+        margin: 1px;
+      }
+    }
+  }
 
   .guided-question {
     width: 100%;
@@ -37,6 +56,13 @@ $guided-questions-box-background: #F2F2F2;
         margin: 0 $tiny-size;
         margin-top: -($large-size / 2);
         background-repeat: no-repeat;
+      }
+    }
+
+    &.disabled {
+      i:before {
+        opacity: 0.5;
+        cursor: default;
       }
     }
   }
