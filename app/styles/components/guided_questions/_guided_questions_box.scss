@@ -12,7 +12,7 @@ $guided-questions-box-background: #F2F2F2;
   .carousel-indicators {
     top: -$medium-size;
     height: $medium-size;
-    
+
     .carousel-indicator-item {
       border: none;
       background-color: $border-color;
@@ -87,7 +87,10 @@ $guided-questions-box-background: #F2F2F2;
     }
   }
 
-  @include desktop {
+
+  // TODO: temporary do this on mobile as well, disable after we implement mobile
+  // specific UI
+  // @include desktop {
     .btn-prev, .btn-next {
       display: block;
     }
@@ -95,5 +98,5 @@ $guided-questions-box-background: #F2F2F2;
     .guided-question {
       padding: $tiny-size $large-size + 1 + $tiny-size;
     }
-  }
+  // }
 }
