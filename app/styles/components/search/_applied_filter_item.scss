@@ -27,7 +27,7 @@
 
   .applied-filter-item-filters {
     color: $primary-color;
-    @include ellipsis($layer-width - $section-width - $large-size - $tiny-size - $large-size)
+    @include ellipsis($layer-width - $section-width - $large-size - $tiny-size - $x-large-size)
   }
 
   span {
