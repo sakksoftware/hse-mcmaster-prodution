@@ -67,3 +67,12 @@
     margin-bottom: $tiny-size;
   }
 }
+
+.layer-filters {
+  .layer-content {
+    padding-bottom: $x-large-size + $tiny-size;
+    @include desktop {
+      padding-bottom: $small-size;
+    }
+  }
+}
