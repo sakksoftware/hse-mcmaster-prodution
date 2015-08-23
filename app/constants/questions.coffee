@@ -208,12 +208,12 @@ module.exports = [
           name: "providers"
           filters: [
             {
-              id: "2_17"
-              title: "physicians"
-            }
-            {
               id: "2_35"
               title: "generalist physicians"
+            }
+            {
+              id: "2_36"
+              title: "specialist physicians"
             }
             {
               id: "2_18"
@@ -230,6 +230,10 @@ module.exports = [
             {
               id: "2_21"
               title: "lay/community health workers"
+            }
+            {
+              id: "2_38"
+              title: "informal/family caregivers"
             }
           ]
         ]
@@ -259,11 +263,26 @@ module.exports = [
       }
     ]
   }
+  {
+    filters: ["0_5"] # complementary content
+    text: "Do you want to see what international agencies like WHO and the World Bank have written on the topic? (and ‘Canadian governments and stakeholder organizations’ if in Canada, and ‘Ontario government and stakeholder organization if in Ontario)"
+    answers: [
+      {
+        text: "Intergovernmental Organiations' Health Systems Documents"
+        filters: [id: "0_17"]
+      }
+      {
+        text: "Canada's Health Systems Documents",
+        filters: [id: "0_18"]
+      }
+      {
+        text: "Ontario's Health Systems Documents"
+        filters: [id: "0_19"]
+      }
+    ]
+  }
   # {
-  #   id: ""
-  #   text: "Do you want to see what international agencies like WHO and the World Bank have written on the topic? (and ‘Canadian governments and stakeholder organizations’ if in Canada, and ‘Ontario government and stakeholder organization if in Ontario)"
-  # }
-  # {
+  #   filters: [""]
   #   id: ""
   #   text: "Are the results helpful, or is your query more about a clinical issue (e.g., does drug A work better than drug B?) or a public health issue (e.g., does one approach to obesity prevention work better than others?) than about a health system issue?"
   # }

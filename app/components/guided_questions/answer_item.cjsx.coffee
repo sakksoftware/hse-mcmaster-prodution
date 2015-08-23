@@ -41,7 +41,11 @@ module.exports = React.createClass
     else
       <li key="answer-item-simple" className="answer-item">
         <a href="#" onClick={@handleAdd}>{answer.text}</a>
-        <span className="answer-item-filters">
-          [{@joinList _.pluck(answer.filters, 'title')}]
-        </span>
+        {
+          filterList = _.compact(_.pluck(answer.filters, 'title'))
+          if answer.filters && filterList.length > 0
+            <span className="answer-item-filters">
+              [{@joinList(filterList)}]
+            </span>
+        }
       </li>
