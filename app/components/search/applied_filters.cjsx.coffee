@@ -14,6 +14,7 @@ module.exports = React.createClass
   onRemoveFilter: (filter) ->
     filter = _.find @props.filters, (f) -> f.id == filter.id
     @props.onRemoveFilter(filter)
+    @forceUpdate()
 
   getAppliedFilterGroups: (filters) ->
     appliedFilters = []
