@@ -3,53 +3,56 @@
 module.exports = [
   {
     text: "Do you want to know about particular types of health system arrangements?"
-    filters: ["0_1"] # topics, not sure we need to apply this
+    filters: [id: "0_1", title: "topics"] # topics, not sure we need to apply this
     answers: [
       {
         text: "How decisions (about care) are made",
-        filters: ["1_1"] # goveranance arranments
+        filters: [id: "1_1", title: "goveranance arranments"]
       }
       {
         text: "How care is paid for"
-        filters: ["1_2"] # financial arrangements
+        filters: [id: "1_2", title: "financial arrangements"]
       }
       {
         text: "How care is organized"
-        filters: ["1_3"] # delivery arrangements
+        filters: [id: "1_3", title: "delivery arrangements"]
       }
       {
         text: "How change can be brought about"
-        filters: ["1_4"] # implementation strategies
+        filters: [id: "1_4", title: "implementation strategies"]
       }
     ]
   }
   {
     text: "Do you have a particular type of question?"
-    filters: ["0_21"] # type of document
+    filters: [id: "0_21", title: "type of document"]
     answers: [
       {
         text: "What approaches have been evaluated for their benefits and harms? (or what approach works?)"
-        filters: ["10_2", "10_3"] # systematic reviews of effects and overviews of reviews
+        filters: [
+          {id: "10_2", title: "systematic reviews of effects"}
+          {id: "10_3", title: "overviews of reviews"}
+        ]
       }
       {
         text: "What approaches have been evaluated for their cost-effectiveness? (or is an approach cost-effective?)"
-        filters: ["10_7"] # economic evaluations and costing studies
+        filters: [id: "10_7", title: "economic evaluations and costing studies"]
       }
       {
         text: "What else do we know about an approach or the problem it addresses?"
-        filters: ["10_4"] # systematic reviews addressing other question
+        filters: [id: "10_4", title: "systematic reviews addressing other question"]
       }
       {
         text: "What’s been tried elsewhere and the rationale documented? (and with what impacts)?"
-        filters: ["10_8"] # health reform descriptions
+        filters: [id: "10_8", title: "health reform descriptions"]
       }
       {
         text: "What do we know about a problem, options and implementation considerations in a particular health system?"
-        filters: ["10_1"] # evidence briefs for policy
+        filters: [id: "10_1", title: "evidence briefs for policy"]
       }
       {
         text: "How does a particular health system work?"
-        filters: ["10_9"] # health system description
+        filters: [id: "10_9", title: "health system description"] 
       }
     ]
   }
@@ -108,7 +111,7 @@ module.exports = [
               }
               {
                 id: "2_31"
-                title: "or chronic obstructive pulmonary disease)"
+                title: "chronic obstructive pulmonary disease"
               }
             ]
           }
