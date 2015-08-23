@@ -16,6 +16,11 @@ module.exports = React.createClass
       id = target.attributes['data-filter-id'].value
       @props.onAddFilterById(id)
 
+  joinList: (array) ->
+    return array if array.length <= 1
+    lastItem = _.last(array)
+    array[0..-2].join(', ') + ' and ' + lastItem
+
   renderFiltersGroup: (filters)->
     for filter in filters
       "<a key=\"answer-filter-item-#{filter.id}\" data-filter-id=\"#{filter.id}\" href=\"#\">#{filter.title}</a>"
@@ -29,17 +34,14 @@ module.exports = React.createClass
         filter = _.find(answer.filters, (f) -> f.name == name)
 
         filtersHtml = @renderFiltersGroup(filter.filters)
-        # TODO: refactor this bit to a helper on the translation
-        lastItem = _.last(filtersHtml)
-        filtersHtml = filtersHtml[0..-2].join(', ') + ' and ' + lastItem
 
-        html = html.replace("%{#{name}}", filtersHtml)
+        html = html.replace("%{#{name}}", @joinList(filtersHtml))
 
       <li key="answer-item-complex-wrapper" className="answer-item" onClick={@applyComplexFilter} dangerouslySetInnerHTML={__html: html}></li>
     else
       <li key="answer-item-simple" className="answer-item">
         <a href="#" onClick={@handleAdd}>{answer.text}</a>
         <span className="answer-item-filters">
-          [{_.pluck(answer.filters, 'title').join(',')}]
+          [{@joinList _.pluck(answer.filters, 'title')}]
         </span>
       </li>
