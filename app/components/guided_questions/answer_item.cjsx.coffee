@@ -9,6 +9,13 @@ module.exports = React.createClass
     for filter in @props.answer.filters
       @props.onAddFilterById(filter.id)
 
+  applyComplexFilter: (e) ->
+    target = e.target
+    if target.constructor == HTMLAnchorElement
+      e.preventDefault()
+      id = target.attributes['data-filter-id'].value
+      @props.onAddFilterById(id)
+
   renderFiltersGroup: (filters)->
     for filter in filters
       "<a key=\"answer-filter-item-#{filter.id}\" data-filter-id=\"#{filter.id}\" href=\"#\">#{filter.title}</a>"
@@ -28,7 +35,7 @@ module.exports = React.createClass
 
         html = html.replace("%{#{name}}", filtersHtml)
 
-      <li className="answer-item" dangerouslySetInnerHTML={__html: html}></li>
+      <li className="answer-item" onClick={@applyComplexFilter} dangerouslySetInnerHTML={__html: html}></li>
     else
       <li className="answer-item">
         <a href="#" onClick={@handleAdd}>{answer.text}</a>
