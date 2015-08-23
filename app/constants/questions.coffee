@@ -52,7 +52,7 @@ module.exports = [
       }
       {
         text: "How does a particular health system work?"
-        filters: [id: "10_9", title: "health system description"] 
+        filters: [id: "10_9", title: "health system description"]
       }
     ]
   }
@@ -129,7 +129,7 @@ module.exports = [
               }
               {
                 id: "2_34"
-                title: "or mental health and addictions"
+                title: "mental health and addictions"
               }
             ]
           }
@@ -160,7 +160,7 @@ module.exports = [
               }
               {
                 id: "2_11"
-                title: "or surgery"
+                title: "surgery"
               }
             ]
           }

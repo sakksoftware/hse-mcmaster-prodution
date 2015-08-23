@@ -1,5 +1,6 @@
 .answer-item {
-  a {
-    
+  .answer-item-filters {
+    margin-left: $x-tiny-size;
+    color: lighten($primary-text-color, 10%);
   }
 }

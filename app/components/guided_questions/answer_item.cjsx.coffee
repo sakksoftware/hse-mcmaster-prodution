@@ -22,7 +22,7 @@ module.exports = React.createClass
 
   render: ->
     answer = @props.answer
-    html = _.clone(answer.text)
+    html = '<div key="answer-item-complex">' + answer.text + '</div>'
     if matches = answer.text.match(/\%\{[A-Z0-9_]+\}/gi)
       for match, i in matches
         name = match.replace('%{', '').replace('}', '')
@@ -35,9 +35,9 @@ module.exports = React.createClass
 
         html = html.replace("%{#{name}}", filtersHtml)
 
-      <li className="answer-item" onClick={@applyComplexFilter} dangerouslySetInnerHTML={__html: html}></li>
+      <li key="answer-item-complex-wrapper" className="answer-item" onClick={@applyComplexFilter} dangerouslySetInnerHTML={__html: html}></li>
     else
-      <li className="answer-item">
+      <li key="answer-item-simple" className="answer-item">
         <a href="#" onClick={@handleAdd}>{answer.text}</a>
         <span className="answer-item-filters">
           [{_.pluck(answer.filters, 'title').join(',')}]
