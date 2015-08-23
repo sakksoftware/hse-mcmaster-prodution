@@ -7,7 +7,7 @@ module.exports = React.createClass
   handleAdd: (e) ->
     e.preventDefault()
     for filter in @props.answer.filters
-      @props.onAddFilterById(filter)
+      @props.onAddFilterById(filter.id)
 
   renderFiltersGroup: (filters)->
     for filter in filters
