@@ -6,10 +6,21 @@ module.exports = React.createClass
     question: React.PropTypes.object.isRequired
     onAddFilter: React.PropTypes.func.isRequired
 
+  getInitialState: ->
+    expanded: false
+
+  toggle: (e) ->
+    e.preventDefault()
+    @setState(expanded: !@state.expanded)
+
   render: ->
-    <div className="guided-question">
+    toggleClass = "collapsed"
+    toggleClass = "expanded" if @state.expanded
+
+    <div className="guided-question #{toggleClass}">
       <div className="guided-question-text">
         {@props.question.text}
+        <a className="btn-toggle" href="#" onClick={@toggle}></a>
       </div>
       <AnswerList answers={@props.question.answers} onAddFilter={@props.onAddFilter} />
     </div>

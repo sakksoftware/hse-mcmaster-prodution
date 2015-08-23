@@ -1,4 +1,3 @@
-GuidedQuestionsBox = require('components/guided_questions/guided_questions_box')
 SearchBar = require('components/search/search_bar')
 LayerToggle = require('components/layered_navigation/layer_toggle')
 FilterNormalizationService = require('services/filter_normalization_service')
@@ -47,10 +46,6 @@ module.exports = React.createClass
       </div>
 
   render: ->
-    filterBox =
-      if @props.search.questions?.length > 0
-        <GuidedQuestionsBox onAddFilter={@props.onAddFilter} />
-
     <div className="search-box">
       <SearchBar query={@props.search.query} onSearch={@props.onSearch} />
       <div className="layer-toggles">
@@ -71,6 +66,5 @@ module.exports = React.createClass
           {@renderFilterCount()}
         </LayerToggle>
       </div>
-      {filterBox}
       {@renderResultCountFooter()}
     </div>

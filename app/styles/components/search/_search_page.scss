@@ -4,6 +4,15 @@
     position: relative;
   }
 
+  .search-box {
+    border-bottom: 1px solid $border-color;
+    margin-bottom: $medium-size + $large-size;
+  }
+
+  .guided-questions-box {
+    margin-bottom: $large-size;
+  }
+
   .filter-groups-menu-wrapper {
     display: none;
     position: absolute;

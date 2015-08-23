@@ -3,10 +3,13 @@ FilterActions = require('actions/filter_actions')
 SearchActions = require('actions/search_actions')
 SearchBox = require('components/search/search_box')
 ResultBox = require('components/results/result_box')
+GuidedQuestionsBox = require('components/guided_questions/guided_questions_box')
+FilterGroupsMenu = require('components/menus/filter_groups_menu')
+
 FilterNormalizationService = require('services/filter_normalization_service')
 SearchSerializationService = require('services/search_serialization_service')
 SearchDeserializationService = require('services/search_deserialization_service')
-FilterGroupsMenu = require('components/menus/filter_groups_menu')
+
 TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
@@ -121,15 +124,19 @@ module.exports = React.createClass
         } />
       </div>
 
-  render: ->
-    results =
-      if @state.step == 'searching'
-        <div className="result-box">
-          <Loader loaded={@state.step == 'results'} />
-        </div>
-      else if @state.step == 'results'
-        <ResultBox sortBy={@state.search.sort_by} results={@state.search.results} onSortChange={@handleSortChange} />
+  renderGuidedSearch: ->
+    if @state.search.questions?.length > 0
+      <GuidedQuestionsBox onAddFilter={@handleFilterAdded} />
 
+  renderResults: ->
+    if @state.step == 'searching'
+      <div className="result-box">
+        <Loader loaded={@state.step == 'results'} />
+      </div>
+    else if @state.step == 'results'
+      <ResultBox sortBy={@state.search.sort_by} results={@state.search.results} onSortChange={@handleSortChange} />
+
+  render: ->
     <div className="search-page">
       <SearchBox
         search={@state.search}
@@ -140,6 +147,7 @@ module.exports = React.createClass
         dismissMenu={@props.dismissMenu}
         overlayContent={@getOverylayContent()}
       />
+      {@renderGuidedSearch()}
       {@renderDesktopFiltersMenu()}
-      {results}
+      {@renderResults()}
     </div>

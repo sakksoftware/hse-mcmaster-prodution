@@ -2,9 +2,8 @@
   .layer-toggles {
     overflow: auto;
     margin-top: $small-size;
-    padding-bottom: $small-size;
+    padding-bottom: $tiny-size;
     border-bottom: 1px solid $seperator-color;
-    margin-bottom: $large-size;
     overflow: visible;
   }
 
@@ -44,10 +43,6 @@
 
   .result-count {
     display: none;
-  }
-
-  .guided-questions-box {
-    margin-bottom: $large-size;
   }
 }
 
