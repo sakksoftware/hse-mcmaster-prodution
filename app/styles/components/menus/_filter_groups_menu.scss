@@ -5,7 +5,7 @@
     margin-top: $medium-size;
   }
 
-  .filter-group-complamentary-1, .filter-group-complamentary-2, .filter-group-complamentary-3 {
+  .filter-group-complementary-1, .filter-group-complementary-2, .filter-group-complementary-3 {
 
     .layer-toggle {
       padding-left: $large-size + $tiny-size;
@@ -21,19 +21,19 @@
     }
   }
 
-  .filter-group-complamentary-2, .filter-group-complamentary-3 {
+  .filter-group-complementary-2, .filter-group-complementary-3 {
     line-height: $large-size;
   }
 
-  .filter-group-complamentary-1 .layer-toggle:before {
+  .filter-group-complementary-1 .layer-toggle:before {
     background: transparent url(/images/global_icon.svg);
   }
 
-  .filter-group-complamentary-2 .layer-toggle:before {
+  .filter-group-complementary-2 .layer-toggle:before {
     background: transparent url(/images/canadian_icon.svg);
   }
 
-  .filter-group-complamentary-3 .layer-toggle:before {
+  .filter-group-complementary-3 .layer-toggle:before {
     background: transparent url(/images/ontario_icon.svg);
   }
 

@@ -33,7 +33,7 @@ module.exports = React.createClass
 
   getMenuName: (filterGroup) ->
     menu = "filters"
-    menu = "countries" if filterGroup.type == "countries"
+    menu = "countries" if filterGroup.type == "countries_countries"
     menu = "dateRange" if filterGroup.type == "date_range"
     menu
 
