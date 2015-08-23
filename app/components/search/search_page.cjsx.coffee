@@ -94,6 +94,22 @@ module.exports = React.createClass
   handleFilterRemove: (filter) ->
     @changeFilterValue(filter, false)
 
+  # TODO: refactor search to come from a store like jon suggested
+  # that way we don't have to pass akward callbacks around
+  findFilter: (filterId, filters) ->
+    for filter in filters
+      if filter.id == filterId
+        return filter
+      else if filter.filters
+        if result = @findFilter(filterId, filter.filters)
+          return result
+
+    return null
+
+  addFilterById: (filterId) ->
+    filter = @findFilter(filterId, @state.search.filters)
+    @changeFilterValue(filter, true)
+
   handleLoad: (search, statusCode, xhr) ->
     @setState(search: search, step: 'results', filtersLoaded: true)
 
@@ -126,7 +142,7 @@ module.exports = React.createClass
 
   renderGuidedSearch: ->
     if @state.search.questions?.length > 0
-      <GuidedQuestionsBox onAddFilter={@handleFilterAdded} />
+      <GuidedQuestionsBox onAddFilterById={@addFilterById} />
 
   renderResults: ->
     if @state.step == 'searching'

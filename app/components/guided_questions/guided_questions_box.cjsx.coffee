@@ -5,7 +5,7 @@ QuestionActions = require('actions/question_actions')
 module.exports = React.createClass
   displayName: 'GuidedQuestionsBox'
   propTypes:
-    onAddFilter: React.PropTypes.func.isRequired
+    onAddFilterById: React.PropTypes.func.isRequired
 
   getInitialState: ->
     questionIndex: 0
@@ -70,7 +70,7 @@ module.exports = React.createClass
         [
           <CarouselIndicators key="carousel-indicators" onClick={@setQuestion} index={@state.questionIndex} length={@state.questions.length} />
           @prevButton()
-          <GuidedQuestion key="guided-question" question={@getQuestion()} onAddFilter={@props.onAddFilter} />
+          <GuidedQuestion key="guided-question" question={@getQuestion()} onAddFilterById={@props.onAddFilterById} />
           @nextButton()
         ]
 

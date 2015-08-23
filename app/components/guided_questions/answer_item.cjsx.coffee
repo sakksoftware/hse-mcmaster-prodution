@@ -2,11 +2,12 @@ module.exports = React.createClass
   displayName: 'AnswerItem'
   propTypes:
     answer: React.PropTypes.object.isRequired
-    onAddFilter: React.PropTypes.func.isRequired
+    onAddFilterById: React.PropTypes.func.isRequired
 
   handleAdd: (e) ->
     e.preventDefault()
-    @props.onAddFilter(@props.answer)
+    for filter in @props.answer.filters
+      @props.onAddFilterById(filter)
 
   render: ->
     <li className="answer-item">

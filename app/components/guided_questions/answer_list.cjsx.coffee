@@ -4,11 +4,11 @@ module.exports = React.createClass
   displayName: 'AnswerList'
   propTypes:
     answers: React.PropTypes.array.isRequired
-    onAddFilter: React.PropTypes.func.isRequired
+    onAddFilterById: React.PropTypes.func.isRequired
 
   renderFilters: ->
     for answer, i in @props.answers
-      <AnswerItem key={"answer-#{i}"} answer={answer} onAddFilter={@props.onAddFilter} />
+      <AnswerItem key={"answer-#{i}"} answer={answer} onAddFilterById={@props.onAddFilterById} />
 
   render: ->
     <ul className="answer-list">

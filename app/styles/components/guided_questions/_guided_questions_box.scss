@@ -11,6 +11,8 @@ $guided-questions-box-background: #F2F2F2;
 
   .carousel-indicators {
     top: -$medium-size;
+    height: $medium-size;
+    
     .carousel-indicator-item {
       border: none;
       background-color: $border-color;

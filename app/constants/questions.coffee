@@ -66,23 +66,23 @@ module.exports = [
             filters: [
               {
                 title: "HIV/AIDS"
-                filter: "2_22"
+                id: "2_22"
               }
               {
                 title: "tuberculosis"
-                filter: "2_23"
+                id: "2_23"
               }
               {
                 title: "malaria"
-                filter: "2_24"
+                id: "2_24"
               }
               {
                 title: "diarrhoeal disease"
-                filter: "2_25"
+                id: "2_25"
               }
               {
                 title: "lower respiratory infections"
-                filter: "2_26"
+                id: "2_26"
               }
             ]
           }
