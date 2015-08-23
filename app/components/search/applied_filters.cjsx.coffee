@@ -7,9 +7,17 @@ module.exports = React.createClass
     onRemoveFilter: React.PropTypes.func.isRequired
     onShowFilterGroup: React.PropTypes.func.isRequired
 
+  findFirstApplied: (filters)->
+    _.find filters, (f) =>
+      return true if f.applied
+      if f.filters
+        return @findFirstApplied(f.filters)
+
+      return false
+
   onShowFilterGroup: (filter) ->
     filter = _.find @props.filters, (f) -> f.id == filter.id
-    @props.onShowFilterGroup(filter, filter.filters[0])
+    @props.onShowFilterGroup(filter, @findFirstApplied(filter.filters))
 
   onRemoveFilter: (filter) ->
     filter = _.find @props.filters, (f) -> f.id == filter.id
