@@ -1,5 +1,10 @@
+ApplicationHelper = require('mixins/application_helper')
+
 module.exports = React.createClass
   displayName: 'AnswerItem'
+
+  mixins: [ApplicationHelper]
+
   propTypes:
     answer: React.PropTypes.object.isRequired
     onAddFilterById: React.PropTypes.func.isRequired
@@ -15,11 +20,6 @@ module.exports = React.createClass
       e.preventDefault()
       id = target.attributes['data-filter-id'].value
       @props.onAddFilterById(id)
-
-  joinList: (array) ->
-    return array if array.length <= 1
-    lastItem = _.last(array)
-    array[0..-2].join(', ') + ' and ' + lastItem
 
   renderFiltersGroup: (filters)->
     for filter in filters

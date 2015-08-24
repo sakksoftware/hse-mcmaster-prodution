@@ -32,10 +32,31 @@
   "last_published": 2011,
   "quality": 7,
   "quality_note": "AMSTAR rating from McMaster Health Forum",
-  "countries": [
-    {"name": "United State", "name_abbreviation": "US", "conducted_count": 3 },
-    {"name": "United Kingdom", "name_abbreviation": "UK", "conducted_count": 5 }
-  ],
+  "studies_conducted_in": {
+    "countries": [
+      {"title": "United State", "name_abbreviation": "US", "conducted_count": 3 },
+      {"title": "United Kingdom", "name_abbreviation": "UK", "conducted_count": 5 }
+    ],
+    "regions": [
+      {"title": "Europe", "authors": [
+        {
+          "title": "Matcht M",
+          "url": "https://www.healthsystemsevidence.org/r.aspx?x=IFivoLmP-PuwBAwYzI2kV6bsNP0Qg_JzmtT_r8SjoyHe6h6jNSmUUd_5LYOU9UKP7qf8MiOR_QSUycNdiDLmN3Evm3WkGIsCdLxRAicdmG0GHIVdnbAj3lY_35CTh0ft91ouERGt-LcECXJroS884ocjxqwAIqaTt_Ip1gCOFk2uKUuUFzFdRMMfKCb3x4Hq_sdbO3-9cie6G1Cw9CTpeg||"
+        }
+      ]},
+      {
+        "title": "United State", "authors": [
+          {
+            "title": "Came W",
+            "url": "https://www.healthsystemsevidence.org/r.aspx?x=IFivoLmP-PuwBAwYzI2kV6bsNP0Qg_JzmtT_r8SjoyHe6h6jNSmUUd_5LYOU9UKP7qf8MiOR_QSUycNdiDLmN3Evm3WkGIsCdLxRAicdmG0GHIVdnbAj3lY_35CTh0ft91ouERGt-LcECXJroS884ocjxqwAIqaTt_Ip1gCOFk2uKUuUFzFdRMMfKCb3x4Hq_sdbO3-9cie6G1Cw9CTpeg||"
+          },
+          {
+            "title": "Ellis T",
+            "url": "https://www.healthsystemsevidence.org/r.aspx?x=IFivoLmP-PuwBAwYzI2kVyM5WsgWsXEE9OpMqPOGAd5lfSeiK7erKT53G-Ryt7MHMRjoQTioh7IQaKQqLqwqu-JVpJkal64VnJlbZxnmo1PuH120mpG-D-gJi-Wr4TOCWitmQw9jzmER1lzVZtT6mHMEXKuqQC-fuXAR67JsOJJdFyCrhND1rKd4sqf_XJgM"
+          }
+      ]}
+    ]
+  },
   "country_groupings": [
     "G7",
     "G20",

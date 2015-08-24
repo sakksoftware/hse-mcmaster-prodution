@@ -35,6 +35,32 @@
     @include inline-list-with($x-tiny-size, ',');
   }
 
+  .region-item {
+    margin: $x-small-size 0;
+  }
+
+  .region-item-title {
+    font-weight: 600;
+    margin-right: $x-tiny-size;
+  }
+
+  .article-author-list {
+    display: inline;
+    margin-left: $x-tiny-size;
+
+    .author-item {
+      display: inline;
+
+      a { color: $primary-text-color; }
+    }
+
+    .author-item + .author-item {
+      &:before {
+        content: '; '
+      }
+    }
+  }
+
   a {
     color: black;
     text-decoration: underline;

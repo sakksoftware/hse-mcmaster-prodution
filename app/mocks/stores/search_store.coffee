@@ -66,7 +66,7 @@ searchData = {
       "category": "International Organizations Document"
     },
     {
-      "id": "40e3343c159defef46c266410a1a9059",
+      "id": "0df62f0040ffd8ecd725c9a602056034",
       "title": "Article Title B",
       "created_at": "2013-08-20 11:33:00Z",
       "updated_at": "2013-08-20 11:33:00Z",

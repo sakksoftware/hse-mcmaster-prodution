@@ -1,9 +1,10 @@
 TranslationHelper = require('mixins/translation_helper')
+ApplicationHelper = require('mixins/application_helper')
 
 module.exports = React.createClass
   displayName: "ArticleItem"
 
-  mixins: [TranslationHelper]
+  mixins: [TranslationHelper, ApplicationHelper]
   baseTranslation: 'articles_page'
 
   propTypes:
@@ -24,10 +25,40 @@ module.exports = React.createClass
     result
 
   renderCountryList: ->
+    return unless @props.article.studies_conducted_in?.countries
     items =
-      for country, i in @props.article.countries
-        <li key={"country-item-#{i}"} className="country-item">{country.name_abbreviation} ({country.conducted_count})</li>
+      for country, i in @props.article.studies_conducted_in.countries
+        <li key="country-item-#{i}" className="country-item">{country.name_abbreviation} ({country.conducted_count})</li>
     <ul className="article-item-countries">{items}</ul>
+
+  renderAuthorList: (authors) ->
+    console.log(authors[0])
+    items =
+      for author, i in authors
+        <li key="author-item-#{i}" className="author-item">
+          <a href={author.url} target="_blank">{author.title}</a>
+        </li>
+
+    <ul className="article-author-list">
+      {items}
+    </ul>
+
+  renderRegionList: ->
+    return unless @props.article.studies_conducted_in?.regions
+    items =
+      for region, i in @props.article.studies_conducted_in?.regions
+        <li key="region-item-#{i}" className="region-item">
+          <span className="region-item-title">{region.title}:</span>
+          {@renderAuthorList(region.authors)}
+        </li>
+
+    <ul className="article-item-region-list">{items}</ul>
+
+  renderStudiesConductedIn: ->
+    <div className="studies-conducted-in">
+      {@renderCountryList()}
+      {@renderRegionList()}
+    </div>
 
   renderCountryGroupingsList: ->
     items =
@@ -62,7 +93,7 @@ module.exports = React.createClass
       {article.quality}/10 ({article.quality_note})
 
       <h2>{@t('countries')}</h2>
-      {@renderCountryList()}
+      {@renderStudiesConductedIn()}
 
       <div className="highlighted-section">
         <h2>{@t('domains')}</h2>
