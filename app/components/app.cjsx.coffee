@@ -67,6 +67,7 @@ module.exports = React.createClass
         onSubMenuClick={@toggleMenu}
         onLogout={@logout}
         onLinkClick={@dismissMenu}
+        onSelectLanguage={@selectLanguage}
       />
     </nav>
 
@@ -105,6 +106,7 @@ module.exports = React.createClass
           onSubMenuClick={@toggleMenu}
           onLogout={@logout}
           onLinkClick={@dismissMenu}
+          onSelectLanguage={@selectLanguage}
           />
       </Layer>
       <Layer name="login" title={@t('menus.login.title')}>
