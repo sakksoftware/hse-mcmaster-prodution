@@ -2,6 +2,7 @@
 Link = require('components/shared/link')
 LayerToggle = require('components/layered_navigation/layer_toggle')
 TranslationHelper = require('mixins/translation_helper')
+AccountMenu = require('components/menus/account_menu')
 LanguagesMenu = require('components/menus/languages_menu')
 
 module.exports = React.createClass
@@ -28,11 +29,14 @@ module.exports = React.createClass
   renderUserLinks: ->
     if @props.currentUser
       [
-        <li key="menu-item-profile" className="menu-item menu-item-profile">
+        <li key="menu-item-account" className="menu-item menu-item-account">
           <span className="menu-item-icon"></span>
           <LayerToggle menu="account" onToggle={@props.onSubMenuClick} context={onLinkClick: @props.onLinkClick}>
             {@fullName() || @props.currentUser.email}
           </LayerToggle>
+
+          <a className="desktop-menu-link" href="#">{@fullName() || @props.currentUser.email}</a>
+          <AccountMenu />
         </li>
         <li key="menu-item-logout" className="menu-item menu-item-logout">
           <span className="menu-item-icon"></span>

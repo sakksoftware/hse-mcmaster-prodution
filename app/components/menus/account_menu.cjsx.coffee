@@ -8,9 +8,11 @@ module.exports = React.createClass
 
   componentWillMount: ->
     @onLinkClick = =>
+      # dismiss menu on mobile
       # call twice since we are in a second leve menu
-      @props.context.onLinkClick()
-      _.defer => @props.context.onLinkClick()
+      if @props.context?.onLinkClick
+        @props.context.onLinkClick()
+        _.defer => @props.context.onLinkClick()
 
   render: ->
     <ul className="account-menu main-menu menu-list">
