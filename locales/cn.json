@@ -76,7 +76,7 @@
   },
   "articles_page": {
     "document_type": "文件的类型",
-    "last_published": "CN_Last year literature searched or year published",
+    "year_published": "CN_Last year literature searched or year published",
     "quality_rating": "质量分级",
     "countries": "证据综合纳入的研究所属的国家",
     "domains": "领域",

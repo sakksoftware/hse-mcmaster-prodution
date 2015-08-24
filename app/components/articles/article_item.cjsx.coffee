@@ -86,8 +86,8 @@ module.exports = React.createClass
       <h2>{@t('document_type')}</h2>
       {article.document_type}
 
-      <h2>{@t('last_published')}</h2>
-      {article.last_published}
+      <h2>{@t('year_published')}</h2>
+      {article.year_published}
 
       <h2>{@t('quality_rating')}</h2>
       {article.quality}/10 ({article.quality_note})

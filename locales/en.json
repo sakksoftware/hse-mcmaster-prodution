@@ -76,7 +76,7 @@
   },
   "articles_page": {
     "document_type": "Type of Document",
-    "last_published": "Last year literature searched or year published",
+    "year_published": "Last year literature searched or year published",
     "quality_rating": "Quality rating",
     "countries": "Countries in which studies (included in the synthesis) were conducted",
     "domains": "Domains",

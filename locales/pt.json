@@ -76,7 +76,7 @@
   },
   "articles_page": {
     "document_type": "Tipo de documentos",
-    "last_published": "PT_Last year literature searched or year published",
+    "year_published": "PT_Last year literature searched or year published",
     "quality_rating": "Classificação da qualidade",
     "countries": "Países nos quais os estudos (incluídos na síntese) foram realizados",
     "domains": "Domínio",
