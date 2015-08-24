@@ -1,6 +1,7 @@
 ArticlesPage = require('components/articles/articles_page')
 SearchPage = require('components/search/search_page')
-StaticPage = require('components/static_page/static_page')
+StaticPage = require('components/static/static_page')
+ProfilePage = require('components/profile/profile_page')
 
 Layer = require('components/layered_navigation/layer')
 LayerGroup = require('components/layered_navigation/layer_group')
@@ -19,6 +20,7 @@ DateRangeMenu = require('components/menus/date_range_menu')
 SignupMenu = require('components/menus/signup_menu')
 LoginMenu = require('components/menus/login_menu')
 LanguagesMenu = require('components/menus/languages_menu')
+AccountMenu = require('components/menus/account_menu')
 
 TranslationHelper = require('mixins/translation_helper')
 
@@ -81,6 +83,8 @@ module.exports = React.createClass
         <StaticPage name="about" key="about-page" />
       when 'terms'
         <StaticPage name="terms" key="terms-page" />
+      when 'profile'
+        <ProfilePage key="profile-page" />
       else
         # TODO: display a 404 here!
         throw new Error("Page not found! Please check the URL")
@@ -106,6 +110,10 @@ module.exports = React.createClass
       <Layer name="languages" title={@t('menus.languages.title')}>
         <LanguagesMenu onSelectLanguage={@selectLanguage} />
       </Layer>
+      <Layer name="account" title={@t('menus.account.title')}>
+        <AccountMenu />
+      </Layer>
+
       <Layer name="filterGroups" title={@t('menus.filter_groups.title')}>
         <FilterGroupsMenu />
       </Layer>

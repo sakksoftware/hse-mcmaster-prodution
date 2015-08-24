@@ -13,6 +13,9 @@
     "logout": "ES_Logout"
   },
   "menus": {
+    "account": {
+      "title": "ES_My Account"
+    },
     "help": {
       "title": "ES_Help",
       "instructions": [

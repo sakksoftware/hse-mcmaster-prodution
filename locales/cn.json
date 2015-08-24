@@ -13,6 +13,9 @@
     "logout": "CN_Logout"
   },
   "menus": {
+    "account": {
+      "title": "CN_My Account"
+    },
     "help": {
       "title": "CN_Help",
       "instructions": [

@@ -22,7 +22,6 @@ module.exports = React.createClass
     @setState errors: errors
 
   handleSubmit: (e) ->
-    console.log('form submitted')
     e.preventDefault()
     @props.onSubmit(@model(), @handleSaved, @handleError)
 

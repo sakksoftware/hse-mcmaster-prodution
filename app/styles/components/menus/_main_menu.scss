@@ -1,4 +1,4 @@
-.layer-main {
+.layer-main, .layer-account {
   background-color: #F2F2F2;
 
   .layer-content {
@@ -31,33 +31,5 @@
     .menu-item-icon {
       left: $x-small-size;
     }
-  }
-
-  .menu-item-home .menu-item-icon {
-    @extend .glyphicon-home;
-  }
-
-  .menu-item-language .menu-item-icon {
-    @extend .glyphicon-globe;
-  }
-
-  .menu-item-about .menu-item-icon {
-    @extend .glyphicon-book;
-  }
-
-  .menu-item-sign-up .menu-item-icon {
-    @extend .glyphicon-user;
-  }
-
-  .menu-item-login .menu-item-icon {
-    @extend .glyphicon-log-in;
-  }
-
-  .menu-item-logout .menu-item-icon {
-    @extend .glyphicon-log-out;
-  }
-
-  .menu-item-profile .menu-item-icon {
-    @extend .glyphicon-user;
   }
 }

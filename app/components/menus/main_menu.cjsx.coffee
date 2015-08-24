@@ -29,7 +29,9 @@ module.exports = React.createClass
       [
         <li key="menu-item-profile" className="menu-item menu-item-profile">
           <span className="menu-item-icon"></span>
-          <a href="#">{@fullName() || @props.currentUser.email}</a>
+          <LayerToggle menu="account" onToggle={@props.onSubMenuClick} context={onLinkClick: @props.onLinkClick}>
+            {@fullName() || @props.currentUser.email}
+          </LayerToggle>
         </li>
         <li key="menu-item-logout" className="menu-item menu-item-logout">
           <span className="menu-item-icon"></span>

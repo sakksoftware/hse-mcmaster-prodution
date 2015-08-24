@@ -13,6 +13,9 @@
     "logout": "FR_Logout"
   },
   "menus": {
+    "account": {
+      "title": "FR_My Account"
+    },
     "help": {
       "title": "FR_Help",
       "instructions": [

@@ -13,6 +13,9 @@
     "logout": "PT_Logout"
   },
   "menus": {
+    "account": {
+      "title": "PT_My Account"
+    },
     "help": {
       "title": "PT_Help",
       "instructions": [

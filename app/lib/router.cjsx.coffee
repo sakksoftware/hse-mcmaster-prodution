@@ -17,7 +17,8 @@ class Router
     'terms': ->
       React.render <App page="terms" />, @el
 
-
+    'profile': ->
+      React.render <App page="profile" />, @el
 
   history: []
 

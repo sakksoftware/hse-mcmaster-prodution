@@ -13,6 +13,9 @@
     "logout": "Logout"
   },
   "menus": {
+    "account": {
+      "title": "My Account"
+    },
     "help": {
       "title": "Help",
       "instructions": [
