@@ -27,6 +27,23 @@ password: withgreatpower
 
 See wiki page for [API documentation](https://github.com/func-i/hse-frontend/wiki/API-End-Points)
 
+## Localization
+
+Locale files live on s3 and used by translators, however there is a local copy for development and it will need to be synced withgreatpower
+the remote copy.
+
+First download the locales:
+
+```
+aws s3 sync s3://my-hse-staging/locales .
+```
+
+Then upload them
+
+```
+aws s3 sync . s3://my-hse-staging/locales
+```
+
 ## Troubleshooting
 
 ### Deployment Issues
