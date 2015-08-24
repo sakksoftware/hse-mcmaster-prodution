@@ -1,5 +1,5 @@
 {
-  "terms_of_use": "PT_Terms of use",
+  "terms_of_use": "Termos de uso",
   "back_to_results": "PT_Back to results",
   "toggle_navigatoin": "PT_Toggle navigation",
   "main_menu": {
@@ -10,7 +10,7 @@
     "select_language": "PT_Select language",
     "create_account": "PT_Create Account",
     "login": "PT_Login",
-    "logout": "PT_Logout"
+    "logout": "Fazer logout"
   },
   "menus": {
     "account": {
@@ -28,9 +28,9 @@
     },
     "signup": {
       "title": "PT_Signup",
-      "email": "PT_Email",
-      "password": "PT_Password",
-      "confirm_password": "PT_Confrim password",
+      "email": "E-mail",
+      "password": "Senha",
+      "confirm_password": "Confirmar senha",
       "i_accept": "PT_I accept the",
       "terms": "PT_Terms of Use",
       "signup_button": "PT_Create account",
@@ -42,11 +42,11 @@
       "title": "PT_Menu"
     },
     "login": {
-      "title": "PT_Login",
-      "email": "PT_Email",
+      "email": "E-mail",
+      "password": "Senha",
       "password": "PT_Password",
       "login_button": "PT_Login",
-      "forgot_password": "PT_Forgot your password?"
+      "forgot_password": "Esqueceu sua senha?"
     },
     "languages": {
       "title": "PT_Languages"
@@ -71,27 +71,27 @@
       "title": "PT_Date Range",
       "published": "PT_Published",
       "instructions": "PT_(Please include two four-digit years, such as 2008 and 2009, or leave them blank to include publications from any year)",
-      "placeholder": "PT_YYYY"
+      "placeholder": "YYYY"
     }
   },
   "articles_page": {
-    "document_type": "PT_Type of Document",
-    "last_published": "PT_Last year litereature searched or year published",
-    "quality_rating": "PT_Quality rating",
-    "countries": "PT_Countries in which studies (included in the synthesis) were conducted",
-    "domains": "PT_Domains",
-    "topics": "PT_Health system topics",
+    "document_type": "Tipo de documentos",
+    "last_published": "PT_Last year literature searched or year published",
+    "quality_rating": "Classificação da qualidade",
+    "countries": "Países nos quais os estudos (incluídos na síntese) foram realizados",
+    "domains": "Domínio",
+    "topics": "Tópico(s) relacionados a sistemas de saúde",
     "country_groupings": "PT_Country groupings",
     "who_regions": "PT_World health organization regions",
     "lmic_focus": "PT_Low- and middle-income regions (LMIC) focus",
-    "summary_links": "PT_User Friendly Summary",
-    "abstract_links": "PT_Scentific abstract",
-    "full_text_link": "PT_Full-Text report",
-    "no_full_text_link": "PT_No free full text search report available",
-    "citation": "PT_Citation",
-    "question_type": "PT_Type of question",
-    "focus": "PT_Focus",
-    "target": "PT_Target"
+    "summary_links": "Sumário amigável ao usuário",
+    "abstract_links": "Abstrato científico",
+    "full_text_link": "Relatório completo",
+    "no_full_text_link": "Relatório completo gratuito não disponível",
+    "citation": "Citação",
+    "question_type": "Tipo de pergunta",
+    "focus": "Foco",
+    "target": "Alvo"
   },
   "search_page": {
     "search_box": {

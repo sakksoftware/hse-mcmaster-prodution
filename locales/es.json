@@ -1,16 +1,16 @@
 {
-  "terms_of_use": "ES_Terms of use",
+  "terms_of_use": "Condiciones de uso",
   "back_to_results": "ES_Back to results",
   "toggle_navigatoin": "ES_Toggle navigation",
   "main_menu": {
-    "home": "ES_Home",
-    "about": "ES_About HSE",
+    "home": "Inicio",
+    "about": "¿Qué es HSE?",
     "walkthrough": "ES_Walk through",
     "guided_search": "ES_Guided Search",
-    "select_language": "ES_Select language",
+    "select_language": "Seleccionar idioma",
     "create_account": "ES_Create Account",
     "login": "ES_Login",
-    "logout": "ES_Logout"
+    "logout": "Cerrar sesión"
   },
   "menus": {
     "account": {
@@ -28,9 +28,9 @@
     },
     "signup": {
       "title": "ES_Signup",
-      "email": "ES_Email",
-      "password": "ES_Password",
-      "confirm_password": "ES_Confrim password",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "confirm_password": "Confirmar contraseña",
       "i_accept": "ES_I accept the",
       "terms": "ES_Terms of Use",
       "signup_button": "ES_Create account",
@@ -43,10 +43,10 @@
     },
     "login": {
       "title": "ES_Login",
-      "email": "ES_Email",
-      "password": "ES_Password",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
       "login_button": "ES_Login",
-      "forgot_password": "ES_Forgot your password?"
+      "forgot_password": "Esqueceu sua senha?"
     },
     "languages": {
       "title": "ES_Languages"
@@ -71,27 +71,27 @@
       "title": "ES_Date Range",
       "published": "ES_Published",
       "instructions": "ES_(Please include two four-digit years, such as 2008 and 2009, or leave them blank to include publications from any year)",
-      "placeholder": "ES_YYYY"
+      "placeholder": "YYYY"
     }
   },
   "articles_page": {
-    "document_type": "ES_Type of Document",
+    "document_type": "Tipo de documento",
     "last_published": "ES_Last year litereature searched or year published",
-    "quality_rating": "ES_Quality rating",
-    "countries": "ES_Countries in which studies (included in the synthesis) were conducted",
-    "domains": "ES_Domains",
-    "topics": "ES_Health system topics",
+    "quality_rating": "Clasificación de la calidad",
+    "countries": "Países en los que se llevaron a cabo los estudios (incluidos en la síntesis)",
+    "domains": "Área",
+    "topics": "Tema(s) de sistemas de salud",
     "country_groupings": "ES_Country groupings",
     "who_regions": "ES_World health organization regions",
     "lmic_focus": "ES_Low- and middle-income regions (LMIC) focus",
-    "summary_links": "ES_User Friendly Summary",
-    "abstract_links": "ES_Scentific abstract",
-    "full_text_link": "ES_Full-Text report",
-    "no_full_text_link": "ES_No free full text search report available",
-    "citation": "ES_Citation",
-    "question_type": "ES_Type of question",
-    "focus": "ES_Focus",
-    "target": "ES_Target"
+    "summary_links": "Resumen fácil de entender para el usuario",
+    "abstract_links": "Resumen científico",
+    "full_text_link": "Texto completo",
+    "no_full_text_link": "No hay un reporte en texto completo disponible",
+    "citation": "Referencia",
+    "question_type": "Tipo de pregunta",
+    "focus": "Interés",
+    "target": "Objetivo"
   },
   "search_page": {
     "search_box": {

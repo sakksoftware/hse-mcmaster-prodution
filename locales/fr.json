@@ -1,16 +1,16 @@
 {
-  "terms_of_use": "FR_Terms of use",
+  "terms_of_use": "Conditions d'utilisation",
   "back_to_results": "FR_Back to results",
   "toggle_navigatoin": "FR_Toggle navigation",
   "main_menu": {
-    "home": "FR_Home",
-    "about": "FR_About HSE",
+    "home": "Accueil",
+    "about": "À propos de HSE",
     "walkthrough": "FR_Walk through",
     "guided_search": "FR_Guided Search",
-    "select_language": "FR_Select language",
+    "select_language": "Choisissez la langue",
     "create_account": "FR_Create Account",
     "login": "FR_Login",
-    "logout": "FR_Logout"
+    "logout": "Fermer une session"
   },
   "menus": {
     "account": {
@@ -28,9 +28,9 @@
     },
     "signup": {
       "title": "FR_Signup",
-      "email": "FR_Email",
-      "password": "FR_Password",
-      "confirm_password": "FR_Confrim password",
+      "email": "Courriel",
+      "password": "Mot de passe",
+      "confirm_password": "Confirmez le mot de passe",
       "i_accept": "FR_I accept the",
       "terms": "FR_Terms of Use",
       "signup_button": "FR_Create account",
@@ -43,10 +43,10 @@
     },
     "login": {
       "title": "FR_Login",
-      "email": "FR_Email",
-      "password": "FR_Password",
+      "email": "Courriel",
+      "password": "Mot de passe",
       "login_button": "FR_Login",
-      "forgot_password": "FR_Forgot your password?"
+      "forgot_password": "Mot de passe oublié?"
     },
     "languages": {
       "title": "FR_Languages"
@@ -71,26 +71,26 @@
       "title": "FR_Date Range",
       "published": "FR_Published",
       "instructions": "FR_(Please include two four-digit years, such as 2008 and 2009, or leave them blank to include publications from any year)",
-      "placeholder": "FR_YYYY"
+      "placeholder": "YYYY"
     }
   },
   "articles_page": {
-    "document_type": "FR_Type of Document",
+    "document_type": "Tipo de documentos",
     "last_published": "FR_Last year litereature searched or year published",
-    "quality_rating": "FR_Quality rating",
-    "countries": "FR_Countries in which studies (included in the synthesis) were conducted",
-    "domains": "FR_Domains",
-    "topics": "FR_Health system topics",
+    "quality_rating": "Cote de qualité",
+    "countries": "Pays dans lesquels les études (incluses dans la synthèse) ont été réalisées",
+    "domains": "Domaine",
+    "topics": "Thème(s) du système de santé",
     "country_groupings": "FR_Country groupings",
     "who_regions": "FR_World health organization regions",
     "lmic_focus": "FR_Low- and middle-income regions (LMIC) focus",
-    "summary_links": "FR_User Friendly Summary",
-    "abstract_links": "FR_Scentific abstract",
-    "full_text_link": "FR_Full-Text report",
-    "no_full_text_link": "FR_No free full text search report available",
-    "citation": "FR_Citation",
-    "question_type": "FR_Type of question",
-    "focus": "FR_Focus",
+    "summary_links": "Résumé convivial",
+    "abstract_links": "Résumé scientifique",
+    "full_text_link": "Rapport intégral",
+    "no_full_text_link": "Aucun rapport intégral disponible",
+    "citation": "Référence",
+    "question_type": "Type de question",
+    "focus": "Cible",
     "target": "FR_Target"
   },
   "search_page": {

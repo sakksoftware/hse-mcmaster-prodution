@@ -1,16 +1,16 @@
 {
-  "terms_of_use": "CN_Terms of use",
+  "terms_of_use": "使用条款",
   "back_to_results": "CN_Back to results",
   "toggle_navigatoin": "CN_Toggle navigation",
   "main_menu": {
-    "home": "CN_Home",
-    "about": "CN_About HSE",
+    "home": "主页",
+    "about": "关于卫生系统证据（HSE)",
     "walkthrough": "CN_Walk through",
     "guided_search": "CN_Guided Search",
-    "select_language": "CN_Select language",
+    "select_language": "选择语言",
     "create_account": "CN_Create Account",
     "login": "CN_Login",
-    "logout": "CN_Logout"
+    "logout": "退出"
   },
   "menus": {
     "account": {
@@ -28,9 +28,9 @@
     },
     "signup": {
       "title": "CN_Signup",
-      "email": "CN_Email",
-      "password": "CN_Password",
-      "confirm_password": "CN_Confrim password",
+      "email": "电子邮件",
+      "password": "密码",
+      "confirm_password": "确认密码",
       "i_accept": "CN_I accept the",
       "terms": "CN_Terms of Use",
       "signup_button": "CN_Create account",
@@ -43,10 +43,10 @@
     },
     "login": {
       "title": "CN_Login",
-      "email": "CN_Email",
-      "password": "CN_Password",
+      "email": "电子邮件",
+      "password": "密码",
       "login_button": "CN_Login",
-      "forgot_password": "CN_Forgot your password?"
+      "forgot_password": "忘记密码？"
     },
     "languages": {
       "title": "CN_Languages"
@@ -71,27 +71,27 @@
       "title": "CN_Date Range",
       "published": "CN_Published",
       "instructions": "CN_(Please include two four-digit years, such as 2008 and 2009, or leave them blank to include publications from any year)",
-      "placeholder": "CN_YYYY"
+      "placeholder": "YYYY"
     }
   },
   "articles_page": {
-    "document_type": "CN_Type of Document",
-    "last_published": "CN_Last year litereature searched or year published",
-    "quality_rating": "CN_Quality rating",
-    "countries": "CN_Countries in which studies (included in the synthesis) were conducted",
-    "domains": "CN_Domains",
-    "topics": "CN_Health system topics",
+    "document_type": "文件的类型",
+    "last_published": "CN_Last year literature searched or year published",
+    "quality_rating": "质量分级",
+    "countries": "证据综合纳入的研究所属的国家",
+    "domains": "领域",
+    "topics": "卫生系统主题",
     "country_groupings": "CN_Country groupings",
     "who_regions": "CN_World health organization regions",
     "lmic_focus": "CN_Low- and middle-income regions (LMIC) focus",
-    "summary_links": "CN_User Friendly Summary",
-    "abstract_links": "CN_Scentific abstract",
-    "full_text_link": "CN_Full-Text report",
-    "no_full_text_link": "CN_No free full text search report available",
-    "citation": "CN_Citation",
-    "question_type": "CN_Type of question",
-    "focus": "CN_Focus",
-    "target": "CN_Target"
+    "summary_links": "用户易懂的概要",
+    "abstract_links": "科学摘要",
+    "full_text_link": "全文",
+    "no_full_text_link": "无免费全文",
+    "citation": "参考文献",
+    "question_type": "问题的类型",
+    "focus": "关注内容",
+    "target": "目标对象"
   },
   "search_page": {
     "search_box": {

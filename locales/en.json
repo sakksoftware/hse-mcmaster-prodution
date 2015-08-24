@@ -21,22 +21,22 @@
       "instructions": [
         "You can add \"and\" \"or\" \"nor\" to improve them.",
         "",
-        "For example: you can search for *(\"Wins WorldCup\" OR \"Wins Champions Leauge\") AND (football OR soccer) -American -beach -women's*",
+        "For example: you can search for *(\"Wins WorldCup\" OR \"Wins Champions League\") AND (football OR soccer) -American -beach -women's*",
         "",
-        "The results would show who won the Champions Leauge and the WorldCup lately."
+        "The results would show who won the Champions League and the World Cup lately."
       ]
     },
     "signup": {
       "title": "Signup",
       "email": "Email",
       "password": "Password",
-      "confirm_password": "Confrim password",
+      "confirm_password": "Confirm password",
       "i_accept": "I accept the",
       "terms": "Terms of Use",
       "signup_button": "Create account",
-      "did_not_recieve": "Didn't receive an emai?",
-      "send_again": "Send Again",
-      "confirmation_msg": "A conformation email has been sent to you. Pleaes confirm your registration to activate your account!"
+      "did_not_recieve": "Didn't receive an email?",
+      "send_again": "Send again",
+      "confirmation_msg": "A conformation email has been sent to you. Please confirm your registration to activate your account!"
     },
     "main": {
       "title": "Menu"
@@ -76,18 +76,18 @@
   },
   "articles_page": {
     "document_type": "Type of Document",
-    "last_published": "Last year litereature searched or year published",
+    "last_published": "Last year literature searched or year published",
     "quality_rating": "Quality rating",
     "countries": "Countries in which studies (included in the synthesis) were conducted",
     "domains": "Domains",
     "topics": "Health system topics",
     "country_groupings": "Country groupings",
-    "who_regions": "World health organization regions",
+    "who_regions": "World Health Organization regions",
     "lmic_focus": "Low- and middle-income regions (LMIC) focus",
     "summary_links": "User Friendly Summary",
-    "abstract_links": "Scentific abstract",
-    "full_text_link": "Full-Text report",
-    "no_full_text_link": "No free full text search report available",
+    "abstract_links": "Scientific abstract",
+    "full_text_link": "Full-text report",
+    "no_full_text_link": "No free full-text search report available",
     "citation": "Citation",
     "question_type": "Type of question",
     "focus": "Focus",
@@ -96,9 +96,9 @@
   "search_page": {
     "search_box": {
       "view_results_count": "View %{results_count} results",
-      "tips": "Tips for more powerful serach",
+      "tips": "Tips for more powerful search",
       "filters": "Filters",
-      "placeholder": "Serach..."
+      "placeholder": "Search..."
     },
     "result_item": {
       "year": "Year:",
@@ -116,6 +116,6 @@
     }
   },
   "errors": {
-    "no_connection": "Opps, could not load data. Check your internet connection."
+    "no_connection": "Oops, could not load data. Check your internet connection."
   }
 }
