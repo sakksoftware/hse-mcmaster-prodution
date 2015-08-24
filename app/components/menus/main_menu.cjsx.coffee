@@ -2,6 +2,7 @@
 Link = require('components/shared/link')
 LayerToggle = require('components/layered_navigation/layer_toggle')
 TranslationHelper = require('mixins/translation_helper')
+LanguagesMenu = require('components/menus/languages_menu')
 
 module.exports = React.createClass
   displayName: 'MainMenu'
@@ -60,9 +61,16 @@ module.exports = React.createClass
         <span className="menu-item-icon"></span>
         <Link onClick={@props.onLinkClick} to="/about">{@t('about')}</Link>
       </li>
+      <li className="menu-item menu-item-walkthrough">
+        <a href="#">{@t('walkthrough')}</a>
+      </li>
       <li className="menu-item menu-item-language">
         <span className="menu-item-icon"></span>
         <LayerToggle menu="languages" onToggle={@props.onSubMenuClick}>{@t('select_language')}</LayerToggle>
+
+        <a className="desktop-menu-link" href="#">{@t('select_language')}</a>
+        <LanguagesMenu />
       </li>
+      <li className="menu-item"><a href="#">{@t('guided_search')}</a></li>
       {@renderUserLinks()}
     </ul>

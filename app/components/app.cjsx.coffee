@@ -11,7 +11,6 @@ LayeredNavigation = require('components/layered_navigation/layered_navigation')
 Link = require('components/shared/link')
 
 MainMenu = require('components/menus/main_menu')
-DesktopMainMenu = require('components/menus/desktop_main_menu')
 HelpMenu = require('components/menus/help_menu')
 FilterGroupsMenu = require('components/menus/filter_groups_menu')
 FiltersMenu = require('components/menus/filters_menu')
@@ -64,7 +63,11 @@ module.exports = React.createClass
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>
       </LayerToggle>
-      <DesktopMainMenu onToggle={@toggleMenu} onSelectLanguage={@selectLanguage} />
+      <MainMenu currentUser={@state.currentUser}
+        onSubMenuClick={@toggleMenu}
+        onLogout={@logout}
+        onLinkClick={@dismissMenu}
+      />
     </nav>
 
   renderPage: ->
