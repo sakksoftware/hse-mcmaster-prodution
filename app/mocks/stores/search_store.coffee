@@ -75,25 +75,6 @@ searchData = {
       "category": "Superhero Marvel Movies"
     }
   ],
-  "questions": [
-    {
-      "text": "Do you want to know about particular types of health system arrangements?",
-      "filters": [
-        {"name": "How decisions (about care) are made", "type": "document", "id": 1234, "count": "350", "applied": false },
-        {"name": "How care is paid for", "type": "document", "id": 1235, "count": "200", "applied": false },
-        {"name": "How care is organized", "type": "document", "id": 1236, "count": "100", "applied": false },
-        {"name": "How change can be brought about", "type": "document", "id": 1236, "count": "100", "applied": false }
-      ]
-    },
-    {
-      "text": "Q2: Narrow your search by selecting one of the options below.",
-      "filters": [
-        {"name": "All of them", "id": 1234, "count": "350", "applied": false },
-        {"name": "Option A", "id": 1235, "count": "200", "applied": false },
-        {"name": "Option B", "id": 1236, "count": "100", "applied": false }
-      ]
-    }
-  ],
   "filters": {}
 }
 

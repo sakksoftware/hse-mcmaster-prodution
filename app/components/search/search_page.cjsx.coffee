@@ -141,8 +141,7 @@ module.exports = React.createClass
       </div>
 
   renderGuidedSearch: ->
-    if @state.search.questions?.length > 0
-      <GuidedQuestionsBox onAddFilterById={@addFilterById} />
+    <GuidedQuestionsBox onAddFilterById={@addFilterById} />
 
   renderResults: ->
     if @state.step == 'searching'
