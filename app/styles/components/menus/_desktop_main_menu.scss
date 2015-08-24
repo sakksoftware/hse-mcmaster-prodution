@@ -45,12 +45,4 @@
       padding-left: $small-size + $small-size + $tiny-size;
     }
   }
-
-  .menu-item-sign-up .menu-item-icon {
-    @extend .glyphicon-user;
-  }
-
-  .menu-item-login .menu-item-icon {
-    @extend .glyphicon-log-in;
-  }
 }
