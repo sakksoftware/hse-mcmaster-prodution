@@ -63,6 +63,7 @@
     & > .menu-item {
       display: inline-block;
       border-left: 1px solid darken($menu-text-color, 10%);
+      border-bottom: none;
 
       &:first-child {
         border-left: none;
