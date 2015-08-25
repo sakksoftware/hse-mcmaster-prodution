@@ -60,14 +60,6 @@ module.exports = React.createClass
       {@renderRegionList()}
     </div>
 
-  renderCountryGroupingsList: ->
-    items =
-      for group, i in @props.article.country_groupings
-        <li key={"country-grouping-#{i}"} className="country-grouping-item">
-          {group}
-        </li>
-    <ul className="article-item-country-groupings">{items}</ul>
-
   renderLinksList: (name, links)->
     items =
       for link, i in links
@@ -90,7 +82,7 @@ module.exports = React.createClass
       {article.year_published}
 
       <h2>{@t('quality_rating')}</h2>
-      {article.quality}/10 ({article.quality_note})
+      {article.quality} ({article.quality_note})
 
       <h2>{@t('countries')}</h2>
       {@renderStudiesConductedIn()}
@@ -104,7 +96,7 @@ module.exports = React.createClass
       </div>
 
       <h2>{@t('country_groupings')}</h2>
-      {@renderCountryGroupingsList()}
+      {article.country_groupings}
 
       <h2>{@t('who_regions')}</h2>
       {article.who_regions}

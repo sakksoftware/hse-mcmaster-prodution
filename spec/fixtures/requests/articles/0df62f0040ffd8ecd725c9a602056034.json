@@ -30,7 +30,7 @@
     }
   ],
   "year_published": 2011,
-  "quality": 7,
+  "quality": "7/10",
   "quality_note": "AMSTAR rating from McMaster Health Forum",
   "studies_conducted_in": {
     "countries": [
@@ -57,11 +57,7 @@
       ]}
     ]
   },
-  "country_groupings": [
-    "G7",
-    "G20",
-    "CommonWealth"
-  ],
+  "country_groupings": "G7; G20; CommonWealth",
   "who_regions": "At least one study was conducted in a low- or middle- income country",
   "lmic_focus": "At least one study was conducted in a low- or middle- income country",
   "domains": [
