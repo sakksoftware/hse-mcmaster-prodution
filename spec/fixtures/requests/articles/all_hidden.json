@@ -1,0 +1,131 @@
+{
+  "title": "Effectiveness of multidisciplinary interventions to improve the quality of life for people with Parkinson's disease: A systematic review",
+  "document_type": {
+    "title": "Systematic review of effects",
+    "sub_types": [{"title": "Healh and health system data"}]
+  },
+  "question_type": "Effectiveness",
+  "focus": "Specific",
+  "description": "Some Crazy long description goes here.....",
+  "targets": [ { "title": "Individual" }],
+  "topics": [
+    {
+      "title": "Delivery arrangement",
+      "topics": [
+        {
+          "title": "By whom care is provided",
+          "topics": [
+            {"title": "Skill mix - Multidisciplinary teams"}
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Implementation strategy",
+      "topics": [
+        {
+          "title": "Consumer-targeted strategy",
+          "topics": [
+            {"title": "Information or education provision", "topics": []},
+            {"title": "Skills and competencies development", "topics": []}
+          ]
+        }
+      ]
+    }
+  ],
+  "themes": [{"title": "Medical Exames"}],
+  "year_published": 2011,
+  "quality": "7/10",
+  "quality_note": "AMSTAR rating from McMaster Health Forum",
+  "studies_conducted_in": {
+    "countries": [
+      {"title": "United State", "name_abbreviation": "US", "conducted_count": 3 },
+      {"title": "United Kingdom", "name_abbreviation": "UK", "conducted_count": 5 }
+    ],
+    "regions": [
+      {"title": "Europe", "authors": [
+        {
+          "title": "Matcht M",
+          "url": "https://www.healthsystemsevidence.org/r.aspx?x=IFivoLmP-PuwBAwYzI2kV6bsNP0Qg_JzmtT_r8SjoyHe6h6jNSmUUd_5LYOU9UKP7qf8MiOR_QSUycNdiDLmN3Evm3WkGIsCdLxRAicdmG0GHIVdnbAj3lY_35CTh0ft91ouERGt-LcECXJroS884ocjxqwAIqaTt_Ip1gCOFk2uKUuUFzFdRMMfKCb3x4Hq_sdbO3-9cie6G1Cw9CTpeg||"
+        }
+      ]},
+      {
+        "title": "United State", "authors": [
+          {
+            "title": "Came W",
+            "url": "https://www.healthsystemsevidence.org/r.aspx?x=IFivoLmP-PuwBAwYzI2kV6bsNP0Qg_JzmtT_r8SjoyHe6h6jNSmUUd_5LYOU9UKP7qf8MiOR_QSUycNdiDLmN3Evm3WkGIsCdLxRAicdmG0GHIVdnbAj3lY_35CTh0ft91ouERGt-LcECXJroS884ocjxqwAIqaTt_Ip1gCOFk2uKUuUFzFdRMMfKCb3x4Hq_sdbO3-9cie6G1Cw9CTpeg||"
+          },
+          {
+            "title": "Ellis T",
+            "url": "https://www.healthsystemsevidence.org/r.aspx?x=IFivoLmP-PuwBAwYzI2kVyM5WsgWsXEE9OpMqPOGAd5lfSeiK7erKT53G-Ryt7MHMRjoQTioh7IQaKQqLqwqu-JVpJkal64VnJlbZxnmo1PuH120mpG-D-gJi-Wr4TOCWitmQw9jzmER1lzVZtT6mHMEXKuqQC-fuXAR67JsOJJdFyCrhND1rKd4sqf_XJgM"
+          }
+      ]}
+    ]
+  },
+  "country_groupings": "G7; G20; CommonWealth",
+  "who_regions": [{"title": "At least one study was conducted in a low- or middle- income country"}],
+  "lmic_focus": "At least one study was conducted in a low- or middle- income country",
+  "domains": [
+    {
+      "title": "Delivery arrangements by whom care is provided", "domains": [
+        {
+          "title": "Some other arrangements"
+        }
+    ]}
+  ],
+  "summary_links": [
+    {
+      "title": "Australasian Cochrane Centre Policy Liaison Initiative",
+      "url": "https://www.healthsystemsevidence.org/r.aspx?x=CcS1L1E5tWvzZNlsh7CCLn0whNVxKssNCp6F22Iwhq5Pv_Zj5EP_5ekHefVpoFoqsiO9WKEQ_tFlf1UmEHQcMttIrrjBM2Ka-wFFUm4NwZ4V7i2irAymdN_WAdclsJ5IgYkZBExiAaYpnsZPA6qQWpk5q8Lrt5dhXvXleM-OXIpuB0f2QgMNEziCezIcWThmAfMngixnJIHedNjf6wFjUkwzmStP9XkFj_gKnBnCzlii_hi2YJ-sfnpYDi19cF_5"
+    }
+  ],
+  "abstract_links": [
+    {
+      "title": "PubMed",
+      "url": "http://link.springer.com/article/10.1007%2Fs10461-012-0348-1"
+    },
+    {
+      "title": "Publisher",
+      "url": "http://www.ncbi.nlm.nih.gov/pubmed/23096999"
+    }
+  ],
+  "citation": "Kaufman ZA, Spencer TS, Ross DA. Effectiveness of sport-based HIV prevention interventions: A systematic review of the evidence. AIDS and Behavior. 2013;17(3):987-1001.",
+  "doi": "10.1007/s10461-012-0348-1",
+  "full_text_link": null,
+  "related_documents": [],
+  "priority_areas": [
+    {"title": "Ontario", "priority_areas": null}
+  ],
+
+  "label_citation": "Citation",
+  "label_countries_in_which_studies_were_conducted": "Countries in which studies (included in the synthesis) were conducted",
+  "label_country_focus": "Country focus",
+  "label_doi": "DOI",
+  "label_full_text_report": "Full-text report",
+  "label_health_system_topics": "Health system topic(s)",
+  "label_last_year_literature_searched": "Last year literature searched",
+  "label_quality_rating": "Quality rating",
+  "label_registry_record": "Registry record",
+  "label_related_documents": "Related documents",
+  "label_scientific_abstract": "Scientific abstract",
+  "label_summary": "Summary",
+  "label_title": "Title",
+  "label_user_friendly_summary": "User-friendly summary",
+  "label_year_published": "Last year literature searched or year published",
+
+  "label_document_type": "Type of Document",
+  "label_countries": "Countries in which studies (included in the synthesis) were conducted",
+  "label_domains": "Domains",
+  "label_topics": "Health system topics",
+  "label_country_groupings": "Country groupings",
+  "label_who_regions": "World Health Organization regions",
+  "label_lmic_focus": "Low- and middle-income regions (LMIC) focus",
+  "label_summary_links": "User Friendly Summary",
+  "label_abstract_links": "Scientific abstract",
+  "label_full_text_link": "Full-text report",
+  "label_question_type": "Type of question",
+  "label_focus": "Focus",
+  "label_targets": "Target",
+  "label_priority_areas": "Priority Area",
+  "label_themes": "Themes"
+}

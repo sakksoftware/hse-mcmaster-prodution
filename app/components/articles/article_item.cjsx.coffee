@@ -10,15 +10,16 @@ module.exports = React.createClass
   propTypes:
     article: React.PropTypes.object.isRequired
 
-  renderTopicList: (topics) ->
+  renderNestedList: (list, listName, itemName) ->
     result = []
+    return result unless list?.length > 0
 
-    for topic, i in topics
-      result.push <li key={"topic-item-#{i}"} className="topic-item">{topic.title}</li>
-      if topic.topics && topic.topics.length > 0
-        result.push <li key={"topic-item-nested-#{i}"} className="topic-item">
+    for item, i in list
+      result.push <li key={"#{itemName}-item-#{i}"} className="#{itemName}-item">{item.title}</li>
+      if item[listName] && item[listName].length > 0
+        result.push <li key={"#{itemName}-item-nested-#{i}"} className="#{itemName}-item">
           <ul>
-            {@renderTopicList(topic.topics)}
+            {@renderNestedList(item[listName], listName, itemName)}
           </ul>
         </li>
 
@@ -54,18 +55,32 @@ module.exports = React.createClass
     <ul className="article-item-region-list">{items}</ul>
 
   renderStudiesConductedIn: ->
+    return unless @props.article.studies_conducted_in?.length > 0
     <div className="studies-conducted-in">
-      {@renderCountryList()}
-      {@renderRegionList()}
+      @renderCountryList()
+      @renderRegionList()
     </div>
 
   renderLinksList: (name, links)->
+    return unless links.length > 0
     items =
       for link, i in links
         <li key={"#{name}-#{i}"} className="#{name}-item">
           <a href={link.url} target="_blank">{link.title}</a>
         </li>
     <ul>{items}</ul>
+
+  renderDomains: (domains) ->
+    return unless domains
+    for domain in domains
+      <li className="domain-item">
+        <span className="domain-item-title">{domain.title}:</span>
+        {@renderDomains(domain.domains)}
+      </li>
+
+    <ul className="article-item-domain-list">
+      {domains}
+    </ul>
 
   renderDocumentSubTypes: ->
     sub_types = @props.article.document_type.sub_types
@@ -82,14 +97,16 @@ module.exports = React.createClass
 
   render: ->
     article = @props.article
+    documentSubTypes =
+      <li key="article-item-document-type-sub-type">{@renderDocumentSubTypes()}</li>
 
     <div className="article-item">
       <h1>{article.title}</h1>
 
       <h2>{@props.article.label_document_type}</h2>
       <ul className="article-item-document-type">
-        <li>{article.document_type}</li>
-        <li>{@renderDocumentSubTypes()}</li>
+        <li key="article-item-document-type-main">{article.document_type}</li>
+        {documentSubTypes}
       </ul>
 
       <h2>{@props.article.label_year_published}</h2>
@@ -99,49 +116,57 @@ module.exports = React.createClass
       {article.quality} ({article.quality_note})
 
       <h2>{@props.article.label_countries}</h2>
-      {@renderStudiesConductedIn()}
+      {@ifNotEmpty @renderStudiesConductedIn(), @t('no_studies_conducted_in')}
+
+      <h2>{@props.article.label_priority_areas}</h2>
+      <ul>{@ifNotEmpty @renderNestedList(@props.article.priority_areas, 'priority_areas', 'priority_area'), @t('no_priority_areas')}</ul>
 
       <div className="highlighted-section">
         <h2>{@props.article.label_domains}</h2>
-        {article.domains}
+        <ul>{@ifNotEmpty @renderNestedList(@props.article.domains, 'domains', 'domain'), @t('no_domains')}</ul>
 
         <h2>{@props.article.label_topics}</h2>
-        <ul>{@renderTopicList(@props.article.topics)}</ul>
+        <ul>{@ifNotEmpty @renderNestedList(@props.article.topics, 'topics', 'topic'), @t('no_topics')}</ul>
       </div>
 
+      <h2>{@props.article.label_themes}</h2>
+      <ul>{@ifNotEmpty @renderNestedList(@props.article.themes, 'themes', 'theme'), @t('no_themes')}</ul>
+
       <h2>{@props.article.label_country_groupings}</h2>
-      {article.country_groupings}
+      {@ifNotEmpty article.country_groupings, @t('no_country_groupings')}
 
       <h2>{@props.article.label_who_regions}</h2>
-      {article.who_regions}
+      {@ifNotEmpty @joinList(_.compact(_.pluck(@props.article.who_regions, 'title'))), @t('no_who_regions')}
 
       <h2>{@props.article.label_lmic_focus}</h2>
-      {article.lmic_focus}
+      <div className="article-item-lmic-focus">
+        {@ifNotEmpty @joinList(_.compact(_.pluck(@props.article.lmic_focus, 'title'))), @t('no_lmic_focus')}
+      </div>
 
       <div className="highlighted-section">
         <h2>{@props.article.label_summary_links}</h2>
-        {@renderLinksList('summary-link', article.summary_links)}
+        {@ifNotEmpty @renderLinksList('summary-link', article.summary_links), @t('no_summary_links')}
 
         <h2>{@props.article.label_abstract_links}</h2>
-        {@renderLinksList('abstract-links', article.abstract_links)}
+        {@ifNotEmpty @renderLinksList('abstract-links', article.abstract_links), @t('no_abstract_links')}
 
         <h2>{@props.article.label_full_text_link}</h2>
-        {article.full_text_link || @t('no_full_text_link')}
+        {@ifNotEmpty article.full_text_link, @t('no_full_text_link')}
 
         <h2>{@props.article.label_citation}</h2>
         {article.citation}
 
         <h2>{@props.article.label_doi}</h2>
-        {article.doi || @t('no_doi')}
+        {@ifNotEmpty article.doi, @t('no_doi')}
       </div>
 
       <h2>{@props.article.label_question_type}</h2>
       {article.question_type}
 
       <h2>{@props.article.label_focus}</h2>
-      {article.focus}
+      {@ifNotEmpty article.focus, @t('no_focus')}
 
       <h2>{@props.article.label_targets}</h2>
-      {@renderTargets()}
+      {@ifNotEmpty @renderTargets(), @t('no_targets')}
 
     </div>

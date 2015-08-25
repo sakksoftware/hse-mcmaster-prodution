@@ -57,8 +57,8 @@ searchData = {
   "saved": false,
   "results": [
     {
-      "id": "0df62f0040ffd8ecd725c9a602056034",
-      "title": "Article Title A",
+      "id": "all_filled_all_visible",
+      "title": "All fields Filled & Visible",
       "created_at": "2014-09-20 11:33:00Z",
       "updated_at": "2014-09-20 11:33:00Z",
       "quality": 7.0,
@@ -66,8 +66,17 @@ searchData = {
       "category": "International Organizations Document"
     },
     {
-      "id": "0df62f0040ffd8ecd725c9a602056034",
-      "title": "Article Title B",
+      "id": "not_filled_all_visible",
+      "title": "All optional fields are emtpy & visible",
+      "created_at": "2013-08-20 11:33:00Z",
+      "updated_at": "2013-08-20 11:33:00Z",
+      "quality": 7.0,
+      "description": "Lots of stuff goes here! Very Interesting right?.....",
+      "category": "Superhero Marvel Movies"
+    },
+    {
+      "id": "all_hidden",
+      "title": "All fields are hidden",
       "created_at": "2013-08-20 11:33:00Z",
       "updated_at": "2013-08-20 11:33:00Z",
       "quality": 7.0,

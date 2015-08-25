@@ -63,7 +63,7 @@
     ]
   },
   "country_groupings": "G7; G20; CommonWealth",
-  "who_regions": "At least one study was conducted in a low- or middle- income country",
+  "who_regions": [{"title": "At least one study was conducted in a low- or middle- income country"}],
   "lmic_focus": "At least one study was conducted in a low- or middle- income country",
   "domains": [
     {
@@ -93,6 +93,9 @@
   "doi": "10.1007/s10461-012-0348-1",
   "full_text_link": null,
   "related_documents": [],
+  "priority_areas": [
+    {"title": "Ontario", "priority_areas": null}
+  ],
 
   "label_citation": "Citation",
   "label_countries_in_which_studies_were_conducted": "Countries in which studies (included in the synthesis) were conducted",
@@ -122,5 +125,7 @@
   "label_full_text_link": "Full-text report",
   "label_question_type": "Type of question",
   "label_focus": "Focus",
-  "label_targets": "Target"
+  "label_targets": "Target",
+  "label_priority_areas": "Priority Area",
+  "label_themes": "Themes"
 }
