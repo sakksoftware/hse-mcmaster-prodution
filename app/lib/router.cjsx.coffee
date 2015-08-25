@@ -2,6 +2,8 @@ App = require('components/app')
 class Router
   constructor: ->
     @el = document.getElementById('react-root')
+    window.addEventListener('hashchange', @handleRouteChange.bind(@))
+    window.addEventListener('popstate', @handleRouteChange.bind(@))
 
   routes:
     '': ->
