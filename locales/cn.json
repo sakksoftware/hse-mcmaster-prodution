@@ -75,23 +75,21 @@
     }
   },
   "articles_page": {
-    "document_type": "文件的类型",
-    "last_published": "最近的文献检索年份或出版年份",
-    "quality_rating": "质量分级",
-    "countries": "证据综合纳入的研究所属的国家",
-    "domains": "领域",
-    "topics": "卫生系统主题",
-    "country_groupings": "CN_Country groupings",
-    "who_regions": "CN_World health organization regions",
-    "lmic_focus": "CN_Low- and middle-income regions (LMIC) focus",
-    "summary_links": "用户易懂的概要",
-    "abstract_links": "科学摘要",
-    "full_text_link": "全文",
-    "no_full_text_link": "无免费全文",
-    "citation": "参考文献",
-    "question_type": "问题的类型",
-    "focus": "关注内容",
-    "target": "目标对象"
+    "no_studies_conducted_in": "CN_Not avilable",
+    "no_full_text_report": "CN_No free full-text search report available",
+    "no_doi": "CN_Not yet available",
+    "no_domains": "CN_Not avilable",
+    "no_topics": "CN_Not avilable",
+    "no_focus": "CN_Not avilable",
+    "no_lmic_focus": "CN_Not available",
+    "no_priority_areas": "CN_Not avilable",
+    "no_targets": "CN_Not avilable",
+    "no_themes": "CN_Not avilable",
+    "no_who_regions": "CN_Not avilable",
+    "no_scientific_abstract": "CN_Not avilable",
+    "no_summary_links": "CN_Not avilable",
+    "no_country_groupings": "CN_Not avilable",
+    "no_full_text_report": "无免费全文"
   },
   "search_page": {
     "search_box": {

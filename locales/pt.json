@@ -75,23 +75,21 @@
     }
   },
   "articles_page": {
-    "document_type": "Tipo de documentos",
-    "last_published": "Literatura pesquisada no ano passado ou ano de publicação",
-    "quality_rating": "Classificação da qualidade",
-    "countries": "Países nos quais os estudos (incluídos na síntese) foram realizados",
-    "domains": "Domínio",
-    "topics": "Tópico(s) relacionados a sistemas de saúde",
-    "country_groupings": "PT_Country groupings",
-    "who_regions": "PT_World health organization regions",
-    "lmic_focus": "PT_Low- and middle-income regions (LMIC) focus",
-    "summary_links": "Sumário amigável ao usuário",
-    "abstract_links": "Abstrato científico",
-    "full_text_link": "Relatório completo",
-    "no_full_text_link": "Relatório completo gratuito não disponível",
-    "citation": "Citação",
-    "question_type": "Tipo de pergunta",
-    "focus": "Foco",
-    "target": "Alvo"
+    "no_studies_conducted_in": "PT_Not avilable",
+    "no_full_text_report": "PT_No free full-text search report available",
+    "no_doi": "PT_Not yet available",
+    "no_domains": "PT_Not avilable",
+    "no_topics": "PT_Not avilable",
+    "no_focus": "PT_Not avilable",
+    "no_lmic_focus": "PT_Not available",
+    "no_priority_areas": "PT_Not avilable",
+    "no_targets": "PT_Not avilable",
+    "no_themes": "PT_Not avilable",
+    "no_who_regions": "PT_Not avilable",
+    "no_scientific_abstract": "PT_Not avilable",
+    "no_summary_links": "PT_Not avilable",
+    "no_country_groupings": "PT_Not avilable",
+    "no_full_text_report": "Relatório completo gratuito não disponível"
   },
   "search_page": {
     "search_box": {
