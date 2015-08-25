@@ -76,7 +76,7 @@
   },
   "articles_page": {
     "no_studies_conducted_in": "FR_Not avilable",
-    "no_full_text_report": "FR_No free full-text search report available",
+    "no_full_text_report": "Aucun rapport intégral disponible",
     "no_doi": "FR_Not yet available",
     "no_domains": "FR_Not avilable",
     "no_topics": "FR_Not avilable",
@@ -89,7 +89,11 @@
     "no_scientific_abstract": "FR_Not avilable",
     "no_summary_links": "FR_Not avilable",
     "no_country_groupings": "FR_Not avilable",
-    "no_full_text_report": "Aucun rapport intégral disponible"
+    "no_author_email": "FR_Not avilable",
+    "no_registry_record_links": "FR_No registry record available",
+    "no_category": "FR_Not avilable",
+    "no_who_links": "FR_Not avilable",
+    "no_related_documents": "FR_Not avilable"
   },
   "search_page": {
     "search_box": {

@@ -97,7 +97,7 @@
       "url": "https://www.healthsystemsevidence.org/r.aspx?x=Zd5gG04JP5f8Wm-4Tpb_rdY2roO3HASutBEoMiAy5IEmh-esh-ZEbaIiaYI94-JO72teTUGQbNhfrSuJoUtqQD5PFEcQMD-eOC86T4cTUhGE34Z71Ju537QVoTiBlFo9BPypw4AfPQ8RdfPQtG77e9QQ3k7IkwXmWJig6D71FdDcsn8YBbPT694Ndg5d3OGj"
     }
   ],
-  "related_documents": [],
+  "related_documents": "Read <a href=\"https://www.healthsystemsevidence.org/r.aspx?x=xSd1DwSZ8WHVg1sE-9DXUZrZe8aqGvaaHIWZfnTPrWPTOUYHBy2EeLbPSvx7gzoWVTB4fOriUsSY0V239KAKqFJmIfwdaMBxRUaJU0CJxG2gXf_AGJWT_juut1c1QCvt\" target='_blank'> economic evaluations</a> that address a similar topic<br />Read about <a href=\"/r.aspx?x=xSd1DwSZ8WHVg1sE-9DXUaTrUhFD1imSMVhCA6SSMKICB_YsK-kB4Xaz_hvGDb17Ryu6tJOQY20GaCq3OMQpjttiYUApdi2HO1lUA5o3ODbMHWyfcldp86kz5RBhDh6b\" target='_blank'> health reform descriptions</a> that address a similar topic<br />Read about the <a href=\"/r.aspx?x=xSd1DwSZ8WHVg1sE-9DXUb7msmkM0N35xno_FzViwxL_pS-OVW48ptsJrJcKMu_paMAk_J28eDi0D7jD9_ztzEQCViAGXAKfElGXD0BsCShm2cEdOvjln7Obon1HUOp4\" target='_blank'> health system(s)</a> where included studies were conducted<br />",
   "priority_areas": [
     {"title": "Ontario", "priority_areas": null}
   ],
@@ -126,5 +126,35 @@
   "label_focus": "Focus",
   "label_targets": "Target",
   "label_priority_areas": "Priority Area",
-  "label_themes": "Themes"
+  "label_themes": "Themes",
+  "label_related_documents": "Related documents",
+
+  "label_registry_record_links": "Registry record link",
+  "label_author_email": "Author email",
+  "label_who_links": "Who links",
+  "label_category": "Category",
+
+  "author_email": "michael@jackson.com",
+
+  "author_email_visible": "false",
+  "canadian_area_visible": "false",
+  "countries_in_which_studies_were_conducted_visible": "false",
+  "country_focus_visible": "false",
+  "document_summary_visible": "false",
+  "full_text_report_visible": "false",
+  "initiative_translation_eihr_visible": "false",
+  "initiative_translation_short_visible": "false",
+  "last_year_literature_searched_visible": "false",
+  "lmic_focus_visible": "false",
+  "quality_rating_visible": "false",
+  "registry_record_visible": "false",
+  "related_documents_visible": "false",
+  "scientific_abstract_literal_visible": "false",
+  "scientific_abstract_visible": "false",
+  "summary_visible": "false",
+  "theme_visible": "false",
+  "user_friendly_summary_visible": "false",
+  "who_links_visible": "false",
+  "who_region_visible": "false",
+  "year_published_visible": "false"
 }

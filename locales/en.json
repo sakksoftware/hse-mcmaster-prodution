@@ -88,7 +88,12 @@
     "no_who_regions": "Not avilable",
     "no_scientific_abstract": "Not avilable",
     "no_summary_links": "Not avilable",
-    "no_country_groupings": "Not avilable"
+    "no_country_groupings": "Not avilable",
+    "no_author_email": "Not avilable",
+    "no_registry_record_links": "No registry record available",
+    "no_category": "Not avilable",
+    "no_who_links": "Not avilable",
+    "no_related_documents": "Not avilable"
   },
   "search_page": {
     "search_box": {

@@ -76,7 +76,7 @@
   },
   "articles_page": {
     "no_studies_conducted_in": "PT_Not avilable",
-    "no_full_text_report": "PT_No free full-text search report available",
+    "no_full_text_report": "Relatório completo gratuito não disponível",
     "no_doi": "PT_Not yet available",
     "no_domains": "PT_Not avilable",
     "no_topics": "PT_Not avilable",
@@ -89,7 +89,11 @@
     "no_scientific_abstract": "PT_Not avilable",
     "no_summary_links": "PT_Not avilable",
     "no_country_groupings": "PT_Not avilable",
-    "no_full_text_report": "Relatório completo gratuito não disponível"
+    "no_author_email": "PT_Not avilable",
+    "no_registry_record_links": "PT_No registry record available",
+    "no_category": "PT_Not avilable",
+    "no_who_links": "PT_Not avilable",
+    "no_related_documents": "PT_Not avilable"
   },
   "search_page": {
     "search_box": {

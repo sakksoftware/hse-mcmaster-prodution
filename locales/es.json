@@ -76,7 +76,7 @@
   },
   "articles_page": {
     "no_studies_conducted_in": "ES_Not avilable",
-    "no_full_text_report": "ES_No free full-text search report available",
+    "no_full_text_report": "No hay un reporte en texto completo disponible",
     "no_doi": "ES_Not yet available",
     "no_domains": "ES_Not avilable",
     "no_topics": "ES_Not avilable",
@@ -89,7 +89,11 @@
     "no_scientific_abstract": "ES_Not avilable",
     "no_summary_links": "ES_Not avilable",
     "no_country_groupings": "ES_Not avilable",
-    "no_full_text_report": "No hay un reporte en texto completo disponible"
+    "no_author_email": "ES_Not avilable",
+    "no_registry_record_links": "ES_No registry record available",
+    "no_category": "ES_Not avilable",
+    "no_who_links": "ES_Not avilable",
+    "no_related_documents": "ES_Not avilable"
   },
   "search_page": {
     "search_box": {

@@ -76,7 +76,7 @@
   },
   "articles_page": {
     "no_studies_conducted_in": "CN_Not avilable",
-    "no_full_text_report": "CN_No free full-text search report available",
+    "no_full_text_report": "无免费全文",
     "no_doi": "CN_Not yet available",
     "no_domains": "CN_Not avilable",
     "no_topics": "CN_Not avilable",
@@ -89,7 +89,11 @@
     "no_scientific_abstract": "CN_Not avilable",
     "no_summary_links": "CN_Not avilable",
     "no_country_groupings": "CN_Not avilable",
-    "no_full_text_report": "无免费全文"
+    "no_author_email": "CN_Not avilable",
+    "no_registry_record_links": "CN_No registry record available",
+    "no_category": "CN_Not avilable",
+    "no_who_links": "CN_Not avilable",
+    "no_related_documents": "CN_Not avilable"
   },
   "search_page": {
     "search_box": {

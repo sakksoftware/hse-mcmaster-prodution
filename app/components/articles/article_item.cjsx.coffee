@@ -100,6 +100,8 @@ module.exports = React.createClass
     documentSubTypes =
       <li key="article-item-document-type-sub-type">{@renderDocumentSubTypes()}</li>
 
+    # TODO: possibly use the description field
+
     <div className="article-item">
       <h1>{article.title}</h1>
 
@@ -169,4 +171,18 @@ module.exports = React.createClass
       <h2>{@props.article.label_targets}</h2>
       {@ifNotEmpty @renderTargets(), @t('no_targets')}
 
+      <h2>{@props.article.label_author_email}</h2>
+      {@ifNotEmpty @props.article.author_email, @t('no_author_email')}
+
+      <h2>{@props.article.label_registry_record_links}</h2>
+      {@ifNotEmpty @props.article.registry_record_links, @t('no_registry_record_links')}
+
+      <h2>{@props.article.label_related_documents}</h2>
+      <span dangerouslySetInnerHTML={__html: @ifNotEmpty @props.article.related_documents, @t('no_related_documents')}></span>
+
+      <h2>{@props.article.label_category}</h2>
+      {@ifNotEmpty @props.article.category, @t('no_category')}
+
+      <h2>{@props.article.label_who_links}</h2>
+      {@ifNotEmpty @props.article.who_links, @t('no_who_links')}
     </div>
