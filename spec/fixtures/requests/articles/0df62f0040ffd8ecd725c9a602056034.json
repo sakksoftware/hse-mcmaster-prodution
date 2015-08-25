@@ -1,9 +1,12 @@
 {
   "title": "Effectiveness of multidisciplinary interventions to improve the quality of life for people with Parkinson's disease: A systematic review",
-  "document_type": "Systematic review of effects",
+  "document_type": {
+    "title": "Systematic review of effects",
+    "sub_types": [{"title": "Healh and health system data"}]
+  },
   "question_type": "Effectiveness",
   "focus": "Specific",
-  "target": "Individual",
+  "targets": [ { "title": "Individual" }],
   "topics": [
     {
       "title": "Delivery arrangement",
@@ -22,13 +25,14 @@
         {
           "title": "Consumer-targeted strategy",
           "topics": [
-            {"title": "Information or education provision"},
-            {"title": "Skills and competencies development"}
+            {"title": "Information or education provision", "topics": []},
+            {"title": "Skills and competencies development", "topics": []}
           ]
         }
       ]
     }
   ],
+  "themes": [{"title": "Medical Exames"}],
   "year_published": 2011,
   "quality": "7/10",
   "quality_note": "AMSTAR rating from McMaster Health Forum",

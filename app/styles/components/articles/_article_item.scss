@@ -27,6 +27,12 @@
     }
   }
 
+  .article-item-document-type {
+    ul {
+      list-style: disc;
+    }
+  }
+
   .article-item-countries {
     @include inline-list-with($x-tiny-size, ';');
   }

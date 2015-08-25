@@ -32,7 +32,6 @@ module.exports = React.createClass
     <ul className="article-item-countries">{items}</ul>
 
   renderAuthorList: (authors) ->
-    console.log(authors[0])
     items =
       for author, i in authors
         <li key="author-item-#{i}" className="author-item">
@@ -68,15 +67,30 @@ module.exports = React.createClass
         </li>
     <ul>{items}</ul>
 
+  renderDocumentSubTypes: ->
+    sub_types = @props.article.document_type.sub_types
+    if sub_types?.length > 0
+      items =
+        for sub_type in sub_types
+          <li className="article-item-document-sub-type-item">{sub_type.title}</li>
+
+      <ul className="article-item-document-sub-types">{items}</ul>
+
+  renderTargets: ->
+    if @props.article.targets?.length > 0
+      <div className="article-item-targets">{@joinList(_.pluck(@props.article.targets, 'title'))}</div>
+
   render: ->
     article = @props.article
 
-    # TOODO: modify rendering of article domains
     <div className="article-item">
       <h1>{article.title}</h1>
 
       <h2>{@t('document_type')}</h2>
-      {article.document_type}
+      <ul className="article-item-document-type">
+        <li>{article.document_type}</li>
+        <li>{@renderDocumentSubTypes()}</li>
+      </ul>
 
       <h2>{@t('year_published')}</h2>
       {article.year_published}
@@ -127,7 +141,7 @@ module.exports = React.createClass
       <h2>{@t('focus')}</h2>
       {article.focus}
 
-      <h2>{@t('target')}</h2>
-      {article.target}
+      <h2>{@t('targets')}</h2>
+      {@renderTargets()}
 
     </div>
