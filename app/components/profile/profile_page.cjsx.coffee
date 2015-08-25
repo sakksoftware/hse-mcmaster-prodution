@@ -25,6 +25,9 @@ module.exports = React.createClass
     </select>
 
   render: ->
+    # TODO: desktop needs to support columns
+    # TODO: add localization
+    # TODO: load user from store
     <div className="profile-page">
       <h1>My Profile</h1>
 
