@@ -75,23 +75,8 @@
     }
   },
   "articles_page": {
-    "document_type": "Tipo de documentos",
-    "year_published": "FR_Last year litereature searched or year published",
-    "quality_rating": "Cote de qualité",
-    "countries": "Pays dans lesquels les études (incluses dans la synthèse) ont été réalisées",
-    "domains": "Domaine",
-    "topics": "Thème(s) du système de santé",
-    "country_groupings": "FR_Country groupings",
-    "who_regions": "FR_World health organization regions",
-    "lmic_focus": "FR_Low- and middle-income regions (LMIC) focus",
-    "summary_links": "Résumé convivial",
-    "abstract_links": "Résumé scientifique",
-    "full_text_link": "Rapport intégral",
     "no_full_text_link": "Aucun rapport intégral disponible",
-    "citation": "Référence",
-    "question_type": "Type de question",
-    "focus": "Cible",
-    "target": "FR_Target"
+    "no_doi": "FR_Not yet available"
   },
   "search_page": {
     "search_box": {

@@ -86,62 +86,62 @@ module.exports = React.createClass
     <div className="article-item">
       <h1>{article.title}</h1>
 
-      <h2>{@t('document_type')}</h2>
+      <h2>{@props.article.label_document_type}</h2>
       <ul className="article-item-document-type">
         <li>{article.document_type}</li>
         <li>{@renderDocumentSubTypes()}</li>
       </ul>
 
-      <h2>{@t('year_published')}</h2>
+      <h2>{@props.article.label_year_published}</h2>
       {article.year_published}
 
-      <h2>{@t('quality_rating')}</h2>
+      <h2>{@props.article.label_quality_rating}</h2>
       {article.quality} ({article.quality_note})
 
-      <h2>{@t('countries')}</h2>
+      <h2>{@props.article.label_countries}</h2>
       {@renderStudiesConductedIn()}
 
       <div className="highlighted-section">
-        <h2>{@t('domains')}</h2>
+        <h2>{@props.article.label_domains}</h2>
         {article.domains}
 
-        <h2>{@t('topics')}</h2>
+        <h2>{@props.article.label_topics}</h2>
         <ul>{@renderTopicList(@props.article.topics)}</ul>
       </div>
 
-      <h2>{@t('country_groupings')}</h2>
+      <h2>{@props.article.label_country_groupings}</h2>
       {article.country_groupings}
 
-      <h2>{@t('who_regions')}</h2>
+      <h2>{@props.article.label_who_regions}</h2>
       {article.who_regions}
 
-      <h2>{@t('lmic_focus')}</h2>
+      <h2>{@props.article.label_lmic_focus}</h2>
       {article.lmic_focus}
 
       <div className="highlighted-section">
-        <h2>{@t('summary_links')}</h2>
+        <h2>{@props.article.label_summary_links}</h2>
         {@renderLinksList('summary-link', article.summary_links)}
 
-        <h2>{@t('abstract_links')}</h2>
+        <h2>{@props.article.label_abstract_links}</h2>
         {@renderLinksList('abstract-links', article.abstract_links)}
 
-        <h2>{@t('full_text_link')}</h2>
-        {article.full_text_link || @t('full_text_link')}
+        <h2>{@props.article.label_full_text_link}</h2>
+        {article.full_text_link || @t('no_full_text_link')}
 
-        <h2>{@t('citation')}</h2>
+        <h2>{@props.article.label_citation}</h2>
         {article.citation}
 
-        <h2>{@t('doi')}</h2>
-        {article.doi || "Not yet available"}
+        <h2>{@props.article.label_doi}</h2>
+        {article.doi || @t('no_doi')}
       </div>
 
-      <h2>{@t('question_type')}</h2>
+      <h2>{@props.article.label_question_type}</h2>
       {article.question_type}
 
-      <h2>{@t('focus')}</h2>
+      <h2>{@props.article.label_focus}</h2>
       {article.focus}
 
-      <h2>{@t('targets')}</h2>
+      <h2>{@props.article.label_targets}</h2>
       {@renderTargets()}
 
     </div>

@@ -75,23 +75,8 @@
     }
   },
   "articles_page": {
-    "document_type": "Type of Document",
-    "year_published": "Last year literature searched or year published",
-    "quality_rating": "Quality rating",
-    "countries": "Countries in which studies (included in the synthesis) were conducted",
-    "domains": "Domains",
-    "topics": "Health system topics",
-    "country_groupings": "Country groupings",
-    "who_regions": "World Health Organization regions",
-    "lmic_focus": "Low- and middle-income regions (LMIC) focus",
-    "summary_links": "User Friendly Summary",
-    "abstract_links": "Scientific abstract",
-    "full_text_link": "Full-text report",
     "no_full_text_link": "No free full-text search report available",
-    "citation": "Citation",
-    "question_type": "Type of question",
-    "focus": "Focus",
-    "target": "Target"
+    "no_doi": "Not yet available"
   },
   "search_page": {
     "search_box": {

@@ -6,6 +6,7 @@
   },
   "question_type": "Effectiveness",
   "focus": "Specific",
+  "description": "Some Crazy long description goes here.....",
   "targets": [ { "title": "Individual" }],
   "topics": [
     {
@@ -91,5 +92,35 @@
   "citation": "Kaufman ZA, Spencer TS, Ross DA. Effectiveness of sport-based HIV prevention interventions: A systematic review of the evidence. AIDS and Behavior. 2013;17(3):987-1001.",
   "doi": "10.1007/s10461-012-0348-1",
   "full_text_link": null,
-  "related_documents": []
+  "related_documents": [],
+
+  "label_citation": "Citation",
+  "label_countries_in_which_studies_were_conducted": "Countries in which studies (included in the synthesis) were conducted",
+  "label_country_focus": "Country focus",
+  "label_doi": "DOI",
+  "label_full_text_report": "Full-text report",
+  "label_health_system_topics": "Health system topic(s)",
+  "label_last_year_literature_searched": "Last year literature searched",
+  "label_quality_rating": "Quality rating",
+  "label_registry_record": "Registry record",
+  "label_related_documents": "Related documents",
+  "label_scientific_abstract": "Scientific abstract",
+  "label_summary": "Summary",
+  "label_title": "Title",
+  "label_user_friendly_summary": "User-friendly summary",
+  "label_year_published": "Last year literature searched or year published",
+
+  "label_document_type": "Type of Document",
+  "label_countries": "Countries in which studies (included in the synthesis) were conducted",
+  "label_domains": "Domains",
+  "label_topics": "Health system topics",
+  "label_country_groupings": "Country groupings",
+  "label_who_regions": "World Health Organization regions",
+  "label_lmic_focus": "Low- and middle-income regions (LMIC) focus",
+  "label_summary_links": "User Friendly Summary",
+  "label_abstract_links": "Scientific abstract",
+  "label_full_text_link": "Full-text report",
+  "label_question_type": "Type of question",
+  "label_focus": "Focus",
+  "label_targets": "Target"
 }
