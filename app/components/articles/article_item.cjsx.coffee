@@ -151,7 +151,7 @@ module.exports = React.createClass
         {@ifNotEmpty @renderLinksList('abstract-links', article.abstract_links), @t('no_scientific_abstract')}
 
         <h2>{@props.article.label_full_text_report}</h2>
-        {@ifNotEmpty article.full_text_link, @t('no_full_text_report')}
+        {@ifNotEmpty @renderLinksList('full-text-report', article.full_text_link), @t('no_full_text_report')}
 
         <h2>{@props.article.label_citation}</h2>
         {article.citation}
