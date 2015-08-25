@@ -62,7 +62,7 @@ module.exports = React.createClass
     </div>
 
   renderLinksList: (name, links)->
-    return unless links.length > 0
+    return unless links?.length > 0
     items =
       for link, i in links
         <li key={"#{name}-#{i}"} className="#{name}-item">
