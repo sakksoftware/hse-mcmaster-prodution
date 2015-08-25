@@ -16,7 +16,8 @@ module.exports = React.createClass
     article: null
 
   componentWillMount: ->
-    ArticleActions.loadArticle(@props.id, @handleLoad, @handleError)
+    lang = Cookies.get('lng') || 'en'
+    ArticleActions.loadArticle(@props.id, lang, @handleLoad, @handleError)
 
   handleLoad: (article) ->
     @setState(article: article)
