@@ -76,7 +76,7 @@
   },
   "articles_page": {
     "no_studies_conducted_in": "Not avilable",
-    "no_full_text_link": "No free full-text search report available",
+    "no_full_text_report": "No free full-text search report available",
     "no_doi": "Not yet available",
     "no_domains": "Not avilable",
     "no_topics": "Not avilable",
@@ -86,7 +86,7 @@
     "no_targets": "Not avilable",
     "no_themes": "Not avilable",
     "no_who_regions": "Not avilable",
-    "no_abstract_links": "Not avilable",
+    "no_scientific_abstract": "Not avilable",
     "no_summary_links": "Not avilable",
     "no_country_groupings": "Not avilable"
   },

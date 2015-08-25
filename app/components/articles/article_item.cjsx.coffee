@@ -115,7 +115,7 @@ module.exports = React.createClass
       <h2>{@props.article.label_quality_rating}</h2>
       {article.quality} ({article.quality_note})
 
-      <h2>{@props.article.label_countries}</h2>
+      <h2>{@props.article.label_studies_conducted_in}</h2>
       {@ifNotEmpty @renderStudiesConductedIn(), @t('no_studies_conducted_in')}
 
       <h2>{@props.article.label_priority_areas}</h2>
@@ -125,14 +125,14 @@ module.exports = React.createClass
         <h2>{@props.article.label_domains}</h2>
         <ul>{@ifNotEmpty @renderNestedList(@props.article.domains, 'domains', 'domain'), @t('no_domains')}</ul>
 
-        <h2>{@props.article.label_topics}</h2>
+        <h2>{@props.article.label_health_system_topics}</h2>
         <ul>{@ifNotEmpty @renderNestedList(@props.article.topics, 'topics', 'topic'), @t('no_topics')}</ul>
       </div>
 
       <h2>{@props.article.label_themes}</h2>
       <ul>{@ifNotEmpty @renderNestedList(@props.article.themes, 'themes', 'theme'), @t('no_themes')}</ul>
 
-      <h2>{@props.article.label_country_groupings}</h2>
+      <h2>{@props.article.label_country_focus}</h2>
       {@ifNotEmpty article.country_groupings, @t('no_country_groupings')}
 
       <h2>{@props.article.label_who_regions}</h2>
@@ -144,14 +144,14 @@ module.exports = React.createClass
       </div>
 
       <div className="highlighted-section">
-        <h2>{@props.article.label_summary_links}</h2>
+        <h2>{@props.article.label_summary}</h2>
         {@ifNotEmpty @renderLinksList('summary-link', article.summary_links), @t('no_summary_links')}
 
-        <h2>{@props.article.label_abstract_links}</h2>
-        {@ifNotEmpty @renderLinksList('abstract-links', article.abstract_links), @t('no_abstract_links')}
+        <h2>{@props.article.label_scientific_abstract}</h2>
+        {@ifNotEmpty @renderLinksList('abstract-links', article.abstract_links), @t('no_scientific_abstract')}
 
-        <h2>{@props.article.label_full_text_link}</h2>
-        {@ifNotEmpty article.full_text_link, @t('no_full_text_link')}
+        <h2>{@props.article.label_full_text_report}</h2>
+        {@ifNotEmpty article.full_text_link, @t('no_full_text_report')}
 
         <h2>{@props.article.label_citation}</h2>
         {article.citation}
