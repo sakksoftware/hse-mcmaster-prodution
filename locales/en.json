@@ -9,7 +9,7 @@
     "guided_search": "Guided Search",
     "select_language": "Select language",
     "create_account": "Create Account",
-    "login": "Login",
+    "login": "Log in",
     "logout": "Logout"
   },
   "menus": {
@@ -19,11 +19,11 @@
     "help": {
       "title": "Help",
       "instructions": [
-        "You can add \"and\" \"or\" \"nor\" to improve them.",
+        "You can combine your search terms using the Boolean operators AND, OR and NOT. Using AND will ensure both terms are included in your results. Using OR will ensure either of the terms are included. Using NOT will ensure that a given search term isn't included in your results.",
         "",
-        "For example: you can search for *(\"Wins WorldCup\" OR \"Wins Champions League\") AND (football OR soccer) -American -beach -women's*",
+        "For example, you can search for cancer OR diabetes AND teams NOT nurses.",
         "",
-        "The results would show who won the Champions League and the World Cup lately."
+        "This approach will search for documents that focus on teams that provide care for cancer or diabetes patients, but that don't involve nurses."
       ]
     },
     "signup": {
@@ -32,7 +32,7 @@
       "password": "Password",
       "confirm_password": "Confirm password",
       "i_accept": "I accept the",
-      "terms": "Terms of Use",
+      "terms": "Terms of use",
       "signup_button": "Create account",
       "did_not_recieve": "Didn't receive an email?",
       "send_again": "Send again",
@@ -42,10 +42,10 @@
       "title": "Menu"
     },
     "login": {
-      "title": "Login",
+      "title": "Log in",
       "email": "Email",
       "password": "Password",
-      "login_button": "Login",
+      "login_button": "Log in",
       "forgot_password": "Forgot your password?"
     },
     "languages": {

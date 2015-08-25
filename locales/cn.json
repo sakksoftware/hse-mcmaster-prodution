@@ -19,11 +19,11 @@
     "help": {
       "title": "CN_Help",
       "instructions": [
-        "CN_You can add \"and\" \"or\" \"nor\" to improve them.",
+        "CN_You can combine your search terms using the Boolean operators AND, OR and NOT. Using AND will ensure both terms are included in your results. Using OR will ensure either of the terms are included. Using NOT will ensure that a given search term isn't included in your results.",
         "",
-        "For example: you can search for *(\"Wins WorldCup\" OR \"Wins Champions Leauge\") AND (football OR soccer) -American -beach -women's*",
+        "CN_For example, you can search for cancer OR diabetes AND teams NOT nurses.",
         "",
-        "The results would show who won the Champions Leauge and the WorldCup lately."
+        "CN_This approach will search for documents that focus on teams that provide care for cancer or diabetes patients, but that don't involve nurses."
       ]
     },
     "signup": {
@@ -75,8 +75,23 @@
     }
   },
   "articles_page": {
+    "document_type": "文件的类型",
+    "last_published": "最近的文献检索年份或出版年份",
+    "quality_rating": "质量分级",
+    "countries": "证据综合纳入的研究所属的国家",
+    "domains": "领域",
+    "topics": "卫生系统主题",
+    "country_groupings": "CN_Country groupings",
+    "who_regions": "CN_World health organization regions",
+    "lmic_focus": "CN_Low- and middle-income regions (LMIC) focus",
+    "summary_links": "用户易懂的概要",
+    "abstract_links": "科学摘要",
+    "full_text_link": "全文",
     "no_full_text_link": "无免费全文",
-    "no_doi": "CN_Not yet available"
+    "citation": "参考文献",
+    "question_type": "问题的类型",
+    "focus": "关注内容",
+    "target": "目标对象"
   },
   "search_page": {
     "search_box": {

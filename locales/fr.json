@@ -19,11 +19,11 @@
     "help": {
       "title": "FR_Help",
       "instructions": [
-        "FR_You can add \"and\" \"or\" \"nor\" to improve them.",
+        "FR_YYou can combine your search terms using the Boolean operators AND, OR and NOT. Using AND will ensure both terms are included in your results. Using OR will ensure either of the terms are included. Using NOT will ensure that a given search term isn't included in your results.",
         "",
-        "For example: you can search for *(\"Wins WorldCup\" OR \"Wins Champions Leauge\") AND (football OR soccer) -American -beach -women's*",
+        "FR_For example, you can search for cancer OR diabetes AND teams NOT nurses.",
         "",
-        "The results would show who won the Champions Leauge and the WorldCup lately."
+        "FR_This approach will search for documents that focus on teams that provide care for cancer or diabetes patients, but that don't involve nurses."
       ]
     },
     "signup": {
@@ -75,8 +75,23 @@
     }
   },
   "articles_page": {
+    "document_type": "Tipo de documentos",
+    "last_published": "Dernière année de la recherche documentaire ou année de publication",
+    "quality_rating": "Cote de qualité",
+    "countries": "Pays dans lesquels les études (incluses dans la synthèse) ont été réalisées",
+    "domains": "Domaine",
+    "topics": "Thème(s) du système de santé",
+    "country_groupings": "FR_Country groupings",
+    "who_regions": "FR_World health organization regions",
+    "lmic_focus": "FR_Low- and middle-income regions (LMIC) focus",
+    "summary_links": "Résumé convivial",
+    "abstract_links": "Résumé scientifique",
+    "full_text_link": "Rapport intégral",
     "no_full_text_link": "Aucun rapport intégral disponible",
-    "no_doi": "FR_Not yet available"
+    "citation": "Référence",
+    "question_type": "Type de question",
+    "focus": "Cible",
+    "target": "FR_Target"
   },
   "search_page": {
     "search_box": {
