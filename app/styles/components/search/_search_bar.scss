@@ -5,6 +5,8 @@ $search-bar-line: 1px solid darken($border-color, 10%);
   position: relative;
 
   .react-autosuggest input {
+    background-color: white;
+
     @include desktop {
       border-bottom: $search-bar-line;
     }

@@ -45,21 +45,23 @@ module.exports = React.createClass
     }, options
 
     if options.type == 'checkbox'
-      <Input type={options.type} label={label} key={options.name} name={options.name} ref={options.name} bsStyle={@getFieldStyle(options.name)} hasFeedback onChange={@handleChange} help={@state.errors[options.name]}>{label}</Input>
+      <Input type={options.type} label={label} key={options.name} name={options.name} ref={options.name} bsStyle={@getFieldStyle(options.name)} defaultValue={options.defaultValue} hasFeedback onChange={@handleChange} help={@state.errors[options.name]}>{label}</Input>
     else
-      <Input type={options.type} placeholder={label} key={options.name} name={options.name} ref={options.name} bsStyle={@getFieldStyle(options.name)} hasFeedback onChange={@handleChange} help={@state.errors[options.name]} />
+      <Input type={options.type} placeholder={label} key={options.name} name={options.name} ref={options.name} bsStyle={@getFieldStyle(options.name)} defaultValue={options.defaultValue} hasFeedback onChange={@handleChange} help={@state.errors[options.name]} />
+
+  renderFields: (fields) ->
+    fields.map (field) =>
+      if field.type is 'input'
+        @renderInput field.props.label, _.omit(field.props, 'label')
+      else if _.isArray(field)
+        @renderFields(field)
+      else
+        field
 
   render: ->
-    fields =
-      @props.children.map (field) =>
-        if field.type is 'input'
-          @renderInput field.props.label, _.omit(field.props, 'label')
-        else
-          field
-
     if @props.replaceContent && @state.saved
       @props.afterSaveContent?() || <div></div>
     else
-      <form ref='form' onSubmit={@handleSubmit}>
-        {fields}
+      <form ref='form' onSubmit={@handleSubmit} className={@props.className}>
+        {@renderFields(@props.children)}
       </form>

@@ -1,0 +1,61 @@
+.profile-page {
+  h1 {
+    font-size: $x-medium-size;
+    margin-bottom: $x-medium-size;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: $small-size;
+    color: darken($primary-text-color, 10%);
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: $medium-size;
+  }
+
+  .editable-information {
+    position: relative;
+    margin-top: $large-size;
+    padding-top: $large-size;
+    border-top: 1px solid $border-color;
+
+    .btn-toggle {
+      position: absolute;
+      right: 0;
+      top: $large-size;
+      color: $primary-text-color;
+    }
+
+    .readonly-field-label {
+      font-weight: 500;
+      color: lighten($primary-text-color, 10%);
+      text-transform: uppercase;
+      margin-bottom: $x-tiny-size;
+    }
+
+    .readonly-field + .readonly-field {
+      margin-top: $medium-size;
+    }
+
+    .readonly-field-confirm_password {
+      display: none;
+    }
+  }
+
+  button {
+    margin-top: $medium-size;
+    padding: $small-size;
+    height: $xx-large-size;
+    width: 100%;
+
+    @include desktop {
+      width: 200px;
+    }
+  }
+
+  // temporary style, remove later
+  select + button {
+    margin-top: $small-size;
+  }
+}
