@@ -15,7 +15,7 @@ module.exports = React.createClass
 
     for topic, i in topics
       result.push <li key={"topic-item-#{i}"} className="topic-item">{topic.title}</li>
-      if topic.topics
+      if topic.topics && topic.topics.length > 0
         result.push <li key={"topic-item-nested-#{i}"} className="topic-item">
           <ul>
             {@renderTopicList(topic.topics)}
