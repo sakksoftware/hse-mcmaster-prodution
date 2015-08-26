@@ -3,8 +3,7 @@ params = require('lib/url').params()
 if window.location.hostname == "localhost"
   window.ENV = params.ENV || 'development'
 else
-  # TODO: remvoe temporary measure for setting env
-  window.ENV = params.ENV || 'development'
+  window.ENV = params.ENV || 'production'
 
 console.log('ENV =', window.ENV)
 
