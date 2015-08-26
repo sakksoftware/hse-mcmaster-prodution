@@ -93,7 +93,8 @@
     "no_registry_record_links": "PT_No registry record available",
     "no_category": "PT_Not avilable",
     "no_who_links": "PT_Not avilable",
-    "no_related_documents": "PT_Not avilable"
+    "no_related_documents": "PT_Not avilable",
+    "no_last_year_literature_searched": "PT_Not avilable"
   },
   "search_page": {
     "search_box": {

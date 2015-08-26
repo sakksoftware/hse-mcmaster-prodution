@@ -93,7 +93,8 @@
     "no_registry_record_links": "CN_No registry record available",
     "no_category": "CN_Not avilable",
     "no_who_links": "CN_Not avilable",
-    "no_related_documents": "CN_Not avilable"
+    "no_related_documents": "CN_Not avilable",
+    "no_last_year_literature_searched": "CN_Not avilable"
   },
   "search_page": {
     "search_box": {

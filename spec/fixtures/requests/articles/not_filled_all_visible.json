@@ -53,15 +53,16 @@
   "label_themes": "Themes",
   "label_related_documents": "Related documents",
 
-  "label_registry_record_links": "Registry record link",
+  "label_registry_record": "Registry record link",
   "label_author_email": "Author email",
   "label_who_links": "Who links",
   "label_category": "Category",
 
   "author_email": null,
+  "last_year_literature_searched": null,
 
   "author_email_visible": "true",
-  "canadian_area_visible": "true",
+  "priority_area_visible": "true",
   "countries_in_which_studies_were_conducted_visible": "true",
   "country_focus_visible": "true",
   "document_summary_visible": "true",

@@ -123,15 +123,15 @@
   "label_themes": "Themes",
   "label_related_documents": "Related documents",
 
-  "label_registry_record_links": "Registry record link",
+  "label_registry_record": "Registry record link",
   "label_author_email": "Author email",
   "label_who_links": "Who links",
-  "label_category": "Category",
 
   "author_email": "michael@jackson.com",
+  "last_year_literature_searched": "2005",
 
   "author_email_visible": "false",
-  "canadian_area_visible": "false",
+  "priority_area_visible": "false",
   "countries_in_which_studies_were_conducted_visible": "false",
   "country_focus_visible": "false",
   "document_summary_visible": "false",

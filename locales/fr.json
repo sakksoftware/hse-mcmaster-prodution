@@ -93,7 +93,8 @@
     "no_registry_record_links": "FR_No registry record available",
     "no_category": "FR_Not avilable",
     "no_who_links": "FR_Not avilable",
-    "no_related_documents": "FR_Not avilable"
+    "no_related_documents": "FR_Not avilable",
+    "no_last_year_literature_searched": "FR_Not avilable"
   },
   "search_page": {
     "search_box": {

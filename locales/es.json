@@ -93,7 +93,8 @@
     "no_registry_record_links": "ES_No registry record available",
     "no_category": "ES_Not avilable",
     "no_who_links": "ES_Not avilable",
-    "no_related_documents": "ES_Not avilable"
+    "no_related_documents": "ES_Not avilable",
+    "no_last_year_literature_searched": "ES_Not avilable"
   },
   "search_page": {
     "search_box": {
