@@ -8,7 +8,7 @@ else
 console.log('ENV =', window.ENV)
 
 config = require('config')[window.ENV]
-if config.useMockStores
+if config.useMocks
   console.log("using mock stores")
   store = require('mocks/stores')
 else

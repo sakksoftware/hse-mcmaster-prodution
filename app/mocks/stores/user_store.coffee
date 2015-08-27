@@ -1,10 +1,33 @@
 API = require('lib/api')
 UserActions = require('actions/user_actions')
 StoreMock = require('mocks/support/store_mock')
+RefluxStateMixin = require('lib/reflux_state_mixin')(Reflux)
 
 module.exports = Reflux.createStore
   listenables: [UserActions]
-  mixins: [StoreMock]
+  mixins: [RefluxStateMixin, StoreMock]
+
+  getInitialState: ->
+    user: null
+    loaded: false
+    errors: null
+
+  onLoadUserCompleted: (user) ->
+    @setState(user: user, loaded: true, errors: null)
+    @trigger(@state)
+
+  onLoadUserFailed: (xhr, statusCode, responseText) ->
+    @setState(errors: responseText, loaded: true)
+    @trigger(@state)
+
+  onUpdateUserCompleted: (user) ->
+    @setState(user: _.extend(@state.user, user), loaded: true, errors: null)
+    @trigger(@state)
+
+  onUpdateUserFailed: (xhr, statusCode, responseText) ->
+    @setState(errors: responseText, loaded: true)
+    @trigger(@state)
+
   onCreateUser: (user, success, error) ->
     user.errors = {}
     if _.isEmpty(user.email)
