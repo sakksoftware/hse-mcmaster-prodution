@@ -2,9 +2,13 @@ languages = require('constants/languages')
 EditableInformation = require('components/shared/editable_information')
 UserActions = require('actions/user_actions')
 UserStore = require('mocks/stores/user_store')
+TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
   displayName: 'ProfilePage'
+
+  mixins: [TranslationHelper]
+  baseTranslation: 'profile_page'
 
   getInitialState: ->
     UserStore.state
@@ -16,12 +20,12 @@ module.exports = React.createClass
   updateState: (state) ->
     @setState(state)
     if state.errors
-      window.flash('error', 'Cannot load user profile information')
+      window.flash('error', @t('short_cannot_load_user_profile'))
 
   updateUser: (user, form)->
     UserActions.updateUser(user)
     unsubscribe = UserActions.updateUser.completed.listen =>
-      window.flash('success', 'Successfully updated user')
+      window.flash 'success', @t('successfully_updated')
       form.toggleReadOnly()
       unsubscribe()
 
@@ -30,34 +34,43 @@ module.exports = React.createClass
       for language in languages
         <option key="language-#{language.name}" value={language.name}>{language.title}</option>
 
-    <select label="Language" name="language" type="select" className="form-control">
+    <select label={@t('language')} name="language" type="select" className="form-control">
       {options}
     </select>
 
   render: ->
     # TODO: desktop needs to support columns
-    # TODO: add localization
     if @state.loaded && !@state.errors
       <div className="profile-page">
-        <h1>My Profile</h1>
+        <h1>{@t('my_profile')}</h1>
 
-        <EditableInformation title="Account Information" onSubmit={@updateUser} object={@state.user}>
-          <input label="Email" name="email" type="email" />
-          <input label="Password" name="password" type="password" />
-          <input label="Confirm Password" name="confirm_password" type="password" />
+        <EditableInformation title={@t('account_information')}
+          onSubmit={@updateUser}
+          object={@state.user}
+          editLabel={@t('edit')}
+          cancelLabel={@t('cancel')}
+        >
+          <input label={@t('email')} name="email" type="email" />
+          <input label={@t('password')} name="password" type="password" />
+          <input label={@t('confirm_password')} name="confirm_password" type="password" />
         </EditableInformation>
 
-        <EditableInformation title="Personal Information" onSubmit={@updateUser} object={@state.user}>
-          <input label="First Name" name="first_name" />
-          <input label="Last Name" name="last_name" />
-          <input label="Role" name="role" />
-          <input label="Country" name="country" />
+        <EditableInformation title={@t('personal_information')}
+          onSubmit={@updateUser}
+          object={@state.user}
+          editLabel={@t('edit')}
+          cancelLabel={@t('cancel')}
+        >
+          <input label={@t('first_name')} name="first_name" />
+          <input label={@t('last_name')} name="last_name" />
+          <input label={@t('role')} name="role" />
+          <input label={@t('country')} name="country" />
           {@renderLanguageSelect()}
         </EditableInformation>
       </div>
     else if @state.errors
       <div className="profile-page">
-        Opps, couldn't load user profile. Check your interent connection and try again
+        {@t('cannot_load_user_profile')}
       </div>
     else
       <div className="profile-page">

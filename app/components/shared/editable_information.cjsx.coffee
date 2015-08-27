@@ -8,6 +8,12 @@ module.exports = React.createClass
     object: React.PropTypes.object.isRequired
     children: React.PropTypes.array.isRequired
     onSubmit: React.PropTypes.func.isRequired
+    editLabel: React.PropTypes.string
+    cancelLabel: React.PropTypes.string
+
+  getDefaultProps: ->
+    editLabel: "Edit"
+    cancelLabel: "Cancel"
 
   getInitialState: ->
     readOnly: true
@@ -45,13 +51,13 @@ module.exports = React.createClass
     if @state.readOnly
       <div key="readonly-editable" className="editable-information">
         <h2>{@props.title}</h2>
-        <a href="#" className="btn-toggle" onClick={@toggleReadOnly}>Edit</a>
+        <a href="#" className="btn-toggle" onClick={@toggleReadOnly}>{@props.editLabel}</a>
         {@renderChildren()}
       </div>
     else
       <Form key="writeable-editable" onSubmit={@handleSubmit} className="editable-information">
         <h2>{@props.title}</h2>
-        <a href="#" className="btn-toggle" onClick={@toggleReadOnly}>Cancel</a>
+        <a href="#" className="btn-toggle" onClick={@toggleReadOnly}>{@props.cancelLabel}</a>
         {@renderChildren()}
         <button>Update information</button>
       </Form>

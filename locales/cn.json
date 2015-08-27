@@ -118,6 +118,24 @@
       "most_popular": "CN_Most Popular"
     }
   },
+  "profile_page": {
+    "successfully_updated": "CN_Successfully updated profile",
+    "my_profile": "CN_My Profile",
+    "account_information": "CN_Account Information",
+    "email": "CN_Email",
+    "password": "CN_Password",
+    "confirm_password": "CN_Confirm Password",
+    "personal_information": "CN_Personal Information",
+    "first_name": "CN_First Name",
+    "last_name": "CN_Last Name",
+    "role": "CN_Role",
+    "country": "CN_Country",
+    "language": "CN_Language",
+    "cannot_load_user_profile": "CN_Opps, couldn't load user profile. Check your interent connection and try again",
+    "short_cannot_load_user_profile": "CN_Cannot load user profile information",
+    "edit": "CN_Edit",
+    "cancel": "CN_Cancel"
+  },
   "errors": {
     "no_connection": "CN_Opps, could not load data. Check your internet connection."
   }

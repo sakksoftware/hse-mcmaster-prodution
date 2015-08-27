@@ -118,6 +118,24 @@
       "most_popular": "FR_Most Popular"
     }
   },
+  "profile_page": {
+    "successfully_updated": "FR_Successfully updated profile",
+    "my_profile": "FR_My Profile",
+    "account_information": "FR_Account Information",
+    "email": "FR_Email",
+    "password": "FR_Password",
+    "confirm_password": "FR_Confirm Password",
+    "personal_information": "FR_Personal Information",
+    "first_name": "FR_First Name",
+    "last_name": "FR_Last Name",
+    "role": "FR_Role",
+    "country": "FR_Country",
+    "language": "FR_Language",
+    "cannot_load_user_profile": "FR_Opps, couldn't load user profile. Check your interent connection and try again",
+    "short_cannot_load_user_profile": "FR_Cannot load user profile information",
+    "edit": "FR_Edit",
+    "cancel": "FR_Cancel"
+  },
   "errors": {
     "no_connection": "FR_Opps, could not load data. Check your internet connection."
   }
