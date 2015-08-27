@@ -7,6 +7,6 @@ module.exports = Reflux.createStore
   listenables: [FilterActions]
   mixins: [StoreMock, FiltersHelper]
 
-  loadFilters: (success, error) ->
+  loadFilters: (lang, success, error) ->
     filters = @getFilters()
-    @send(filters: filters, success, '/filters')
+    @send(filters: filters, success, "/filters?lang=#{lang}")

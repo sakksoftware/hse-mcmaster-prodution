@@ -11,9 +11,10 @@ module.exports = Reflux.createStore
     user: null
     loaded: false
     errors: null
+    language: Cookies.get('lang') || 'en'
 
   onLoadUserCompleted: (user) ->
-    @setState(user: user, loaded: true, errors: null)
+    @setState(user: user, loaded: true, errors: null, language: user.language)
     @trigger(@state)
 
   onLoadUserFailed: (xhr, statusCode, responseText) ->
@@ -21,12 +22,16 @@ module.exports = Reflux.createStore
     @trigger(@state)
 
   onUpdateUserCompleted: (user) ->
-    @setState(user: _.extend(@state.user, user), loaded: true, errors: null)
+    @setState(user: _.extend(@state.user, user), loaded: true, errors: null, language: user.language || @state.language)
     @trigger(@state)
 
   onUpdateUserFailed: (xhr, statusCode, responseText) ->
     @setState(errors: responseText, loaded: true)
     @trigger(@state)
+
+  onChangeLanguage: (language) ->
+    Cookies.set('lang', language)
+    window.location.reload()
 
   onCreateUser: (user, success, error) ->
     user.errors = {}

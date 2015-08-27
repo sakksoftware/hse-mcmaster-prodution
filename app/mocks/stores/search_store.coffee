@@ -29,11 +29,11 @@ module.exports = Reflux.createStore
     filters = FilterNormalizationService.getFiltersArray(filters)
     filters.filter((e) -> e.applied)
 
-  search: (search, success, error, options = {}) ->
+  search: (search, lang, success, error, options = {}) ->
     allFilters = @getFilters()
     applied_filters = @_getAppliedFilters(search.filters)
     @_addAppliedProperty(allFilters, applied_filters)
-    query = SearchSerializationService.serializeSearchUrl(search)
+    query = SearchSerializationService.serializeSearchUrl(search, lang)
 
     res = searchData
     res.applied_filters = applied_filters
@@ -43,10 +43,11 @@ module.exports = Reflux.createStore
 
     @send(res, success, "/search#{query}")
 
-  suggestions: (query, success, error, options = {}) ->
+  suggestions: (search, lang, success, error, options = {}) ->
+    query = SearchSerializationService.serializeSearchUrl(search, lang)
     res = _.clone(suggestionData)
-    res.suggestions = _.filter suggestionData.suggestions, (s) => s.query.toLowerCase().match(query.toLowerCase())
-    @send(res, success, '/search/suggestions')
+    res.suggestions = _.filter suggestionData.suggestions, (s) => s.query.toLowerCase().match(search.query.toLowerCase())
+    @send(res, success, "/search/suggestions#{query}")
 
 searchData = {
   "query": "HIV",

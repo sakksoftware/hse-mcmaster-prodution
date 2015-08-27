@@ -9,6 +9,7 @@ if config.useMocks
 UserActions = Reflux.createActions
   createUser: {}
   loginUser: {}
+  changeLanguage: {}
   updateUser: {asyncResult: true}
   loadUser: {asyncResult: true}
 

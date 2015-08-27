@@ -47,7 +47,7 @@ module.exports = React.createClass
 
   render: ->
     <div className="search-box">
-      <SearchBar query={@props.search.query} onSearch={@props.onSearch} />
+      <SearchBar search={@props.search} onSearch={@props.onSearch} />
       <div className="layer-toggles">
         <LayerToggle menu="help" onToggle={@props.onShowMenu}>
           <span className="icon"></span>{@t('tips')}

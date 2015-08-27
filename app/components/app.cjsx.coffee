@@ -45,10 +45,6 @@ module.exports = React.createClass
     @setState(currentUser: null)
     @dismissMenu()
 
-  selectLanguage: (language) ->
-    Cookies.set('lng', language)
-    window.location.reload()
-
   toggleMenu: (menuName, title, menuContext = {}) ->
     @refs.offcanvas.toggleMenu(menuName, title, menuContext)
 
@@ -106,14 +102,13 @@ module.exports = React.createClass
           onSubMenuClick={@toggleMenu}
           onLogout={@logout}
           onLinkClick={@dismissMenu}
-          onSelectLanguage={@selectLanguage}
           />
       </Layer>
       <Layer name="login" title={@t('menus.login.title')}>
         <LoginMenu onLogin={@login} />
       </Layer>
       <Layer name="languages" title={@t('menus.languages.title')}>
-        <LanguagesMenu onSelectLanguage={@selectLanguage} />
+        <LanguagesMenu />
       </Layer>
       <Layer name="account" title={@t('menus.account.title')}>
         <AccountMenu />

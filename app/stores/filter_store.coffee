@@ -4,7 +4,7 @@ FilterActions = require('actions/filter_actions')
 module.exports = Reflux.createStore
   listenables: [FilterActions]
 
-  loadFilters: (success, error) ->
-    API.read "filters",
+  loadFilters: (lang, success, error) ->
+    API.read "filters?lang=#{lang}",
       success: success,
       error: error

@@ -10,16 +10,16 @@ console.log('ENV =', window.ENV)
 config = require('config')[window.ENV]
 if config.useMocks
   console.log("using mock stores")
-  store = require('mocks/stores')
+  stores = require('mocks/stores')
 else
-  store = require('stores')
+  stores = require('stores')
 
 localesUrl = config.localesUrl
 if params.remote_locales == "false"
   localesUrl = require('config')['development'].localesUrl
 
 initialize = ->
-  language = Cookies.get('lng') || 'en'
+  language = stores.UserStore.state.language
   $.i18n.init
     lng: language
     fallbackLng: 'en'

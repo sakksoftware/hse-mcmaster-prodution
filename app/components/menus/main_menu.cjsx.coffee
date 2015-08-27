@@ -16,7 +16,6 @@ module.exports = React.createClass
     onSubMenuClick: React.PropTypes.func.isRequired
     onLinkClick: React.PropTypes.func.isRequired
     onLogout: React.PropTypes.func.isRequired
-    onSelectLanguage: React.PropTypes.func.isRequired
 
   fullName: ->
     user = @props.currentUser
@@ -74,7 +73,7 @@ module.exports = React.createClass
         <LayerToggle menu="languages" onToggle={@props.onSubMenuClick}>{@t('select_language')}</LayerToggle>
 
         <a className="desktop-menu-link" href="#">{@t('select_language')}</a>
-        <LanguagesMenu onSelectLanguage={@props.onSelectLanguage} />
+        <LanguagesMenu />
       </li>
       <li className="menu-item"><a href="#">{@t('guided_search')}</a></li>
       {@renderUserLinks()}

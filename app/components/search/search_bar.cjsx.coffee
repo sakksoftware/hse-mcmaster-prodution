@@ -1,6 +1,7 @@
 Input = ReactBootstrap.Input
 SearchActions = require('actions/search_actions')
 TranslationHelper = require('mixins/translation_helper')
+UserStore = require('stores/user_store')
 
 module.exports = React.createClass
   displayName: 'SearchBar'
@@ -9,7 +10,7 @@ module.exports = React.createClass
   baseTranslation: 'search_page.search_box'
 
   propTypes:
-    query: React.PropTypes.string
+    search: React.PropTypes.object
     onSearch: React.PropTypes.func.isRequired
 
   dismissKeyboard: -> document.activeElement.blur()
@@ -21,7 +22,8 @@ module.exports = React.createClass
   fetchSuggestions: (query, callback) ->
     handleLoadSuggestions = (data) -> callback(null, data.suggestions)
     handleError = -> console.log('Error: cannot load suggestions')
-    SearchActions.suggestions query, handleLoadSuggestions, handleError
+    @props.search.query = query
+    SearchActions.suggestions @props.search, UserStore.state.language, handleLoadSuggestions, handleError
 
   getSuggestionValue: (suggestion, input) ->
     suggestion.query
@@ -35,7 +37,7 @@ module.exports = React.createClass
   render: ->
     inputAttributes =
       placeholder: @t('placeholder')
-      value: @props.query
+      value: @props.search.query
       id: 'search'
       ref: 'search'
 

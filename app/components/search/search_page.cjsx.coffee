@@ -10,6 +10,8 @@ FilterNormalizationService = require('services/filter_normalization_service')
 SearchSerializationService = require('services/search_serialization_service')
 SearchDeserializationService = require('services/search_deserialization_service')
 
+UserStore = require('stores/user_store')
+
 TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
@@ -39,11 +41,11 @@ module.exports = React.createClass
       @fetchResults()
 
   fetchFilters: ->
-    FilterActions.loadFilters @handleLoadFilters, @handleError
+    FilterActions.loadFilters UserStore.state.language, @handleLoadFilters, @handleError
 
   fetchResults: ->
     @setState(step: 'searching', search: @state.search)
-    SearchActions.search @state.search,
+    SearchActions.search @state.search, UserStore.state.language,
       @handleLoad,
       @handleError
 
