@@ -29,6 +29,7 @@ module.exports = class API
     options = $.extend {
       url: url
       method: method
+      dataType: options.dataType || 'json' # always recieve json back from the server
       # uncomment if rails for CSRF protection
       # beforeSend: (xhr) =>
       #   xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
