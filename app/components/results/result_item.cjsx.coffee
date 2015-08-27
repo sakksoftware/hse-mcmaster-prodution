@@ -22,7 +22,7 @@ module.exports = React.createClass
           </div>
           <div className="field result-item-quality">
             <span className="field-name">{@t('quality')}</span>
-            <span className="field-value">{@props.result.quality}/10</span>
+            <span className="field-value">{@props.result.quality}</span>
           </div>
         </div>
         <div className="result-item-header-right">
