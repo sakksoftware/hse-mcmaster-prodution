@@ -2,6 +2,7 @@ ArticleActions = require('actions/article_actions')
 ArticleItem = require('components/articles/article_item')
 Link = require('components/shared/link')
 TranslationHelper = require('mixins/translation_helper')
+UserStore = require('stores/user_store')
 
 module.exports = React.createClass
   displayName: 'ArticlePage'
