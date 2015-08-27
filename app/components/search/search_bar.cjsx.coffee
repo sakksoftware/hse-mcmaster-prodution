@@ -16,8 +16,12 @@ module.exports = React.createClass
   dismissKeyboard: -> document.activeElement.blur()
   handleSubmit: (e) ->
     e.preventDefault()
-    @props.onSearch?(document.getElementById('search').value)
+    @onSearch(document.getElementById('search').value)
+
+  onSearch: (query) ->
+    @props.onSearch?(query)
     @dismissKeyboard()
+
 
   fetchSuggestions: (query, callback) ->
     handleLoadSuggestions = (data) -> callback(null, data.suggestions)
@@ -47,5 +51,6 @@ module.exports = React.createClass
         suggestionValue={@getSuggestionValue}
         suggestionRenderer={@renderSuggestion}
         inputAttributes={inputAttributes}
+        onSuggestionSelected={(suggestion) => @onSearch(suggestion.query)}
       />
     </form>
