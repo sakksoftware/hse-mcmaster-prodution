@@ -56,6 +56,9 @@ module.exports = React.createClass
       ]
 
   render: ->
+    # <li className="menu-item menu-item-walkthrough">
+    #   <a href="#">{@t('walkthrough')}</a>
+    # </li>
     <ul className="main-menu menu-list">
       <li className="menu-item menu-item-home">
         <span className="menu-item-icon"></span>
@@ -64,9 +67,6 @@ module.exports = React.createClass
       <li className="menu-item menu-item-about">
         <span className="menu-item-icon"></span>
         <Link onClick={@props.onLinkClick} to="/about">{@t('about')}</Link>
-      </li>
-      <li className="menu-item menu-item-walkthrough">
-        <a href="#">{@t('walkthrough')}</a>
       </li>
       <li className="menu-item menu-item-language">
         <span className="menu-item-icon"></span>
