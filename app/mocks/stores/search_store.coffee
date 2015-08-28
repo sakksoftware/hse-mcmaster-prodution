@@ -62,7 +62,7 @@ searchData = {
       "title": "All fields Filled & Visible",
       "created_at": "2014-09-20 11:33:00Z",
       "updated_at": "2014-09-20 11:33:00Z",
-      "quality": 7.0,
+      "quality": "7/11",
       "description": "Some Crazy long description goes here.....",
       "category": "International Organizations Document"
     },
@@ -71,7 +71,7 @@ searchData = {
       "title": "All optional fields are emtpy & visible",
       "created_at": "2013-08-20 11:33:00Z",
       "updated_at": "2013-08-20 11:33:00Z",
-      "quality": 7.0,
+      "quality": "7/11",
       "description": "Lots of stuff goes here! Very Interesting right?.....",
       "category": "Superhero Marvel Movies"
     },
@@ -80,7 +80,7 @@ searchData = {
       "title": "All fields are hidden",
       "created_at": "2013-08-20 11:33:00Z",
       "updated_at": "2013-08-20 11:33:00Z",
-      "quality": 7.0,
+      "quality": "7/11",
       "description": "Lots of stuff goes here! Very Interesting right?.....",
       "category": "Superhero Marvel Movies"
     }
