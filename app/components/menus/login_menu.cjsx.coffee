@@ -17,9 +17,7 @@ module.exports = React.createClass
     @props.onLogin(user)
 
   handleSubmit: (user, success, error) ->
-    UserActions.loginUser(user)
-    UserActions.loginUser.completed.listen(success)
-    UserActions.loginUser.failed.listen(error)
+    UserActions.loginUser(user).then(success).catch(error)
 
   render: ->
     <Form className="login-menu" onSubmit={@handleSubmit} afterSave={@afterSave}>

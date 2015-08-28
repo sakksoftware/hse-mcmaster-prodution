@@ -18,9 +18,7 @@ module.exports = React.createClass
   #   </div>
 
   handleSubmit: (user, success, error)->
-    UserActions.createUser(user)
-    UserActions.createUser.completed.listen(success)
-    UserActions.createUser.failed.listen(error)
+    UserActions.createUser(user).then(success).catch(error)
 
   render: ->
     <Form className="signup-menu"
