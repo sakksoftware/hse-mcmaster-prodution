@@ -12,6 +12,11 @@ module.exports = React.createClass
     resultNumber: React.PropTypes.number.isRequired
     result: React.PropTypes.object.isRequired
 
+  shortRating: (quality) ->
+    if match = quality.match(/[0-9]{1,2}\/[0-9]{1,2}/)
+      return match
+    quality
+
   render: ->
     <li className="result-item">
       <header className="result-item-header">
@@ -23,7 +28,7 @@ module.exports = React.createClass
           </div>
           <div className="field result-item-quality">
             <span className="field-name">{@t('quality')}</span>
-            <span className="field-value">{@props.result.quality}</span>
+            <span className="field-value">{@shortRating(@props.result.quality)}</span>
           </div>
         </div>
         <div className="result-item-header-right">
