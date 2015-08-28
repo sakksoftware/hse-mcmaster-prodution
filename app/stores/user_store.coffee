@@ -32,12 +32,20 @@ module.exports = Reflux.createStore
     Cookies.set('lang', language)
     window.location.reload()
 
-  onCreateUser: (user, success, error) ->
-    API.create 'users', { user: user },
-      success: success
-      error: error
+  onCreateUserCompleted: (data) ->
+    user = data.user
+    @setState(user: user, loaded: true, language: user.language)
+    @trigger(@state)
 
-  onLoginUser: (user, success, error) ->
-    API.create 'users', { user: user },
-      success: success
-      error: error
+  onCreateUserFailed: (xhr, statusCode, responseText) ->
+    @setState(errors: responseText, loaded: true)
+    @trigger(@state)
+
+  onLoginUserCompleted: (data) ->
+    user = data.user
+    @setState(user: user, loaded: true, language: user.language)
+    @trigger(@state)
+
+  onLoginUserFailed: (xhr, statusCode, responseText) ->
+    @setState(errors: responseText, loaded: true)
+    @trigger(@state)

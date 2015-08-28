@@ -45,6 +45,10 @@ module.exports = React.createClass
     @setState(currentUser: null)
     @dismissMenu()
 
+  signup: (user) ->
+    @setState(currentUser: user)
+    @dismissMenu()
+
   toggleMenu: (menuName, title, menuContext = {}) ->
     @refs.offcanvas.toggleMenu(menuName, title, menuContext)
 
@@ -95,7 +99,7 @@ module.exports = React.createClass
         <HelpMenu />
       </Layer>
       <Layer name="signup" title={@t('menus.signup.title')}>
-        <SignupMenu />
+        <SignupMenu onSignup={@signup}/>
       </Layer>
       <Layer name="main" title={@t('menus.main.title')}>
         <MainMenu currentUser={@state.currentUser}

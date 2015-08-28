@@ -33,30 +33,22 @@ module.exports = Reflux.createStore
     Cookies.set('lang', language)
     window.location.reload()
 
-  onCreateUser: (user, success, error) ->
-    user.errors = {}
-    if _.isEmpty(user.email)
-      user.errors.email = "can't be blank!"
-    if _.isEmpty(user.password)
-      user.errors.password = "can't be blank!"
-    if _.isEmpty(user.confirm_password)
-      user.errors.confirm_password = "can't be blank!"
-    if user.accept_terms != "on"
-      user.errors.accept_terms = "You must accept the terms and conditions!"
+  onCreateUserCompleted: (data) ->
+    @setState(user: data.user, loaded: true, errors: null)
+    @trigger(@state)
 
-    if _.isEmpty(user.errors)
-      @send(user, success, 'POST /users')
-    else
-      @sendError(400, user: user, error, 'POST /users')
+  onCreateUserFailed: (xhr, statusCode, responseText) ->
+    @setState(loaded: true, errors: responseText)
+    @trigger(@state)
 
-  onLoginUser: (user, success, error) ->
-    user.errors = {}
-    if _.isEmpty(user.email)
-      user.errors.email = "can't be blank!"
-    if _.isEmpty(user.password)
-      user.errors.password = "can't be blank!"
+  onLoginUserCompleted: (data) ->
+    @setState(user: data.user, loaded: true, errors: null)
+    @trigger(@state)
 
-    if _.isEmpty(user.errors)
-      @send(user, success, 'POST /users')
-    else
-      @sendError(400, user: user, error, 'POST /users')
+  onLoginUserFailed: (xhr, statusCode, responseText) ->
+    try
+      data = JSON.parse(responseText)
+    catch
+      data = null
+
+    @setState(loaded: true, errors: statusCode)
