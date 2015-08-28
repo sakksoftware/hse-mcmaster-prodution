@@ -20,9 +20,9 @@ UserActions.createUser.listen (user) ->
     user.errors.accept_terms = "must_accept_terms"
 
   if _.isEmpty(user.errors)
-    StoreMock.send(user, (=> @completed.trigger(user: user)), 'POST /users')
+    StoreMock.send(user: user, (=> @completed.trigger(user: user)), 'POST /users')
   else
-    StoreMock.sendError(400, user: user, (=> @failed.trigger({}, 'bad data', user: user)), 'POST /users')
+    StoreMock.sendError(400, user: user, null, (=> @failed.trigger({}, 'bad data', user: user)), 'POST /users')
 
 UserActions.loadUser.listen ->
   API.read('/user').done(@completed).fail(@failed)
@@ -38,11 +38,8 @@ UserActions.loginUser.listen (user) ->
     user.errors.password = "can't be blank!"
 
   if _.isEmpty(user.errors)
-    debugger
-    # @send(user, success, 'POST /users')
-    @completed.trigger(user: user)
+    StoreMock.send user: user, (=> @completed.trigger(user: user)), 'POST /login')
   else
-    @failed.trigger({}, "bad input", user: user)
-    # @sendError(400, user: user, error, 'POST /users')
+    StoreMock.sendError 400, user: user, null, (=> @failed.trigger({}, "bad input", user: user)), 'POST /users'
 
 module.exports = UserActions
