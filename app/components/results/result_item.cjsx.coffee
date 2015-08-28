@@ -1,10 +1,11 @@
 Link = require('components/shared/link')
+ApplicationHelper = require('mixins/application_helper')
 TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
   displayName: 'ResultItem'
 
-  mixins: [TranslationHelper]
+  mixins: [ApplicationHelper, TranslationHelper]
   baseTranslation: 'search_page.result_item'
 
   propTypes:
@@ -36,6 +37,6 @@ module.exports = React.createClass
         <div className="result-item-categories">
           {@props.result.category}
         </div>
-        {@props.result.description}
+        {@ellipsis(@props.result.description, 250)}
       </section>
     </li>

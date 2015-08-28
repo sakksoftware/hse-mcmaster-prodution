@@ -15,3 +15,7 @@ module.exports =
         value
     else
       other
+
+  ellipsis: (text, maxLength)->
+    return text[0..(maxLength - 3 - 1)] + '...' if text?.length > maxLength
+    text
