@@ -14,9 +14,10 @@
     padding-left: $x-small-size;
     padding-right: $x-small-size;
     position: relative;
-
     border-bottom: 1px solid #E5E5E5;
-    a, .layer-toggle {
+
+    // TODO: replace with menu-item-text
+    a, .layer-toggle, label {
       padding: $tiny-size;
       padding-left: $x-small-size + $small-size;
     }
@@ -50,6 +51,20 @@
     display: none;
   }
 
+  .menu-item-guided-search {
+    padding-right: $x-large-size;
+
+    .react-toggle {
+      position: absolute;
+      right: $tiny-size;
+      top: $x-tiny-size + 2;
+
+      @include desktop {
+        top: $x-small-size;
+      }
+    }
+  }
+
   @include desktop {
     float: right;
     display: none;
@@ -72,7 +87,7 @@
         }
       }
 
-      a, .layer-toggle {
+      a, .layer-toggle, label {
         padding: $small-size;
         line-height: $small-size;
         padding-top: $small-size;
@@ -154,6 +169,10 @@
           display: block;
         }
       }
+    }
+
+    .menu-item-guided-search {
+      padding-right: $x-large-size + $x-tiny-size;
     }
 
     .menu-item-icon {
