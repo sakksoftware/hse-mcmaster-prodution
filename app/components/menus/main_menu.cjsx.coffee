@@ -1,9 +1,12 @@
-# TODO: can probalby combine the main menu and the desktop menu
 Link = require('components/shared/link')
 LayerToggle = require('components/layered_navigation/layer_toggle')
 TranslationHelper = require('mixins/translation_helper')
 AccountMenu = require('components/menus/account_menu')
 LanguagesMenu = require('components/menus/languages_menu')
+UserActions = require('actions/user_actions')
+UserStore = require('stores/user_store')
+
+Toggle = ReactToggle
 
 module.exports = React.createClass
   displayName: 'MainMenu'
@@ -25,6 +28,10 @@ module.exports = React.createClass
   handleLogout: (e) ->
     e.preventDefault()
     @props.onLogout()
+
+  toggleGuidedSearch: ->
+    UserActions.toggleGuidedSearch()
+
 
   renderUserLinks: ->
     if @props.currentUser
@@ -77,7 +84,12 @@ module.exports = React.createClass
       </li>
       <li className="menu-item menu-item-guided-search">
         <span className="menu-item-icon"></span>
-        <a href="#">{@t('guided_search')}</a>
+        <label>
+          <Toggle
+            defaultChecked={UserStore.state.guidedSearch}
+            onChange={this.toggleGuidedSearch} />
+          <span>{@t('guided_search')}</span>
+        </label>
       </li>
       {@renderUserLinks()}
     </ul>

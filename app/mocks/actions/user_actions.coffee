@@ -3,6 +3,7 @@ StoreMock = require('mocks/support/store_mock')
 
 UserActions = Reflux.createActions
   changeLanguage: {}
+  toggleGuidedSearch: {}
   createUser: {asyncResult: true}
   loginUser: {asyncResult: true}
   updateUser: {asyncResult: true}

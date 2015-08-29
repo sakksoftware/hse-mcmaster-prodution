@@ -32,13 +32,19 @@ module.exports = React.createClass
     search: @deserializeSearchUrl()
     filtersLoaded: false
     step: 'pending_search'
+    guidedSearch: UserStore.state.guidedSearch
 
   componentWillMount: ->
+    UserStore.listen(@userStoreUpdated)
+
     # TODO: remove when passing results as an attribute from server a bit hacky now
     if @state.search.query == null
       @fetchFilters()
     else
       @fetchResults()
+
+  userStoreUpdated: (state) ->
+    @setState(guidedSearch: state.guidedSearch)
 
   fetchFilters: ->
     FilterActions.loadFilters UserStore.state.language, @handleLoadFilters, @handleError
@@ -151,7 +157,8 @@ module.exports = React.createClass
       </div>
 
   renderGuidedSearch: ->
-    <GuidedQuestionsBox onAddFilterById={@addFilterById} />
+    if @state.guidedSearch
+      <GuidedQuestionsBox onAddFilterById={@addFilterById} />
 
   renderResults: ->
     if @state.step == 'searching'

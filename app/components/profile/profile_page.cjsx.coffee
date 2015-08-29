@@ -1,7 +1,7 @@
 languages = require('constants/languages')
 EditableInformation = require('components/shared/editable_information')
 UserActions = require('actions/user_actions')
-UserStore = require('mocks/stores/user_store')
+UserStore = require('stores/user_store')
 TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass

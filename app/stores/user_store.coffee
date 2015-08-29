@@ -7,10 +7,16 @@ module.exports = Reflux.createStore
   mixins: [RefluxStateMixin]
 
   getInitialState: ->
+    if Cookies.get('guided_search')
+      guidedSearch = Cookies.get('guided_search') == 'true'
+    else
+      guidedSearch = true
+
     user: null
     loaded: false
     errors: null
     language: Cookies.get('lang') || 'en'
+    guidedSearch: guidedSearch
 
   onLoadUserCompleted: (user) ->
     @setState(user: user, loaded: true, errors: null, language: user.language)
@@ -30,7 +36,13 @@ module.exports = Reflux.createStore
 
   onChangeLanguage: (language) ->
     Cookies.set('lang', language)
+    @setState(language: language)
     window.location.reload()
+
+  onToggleGuidedSearch: (language) ->
+    @setState(guidedSearch: !@state.guidedSearch)
+    Cookies.set('guided_search', @state.guidedSearch)
+    @trigger(@state)
 
   onCreateUserCompleted: (data) ->
     user = data.user
