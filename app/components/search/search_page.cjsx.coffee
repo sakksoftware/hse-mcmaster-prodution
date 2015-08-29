@@ -113,6 +113,8 @@ module.exports = React.createClass
     @changeFilterValue(filter, true)
 
   handleLoad: (search, statusCode, xhr) ->
+    if search.page > 1
+      search.results = @state.search.results.concat(search.results)
     @setState(search: search, step: 'results', filtersLoaded: true)
 
   handleLoadFilters: (data) ->
@@ -123,6 +125,12 @@ module.exports = React.createClass
   handleError: (xhr, statusCode, statusText) ->
     console.log("error", xhr, statusCode, statusText)
     flash('error', @t('errors.no_connection'))
+
+  handleLoadMore: (page) ->
+    @state.search.page = page
+    SearchActions.search @state.search, UserStore.state.language,
+      @handleLoad,
+      @handleError
 
   getOverylayContent: ->
     if @state.search?.results_count
@@ -151,7 +159,12 @@ module.exports = React.createClass
         <Loader loaded={@state.step == 'results'} />
       </div>
     else if @state.step == 'results'
-      <ResultBox sortBy={@state.search.sort_by} results={@state.search.results} onSortChange={@handleSortChange} />
+      <ResultBox sortBy={@state.search.sort_by}
+        results={@state.search.results}
+        resultsCount={@state.search.results_count}
+        onSortChange={@handleSortChange}
+        onLoadMore={@handleLoadMore}
+      />
 
   render: ->
     <div className="search-page">

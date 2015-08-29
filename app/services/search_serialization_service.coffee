@@ -6,7 +6,8 @@ module.exports =
     sortBy = search.sort_by || "relevance"
     applied_filters = serializeAppliedFilters(search.filters)
     lang = "&lang=#{language}"
-    "?q=#{query}&sort_by=#{sortBy}#{lang}&applied_filters=#{applied_filters}"
+    page = search.page || 1
+    "?q=#{query}&sort_by=#{sortBy}#{lang}&applied_filters=#{applied_filters}&page=#{page}"
 
 # private
 serializeAppliedFilters = (filters) ->

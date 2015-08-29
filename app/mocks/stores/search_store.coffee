@@ -35,11 +35,14 @@ module.exports = Reflux.createStore
     @_addAppliedProperty(allFilters, applied_filters)
     query = SearchSerializationService.serializeSearchUrl(search, lang)
 
-    res = searchData
+    res = _.clone(searchData)
     res.applied_filters = applied_filters
     res.filters = allFilters
     res.query = search.query
     res.sort_by = search.sort_by
+    res.page = search.page
+    lastResultIndex = Math.min(res.results_count - (res.results_per_page * (res.page - 1)), res.results_per_page) - 1
+    res.results = res.results[0..lastResultIndex]
 
     @send(res, success, "/search#{query}")
 
@@ -52,8 +55,8 @@ module.exports = Reflux.createStore
 searchData = {
   "query": "HIV",
   "page": 1,
-  "results_per_page": 50,
-  "results_count": 1500,
+  "results_per_page": 10,
+  "results_count": 55,
   "sort_by": "relevance",
   "saved": false,
   "results": [
@@ -78,6 +81,69 @@ searchData = {
     {
       "id": "all_hidden",
       "title": "All fields are hidden",
+      "created_at": "2013-08-20 11:33:00Z",
+      "updated_at": "2013-08-20 11:33:00Z",
+      "quality": "7/11",
+      "description": "Lots of stuff goes here! Very Interesting right?.....",
+      "category": "Superhero Marvel Movies"
+    },
+    {
+      "id": "all_visible",
+      "title": "Article D",
+      "created_at": "2013-08-20 11:33:00Z",
+      "updated_at": "2013-08-20 11:33:00Z",
+      "quality": "7/11",
+      "description": "Lots of stuff goes here! Very Interesting right?.....",
+      "category": "Superhero Marvel Movies"
+    },
+    {
+      "id": "all_visible",
+      "title": "Article E",
+      "created_at": "2013-08-20 11:33:00Z",
+      "updated_at": "2013-08-20 11:33:00Z",
+      "quality": "7/11",
+      "description": "Lots of stuff goes here! Very Interesting right?.....",
+      "category": "Superhero Marvel Movies"
+    },
+    {
+      "id": "all_visible",
+      "title": "Article F",
+      "created_at": "2013-08-20 11:33:00Z",
+      "updated_at": "2013-08-20 11:33:00Z",
+      "quality": "7/11",
+      "description": "Lots of stuff goes here! Very Interesting right?.....",
+      "category": "Superhero Marvel Movies"
+    },
+    {
+      "id": "all_visible",
+      "title": "Article G",
+      "created_at": "2013-08-20 11:33:00Z",
+      "updated_at": "2013-08-20 11:33:00Z",
+      "quality": "7/11",
+      "description": "Lots of stuff goes here! Very Interesting right?.....",
+      "category": "Superhero Marvel Movies"
+    },
+    {
+      "id": "all_visible",
+      "title": "Article H",
+      "created_at": "2013-08-20 11:33:00Z",
+      "updated_at": "2013-08-20 11:33:00Z",
+      "quality": "7/11",
+      "description": "Lots of stuff goes here! Very Interesting right?.....",
+      "category": "Superhero Marvel Movies"
+    },
+    {
+      "id": "all_visible",
+      "title": "Article I",
+      "created_at": "2013-08-20 11:33:00Z",
+      "updated_at": "2013-08-20 11:33:00Z",
+      "quality": "7/11",
+      "description": "Lots of stuff goes here! Very Interesting right?.....",
+      "category": "Superhero Marvel Movies"
+    },
+    {
+      "id": "all_visible",
+      "title": "Article J",
       "created_at": "2013-08-20 11:33:00Z",
       "updated_at": "2013-08-20 11:33:00Z",
       "quality": "7/11",

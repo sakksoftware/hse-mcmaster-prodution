@@ -1,14 +1,23 @@
 ResultItem = require('components/results/result_item')
 TranslationHelper = require('mixins/translation_helper')
+InfiniteScroll = require('mixins/infinite_scroll')
 
 module.exports = React.createClass
   displayName: 'ResultList'
 
-  mixins: [TranslationHelper]
+  mixins: [TranslationHelper, InfiniteScroll]
   baseTranslation: 'search_page.result_list'
 
   propTypes:
     results: React.PropTypes.array.isRequired
+    resultsCount: React.PropTypes.number.isRequired
+    onLoadMore: React.PropTypes.func.isRequired
+
+  loadMore: (page) ->
+    @props.onLoadMore(page)
+
+  hasMore: ->
+    @props.resultsCount > 0 and @props.resultsCount > @props.results.length
 
   renderList: ->
     if @props.results.length == 0

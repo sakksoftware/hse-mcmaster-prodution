@@ -6,10 +6,12 @@ module.exports = React.createClass
   propTypes:
     sortBy: React.PropTypes.string.isRequired
     results: React.PropTypes.array.isRequired
+    resultsCount: React.PropTypes.number.isRequired
+    onLoadMore: React.PropTypes.func.isRequired
     onSortChange: React.PropTypes.func.isRequired
 
   render: ->
     <div className="result-box">
       <SortOrder sortBy={@props.sortBy} onChange={@props.onSortChange} />
-      <ResultList results={@props.results} />
+      <ResultList results={@props.results} resultsCount={@props.resultsCount} onLoadMore={@props.onLoadMore} />
     </div>
