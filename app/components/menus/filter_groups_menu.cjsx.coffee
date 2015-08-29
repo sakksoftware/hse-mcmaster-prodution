@@ -49,6 +49,7 @@ module.exports = React.createClass
 
   renderMenu: (section, filterGroup) ->
     <LayerToggle
+      className="menu-item-text"
       menu={@getMenuName(filterGroup)}
       title={@getTitle(section, filterGroup)}
       context={@getMenuContext(filterGroup)}

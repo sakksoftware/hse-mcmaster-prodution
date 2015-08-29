@@ -20,7 +20,7 @@ module.exports = React.createClass
   renderLanguages: ->
     for language, i in languages
       <li className="menu-item" key="language-#{i}" value={language.name}>
-        <a href="#" onClick={@handleSelectLanguage(language.name)}>{language.title}</a>
+        <a className="menu-item-text" href="#" onClick={@handleSelectLanguage(language.name)}>{language.title}</a>
         {@renderCheckMark(language)}
       </li>
 

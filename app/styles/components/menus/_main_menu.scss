@@ -16,8 +16,7 @@
     position: relative;
     border-bottom: 1px solid #E5E5E5;
 
-    // TODO: replace with menu-item-text
-    a, .layer-toggle, label {
+    .menu-item-text {
       padding: $tiny-size;
       padding-left: $x-small-size + $small-size;
     }
@@ -87,7 +86,7 @@
         }
       }
 
-      a, .layer-toggle, label {
+      .menu-item-text {
         padding: $small-size;
         line-height: $small-size;
         padding-top: $small-size;

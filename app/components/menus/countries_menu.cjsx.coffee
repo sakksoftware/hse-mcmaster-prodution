@@ -63,13 +63,13 @@ module.exports = React.createClass
       <input placeholder={@t('placeholder')} onChange={@filterCountries} className="country-filter" ref="countryFilter" />
       <ul className="countries-menu-predicate menu-list nested-menu">
         <li data-value="target" className="menu-item menu-filter-item">
-          <a onClick={@setMode('target')}>
+          <a className="menu-item-text" onClick={@setMode('target')}>
             {@t('predicates.target')}
             {@renderCheckMark('target')}
           </a>
         </li>
         <li data-value="contains" className="menu-item menu-filter-item">
-          <a onClick={@setMode('at_least_one_study')}>
+          <a className="menu-item-text" onClick={@setMode('at_least_one_study')}>
             {@t('predicates.at_least_one_study')}
             {@renderCheckMark('at_least_one_study')}
           </a>

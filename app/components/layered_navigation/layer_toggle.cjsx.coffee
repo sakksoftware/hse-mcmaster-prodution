@@ -14,6 +14,7 @@ module.exports = React.createClass
     title: React.PropTypes.string
     context: React.PropTypes.object
     children: React.PropTypes.node
+    className: React.PropTypes.string
 
   handleClick: (e) ->
     e.stopPropagation() # prevent things like dismiss menu from being called on parent
@@ -21,7 +22,7 @@ module.exports = React.createClass
 
   render: ->
     menu = @props.menu.replace(/([A-Z])/g, "-$1").toLowerCase()
-    <button ref="btnOffcanvas" type="button" onClick={@handleClick} className={"layer-toggle layer-toggle-#{menu}"}>
+    <button ref="btnOffcanvas" type="button" onClick={@handleClick} className={"layer-toggle layer-toggle-#{menu} #{@props.className}"}>
       <span className="sr-only">{@t('toggle_navigation')}</span>
       {@props.children}
     </button>
