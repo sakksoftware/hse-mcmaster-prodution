@@ -38,7 +38,7 @@ UserActions.loginUser.listen (user) ->
     user.errors.password = "can't be blank!"
 
   if _.isEmpty(user.errors)
-    StoreMock.send user: user, (=> @completed.trigger(user: user)), 'POST /login')
+    StoreMock.send user: user, (=> @completed.trigger(user: user)), 'POST /login'
   else
     StoreMock.sendError 400, user: user, null, (=> @failed.trigger({}, "bad input", user: user)), 'POST /users'
 
