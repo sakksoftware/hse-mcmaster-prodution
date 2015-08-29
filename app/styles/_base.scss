@@ -17,6 +17,10 @@ button {
   padding: $tiny-size $small-size;
   font-weight: 400;
   font-size: $x-small-size + 1;
+
+  span {
+    vertical-align: top;
+  }
 }
 
 select {

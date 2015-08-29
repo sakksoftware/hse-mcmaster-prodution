@@ -75,6 +75,9 @@ module.exports = React.createClass
         <a className="desktop-menu-link" href="#">{@t('select_language')}</a>
         <LanguagesMenu />
       </li>
-      <li className="menu-item"><a href="#">{@t('guided_search')}</a></li>
+      <li className="menu-item menu-item-guided-search">
+        <span className="menu-item-icon"></span>
+        <a href="#">{@t('guided_search')}</a>
+      </li>
       {@renderUserLinks()}
     </ul>

@@ -54,25 +54,27 @@
     float: right;
     display: none;
 
-    .menu-item-language {
-      .languages-menu {
-        display: block;
-      }
-    }
-
     & > .menu-item {
-      display: inline-block;
-      border-left: 1px solid darken($menu-text-color, 10%);
       border-bottom: none;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
 
-      &:first-child {
-        border-left: none;
+      &:before {
+        display: inline-block;
+        content: "|";
+        position: absolute;
+        top: $small-size;
+        left: -2px;
+
+        &:first-child:before {
+          display: none;
+        }
       }
 
       a, .layer-toggle {
         padding: $small-size;
         line-height: $small-size;
-        padding-left: $small-size;
         padding-top: $small-size;
         padding-bottom: $small-size;
         width: 100%;
@@ -92,6 +94,8 @@
     }
 
     .menu-item-language {
+      padding-right: $small-size;
+
       .layer-toggle {
         display: none;
       }
@@ -105,26 +109,45 @@
         top: $medium-size;
         background: url('/images/dropdown_grey.svg');
       }
+
+      .languages-menu {
+        display: block;
+
+        .menu-item {
+          padding-left: $small-size;
+          a {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+      }
     }
 
     .menu-item-account {
+      padding-right: $small-size;
+
       .layer-toggle {
         display: none;
       }
 
-      & > .menu-item-icon {
+      &:after {
+        content: " ";
         margin-left: $x-tiny-size;
         display: inline-block;
         position: absolute;
         right: $tiny-size;
         left: auto;
         top: $medium-size;
+        height: $small-size;
+        width: $small-size;
         background: url('/images/dropdown_grey.svg');
+        background-repeat: no-repeat;
       }
 
       .account-menu {
         .menu-item {
           display: block;
+          padding-left: $small-size + $tiny-size;
         }
 
         .menu-item-icon {
@@ -138,14 +161,31 @@
       left: $small-size;
     }
 
-    .menu-item-sign-up, .menu-item-login {
-      .layer-toggle {
-        padding-left: $small-size + $small-size + $tiny-size;
-      }
+    .menu-item-sign-up, .menu-item-login, .menu-item-account, .menu-item-logout {
+      padding-left: $small-size + $tiny-size;
     }
 
     .menu-item-home { display: none; }
     .menu-item-icon { display: none; }
-    .menu-item { padding-left: $x-small-size; }
+
+    .menu-item-sign-up > .menu-item-icon {
+      display: block;
+    }
+
+    .menu-item-login > .menu-item-icon {
+      display: block;
+    }
+
+    .menu-item-logout > .menu-item-icon {
+      display: block;
+    }
+
+    .menu-item-account > .menu-item-icon {
+      display: block;
+    }
+
+    .menu-item-profile > .menu-item-icon {
+      display: block;
+    }
   }
 }

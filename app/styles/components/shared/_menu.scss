@@ -16,6 +16,7 @@
     text-align: left;
     background-color: transparent;
     padding: $x-small-size;
+    font-weight: 300;
   }
 
   .layer-toggle{
@@ -74,7 +75,7 @@
 }
 
 .menu-item-sign-up .menu-item-icon {
-  background: url('/images/m_signup.svg'); // missing!
+  background: url('/images/m_profile.svg');
 }
 
 .menu-item-login .menu-item-icon {
@@ -89,12 +90,16 @@
   background: url('/images/m_profile.svg');
 }
 
+.menu-item-profile .menu-item-icon {
+  background: url('/images/m_profile.svg');
+}
+
 .menu-item-saved-documents .menu-item-icon {
   background: url('/images/m_saved_documents.svg');
 }
 
-.menu-item-saved-search .menu-item-icon {
-  background: url('/images/m_saved_search.svg');
+.menu-item-saved-searches .menu-item-icon {
+  background: url('/images/m_saved_searches.svg');
 }
 
 .menu-item-saved-search .menu-item-icon {
@@ -103,4 +108,43 @@
 
 .menu-item-complementary-content .menu-item-icon {
   background: url('/images/m_complementary_content.svg');
+}
+
+.menu-item-guided-search .menu-item-icon {
+  background: url('/images/m_guided_search.svg');
+}
+
+@include desktop {
+  .menu-item-sign-up > .menu-item-icon {
+    background: url('/images/m_w_profile.svg');
+    display: block;
+  }
+
+  .menu-item-login > .menu-item-icon {
+    background: url('/images/m_w_login.svg');
+  }
+
+  .menu-item-logout > .menu-item-icon {
+    background: url('/images/m_w_logout.svg');
+  }
+
+  .menu-item-account > .menu-item-icon {
+    background: url('/images/m_w_profile.svg');
+  }
+
+  .menu-item-profile > .menu-item-icon {
+    background: url('/images/m_w_profile.svg');
+  }
+
+  .menu-item-complementary-content .menu-item-icon {
+    background: url('/images/m_w_complementary_content.svg');
+  }
+
+  .menu-item-saved-documents .menu-item-icon {
+    background: url('/images/m_w_saved_documents.svg');
+  }
+
+  .menu-item-saved-searches .menu-item-icon {
+    background: url('/images/m_w_saved_searches.svg');
+  }
 }

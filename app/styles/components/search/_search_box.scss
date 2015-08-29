@@ -15,8 +15,10 @@
 
     .icon {
       margin-right: $x-tiny-size;
-      @extend .glyphicon;
-      @extend .glyphicon-exclamation-sign;
+      height: $small-size;
+      width: $small-size;
+      background: url('/images/tip_icon.svg');
+      display: inline-block;
     }
   }
 

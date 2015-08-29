@@ -1,8 +1,8 @@
 @mixin btn-default {
   background-color: lightgrey;
-  padding: 5px 10px;
+  padding: $tiny-size $small-size;
   border: none;
-  height: 30px;
+  height: $large-size;
 }
 
 @mixin hamburger-icon {
