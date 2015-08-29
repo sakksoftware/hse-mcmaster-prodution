@@ -4,7 +4,6 @@ if config.useMocks
   return module.exports = require('mocks/actions/user_actions')
 
 UserActions = Reflux.createActions
-  createUser: {}
   createUser: {asyncResult: true}
   loginUser: {asyncResult: true}
   updateUser: {asyncResult: true}
