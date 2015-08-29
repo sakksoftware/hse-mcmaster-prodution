@@ -27,6 +27,6 @@ module.exports = React.createClass
       <input label={@t('password')} name="password" type="password" />
       <input label={@t('confirm_password')} name="confirm_password" type="password" />
       <input label={@t('i_accept')} type='checkbox' name="accept_terms" />
-      <a href="/terms" target="_blank">{@t('terms')}</a>
+      <a href="/terms" className="btn-terms" target="_blank">{@t('terms')}</a>
       <button className='btn-primary'>{@t('signup_button')}</button>
     </Form>

@@ -24,5 +24,5 @@ module.exports = React.createClass
       <input label={@t('email')} name="email" type="email" />
       <input label={@t('password')} name="password" type="password" />
       <button className="btn-primary">{@t('login_button')}</button>
-      <a href="/forgot_password">{@t('forgot_password')}</a>
+      <a className="btn-forgot-password" href="/forgot_password">{@t('forgot_password')}</a>
     </Form>
