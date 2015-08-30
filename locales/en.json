@@ -136,7 +136,28 @@
     "edit": "Edit",
     "cancel": "Cancel"
   },
+  "complementary_content_page": {
+    "title": "Complementary Content",
+    "description": "Enable viewing of complementary content",
+    "complementary_content_1": {
+      "title": "Intergovernmental Organiations' Health Systems Documents",
+      "description": "For those who..."
+    },
+    "complementary_content_2": {
+      "title": "Canada's Health System Documents",
+      "description": "For those who do not designate their country as Canada or log in using a Canada-based IP address"
+    },
+    "complementary_content_3": {
+      "title": "Ontario's Health System Documents",
+      "description": "For those who log in Ontario-based IP address"
+    }
+  },
   "errors": {
-    "no_connection": "Oops, could not load data. Check your internet connection."
+    "no_connection": "Oops, could not load data. Check your internet connection.",
+    "cant_be_blank": "can't be blank!",
+    "must_accept_terms": "you must accept the terms and conditions!",
+    "already_exists": "already exists",
+    "invalid_email": "email is invalid",
+    "too_short": "is too short, must be at least 8 characters"
   }
 }
