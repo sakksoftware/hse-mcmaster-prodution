@@ -4,7 +4,6 @@ module.exports = React.createClass
   displayName: 'GuidedQuestion'
   propTypes:
     question: React.PropTypes.object.isRequired
-    onAddFilterById: React.PropTypes.func.isRequired
 
   getInitialState: ->
     expanded: false
@@ -22,5 +21,5 @@ module.exports = React.createClass
         {@props.question.text}
         <a className="btn-toggle" href="#" onClick={@toggle}></a>
       </div>
-      <AnswerList answers={@props.question.answers} onAddFilterById={@props.onAddFilterById} />
+      <AnswerList answers={@props.question.answers} />
     </div>

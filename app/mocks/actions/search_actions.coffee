@@ -8,6 +8,17 @@ SearchSerializationService = require('services/search_serialization_service')
 FiltersHelper = require('mocks/support/filters_helper')
 
 SearchActions = Reflux.createActions
+  sortBy: {}
+  addFilter: {}
+  removeFilter: {}
+  removeFilterGroup: {}
+  changeFilterValue: {}
+  changeParentFilterValue: {}
+  toggleNestedFilter: {}
+  toggleFilter: {}
+  toggleCountryFilter: {}
+  toggleDateRangeFilter: {}
+  getFilterGroup: {}
   search: {asyncResult: true}
   suggestions: {asyncResult: true}
 

@@ -1,4 +1,5 @@
 ApplicationHelper = require('mixins/application_helper')
+SearchActions = require('actions/search_actions')
 
 module.exports = React.createClass
   displayName: 'AnswerItem'
@@ -7,19 +8,18 @@ module.exports = React.createClass
 
   propTypes:
     answer: React.PropTypes.object.isRequired
-    onAddFilterById: React.PropTypes.func.isRequired
 
   handleAdd: (e) ->
     e.preventDefault()
     for filter in @props.answer.filters
-      @props.onAddFilterById(filter.id)
+      SearchActions.addFilter(filter.id)
 
   applyComplexFilter: (e) ->
     target = e.target
     if target.constructor == HTMLAnchorElement
       e.preventDefault()
       id = target.attributes['data-filter-id'].value
-      @props.onAddFilterById(id)
+      SearchActions.addFilter(id)
 
   renderFiltersGroup: (filters)->
     for filter in filters

@@ -61,68 +61,9 @@ module.exports = React.createClass
     SearchActions.search(@state.search, UserStore.state.language).then =>
       @setState(step: 'results', filtersLoaded: true)
 
-  updateUrl: ->
-    Router = require('lib/router')
-    Router.update(@serializeSearchUrl(@state.search))
-
   handleSearch: (query) ->
     @state.search.query = query
-    @updateUrl()
     @fetchResults()
-
-  handleSortChange: (sortBy) ->
-    @state.search.sort_by = sortBy
-    @updateUrl()
-    @fetchResults()
-
-  changeFilterValue: (filter, value) ->
-    # optimistic update
-    filter.applied = value
-    @updateUrl()
-    @fetchResults()
-
-  changeParentFilterValue: (parentFilter, value) ->
-    parentFilter.applied = value
-    for filter in parentFilter.filters
-      filter.applied = value
-      if filter.filters
-        @changeParentFilterValue(filter, value)
-
-  handleNestedFilterToggle: (filter) ->
-    @changeParentFilterValue(filter, !filter.applied)
-    @updateUrl()
-    @fetchResults()
-
-  handleFilterToggle: (filter) ->
-    if filter.filters
-      return @handleNestedFilterToggle(filter)
-
-    if filter.applied
-      @handleFilterRemove(filter)
-    else
-      @handleFilterAdded(filter)
-
-  handleFilterAdded: (filter) ->
-    @changeFilterValue(filter, true)
-
-  handleFilterRemove: (filter) ->
-    @changeFilterValue(filter, false)
-
-  # TODO: refactor search to come from a store like jon suggested
-  # that way we don't have to pass akward callbacks around
-  findFilter: (filterId, filters) ->
-    for filter in filters
-      if filter.id == filterId
-        return filter
-      else if filter.filters
-        if result = @findFilter(filterId, filter.filters)
-          return result
-
-    return null
-
-  addFilterById: (filterId) ->
-    filter = @findFilter(filterId, @state.search.filters)
-    @changeFilterValue(filter, true)
 
   handleLoadFilters: (data) ->
     @state.search.filters = data.filters
@@ -132,6 +73,9 @@ module.exports = React.createClass
   handleLoadMore: (page) ->
     @state.search.page = page
     SearchActions.search(@state.search, UserStore.state.language)
+
+  handleSortChange: (sortBy) ->
+    SearchActions.sortBy(sortBy)
 
   getOverylayContent: ->
     if @state.search?.results_count
@@ -144,8 +88,6 @@ module.exports = React.createClass
           {@t('menus.filter_groups.title')}
         </div>
         <FilterGroupsMenu context={
-          filters: @state.search.filters
-          onToggleFilter: @handleFilterToggle
           onShowFilterGroup: @props.onShowMenu
           overlayContent: @getOverylayContent()
         } />
@@ -153,7 +95,7 @@ module.exports = React.createClass
 
   renderGuidedSearch: ->
     if @state.guidedSearch
-      <GuidedQuestionsBox onAddFilterById={@addFilterById} />
+      <GuidedQuestionsBox />
 
   renderResults: ->
     if @state.step == 'searching'
@@ -173,8 +115,6 @@ module.exports = React.createClass
       <SearchBox
         search={@state.search}
         onSearch={@handleSearch}
-        onToggleFilter={@handleFilterToggle}
-        onAddFilter={@handleFilterAdded}
         onShowMenu={@props.onShowMenu}
         dismissMenu={@props.dismissMenu}
         overlayContent={@getOverylayContent()}

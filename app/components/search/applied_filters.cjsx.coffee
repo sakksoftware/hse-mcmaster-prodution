@@ -1,4 +1,5 @@
 AppliedFilterItem = require('components/search/applied_filter_item')
+SearchStore = require('stores/search_store')
 
 module.exports = React.createClass
   displayName: 'AppliedFilters'
@@ -20,26 +21,13 @@ module.exports = React.createClass
     @props.onShowFilterGroup(filter, @findFirstApplied(filter.filters))
 
   onRemoveFilter: (filter) ->
-    filter = _.find @props.filters, (f) -> f.id == filter.id
     @props.onRemoveFilter(filter)
-    @forceUpdate()
 
   getAppliedFilterGroups: (filters) ->
-    appliedFilters = []
-
-    for filter in filters
-      filter = _.clone(filter)
-
-      if filter.filters
-        filter.filters = @getAppliedFilterGroups(filter.filters)
-
-      if filter.applied || filter.filters?.length > 0
-        appliedFilters.push filter
-
-    appliedFilters
+    SearchStore.getAppliedFilterGroups()
 
   renderFilters: ->
-    for filter, index in @getAppliedFilterGroups(@props.filters)
+    for filter, index in @getAppliedFilterGroups()
       <AppliedFilterItem filter={filter} key="filter-#{index}"
         onShowFilterGroup={@onShowFilterGroup}
         onRemoveFilter={@onRemoveFilter} />

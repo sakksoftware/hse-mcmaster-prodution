@@ -15,7 +15,6 @@ module.exports = React.createClass
 
   componentWillMount: ->
     @filterGroup = @props.context.filterGroup
-    @onToggleFilter = @props.context.onToggleFilter
     @setState(start: @filterGroup.start, end: @filterGroup.end)
 
   applyOnEnter: (ev) ->
@@ -27,14 +26,7 @@ module.exports = React.createClass
     end = @refs.end.getDOMNode().value
     @setState(start: start, end: end)
 
-    if _.isEmpty(start) && _.isEmpty(end)
-      @filterGroup.applied = true
-      @onToggleFilter(@filterGroup)
-    else
-      @filterGroup.applied = false
-      @filterGroup.start = start
-      @filterGroup.end = end
-      @onToggleFilter(@filterGroup)
+    SearchActions.toggleDateRangeFilter(@filterGroup, start, end)
 
   render: ->
     <form className="date-range-menu">

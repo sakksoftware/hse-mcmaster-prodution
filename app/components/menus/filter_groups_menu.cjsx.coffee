@@ -1,6 +1,8 @@
 AppliedFilters = require('components/search/applied_filters')
 LayerToggle = require('components/layered_navigation/layer_toggle')
 TranslationHelper = require('mixins/translation_helper')
+SearchActions = require('actions/search_actions')
+SearchStore = require('stores/search_store')
 
 module.exports = React.createClass
   displayName: 'FilterGroupsMenu'
@@ -11,16 +13,22 @@ module.exports = React.createClass
   propTypes:
     context: React.PropTypes.object
 
+  getInitialState: ->
+    filters: SearchStore.state.search.filters
+
   componentWillMount: ->
-    @filters = @props.context.filters
-    @onToggleFilter = @props.context.onToggleFilter
     @onShowFilterGroup = @props.context.onShowFilterGroup
     @overlayContent = @props.context.overlayContent
+    @unsubscribe = SearchStore.listen(@updateFilters)
+
+  componentWillUnmount: ->
+    @unsubscribe()
+
+  updateFilters: (state) ->
+    @setState(filters: state.search.filters)
 
   onRemoveFilterGroup: (filter) ->
-    # temporary toggle on so we can toggle it off!
-    filter.applied = true
-    @onToggleFilter(filter)
+    SearchActions.removeFilterGroup(filter)
 
   getTitle: (section, filterGroup) ->
     @t('menus.filters.title', section_title: section.title, filter_group_title: filterGroup.title)
@@ -28,7 +36,6 @@ module.exports = React.createClass
   getMenuContext: (filterGroup) ->
     filterGroup: filterGroup
     filters: filterGroup.filters
-    onToggleFilter: @onToggleFilter
     overlayContent: @overlayContent
 
   getMenuName: (filterGroup) ->
@@ -75,11 +82,11 @@ module.exports = React.createClass
     ]
 
   renderSections: ->
-    for section in @filters
+    for section in @state.filters
       @renderSection(section)
 
   render: ->
     <div className="filter-groups-menu nested-menu">
-      <AppliedFilters filters={@filters} onRemoveFilter={@onRemoveFilterGroup} onShowFilterGroup={@onShowFilterGroupWrapper} />
+      <AppliedFilters filters={@state.filters} onRemoveFilter={@onRemoveFilterGroup} onShowFilterGroup={@onShowFilterGroupWrapper} />
       {@renderSections()}
     </div>

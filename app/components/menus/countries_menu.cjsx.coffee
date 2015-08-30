@@ -1,6 +1,7 @@
 MenuFilterItem = require('components/menus/menu_filter_item')
 ViewHelpers = require('mixins/view_helpers')
 TranslationHelper = require('mixins/translation_helper')
+SearchActions = require('actions/search_actions')
 
 module.exports = React.createClass
   displayName: 'CountriesMenu'
@@ -14,17 +15,14 @@ module.exports = React.createClass
   componentWillMount: ->
     @filters = @props.context.filters
     @filterGroup = @props.context.filterGroup
-    @onToggleFilter = (filter) =>
-      @filterGroup.applied = true
-      @filterGroup.mode = @state.mode
-      if filter != @filterGroup
-        @props.context.onToggleFilter(filter)
-      @forceUpdate()
     @setState(countries: @filters, mode: @filterGroup.mode)
 
   getInitialState: ->
     countries: []
     mode: ''
+
+  onToggleFilter: (filter) ->
+    SearchActions.toggleCountryFilter(filter, @state.mode)
 
   getAppliedFilters: ->
     _(@filters).filter (f) -> f.applied

@@ -6,6 +6,17 @@ API = require('lib/api')
 serializeSearchUrl = require('services/search_serialization_service').serializeSearchUrl
 
 SearchActions = Reflux.createActions
+  sortBy: {}
+  addFilter: {}
+  removeFilter: {}
+  removeFilterGroup: {}
+  changeFilterValue: {}
+  changeParentFilterValue: {}
+  toggleNestedFilter: {}
+  toggleFilter: {}
+  toggleCountryFilter: {}
+  toggleDateRangeFilter: {}
+  getFilterGroup: {}
   search: {asyncResult: true}
   suggestions: {asyncResult: true}
 

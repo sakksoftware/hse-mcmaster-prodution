@@ -1,5 +1,7 @@
 MenuFilterItem = require('components/menus/menu_filter_item')
 TranslationHelper = require('mixins/translation_helper')
+SearchActions = require('actions/search_actions')
+SearchStore = require('stores/search_store')
 
 module.exports = React.createClass
   displayName: 'FiltersMenu'
@@ -19,16 +21,24 @@ module.exports = React.createClass
     "#C4536E"
   ]
 
-  componentWillMount: ->
-    @filters = @props.context.filters
-    @filterGroup = @props.context.filterGroup
+  getInitialState: ->
+    filters: @props.context.filters
 
-    @onToggleFilter = (filter) =>
-      # send real object instead of clone
-      filter = @filterGroup if filter.id == @allFilter.id
-      @props.context.onToggleFilter(filter)
-      @forceUpdate()
+  componentWillMount: ->
+    @filterGroup = @props.context.filterGroup
     @currentColorIndex = 0
+
+    @unsubscribe = SearchStore.listen(@onFiltersUpdated)
+
+  componentWillUnmount: ->
+    @unsubscribe()
+
+  onFiltersUpdated: ->
+    filters = SearchStore.getFilterGroup(@filterGroup)
+    @setState(filters: filters)
+
+  onToggleFilter: (filter) ->
+    SearchActions.toggleFilter(filter)
 
   nextColor: ->
     @currentColorIndex = (@currentColorIndex + 1) % @colors.length
@@ -69,6 +79,6 @@ module.exports = React.createClass
     <div className="filters-menu nested-menu">
       <ul className="menu-list">
         {@renderAllFilter()}
-        {@renderItems(@filters)}
+        {@renderItems(@state.filters)}
       </ul>
     </div>

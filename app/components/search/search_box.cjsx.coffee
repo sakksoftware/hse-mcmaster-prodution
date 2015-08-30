@@ -10,8 +10,6 @@ module.exports = React.createClass
   propTypes:
     search: React.PropTypes.object
     onSearch: React.PropTypes.func.isRequired
-    onToggleFilter: React.PropTypes.func.isRequired
-    onAddFilter: React.PropTypes.func.isRequired
     onShowMenu: React.PropTypes.func.isRequired
     overlayContent: React.PropTypes.string
 
@@ -57,7 +55,6 @@ module.exports = React.createClass
           context={
             filters: @props.search.filters
             onShowFilterGroup: @props.onShowMenu
-            onToggleFilter: @props.onToggleFilter
             overlayContent: @props.overlayContent
           }
           onToggle={@handleClickFiltersButton}
