@@ -1,77 +1,77 @@
 {
   "terms_of_use": "Termos de uso",
-  "back_to_results": "PT_Back to results",
-  "toggle_navigatoin": "PT_Toggle navigation",
+  "back_to_results": "Voltar aos resultados",
+  "toggle_navigation": "Alternar navegação",
   "main_menu": {
     "home": "Início",
     "about": "Sobre o HSE",
-    "walkthrough": "PT_Walk through",
-    "guided_search": "PT_Guided Search",
-    "select_language": "PT_Select language",
-    "create_account": "PT_Create Account",
-    "login": "PT_Login",
+    "walkthrough": "Guia passo a passo",
+    "guided_search": "Pesquisa orientada",
+    "select_language": "Selecionar idioma",
+    "create_account": "Criar conta",
+    "login": "Iniciar sessão",
     "logout": "Fazer logout"
   },
   "menus": {
     "account": {
-      "title": "PT_My Account"
+      "title": "Minha conta"
     },
     "help": {
-      "title": "PT_Help",
+      "title": "Ajuda",
       "instructions": [
-        "PT_You can combine your search terms using the Boolean operators AND, OR and NOT. Using AND will ensure both terms are included in your results. Using OR will ensure either of the terms are included. Using NOT will ensure that a given search term isn't included in your results.",
+        "Pode combinar seus termos de pesquisa usando os operadores booleanos E, OU e NÃO. Usar E permite que ambos os termos sejam incluídos em seus resultados. Usar OU permite a inclusão de um dos termos. Usar NÃO permite que um dado termo de pesquisa não seja incluído em seus resultados.",
         "",
-        "PT_For example, you can search for cancer OR diabetes AND teams NOT nurses.",
+        "Por exemplo, pode pesquisar por câncer OU diabetes E equipes NÃO enfermeiros.",
         "",
-        "PT_This approach will search for documents that focus on teams that provide care for cancer or diabetes patients, but that don't involve nurses."
+        "Esta abordagem pesquisará documentos com foco em equipes que fornecem cuidados para pacientes oncológicos ou diabéticos, mas que não envolvem enfermeiros."
       ]
     },
     "signup": {
-      "title": "PT_Signup",
+      "title": "Inscrever-se",
       "email": "E-mail",
       "password": "Senha",
       "confirm_password": "Confirmar senha",
-      "i_accept": "PT_I accept the",
-      "terms": "PT_Terms of Use",
-      "signup_button": "PT_Create account",
-      "did_not_recieve": "PT_Didn't receive an emai?",
-      "send_again": "PT_Send Again",
-      "confirmation_msg": "PT_A conformation email has been sent to you. Pleaes confirm your registration to activate your account!"
+      "i_accept": "Aceito os",
+      "terms": "Termos de uso",
+      "signup_button": "Criar conta",
+      "did_not_recieve": "Não recebeu um e-mail?",
+      "send_again": "Enviar novamente",
+      "confirmation_msg": "Foi-lhe enviado um e-mail de confirmação. Confirme o seu registro para ativar a sua conta!"
     },
     "main": {
-      "title": "PT_Menu"
+      "title": "Menu"
     },
     "login": {
       "email": "E-mail",
       "password": "Senha",
       "password": "PT_Password",
-      "login_button": "PT_Login",
+      "login_button": "Iniciar sessão",
       "forgot_password": "Esqueceu sua senha?"
     },
     "languages": {
-      "title": "PT_Languages"
+      "title": "Idiomas"
     },
     "filter_groups": {
       "title": "PT_Filter documents by..."
     },
     "filters": {
-      "title": "PT_Select %{section_title}: %{filter_group_title}",
-      "all_filters": "PT_All %{filter_title}"
+      "title": "Selecionar %{section_title}: %{filter_group_title}",
+      "all_filters": "Tudo %{filter_title}"
     },
     "countries": {
-      "title": "PT_Countries",
-      "placeholder": "PT_Type country name",
-      "no_countries_found": "PT_No countries found.",
+      "title": "Países",
+      "placeholder": "Digite o nome do país",
+      "no_countries_found": "Nenhum país encontrado.",
       "predicates": {
-        "target": "PT_Target of document",
-        "at_least_one_study": "PT_At least one study from are"
+        "target": "Destino do documento",
+        "at_least_one_study": "Pelo menos um estudo de está"
       }
     },
     "date_range": {
-      "title": "PT_Date Range",
-      "published": "PT_Published",
-      "instructions": "PT_(Please include two four-digit years, such as 2008 and 2009, or leave them blank to include publications from any year)",
-      "placeholder": "YYYY"
+      "title": "Intervalo de datas",
+      "published": "Publicado",
+      "instructions": "(Inclua dois anos de quatro dígitos, como 2008 e 2009, ou deixe em branco para incluir publicações de qualquer ano)",
+      "placeholder": "AAAA"
     }
   },
   "articles_page": {
@@ -98,24 +98,24 @@
   },
   "search_page": {
     "search_box": {
-      "view_results_count": "PT_View %{results_count} results",
-      "tips": "PT_Tips for more powerful serach",
-      "filters": "PT_Filters",
-      "placeholder": "PT_Serach..."
+      "view_results_count": "Exibir %{results_count} resultados",
+      "tips": "Dicas para uma pesquisa mais eficaz",
+      "filters": "Filtros",
+      "placeholder": "Pesquisar..."
     },
     "result_item": {
-      "year": "PT_Year:",
-      "quality": "PT_Quality:",
-      "select": "PT_Select:"
+      "year": "Ano:",
+      "quality": "Qualidade:",
+      "select": "Selecionar:"
     },
     "result_list": {
-      "no_results": "PT_No results found."
+      "no_results": "Nenhum resultado encontrado."
     },
     "sort_order": {
-      "sorted_by": "PT_Results sorted by",
-      "relevance": "PT_Best Match",
-      "most_recent": "PT_Most Recent",
-      "most_popular": "PT_Most Popular"
+      "sorted_by": "Resultados classificados por",
+      "relevance": "Melhor correspondência",
+      "most_recent": "Mais recente",
+      "most_popular": "Mais popular"
     }
   },
   "profile_page": {
@@ -153,7 +153,7 @@
     }
   },
   "errors": {
-    "no_connection": "PT_Oops, could not load data. Check your internet connection.",
+    "no_connection": "Opa, não foi possível carregar dados. Verifique sua conexão com a Internet.",
     "cant_be_blank": "PT_can't be blank!",
     "must_accept_terms": "PT_you must accept the terms and conditions!",
     "already_exists": "PT_already exists",

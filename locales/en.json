@@ -1,7 +1,7 @@
 {
   "terms_of_use": "Terms of use",
   "back_to_results": "Back to results",
-  "toggle_navigatoin": "Toggle navigation",
+  "toggle_navigation": "Toggle navigation",
   "main_menu": {
     "home": "Home",
     "about": "About HSE",
@@ -36,7 +36,7 @@
       "signup_button": "Create account",
       "did_not_recieve": "Didn't receive an email?",
       "send_again": "Send again",
-      "confirmation_msg": "A conformation email has been sent to you. Please confirm your registration to activate your account!"
+      "confirmation_msg": "A confirmation email has been sent to you. Please confirm your registration to activate your account!"
     },
     "main": {
       "title": "Menu"
@@ -75,26 +75,26 @@
     }
   },
   "articles_page": {
-    "no_studies_conducted_in": "Not avilable",
+    "no_studies_conducted_in": "Not available",
     "no_full_text_report": "No free full-text search report available",
     "no_doi": "Not yet available",
-    "no_domains": "Not avilable",
-    "no_topics": "Not avilable",
-    "no_focus": "Not avilable",
+    "no_domains": "Not available",
+    "no_topics": "Not available",
+    "no_focus": "Not available",
     "no_lmic_focus": "Not available",
-    "no_priority_areas": "Not avilable",
-    "no_targets": "Not avilable",
-    "no_themes": "Not avilable",
-    "no_who_regions": "Not avilable",
-    "no_scientific_abstract": "Not avilable",
-    "no_summary_links": "Not avilable",
-    "no_country_groupings": "Not avilable",
-    "no_author_email": "Not avilable",
+    "no_priority_areas": "Not available",
+    "no_targets": "Not available",
+    "no_themes": "Not available",
+    "no_who_regions": "Not available",
+    "no_scientific_abstract": "Not available",
+    "no_summary_links": "Not available",
+    "no_country_groupings": "Not available",
+    "no_author_email": "Not available",
     "no_registry_record_links": "No registry record available",
-    "no_category": "Not avilable",
-    "no_who_links": "Not avilable",
-    "no_related_documents": "Not avilable",
-    "no_last_year_literature_searched": "Not avilable"
+    "no_category": "Not available",
+    "no_who_links": "Not available",
+    "no_related_documents": "Not available",
+    "no_last_year_literature_searched": "Not available"
   },
   "search_page": {
     "search_box": {

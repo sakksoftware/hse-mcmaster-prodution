@@ -1,77 +1,77 @@
 {
   "terms_of_use": "Condiciones de uso",
-  "back_to_results": "ES_Back to results",
-  "toggle_navigatoin": "ES_Toggle navigation",
+  "back_to_results": "Volver a los resultados",
+  "toggle_navigation": "Alternar navegación",
   "main_menu": {
     "home": "Inicio",
     "about": "¿Qué es HSE?",
-    "walkthrough": "ES_Walk through",
-    "guided_search": "ES_Guided Search",
+    "walkthrough": "Recorrido",
+    "guided_search": "Búsqueda guiada",
     "select_language": "Seleccionar idioma",
-    "create_account": "ES_Create Account",
-    "login": "ES_Login",
+    "create_account": "Crear cuenta",
+    "login": "Iniciar sesión",
     "logout": "Cerrar sesión"
   },
   "menus": {
     "account": {
-      "title": "ES_My Account"
+      "title": "Mi cuenta"
     },
     "help": {
-      "title": "ES_Help",
+      "title": "Ayuda",
       "instructions": [
-        "ES_You can combine your search terms using the Boolean operators AND, OR and NOT. Using AND will ensure both terms are included in your results. Using OR will ensure either of the terms are included. Using NOT will ensure that a given search term isn't included in your results.",
+        "Puede combinar los términos de su búsqueda utilizando los operadores booleanos Y, O y NO. Si utiliza Y, se asegurará de que los dos términos se incluyan en los resultados. Si utiliza O, se asegurará de que se incluya alguno de los términos. Si utiliza NO, se asegurará de que un término de búsqueda determinado no se incluya en los resultados.",
         "",
-        "ES_For example, you can search for cancer OR diabetes AND teams NOT nurses.",
+        "Por ejemplo, puede buscar cáncer O diabetes Y equipos NO enfermeros. ",
         "",
-        "ES_This approach will search for documents that focus on teams that provide care for cancer or diabetes patients, but that don't involve nurses."
+        "Este enfoque buscará documentos sobre equipos que proporcionan atención para pacientes con cáncer o diabetes, pero que no incluyen enfermeros."
       ]
     },
     "signup": {
-      "title": "ES_Signup",
+      "title": "Registrarse",
       "email": "Correo electrónico",
       "password": "Contraseña",
       "confirm_password": "Confirmar contraseña",
-      "i_accept": "ES_I accept the",
-      "terms": "ES_Terms of Use",
-      "signup_button": "ES_Create account",
-      "did_not_recieve": "ES_Didn't receive an emai?",
-      "send_again": "ES_Send Again",
-      "confirmation_msg": "ES_A conformation email has been sent to you. Pleaes confirm your registration to activate your account!"
+      "i_accept": "Acepto los",
+      "terms": "Términos de uso",
+      "signup_button": "Crear cuenta",
+      "did_not_recieve": "¿No recibió un correo electrónico?",
+      "send_again": "Enviar nuevamente",
+      "confirmation_msg": "Se le ha enviado un correo electrónico de confirmación. Confirme su registro para activar su cuenta."
     },
     "main": {
-      "title": "ES_Menu"
+      "title": "Menú"
     },
     "login": {
       "title": "ES_Login",
       "email": "Correo electrónico",
       "password": "Contraseña",
-      "login_button": "ES_Login",
+      "login_button": "Iniciar sesión",
       "forgot_password": "Esqueceu sua senha?"
     },
     "languages": {
-      "title": "ES_Languages"
+      "title": "Idiomas"
     },
     "filter_groups": {
       "title": "ES_Filter documents by..."
     },
     "filters": {
-      "title": "ES_Select %{section_title}: %{filter_group_title}",
-      "all_filters": "ES_All %{filter_title}"
+      "title": "Seleccionar %{section_title}: %{filter_group_title}",
+      "all_filters": "Todos %{filter_title}"
     },
     "countries": {
-      "title": "ES_Countries",
-      "placeholder": "ES_Type country name",
-      "no_countries_found": "ES_No countries found.",
+      "title": "Países",
+      "placeholder": "Escribir el nombre del país",
+      "no_countries_found": "No se encontraron países.",
       "predicates": {
-        "target": "ES_Target of document",
-        "at_least_one_study": "ES_At least one study from are"
+        "target": "Destino del documento",
+        "at_least_one_study": "Al menos un estudio de"
       }
     },
     "date_range": {
-      "title": "ES_Date Range",
-      "published": "ES_Published",
-      "instructions": "ES_(Please include two four-digit years, such as 2008 and 2009, or leave them blank to include publications from any year)",
-      "placeholder": "YYYY"
+      "title": "Intervalo de fechas",
+      "published": "Publicado",
+      "instructions": "(Incluya dos años de cuatro dígitos, como 2008 y 2009, o déjelos en blanco para incluir publicaciones de cualquier año)",
+      "placeholder": "AAAA"
     }
   },
   "articles_page": {
@@ -98,24 +98,24 @@
   },
   "search_page": {
     "search_box": {
-      "view_results_count": "ES_View %{results_count} results",
-      "tips": "ES_Tips for more powerful serach",
-      "filters": "ES_Filters",
-      "placeholder": "ES_Serach..."
+      "view_results_count": "Ver %{results_count} resultados",
+      "tips": "Sugerencias para una búsqueda más eficaz",
+      "filters": "Filtros",
+      "placeholder": "Buscar…"
     },
     "result_item": {
-      "year": "ES_Year:",
-      "quality": "ES_Quality:",
-      "select": "ES_Select:"
+      "year": "Año:",
+      "quality": "Calidad:",
+      "select": "Seleccionar:"
     },
     "result_list": {
-      "no_results": "ES_No results found."
+      "no_results": "No se encontraron resultados."
     },
     "sort_order": {
-      "sorted_by": "ES_Results sorted by",
-      "relevance": "ES_Best Match",
-      "most_recent": "ES_Most Recent",
-      "most_popular": "ES_Most Popular"
+      "sorted_by": "Resultados ordenados por",
+      "relevance": "Mejor coincidencia",
+      "most_recent": "Más reciente",
+      "most_popular": "Más popular"
     }
   },
   "profile_page": {
@@ -153,7 +153,7 @@
     }
   },
   "errors": {
-    "no_connection": "ES_Oops, could not load data. Check your internet connection.",
+    "no_connection": "No fue posible cargar los datos. Verifique su conexión de Internet.",
     "cant_be_blank": "ES_can't be blank!",
     "must_accept_terms": "ES_you must accept the terms and conditions!",
     "already_exists": "ES_already exists",
