@@ -47,7 +47,7 @@ module.exports = React.createClass
       countries = @filters
     else
       countries = _(@state.countries).filter (country) ->
-        country.name.toLowerCase().indexOf(query.toLowerCase()) >= 0
+        country.title.toLowerCase().indexOf(query.toLowerCase()) >= 0
     @setState(countries: countries, mode: @state.mode)
 
   renderCheckMark: (mode) ->
