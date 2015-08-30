@@ -24,15 +24,15 @@ UserActions.createUser.listen (user) ->
   if _.isEmpty(user.errors)
     API.read('/user').done (u) =>
       user = _.extend(u, user)
-      StoreMock.send(user: user, (=> @completed.trigger(user: user)), 'POST /users')
+      StoreMock.send(user: user, (=> @completed(user: user)), 'POST /users')
   else
-    StoreMock.sendError(400, user: user, null, (=> @failed.trigger({}, 'bad data', user: user)), 'POST /users')
+    StoreMock.sendError(400, user: user, null, (=> @failed({}, 'bad data', user: user)), 'POST /users')
 
 UserActions.loadUser.listen ->
   API.read('/user').done(@completed).fail(@failed)
 
 UserActions.updateUser.listen (user) ->
-  @completed.trigger(user)
+  @completed(user)
 
 UserActions.loginUser.listen (user) ->
   user.errors = {}
@@ -44,8 +44,8 @@ UserActions.loginUser.listen (user) ->
   if _.isEmpty(user.errors)
     API.read('/user').done (u) =>
       user = _.extend(u, user)
-      StoreMock.send user: user, (=> @completed.trigger(user: user)), 'POST /login'
+      StoreMock.send user: user, (=> @completed(user: user)), 'POST /login'
   else
-    StoreMock.sendError 400, user: user, null, (=> @failed.trigger({}, "bad input", user: user)), 'POST /users'
+    StoreMock.sendError 400, user: user, null, (=> @failed({}, "bad input", user: user)), 'POST /users'
 
 module.exports = UserActions
