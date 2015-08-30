@@ -8,4 +8,5 @@ module.exports = ->
       </div>
       """)
     $html.alert()
+    $('body > .alert').remove()
     $('body').prepend($html)

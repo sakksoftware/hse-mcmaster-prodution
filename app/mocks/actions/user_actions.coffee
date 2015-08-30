@@ -4,6 +4,7 @@ StoreMock = require('mocks/support/store_mock')
 UserActions = Reflux.createActions
   changeLanguage: {}
   toggleGuidedSearch: {}
+  toggleComplementaryContent: {}
   createUser: {asyncResult: true}
   loginUser: {asyncResult: true}
   updateUser: {asyncResult: true}
@@ -21,7 +22,9 @@ UserActions.createUser.listen (user) ->
     user.errors.accept_terms = "must_accept_terms"
 
   if _.isEmpty(user.errors)
-    StoreMock.send(user: user, (=> @completed.trigger(user: user)), 'POST /users')
+    API.read('/user').done (u) =>
+      user = _.extend(u, user)
+      StoreMock.send(user: user, (=> @completed.trigger(user: user)), 'POST /users')
   else
     StoreMock.sendError(400, user: user, null, (=> @failed.trigger({}, 'bad data', user: user)), 'POST /users')
 
@@ -39,7 +42,9 @@ UserActions.loginUser.listen (user) ->
     user.errors.password = "can't be blank!"
 
   if _.isEmpty(user.errors)
-    StoreMock.send user: user, (=> @completed.trigger(user: user)), 'POST /login'
+    API.read('/user').done (u) =>
+      user = _.extend(u, user)
+      StoreMock.send user: user, (=> @completed.trigger(user: user)), 'POST /login'
   else
     StoreMock.sendError 400, user: user, null, (=> @failed.trigger({}, "bad input", user: user)), 'POST /users'
 

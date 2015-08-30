@@ -4,5 +4,8 @@
   "email": "michael@yagudaev.com",
   "role": "Super Hero",
   "country": "Canada",
-  "language": "en"
+  "language": "en",
+  "complementary_1": true,
+  "complementary_2": false,
+  "complementary_3": false
 }

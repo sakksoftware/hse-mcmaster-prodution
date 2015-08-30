@@ -22,6 +22,9 @@ class Router
     'profile': ->
       React.render <App page="profile" />, @el
 
+    'complementary_content': ->
+      React.render <App page="complementary_content" />, @el
+
   history: []
 
   back: -> @visit(@history.pop())

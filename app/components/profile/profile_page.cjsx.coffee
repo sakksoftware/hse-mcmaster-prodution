@@ -15,7 +15,10 @@ module.exports = React.createClass
 
   componentWillMount: ->
     UserActions.loadUser()
-    UserStore.listen(@updateState)
+    @unsubscribe = UserStore.listen(@updateState)
+
+  componentWillUnmount: ->
+    @unsubscribe()
 
   updateState: (state) ->
     @setState(state)

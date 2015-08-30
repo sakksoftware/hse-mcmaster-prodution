@@ -35,13 +35,16 @@ module.exports = React.createClass
     guidedSearch: UserStore.state.guidedSearch
 
   componentWillMount: ->
-    UserStore.listen(@userStoreUpdated)
+    @unsubscribe = UserStore.listen(@userStoreUpdated)
 
     # TODO: remove when passing results as an attribute from server a bit hacky now
     if @state.search.query == null
       @fetchFilters()
     else
       @fetchResults()
+
+  componentWillUnmount: ->
+    @unsubscribe()
 
   userStoreUpdated: (state) ->
     @setState(guidedSearch: state.guidedSearch)

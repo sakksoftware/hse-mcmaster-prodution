@@ -2,6 +2,7 @@ ArticlesPage = require('components/articles/articles_page')
 SearchPage = require('components/search/search_page')
 StaticPage = require('components/static/static_page')
 ProfilePage = require('components/profile/profile_page')
+ComplementaryContentPage = require('components/complementary_content/complementary_content_page')
 
 Layer = require('components/layered_navigation/layer')
 LayerGroup = require('components/layered_navigation/layer_group')
@@ -89,6 +90,8 @@ module.exports = React.createClass
         <StaticPage name="terms" key="terms-page" />
       when 'profile'
         <ProfilePage key="profile-page" />
+      when 'complementary_content'
+        <ComplementaryContentPage key="complementary-content-page" />
       else
         # TODO: display a 404 here!
         throw new Error("Page not found! Please check the URL")

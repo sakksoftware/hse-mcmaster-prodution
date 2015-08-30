@@ -6,6 +6,7 @@ if config.useMocks
 UserActions = Reflux.createActions
   changeLanguage: {}
   toggleGuidedSearch: {}
+  toggleComplementaryContent: {}
   createUser: {asyncResult: true}
   loginUser: {asyncResult: true}
   updateUser: {asyncResult: true}

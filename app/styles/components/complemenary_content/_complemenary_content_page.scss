@@ -1,0 +1,32 @@
+.complementary-content-page {
+  h1 {
+    margin-bottom: $x-medium-size;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    border-bottom: 1px solid $border-color;
+    margin-top: $xx-large-size;
+  }
+
+  li {
+    border-top: 1px solid $border-color;
+  }
+
+  .complementary-content-title {
+    font-weight: 500;
+    margin-top: $small-size;
+    margin-bottom: 0;
+  }
+
+  .complementary-content-description {
+    font-weight: 300;
+    color: $primary-text-color;
+    margin-bottom: $x-small-size;
+  }
+
+  .react-toggle {
+    margin-bottom: $tiny-size;
+  }
+}
