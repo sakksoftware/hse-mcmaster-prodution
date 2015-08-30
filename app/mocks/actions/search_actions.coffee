@@ -1,56 +1,58 @@
+console.log('loaded mock search')
+
 API = require('lib/api')
-config = require('config')[window.ENV]
-SearchActions = require('actions/search_actions')
+serializeSearchUrl = require('services/search_serialization_service').serializeSearchUrl
 StoreMock = require('mocks/support/store_mock')
 FilterNormalizationService = require('services/filter_normalization_service')
 SearchSerializationService = require('services/search_serialization_service')
 FiltersHelper = require('mocks/support/filters_helper')
 
-console.log('loaded mock search')
+SearchActions = Reflux.createActions
+  search: {asyncResult: true}
+  suggestions: {asyncResult: true}
 
-module.exports = Reflux.createStore
-  listenables: [SearchActions]
-  mixins: [StoreMock, FiltersHelper]
+SearchActions.search.listen (search, language) ->
+  allFilters = FiltersHelper.getFilters()
+  applied_filters = getAppliedFilters(search.filters)
+  addAppliedProperty(allFilters, applied_filters)
+  query = SearchSerializationService.serializeSearchUrl(search, language)
 
-  _addAppliedProperty: (filters, appliedFilters) ->
-    _(filters).each (f) =>
-      if f.id
-        appliedFilter = _(appliedFilters).find (af) -> af.id == f.id
-        f.applied = appliedFilter?.applied || false
-        if appliedFilter?.name == "countries"
-          f.mode = appliedFilter.mode
-        if appliedFilter?.name == "date_range"
-          f.start = appliedFilter.start
-          f.end = appliedFilter.end
-      if f.filters
-        @_addAppliedProperty(f.filters, appliedFilters)
+  res = _.clone(searchData)
+  res.applied_filters = applied_filters
+  res.filters = allFilters
+  res.query = search.query
+  res.sort_by = search.sort_by
+  res.page = search.page
+  lastResultIndex = Math.min(res.results_count - (res.results_per_page * (res.page - 1)), res.results_per_page) - 1
+  res.results = res.results[0..lastResultIndex]
 
-  _getAppliedFilters: (filters) ->
-    filters = FilterNormalizationService.getFiltersArray(filters)
-    filters.filter((e) -> e.applied)
+  StoreMock.send(res, (=> @completed(res)), "/search#{query}")
 
-  search: (search, lang, success, error, options = {}) ->
-    allFilters = @getFilters()
-    applied_filters = @_getAppliedFilters(search.filters)
-    @_addAppliedProperty(allFilters, applied_filters)
-    query = SearchSerializationService.serializeSearchUrl(search, lang)
+SearchActions.suggestions.listen (search, language) ->
+  query = SearchSerializationService.serializeSearchUrl(search, language)
+  res = _.clone(suggestionData)
+  res.suggestions = _.filter suggestionData.suggestions, (s) => s.query.toLowerCase().match(search.query.toLowerCase())
+  StoreMock.send(res, (=> @completed(res)), "/search/suggestions#{query}")
 
-    res = _.clone(searchData)
-    res.applied_filters = applied_filters
-    res.filters = allFilters
-    res.query = search.query
-    res.sort_by = search.sort_by
-    res.page = search.page
-    lastResultIndex = Math.min(res.results_count - (res.results_per_page * (res.page - 1)), res.results_per_page) - 1
-    res.results = res.results[0..lastResultIndex]
+module.exports = SearchActions
 
-    @send(res, success, "/search#{query}")
+# private
+addAppliedProperty = (filters, appliedFilters) ->
+  _(filters).each (f) =>
+    if f.id
+      appliedFilter = _(appliedFilters).find (af) -> af.id == f.id
+      f.applied = appliedFilter?.applied || false
+      if appliedFilter?.name == "countries"
+        f.mode = appliedFilter.mode
+      if appliedFilter?.name == "date_range"
+        f.start = appliedFilter.start
+        f.end = appliedFilter.end
+    if f.filters
+      addAppliedProperty(f.filters, appliedFilters)
 
-  suggestions: (search, lang, success, error, options = {}) ->
-    query = SearchSerializationService.serializeSearchUrl(search, lang)
-    res = _.clone(suggestionData)
-    res.suggestions = _.filter suggestionData.suggestions, (s) => s.query.toLowerCase().match(search.query.toLowerCase())
-    @send(res, success, "/search/suggestions#{query}")
+getAppliedFilters = (filters) ->
+  filters = FilterNormalizationService.getFiltersArray(filters)
+  filters.filter((e) -> e.applied)
 
 searchData = {
   "query": "HIV",

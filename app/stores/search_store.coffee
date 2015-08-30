@@ -1,17 +1,30 @@
-API = require('lib/api')
 SearchActions = require('actions/search_actions')
-SearchSerializationService = require('services/search_serialization_service')
+SearchDeserializationService = require('services/search_deserialization_service')
+RefluxStateMixin = require('lib/reflux_state_mixin')(Reflux)
 
 module.exports = Reflux.createStore
   listenables: [SearchActions]
-  mixins: [SearchSerializationService]
+  mixins: [RefluxStateMixin, SearchDeserializationService]
 
-  search: (search, language, success, error) ->
-    API.read "search#{@serializeSearchUrl(search, language)}",
-      success: success,
-      error: error
+  getInitialState: ->
+    search: @deserializeSearchUrl()
+    suggestions: []
+    errors: null
 
-  suggestions: (search, language, success, error, options = {}) ->
-    API.read "search/suggestions#{@serializeSearchUrl(search, language)}",
-      success: success,
-      error: error
+  onSearchCompleted: (search) ->
+    if search.page > 1
+      search.results = @state.search.results.concat(search.results)
+
+    @setState(search: search, errors: null)
+    @trigger(@state)
+
+  onSearchFailed: () ->
+    console.log('The search has failed')
+    # flash('error', @t('errors.no_connection'))
+
+  onSuggestionsCompleted: (suggestions) ->
+    @setState(suggestions: suggestions)
+    @trigger(@state)
+
+  onSuggestionsFailed: () ->
+    console.log('Failed to retrieve suggestions')

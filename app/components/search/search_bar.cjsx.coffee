@@ -22,12 +22,10 @@ module.exports = React.createClass
     @props.onSearch?(query)
     @dismissKeyboard()
 
-
   fetchSuggestions: (query, callback) ->
     handleLoadSuggestions = (data) -> callback(null, data.suggestions)
-    handleError = -> console.log('Error: cannot load suggestions')
     @props.search.query = query
-    SearchActions.suggestions @props.search, UserStore.state.language, handleLoadSuggestions, handleError
+    SearchActions.suggestions(@props.search, UserStore.state.language).then(handleLoadSuggestions)
 
   getSuggestionValue: (suggestion, input) ->
     suggestion.query

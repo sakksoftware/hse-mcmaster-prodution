@@ -8,16 +8,16 @@ FilterGroupsMenu = require('components/menus/filter_groups_menu')
 
 FilterNormalizationService = require('services/filter_normalization_service')
 SearchSerializationService = require('services/search_serialization_service')
-SearchDeserializationService = require('services/search_deserialization_service')
 
 UserStore = require('stores/user_store')
+SearchStore = require('stores/search_store')
 
 TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
   displayName: 'SearchPage'
 
-  mixins: [FilterNormalizationService, SearchSerializationService, SearchDeserializationService, TranslationHelper]
+  mixins: [FilterNormalizationService, SearchSerializationService, TranslationHelper]
   baseTranslation: ''
 
   propTypes:
@@ -29,13 +29,14 @@ module.exports = React.createClass
   # searching
   # results
   getInitialState: ->
-    search: @deserializeSearchUrl()
+    search: SearchStore.state.search
     filtersLoaded: false
     step: 'pending_search'
     guidedSearch: UserStore.state.guidedSearch
 
   componentWillMount: ->
-    @unsubscribe = UserStore.listen(@userStoreUpdated)
+    @unsubscribeUser = UserStore.listen(@userStoreUpdated)
+    @unsubscribeSearch = SearchStore.listen(@searchStoreUpdated)
 
     # TODO: remove when passing results as an attribute from server a bit hacky now
     if @state.search.query == null
@@ -44,19 +45,21 @@ module.exports = React.createClass
       @fetchResults()
 
   componentWillUnmount: ->
-    @unsubscribe()
+    @unsubscribeUser()
 
   userStoreUpdated: (state) ->
     @setState(guidedSearch: state.guidedSearch)
+
+  searchStoreUpdated: (state) ->
+    @setState(search: state.search)
 
   fetchFilters: ->
     FilterActions.loadFilters UserStore.state.language, @handleLoadFilters, @handleError
 
   fetchResults: ->
-    @setState(step: 'searching', search: @state.search)
-    SearchActions.search @state.search, UserStore.state.language,
-      @handleLoad,
-      @handleError
+    @setState(step: 'searching')
+    SearchActions.search(@state.search, UserStore.state.language).then =>
+      @setState(step: 'results', filtersLoaded: true)
 
   updateUrl: ->
     Router = require('lib/router')
@@ -121,25 +124,14 @@ module.exports = React.createClass
     filter = @findFilter(filterId, @state.search.filters)
     @changeFilterValue(filter, true)
 
-  handleLoad: (search, statusCode, xhr) ->
-    if search.page > 1
-      search.results = @state.search.results.concat(search.results)
-    @setState(search: search, step: 'results', filtersLoaded: true)
-
   handleLoadFilters: (data) ->
     @state.search.filters = data.filters
-    @setState(search: @state.search, step: @state.step, filtersLoaded: true)
+    @setState(filtersLoaded: true)
     @forceUpdate()
-
-  handleError: (xhr, statusCode, statusText) ->
-    console.log("error", xhr, statusCode, statusText)
-    flash('error', @t('errors.no_connection'))
 
   handleLoadMore: (page) ->
     @state.search.page = page
-    SearchActions.search @state.search, UserStore.state.language,
-      @handleLoad,
-      @handleError
+    SearchActions.search(@state.search, UserStore.state.language)
 
   getOverylayContent: ->
     if @state.search?.results_count

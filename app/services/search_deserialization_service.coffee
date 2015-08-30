@@ -6,7 +6,12 @@ countriesPattern = /^\[(\d+_\d+),([a-z_]+)\]/
 module.exports =
   deserializeSearchUrl: ->
     params = Url.params()
-    applied_filters = params.applied_filters?.split(';')
+
+    if _.isEmpty(params.applied_filters)
+      applied_filters = []
+    else
+      applied_filters = params.applied_filters?.split(';')
+
     # set applied filters until we fetch filers from search
     filters = applied_filters?.map (f) ->
       if match = f.match(dateRangePattern)
@@ -20,6 +25,7 @@ module.exports =
       query: if params.q? then params.q else null
       sort_by: params.sort_by || 'relevance'
       results: null
-      applied_filters: applied_filters || null
+      results_count: 0
+      applied_filters: applied_filters || []
       filters: filters || []
     }
