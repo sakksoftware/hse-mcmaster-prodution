@@ -15,7 +15,7 @@ serializeAppliedFilters = (filters) ->
   result = []
 
   for filter in appliedFilters
-    if filter.type.match(/countries_/)
+    if filter.type.match(/countries_/) && filter.type != 'countries_lmics'
       result.push "[#{filter.id},#{filter.mode}]"
     else if filter.type == 'date_range'
       end = if filter.end then ",#{filter.end}" else ""
