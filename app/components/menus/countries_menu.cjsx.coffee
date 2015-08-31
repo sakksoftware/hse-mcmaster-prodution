@@ -68,10 +68,9 @@ module.exports = React.createClass
     _.map @state.countries, (filter) =>
       <MenuFilterItem filter={filter} key="filter-#{filter.id}" onToggle={@onToggleFilter} />
 
-  render: ->
-    <div className="countries-menu filters-menu">
-      <input placeholder={@t('placeholder')} onChange={@filterCountries} className="country-filter" ref="countryFilter" />
-      <ul className="countries-menu-predicate menu-list nested-menu">
+  renderPredicates: ->
+    if @filterGroup.type == 'countries_countries'
+      <ul className="countries-menu-predicate menu-list nested-menu" key="predicates">
         <li data-value="target" className="menu-item menu-filter-item">
           <a className="menu-item-text" onClick={@setMode('target')}>
             {@t('predicates.target')}
@@ -85,6 +84,11 @@ module.exports = React.createClass
           </a>
         </li>
       </ul>
+
+  render: ->
+    <div className="countries-menu filters-menu">
+      <input placeholder={@t('placeholder')} onChange={@filterCountries} className="country-filter" ref="countryFilter" />
+      {@renderPredicates()}
       <ul className="countries-list menu-list nested-menu">
         {@ifEmpty(@renderCountries(), @t('no_countries_found'))}
       </ul>
