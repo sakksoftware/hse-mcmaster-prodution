@@ -33,7 +33,6 @@ module.exports = Reflux.createStore
       search.results = @state.search.results.concat(search.results)
 
     @setState(search: search, errors: null, loaded: true)
-    @trigger(@state)
 
   onSearchFailed: () ->
     console.log('The search has failed')
@@ -41,7 +40,6 @@ module.exports = Reflux.createStore
 
   onSuggestionsCompleted: (suggestions) ->
     @setState(suggestions: suggestions)
-    @trigger(@state)
 
   onSuggestionsFailed: () ->
     console.log('Failed to retrieve suggestions')
@@ -70,7 +68,6 @@ module.exports = Reflux.createStore
     filter = @findFilter filter
     filter.applied = value
     @setState(search: @state.search)
-    @trigger(@state)
     @updateUrl()
     SearchActions.search(@state.search)
 
@@ -78,7 +75,6 @@ module.exports = Reflux.createStore
     parentFilter = @findFilter parentFilter
     @_changeParentFilterValue(parentFilter, value)
     @setState(search: @state.search)
-    @trigger(@state)
     @updateUrl()
     SearchActions.search(@state.search)
 
@@ -106,7 +102,6 @@ module.exports = Reflux.createStore
 
     filterGroup.mode = mode
     @setState(search: @state.search)
-    @trigger(@state)
     @updateUrl()
     SearchActions.search(@state.search)
 
