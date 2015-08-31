@@ -64,6 +64,11 @@
     }
   }
 
+  // TODO: unhinde when implemented
+  .menu-item-saved-documents, .menu-item-saved-searches {
+    display: none !important;
+  }
+
   @include desktop {
     float: right;
     display: none;
