@@ -28,12 +28,11 @@ module.exports = React.createClass
     mode: 'target'
 
   onFiltersUpdated: ->
-    filters = SearchStore.findFilter(@filterGroup).filters
-    @setState(countries: filters)
+    @filterGroup = SearchStore.findFilter(@filterGroup)
+    @filters = @filterGroup.filters
     @filterCountries()
 
   onToggleFilter: (filter) ->
-    # TOOD: optimize performance here, slow clicking
     SearchActions.toggleCountryFilter(filter, @filterGroup, @state.mode)
 
   getAppliedFilters: ->
