@@ -19,10 +19,6 @@ module.exports = Reflux.createStore
   findFilter: (filter) ->
     @_findFilterRecursive @_getId(filter), @state.search.filters
 
-  getFilterGroup: (filterGroup) ->
-    filterGroup = @findFilter(filterGroup)
-    filterGroup.filters
-
   getAppliedFilterGroups: ->
     @_getAppliedFilterGroups(@state.search.filters)
 

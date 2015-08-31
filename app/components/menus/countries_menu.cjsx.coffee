@@ -28,7 +28,7 @@ module.exports = React.createClass
     mode: 'target'
 
   onFiltersUpdated: ->
-    filters = SearchStore.getFilterGroup(@filterGroup)
+    filters = SearchStore.findFilter(@filterGroup).filters
     @setState(countries: filters)
     @filterCountries()
 

@@ -34,7 +34,8 @@ module.exports = React.createClass
     @unsubscribe()
 
   onFiltersUpdated: ->
-    filters = SearchStore.getFilterGroup(@filterGroup)
+    @filterGroup = SearchStore.findFilter(@filterGroup)
+    filters = @filterGroup.filters
     @setState(filters: filters)
 
   onToggleFilter: (filter) ->
