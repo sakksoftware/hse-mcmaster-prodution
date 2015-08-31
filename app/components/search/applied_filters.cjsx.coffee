@@ -8,17 +8,9 @@ module.exports = React.createClass
     onRemoveFilter: React.PropTypes.func.isRequired
     onShowFilterGroup: React.PropTypes.func.isRequired
 
-  findFirstApplied: (filters)->
-    _.find filters, (f) =>
-      return true if f.applied
-      if f.filters
-        return @findFirstApplied(f.filters)
-
-      return false
-
-  onShowFilterGroup: (filter) ->
-    filter = _.find @props.filters, (f) -> f.id == filter.id
-    @props.onShowFilterGroup(filter, @findFirstApplied(filter.filters))
+  onShowFilterGroup: (section, filter) ->
+    filter = SearchStore.findFilter(filter)
+    @props.onShowFilterGroup(section, filter)
 
   onRemoveFilter: (filter) ->
     @props.onRemoveFilter(filter)
@@ -27,10 +19,11 @@ module.exports = React.createClass
     SearchStore.getAppliedFilterGroups()
 
   renderFilters: ->
-    for filter, index in @getAppliedFilterGroups()
-      <AppliedFilterItem filter={filter} key="filter-#{index}"
-        onShowFilterGroup={@onShowFilterGroup}
-        onRemoveFilter={@onRemoveFilter} />
+    for filterSection, i in @getAppliedFilterGroups()
+      for filterGroup, j in filterSection.filters
+        <AppliedFilterItem section={filterSection} filter={filterGroup} key="filter-#{filterGroup.id}"
+          onShowFilterGroup={@onShowFilterGroup}
+          onRemoveFilter={@onRemoveFilter} />
 
   render: ->
     <ul className="applied-filters">

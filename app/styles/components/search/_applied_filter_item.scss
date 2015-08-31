@@ -17,17 +17,9 @@
     display: block;
   }
 
-  .applied-filter-item-section {
-    color: $primary-text-color;
-    max-width: $section-width;
-    margin-right: $x-tiny-size;
-
-    @include ellipsis($section-width);
-  }
-
   .applied-filter-item-filters {
     color: $primary-color;
-    @include ellipsis($layer-width - $section-width - $large-size - $tiny-size - $x-large-size)
+    @include ellipsis(208px);
   }
 
   span {

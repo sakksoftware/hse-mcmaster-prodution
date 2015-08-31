@@ -16,8 +16,11 @@ module.exports = Reflux.createStore
   ################
   # Data accessors
   ################
+  findFilter: (filter) ->
+    @_findFilterRecursive @_getId(filter), @state.search.filters
+
   getFilterGroup: (filterGroup) ->
-    filterGroup = @_findFilter(filterGroup)
+    filterGroup = @findFilter(filterGroup)
     filterGroup.filters
 
   getAppliedFilterGroups: ->
@@ -68,7 +71,7 @@ module.exports = Reflux.createStore
     @onChangeParentFilterValue(filterGroup, false)
 
   onChangeFilterValue: (filter, value) ->
-    filter = @_findFilter filter
+    filter = @findFilter filter
     filter.applied = value
     @setState(search: @state.search)
     @trigger(@state)
@@ -76,7 +79,7 @@ module.exports = Reflux.createStore
     SearchActions.search(@state.search)
 
   onChangeParentFilterValue: (parentFilter, value) ->
-    parentFilter = @_findFilter parentFilter
+    parentFilter = @findFilter parentFilter
     @_changeParentFilterValue(parentFilter, value)
     @setState(search: @state.search)
     @trigger(@state)
@@ -96,9 +99,9 @@ module.exports = Reflux.createStore
       @onAddFilter(filter)
 
   onToggleCountryFilter: (filter, filterGroup, mode) ->
-    filter = @_findFilter(filter)
+    filter = @findFilter(filter)
     filter.applied = !filter.applied
-    filterGroup = @_findFilter(filterGroup)
+    filterGroup = @findFilter(filterGroup)
 
     if _.find(filterGroup.filters, (f) -> f.applied)
       filterGroup.applied = true
@@ -112,7 +115,7 @@ module.exports = Reflux.createStore
     SearchActions.search(@state.search)
 
   onToggleDateRangeFilter: (filter, start, end) ->
-    filter = @_findFilter(filter)
+    filter = @findFilter(filter)
 
     if _.isEmpty(start) && _.isEmpty(end)
       @onRemoveFilter(filter)
@@ -123,9 +126,6 @@ module.exports = Reflux.createStore
       @onAddFilter(filter)
 
   # private
-  _findFilter: (filter)->
-    @_findFilterRecursive @_getId(filter), @state.search.filters
-
   _findFilterRecursive: (filterId, filters) ->
     for filter in filters
       if filter.id == filterId

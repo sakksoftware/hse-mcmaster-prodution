@@ -35,7 +35,7 @@ module.exports = React.createClass
 
   getMenuContext: (filterGroup) ->
     filterGroup: filterGroup
-    filters: filterGroup.filters
+    filters: SearchStore.getFilterGroup(filterGroup)
     overlayContent: @overlayContent
 
   getMenuName: (filterGroup) ->
