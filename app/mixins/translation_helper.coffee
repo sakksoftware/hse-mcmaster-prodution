@@ -5,4 +5,8 @@ module.exports =
 
     prefix = ""
     prefix = "#{@baseTranslation}." if @baseTranslation != ""
+    # if key contains absoulte path
+    if key.match(/^\//)
+      prefix = ""
+      key = key.replace(/^\//, '')
     $.t("#{prefix}#{key}", args)

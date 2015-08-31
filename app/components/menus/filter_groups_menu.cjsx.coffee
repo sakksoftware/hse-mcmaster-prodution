@@ -12,20 +12,29 @@ module.exports = React.createClass
 
   propTypes:
     context: React.PropTypes.object
+    setOverlayContent: React.PropTypes.func
 
   getInitialState: ->
     filters: SearchStore.state.search.filters
 
   componentWillMount: ->
     @onShowFilterGroup = @props.context.onShowFilterGroup
-    @overlayContent = @props.context.overlayContent
-    @unsubscribe = SearchStore.listen(@updateFilters)
+    @unsubscribe = SearchStore.listen(@onSearchUpdated)
 
   componentWillUnmount: ->
     @unsubscribe()
 
-  updateFilters: (state) ->
+  onSearchUpdated: (state) ->
     @setState(filters: state.search.filters)
+    @setOverlayContent(state)
+
+  # TODO: can probably rewrite this whole thing by using css to move the SearchBox.renderResultCountFooter
+  # as this is for desktop only
+  setOverlayContent: (state) ->
+    overlayContent = ""
+    if state.search?.results_count != null
+      overlayContent = @t('/search_page.search_box.view_results_count', results_count: state.search.results_count)
+    @props.setOverlayContent(overlayContent)
 
   onRemoveFilterGroup: (filter) ->
     SearchActions.removeFilterGroup(filter)
@@ -36,7 +45,6 @@ module.exports = React.createClass
   getMenuContext: (filterGroup) ->
     filterGroup: filterGroup
     filters: SearchStore.findFilter(filterGroup).filters
-    overlayContent: @overlayContent
 
   getMenuName: (filterGroup) ->
     menu = "filters"

@@ -38,7 +38,7 @@ module.exports = React.createClass
       <span className="filter-count">{count}</span>
 
   renderResultCountFooter: ->
-    if @state.showingFiltersMenu && @props.search?.results_count
+    if @state.showingFiltersMenu && @props.search?.results_count != null
       <div className="result-count">
         <a href="#" onClick={@handleBackToSearchResults}>{@t('view_results_count', results_count: @props.search.results_count)}</a>
       </div>

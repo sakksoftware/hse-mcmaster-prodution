@@ -51,10 +51,13 @@ module.exports = React.createClass
     @dismissMenu()
 
   toggleMenu: (menuName, title, menuContext = {}) ->
-    @refs.offcanvas.toggleMenu(menuName, title, menuContext)
+    @refs.layaredNavigation.toggleMenu(menuName, title, menuContext)
 
   dismissMenu: ->
-    @refs.offcanvas.dismissMenu()
+    @refs.layaredNavigation.dismissMenu()
+
+  setOverlayContent: (content) ->
+    @refs.layaredNavigation.setOverlayContent(content)
 
   renderHeader: ->
     <nav className="top-nav">
@@ -80,6 +83,7 @@ module.exports = React.createClass
         <SearchPage key="search-page"
           onShowMenu={@toggleMenu}
           dismissMenu={@dismissMenu}
+          setOverlayContent ={@setOverlayContent}
          />
       when 'articles'
         id = @props.args.id
@@ -122,7 +126,7 @@ module.exports = React.createClass
       </Layer>
 
       <Layer name="filterGroups" title={@t('menus.filter_groups.title')}>
-        <FilterGroupsMenu />
+        <FilterGroupsMenu setOverlayContent={@setOverlayContent} />
       </Layer>
       <Layer name="filters" title={@t('menus.filters.title')}>
         <FiltersMenu />
@@ -136,7 +140,7 @@ module.exports = React.createClass
     </LayerGroup>
 
   render: ->
-    <LayeredNavigation ref="offcanvas" className="app" id="app">
+    <LayeredNavigation ref="layaredNavigation" className="app" id="app">
       {@renderLayerGroup()}
       {@renderHeader()}
       <div id="page-content">

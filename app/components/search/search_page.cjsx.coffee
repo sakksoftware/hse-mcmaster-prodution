@@ -23,6 +23,7 @@ module.exports = React.createClass
   propTypes:
     onShowMenu: React.PropTypes.func.isRequired
     dismissMenu: React.PropTypes.func.isRequired
+    setOverlayContent: React.PropTypes.func.isRequired
 
   # steps
   # pending_search
@@ -77,10 +78,6 @@ module.exports = React.createClass
   handleSortChange: (sortBy) ->
     SearchActions.sortBy(sortBy)
 
-  getOverylayContent: ->
-    if @state.search?.results_count
-      "#{@state.search.results_count} results"
-
   renderDesktopFiltersMenu: ->
     if @state.filtersLoaded
       <div className="filter-groups-menu-wrapper">
@@ -89,8 +86,7 @@ module.exports = React.createClass
         </div>
         <FilterGroupsMenu context={
           onShowFilterGroup: @props.onShowMenu
-          overlayContent: @getOverylayContent()
-        } />
+        } setOverlayContent={@props.setOverlayContent} />
       </div>
 
   renderGuidedSearch: ->
@@ -117,7 +113,6 @@ module.exports = React.createClass
         onSearch={@handleSearch}
         onShowMenu={@props.onShowMenu}
         dismissMenu={@props.dismissMenu}
-        overlayContent={@getOverylayContent()}
       />
       {@renderGuidedSearch()}
       {@renderDesktopFiltersMenu()}

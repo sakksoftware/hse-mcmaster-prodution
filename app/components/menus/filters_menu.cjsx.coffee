@@ -27,13 +27,12 @@ module.exports = React.createClass
   componentWillMount: ->
     @filterGroup = @props.context.filterGroup
     @currentColorIndex = 0
-
-    @unsubscribe = SearchStore.listen(@onFiltersUpdated)
+    @unsubscribe = SearchStore.listen(@onSearchUpdated)
 
   componentWillUnmount: ->
     @unsubscribe()
 
-  onFiltersUpdated: ->
+  onSearchUpdated: ->
     @filterGroup = SearchStore.findFilter(@filterGroup)
     filters = @filterGroup.filters
     @setState(filters: filters)
