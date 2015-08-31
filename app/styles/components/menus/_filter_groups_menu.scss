@@ -8,21 +8,26 @@
   .filter-group-complementary-1, .filter-group-complementary-2, .filter-group-complementary-3 {
 
     .layer-toggle {
-      padding-left: $large-size + $tiny-size;
+      padding-left: $large-size + $tiny-size + $tiny-size;
       &:before {
         content: '';
         height: $large-size;
         width: $large-size;
         display: block;
         position: absolute;
-        left: 0;
+        left: $tiny-size;
         top: $x-small-size;
+      }
+      &:after {
+        top: $medium-size;
       }
     }
   }
 
-  .filter-group-complementary-2, .filter-group-complementary-3 {
-    line-height: $large-size;
+  .filter-group-complementary-1, .filter-group-complementary-2 {
+    .layer-toggle:before {
+      top: $medium-size;
+    }
   }
 
   .filter-group-complementary-1 .layer-toggle:before {
