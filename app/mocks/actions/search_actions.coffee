@@ -52,9 +52,9 @@ addAppliedProperty = (filters, appliedFilters) ->
     if f.id
       appliedFilter = _(appliedFilters).find (af) -> af.id == f.id
       f.applied = appliedFilter?.applied || false
-      if appliedFilter?.name == "countries"
+      if appliedFilter?.type == "countries_countries"
         f.mode = appliedFilter.mode
-      if appliedFilter?.name == "date_range"
+      if appliedFilter?.type == "date_range"
         f.start = appliedFilter.start
         f.end = appliedFilter.end
     if f.filters

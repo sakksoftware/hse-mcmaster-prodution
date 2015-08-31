@@ -10,7 +10,10 @@ module.exports = React.createClass
     onShowFilterGroup: React.PropTypes.func.isRequired
 
   getChildFiltersText: ->
-    _(@getFiltersArray(@props.filter.filters)).pluck('title').join(', ').substring(0, 50)
+    if @props.filter.filters
+      _(@getFiltersArray(@props.filter.filters)).pluck('title').join(', ').substring(0, 50)
+    else if @props.filter.type == 'date_range'
+      "#{@props.filter.title}: #{@props.filter.start || ''}-#{@props.filter.end || ''}"
 
   handleShowFilterGroup: (e) ->
     e.preventDefault()
