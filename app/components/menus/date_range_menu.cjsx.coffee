@@ -1,4 +1,5 @@
 TranslationHelper = require('mixins/translation_helper')
+SearchActions = require('actions/search_actions')
 
 module.exports = React.createClass
   displayName: 'DateRangeMenu'
