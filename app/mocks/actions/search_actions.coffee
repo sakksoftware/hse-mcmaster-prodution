@@ -80,7 +80,8 @@ searchData = {
       "updated_at": "2014-09-20 11:33:00Z",
       "quality": "7/11",
       "description": "Some Crazy long description goes here.....",
-      "category": "International Organizations Document"
+      "category": "International Organizations Document",
+      "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     },
     {
       "id": "not_filled_all_visible",
@@ -89,7 +90,8 @@ searchData = {
       "updated_at": "2013-08-20 11:33:00Z",
       "quality": "7/11",
       "description": "Lots of stuff goes here! Very Interesting right?.....",
-      "category": "Superhero Marvel Movies"
+      "category": "Superhero Marvel Movies",
+      "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     },
     {
       "id": "all_hidden",
@@ -98,7 +100,8 @@ searchData = {
       "updated_at": "2013-08-20 11:33:00Z",
       "quality": "7/11",
       "description": "Lots of stuff goes here! Very Interesting right?.....",
-      "category": "Superhero Marvel Movies"
+      "category": "Superhero Marvel Movies",
+      "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     },
     {
       "id": "all_visible",
@@ -107,7 +110,8 @@ searchData = {
       "updated_at": "2013-08-20 11:33:00Z",
       "quality": "7/11",
       "description": "Lots of stuff goes here! Very Interesting right?.....",
-      "category": "Superhero Marvel Movies"
+      "category": "Superhero Marvel Movies",
+      "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     },
     {
       "id": "all_visible",
@@ -116,7 +120,8 @@ searchData = {
       "updated_at": "2013-08-20 11:33:00Z",
       "quality": "7/11",
       "description": "Lots of stuff goes here! Very Interesting right?.....",
-      "category": "Superhero Marvel Movies"
+      "category": "Superhero Marvel Movies",
+      "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     },
     {
       "id": "all_visible",
@@ -125,7 +130,8 @@ searchData = {
       "updated_at": "2013-08-20 11:33:00Z",
       "quality": "7/11",
       "description": "Lots of stuff goes here! Very Interesting right?.....",
-      "category": "Superhero Marvel Movies"
+      "category": "Superhero Marvel Movies",
+      "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     },
     {
       "id": "all_visible",
@@ -134,7 +140,8 @@ searchData = {
       "updated_at": "2013-08-20 11:33:00Z",
       "quality": "7/11",
       "description": "Lots of stuff goes here! Very Interesting right?.....",
-      "category": "Superhero Marvel Movies"
+      "category": "Superhero Marvel Movies",
+      "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     },
     {
       "id": "all_visible",
@@ -143,7 +150,8 @@ searchData = {
       "updated_at": "2013-08-20 11:33:00Z",
       "quality": "7/11",
       "description": "Lots of stuff goes here! Very Interesting right?.....",
-      "category": "Superhero Marvel Movies"
+      "category": "Superhero Marvel Movies",
+      "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     },
     {
       "id": "all_visible",
@@ -152,7 +160,8 @@ searchData = {
       "updated_at": "2013-08-20 11:33:00Z",
       "quality": "7/11",
       "description": "Lots of stuff goes here! Very Interesting right?.....",
-      "category": "Superhero Marvel Movies"
+      "category": "Superhero Marvel Movies",
+      "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     },
     {
       "id": "all_visible",
@@ -161,7 +170,8 @@ searchData = {
       "updated_at": "2013-08-20 11:33:00Z",
       "quality": "7/11",
       "description": "Lots of stuff goes here! Very Interesting right?.....",
-      "category": "Superhero Marvel Movies"
+      "category": "Superhero Marvel Movies",
+      "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     }
   ],
   "filters": {}

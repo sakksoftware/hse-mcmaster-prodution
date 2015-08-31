@@ -13,7 +13,7 @@ module.exports = React.createClass
     result: React.PropTypes.object.isRequired
 
   shortRating: (quality) ->
-    if match = quality.match(/[0-9]{1,2}\/[0-9]{1,2}/)
+    if match = quality?.match(/[0-9]{1,2}\/[0-9]{1,2}/)
       return match
     quality
 
@@ -40,7 +40,7 @@ module.exports = React.createClass
           <Link to={"/articles/#{@props.result.id}"}>{@props.result.title}</Link>
         </h2>
         <div className="result-item-categories">
-          {@props.result.category}
+          {@props.result.category} | {@props.result.country_groupings}
         </div>
         {@ellipsis(@props.result.description, 250)}
       </section>
