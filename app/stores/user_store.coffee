@@ -20,19 +20,15 @@ module.exports = Reflux.createStore
 
   onLoadUserCompleted: (user) ->
     @setState(user: user, loaded: true, errors: null, language: user.language)
-    @trigger(@state)
 
   onLoadUserFailed: (xhr, statusCode, responseText) ->
     @setState(errors: responseText, loaded: true)
-    @trigger(@state)
 
   onUpdateUserCompleted: (user) ->
     @setState(user: _.extend(@state.user, user), loaded: true, errors: null, language: user.language || @state.language)
-    @trigger(@state)
 
   onUpdateUserFailed: (xhr, statusCode, responseText) ->
     @setState(errors: responseText, loaded: true)
-    @trigger(@state)
 
   onChangeLanguage: (language) ->
     Cookies.set('lang', language)
@@ -42,7 +38,6 @@ module.exports = Reflux.createStore
   onToggleGuidedSearch: (language) ->
     @setState(guidedSearch: !@state.guidedSearch)
     Cookies.set('guided_search', @state.guidedSearch)
-    @trigger(@state)
 
   onToggleComplementaryContent: (fieldName) ->
     user = @state.user
@@ -53,17 +48,13 @@ module.exports = Reflux.createStore
   onCreateUserCompleted: (data) ->
     user = data.user
     @setState(user: user, loaded: true, language: user.language)
-    @trigger(@state)
 
   onCreateUserFailed: (xhr, statusCode, responseText) ->
     @setState(errors: responseText, loaded: true)
-    @trigger(@state)
 
   onLoginUserCompleted: (data) ->
     user = data.user
     @setState(user: user, loaded: true, language: user.language)
-    @trigger(@state)
 
   onLoginUserFailed: (xhr, statusCode, responseText) ->
     @setState(errors: responseText, loaded: true)
-    @trigger(@state)
