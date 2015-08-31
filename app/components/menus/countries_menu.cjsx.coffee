@@ -2,6 +2,7 @@ MenuFilterItem = require('components/menus/menu_filter_item')
 ViewHelpers = require('mixins/view_helpers')
 TranslationHelper = require('mixins/translation_helper')
 SearchActions = require('actions/search_actions')
+SearchStore = require('stores/search_store')
 
 module.exports = React.createClass
   displayName: 'CountriesMenu'
@@ -14,15 +15,26 @@ module.exports = React.createClass
 
   componentWillMount: ->
     @filters = @props.context.filters
-    @filterGroup = @props.context.filterGroup
-    @setState(countries: @filters, mode: @filterGroup.mode)
+    @filterGroup = _.clone(@props.context.filterGroup)
+    mode = @filterGroup.mode || @state.mode
+    @setState(countries: @filters, mode: mode)
+    @unsubscribe = SearchStore.listen(@onFiltersUpdated)
+
+  componentWillUnmount: ->
+    @unsubscribe()
 
   getInitialState: ->
     countries: []
-    mode: ''
+    mode: 'target'
+
+  onFiltersUpdated: ->
+    filters = SearchStore.getFilterGroup(@filterGroup)
+    @setState(countries: filters)
+    @filterCountries()
 
   onToggleFilter: (filter) ->
-    SearchActions.toggleCountryFilter(filter, @state.mode)
+    # TOOD: optimize performance here, slow clicking
+    SearchActions.toggleCountryFilter(filter, @filterGroup, @state.mode)
 
   getAppliedFilters: ->
     _(@filters).filter (f) -> f.applied
@@ -46,7 +58,7 @@ module.exports = React.createClass
     else
       countries = _(@state.countries).filter (country) ->
         country.title.toLowerCase().indexOf(query.toLowerCase()) >= 0
-    @setState(countries: countries, mode: @state.mode)
+    @setState(countries: countries)
 
   renderCheckMark: (mode) ->
     if @state.mode == mode

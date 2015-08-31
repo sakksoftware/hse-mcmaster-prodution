@@ -95,16 +95,20 @@ module.exports = Reflux.createStore
     else
       @onAddFilter(filter)
 
-  onToggleCountryFilter: (filter, mode) ->
-    console.log("TODO: IMPLEMENT!")
-    # filter = @_findFilter(filter)
-    # filter.applied = !filter.applied
-    # parentFilter = @_findParentFilter(filter)
-    # parentFilter.applied = filter.applied
-    # parentFilter.mode = mode
-    # @updateUrl()
-    # @setState(search: @state.search)
-    # @trigger(@state)
+  onToggleCountryFilter: (filter, filterGroup, mode) ->
+    filter = @_findFilter(filter)
+    filter.applied = !filter.applied
+    filterGroup = @_findFilter(filterGroup)
+
+    if _.find(filterGroup.filters, (f) -> f.applied)
+      filterGroup.applied = true
+    else
+      filterGroup.applied = false
+
+    filterGroup.mode = mode
+    @setState(search: @state.search)
+    @trigger(@state)
+    @updateUrl()
     SearchActions.search(@state.search)
 
   onToggleDateRangeFilter: (filter, start, end) ->

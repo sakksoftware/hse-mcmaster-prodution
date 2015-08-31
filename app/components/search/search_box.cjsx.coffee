@@ -21,7 +21,7 @@ module.exports = React.createClass
     filters = filters.filter((e) => e.applied)
 
     # delete coutnries filter fro
-    filters = _.reject filters, (f) -> f.type == "countries"
+    filters = _.reject filters, (f) -> f.type.match(/countries_/)
     filters
 
   handleClickFiltersButton: ->
