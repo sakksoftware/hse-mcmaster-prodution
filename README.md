@@ -35,6 +35,7 @@ the remote copy.
 First download the locales:
 
 ```
+cd locales/
 aws s3 sync s3://my-hse-staging/locales .
 ```
 
