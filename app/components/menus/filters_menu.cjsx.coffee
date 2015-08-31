@@ -64,6 +64,7 @@ module.exports = React.createClass
     result
 
   renderAllFilter: ->
+    return if @state.filters.length <= 1
     result =
       <MenuFilterItem className="all-filters" key="all-filter-#{@filterGroup.id}" indicatorColor={@currentColor()}
         filter={@allFilter} onToggle={@onToggleFilter} />
