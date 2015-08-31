@@ -1,150 +1,150 @@
 {
   "terms_of_use": "使用条款",
-  "back_to_results": "CN_Back to results",
-  "toggle_navigation": "CN_Toggle navigation",
+  "back_to_results": "返回结果",
+  "toggle_navigation": "切换导航",
   "main_menu": {
     "home": "主页",
     "about": "关于卫生系统证据（HSE)",
-    "walkthrough": "CN_Walk through",
-    "guided_search": "CN_Guided Search",
+    "walkthrough": "浏览",
+    "guided_search": "引导式检索",
     "select_language": "选择语言",
-    "create_account": "CN_Create Account",
-    "login": "CN_Login",
+    "create_account": "注册",
+    "login": "登陆",
     "logout": "退出"
   },
   "menus": {
     "account": {
-      "title": "CN_My Account"
+      "title": "我的账户"
     },
     "help": {
-      "title": "CN_Help",
+      "title": "帮助",
       "instructions": [
-        "CN_You can combine your search terms using the Boolean operators AND, OR and NOT. Using AND will ensure both terms are included in your results. Using OR will ensure either of the terms are included. Using NOT will ensure that a given search term isn't included in your results.",
+        "您可以用布尔逻辑运算符AND、OR和NOT组配检索词。应用AND可确保两个检索词都在结果中出现；应用OR可确保结果中至少包括两个检索词中的一个；应用NOT可确保结果中没有给定的检索词。",
         "",
-        "CN_For example, you can search for cancer OR diabetes AND teams NOT nurses.",
+        "例如，您可以检索“癌症 OR 糖尿病 AND 团队 NOT 护士”。",
         "",
-        "CN_This approach will search for documents that focus on teams that provide care for cancer or diabetes patients, but that don't involve nurses."
+        "这一方法可检索出关注为癌症或糖尿病患者提供护理的团队（但不包括护士）的文件。"
       ]
     },
     "signup": {
-      "title": "CN_Signup",
+      "title": "注册",
       "email": "电子邮件",
       "password": "密码",
       "confirm_password": "确认密码",
-      "i_accept": "CN_I accept the",
-      "terms": "CN_Terms of Use",
-      "signup_button": "CN_Create account",
-      "did_not_recieve": "CN_Didn't receive an emai?",
-      "send_again": "CN_Send Again",
-      "confirmation_msg": "CN_A conformation email has been sent to you. Pleaes confirm your registration to activate your account!"
+      "i_accept": "我接受",
+      "terms": "使用条款",
+      "signup_button": "注册",
+      "did_not_recieve": "还没收到邮件？",
+      "send_again": "再次发送",
+      "confirmation_msg": "确认邮件已经发送至您的邮箱，请确认注册以激活您的账号！"
     },
     "main": {
-      "title": "CN_Menu"
+      "title": "菜单"
     },
     "login": {
-      "title": "CN_Login",
+      "title": "登陆",
       "email": "电子邮件",
       "password": "密码",
-      "login_button": "CN_Login",
+      "login_button": "登陆",
       "forgot_password": "忘记密码？"
     },
     "languages": {
-      "title": "CN_Languages"
+      "title": "语言"
     },
     "filter_groups": {
-      "title": "CN_Filter documents by..."
+      "title": "按……筛选文件"
     },
     "filters": {
-      "title": "CN_Select %{section_title}: %{filter_group_title}",
-      "all_filters": "CN_All %{filter_title}"
+      "title": "选择 %{section_title}: %{filter_group_title}",
+      "all_filters": "全部 %{filter_title}"
     },
     "countries": {
-      "title": "CN_Countries",
-      "placeholder": "CN_Type country name",
-      "no_countries_found": "CN_No countries found.",
+      "title": "国家",
+      "placeholder": "输入国家名称",
+      "no_countries_found": "未找到相应国家。",
       "predicates": {
-        "target": "CN_Target of document",
-        "at_least_one_study": "CN_At least one study from are"
+        "target": "文件目标",
+        "at_least_one_study": "至少一个研究来自"
       }
     },
     "date_range": {
-      "title": "CN_Date Range",
-      "published": "CN_Published",
-      "instructions": "CN_(Please include two four-digit years, such as 2008 and 2009, or leave them blank to include publications from any year)",
+      "title": "日期范围",
+      "published": "已发表",
+      "instructions": "（请填写两个四位数年份，如2008和2009，或不填，即不限制纳入研究的发表时间）",
       "placeholder": "YYYY"
     }
   },
   "articles_page": {
-    "no_studies_conducted_in": "CN_Not avilable",
+    "no_studies_conducted_in": "CN_Not available",
     "no_full_text_report": "无免费全文",
     "no_doi": "CN_Not yet available",
-    "no_domains": "CN_Not avilable",
-    "no_topics": "CN_Not avilable",
-    "no_focus": "CN_Not avilable",
+    "no_domains": "CN_Not available",
+    "no_topics": "CN_Not available",
+    "no_focus": "CN_Not available",
     "no_lmic_focus": "CN_Not available",
-    "no_priority_areas": "CN_Not avilable",
-    "no_targets": "CN_Not avilable",
-    "no_themes": "CN_Not avilable",
-    "no_who_regions": "CN_Not avilable",
-    "no_scientific_abstract": "CN_Not avilable",
-    "no_summary_links": "CN_Not avilable",
-    "no_country_groupings": "CN_Not avilable",
-    "no_author_email": "CN_Not avilable",
+    "no_priority_areas": "CN_Not available",
+    "no_targets": "CN_Not available",
+    "no_themes": "CN_Not available",
+    "no_who_regions": "CN_Not available",
+    "no_scientific_abstract": "CN_Not available",
+    "no_summary_links": "CN_Not available",
+    "no_country_groupings": "CN_Not available",
+    "no_author_email": "CN_Not available",
     "no_registry_record_links": "CN_No registry record available",
-    "no_category": "CN_Not avilable",
-    "no_who_links": "CN_Not avilable",
-    "no_related_documents": "CN_Not avilable",
-    "no_last_year_literature_searched": "CN_Not avilable"
+    "no_category": "CN_Not available",
+    "no_who_links": "CN_Not available",
+    "no_related_documents": "CN_Not available",
+    "no_last_year_literature_searched": "CN_Not available"
   },
   "search_page": {
     "search_box": {
-      "view_results_count": "CN_View %{results_count} results",
-      "tips": "CN_Tips for more powerful serach",
-      "filters": "CN_Filters",
-      "placeholder": "CN_Serach..."
+      "view_results_count": "查看 %{results_count} 结果",
+      "tips": "如何实现更有效检索",
+      "filters": "限定项",
+      "placeholder": "检索……"
     },
     "result_item": {
-      "year": "CN_Year:",
-      "quality": "CN_Quality:",
-      "select": "CN_Select:"
+      "year": "年份：",
+      "quality": "质量：",
+      "select": "选择："
     },
     "result_list": {
-      "no_results": "CN_No results found."
+      "no_results": "未找到相应结果。"
     },
     "sort_order": {
-      "sorted_by": "CN_Results sorted by",
-      "relevance": "CN_Best Match",
-      "most_recent": "CN_Most Recent",
-      "most_popular": "CN_Most Popular"
+      "sorted_by": "按……排序的结果",
+      "relevance": "最相关",
+      "most_recent": "最近发表",
+      "most_popular": "最多关注"
     }
   },
   "profile_page": {
     "successfully_updated": "CN_Successfully updated profile",
     "my_profile": "CN_My Profile",
-    "account_information": "CN_Account Information",
+    "account_information": "账户信息",
     "email": "CN_Email",
     "password": "CN_Password",
     "confirm_password": "CN_Confirm Password",
-    "personal_information": "CN_Personal Information",
-    "first_name": "CN_First Name",
-    "last_name": "CN_Last Name",
+    "personal_information": "个人信息",
+    "first_name": "名",
+    "last_name": "姓",
     "role": "CN_Role",
-    "country": "CN_Country",
-    "language": "CN_Language",
-    "cannot_load_user_profile": "CN_Opps, couldn't load user profile. Check your interent connection and try again",
+    "country": "国家",
+    "language": "语言",
+    "cannot_load_user_profile": "啊，无法加载数据，请检查您的网络链接。",
     "short_cannot_load_user_profile": "CN_Cannot load user profile information",
     "edit": "CN_Edit",
-    "cancel": "CN_Cancel"
+    "cancel": "取消"
   },
   "complementary_content_page": {
-    "title": "CN_Complementary Content",
+    "title": "补充内容",
     "description": "CN_Enable viewing of complementary content",
     "complementary_content_1": {
-      "title": "CN_Intergovernmental Organiations' Health Systems Documents",
+      "title": "CN_Intergovernmental Organizations' Health Systems Documents",
       "description": "CN_For those who..."
     },
     "complementary_content_2": {
-      "title": "CN_Canada's Health System Documents",
+      "title": "加拿大卫生系统文件",
       "description": "CN_For those who do not designate their country as Canada or log in using a Canada-based IP address"
     },
     "complementary_content_3": {
@@ -153,7 +153,7 @@
     }
   },
   "errors": {
-    "no_connection": "CN_Oops, could not load data. Check your internet connection.",
+    "no_connection": "啊，无法加载数据，请检查您的网络链接。",
     "cant_be_blank": "CN_can't be blank!",
     "must_accept_terms": "CN_you must accept the terms and conditions!",
     "already_exists": "CN_already exists",

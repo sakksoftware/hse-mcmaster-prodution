@@ -42,7 +42,7 @@
       "title": "Menú"
     },
     "login": {
-      "title": "ES_Login",
+      "title": "Iniciar sesión",
       "email": "Correo electrónico",
       "password": "Contraseña",
       "login_button": "Iniciar sesión",
@@ -52,11 +52,11 @@
       "title": "Idiomas"
     },
     "filter_groups": {
-      "title": "ES_Filter documents by..."
+      "title": "Filtrar documento por…"
     },
     "filters": {
       "title": "Seleccionar %{section_title}: %{filter_group_title}",
-      "all_filters": "Todos %{filter_title}"
+      "all_filters": "todos %{filter_title}"
     },
     "countries": {
       "title": "Países",
@@ -75,26 +75,26 @@
     }
   },
   "articles_page": {
-    "no_studies_conducted_in": "ES_Not avilable",
+    "no_studies_conducted_in": "ES_Not available",
     "no_full_text_report": "No hay un reporte en texto completo disponible",
     "no_doi": "ES_Not yet available",
-    "no_domains": "ES_Not avilable",
-    "no_topics": "ES_Not avilable",
-    "no_focus": "ES_Not avilable",
+    "no_domains": "ES_Not available",
+    "no_topics": "ES_Not available",
+    "no_focus": "ES_Not available",
     "no_lmic_focus": "ES_Not available",
-    "no_priority_areas": "ES_Not avilable",
-    "no_targets": "ES_Not avilable",
-    "no_themes": "ES_Not avilable",
-    "no_who_regions": "ES_Not avilable",
-    "no_scientific_abstract": "ES_Not avilable",
-    "no_summary_links": "ES_Not avilable",
-    "no_country_groupings": "ES_Not avilable",
-    "no_author_email": "ES_Not avilable",
+    "no_priority_areas": "ES_Not available",
+    "no_targets": "ES_Not available",
+    "no_themes": "ES_Not available",
+    "no_who_regions": "ES_Not available",
+    "no_scientific_abstract": "ES_Not available",
+    "no_summary_links": "ES_Not available",
+    "no_country_groupings": "ES_Not available",
+    "no_author_email": "ES_Not available",
     "no_registry_record_links": "ES_No registry record available",
-    "no_category": "ES_Not avilable",
-    "no_who_links": "ES_Not avilable",
-    "no_related_documents": "ES_Not avilable",
-    "no_last_year_literature_searched": "ES_Not avilable"
+    "no_category": "ES_Not available",
+    "no_who_links": "ES_Not available",
+    "no_related_documents": "ES_Not available",
+    "no_last_year_literature_searched": "ES_Not available"
   },
   "search_page": {
     "search_box": {
@@ -121,30 +121,30 @@
   "profile_page": {
     "successfully_updated": "ES_Successfully updated profile",
     "my_profile": "ES_My Profile",
-    "account_information": "ES_Account Information",
+    "account_information": "Información de la cuenta",
     "email": "ES_Email",
     "password": "ES_Password",
     "confirm_password": "ES_Confirm Password",
-    "personal_information": "ES_Personal Information",
-    "first_name": "ES_First Name",
-    "last_name": "ES_Last Name",
+    "personal_information": "Información personal",
+    "first_name": "Nombre",
+    "last_name": "Apellido",
     "role": "ES_Role",
-    "country": "ES_Country",
-    "language": "ES_Language",
-    "cannot_load_user_profile": "ES_Opps, couldn't load user profile. Check your interent connection and try again",
+    "country": "País",
+    "language": "Idioma",
+    "cannot_load_user_profile": "No fue posible cargar los datos. Verifique su conexión de Internet.",
     "short_cannot_load_user_profile": "ES_Cannot load user profile information",
     "edit": "ES_Edit",
-    "cancel": "ES_Cancel"
+    "cancel": "Cancelar"
   },
   "complementary_content_page": {
-    "title": "ES_Complementary Content",
+    "title": "CONTENIDO GRATUITO",
     "description": "ES_Enable viewing of complementary content",
     "complementary_content_1": {
-      "title": "ES_Intergovernmental Organiations' Health Systems Documents",
+      "title": "ES_Intergovernmental Organizations' Health Systems Documents",
       "description": "ES_For those who..."
     },
     "complementary_content_2": {
-      "title": "ES_Canada's Health System Documents",
+      "title": "DOCUMENTOS DE SISTEMAS DE SALUD DE CANADÁ",
       "description": "ES_For those who do not designate their country as Canada or log in using a Canada-based IP address"
     },
     "complementary_content_3": {

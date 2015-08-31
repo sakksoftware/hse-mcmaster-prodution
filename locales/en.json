@@ -56,7 +56,7 @@
     },
     "filters": {
       "title": "Select %{section_title}: %{filter_group_title}",
-      "all_filters": "All %{filter_title}"
+      "all_filters": "all %{filter_title}"
     },
     "countries": {
       "title": "Countries",
@@ -137,14 +137,14 @@
     "cancel": "Cancel"
   },
   "complementary_content_page": {
-    "title": "Complementary Content",
+    "title": "COMPLEMENTARY CONTENT",
     "description": "Enable viewing of complementary content",
     "complementary_content_1": {
-      "title": "Intergovernmental Organiations' Health Systems Documents",
+      "title": "Intergovernmental Organizations' Health Systems Documents",
       "description": "For those who..."
     },
     "complementary_content_2": {
-      "title": "Canada's Health System Documents",
+      "title": "CANADA'S HEALTH SYSTEMS DOCUMENTS",
       "description": "For those who do not designate their country as Canada or log in using a Canada-based IP address"
     },
     "complementary_content_3": {

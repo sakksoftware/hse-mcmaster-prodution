@@ -1,146 +1,146 @@
 {
   "terms_of_use": "Conditions d'utilisation",
-  "back_to_results": "FR_Back to results",
-  "toggle_navigation": "FR_Toggle navigation",
+  "back_to_results": "Retour aux résultats",
+  "toggle_navigation": "Faire disparaître le menu de navigation",
   "main_menu": {
     "home": "Accueil",
     "about": "À propos de HSE",
-    "walkthrough": "FR_Walk through",
-    "guided_search": "FR_Guided Search",
+    "walkthrough": "Visite",
+    "guided_search": "Recherche guidée",
     "select_language": "Choisissez la langue",
-    "create_account": "FR_Create Account",
-    "login": "FR_Login",
+    "create_account": "Créer un compte",
+    "login": "Ouvrir une session",
     "logout": "Fermer une session"
   },
   "menus": {
     "account": {
-      "title": "FR_My Account"
+      "title": "Mon compte"
     },
     "help": {
-      "title": "FR_Help",
+      "title": "Aide",
       "instructions": [
-        "FR_YYou can combine your search terms using the Boolean operators AND, OR and NOT. Using AND will ensure both terms are included in your results. Using OR will ensure either of the terms are included. Using NOT will ensure that a given search term isn't included in your results.",
+        "Vous pouvez combiner les termes de recherche en utilisant les opérateurs booléens ET, OU et SAUF. Utiliser ET fera en sorte que les deux termes seront inclus dans vos résultats. Utiliser OU fera en sorte que l'un des termes sera inclus. Utiliser SAUF fera en sorte qu'un terme de recherche donné ne figurera pas dans vos résultats.",
         "",
-        "FR_For example, you can search for cancer OR diabetes AND teams NOT nurses.",
+        "Par exemple, vous pouvez effectuer une recherche pour cancer OU diabète ET équipes SAUF infirmières.",
         "",
-        "FR_This approach will search for documents that focus on teams that provide care for cancer or diabetes patients, but that don't involve nurses."
+        "Cette approche permettra de rechercher des documents qui mettent l'accent sur les équipes qui fournissent des soins pour les patients atteints de cancer ou de diabète, mais qui n'impliquent pas des infirmières."
       ]
     },
     "signup": {
-      "title": "FR_Signup",
+      "title": "Inscrivez-vous",
       "email": "Courriel",
       "password": "Mot de passe",
       "confirm_password": "Confirmez le mot de passe",
-      "i_accept": "FR_I accept the",
-      "terms": "FR_Terms of Use",
-      "signup_button": "FR_Create account",
-      "did_not_recieve": "FR_Didn't receive an emai?",
-      "send_again": "FR_Send Again",
-      "confirmation_msg": "FR_A conformation email has been sent to you. Pleaes confirm your registration to activate your account!"
+      "i_accept": "J'accepte les",
+      "terms": "Conditions d'utilisation",
+      "signup_button": "Créer un compte",
+      "did_not_recieve": "Vous n'avez pas reçu un courriel?",
+      "send_again": "Envoyer encore une fois",
+      "confirmation_msg": "Un courriel de confirmation vous a été envoyé. SVP, confirmez votre inscription pour activer votre compte!"
     },
     "main": {
-      "title": "FR_Menu"
+      "title": "Menu"
     },
     "login": {
-      "title": "FR_Login",
+      "title": "Ouvrir une session",
       "email": "Courriel",
       "password": "Mot de passe",
-      "login_button": "FR_Login",
+      "login_button": "Ouvrir une session",
       "forgot_password": "Mot de passe oublié?"
     },
     "languages": {
-      "title": "FR_Languages"
+      "title": "Langues"
     },
     "filter_groups": {
-      "title": "FR_Filter documents by..."
+      "title": "Filtrer les documents par ..."
     },
     "filters": {
-      "title": "FR_Select %{section_title}: %{filter_group_title}",
-      "all_filters": "FR_All %{filter_title}"
+      "title": "Sélectionner %{section_title}: %{filter_group_title}",
+      "all_filters": "tous %{filter_title}"
     },
     "countries": {
-      "title": "FR_Countries",
-      "placeholder": "FR_Type country name",
-      "no_countries_found": "FR_No countries found.",
+      "title": "Pays",
+      "placeholder": "Inscrivez le nom du pays",
+      "no_countries_found": "Aucun pays n'a été trouvé.",
       "predicates": {
-        "target": "FR_Target of document",
-        "at_least_one_study": "FR_At least one study from are"
+        "target": "Cible du document",
+        "at_least_one_study": "Au moins une étude provenant de"
       }
     },
     "date_range": {
-      "title": "FR_Date Range",
-      "published": "FR_Published",
-      "instructions": "FR_(Please include two four-digit years, such as 2008 and 2009, or leave them blank to include publications from any year)",
-      "placeholder": "YYYY"
+      "title": "Intervalle de dates",
+      "published": "Publié",
+      "instructions": "(SVP, veuillez utiliser deux années avec les quatre chiffres, tel que 2008 et 2009, ou laissez l’espace vide si vous voulez inclure toutes les publications peu importe l’année.)",
+      "placeholder": "AAAA"
     }
   },
   "articles_page": {
-    "no_studies_conducted_in": "FR_Not avilable",
+    "no_studies_conducted_in": "FR_Not available",
     "no_full_text_report": "Aucun rapport intégral disponible",
     "no_doi": "FR_Not yet available",
-    "no_domains": "FR_Not avilable",
-    "no_topics": "FR_Not avilable",
-    "no_focus": "FR_Not avilable",
+    "no_domains": "FR_Not available",
+    "no_topics": "FR_Not available",
+    "no_focus": "FR_Not available",
     "no_lmic_focus": "FR_Not available",
-    "no_priority_areas": "FR_Not avilable",
-    "no_targets": "FR_Not avilable",
-    "no_themes": "FR_Not avilable",
-    "no_who_regions": "FR_Not avilable",
-    "no_scientific_abstract": "FR_Not avilable",
-    "no_summary_links": "FR_Not avilable",
-    "no_country_groupings": "FR_Not avilable",
-    "no_author_email": "FR_Not avilable",
+    "no_priority_areas": "FR_Not available",
+    "no_targets": "FR_Not available",
+    "no_themes": "FR_Not available",
+    "no_who_regions": "FR_Not available",
+    "no_scientific_abstract": "FR_Not available",
+    "no_summary_links": "FR_Not available",
+    "no_country_groupings": "FR_Not available",
+    "no_author_email": "FR_Not available",
     "no_registry_record_links": "FR_No registry record available",
-    "no_category": "FR_Not avilable",
-    "no_who_links": "FR_Not avilable",
-    "no_related_documents": "FR_Not avilable",
-    "no_last_year_literature_searched": "FR_Not avilable"
+    "no_category": "FR_Not available",
+    "no_who_links": "FR_Not available",
+    "no_related_documents": "FR_Not available",
+    "no_last_year_literature_searched": "FR_Not available"
   },
   "search_page": {
     "search_box": {
-      "view_results_count": "FR_View %{results_count} results",
-      "tips": "FR_Tips for more powerful serach",
-      "filters": "FR_Filters",
-      "placeholder": "FR_Serach..."
+      "view_results_count": "Voir %{results_count} résultats",
+      "tips": "Conseils pour une recherche plus puissante",
+      "filters": "Filtres",
+      "placeholder": "Recherche…"
     },
     "result_item": {
-      "year": "FR_Year:",
-      "quality": "FR_Quality:",
-      "select": "FR_Select:"
+      "year": "Année:",
+      "quality": "Qualité:",
+      "select": "Sélectionnez:"
     },
     "result_list": {
-      "no_results": "FR_No results found."
+      "no_results": "Aucun résultat trouvé."
     },
     "sort_order": {
-      "sorted_by": "FR_Results sorted by",
-      "relevance": "FR_Best Match",
-      "most_recent": "FR_Most Recent",
-      "most_popular": "FR_Most Popular"
+      "sorted_by": "Résultats triés par",
+      "relevance": "Meilleure correspondance",
+      "most_recent": "Le plus récent",
+      "most_popular": "Le plus populaire"
     }
   },
   "profile_page": {
     "successfully_updated": "FR_Successfully updated profile",
     "my_profile": "FR_My Profile",
-    "account_information": "FR_Account Information",
+    "account_information": "Information sur le compte",
     "email": "FR_Email",
     "password": "FR_Password",
     "confirm_password": "FR_Confirm Password",
-    "personal_information": "FR_Personal Information",
-    "first_name": "FR_First Name",
-    "last_name": "FR_Last Name",
+    "personal_information": "Information personnelle",
+    "first_name": "Prénom",
+    "last_name": "Nom de famille",
     "role": "FR_Role",
-    "country": "FR_Country",
-    "language": "FR_Language",
-    "cannot_load_user_profile": "FR_Opps, couldn't load user profile. Check your interent connection and try again",
+    "country": "Pays",
+    "language": "Langue",
+    "cannot_load_user_profile": "Oups, incapable de charger les données. Vérifiez votre connexion internet.",
     "short_cannot_load_user_profile": "FR_Cannot load user profile information",
     "edit": "FR_Edit",
-    "cancel": "FR_Cancel"
+    "cancel": "Annuler"
   },
   "complementary_content_page": {
-    "title": "FR_Complementary Content",
+    "title": "CONTENU COMPLÉMENTAIRE",
     "description": "FR_Enable viewing of complementary content",
     "complementary_content_1": {
-      "title": "FR_Intergovernmental Organiations' Health Systems Documents",
+      "title": "DOCUMENTS SUR LES SYSTÈMES DE SANTÉ AU CANADA",
       "description": "FR_For those who..."
     },
     "complementary_content_2": {
@@ -153,7 +153,7 @@
     }
   },
   "errors": {
-    "no_connection": "FR_Oops, could not load data. Check your internet connection.",
+    "no_connection": "Oups, incapable de charger les données. Vérifiez votre connexion internet.",
     "cant_be_blank": "FR_can't be blank!",
     "must_accept_terms": "FR_you must accept the terms and conditions!",
     "already_exists": "FR_already exists",

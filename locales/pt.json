@@ -42,9 +42,9 @@
       "title": "Menu"
     },
     "login": {
+      "title": "Iniciar sessão",
       "email": "E-mail",
       "password": "Senha",
-      "password": "PT_Password",
       "login_button": "Iniciar sessão",
       "forgot_password": "Esqueceu sua senha?"
     },
@@ -52,11 +52,11 @@
       "title": "Idiomas"
     },
     "filter_groups": {
-      "title": "PT_Filter documents by..."
+      "title": "Filtrar documento por..."
     },
     "filters": {
       "title": "Selecionar %{section_title}: %{filter_group_title}",
-      "all_filters": "Tudo %{filter_title}"
+      "all_filters": "tudo %{filter_title}"
     },
     "countries": {
       "title": "Países",
@@ -75,26 +75,26 @@
     }
   },
   "articles_page": {
-    "no_studies_conducted_in": "PT_Not avilable",
+    "no_studies_conducted_in": "PT_Not available",
     "no_full_text_report": "Relatório completo gratuito não disponível",
     "no_doi": "PT_Not yet available",
-    "no_domains": "PT_Not avilable",
-    "no_topics": "PT_Not avilable",
-    "no_focus": "PT_Not avilable",
+    "no_domains": "PT_Not available",
+    "no_topics": "PT_Not available",
+    "no_focus": "PT_Not available",
     "no_lmic_focus": "PT_Not available",
-    "no_priority_areas": "PT_Not avilable",
-    "no_targets": "PT_Not avilable",
-    "no_themes": "PT_Not avilable",
-    "no_who_regions": "PT_Not avilable",
-    "no_scientific_abstract": "PT_Not avilable",
-    "no_summary_links": "PT_Not avilable",
-    "no_country_groupings": "PT_Not avilable",
-    "no_author_email": "PT_Not avilable",
+    "no_priority_areas": "PT_Not available",
+    "no_targets": "PT_Not available",
+    "no_themes": "PT_Not available",
+    "no_who_regions": "PT_Not available",
+    "no_scientific_abstract": "PT_Not available",
+    "no_summary_links": "PT_Not available",
+    "no_country_groupings": "PT_Not available",
+    "no_author_email": "PT_Not available",
     "no_registry_record_links": "PT_No registry record available",
-    "no_category": "PT_Not avilable",
-    "no_who_links": "PT_Not avilable",
-    "no_related_documents": "PT_Not avilable",
-    "no_last_year_literature_searched": "PT_Not avilable"
+    "no_category": "PT_Not available",
+    "no_who_links": "PT_Not available",
+    "no_related_documents": "PT_Not available",
+    "no_last_year_literature_searched": "PT_Not available"
   },
   "search_page": {
     "search_box": {
@@ -121,30 +121,30 @@
   "profile_page": {
     "successfully_updated": "PT_Successfully updated profile",
     "my_profile": "PT_My Profile",
-    "account_information": "PT_Account Information",
+    "account_information": "Informações da conta",
     "email": "PT_Email",
     "password": "PT_Password",
     "confirm_password": "PT_Confirm Password",
-    "personal_information": "PT_Personal Information",
-    "first_name": "PT_First Name",
-    "last_name": "PT_Last Name",
+    "personal_information": "Informações pessoais",
+    "first_name": "Nome",
+    "last_name": "Sobrenome",
     "role": "PT_Role",
-    "country": "PT_Country",
-    "language": "PT_Language",
-    "cannot_load_user_profile": "PT_Opps, couldn't load user profile. Check your interent connection and try again",
+    "country": "País",
+    "language": "Idioma",
+    "cannot_load_user_profile": "Opa, não foi possível carregar dados. Verifique sua conexão com a Internet.",
     "short_cannot_load_user_profile": "PT_Cannot load user profile information",
     "edit": "PT_Edit",
-    "cancel": "PT_Cancel"
+    "cancel": "Cancelar"
   },
   "complementary_content_page": {
-    "title": "PT_Complementary Content",
+    "title": "COMPLEMENTARIDADE DE CONTEÚDOS",
     "description": "PT_Enable viewing of complementary content",
     "complementary_content_1": {
-      "title": "PT_Intergovernmental Organiations' Health Systems Documents",
+      "title": "PT_Intergovernmental Organizations' Health Systems Documents",
       "description": "PT_For those who..."
     },
     "complementary_content_2": {
-      "title": "PT_Canada's Health System Documents",
+      "title": "DOCUMENTOS DOS SISTEMAS DE SAÚDE DO CANADÁ",
       "description": "PT_For those who do not designate their country as Canada or log in using a Canada-based IP address"
     },
     "complementary_content_3": {
