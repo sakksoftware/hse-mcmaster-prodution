@@ -6,7 +6,7 @@ class Router
     window.addEventListener('popstate', @handleRouteChange.bind(@))
 
   routes:
-    '': ->
+    '/$': ->
       React.render <App page="search" />, @el
 
     'articles/:id': (id) ->
@@ -24,6 +24,9 @@ class Router
 
     'complementary_content': ->
       React.render <App page="complementary_content" />, @el
+
+    '.*': ->
+      React.render <App page="page_not_found" />, @el
 
   history: []
 
@@ -69,6 +72,7 @@ class Router
           action = value
           matches.splice(0, 1)
           params = matches
+          return false # break out of the loop
 
     [action, params]
 

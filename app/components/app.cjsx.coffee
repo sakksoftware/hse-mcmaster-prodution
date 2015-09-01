@@ -3,6 +3,7 @@ SearchPage = require('components/search/search_page')
 StaticPage = require('components/static/static_page')
 ProfilePage = require('components/profile/profile_page')
 ComplementaryContentPage = require('components/complementary_content/complementary_content_page')
+PageNotFound = require('components/error_pages/page_not_found')
 
 Layer = require('components/layered_navigation/layer')
 LayerGroup = require('components/layered_navigation/layer_group')
@@ -96,8 +97,10 @@ module.exports = React.createClass
         <ProfilePage key="profile-page" />
       when 'complementary_content'
         <ComplementaryContentPage key="complementary-content-page" />
+      when 'page_not_found'
+        <PageNotFound />
       else
-        # TODO: display a 404 here!
+        # should never reach here, programming error.
         throw new Error("Page not found! Please check the URL")
 
   renderLayerGroup: ->
