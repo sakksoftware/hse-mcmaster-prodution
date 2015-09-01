@@ -1,6 +1,8 @@
 GuidedQuestion = require('components/guided_questions/guided_question')
 CarouselIndicators = require('components/shared/carousel_indicators')
 QuestionActions = require('actions/question_actions')
+SearchStore = require('stores/search_store')
+FilterStore = require('stores/filter_store')
 
 module.exports = React.createClass
   displayName: 'GuidedQuestionsBox'
@@ -11,12 +13,22 @@ module.exports = React.createClass
   getInitialState: ->
     questionIndex: 0
     questions: []
+    questionsLoaded: false
+    filtersLoaded: false
 
   componentWillMount: ->
     QuestionActions.loadQuestions().then(@handleQuestionsLoaded).catch(@handleError)
+    @unsubscribeSearch = SearchStore.listen(@handleSearchLoaded)
+    @unsubscirbeFilters = FilterStore.listen(@handleFiltersLoaded)
 
   handleQuestionsLoaded: (questions) ->
-    @setState(questions: questions, questionIndex: 0, loaded: true)
+    @setState(questions: questions, questionIndex: 0, questionsLoaded: true)
+
+  handleSearchLoaded: (state) ->
+    @setState(filtersLoaded: state.loaded)
+
+  handleFiltersLoaded: (state) ->
+    @setState(filtersLoaded: state.loaded)
 
   # TODO: refactor into mixin
   handleError: (xhr, statusCode, responseText) ->
@@ -69,7 +81,7 @@ module.exports = React.createClass
 
   render: ->
     body =
-      if @state.loaded
+      if @state.questionsLoaded && @state.filtersLoaded
         [
           <CarouselIndicators key="carousel-indicators" onClick={@setQuestion} index={@state.questionIndex} length={@state.questions.length} />
           @prevButton()

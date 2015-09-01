@@ -58,7 +58,7 @@ module.exports = React.createClass
     @setState(search: state.search, step: step)
 
   fetchFilters: ->
-    FilterActions.loadFilters UserStore.state.language, @handleLoadFilters, @handleError
+    FilterActions.loadFilters(UserStore.state.language).then(@handleLoadFilters).catch(@handleError)
 
   fetchResults: ->
     @setState(step: 'searching')
