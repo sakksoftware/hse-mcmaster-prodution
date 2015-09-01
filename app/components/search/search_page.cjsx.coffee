@@ -52,7 +52,10 @@ module.exports = React.createClass
     @setState(guidedSearch: state.guidedSearch)
 
   searchStoreUpdated: (state) ->
-    @setState(search: state.search)
+    # TODO: rethink were to put the search steps state
+    step = @state.step
+    step = 'results' if state.search.results_count > 0
+    @setState(search: state.search, step: step)
 
   fetchFilters: ->
     FilterActions.loadFilters UserStore.state.language, @handleLoadFilters, @handleError
