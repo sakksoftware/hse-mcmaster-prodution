@@ -87,25 +87,25 @@ module.exports = [
     filters: ["0_2"] # domains
     answers: [
       {
-        text: "Diseases can include infectious diseases (HIV/AIDS, tuberculosis, malaria, diarrhoeal disease and lower respiratory infections), non-communicable diseases (cancer, cardiovascular disease, diabetes, alzheimer and other dementias and chronic obstructive pulmonary disease) or other (maternal and child health, accidents, mental health and addictions)"
+        text: "Diseases (infectious diseases, non-communicable diseases or other)"
         filterGroup:
           id: "2_1"
           title: "diseases"
       }
       {
-        text: "Technologies can include drugs, devices, diagnostics, surgery"
+        text: "Technologies (include drugs, devices, diagnostics, surgery)"
         filterGroup:
           id: "2_2"
           title: "technologies"
       }
       {
-        text: "Sectors can include primary care, home care, hospital care, rehabilitation, long-term care and public health"
+        text: "Sectors (primary care, home care, hospital care, rehabilitation, long-term care and public health)"
         filterGroup:
           id: "2_3"
           title: "sectors"
       }
       {
-        text: "Providers can include specialist generalist physicians, specialist physicians, nurses, pharmacists, allied health professionals, lay/community health workers, informal/family caregivers"
+        text: "Providers (specialist generalist physicians, specialist physicians, nurses, pharmacists, etc)"
         filterGroup:
           id: "2_4"
           title: "providers"
