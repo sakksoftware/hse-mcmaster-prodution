@@ -40,8 +40,7 @@ SearchActions.search.listen (search, language) ->
 
 SearchActions.suggestions.listen (search, language) ->
   query = SearchSerializationService.serializeSearchUrl(search, language)
-  res = _.clone(suggestionData)
-  res.suggestions = _.filter suggestionData.suggestions, (s) => s.query.toLowerCase().match(search.query.toLowerCase())
+  res = _.filter suggestionData, (s) => s.query.toLowerCase().match(search.query.toLowerCase())
   StoreMock.send(res, (=> @completed(res)), "/search/suggestions#{query}")
 
 module.exports = SearchActions
@@ -176,11 +175,9 @@ searchData = {
   "filters": {}
 }
 
-suggestionData = {
-  "suggestions": [
-    {"query": "HIV", "count": 1544},
-    {"query": "HIV Positive", "count": 444},
-    {"query": "HIV Research in Africa", "count": 987},
-    {"query": "HIV Things", "count": 543}
-  ]
-}
+suggestionData = [
+  {"query": "HIV", "count": 1544},
+  {"query": "HIV Positive", "count": 444},
+  {"query": "HIV Research in Africa", "count": 987},
+  {"query": "HIV Things", "count": 543}
+]

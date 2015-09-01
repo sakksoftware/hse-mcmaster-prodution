@@ -11,6 +11,7 @@ SearchSerializationService = require('services/search_serialization_service')
 
 UserStore = require('stores/user_store')
 SearchStore = require('stores/search_store')
+FilterStore = require('stores/filter_store')
 
 TranslationHelper = require('mixins/translation_helper')
 
@@ -38,6 +39,7 @@ module.exports = React.createClass
   componentWillMount: ->
     @unsubscribeUser = UserStore.listen(@userStoreUpdated)
     @unsubscribeSearch = SearchStore.listen(@searchStoreUpdated)
+    @unsubscribeFilters = FilterStore.listen(@filterStoreUpdated)
 
     # TODO: remove when passing results as an attribute from server a bit hacky now
     if @state.search.query == null
@@ -57,8 +59,12 @@ module.exports = React.createClass
     step = 'results' if state.search.results_count > 0
     @setState(search: state.search, step: step)
 
+  filterStoreUpdated: (state) ->
+    @state.search.filters = state.filters
+    @setState(filtersLoaded: state.loaded)
+
   fetchFilters: ->
-    FilterActions.loadFilters(UserStore.state.language).then(@handleLoadFilters).catch(@handleError)
+    FilterActions.loadFilters(UserStore.state.language)
 
   fetchResults: ->
     @setState(step: 'searching')
@@ -68,11 +74,6 @@ module.exports = React.createClass
   handleSearch: (query) ->
     @state.search.query = query
     @fetchResults()
-
-  handleLoadFilters: (data) ->
-    @state.search.filters = data.filters
-    @setState(filtersLoaded: true)
-    @forceUpdate()
 
   handleLoadMore: (page) ->
     @state.search.page = page

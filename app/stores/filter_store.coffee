@@ -19,8 +19,8 @@ module.exports = Reflux.createStore
   #############
   # Events
   #############
-  onLoadFiltersCompleted: (data, lang) ->
-    @setState(filters: data.filters, loaded: true, errors: null)
+  onLoadFiltersCompleted: (filters, lang) ->
+    @setState(filters: filters, loaded: true, errors: null)
 
   onLoadFiltersFailed: (xhr, statusCode, responseText) ->
     @setState(loaded: false, errors: responseText)

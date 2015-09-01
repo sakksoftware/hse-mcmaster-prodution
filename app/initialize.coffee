@@ -7,14 +7,14 @@ else
 
 console.log('ENV =', window.ENV)
 config = require('config')[window.ENV]
-UserStore = require('stores/user_store')
+stores = require('stores')
 
 localesUrl = config.localesUrl
 if params.remote_locales == "false"
   localesUrl = require('config')['development'].localesUrl
 
 initialize = ->
-  language = UserStore.state.language
+  language = stores.UserStore.state.language
   $.i18n.init
     lng: language
     fallbackLng: 'en'

@@ -23,7 +23,7 @@ module.exports = React.createClass
     @dismissKeyboard()
 
   fetchSuggestions: (query, callback) ->
-    handleLoadSuggestions = (data) -> callback(null, data.suggestions)
+    handleLoadSuggestions = (suggestions) -> callback(null, suggestions)
     @props.search.query = query
     SearchActions.suggestions(@props.search, UserStore.state.language).then(handleLoadSuggestions)
 

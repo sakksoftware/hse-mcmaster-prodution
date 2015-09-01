@@ -45,15 +45,13 @@ module.exports = Reflux.createStore
     @setState(user: user)
     UserActions.updateUser(user)
 
-  onCreateUserCompleted: (data) ->
-    user = data.user
+  onCreateUserCompleted: (user) ->
     @setState(user: user, loaded: true, language: user.language)
 
   onCreateUserFailed: (xhr, statusCode, responseText) ->
     @setState(errors: responseText, loaded: true)
 
-  onLoginUserCompleted: (data) ->
-    user = data.user
+  onLoginUserCompleted: (user) ->
     @setState(user: user, loaded: true, language: user.language)
 
   onLoginUserFailed: (xhr, statusCode, responseText) ->

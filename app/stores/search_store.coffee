@@ -27,6 +27,7 @@ module.exports = Reflux.createStore
   ################
   onSearch: (search) ->
     @setState(loaded: false)
+    @updateUrl()
 
   onSearchCompleted: (search) ->
     if search.page > 1

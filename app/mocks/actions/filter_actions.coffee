@@ -6,6 +6,6 @@ FilterActions = Reflux.createActions
 
 FilterActions.loadFilters.listen (lang) ->
   filters = FiltersHelper.getFilters()
-  StoreMock.send(filters: filters, (=> @completed(filters: filters)), "/filters?lang=#{lang}")
+  StoreMock.send(filters: filters, (=> @completed(filters)), "/filters?lang=#{lang}")
 
 module.exports = FilterActions
