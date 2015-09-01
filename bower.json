@@ -16,7 +16,8 @@
     "i18next": "~1.10.2",
     "js-cookie": "~2.0.3",
     "react-toggle": "~1.2.3",
-    "es5-shim": "~4.1.11"
+    "es5-shim": "~4.1.11",
+    "es6-shim": "~0.33.3"
   },
   "overrides": {
     "react": {
