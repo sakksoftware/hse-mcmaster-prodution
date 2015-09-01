@@ -6,7 +6,7 @@ class Router
     window.addEventListener('popstate', @handleRouteChange.bind(@))
 
   routes:
-    '/$': ->
+    '/?$': ->
       React.render <App page="search" />, @el
 
     'articles/:id': (id) ->
