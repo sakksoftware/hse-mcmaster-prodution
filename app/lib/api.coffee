@@ -15,15 +15,17 @@ module.exports = class API
 
   @send: (url, method, data = {}, options = {}) ->
     parser = document.createElement('a')
-    if url[0] != '/' and url.substr(0, 5) != 'http:' and url.substr(0, 3) != 'ws:'
+    # TODO: this doesn't handle absolute paths properly
+    # needs more work....
+    if url[0] != '/' and url.substr(0, 4) != 'http' and url.substr(0, 3) != 'ws:'
       url = '/' + url
 
-    parser.href = url
+    path = parser.href = url
 
     if ENV is 'development'
-      url = "/fake_api" + parser.pathname + ".json" + parser.search + parser.hash
+      url = "/fake_api" + path + ".json" + parser.search + parser.hash
     else
-      url = parser.pathname + parser.search + parser.hash
+      url = path + parser.search + parser.hash
       url = config.apiBase + "/api#{url}"
 
     options = $.extend {
