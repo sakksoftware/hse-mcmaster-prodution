@@ -3,6 +3,7 @@ CarouselIndicators = require('components/shared/carousel_indicators')
 QuestionActions = require('actions/question_actions')
 SearchStore = require('stores/search_store')
 FilterStore = require('stores/filter_store')
+QuestionStore = require('stores/question_store')
 
 module.exports = React.createClass
   displayName: 'GuidedQuestionsBox'
@@ -12,9 +13,9 @@ module.exports = React.createClass
 
   getInitialState: ->
     questionIndex: 0
-    questions: []
-    questionsLoaded: false
-    filtersLoaded: false
+    questions: QuestionStore.state.questions
+    questionsLoaded: QuestionStore.state.loaded
+    filtersLoaded: SearchStore.state.loaded || FilterStore.state.loaded
 
   componentWillMount: ->
     QuestionActions.loadQuestions().then(@handleQuestionsLoaded).catch(@handleError)
