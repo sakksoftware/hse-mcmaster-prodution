@@ -11,8 +11,8 @@ module.exports = Reflux.createStore
     errors: null
 
   onLoadQuestionsCompleted: (questions) ->
-    @setState(questions: questions)
+    @setState(questions: questions, loaded: true)
 
   onLoadQuestionsFailed: ->
     console.log('Cannot load questions')
-    @setState(errors: 'Cannot load questions')
+    @setState(errors: 'Cannot load questions', loaded: false)

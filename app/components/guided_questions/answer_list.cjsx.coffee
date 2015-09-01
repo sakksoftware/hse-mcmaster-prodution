@@ -8,29 +8,11 @@ module.exports = React.createClass
     onShowMenu: React.PropTypes.func.isRequired
     onHideMenu: React.PropTypes.func.isRequired
 
-  getInitialState: ->
-    loaded: false
-
-  componentWillMount: ->
-    @unsubscribe = SearchStore.listen(@onSearchUpdated)
-
-  componentWillUnmount: ->
-    @unsubscribe()
-
-  onSearchUpdated: (state) ->
-    @setState(loaded: state.loaded)
-
-
   renderFilters: ->
     for answer, i in @props.answers
       <AnswerItem onShowMenu={@props.onShowMenu} onHideMenu={@props.onHideMenu} key={"answer-#{i}"} answer={answer} />
 
   render: ->
-    if @state.loaded
-      <ul className="answer-list">
-        {@renderFilters()}
-      </ul>
-    else
-      <ul className="answer-list">
-        <Loader loaded=false />
-      </ul>
+    <ul className="answer-list">
+      {@renderFilters()}
+    </ul>

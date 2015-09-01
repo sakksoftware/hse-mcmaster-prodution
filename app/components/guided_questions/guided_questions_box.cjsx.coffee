@@ -16,7 +16,7 @@ module.exports = React.createClass
     QuestionActions.loadQuestions().then(@handleQuestionsLoaded).catch(@handleError)
 
   handleQuestionsLoaded: (questions) ->
-    @setState(questions: questions, questionIndex: 0)
+    @setState(questions: questions, questionIndex: 0, loaded: true)
 
   # TODO: refactor into mixin
   handleError: (xhr, statusCode, responseText) ->
@@ -69,15 +69,15 @@ module.exports = React.createClass
 
   render: ->
     body =
-      if @state.questions.length == 0
-        <Loader loaded={false} />
-      else
+      if @state.loaded
         [
           <CarouselIndicators key="carousel-indicators" onClick={@setQuestion} index={@state.questionIndex} length={@state.questions.length} />
           @prevButton()
           <GuidedQuestion onShowMenu={@props.onShowMenu} onHideMenu={@nextQuestion} key="guided-question" question={@getQuestion()} />
           @nextButton()
         ]
+      else
+        <Loader loaded={false} />
 
     <div className="guided-questions-box" tabIndex={1} onKeyDown={@handleKeyDown}>
       {body}
