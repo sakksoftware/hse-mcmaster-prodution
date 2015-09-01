@@ -6,20 +6,15 @@ else
   window.ENV = params.ENV || 'production'
 
 console.log('ENV =', window.ENV)
-
 config = require('config')[window.ENV]
-if config.useMocks
-  console.log("using mock stores")
-  stores = require('mocks/stores')
-else
-  stores = require('stores')
+UserStore = require('stores/user_store')
 
 localesUrl = config.localesUrl
 if params.remote_locales == "false"
   localesUrl = require('config')['development'].localesUrl
 
 initialize = ->
-  language = stores.UserStore.state.language
+  language = UserStore.state.language
   $.i18n.init
     lng: language
     fallbackLng: 'en'
