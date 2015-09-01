@@ -3,4 +3,13 @@
     margin-left: $x-tiny-size;
     color: lighten($primary-text-color, 10%);
   }
+
+  .layer-toggle {
+    display: inline;
+    color: $link-color;
+    background: none;
+    text-align: left;
+    height: auto;
+    padding: 0;
+  }
 }

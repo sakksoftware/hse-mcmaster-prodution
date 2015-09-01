@@ -7,19 +7,27 @@ module.exports = [
     answers: [
       {
         text: "How decisions (about care) are made",
-        filters: [id: "1_1", title: "goveranance arranments"]
+        filterGroup:
+          id: "1_1"
+          title: "goveranance arranments"
       }
       {
         text: "How care is paid for"
-        filters: [id: "1_2", title: "financial arrangements"]
+        filterGroup:
+          id: "1_2"
+          title: "financial arrangements"
       }
       {
         text: "How care is organized"
-        filters: [id: "1_3", title: "delivery arrangements"]
+        filterGroup:
+          id: "1_3"
+          title: "delivery arrangements"
       }
       {
         text: "How change can be brought about"
-        filters: [id: "1_4", title: "implementation strategies"]
+        filterGroup:
+          id: "1_4"
+          title: "implementation strategies"
       }
     ]
   }
@@ -29,6 +37,9 @@ module.exports = [
     answers: [
       {
         text: "What approaches have been evaluated for their benefits and harms? (or what approach works?)"
+        filterGroup:
+          id: "0_10"
+          title: "systematic reviews of effects and overviews of reviews"
         filters: [
           {id: "10_2", title: "systematic reviews of effects"}
           {id: "10_3", title: "overviews of reviews"}
@@ -36,22 +47,37 @@ module.exports = [
       }
       {
         text: "What approaches have been evaluated for their cost-effectiveness? (or is an approach cost-effective?)"
+        filterGroup:
+          id: "0_10"
+          title: "economic evaluations and costing studies"
         filters: [id: "10_7", title: "economic evaluations and costing studies"]
       }
       {
         text: "What else do we know about an approach or the problem it addresses?"
+        filterGroup:
+          id: "0_10"
+          title: "systematic reviews addressing other question"
         filters: [id: "10_4", title: "systematic reviews addressing other question"]
       }
       {
         text: "What’s been tried elsewhere and the rationale documented? (and with what impacts)?"
+        filterGroup:
+          id: "0_10"
+          title: "health reform descriptions"
         filters: [id: "10_8", title: "health reform descriptions"]
       }
       {
         text: "What do we know about a problem, options and implementation considerations in a particular health system?"
+        filterGroup:
+          id: "0_10"
+          title: "evidence briefs for policy"
         filters: [id: "10_1", title: "evidence briefs for policy"]
       }
       {
         text: "How does a particular health system work?"
+        filterGroup:
+          id: "0_10"
+          title: "health system description"
         filters: [id: "10_9", title: "health system description"]
       }
     ]
@@ -61,182 +87,28 @@ module.exports = [
     filters: ["0_2"] # domains
     answers: [
       {
-        text: "Diseases can include infectious diseases (%{infectious_diseases}), non-communicable diseases (%{non_communicable_diseases}) or other (%{other})"
-        filters: [
-          {
-            name: "infectious_diseases"
-            id: "2_5"
-            filters: [
-              {
-                title: "HIV/AIDS"
-                id: "2_22"
-              }
-              {
-                title: "tuberculosis"
-                id: "2_23"
-              }
-              {
-                title: "malaria"
-                id: "2_24"
-              }
-              {
-                title: "diarrhoeal disease"
-                id: "2_25"
-              }
-              {
-                title: "lower respiratory infections"
-                id: "2_26"
-              }
-            ]
-          }
-          {
-            name: "non_communicable_diseases"
-            id: "2_6"
-            filters: [
-              {
-                id: "2_27"
-                title: "cancer"
-              }
-              {
-                id: "2_28"
-                title: "cardiovascular disease"
-              }
-              {
-                id: "2_29"
-                title: "diabetes"
-              }
-              {
-                id: "2_30"
-                title: "Alzheimer and other dementias"
-              }
-              {
-                id: "2_31"
-                title: "chronic obstructive pulmonary disease"
-              }
-            ]
-          }
-          {
-            name: "other"
-            id: "2_7"
-            filters: [
-              {
-                id: "2_32"
-                title: "maternal and child health"
-              }
-              {
-                id: "2_33"
-                title: "accidents"
-              }
-              {
-                id: "2_34"
-                title: "mental health and addictions"
-              }
-            ]
-          }
-        ]
+        text: "Diseases can include infectious diseases (HIV/AIDS, tuberculosis, malaria, diarrhoeal disease and lower respiratory infections), non-communicable diseases (cancer, cardiovascular disease, diabetes, alzheimer and other dementias and chronic obstructive pulmonary disease) or other (maternal and child health, accidents, mental health and addictions)"
+        filterGroup:
+          id: "2_1"
+          title: "diseases"
       }
       {
-        text: "Technologies can include %{technologies}"
-        filters: [
-          {
-            id: "2_2"
-            name: "technologies"
-            filters: [
-              {
-                id: "2_8"
-                title: "drugs"
-              }
-              # { # NO SUCH FILTER
-              #   id: ""
-              #   title: "vaccines"
-              # }
-              {
-                id: "2_9"
-                title: "devices"
-              }
-              {
-                id: "2_10"
-                title: "diagnostics"
-              }
-              {
-                id: "2_11"
-                title: "surgery"
-              }
-            ]
-          }
-        ]
+        text: "Technologies can include drugs, devices, diagnostics, surgery"
+        filterGroup:
+          id: "2_2"
+          title: "technologies"
       }
       {
-        text: "Sectors can include %{sectors}"
-        filters: [
-          {
-            id: "2_3"
-            name: "sectors"
-            filters: [
-              {
-                id: "2_12"
-                title: "primary care"
-              }
-              {
-                id: "2_13"
-                title: "home care"
-              }
-              {
-                id: "2_14"
-                title: "hospital care"
-              }
-              {
-                id: "2_15"
-                title: "rehabilitation"
-              }
-              {
-                id: "2_16"
-                title: "long-term care"
-              }
-              {
-                id: "2_37"
-                title: "public health"
-              }
-            ]
-          }
-        ]
+        text: "Sectors can include primary care, home care, hospital care, rehabilitation, long-term care and public health"
+        filterGroup:
+          id: "2_3"
+          title: "sectors"
       }
       {
-        text: "Providers can include specialist %{providers}"
-        filters: [
+        text: "Providers can include specialist generalist physicians, specialist physicians, nurses, pharmacists, allied health professionals, lay/community health workers, informal/family caregivers"
+        filterGroup:
           id: "2_4"
-          name: "providers"
-          filters: [
-            {
-              id: "2_35"
-              title: "generalist physicians"
-            }
-            {
-              id: "2_36"
-              title: "specialist physicians"
-            }
-            {
-              id: "2_18"
-              title: "nurses"
-            }
-            {
-              id: "2_19"
-              title: "pharmacists"
-            }
-            {
-              id: "2_20"
-              title: "allied health professionals"
-            }
-            {
-              id: "2_21"
-              title: "lay/community health workers"
-            }
-            {
-              id: "2_38"
-              title: "informal/family caregivers"
-            }
-          ]
-        ]
+          title: "providers"
       }
     ]
   }
@@ -244,22 +116,17 @@ module.exports = [
     text: "Are you focused on particular countries or on LMICs?"
     answers: [
       {
-        id: "0_6"
         text: "Country focus"
-        # filters: [
-        #   {
-        #     id: "9_1"
-        #     title: "Target of document"
-        #   }
-        #   {
-        #     id: ""
-        #     title: "At least one study from the country included"
-        #   }
-        # ]
+        filterGroup:
+          id: "0_6"
+          title: "country focus"
+          type: "countries_countries"
       }
       {
-        id: "0_9"
         text: "Low- and middle-income country (LMIC) focus"
+        filterGroup:
+          id: "0_9"
+          title: "LMIC focus"
       }
     ]
   }
@@ -269,21 +136,22 @@ module.exports = [
     answers: [
       {
         text: "Intergovernmental Organiations' Health Systems Documents"
-        filters: [id: "0_17"]
+        filterGroup:
+          id: "0_17"
+          title: "intergovernmental documents"
       }
       {
-        text: "Canada's Health Systems Documents",
-        filters: [id: "0_18"]
+        text: "Canada's Health Systems Documents"
+        filterGroup:
+          id: "0_18"
+          title: "canadian documents"
       }
       {
         text: "Ontario's Health Systems Documents"
-        filters: [id: "0_19"]
+        filterGroup:
+          id: "0_19"
+          title: "ontario's documents"
       }
     ]
   }
-  # {
-  #   filters: [""]
-  #   id: ""
-  #   text: "Are the results helpful, or is your query more about a clinical issue (e.g., does drug A work better than drug B?) or a public health issue (e.g., does one approach to obesity prevention work better than others?) than about a health system issue?"
-  # }
 ]

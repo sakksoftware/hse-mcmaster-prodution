@@ -30,7 +30,8 @@ module.exports = React.createClass
     return if @state.menus.length == 0
 
     menus = _.clone(@state.menus)
-    menus.pop()
+    menu = menus.pop()
+    menu.context?.onDismiss?()
     @setState(menus: menus)
     return # avoid warning message from react by return undefined
 

@@ -4,6 +4,8 @@ module.exports = React.createClass
   displayName: 'GuidedQuestion'
   propTypes:
     question: React.PropTypes.object.isRequired
+    onShowMenu: React.PropTypes.func.isRequired
+    onHideMenu: React.PropTypes.func.isRequired
 
   getInitialState: ->
     expanded: false
@@ -21,5 +23,5 @@ module.exports = React.createClass
         {@props.question.text}
         <a className="btn-toggle" href="#" onClick={@toggle}></a>
       </div>
-      <AnswerList answers={@props.question.answers} />
+      <AnswerList answers={@props.question.answers} onShowMenu={@props.onShowMenu} onHideMenu={@props.onHideMenu} />
     </div>

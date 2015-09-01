@@ -91,7 +91,7 @@ module.exports = React.createClass
 
   renderGuidedSearch: ->
     if @state.guidedSearch
-      <GuidedQuestionsBox />
+      <GuidedQuestionsBox onShowMenu={@props.onShowMenu} />
 
   renderResults: ->
     if @state.step == 'searching'
