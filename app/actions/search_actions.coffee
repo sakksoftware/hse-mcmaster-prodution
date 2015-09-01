@@ -23,8 +23,4 @@ SearchActions.search.listen (search, language) ->
   API.read("search#{serializeSearchUrl(search, language)}").
     done(@completed).fail(@failed)
 
-SearchActions.suggestions.listen (search, language) ->
-  API.read("search/suggestions#{serializeSearchUrl(search, language)}").
-    done(@completed).fail(@failed)
-
 module.exports = SearchActions

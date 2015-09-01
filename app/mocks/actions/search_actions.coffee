@@ -1,7 +1,6 @@
 console.log('loaded mock search')
 
 API = require('lib/api')
-serializeSearchUrl = require('services/search_serialization_service').serializeSearchUrl
 StoreMock = require('mocks/support/store_mock')
 FilterNormalizationService = require('services/filter_normalization_service')
 SearchSerializationService = require('services/search_serialization_service')
@@ -19,7 +18,6 @@ SearchActions = Reflux.createActions
   toggleCountryFilter: {}
   toggleDateRangeFilter: {}
   search: {asyncResult: true}
-  suggestions: {asyncResult: true}
 
 SearchActions.search.listen (search, language) ->
   allFilters = FiltersHelper.getFilters()
@@ -37,11 +35,6 @@ SearchActions.search.listen (search, language) ->
   res.results = res.results[0..lastResultIndex]
 
   StoreMock.send(res, (=> @completed(res)), "/search#{query}")
-
-SearchActions.suggestions.listen (search, language) ->
-  query = SearchSerializationService.serializeSearchUrl(search, language)
-  res = _.filter suggestionData, (s) => s.query.toLowerCase().match(search.query.toLowerCase())
-  StoreMock.send(res, (=> @completed(res)), "/search/suggestions#{query}")
 
 module.exports = SearchActions
 
@@ -174,10 +167,3 @@ searchData = {
   ],
   "filters": {}
 }
-
-suggestionData = [
-  {"query": "HIV", "count": 1544},
-  {"query": "HIV Positive", "count": 444},
-  {"query": "HIV Research in Africa", "count": 987},
-  {"query": "HIV Things", "count": 543}
-]

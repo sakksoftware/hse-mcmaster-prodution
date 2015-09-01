@@ -1,5 +1,5 @@
 Input = ReactBootstrap.Input
-SearchActions = require('actions/search_actions')
+SuggestionActions = require('actions/suggestion_actions')
 TranslationHelper = require('mixins/translation_helper')
 UserStore = require('stores/user_store')
 
@@ -25,7 +25,7 @@ module.exports = React.createClass
   fetchSuggestions: (query, callback) ->
     handleLoadSuggestions = (suggestions) -> callback(null, suggestions)
     @props.search.query = query
-    SearchActions.suggestions(@props.search, UserStore.state.language).then(handleLoadSuggestions)
+    SuggestionActions.suggestions(@props.search, UserStore.state.language).then(handleLoadSuggestions)
 
   getSuggestionValue: (suggestion, input) ->
     suggestion.query

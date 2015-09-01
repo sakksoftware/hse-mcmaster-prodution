@@ -9,7 +9,6 @@ module.exports = Reflux.createStore
 
   getInitialState: ->
     search: @deserializeSearchUrl()
-    suggestions: []
     errors: null
     loaded: false
 
@@ -38,12 +37,6 @@ module.exports = Reflux.createStore
   onSearchFailed: () ->
     console.log('The search has failed')
     # flash('error', @t('errors.no_connection'))
-
-  onSuggestionsCompleted: (suggestions) ->
-    @setState(suggestions: suggestions)
-
-  onSuggestionsFailed: () ->
-    console.log('Failed to retrieve suggestions')
 
   updateUrl: ->
     Router = require('lib/router')
