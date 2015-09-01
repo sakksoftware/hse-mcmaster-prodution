@@ -13,7 +13,7 @@ module.exports = React.createClass
     questions: []
 
   componentWillMount: ->
-    QuestionActions.loadQuestions(@handleQuestionsLoaded, @handleError)
+    QuestionActions.loadQuestions().then(@handleQuestionsLoaded).catch(@handleError)
 
   handleQuestionsLoaded: (questions) ->
     @setState(questions: questions, questionIndex: 0)

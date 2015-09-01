@@ -1,8 +1,18 @@
 QuestionActions = require('actions/question_actions')
-questions = require('constants/questions')
+RefluxStateMixin = require('lib/reflux_state_mixin')(Reflux)
 
 module.exports = Reflux.createStore
   listenables: [QuestionActions]
+  mixins: [RefluxStateMixin]
 
-  loadQuestions: (success, error) ->
-    success(questions)
+  getInitialState: ->
+    questions: []
+    loaded: false
+    errors: null
+
+  onLoadQuestionsCompleted: (questions) ->
+    @setState(questions: questions)
+
+  onLoadQuestionsFailed: ->
+    console.log('Cannot load questions')
+    @setState(errors: 'Cannot load questions')
