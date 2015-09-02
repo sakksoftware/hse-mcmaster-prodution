@@ -13,7 +13,7 @@ module.exports = class API
   @destroy: (url, options = {}) ->
     @send(url, "DELETE", {}, options)
 
-  @send: (url, method, data = {}, options = {}) ->
+  @send: (url, method, data = null, options = {}) ->
     if @_isRelativePath(url)
       if url[0] != '/'
         url = '/' + url
