@@ -51,6 +51,11 @@
       transition: 150ms ease-in;
     }
 
+    .layered-navigation-content {
+      height: 100vh;
+      overflow: hidden;
+    }
+
     @include desktop {
         margin-left: 0;
     }
