@@ -27,7 +27,7 @@
   .top-nav {
     width: auto;
     overflow: visible;
-    background: $background-gradient-start; // no gradient support fallback
+    background: $background-gradient-end; // no gradient support fallback
     background: linear-gradient(to right, $background-gradient-start, $background-gradient-end);
     color: $menu-header-color;
     line-height: $small-size;
