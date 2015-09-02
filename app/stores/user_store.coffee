@@ -53,6 +53,7 @@ module.exports = Reflux.createStore
 
   onLoginUserCompleted: (user) ->
     @setState(user: user, loaded: true, language: user.language)
+    Cookies.set('token', user.token)
 
   onLoginUserFailed: (xhr, statusCode, responseText) ->
     @setState(errors: responseText, loaded: true)

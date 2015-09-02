@@ -22,10 +22,7 @@ UserActions.updateUser.listen (user) ->
   API.update('user', user).done(@completed).fail(@failed)
 
 UserActions.loginUser.listen (user) ->
-  API.create('user', user).fail(@failed).done (user) =>
-    $.ajaxSetup
-      beforeSend: (xhr) =>
-        xhr.setRequestHeader('X-Authenticate', user.token)
+  API.create('user/login', user).fail(@failed).done (user) =>
     @completed(user)
 
 module.exports = UserActions

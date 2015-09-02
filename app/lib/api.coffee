@@ -8,7 +8,7 @@ module.exports = class API
     @send(url, "POST", data, options)
 
   @update: (url, data, options = {}) ->
-    @send(url, "PATCH", data, options)
+    @send(url, "PUT", data, options)
 
   @destroy: (url, options = {}) ->
     @send(url, "DELETE", {}, options)
@@ -34,9 +34,9 @@ module.exports = class API
       method: method
       contentType: 'application/json; charset=UTF-8' # always send json to the server
       dataType: options.dataType || 'json' # always recieve json back from the server
-      # uncomment if rails for CSRF protection
-      # beforeSend: (xhr) =>
-      #   xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+      beforeSend: (xhr) =>
+        if token = Cookies.get('token')
+          xhr.setRequestHeader('Authorization', token)
       data: JSON.stringify(data)
       success: [options.success || (->), @onSuccess]
       error: [options.error || (->), @onError]
