@@ -3,6 +3,8 @@ SearchSerializationService = require('services/search_serialization_service')
 SearchDeserializationService = require('services/search_deserialization_service')
 RefluxStateMixin = require('lib/reflux_state_mixin')(Reflux)
 
+UserStore = require('stores/user_store')
+
 module.exports = Reflux.createStore
   listenables: [SearchActions]
   mixins: [RefluxStateMixin, SearchSerializationService, SearchDeserializationService]
@@ -40,7 +42,7 @@ module.exports = Reflux.createStore
 
   updateUrl: ->
     Router = require('lib/router')
-    Router.update(@serializeSearchUrl(@state.search))
+    Router.update(@serializeSearchUrl(@state.search, UserStore.state.language))
 
   onSortBy: (sortBy) ->
     search = _.clone(@state.search)
