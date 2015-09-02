@@ -17,7 +17,6 @@ module.exports =
       @detachScrollListener()
       # call loadMore after detachScrollListener to allow
       # for non-async loadMore functions
-      console.log(@page)
       @page = @page + 1
       @loadMore @page
 
