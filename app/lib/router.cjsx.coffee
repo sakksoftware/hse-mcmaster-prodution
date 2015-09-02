@@ -34,7 +34,7 @@ class Router
 
   start: ->
     if !window.history || !window.history.pushState
-      if window.location.pathname != '' && window.location.pathname != '/'
+      if window.location.pathname != '' && window.location.pathname != '/' && !window.location.pathname.match(/^\/\?/)
         path = window.location.pathname
         path = '/' + path if path[0] != '/'
         window.location = '/#!' + window.location.pathname
@@ -68,7 +68,7 @@ class Router
     if window.history?.pushState?
       path = window.location.pathname
     else
-      path = @getHash()
+      path = @getHash().replace(/\?.+/, '')
 
     path = '/' + path if path[0] != '/'
     path

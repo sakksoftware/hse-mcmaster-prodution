@@ -14,19 +14,20 @@ module.exports = class API
     @send(url, "DELETE", {}, options)
 
   @send: (url, method, data = {}, options = {}) ->
-    parser = document.createElement('a')
-    # TODO: this doesn't handle absolute paths properly
-    # needs more work....
-    if url[0] != '/' and url.substr(0, 4) != 'http' and url.substr(0, 3) != 'ws:'
-      url = '/' + url
+    if @_isRelativePath(url)
+      if url[0] != '/'
+        url = '/' + url
 
-    path = parser.href = url
+      parser = document.createElement('a')
+      parser.href = url
+      path = parser.pathname
+      path = '/' + path if path[0] != '/'
 
-    if ENV is 'development'
-      url = "/fake_api" + path + ".json" + parser.search + parser.hash
-    else
-      url = path + parser.search + parser.hash
-      url = config.apiBase + "/api#{url}"
+      if ENV is 'development'
+        url = "/fake_api" + path + ".json" + parser.search + parser.hash
+      else
+        url = path + parser.search + parser.hash
+        url = config.apiBase + "/api#{url}"
 
     options = $.extend {
       url: url
@@ -53,3 +54,6 @@ module.exports = class API
       return
 
     console.debug "[API] Error: ", res
+
+  @_isRelativePath: (url) ->
+    url.substr(0, 4) != 'http' and url.substr(0, 3) != 'ws:'
