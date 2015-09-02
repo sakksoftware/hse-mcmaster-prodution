@@ -158,6 +158,7 @@
     "must_accept_terms": "you must accept the terms and conditions!",
     "already_exists": "already exists",
     "invalid_email": "email is invalid",
-    "too_short": "is too short, must be at least 8 characters"
+    "too_short": "is too short, must be at least 8 characters",
+    "invalid_login": "wrong username or password"
   }
 }

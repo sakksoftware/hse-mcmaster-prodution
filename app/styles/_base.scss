@@ -111,3 +111,13 @@ label {
 .layered-navigation {
   overflow: hidden;
 }
+
+.form-errors {
+  color: red;
+}
+
+form {
+  .form-errors {
+    margin-bottom: $small-size;
+  }
+}

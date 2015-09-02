@@ -3,6 +3,7 @@ ArticleItem = require('components/articles/article_item')
 Link = require('components/shared/link')
 TranslationHelper = require('mixins/translation_helper')
 UserStore = require('stores/user_store')
+PageNotFound = require('components/error_pages/page_not_found')
 
 module.exports = React.createClass
   displayName: 'ArticlePage'
@@ -15,6 +16,7 @@ module.exports = React.createClass
 
   getInitialState: ->
     article: null
+    errors: null
 
   componentWillMount: ->
     lang = UserStore.state.language
@@ -23,9 +25,15 @@ module.exports = React.createClass
   handleLoad: (article) ->
     @setState(article: article)
 
-  handleError: (xhr, statusCode, response) ->
+  handleError: (xhr, errorText, response) ->
     console.log("Failed to load article #{@props.id}")
-    flash('error', @t('errors.no_connection'))
+    if xhr.status != 404
+      if errorText == "parseText"
+        flash('error', @t('errors.unexpected_server_response'))
+      else
+        flash('error', @t('errors.no_connection'))
+
+    @setState(errors: [{type: 'page_not_found'}])
 
   backLink: ->
     router = require('lib/router')
@@ -33,6 +41,9 @@ module.exports = React.createClass
       <Link to="back" className="btn-back">{@t('back_to_results')}</Link>
 
   render: ->
+    if @state.errors?[0].type == 'page_not_found'
+      <PageNotFound />
+
     body =
       if @state.article
         id = @state.article.id

@@ -30,7 +30,7 @@ module.exports = React.createClass
 
   handleError: (xhr, errorType, statusCode) ->
     data = JSON.parse(xhr.responseText)
-    @setState(errors: data.user.errors, saved: false, submitted: true)
+    @setState(errors: data.errors, saved: false, submitted: true)
 
   getFieldStyle: (field) ->
     return if !@state[field] && !@state.submitted
@@ -51,7 +51,7 @@ module.exports = React.createClass
 
   renderFields: (fields) ->
     fields.map (field) =>
-      if field.type is 'input'
+      if field?.type is 'input'
         @renderInput field.props.label, _.omit(field.props, 'label')
       else if _.isArray(field)
         @renderFields(field)
