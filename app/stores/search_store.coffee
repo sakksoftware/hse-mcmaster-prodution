@@ -47,6 +47,7 @@ module.exports = Reflux.createStore
   onSortBy: (sortBy) ->
     search = _.clone(@state.search)
     search.sort_by = sortBy
+    search.page = 1
     @setState(search: search)
     @updateUrl()
     SearchActions.search(@state.search)
@@ -63,14 +64,18 @@ module.exports = Reflux.createStore
   onChangeFilterValue: (filter, value) ->
     filter = @findFilter filter
     filter.applied = value
-    @setState(search: @state.search)
+    search = _.clone(@state.search)
+    search.page = 1
+    @setState(search: search)
     @updateUrl()
     SearchActions.search(@state.search)
 
   onChangeParentFilterValue: (parentFilter, value) ->
     parentFilter = @findFilter parentFilter
     @_changeParentFilterValue(parentFilter, value)
-    @setState(search: @state.search)
+    search = _.clone(@state.search)
+    search.page = 1
+    @setState(search: search)
     @updateUrl()
     SearchActions.search(@state.search)
 
@@ -98,6 +103,8 @@ module.exports = Reflux.createStore
 
     filterGroup.mode = mode
     @setState(search: @state.search)
+    search = _.clone(@state.search)
+    search.page = 1
     @updateUrl()
     SearchActions.search(@state.search)
 
