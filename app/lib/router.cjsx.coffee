@@ -6,7 +6,7 @@ class Router
     window.addEventListener('popstate', @handleRouteChange.bind(@))
 
   routes:
-    '/?$': ->
+    '/$': ->
       React.render <App page="search" />, @el
 
     'articles/:id': (id) ->
@@ -33,6 +33,13 @@ class Router
   back: -> @visit(@history.pop())
 
   start: ->
+    if !window.history || !window.history.pushState
+      if window.location.pathname != '' && window.location.pathname != '/'
+        path = window.location.pathname
+        path = '/' + path if path[0] != '/'
+        window.location = '/#!' + window.location.pathname
+        return
+
     @handleRouteChange()
 
   visit: (url) ->
@@ -40,12 +47,13 @@ class Router
     @handleRouteChange()
 
   update: (url) ->
-    if (window.history?.pushState?)
+    if window.history?.pushState?
       @history.push(window.location.pathname + window.location.search)
       window.history.pushState(null, "HSE", url)
     else
-      @history.push(window.location.hash)
-      window.location.hash = url
+      @history.push(@getHash())
+      url = '/' + url if url[0] != '/'
+      window.location.hash = '!' + url
 
   hasHistory: -> @history.length > 0
 
@@ -57,10 +65,16 @@ class Router
     action.apply(@, params)
 
   getPath: ->
-    if (window.history?.pushState?)
-      window.location.pathname
+    if window.history?.pushState?
+      path = window.location.pathname
     else
-      window.location.hash
+      path = @getHash()
+
+    path = '/' + path if path[0] != '/'
+    path
+
+  getHash: ->
+    window.location.hash.replace(/^#!\//, '')
 
   findActionFor: (path) ->
     params = []
