@@ -12,6 +12,7 @@ UserActions = Reflux.createActions
   logoutUser: {asyncResult: true}
   updateUser: {asyncResult: true}
   loadUser: {asyncResult: true}
+  forgotPassword: {asyncResult: true}
 
 UserActions.createUser.listen (user) ->
   API.create('users', user).done(@completed).fail(@failed)
@@ -38,5 +39,8 @@ UserActions.loginUser.listen (user) ->
 
 UserActions.logoutUser.listen ->
   API.read('user/logout').done(@completed).fail(@failed)
+
+UserActions.forgotPassword.listen ->
+  API.create('user/forgot_password').done(@completed).fail(@failed)
 
 module.exports = UserActions

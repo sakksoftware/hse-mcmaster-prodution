@@ -7,5 +7,6 @@
   "language": "en",
   "complementary_1": true,
   "complementary_2": false,
-  "complementary_3": false
+  "complementary_3": false,
+  "token": "crazy-long-token"
 }
