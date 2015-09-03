@@ -74,3 +74,9 @@ module.exports = Reflux.createStore
 
   onForgotPasswordFailed: () ->
     @setState(errors: ['wrong_email'])
+
+  onResetPasswordCompleted: (user) ->
+    @setState(user: user, loaded: true, errors: null)
+
+  onResetPasswordFailed: ->
+    @setState(errors: ['failed_password_reset'])

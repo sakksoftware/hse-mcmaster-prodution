@@ -4,6 +4,7 @@ StaticPage = require('components/static/static_page')
 ProfilePage = require('components/profile/profile_page')
 ComplementaryContentPage = require('components/complementary_content/complementary_content_page')
 ForgotPasswordPage = require('components/forgot_password/forgot_password_page')
+ResetPasswordPage = require('components/reset_password/reset_password_page')
 PageNotFound = require('components/error_pages/page_not_found')
 
 Layer = require('components/layered_navigation/layer')
@@ -30,6 +31,8 @@ UserActions = require('actions/user_actions')
 UserStore = require('stores/user_store')
 
 ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
+
+params = require('lib/url').params()
 
 module.exports = React.createClass
   displayName: 'App'
@@ -114,6 +117,8 @@ module.exports = React.createClass
         <ForgotPasswordPage />
       when 'page_not_found'
         <PageNotFound />
+      when 'reset_password'
+        <ResetPasswordPage lfe={params.lfe} />
       else
         # should never reach here, programming error.
         throw new Error("Page not found! Please check the URL")

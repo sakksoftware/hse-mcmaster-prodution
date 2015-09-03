@@ -11,6 +11,8 @@ UserActions = Reflux.createActions
   updateUser: {asyncResult: true}
   loadUser: {asyncResult: true}
   forgotPassword: {asyncResult: true}
+  resetPassword: {asyncResult: true}
+
 
 UserActions.createUser.listen (user) ->
   user.errors = {}
@@ -55,5 +57,9 @@ UserActions.logoutUser.listen (user) ->
 
 UserActions.forgotPassword.listen (data) ->
   StoreMock.send data, (=> @completed(data)), 'POST /user/forgotPassword'
+
+UserActions.resetPassword.listen (data) ->
+  API.read('/user').done (user) =>
+    StoreMock.send data, (=> @completed(user)), 'POST /user/reset_password'
 
 module.exports = UserActions

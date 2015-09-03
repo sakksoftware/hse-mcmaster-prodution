@@ -28,6 +28,9 @@ class Router
     'forgot_password': ->
       React.render <App page="forgot_password" />, @el
 
+    'reset_password': ->
+      React.render <App page="reset_password" />, @el
+
     '.*': ->
       React.render <App page="page_not_found" />, @el
 
