@@ -9,7 +9,7 @@
     ],
     "answers": [
       {
-        "text": "How decisions (about care) are made",
+        "text": "How decisions about care are made",
         "filterGroup": {
           "id": "1_1",
           "title": "governance arrangements"
@@ -145,7 +145,7 @@
         }
       },
       {
-        "text": "Technologies (diagnostics, vaccines, drugs, devices, surgeries)",
+        "text": "Technologies (vaccines, diagnostics, drugs, devices, surgeries)",
         "filterGroup": {
           "id": "2_2",
           "title": "technologies"
