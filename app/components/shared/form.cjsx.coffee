@@ -30,7 +30,15 @@ module.exports = React.createClass
 
   handleError: (xhr, errorType, statusCode) ->
     data = JSON.parse(xhr.responseText)
-    @setState(errors: data.errors, saved: false, submitted: true)
+    errors = data.errors
+    # transform data for .NET
+    if _.isArray(errors)
+      _errors = {}
+      for error in errors
+        _errors[error.key] = error.value
+      errors = _errors
+
+    @setState(errors: errors, saved: false, submitted: true)
 
   getFieldStyle: (field) ->
     return if !@state[field] && !@state.submitted
