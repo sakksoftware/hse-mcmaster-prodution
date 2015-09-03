@@ -74,7 +74,7 @@ module.exports = React.createClass
 
   renderHeader: ->
     <nav className="top-nav">
-      <h1><Link to="/">Health System Evidence</Link></h1>
+      <h1><Link to="/">Health Systems Evidence</Link></h1>
       <LayerToggle menu="main" onToggle={@toggleMenu}>
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>
