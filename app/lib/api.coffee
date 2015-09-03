@@ -37,10 +37,12 @@ module.exports = class API
       beforeSend: (xhr) =>
         if token = Cookies.get('token')
           xhr.setRequestHeader('Authorization', token)
-      data: JSON.stringify(data)
       success: [options.success || (->), @onSuccess]
       error: [options.error || (->), @onError]
     }, options
+
+    if options.method != 'GET'
+      options.data = JSON.stringify(data)
 
     $.ajax options
 
