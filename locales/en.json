@@ -152,6 +152,13 @@
       "description": "For those who log in Ontario-based IP address"
     }
   },
+  "forgot_password_page": {
+    "title": "Forgot Password",
+    "email": "Email",
+    "instructions": "Enter the email you use for login below and we will send you a link to reset your password",
+    "submit": "Send email",
+    "on_success": "A password rest token has been sent to your email"
+  },
   "errors": {
     "no_connection": "Oops, could not load data. Check your internet connection.",
     "cant_be_blank": "can't be blank!",

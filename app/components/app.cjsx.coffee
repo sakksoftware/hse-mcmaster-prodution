@@ -3,6 +3,7 @@ SearchPage = require('components/search/search_page')
 StaticPage = require('components/static/static_page')
 ProfilePage = require('components/profile/profile_page')
 ComplementaryContentPage = require('components/complementary_content/complementary_content_page')
+ForgotPasswordPage = require('components/forgot_password/forgot_password_page')
 PageNotFound = require('components/error_pages/page_not_found')
 
 Layer = require('components/layered_navigation/layer')
@@ -109,6 +110,8 @@ module.exports = React.createClass
         <ProfilePage key="profile-page" />
       when 'complementary_content'
         <ComplementaryContentPage key="complementary-content-page" />
+      when 'forgot_password'
+        <ForgotPasswordPage />
       when 'page_not_found'
         <PageNotFound />
       else
@@ -131,7 +134,7 @@ module.exports = React.createClass
           />
       </Layer>
       <Layer name="login" title={@t('menus.login.title')}>
-        <LoginMenu onLogin={@login} />
+        <LoginMenu onLogin={@login} onForgotPasswordClick={@dismissMenu} />
       </Layer>
       <Layer name="languages" title={@t('menus.languages.title')}>
         <LanguagesMenu />

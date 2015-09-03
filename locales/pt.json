@@ -152,12 +152,20 @@
       "description": "PT_For those who log in Ontario-based IP address"
     }
   },
+  "forgot_password_page": {
+    "title": "PT_Forgot Password",
+    "email": "PT_Email",
+    "instructions": "PT_Enter the email you use for login below and we will send you a link to reset your password",
+    "submit": "PT_Send email",
+    "on_success": "PT_A password rest token has been sent to your email"
+  },
   "errors": {
     "no_connection": "Opa, não foi possível carregar dados. Verifique sua conexão com a Internet.",
     "cant_be_blank": "PT_can't be blank!",
     "must_accept_terms": "PT_you must accept the terms and conditions!",
     "already_exists": "PT_already exists",
     "invalid_email": "PT_email is invalid",
-    "too_short": "PT_is too short, must be at least 8 characters"
+    "too_short": "PT_is too short, must be at least 8 characters",
+    "invalid_login": "PT_wrong username or password"
   }
 }

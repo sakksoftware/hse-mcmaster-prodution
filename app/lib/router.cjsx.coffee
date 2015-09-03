@@ -25,6 +25,9 @@ class Router
     'complementary_content': ->
       React.render <App page="complementary_content" />, @el
 
+    'forgot_password': ->
+      React.render <App page="forgot_password" />, @el
+
     '.*': ->
       React.render <App page="page_not_found" />, @el
 

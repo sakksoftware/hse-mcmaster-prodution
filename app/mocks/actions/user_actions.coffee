@@ -51,6 +51,9 @@ UserActions.loginUser.listen (user) ->
     StoreMock.sendError 400, user, null, (=> @failed({}, "bad input", user)), 'POST /users/login'
 
 UserActions.logoutUser.listen (user) ->
-  @completed()
+  StoreMock.send user, (=> @completed(user)), 'GET /user/logout'
+
+UserActions.forgotPassword.listen (data) ->
+  StoreMock.send data, (=> @completed(data)), 'POST /user/forgotPassword'
 
 module.exports = UserActions

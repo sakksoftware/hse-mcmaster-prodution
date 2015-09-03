@@ -152,12 +152,20 @@
       "description": "CN_For those who log in Ontario-based IP address"
     }
   },
+  "forgot_password_page": {
+    "title": "CN_Forgot Password",
+    "email": "CN_Email",
+    "instructions": "CN_Enter the email you use for login below and we will send you a link to reset your password",
+    "submit": "CN_Send email",
+    "on_success": "CN_A password rest token has been sent to your email"
+  },
   "errors": {
     "no_connection": "啊，无法加载数据，请检查您的网络链接。",
     "cant_be_blank": "CN_can't be blank!",
     "must_accept_terms": "CN_you must accept the terms and conditions!",
     "already_exists": "CN_already exists",
     "invalid_email": "CN_email is invalid",
-    "too_short": "CN_is too short, must be at least 8 characters"
+    "too_short": "CN_is too short, must be at least 8 characters",
+    "invalid_login": "CN_wrong username or password"
   }
 }

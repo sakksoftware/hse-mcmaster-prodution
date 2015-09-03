@@ -3,6 +3,7 @@ Form = require('components/shared/form')
 UserActions = require('actions/user_actions')
 TranslationHelper = require('mixins/translation_helper')
 UserStore = require('stores/user_store')
+Link = require('components/shared/link')
 
 module.exports = React.createClass
   displayName: "LoginMenu"
@@ -12,6 +13,7 @@ module.exports = React.createClass
 
   propTypes:
     onLogin: React.PropTypes.func.isRequired
+    onForgotPasswordClick: React.PropTypes.func.isRequired
 
   componentWillMount: ->
     @unsubscribe = UserStore.listen(@userUpdated)
@@ -43,5 +45,5 @@ module.exports = React.createClass
       <input label={@t('email')} name="email" type="email" />
       <input label={@t('password')} name="password" type="password" />
       <button className="btn-primary">{@t('login_button')}</button>
-      <a className="btn-forgot-password" href="/forgot_password">{@t('forgot_password')}</a>
+      <Link onClick={@props.onForgotPasswordClick} className="btn-forgot-password" to="/forgot_password">{@t('forgot_password')}</Link>
     </Form>

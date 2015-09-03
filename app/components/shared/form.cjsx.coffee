@@ -8,7 +8,7 @@ module.exports = React.createClass
   propTypes:
     onSubmit: React.PropTypes.func.isRequired
     afterSave: React.PropTypes.func
-    afterSaveContent: React.PropTypes.node
+    afterSaveContent: React.PropTypes.func
     replaceContent: React.PropTypes.bool
 
   # TODO: think of how to remove dependency on translations helper in

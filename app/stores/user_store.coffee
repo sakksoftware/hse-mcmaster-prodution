@@ -67,9 +67,10 @@ module.exports = Reflux.createStore
     Cookies.remove('token')
 
   onLogoutUserFailed: ->
-    @state(errors: ['faild_logout'])
+    @setState(errors: ['faild_logout'])
 
-  onForgotPasswordCompleted: () ->
-    @state(loaded: false)
+  onForgotPasswordCompleted: ->
+    @setState(loaded: false)
 
   onForgotPasswordFailed: () ->
+    @setState(errors: ['wrong_email'])

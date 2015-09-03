@@ -40,7 +40,7 @@ UserActions.loginUser.listen (user) ->
 UserActions.logoutUser.listen ->
   API.read('user/logout').done(@completed).fail(@failed)
 
-UserActions.forgotPassword.listen ->
-  API.create('user/forgot_password').done(@completed).fail(@failed)
+UserActions.forgotPassword.listen (data) ->
+  API.create('user/forgot_password', data).done(@completed).fail(@failed)
 
 module.exports = UserActions
