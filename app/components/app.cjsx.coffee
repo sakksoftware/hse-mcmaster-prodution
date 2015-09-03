@@ -43,7 +43,8 @@ module.exports = React.createClass
     currentUser: null
 
   componentWillMount: ->
-    UserActions.loadUser()
+    if Cookies.get('token') # only get user if there is a token saved
+      UserActions.loadUser()
     @unsubscribe = UserStore.listen(@updateUser)
 
   componentWillUnmount: ->
