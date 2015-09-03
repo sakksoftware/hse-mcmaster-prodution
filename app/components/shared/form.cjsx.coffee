@@ -1,6 +1,7 @@
 Input = ReactBootstrap.Input
 Button = ReactBootstrap.Button
 Util = require('lib/util')
+TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
   displayName: 'Form'
@@ -9,6 +10,11 @@ module.exports = React.createClass
     afterSave: React.PropTypes.func
     afterSaveContent: React.PropTypes.node
     replaceContent: React.PropTypes.bool
+
+  # TODO: think of how to remove dependency on translations helper in
+  # this generic form component
+  mixins: [TranslationHelper]
+  baseTranslation: 'errors'
 
   getInitialState: ->
     {errors: {}, saved: false, submitted: false}
@@ -35,7 +41,7 @@ module.exports = React.createClass
     if _.isArray(errors)
       _errors = {}
       for error in errors
-        _errors[error.key] = error.value
+        _errors[error.key] = @t(error.value)
       errors = _errors
 
     @setState(errors: errors, saved: false, submitted: true)
