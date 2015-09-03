@@ -7,8 +7,10 @@ UserActions = Reflux.createActions
   toggleComplementaryContent: {}
   createUser: {asyncResult: true}
   loginUser: {asyncResult: true}
+  logoutUser: {asyncResult: true}
   updateUser: {asyncResult: true}
   loadUser: {asyncResult: true}
+  forgotPassword: {asyncResult: true}
 
 UserActions.createUser.listen (user) ->
   user.errors = {}
@@ -47,5 +49,8 @@ UserActions.loginUser.listen (user) ->
       StoreMock.send user, (=> @completed(user)), 'POST /login/login'
   else
     StoreMock.sendError 400, user, null, (=> @failed({}, "bad input", user)), 'POST /users/login'
+
+UserActions.logoutUser.listen (user) ->
+  @completed()
 
 module.exports = UserActions
