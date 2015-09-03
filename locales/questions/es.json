@@ -1,188 +1,188 @@
 [
   {
-    "text": "ES_Do you want to know about particular types of health system arrangements?",
+    "text": "¿Desea información sobre determinados tipos de convenios para el sistema de salud?",
     "filters": [
       {
         "id": "0_1",
-        "title": "ES_topics"
+        "title": "Temas"
       }
     ],
     "answers": [
       {
-        "text": "ES_How decisions (about care) are made",
+        "text": "Cómo se toman las decisiones (acerca de la atención)",
         "filterGroup": {
           "id": "1_1",
-          "title": "ES_goveranance arranments"
+          "title": "Los acuerdos de gobernanza"
         }
       },
       {
-        "text": "ES_How care is paid for",
+        "text": "Cómo se paga la atención",
         "filterGroup": {
           "id": "1_2",
-          "title": "ES_financial arrangements"
+          "title": "Acuerdos financieros"
         }
       },
       {
-        "text": "ES_How care is organized",
+        "text": "Cómo se organiza la atención",
         "filterGroup": {
           "id": "1_3",
-          "title": "ES_delivery arrangements"
+          "title": "Planificación de las prestaciones"
         }
       },
       {
-        "text": "ES_How change can be brought about",
+        "text": "Cómo se pueden implementar los cambios",
         "filterGroup": {
           "id": "1_4",
-          "title": "ES_implementation strategies"
+          "title": "Estrategias de implementación"
         }
       }
     ]
   },
   {
-    "text": "ES_Do you have a particular type of question?",
+    "text": "¿Desea formular una determinada clase de pregunta? ",
     "filters": [
       {
         "id": "0_21",
-        "title": "ES_type of document"
+        "title": "tipo de documento"
       }
     ],
     "answers": [
       {
-        "text": "ES_What approaches have been evaluated for their benefits and harms? (or what approach works?)",
+        "text": "¿Qué enfoques se han evaluado respecto de sus ventajas y desventajas? (o ¿qué enfoque funciona?)",
         "filterGroup": {
           "id": "0_10",
-          "title": "ES_systematic reviews of effects and overviews of reviews"
+          "title": "revisiones sistemáticas de efectos y descripciones generales de revisiones"
         },
         "filters": [
           {
             "id": "10_2",
-            "title": "ES_systematic reviews of effects"
+            "title": "revisiones sistemáticas de efectos"
           },
           {
             "id": "10_3",
-            "title": "ES_overviews of reviews"
+            "title": "descripciones generales de revisiones"
           }
         ]
       },
       {
-        "text": "ES_What approaches have been evaluated for their cost-effectiveness? (or is an approach cost-effective?)",
+        "text": "¿Qué enfoques se han evaluado respecto de su rentabilidad? (o sea una rentable enfoque?)",
         "filterGroup": {
           "id": "0_10",
-          "title": "ES_economic evaluations and costing studies"
+          "title": "evaluaciones económicas y estudios de costos"
         },
         "filters": [
           {
             "id": "10_7",
-            "title": "ES_economic evaluations and costing studies"
+            "title": "evaluaciones económicas y estudios de costos"
           }
         ]
       },
       {
-        "text": "ES_What else do we know about an approach or the problem it addresses?",
+        "text": "¿Qué más sabemos acerca de un enfoque o del problema que este aborda?",
         "filterGroup": {
           "id": "0_10",
-          "title": "ES_systematic reviews addressing other question"
+          "title": "revisiones sistemáticas que incluyen otras preguntas"
         },
         "filters": [
           {
             "id": "10_4",
-            "title": "ES_systematic reviews addressing other question"
+            "title": "revisiones sistemáticas que incluyen otras preguntas"
           }
         ]
       },
       {
-        "text": "ES_What’s been tried elsewhere and the rationale documented? (and with what impacts)?",
+        "text": "¿Qué se ha probado en otros lugares y cuáles son las justificaciones documentadas? (y con qué impactos)?",
         "filterGroup": {
           "id": "0_10",
-          "title": "ES_health reform descriptions"
+          "title": "descripciones de la reforma de salud"
         },
         "filters": [
           {
             "id": "10_8",
-            "title": "ES_health reform descriptions"
+            "title": "descripciones de la reforma de salud"
           }
         ]
       },
       {
-        "text": "ES_What do we know about a problem, options and implementation considerations in a particular health system?",
+        "text": "¿Qué se sabe acerca de un problema, las opciones y las consideraciones de implementación en un sistema de salud determinado?",
         "filterGroup": {
           "id": "0_10",
-          "title": "ES_evidence briefs for policy"
+          "title": "resúmenes de evidencia de la política"
         },
         "filters": [
           {
             "id": "10_1",
-            "title": "ES_evidence briefs for policy"
+            "title": "resúmenes de evidencia de la política"
           }
         ]
       },
       {
-        "text": "ES_How does a particular health system work?",
+        "text": "¿Cómo funciona un sistema de salud determinado?",
         "filterGroup": {
           "id": "0_10",
-          "title": "ES_health system description"
+          "title": "descripción del sistema de salud"
         },
         "filters": [
           {
             "id": "10_9",
-            "title": "ES_health system description"
+            "title": "descripción del sistema de salud"
           }
         ]
       }
     ]
   },
   {
-    "text": "ES_Are you interested in particular diseases, technologies, sectors or providers?",
+    "text": "¿Está interesado en enfermedades, tecnologías, sectores o proveedores determinados?",
     "filters": [
       "0_2"
     ],
     "answers": [
       {
-        "text": "ES_Diseases (infectious diseases, non-communicable diseases or other)",
+        "text": "Enfermedades (infecciosas, no transmisibles u otras)",
         "filterGroup": {
           "id": "2_1",
-          "title": "ES_diseases"
+          "title": "Enfermedades"
         }
       },
       {
-        "text": "ES_Technologies (include drugs, devices, diagnostics, surgery)",
+        "text": "Tecnologías (diagnóstico, vacunas, medicamentos, dispositivos, cirugías)",
         "filterGroup": {
           "id": "2_2",
-          "title": "ES_technologies"
+          "title": "Tecnologías"
         }
       },
       {
-        "text": "ES_Sectors (primary care, home care, hospital care, rehabilitation, long-term care and public health)",
+        "text": "Sectores (atención domiciliaria, atención primaria, atención hospitalaria, rehabilitación, atención a largo plazo y salud pública)",
         "filterGroup": {
           "id": "2_3",
-          "title": "ES_sectors"
+          "title": "Sectores"
         }
       },
       {
-        "text": "ES_Providers (specialist generalist physicians, specialist physicians, nurses, pharmacists, etc)",
+        "text": "Proveedores (médicos de cabecera, médicos especialistas, enfermeros, farmacéuticos, etc.)",
         "filterGroup": {
           "id": "2_4",
-          "title": "ES_providers"
+          "title": "Proveedores"
         }
       }
     ]
   },
   {
-    "text": "ES_Are you focused on particular countries or on LMICs?",
+    "text": "¿Le interesan determinados países o PBMI?",
     "answers": [
       {
-        "text": "ES_Country focus",
+        "text": "Centrado en países",
         "filterGroup": {
           "id": "0_6",
-          "title": "ES_country focus",
+          "title": "Centrado en países",
           "type": "countries_countries"
         }
       },
       {
-        "text": "ES_Low- and middle-income country (LMIC) focus",
+        "text": "Centrado en países de ingresos bajos y medios (LMIC)",
         "filterGroup": {
           "id": "0_9",
-          "title": "ES_LMIC focus"
+          "title": "Centrado en LMIC"
         }
       }
     ]
@@ -191,27 +191,27 @@
     "filters": [
       "0_5"
     ],
-    "text": "ES_Do you want to see what international agencies like WHO and the World Bank have written on the topic? (and ‘Canadian governments and stakeholder organizations’ if in Canada, and ‘Ontario government and stakeholder organization if in Ontario)",
+    "text": "¿Desea conocer qué han escrito sobre el tema organismos internacionales como la OMS y el Banco Mundial? (y \"gobiernos y organizaciones interesadas canadienses\", si se encuentra en Canadá, y \"el gobierno y la organización interesada de Ontario\", si se encuentra en Ontario)",
     "answers": [
       {
-        "text": "ES_Intergovernmental Organiations' Health Systems Documents",
+        "text": "Documentos de sistemas de salud de organizaciones intergubernamentales",
         "filterGroup": {
           "id": "0_17",
-          "title": "ES_intergovernmental documents"
+          "title": "Documentos intergubernamentales"
         }
       },
       {
-        "text": "ES_Canada's Health Systems Documents",
+        "text": "Documentos de sistemas de salud de Canadá",
         "filterGroup": {
           "id": "0_18",
-          "title": "ES_canadian documents"
+          "title": "Documentos Canadienses"
         }
       },
       {
-        "text": "ES_Ontario's Health Systems Documents",
+        "text": "Documentos de sistemas de salud de Ontario",
         "filterGroup": {
           "id": "0_19",
-          "title": "ES_ontario's documents"
+          "title": "Documentos de Ontario"
         }
       }
     ]

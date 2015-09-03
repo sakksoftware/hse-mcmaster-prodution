@@ -1,138 +1,138 @@
 [
   {
-    "text": "FR_Do you want to know about particular types of health system arrangements?",
+    "text": "Voulez-vous en savoir plus sur certains types d'arrangements du système de santé?",
     "filters": [
       {
         "id": "0_1",
-        "title": "FR_topics"
+        "title": "Sujets"
       }
     ],
     "answers": [
       {
-        "text": "FR_How decisions (about care) are made",
+        "text": "Comment les décisions (sur les soins) sont-elles prises",
         "filterGroup": {
           "id": "1_1",
-          "title": "FR_goveranance arranments"
+          "title": "Les modalités de gouvernance"
         }
       },
       {
-        "text": "FR_How care is paid for",
+        "text": "Comment les soins sont-ils payés",
         "filterGroup": {
           "id": "1_2",
-          "title": "FR_financial arrangements"
+          "title": "Arrangements financiers"
         }
       },
       {
-        "text": "FR_How care is organized",
+        "text": "Comment les soins sont-ils organisés",
         "filterGroup": {
           "id": "1_3",
-          "title": "FR_delivery arrangements"
+          "title": "Arrangements relatifs à la prestation de services"
         }
       },
       {
-        "text": "FR_How change can be brought about",
+        "text": "Comment favoriser le changement",
         "filterGroup": {
           "id": "1_4",
-          "title": "FR_implementation strategies"
+          "title": "Stratégies de mise en œuvre"
         }
       }
     ]
   },
   {
-    "text": "FR_Do you have a particular type of question?",
+    "text": "Avez-vous un type de question en particulier?",
     "filters": [
       {
         "id": "0_21",
-        "title": "FR_type of document"
+        "title": "type de document"
       }
     ],
     "answers": [
       {
-        "text": "FR_What approaches have been evaluated for their benefits and harms? (or what approach works?)",
+        "text": "Quelles approches ont été évaluées pour leurs avantages et leurs inconvénients? (ou quelle approche fonctionne?)",
         "filterGroup": {
           "id": "0_10",
-          "title": "FR_systematic reviews of effects and overviews of reviews"
+          "title": "revues systématiques sur les effets et revues des revues systématiques"
         },
         "filters": [
           {
             "id": "10_2",
-            "title": "FR_systematic reviews of effects"
+            "title": "revues systématiques sur les effets"
           },
           {
             "id": "10_3",
-            "title": "FR_overviews of reviews"
+            "title": "revues des revues systématiques"
           }
         ]
       },
       {
-        "text": "FR_What approaches have been evaluated for their cost-effectiveness? (or is an approach cost-effective?)",
+        "text": "Quelles approches ont été évaluées pour leur rapport coût-efficacité? (ou est une approche rentable?)",
         "filterGroup": {
           "id": "0_10",
-          "title": "FR_economic evaluations and costing studies"
+          "title": "évaluations économiques et études des prix de revient"
         },
         "filters": [
           {
             "id": "10_7",
-            "title": "FR_economic evaluations and costing studies"
+            "title": "évaluations économiques et études des prix de revient"
           }
         ]
       },
       {
-        "text": "FR_What else do we know about an approach or the problem it addresses?",
+        "text": "Que savons-nous d'autre sur une approche ou un problème qu'il vise à résoudre?",
         "filterGroup": {
           "id": "0_10",
-          "title": "FR_systematic reviews addressing other question"
+          "title": "revues systématiques sur d'autres questions"
         },
         "filters": [
           {
             "id": "10_4",
-            "title": "FR_systematic reviews addressing other question"
+            "title": "revues systématiques sur d'autres questions"
           }
         ]
       },
       {
-        "text": "FR_What’s been tried elsewhere and the rationale documented? (and with what impacts)?",
+        "text": "Qu'est-ce qui a été essayé ailleurs et quelle est la justification? (et avec quels impacts)?",
         "filterGroup": {
           "id": "0_10",
-          "title": "FR_health reform descriptions"
+          "title": "descriptions de réformes de la santé"
         },
         "filters": [
           {
             "id": "10_8",
-            "title": "FR_health reform descriptions"
+            "title": "descriptions de réformes de la santé"
           }
         ]
       },
       {
-        "text": "FR_What do we know about a problem, options and implementation considerations in a particular health system?",
+        "text": "Que savons-nous d'un problème, des options et des implications de mise en œuvre dans un système de santé particulier?",
         "filterGroup": {
           "id": "0_10",
-          "title": "FR_evidence briefs for policy"
+          "title": "synthèses de données probantes pour éclairer les politiques"
         },
         "filters": [
           {
             "id": "10_1",
-            "title": "FR_evidence briefs for policy"
+            "title": "synthèses de données probantes pour éclairer les politiques"
           }
         ]
       },
       {
-        "text": "FR_How does a particular health system work?",
+        "text": "Comment fonctionne un système de santé en particulier?",
         "filterGroup": {
           "id": "0_10",
-          "title": "FR_health system description"
+          "title": "descriptions des systèmes de santé"
         },
         "filters": [
           {
             "id": "10_9",
-            "title": "FR_health system description"
+            "title": "descriptions des systèmes de santé"
           }
         ]
       }
     ]
   },
   {
-    "text": "FR_Are you interested in particular diseases, technologies, sectors or providers?",
+    "text": "Êtes-vous intéressé à des maladies, technologies, secteurs ou fournisseurs de soins spécifiques?",
     "filters": [
       "0_2"
     ],
@@ -168,7 +168,7 @@
     ]
   },
   {
-    "text": "FR_Are you focused on particular countries or on LMICs?",
+    "text": "Êtes-vous intéressé par des pays ou PFMRs particuliers?",
     "answers": [
       {
         "text": "FR_Country focus",
@@ -191,27 +191,27 @@
     "filters": [
       "0_5"
     ],
-    "text": "FR_Do you want to see what international agencies like WHO and the World Bank have written on the topic? (and ‘Canadian governments and stakeholder organizations’ if in Canada, and ‘Ontario government and stakeholder organization if in Ontario)",
+    "text": "Voulez-vous voir ce que les organisations internationales comme l'OMS et la Banque mondiale ont écrit sur le sujet? (et « les gouvernements et autres organisations au Canada » si vous êtes au Canada et « le gouvernement et organisations en Ontario » si vous êtes en Ontario)",
     "answers": [
       {
         "text": "FR_Intergovernmental Organiations' Health Systems Documents",
         "filterGroup": {
           "id": "0_17",
-          "title": "FR_intergovernmental documents"
+          "title": "Documents intergouvernementaux"
         }
       },
       {
         "text": "FR_Canada's Health Systems Documents",
         "filterGroup": {
           "id": "0_18",
-          "title": "FR_canadian documents"
+          "title": "Documents Canadiens"
         }
       },
       {
         "text": "FR_Ontario's Health Systems Documents",
         "filterGroup": {
           "id": "0_19",
-          "title": "FR_ontario's documents"
+          "title": "Les documents de l'Ontario"
         }
       }
     ]
