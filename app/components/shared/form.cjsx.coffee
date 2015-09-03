@@ -64,6 +64,7 @@ module.exports = React.createClass
       <Input type={options.type} placeholder={label} key={options.name} name={options.name} ref={options.name} bsStyle={@getFieldStyle(options.name)} defaultValue={options.defaultValue} hasFeedback onChange={@handleChange} help={@state.errors[options.name]} />
 
   renderFields: (fields) ->
+    fields = [fields] unless _.isArray(fields)
     fields.map (field) =>
       if field?.type is 'input'
         @renderInput field.props.label, _.omit(field.props, 'label')
