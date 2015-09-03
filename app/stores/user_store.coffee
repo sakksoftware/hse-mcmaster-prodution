@@ -12,19 +12,7 @@ module.exports = Reflux.createStore
     else
       guidedSearch = true
 
-    user:
-      id: 0
-      accept_terms: null
-      country: null
-      country_id: 0
-      email: null
-      errors: null
-      first_name: null
-      language: "en"
-      last_name: null
-      password: null
-      token: null
-
+    user: null
     loaded: false
     errors: null
     language: Cookies.get('lang') || 'en'
@@ -73,3 +61,7 @@ module.exports = Reflux.createStore
     if xhr.status == 403
       errors = ['invalid_login']
     @setState(errors: errors, loaded: true)
+
+  onLogoutUserCompleted: ->
+    @setState(user: null, loaded: false, errors: null)
+    Cookies.set('token', null)

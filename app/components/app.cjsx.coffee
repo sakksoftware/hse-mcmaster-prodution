@@ -25,6 +25,9 @@ AccountMenu = require('components/menus/account_menu')
 
 TranslationHelper = require('mixins/translation_helper')
 
+UserActions = require('actions/user_actions')
+UserStore = require('stores/user_store')
+
 ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
 module.exports = React.createClass
@@ -39,16 +42,24 @@ module.exports = React.createClass
   getInitialState: ->
     currentUser: null
 
+  componentWillMount: ->
+    UserActions.loadUser()
+    @unsubscribe = UserStore.listen(@updateUser)
+
+  componentWillUnmount: ->
+    @unsubscribe()
+
+  updateUser: (state) ->
+    @setState(currentUser: state.user)
+
   login: (user) ->
     @dismissMenu()
-    @setState(currentUser: user)
 
   logout: ->
-    @setState(currentUser: null)
+    UserActions.logoutUser()
     @dismissMenu()
 
   signup: (user) ->
-    @setState(currentUser: user)
     @dismissMenu()
 
   toggleMenu: (menuName, title, menuContext = {}) ->

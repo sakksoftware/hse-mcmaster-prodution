@@ -9,6 +9,7 @@ UserActions = Reflux.createActions
   toggleComplementaryContent: {}
   createUser: {asyncResult: true}
   loginUser: {asyncResult: true}
+  logoutUser: {asyncResult: true}
   updateUser: {asyncResult: true}
   loadUser: {asyncResult: true}
 
@@ -34,5 +35,8 @@ UserActions.loginUser.listen (user) ->
       @failed(xhr)
     .done (user) =>
       @completed(user)
+
+UserActions.logoutUser.listen ->
+  API.read('user/logout').done(@completed).fail(@failed)
 
 module.exports = UserActions
