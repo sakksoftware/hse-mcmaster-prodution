@@ -159,6 +159,12 @@
     "submit": "FR_Send email",
     "on_success": "FR_A password rest token has been sent to your email"
   },
+  "reset_password_page": {
+    "title": "FR_Reset Password",
+    "password": "FR_Password",
+    "confirm_password": "FR_Confirm password",
+    "submit": "FR_Reset password"
+  },
   "errors": {
     "no_connection": "Oups, incapable de charger les données. Vérifiez votre connexion internet.",
     "cant_be_blank": "FR_can't be blank!",
@@ -166,6 +172,7 @@
     "already_exists": "FR_already exists",
     "invalid_email": "FR_email is invalid",
     "too_short": "FR_is too short, must be at least 8 characters",
-    "invalid_login": "FR_wrong username or password"
+    "invalid_login": "FR_wrong username or password",
+    "passwords_must_match": "FR_passwords must match"
   }
 }

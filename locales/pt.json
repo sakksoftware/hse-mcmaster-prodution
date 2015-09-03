@@ -159,6 +159,12 @@
     "submit": "PT_Send email",
     "on_success": "PT_A password rest token has been sent to your email"
   },
+  "reset_password_page": {
+    "title": "PT_Reset Password",
+    "password": "PT_Password",
+    "confirm_password": "PT_Confirm password",
+    "submit": "PT_Reset password"
+  },
   "errors": {
     "no_connection": "Opa, não foi possível carregar dados. Verifique sua conexão com a Internet.",
     "cant_be_blank": "PT_can't be blank!",
@@ -166,6 +172,7 @@
     "already_exists": "PT_already exists",
     "invalid_email": "PT_email is invalid",
     "too_short": "PT_is too short, must be at least 8 characters",
-    "invalid_login": "PT_wrong username or password"
+    "invalid_login": "PT_wrong username or password",
+    "passwords_must_match": "PT_passwords must match"
   }
 }

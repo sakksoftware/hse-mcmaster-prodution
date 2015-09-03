@@ -159,6 +159,12 @@
     "submit": "Send email",
     "on_success": "A password rest token has been sent to your email"
   },
+  "reset_password_page": {
+    "title": "Reset Password",
+    "password": "Password",
+    "confirm_password": "Confirm password",
+    "submit": "Reset password"
+  },
   "errors": {
     "no_connection": "Oops, could not load data. Check your internet connection.",
     "cant_be_blank": "can't be blank!",
@@ -166,6 +172,7 @@
     "already_exists": "already exists",
     "invalid_email": "email is invalid",
     "too_short": "is too short, must be at least 8 characters",
-    "invalid_login": "wrong username or password"
+    "invalid_login": "wrong username or password",
+    "passwords_must_match": "passwords must match"
   }
 }

@@ -159,6 +159,12 @@
     "submit": "ES_Send email",
     "on_success": "ES_A password rest token has been sent to your email"
   },
+  "reset_password_page": {
+    "title": "ES_Reset Password",
+    "password": "ES_Password",
+    "confirm_password": "ES_Confirm password",
+    "submit": "ES_Reset password"
+  },
   "errors": {
     "no_connection": "No fue posible cargar los datos. Verifique su conexión de Internet.",
     "cant_be_blank": "ES_can't be blank!",
@@ -166,6 +172,7 @@
     "already_exists": "ES_already exists",
     "invalid_email": "ES_email is invalid",
     "too_short": "ES_is too short, must be at least 8 characters",
-    "invalid_login": "ES_wrong username or password"
+    "invalid_login": "ES_wrong username or password",
+    "passwords_must_match": "ES_passwords must match"
   }
 }
