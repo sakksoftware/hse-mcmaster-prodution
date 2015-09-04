@@ -31,9 +31,11 @@ module.exports = React.createClass
     suggestion.query
 
   renderSuggestion: (suggestion, input) ->
+    # TODO: add back suggestion count below once we have it implemented
+    # ({suggestion.count})
     <span>
       <strong>{suggestion.query.slice(0, input.length)}</strong>
-      {suggestion.query.slice(input.length)} ({suggestion.count})
+      {suggestion.query.slice(input.length)}
     </span>
 
   render: ->
