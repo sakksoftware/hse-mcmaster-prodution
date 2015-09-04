@@ -2,6 +2,8 @@ params = require('lib/url').params()
 
 if window.location.hostname == "localhost"
   window.ENV = params.ENV || 'development'
+else if window.location.hostname == "staging.healthsystemsevidence.org"
+  winow.ENV = params.ENV || 'staging'
 else
   window.ENV = params.ENV || 'production'
 

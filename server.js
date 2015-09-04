@@ -2,8 +2,19 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var basicAuth = require('basic-auth-connect');
+var NODE_ENV = process.env.NODE_ENV;
 
-app.use(basicAuth('hse', 'withgreatpower'));
+if NODE_ENV == 'staging'
+  app.use(basicAuth('hse', 'withgreatpower'));
+
+if NODE_ENV == 'production'
+  // force ssl
+  app.use(function(req, res, next) {
+    if(!req.secure) {
+      return res.redirect(['https://', req.get('Host'), req.url].join(''));
+    }
+    next();
+  });
 
 app.use(express.static('public'));
 
