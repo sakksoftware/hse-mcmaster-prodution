@@ -11,7 +11,7 @@ if(NODE_ENV == 'staging') {
 if(NODE_ENV == 'production') {
   // force ssl
   app.use(function(req, res, next) {
-    if(!req.secure) {
+    if(req.headers['x-forwarded-proto'] !== 'https') {
       return res.redirect(['https://', req.get('Host'), req.url].join(''));
     }
     next();
