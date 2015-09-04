@@ -8,6 +8,7 @@
     "node": "~0.12.1",
     "npm": "~2.5.1"
   },
+  "cacheDirectories": ["node_modules", "bower_components"],
   "repository": {
     "type": "git",
     "url": "https://github.com/func-i/hse-frontend"
@@ -18,10 +19,13 @@
     "postinstall": "gem install sass && bower install && brunch build --production"
   },
   "dependencies": {
+    "basic-auth-connect": "^1.0.0",
+    "express": "^4.13.3",
+  },
+  "devDependencies": {
     "assetsmanager-brunch": "^1.8.1",
     "auto-reload-brunch": "^1.7.5",
     "autoprefixer-brunch": "^1.8.5",
-    "basic-auth-connect": "^1.0.0",
     "bower": "^1.4.1",
     "brunch": "^1.8.3",
     "cjsx-react-brunch": "0.0.2",
@@ -29,7 +33,6 @@
     "coffee-script-brunch": "^1.8.1",
     "css-brunch": ">= 1.0 < 1.8",
     "es6-module-transpiler-brunch": "0.0.6",
-    "express": "^4.13.3",
     "javascript-brunch": ">= 1.0 < 1.8",
     "node-sass": "^3.2.0",
     "sass-brunch": "^1.8.10",
