@@ -32,7 +32,8 @@ class Router
       React.render <App page="reset_password" />, @el
 
     '.*': ->
-      React.render <App page="page_not_found" />, @el
+      @visit('/') # redirect to homepage
+      # React.render <App page="page_not_found" />, @el
 
   history: []
 
