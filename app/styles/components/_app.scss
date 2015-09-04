@@ -3,7 +3,6 @@
     max-width: 500px;
     margin: 0 auto;
     padding: $small-size;
-    padding-top: $xx-large-size + $large-size;
   }
 
   .layer-toggle-main {
@@ -33,10 +32,6 @@
     color: $menu-header-color;
     line-height: $small-size;
     height: $xx-large-size;
-    position: fixed;
-    z-index: 3000;
-    left: 0;
-    right: 0;
 
     h1 {
       display: inline-block;
@@ -111,7 +106,10 @@
   // desktop
   @include desktop {
     .top-nav {
-
+      z-index: 3000;
+      position: fixed;
+      left: 0;
+      right: 0;
     }
 
     #page-content {
