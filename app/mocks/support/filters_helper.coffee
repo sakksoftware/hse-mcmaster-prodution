@@ -1,4 +1,4 @@
-allCountries = require('constants/countries_list')
+allCountries = require('mocks/support/countries_list')
 
 module.exports =
   getFilters: -> _.clone(filterData)

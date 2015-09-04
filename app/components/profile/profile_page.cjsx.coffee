@@ -2,6 +2,8 @@ languages = require('constants/languages')
 EditableInformation = require('components/shared/editable_information')
 UserActions = require('actions/user_actions')
 UserStore = require('stores/user_store')
+CountryActions = require('actions/country_actions')
+CountryStore = require('stores/country_store')
 TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
@@ -11,26 +13,48 @@ module.exports = React.createClass
   baseTranslation: 'profile_page'
 
   getInitialState: ->
-    UserStore.state
+    _.extend {}, UserStore.state,
+      countriesLoaded: CountryStore.state.loaded
+      countries: CountryStore.state.countries
 
   componentWillMount: ->
     UserActions.loadUser()
-    @unsubscribe = UserStore.listen(@updateState)
+    CountryActions.loadCountries()
+    @unsubscribeUserStore = UserStore.listen(@onUserStoreUpdated)
+    @unsubscribeCountryStore = CountryStore.listen(@onCoutnryStoreUpdated)
 
   componentWillUnmount: ->
-    @unsubscribe()
+    @unsubscribeUserStore()
 
-  updateState: (state) ->
+  onUserStoreUpdated: (state) ->
     @setState(state)
     if state.errors
       window.flash('error', @t('short_cannot_load_user_profile'))
 
-  updateUser: (user, form)->
-    UserActions.updateUser(user)
+  onCoutnryStoreUpdated: (state) ->
+    unless state.errors
+      @setState(countriesLoaded: state.loaded, countries: state.countries)
+
+  updateUser: (user, form) ->
+    user.country = parseInt(user.country, 10)
+    user = _.extend({}, @state.user, user)
     unsubscribe = UserActions.updateUser.completed.listen =>
       window.flash 'success', @t('successfully_updated')
       form.toggleReadOnly()
       unsubscribe()
+    UserActions.updateUser(user)
+
+  renderCountriesSelect: ->
+    if @state.countriesLoaded
+      options =
+        for country in @state.countries
+          <option key="country-#{country.id}" value={country.id}>{country.title}</option>
+
+      <select label={@t('country')} name="country" type="select" className="form-control">
+        {options}
+      </select>
+    else
+      <Loader loaded=false />
 
   renderLanguageSelect: ->
     options =
@@ -67,7 +91,7 @@ module.exports = React.createClass
           <input label={@t('first_name')} name="first_name" />
           <input label={@t('last_name')} name="last_name" />
           <input label={@t('role')} name="role" />
-          <input label={@t('country')} name="country" />
+          {@renderCountriesSelect()}
           {@renderLanguageSelect()}
         </EditableInformation>
       </div>
