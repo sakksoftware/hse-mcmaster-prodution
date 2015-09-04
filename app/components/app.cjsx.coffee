@@ -176,6 +176,6 @@ module.exports = React.createClass
           <img src="/images/mcmaster_logo.svg" className="logo" />
           <img src="/images/mcmaster_forum_logo.svg" className="forum-logo" />
         </div>
-        <Link className="terms" to="terms">{@t('terms_of_use')}</Link>
+        <Link className="terms" to="/terms">{@t('terms_of_use')}</Link>
       </footer>
     </LayeredNavigation>

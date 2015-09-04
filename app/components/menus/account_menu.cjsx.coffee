@@ -18,18 +18,18 @@ module.exports = React.createClass
     <ul className="account-menu main-menu menu-list">
       <li className="menu-item menu-item-profile">
         <span className="menu-item-icon"></span>
-        <Link className="menu-item-text" onClick={@onLinkClick} to="profile">Profile</Link>
+        <Link className="menu-item-text" onClick={@onLinkClick} to="/profile">Profile</Link>
       </li>
       <li className="menu-item menu-item-saved-documents">
         <span className="menu-item-icon"></span>
-        <Link className="menu-item-text" onClick={@onLinkClick} to="saved_documents">Saved documents</Link>
+        <Link className="menu-item-text" onClick={@onLinkClick} to="/saved_documents">Saved documents</Link>
       </li>
       <li className="menu-item menu-item-saved-searches">
         <span className="menu-item-icon"></span>
-        <Link className="menu-item-text" onClick={@onLinkClick} to="save_searches">Saved searches</Link>
+        <Link className="menu-item-text" onClick={@onLinkClick} to="/save_searches">Saved searches</Link>
       </li>
       <li className="menu-item menu-item-complementary-content">
         <span className="menu-item-icon"></span>
-        <Link className="menu-item-text" onClick={@onLinkClick} to="complementary_content">Complementary Content</Link>
+        <Link className="menu-item-text" onClick={@onLinkClick} to="/complementary_content">Complementary Content</Link>
       </li>
     </ul>
