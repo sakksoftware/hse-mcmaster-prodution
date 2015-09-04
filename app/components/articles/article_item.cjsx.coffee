@@ -101,6 +101,11 @@ module.exports = React.createClass
     documentSubTypes =
       <li key="article-item-document-type-sub-type">{@renderDocumentSubTypes()}</li>
 
+    # <ArticleField visible={article.related_documents_visible}>
+    #   <h2>{@props.article.label_related_documents}</h2>
+    #   <span dangerouslySetInnerHTML={__html: @ifNotEmpty @props.article.related_documents, @t('no_related_documents')}></span>
+    # </ArticleField>
+
     # TODO: possibly use the description field
     <div className="article-item">
       <h1>{article.title}</h1>
@@ -217,11 +222,6 @@ module.exports = React.createClass
       <ArticleField visible={article.registry_record_visible}>
         <h2>{@props.article.label_registry_record_links}</h2>
         {@ifNotEmpty @props.article.registry_record_links, @t('no_registry_record_links')}
-      </ArticleField>
-
-      <ArticleField visible={article.related_documents_visible}>
-        <h2>{@props.article.label_related_documents}</h2>
-        <span dangerouslySetInnerHTML={__html: @ifNotEmpty @props.article.related_documents, @t('no_related_documents')}></span>
       </ArticleField>
 
       <ArticleField visible={article.who_links_visible}>
