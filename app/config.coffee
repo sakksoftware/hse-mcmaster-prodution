@@ -17,7 +17,7 @@ module.exports =
     # mockAlwaysSucceed: true
 
   production:
-    apiBase: '//api.healthsystemsevidence.com'
+    apiBase: '//api.healthsystemsevidence.org'
     useMocks: false
     mockResponseTime: 500
     localesUrl: '/locales/'
