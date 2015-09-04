@@ -27,7 +27,9 @@ module.exports = React.createClass
     @unsubscribeUserStore()
 
   onUserStoreUpdated: (state) ->
-    @setState(state)
+    userState = _.omit(state, 'loaded')
+    userState.userLoaded = state.loaded
+    @setState(userState)
     if state.errors
       window.flash('error', @t('short_cannot_load_user_profile'))
 
@@ -45,12 +47,12 @@ module.exports = React.createClass
     UserActions.updateUser(user)
 
   renderCountriesSelect: ->
-    if @state.countriesLoaded
+    if @state.countriesLoaded && @state.userLoaded
       options =
         for country in @state.countries
           <option key="country-#{country.id}" value={country.id}>{country.title}</option>
 
-      <select label={@t('country')} name="country" type="select" className="form-control">
+      <select label={@t('country')} name="country" type="select" defaultValue={@state.user.country} className="form-control form-group">
         {options}
       </select>
     else
@@ -61,13 +63,13 @@ module.exports = React.createClass
       for language in languages
         <option key="language-#{language.name}" value={language.name}>{language.title}</option>
 
-    <select label={@t('language')} name="language" type="select" className="form-control">
+    <select label={@t('language')} name="language" type="select" defaultValue={@state.user.language} className="form-control form-group">
       {options}
     </select>
 
   render: ->
     # TODO: desktop needs to support columns
-    if @state.loaded && !@state.errors
+    if @state.userLoaded && !@state.errors
       <div className="profile-page">
         <h1>{@t('my_profile')}</h1>
 
