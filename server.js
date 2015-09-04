@@ -4,10 +4,11 @@ var path = require('path');
 var basicAuth = require('basic-auth-connect');
 var NODE_ENV = process.env.NODE_ENV;
 
-if NODE_ENV == 'staging'
+if(NODE_ENV == 'staging') {
   app.use(basicAuth('hse', 'withgreatpower'));
+}
 
-if NODE_ENV == 'production'
+if(NODE_ENV == 'production') {
   // force ssl
   app.use(function(req, res, next) {
     if(!req.secure) {
@@ -15,6 +16,7 @@ if NODE_ENV == 'production'
     }
     next();
   });
+}
 
 app.use(express.static('public'));
 
