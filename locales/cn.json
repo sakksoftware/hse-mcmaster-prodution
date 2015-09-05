@@ -106,7 +106,8 @@
     "result_item": {
       "year": "年份：",
       "quality": "质量：",
-      "select": "选择："
+      "select": "选择：",
+      "not_available": "CN_Not available"
     },
     "result_list": {
       "no_results": "未找到相应结果。"

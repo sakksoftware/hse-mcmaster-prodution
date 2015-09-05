@@ -106,7 +106,8 @@
     "result_item": {
       "year": "Année:",
       "quality": "Qualité:",
-      "select": "Sélectionnez:"
+      "select": "Sélectionnez:",
+      "not_available": "FR_Not available"
     },
     "result_list": {
       "no_results": "Aucun résultat trouvé."

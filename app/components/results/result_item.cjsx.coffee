@@ -14,8 +14,9 @@ module.exports = React.createClass
 
   shortRating: (quality) ->
     if match = quality?.match(/[0-9]{1,2}\/[0-9]{1,2}/)
-      return match
-    quality
+      match
+    else
+      @t('not_available')
 
   render: ->
     <li className="result-item">
