@@ -92,7 +92,7 @@ label {
   position: fixed;
   width: 100%;
   z-index: 1000;
-  height: 40px;
+  min-height: 40px;
 
   @include desktop {
     top: $xx-large-size;
