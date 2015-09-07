@@ -51,6 +51,8 @@ module.exports = React.createClass
 
   componentWillUnmount: ->
     @unsubscribeUser()
+    @unsubscribeSearch()
+    @unsubscribeFilters()
 
   userStoreUpdated: (state) ->
     @setState(guidedSearch: state.guidedSearch)

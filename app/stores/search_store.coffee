@@ -9,6 +9,9 @@ module.exports = Reflux.createStore
   listenables: [SearchActions]
   mixins: [RefluxStateMixin, SearchSerializationService, SearchDeserializationService]
 
+  init: ->
+    UserStore.listen(@onUserStoreUpdated)
+
   getInitialState: ->
     search: @deserializeSearchUrl()
     errors: null
@@ -26,6 +29,14 @@ module.exports = Reflux.createStore
   ################
   # event handlers
   ################
+  onUserStoreUpdated: (state) ->
+    if state.loaded
+      # TODO: should I start using constant for errors instead of strings?
+      errors = _.without(@state.errors, 'reached_search_limit')
+      search = _.clone(@state.search)
+      search.page = 1
+      @setState(search: search, errors: errors)
+
   onSearch: (search) ->
     @setState(loaded: false)
     @updateUrl()

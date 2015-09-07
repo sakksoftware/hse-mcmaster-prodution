@@ -6,8 +6,11 @@ module.exports = React.createClass
   getInitialState: ->
     isDismissed: false
 
-  dismiss: (e) ->
+  onDismiss: (e) ->
     e.preventDefault()
+    @dismiss()
+
+  dismiss: ->
     @setState(isDismissed: true)
 
   render: ->
@@ -17,7 +20,7 @@ module.exports = React.createClass
       <div className="signup-prompt-title">
         Sign up to view more than 20 results, to save documents and searches,
         and to subscribe to email alerts
-        <a href="#" className="signup-prompt-dismiss" onClick={@dismiss}>x</a>
+        <a href="#" className="signup-prompt-dismiss" onClick={@onDismiss}>x</a>
       </div>
-      <SignupMenu onSignup={=> console.log('sign me up!')} />
+      <SignupMenu onSignup={@dismiss} />
     </div>
