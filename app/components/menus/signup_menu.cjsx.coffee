@@ -18,7 +18,21 @@ module.exports = React.createClass
   #   </div>
 
   handleSubmit: (user, success, error)->
-    UserActions.createUser(user).then(success).catch(error)
+    # TODO: identical segments to Reset Password Page, refactor into a service? /validations folder?
+    if user.confirm_password != user.password
+      user.errors ||= {}
+      user.errors.confirm_password = @t('/errors.passwords_must_match')
+    if _.isEmpty(user.confirm_password)
+      user.errors ||= {}
+      user.errors.confirm_password = @t('/errors.cant_be_blank')
+    if _.isEmpty(user.password)
+      user.errors ||= {}
+      user.errors.password = @t('/errors.cant_be_blank')
+
+    if user.errors
+      error(responseText: JSON.stringify(user))
+    else
+      UserActions.createUser(user).then(success).catch(error)
 
   render: ->
     <Form className="signup-menu"
