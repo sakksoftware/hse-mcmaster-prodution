@@ -57,7 +57,7 @@ module.exports = React.createClass
     # TODO: rethink were to put the search steps state
     step = @state.step
     step = 'results' if state.search.results_count > 0
-    @setState(search: state.search, step: step)
+    @setState(search: state.search, step: step, errors: state.errors)
 
   filterStoreUpdated: (state) ->
     @state.search.filters = state.filters
@@ -76,8 +76,9 @@ module.exports = React.createClass
     @fetchResults()
 
   handleLoadMore: (page) ->
-    @state.search.page = page
-    SearchActions.search(@state.search, UserStore.state.language)
+    if @state.errors?[0] != 'reached_search_limit'
+      @state.search.page = page
+      SearchActions.search(@state.search, UserStore.state.language)
 
   handleSortChange: (sortBy) ->
     SearchActions.sortBy(sortBy)

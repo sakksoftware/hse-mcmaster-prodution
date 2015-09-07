@@ -36,8 +36,11 @@ module.exports = Reflux.createStore
 
     @setState(search: search, errors: null, loaded: true)
 
-  onSearchFailed: () ->
-    console.log('The search has failed')
+  onSearchFailed: (xhr) ->
+    if xhr.status == 403
+      @setState(errors: ['reached_search_limit'], loaded: true)
+    else
+      console.log('The search has failed')
     # flash('error', @t('errors.no_connection'))
 
   updateUrl: ->
