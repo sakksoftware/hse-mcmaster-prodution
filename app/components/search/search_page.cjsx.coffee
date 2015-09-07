@@ -1,10 +1,12 @@
 Button = ReactBootstrap.Button
 FilterActions = require('actions/filter_actions')
 SearchActions = require('actions/search_actions')
+
 SearchBox = require('components/search/search_box')
 ResultBox = require('components/results/result_box')
 GuidedQuestionsBox = require('components/guided_questions/guided_questions_box')
 FilterGroupsMenu = require('components/menus/filter_groups_menu')
+SignupPrompt = require('components/search/signup_prompt')
 
 FilterNormalizationService = require('services/filter_normalization_service')
 SearchSerializationService = require('services/search_serialization_service')
@@ -111,6 +113,10 @@ module.exports = React.createClass
         onLoadMore={@handleLoadMore}
       />
 
+  renderSignupPrompt: ->
+    if @state.errors?[0] == 'reached_search_limit'
+      <SignupPrompt />
+
   render: ->
     <div className="search-page">
       <SearchBox
@@ -122,4 +128,5 @@ module.exports = React.createClass
       {@renderGuidedSearch()}
       {@renderDesktopFiltersMenu()}
       {@renderResults()}
+      {@renderSignupPrompt()}
     </div>

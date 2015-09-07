@@ -1,0 +1,96 @@
+.signup-prompt {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 3000;
+  height: auto;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .signup-prompt-title {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: $tiny-size;
+    text-align: center;
+    color: $primary-complementary-color;
+    padding-right: $small-size + $tiny-size;
+  }
+
+  .signup-prompt-dismiss {
+    position: absolute;
+    right: $tiny-size;
+    top: $tiny-size;
+    color: $primary-complementary-color;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: top;
+
+    .help-block {
+      margin-bottom: 0;
+    }
+
+    &.has-error .help-block {
+      color: #FFFD6A;
+    }
+
+    &.has-success {
+      color: $primary-complementary-color;
+    }
+
+    &:last-of-type {
+      height: auto;
+      margin-top: $tiny-size;
+      margin-left: 0 !important;
+    }
+  }
+
+  .form-group + .form-group {
+    margin-left: $small-size;
+  }
+
+  .checkbox {
+    margin: 0;
+  }
+
+  label {
+    color: $primary-complementary-color;
+  }
+
+  .form-control {
+    width: auto;
+  }
+
+  .signup-menu {
+    padding: $tiny-size;
+    padding-top: $small-size;
+    margin: 0 auto;
+    width: 700px;
+    display: none;
+
+    .btn-terms {
+      display: inline-block;
+      margin-left: $x-tiny-size;
+      vertical-align: middle;
+      margin-top: $tiny-size;
+      color: $primary-complementary-color;
+      text-decoration: underline;
+    }
+
+    .btn-primary {
+      display: block;
+      margin-top: $tiny-size;
+      background-color: #333333;
+      padding: $x-small-size;
+      height: auto;
+    }
+
+    @include desktop {
+      display: block;
+    }
+  }
+}
