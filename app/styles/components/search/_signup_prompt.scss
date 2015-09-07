@@ -12,14 +12,17 @@
     padding: $tiny-size;
     text-align: center;
     color: $primary-complementary-color;
-    padding-right: $small-size + $tiny-size;
+    padding-right: $small-size + $small-size;
   }
 
   .signup-prompt-dismiss {
     position: absolute;
-    right: $tiny-size;
+    right: $small-size;
     top: $tiny-size;
     color: $primary-complementary-color;
+    width: $small-size;
+    height: $small-size;
+
     &:hover {
       text-decoration: none;
     }
