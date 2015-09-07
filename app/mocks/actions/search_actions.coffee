@@ -5,6 +5,7 @@ StoreMock = require('mocks/support/store_mock')
 FilterNormalizationService = require('services/filter_normalization_service')
 SearchSerializationService = require('services/search_serialization_service')
 FiltersHelper = require('mocks/support/filters_helper')
+UserStore = require('stores/user_store')
 
 SearchActions = Reflux.createActions
   sortBy: {}
@@ -19,7 +20,8 @@ SearchActions = Reflux.createActions
   toggleDateRangeFilter: {}
   search: {asyncResult: true}
 
-SearchActions.search.listen (search, language) ->
+SearchActions.search.listen (search) ->
+  language = UserStore.state.language
   allFilters = FiltersHelper.getFilters()
   applied_filters = getAppliedFilters(search.filters)
   addAppliedProperty(allFilters, applied_filters)

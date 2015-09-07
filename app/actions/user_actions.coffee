@@ -16,6 +16,7 @@ UserActions = Reflux.createActions
   resetPassword: {asyncResult: true}
 
 UserActions.createUser.listen (user) ->
+  user.language = Cookies.get('lang')
   API.create('users', user).done(@completed).fail(@failed)
 
 UserActions.loadUser.listen ->

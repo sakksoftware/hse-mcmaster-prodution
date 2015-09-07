@@ -72,7 +72,7 @@ module.exports = React.createClass
 
   fetchResults: ->
     @setState(step: 'searching')
-    SearchActions.search(@state.search, UserStore.state.language).then =>
+    SearchActions.search(@state.search).then =>
       @setState(step: 'results', filtersLoaded: true)
 
   handleSearch: (query) ->
@@ -82,7 +82,7 @@ module.exports = React.createClass
   handleLoadMore: (page) ->
     if @state.errors?[0] != 'reached_search_limit'
       @state.search.page = page
-      SearchActions.search(@state.search, UserStore.state.language)
+      SearchActions.search(@state.search)
 
   handleSortChange: (sortBy) ->
     SearchActions.sortBy(sortBy)

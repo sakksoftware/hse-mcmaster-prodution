@@ -4,6 +4,7 @@ if config.useMocks
 
 API = require('lib/api')
 serializeSearchUrl = require('services/search_serialization_service').serializeSearchUrl
+UserStore = require('stores/user_store')
 
 SearchActions = Reflux.createActions
   sortBy: {}
@@ -18,7 +19,8 @@ SearchActions = Reflux.createActions
   toggleDateRangeFilter: {}
   search: {asyncResult: true}
 
-SearchActions.search.listen (search, language) ->
+SearchActions.search.listen (search) ->
+  language = UserStore.state.language
   API.read("search#{serializeSearchUrl(search, language)}").
     done(@completed).fail(@failed)
 

@@ -52,7 +52,7 @@ module.exports = React.createClass
         for country in @state.countries
           <option key="country-#{country.id}" value={country.id}>{country.title}</option>
 
-      <select label={@t('country')} name="country" type="select" defaultValue={@state.user.country} className="form-control form-group">
+      <select label={@t('country')} name="country_id" type="select" defaultValue={@state.user.country_id} className="form-control form-group">
         {options}
       </select>
     else

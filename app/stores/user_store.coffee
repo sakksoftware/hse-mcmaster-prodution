@@ -25,15 +25,21 @@ module.exports = Reflux.createStore
     @setState(errors: responseText, loaded: true)
 
   onUpdateUserCompleted: (user) ->
-    @setState(user: _.extend(@state.user, user), loaded: true, errors: null, language: user.language || @state.language)
+    user = _.extend({}, @state.user, user)
+    @setState(user: user, loaded: true, errors: null, language: user.language)
 
   onUpdateUserFailed: (xhr, statusCode, responseText) ->
     @setState(errors: responseText, loaded: true)
 
   onChangeLanguage: (language) ->
     Cookies.set('lang', language)
-    @setState(language: language)
-    window.location.reload()
+    if @state.loaded
+      user = _.omit(@state.user, 'email')
+      user.language = language
+      UserActions.updateUser(user).then =>
+        window.location.reload()
+    else
+      window.location.reload()
 
   onToggleGuidedSearch: (language) ->
     @setState(guidedSearch: !@state.guidedSearch)
