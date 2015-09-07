@@ -17,7 +17,6 @@ SearchActions = Reflux.createActions
   toggleCountryFilter: {}
   toggleDateRangeFilter: {}
   search: {asyncResult: true}
-  suggestions: {asyncResult: true}
 
 SearchActions.search.listen (search, language) ->
   API.read("search#{serializeSearchUrl(search, language)}").
