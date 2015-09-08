@@ -41,6 +41,9 @@
     margin-left: -$layer-width;
 
     .layered-navigation-overlay {
+      // solves bug on iOS that prevents overlay from closing https://github.com/facebook/react/issues/134
+      // this should be fixed in the next version 0.14.0 so remove once new version is released.
+      cursor:pointer;
       z-index: 1000;
       background-color: rgba(0, 0, 0, 0.5);
       opacity: 1.0;

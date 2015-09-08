@@ -85,8 +85,8 @@ module.exports = React.createClass
       <ReactCSSTransitionGroup transitionName="layer" component="div">
         {@renderLayers()}
       </ReactCSSTransitionGroup>
-      <div className="layered-navigation-content" onClick={@dismissMenu}>
-        <div className="layered-navigation-overlay">{@renderOverlayContent()}</div>
+      <div className="layered-navigation-content">
+        <div className="layered-navigation-overlay" onClick={@dismissMenu}>{@renderOverlayContent()}</div>
         {@props.children}
       </div>
     </div>
