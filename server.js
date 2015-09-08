@@ -2,7 +2,21 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var basicAuth = require('basic-auth-connect');
-var NODE_ENV = process.env.NODE_ENV;
+var crypto = require('crypto');
+
+var NODE_ENV = process.env.NODE_ENV || 'development';
+var AES_KEY = process.env.AES_KEY || '';
+var AES_IV = process.env.AES_IV || '';
+
+function decrypt(crypted) {
+  var crypto = require('crypto');
+  var binkey = new Buffer(AES_KEY, 'base64');
+  var biniv = new Buffer(AES_IV, 'base64');
+  var decipher = crypto.createDecipheriv('aes-256-cbc', binkey, biniv);
+  var decrypted = decipher.update(crypted,'base64','utf8');
+  decrypted += decipher.final('utf8');
+  return decrypted;
+}
 
 if(NODE_ENV == 'staging') {
   app.use(basicAuth('hse', 'withgreatpower'));
@@ -21,9 +35,25 @@ if(NODE_ENV == 'production') {
 app.use(express.static('public'));
 
 app.get('/one-page-summary.aspx', function(req, res) {
-  id = req.url.match(/one-page-summary\.aspx\?A=([0-9]+)&T=/)[1];
-  console.log('redirecting to ' + '/articles/' + id)
-  res.redirect('/articles/' + id);
+  id = req.query.A;
+  title = req.query.T;
+  url = '/articles/' + id + '?t=' + title;
+  console.log('redirecting to ', url);
+  res.redirect(url);
+});
+
+app.get('/r.aspx', function(req, res) {
+  data = decrypt(req.query.x);
+  if(match = data.match(/A=([0-9]+).*R=one-page-summary\.aspx\0T=(.{10})/i)) {
+    id = match[1];
+    title = match[2];
+    url = '/articles/' + id + '?t=' + title;
+    console.log('redirecting to ', url);
+    res.redirect(url);
+  } else {
+    console.log('[Unknown Redirect] request recieved with data ', data);
+    res.redirect('/');
+  }
 });
 
 app.get('*', function(req, res) {
