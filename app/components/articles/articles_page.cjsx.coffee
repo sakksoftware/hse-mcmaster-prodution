@@ -19,8 +19,10 @@ module.exports = React.createClass
     errors: null
 
   componentWillMount: ->
+    params = require('lib/url').params()
     lang = UserStore.state.language
-    ArticleActions.loadArticle(@props.id, lang, @handleLoad, @handleError)
+    title = params.t # 10 character of the title to protect against scrapping
+    ArticleActions.loadArticle(@props.id, title, lang).then(@handleLoad).catch(@handleError)
 
   handleLoad: (article) ->
     @setState(article: article)
