@@ -26,7 +26,7 @@
         "text": "如何组织卫生保健",
         "filterGroup": {
           "id": "1_3",
-          "title": "提供安排"
+          "title": "供给安排"
         }
       },
       {
@@ -43,7 +43,7 @@
     "filters": [
       {
         "id": "0_21",
-        "title": "CN_type of document"
+        "title": "文档类型"
       }
     ],
     "answers": [
@@ -138,31 +138,31 @@
     ],
     "answers": [
       {
-        "text": "CN_Diseases (infectious diseases, non-communicable diseases or other)",
+        "text": "疾病（传染病、非传染性疾病或其他疾病）",
         "filterGroup": {
           "id": "2_1",
-          "title": "CN_diseases"
+          "title": "疾病"
         }
       },
       {
-        "text": "CN_Technologies (include drugs, devices, diagnostics, surgery)",
+        "text": "技术（诊断、疫苗、药物、设备、手术）",
         "filterGroup": {
           "id": "2_2",
-          "title": "CN_technologies"
+          "title": "技术"
         }
       },
       {
-        "text": "CN_Sectors (primary care, home care, hospital care, rehabilitation, long-term care and public health)",
+        "text": "部门（家庭保健、初级卫生保健、医院保健、康复、长期保健和公共卫生）",
         "filterGroup": {
           "id": "2_3",
-          "title": "CN_sectors"
+          "title": "部门"
         }
       },
       {
-        "text": "CN_Providers (specialist generalist physicians, specialist physicians, nurses, pharmacists, etc)",
+        "text": "卫生保健提供者（全科医生、专科医生、护士、药师等）",
         "filterGroup": {
           "id": "2_4",
-          "title": "CN_providers"
+          "title": "卫生保健提供者"
         }
       }
     ]
@@ -171,18 +171,18 @@
     "text": "您要关注特定国家或中低收入国家吗？",
     "answers": [
       {
-        "text": "CN_Country focus",
+        "text": "关注的国家",
         "filterGroup": {
           "id": "0_6",
-          "title": "CN_country focus",
+          "title": "关注的国家",
           "type": "countries_countries"
         }
       },
       {
-        "text": "CN_Low- and middle-income country (LMIC) focus",
+        "text": "关注中低收入国家",
         "filterGroup": {
           "id": "0_9",
-          "title": "CN_LMIC focus"
+          "title": "关注中低收入国家"
         }
       }
     ]
@@ -194,21 +194,21 @@
     "text": "您想查看像世界卫生组织和世界银行之类的国际机构就该主题所撰写的文件吗？（若您在加拿大，还有“加拿大政府和利益相关者组织”；若您在渥太华，还有“渥太华政府和利益相关者组织”）",
     "answers": [
       {
-        "text": "CN_Intergovernmental Organizations' Health Systems Documents",
+        "text": "政府间组织的卫生系统文件",
         "filterGroup": {
           "id": "0_17",
           "title": "政府间文件"
         }
       },
       {
-        "text": "CN_Canada's Health Systems Documents",
+        "text": "加拿大的卫生系统文件",
         "filterGroup": {
           "id": "0_18",
           "title": "加拿大文件"
         }
       },
       {
-        "text": "CN_Ontario's Health Systems Documents",
+        "text": "安大略省的卫生系统文件",
         "filterGroup": {
           "id": "0_19",
           "title": "安大略省的文件"

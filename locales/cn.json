@@ -75,26 +75,26 @@
     }
   },
   "articles_page": {
-    "no_studies_conducted_in": "CN_Not available",
+    "no_studies_conducted_in": "无法获取",
     "no_full_text_report": "无免费全文",
-    "no_doi": "CN_Not yet available",
-    "no_domains": "CN_Not available",
-    "no_topics": "CN_Not available",
-    "no_focus": "CN_Not available",
-    "no_lmic_focus": "CN_Not available",
-    "no_priority_areas": "CN_Not available",
-    "no_targets": "CN_Not available",
-    "no_themes": "CN_Not available",
-    "no_who_regions": "CN_Not available",
-    "no_scientific_abstract": "CN_Not available",
-    "no_summary_links": "CN_Not available",
-    "no_country_groupings": "CN_Not available",
-    "no_author_email": "CN_Not available",
-    "no_registry_record_links": "CN_No registry record available",
-    "no_category": "CN_Not available",
-    "no_who_links": "CN_Not available",
-    "no_related_documents": "CN_Not available",
-    "no_last_year_literature_searched": "CN_Not available"
+    "no_doi": "尚不能获取",
+    "no_domains": "无法获取",
+    "no_topics": "无法获取",
+    "no_focus": "无法获取",
+    "no_lmic_focus": "无法获取",
+    "no_priority_areas": "无法获取",
+    "no_targets": "无法获取",
+    "no_themes": "无法获取",
+    "no_who_regions": "无法获取",
+    "no_scientific_abstract": "无法获取",
+    "no_summary_links": "无法获取",
+    "no_country_groupings": "无法获取",
+    "no_author_email": "无法获取",
+    "no_registry_record_links": "没有注册记录",
+    "no_category": "无法获取",
+    "no_who_links": "无法获取",
+    "no_related_documents": "无法获取",
+    "no_last_year_literature_searched": "无法获取"
   },
   "search_page": {
     "search_box": {
@@ -106,8 +106,7 @@
     "result_item": {
       "year": "年份：",
       "quality": "质量：",
-      "select": "选择：",
-      "not_available": "CN_Not available"
+      "select": "选择："
     },
     "result_list": {
       "no_results": "未找到相应结果。"
@@ -120,59 +119,59 @@
     }
   },
   "profile_page": {
-    "successfully_updated": "CN_Successfully updated profile",
-    "my_profile": "CN_My Profile",
+    "successfully_updated": "成功更新资料",
+    "my_profile": "我的资料",
     "account_information": "账户信息",
-    "email": "CN_Email",
-    "password": "CN_Password",
-    "confirm_password": "CN_Confirm Password",
+    "email": "电子邮件",
+    "password": "密码",
+    "confirm_password": "确认密码",
     "personal_information": "个人信息",
     "first_name": "名",
     "last_name": "姓",
-    "role": "CN_Role",
+    "role": "职业",
     "country": "国家",
     "language": "语言",
     "cannot_load_user_profile": "啊，无法加载数据，请检查您的网络链接。",
-    "short_cannot_load_user_profile": "CN_Cannot load user profile information",
-    "edit": "CN_Edit",
+    "short_cannot_load_user_profile": "不能加载用户信息",
+    "edit": "编辑",
     "cancel": "取消"
   },
   "complementary_content_page": {
     "title": "补充内容",
-    "description": "CN_Enable viewing of complementary content",
+    "description": "允许查看补充内容",
     "complementary_content_1": {
-      "title": "CN_Intergovernmental Organizations' Health Systems Documents",
-      "description": "CN_For those who..."
+      "title": "政府间组织的卫生系统文件",
+      "description": "对于那些……的人"
     },
     "complementary_content_2": {
       "title": "加拿大卫生系统文件",
-      "description": "CN_For those who do not designate their country as Canada or log in using a Canada-based IP address"
+      "description": "对于那些国家不是加拿大或者没有使用加拿大IP地址登录的人"
     },
     "complementary_content_3": {
-      "title": "CN_Ontario's Health System Documents",
-      "description": "CN_For those who log in Ontario-based IP address"
+      "title": "安大略省的卫生系统文件",
+      "description": "对于那些使用安大略省IP地址登录的人"
     }
   },
   "forgot_password_page": {
     "title": "CN_Forgot Password",
-    "email": "CN_Email",
+    "email": "电子邮件",
     "instructions": "CN_Enter the email you use for login below and we will send you a link to reset your password",
     "submit": "CN_Send email",
-    "on_success": "CN_A password rest token has been sent to your email"
+    "on_success": "CN_A password reset token has been sent to your email"
   },
   "reset_password_page": {
     "title": "CN_Reset Password",
-    "password": "CN_Password",
-    "confirm_password": "CN_Confirm password",
+    "password": "密码",
+    "confirm_password": "确认密码",
     "submit": "CN_Reset password"
   },
   "errors": {
     "no_connection": "啊，无法加载数据，请检查您的网络链接。",
-    "cant_be_blank": "CN_can't be blank!",
-    "must_accept_terms": "CN_you must accept the terms and conditions!",
-    "already_exists": "CN_already exists",
-    "invalid_email": "CN_email is invalid",
-    "too_short": "CN_is too short, must be at least 8 characters",
+    "cant_be_blank": "不能为空！",
+    "must_accept_terms": "你必须接受这些条款和条件！",
+    "already_exists": "已经存在",
+    "invalid_email": "无效邮箱",
+    "too_short": "太短了，必须至少8个字符",
     "invalid_login": "CN_wrong username or password",
     "passwords_must_match": "CN_passwords must match"
   }

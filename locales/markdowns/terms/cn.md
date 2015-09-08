@@ -83,7 +83,7 @@
 如果本协议的任何条款被视为无效或因任何原因无法执行，则该条款可被分离并不得影响其余条款的有效性和可执行性。
 
 ##23. 我们的联系方式
-McMaster Health Forum<br>
-1280 Main St. West MML-417<br>
-Hamilton, ON, Canada L8S 4L6<br>
+McMaster Health Forum  
+1280 Main St. West MML-417  
+Hamilton, ON, Canada L8S 4L6  
 hse@mcmaster.ca

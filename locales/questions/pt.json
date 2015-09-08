@@ -171,10 +171,10 @@
     "text": "Está focado em países específicos ou em países de renda baixa e média?",
     "answers": [
       {
-        "text": "PT_Country focus",
+        "text": "Foco do país",
         "filterGroup": {
           "id": "0_6",
-          "title": "PT_country focus",
+          "title": "Foco do país",
           "type": "countries_countries"
         }
       },

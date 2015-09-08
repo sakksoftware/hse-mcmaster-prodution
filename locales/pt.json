@@ -75,26 +75,26 @@
     }
   },
   "articles_page": {
-    "no_studies_conducted_in": "PT_Not available",
+    "no_studies_conducted_in": "Não disponível",
     "no_full_text_report": "Relatório completo gratuito não disponível",
-    "no_doi": "PT_Not yet available",
-    "no_domains": "PT_Not available",
-    "no_topics": "PT_Not available",
-    "no_focus": "PT_Not available",
-    "no_lmic_focus": "PT_Not available",
-    "no_priority_areas": "PT_Not available",
-    "no_targets": "PT_Not available",
-    "no_themes": "PT_Not available",
-    "no_who_regions": "PT_Not available",
-    "no_scientific_abstract": "PT_Not available",
-    "no_summary_links": "PT_Not available",
-    "no_country_groupings": "PT_Not available",
-    "no_author_email": "PT_Not available",
-    "no_registry_record_links": "PT_No registry record available",
-    "no_category": "PT_Not available",
-    "no_who_links": "PT_Not available",
-    "no_related_documents": "PT_Not available",
-    "no_last_year_literature_searched": "PT_Not available"
+    "no_doi": "Ainda não disponível",
+    "no_domains": "Não disponível",
+    "no_topics": "Não disponível",
+    "no_focus": "Não disponível",
+    "no_lmic_focus": "Não disponível",
+    "no_priority_areas": "Não disponível",
+    "no_targets": "Não disponível",
+    "no_themes": "Não disponível",
+    "no_who_regions": "Não disponível",
+    "no_scientific_abstract": "Não disponível",
+    "no_summary_links": "Não disponível",
+    "no_country_groupings": "Não disponível",
+    "no_author_email": "Não disponível",
+    "no_registry_record_links": "Registro de cadastro não disponível",
+    "no_category": "Não disponível",
+    "no_who_links": "Não disponível",
+    "no_related_documents": "Não disponível",
+    "no_last_year_literature_searched": "Não disponível"
   },
   "search_page": {
     "search_box": {
@@ -106,8 +106,7 @@
     "result_item": {
       "year": "Ano:",
       "quality": "Qualidade:",
-      "select": "Selecionar:",
-      "not_available": "CN_Not available"
+      "select": "Selecionar:"
     },
     "result_list": {
       "no_results": "Nenhum resultado encontrado."
@@ -120,42 +119,42 @@
     }
   },
   "profile_page": {
-    "successfully_updated": "PT_Successfully updated profile",
-    "my_profile": "PT_My Profile",
+    "successfully_updated": "Perfil atualizado com sucesso",
+    "my_profile": "Meu perfil",
     "account_information": "Informações da conta",
-    "email": "PT_Email",
-    "password": "PT_Password",
-    "confirm_password": "PT_Confirm Password",
+    "email": "E-mail",
+    "password": "Senha",
+    "confirm_password": "Confirmar senha",
     "personal_information": "Informações pessoais",
     "first_name": "Nome",
     "last_name": "Sobrenome",
-    "role": "PT_Role",
+    "role": "Função",
     "country": "País",
     "language": "Idioma",
     "cannot_load_user_profile": "Opa, não foi possível carregar dados. Verifique sua conexão com a Internet.",
-    "short_cannot_load_user_profile": "PT_Cannot load user profile information",
-    "edit": "PT_Edit",
+    "short_cannot_load_user_profile": "Não foi possível carregar as informações do perfil do usuário",
+    "edit": "Editar",
     "cancel": "Cancelar"
   },
   "complementary_content_page": {
     "title": "COMPLEMENTARIDADE DE CONTEÚDOS",
-    "description": "PT_Enable viewing of complementary content",
+    "description": "Permitir visualização de conteúdo complementar",
     "complementary_content_1": {
-      "title": "PT_Intergovernmental Organizations' Health Systems Documents",
-      "description": "PT_For those who..."
+      "title": "DOCUMENTOS DOS SISTEMAS DE SAÚDE DE ORGANIZAÇÕES INTERGOVERNAMENTAIS",
+      "description": "Para aqueles que…"
     },
     "complementary_content_2": {
       "title": "DOCUMENTOS DOS SISTEMAS DE SAÚDE DO CANADÁ",
-      "description": "PT_For those who do not designate their country as Canada or log in using a Canada-based IP address"
+      "description": "Para aqueles que pertencem a um país que não seja Canadá ou que fazem login usando um endereço IP localizado no Canadá"
     },
     "complementary_content_3": {
-      "title": "PT_Ontario's Health System Documents",
-      "description": "PT_For those who log in Ontario-based IP address"
+      "title": "DOCUMENTOS DE SISTEMAS DE SAÚDE DO ONTÁRIO",
+      "description": "Para aqueles que fazem login usando um endereço IP localizado em Ontário"
     }
   },
   "forgot_password_page": {
-    "title": "PT_Forgot Password",
-    "email": "PT_Email",
+    "title": "Esqueceu a senha",
+    "email": "E-mail",
     "instructions": "PT_Enter the email you use for login below and we will send you a link to reset your password",
     "submit": "PT_Send email",
     "on_success": "PT_A password rest token has been sent to your email"
@@ -163,16 +162,16 @@
   "reset_password_page": {
     "title": "PT_Reset Password",
     "password": "PT_Password",
-    "confirm_password": "PT_Confirm password",
+    "confirm_password": "Confirmar senha",
     "submit": "PT_Reset password"
   },
   "errors": {
     "no_connection": "Opa, não foi possível carregar dados. Verifique sua conexão com a Internet.",
-    "cant_be_blank": "PT_can't be blank!",
-    "must_accept_terms": "PT_you must accept the terms and conditions!",
-    "already_exists": "PT_already exists",
-    "invalid_email": "PT_email is invalid",
-    "too_short": "PT_is too short, must be at least 8 characters",
+    "cant_be_blank": "não pode ficar em branco",
+    "must_accept_terms": "você deve aceitar os termos e condições",
+    "already_exists": "já existe",
+    "invalid_email": "o e-mail não é válido",
+    "too_short": "é muito curto, debe conter pelo menos 8 caracteres",
     "invalid_login": "PT_wrong username or password",
     "passwords_must_match": "PT_passwords must match"
   }

@@ -71,7 +71,7 @@ In addition to voluntary information provided, McMaster uses Google Analytics, w
 
 If the User does not want a cookie placed on their computer by McMaster's Health Systems Evidence site, the User may disable cookies in their web browser configuration options. Note that it is possible that some aspects of the Site may be unavailable to the User if this option is chosen.
 
-McMaster reserves the right to perform statistical analyses of user behaviour and characteristics, in order to measure interest in and use of the various sections of its sites so as to improve design and navigation. Only aggregated data from these analyses, not individual data, will be used for this purpose. McMaster reserves the right to publish these aggregated data, including trends over time, in peer-reviewed journals and other formats. Aggregated data includes, but would not be limited to, two types of data. First, monthly statistics on how the Health Systems Evidence Site is being used could include: 1) number of overall visitors to the site; 2) number of unique visitors to the site; 3) number of page views; 4) number of unique page views; 5) traffic source; 6) countries where visitors are based; 7) number of searches performed; 8) number of clicks on various types of links; and 9) length of time on the site. Second, reports related to the number of users saving documents and searches and subscribed to email alerts based on saved or curated searches, as well as the number and nature of the saved documents, saved searches and curated searches. Both types of data could be segmented by users’ preferred language, country of residence, role and interests (as provided on the account registration page through which users register to gain access to the Site’s advanced features). 
+McMaster reserves the right to perform statistical analyses of user behaviour and characteristics, in order to measure interest in and use of the various sections of its sites so as to improve design and navigation. Only aggregated data from these analyses, not individual data, will be used for this purpose. McMaster reserves the right to publish these aggregated data, including trends over time, in peer-reviewed journals and other formats. Aggregated data includes, but would not be limited to, two types of data. First, monthly statistics on how the Health Systems Evidence Site is being used could include: 1) number of overall visitors to the site; 2) number of unique visitors to the site; 3) number of page views; 4) number of unique page views; 5) traffic source; 6) countries where visitors are based; 7) number of searches performed; 8) number of clicks on various types of links; and 9) length of time on the site. Second, reports related to the number of users saving documents and searches and subscribed to email alerts based on saved or curated searches, as well as the number and nature of the saved documents, saved searches and curated searches. Both types of data could be segmented by users’ preferred language, country of residence, role and interests (as provided on the account registration page through which users register to gain access to the Site’s advanced features).
 
 ##20. Termination of License
 Upon a User’s breach of this Agreement, as determined in the sole and absolute discretion of McMaster, McMaster may immediately terminate the license of the User to use and access this Site.
@@ -83,7 +83,7 @@ Upon the termination of the license of a User, in addition to any other remedies
 If any of these conditions shall be deemed invalid, void, or for any reason unenforceable, that condition shall be deemed severable and shall not affect the validity and enforceability of any remaining condition.
 
 ##23. Our Contact Information
-McMaster Health Forum<br>
-1280 Main St. West MML-417<br>
-Hamilton, ON, Canada L8S 4L6<br>
+McMaster Health Forum   
+1280 Main St. West MML-417   
+Hamilton, ON, Canada L8S 4L6   
 hse@mcmaster.ca
