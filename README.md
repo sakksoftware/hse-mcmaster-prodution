@@ -51,6 +51,7 @@ aws s3 sync . s3://my-hse-staging/locales
 
 If you deploy to heroku or do an `npm install` and get the following error:
 
+
 ```
 npm ERR! code ELIFECYCLE
 npm ERR! hse-frontend@0.0.1 postinstall: `gem install sass && bower install && brunch build --production`
