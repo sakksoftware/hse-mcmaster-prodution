@@ -92,7 +92,7 @@ module.exports = React.createClass
         >
           <input label={@t('first_name')} name="first_name" />
           <input label={@t('last_name')} name="last_name" />
-          <input label={@t('role')} name="role" />
+          <input label={@t('role')} name="roles" />
           {@renderCountriesSelect()}
           {@renderLanguageSelect()}
         </EditableInformation>
