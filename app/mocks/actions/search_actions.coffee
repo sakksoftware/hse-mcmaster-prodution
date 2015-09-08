@@ -25,7 +25,7 @@ SearchActions.search.listen (search) ->
   allFilters = FiltersHelper.getFilters()
   applied_filters = getAppliedFilters(search.filters)
   addAppliedProperty(allFilters, applied_filters)
-  query = SearchSerializationService.serializeSearchUrl(search, language)
+  query = SearchSerializationService.serializeSearchUrl(search, language, includePage: true)
 
   res = _.clone(searchData)
   res.applied_filters = applied_filters

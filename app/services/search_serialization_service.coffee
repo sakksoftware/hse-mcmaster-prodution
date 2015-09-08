@@ -1,13 +1,18 @@
 FilterNormalizationService = require('services/filter_normalization_service')
 
 module.exports =
-  serializeSearchUrl: (search, language) ->
+  serializeSearchUrl: (search, language, options = {}) ->
+    options = _.extend({includePage: false}, options)
     query = search.query || ""
     sortBy = search.sort_by || "relevance"
     applied_filters = serializeAppliedFilters(search.filters)
     lang = "&lang=#{language}"
-    page = search.page || 1
-    "?q=#{query}&sort_by=#{sortBy}#{lang}&applied_filters=#{applied_filters}&page=#{page}"
+    if options.includePage
+      page = search.page || 1
+      page = "&page=#{page}"
+    else
+      page = ''
+    "?q=#{query}&sort_by=#{sortBy}#{lang}&applied_filters=#{applied_filters}#{page}"
 
 # private
 serializeAppliedFilters = (filters) ->

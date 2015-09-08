@@ -21,7 +21,7 @@ SearchActions = Reflux.createActions
 
 SearchActions.search.listen (search) ->
   language = UserStore.state.language
-  API.read("search#{serializeSearchUrl(search, language)}").
+  API.read("search#{serializeSearchUrl(search, language, includePage: true)}").
     done(@completed).fail(@failed)
 
 module.exports = SearchActions
