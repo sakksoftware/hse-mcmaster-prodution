@@ -106,7 +106,8 @@
     "result_item": {
       "year": "Year:",
       "quality": "Quality:",
-      "select": "Select:"
+      "select": "Select:",
+      "not_available": "Not available"
     },
     "result_list": {
       "no_results": "No results found."
