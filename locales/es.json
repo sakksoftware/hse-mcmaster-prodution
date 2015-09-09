@@ -107,7 +107,7 @@
       "year": "Año:",
       "quality": "Calidad:",
       "select": "Seleccionar:",
-      "not_available": "ES_Not available"
+      "not_available": "No disponible"
     },
     "result_list": {
       "no_results": "No se encontraron resultados."
@@ -154,17 +154,17 @@
     }
   },
   "forgot_password_page": {
-    "title": "Se te olvidó tu contraseña",
+    "title": "Olvidó su contraseña",
     "email": "Correo electrónico",
-    "instructions": "ES_Enter the email you use for login below and we will send you a link to reset your password",
-    "submit": "ES_Send email",
-    "on_success": "ES_A password rest token has been sent to your email"
+    "instructions": "Ingrese el correo electrónico que utiliza para iniciar sesión y le enviaremos un enlace para restablecer su contraseña",
+    "submit": "Enviar correo electrónico",
+    "on_success": "Se le ha enviado un mensaje de correo electrónico con una clave para restablecer su contraseña"
   },
   "reset_password_page": {
-    "title": "ES_Reset Password",
-    "password": "ES_Password",
+    "title": "Restablecer contraseña",
+    "password": “Contraseña",
     "confirm_password": "Confirme la contraseña",
-    "submit": "ES_Reset password"
+    "submit": "Restablecer contraseña"
   },
   "errors": {
     "no_connection": "No fue posible cargar los datos. Verifique su conexión de Internet.",
@@ -173,7 +173,7 @@
     "already_exists": "ya existe",
     "invalid_email": "correo electrónico inválido",
     "too_short": "es demasiado corto, debe contener un mínimo de 8 caracteres",
-    "invalid_login": "ES_wrong username or password",
-    "passwords_must_match": "ES_passwords must match"
+    "invalid_login": "Nombre de usuario o contraseña incorrectos",
+    "passwords_must_match": "Las contraseñas deben coincidir"
   }
 }

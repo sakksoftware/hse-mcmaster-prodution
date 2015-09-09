@@ -107,7 +107,7 @@
       "year": "Ano:",
       "quality": "Qualidade:",
       "select": "Selecionar:",
-      "not_available": "PT_Not available"
+      "not_available": "Não disponível"
     },
     "result_list": {
       "no_results": "Nenhum resultado encontrado."
@@ -154,17 +154,17 @@
     }
   },
   "forgot_password_page": {
-    "title": "Esqueceu a senha",
+    "title": "Esqueci a senha",
     "email": "E-mail",
-    "instructions": "PT_Enter the email you use for login below and we will send you a link to reset your password",
-    "submit": "PT_Send email",
-    "on_success": "PT_A password rest token has been sent to your email"
+    "instructions": "Insira o e-mail que usa para iniciar sessão e lhe enviaremos um link para redefinir sua senha",
+    "submit": "Enviar e-mail",
+    "on_success": "Um token de redefinição de senha foi enviado para seu e-mail"
   },
   "reset_password_page": {
-    "title": "PT_Reset Password",
-    "password": "PT_Password",
+    "title": "Redefinir senha",
+    "password": “Senha",
     "confirm_password": "Confirmar senha",
-    "submit": "PT_Reset password"
+    "submit": "Redefinir senha"
   },
   "errors": {
     "no_connection": "Opa, não foi possível carregar dados. Verifique sua conexão com a Internet.",
@@ -173,7 +173,7 @@
     "already_exists": "já existe",
     "invalid_email": "o e-mail não é válido",
     "too_short": "é muito curto, debe conter pelo menos 8 caracteres",
-    "invalid_login": "PT_wrong username or password",
-    "passwords_must_match": "PT_passwords must match"
+    "invalid_login": "Nome de usuário e senha incorretos",
+    "passwords_must_match": "As senhas devem coincidir"
   }
 }
