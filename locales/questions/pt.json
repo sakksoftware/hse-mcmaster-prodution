@@ -10,6 +10,9 @@
     "answers": [
       {
         "text": "Como as decisões (sobre cuidados) são tomadas ",
+        "section": {
+          "title": "PT_Topics of Interest"
+        },
         "filterGroup": {
           "id": "1_1",
           "title": "Os arranjos de governança"
@@ -17,6 +20,9 @@
       },
       {
         "text": "Como são pagos os cuidados",
+        "section": {
+          "title": "PT_Topics of Interest"
+        },
         "filterGroup": {
           "id": "1_2",
           "title": "Mecanismos financeiros"
@@ -24,6 +30,9 @@
       },
       {
         "text": "Como são organizados os cuidados",
+        "section": {
+          "title": "PT_Topics of Interest"
+        },
         "filterGroup": {
           "id": "1_3",
           "title": "Mecanismos de prestação de cuidados"
@@ -31,6 +40,9 @@
       },
       {
         "text": "Como as mudanças podem ser induzidas",
+        "section": {
+          "title": "PT_Topics of Interest"
+        },
         "filterGroup": {
           "id": "1_4",
           "title": "Estratégias de implementação"
@@ -49,6 +61,9 @@
     "answers": [
       {
         "text": "Quais abordagens foram avaliadas por suas vantagens e desvantagens? (ou qual a abordagem que funciona?)",
+        "section": {
+          "title": "PT_Type of Document"
+        },
         "filterGroup": {
           "id": "0_10",
           "title": "revisões sistemáticas de efeitos e visões gerais de revisões"
@@ -66,6 +81,9 @@
       },
       {
         "text": "Quais abordagens foram avaliadas por seu custo-benefício? (ou é um custo-benefício abordagem?)",
+        "section": {
+          "title": "PT_Type of Document"
+        },
         "filterGroup": {
           "id": "0_10",
           "title": "avaliações econômicas e estudos de custos"
@@ -79,6 +97,9 @@
       },
       {
         "text": "O que sabemos a respeito de uma abordagem ou do problema que ela aborda?",
+        "section": {
+          "title": "PT_Type of Document"
+        },
         "filterGroup": {
           "id": "0_10",
           "title": "revisões sistemáticas que abordam outras perguntas"
@@ -92,6 +113,9 @@
       },
       {
         "text": "O que já foi experimentado em outros lugares e qual a fundamentação documentada? (e com que impactos)?",
+        "section": {
+          "title": "PT_Type of Document"
+        },
         "filterGroup": {
           "id": "0_10",
           "title": "descrições da reforma da saúde"
@@ -105,6 +129,9 @@
       },
       {
         "text": "O que sabemos a respeito de um problema, opções e considerações sobre implementação em um determinado sistema de saúde?",
+        "section": {
+          "title": "PT_Type of Document"
+        },
         "filterGroup": {
           "id": "0_10",
           "title": "resumos de evidências para políticas"
@@ -118,6 +145,9 @@
       },
       {
         "text": "Como funciona um determinado sistema de saúde?",
+        "section": {
+          "title": "PT_Type of Document"
+        },
         "filterGroup": {
           "id": "0_10",
           "title": "descrição do sistema de saúde"
@@ -139,6 +169,9 @@
     "answers": [
       {
         "text": "Doenças (doenças infecciosas, doenças não transmissíveis ou outras condições)",
+        "section": {
+          "title": "PT_Domains"
+        },
         "filterGroup": {
           "id": "2_1",
           "title": "Doenças"
@@ -146,6 +179,9 @@
       },
       {
         "text": "Tecnologias (diagnósticos, vacinas, medicamentos, dispositivos, cirurgias)",
+        "section": {
+          "title": "PT_Domains"
+        },
         "filterGroup": {
           "id": "2_2",
           "title": "Tecnologias"
@@ -153,6 +189,9 @@
       },
       {
         "text": "Setores (cuidados domiciliares, cuidados primários, cuidados hospitalares, reabilitação, cuidados de longa duração e saúde pública)",
+        "section": {
+          "title": "PT_Domains"
+        },
         "filterGroup": {
           "id": "2_3",
           "title": "Setores"
@@ -160,6 +199,9 @@
       },
       {
         "text": "Fornecedores (médicos generalistas, médicos especialistas, enfermeiros, farmacêuticos, etc.)",
+        "section": {
+          "title": "PT_Domains"
+        },
         "filterGroup": {
           "id": "2_4",
           "title": "Fornecedores"
@@ -172,6 +214,9 @@
     "answers": [
       {
         "text": "Foco do país",
+        "section": {
+          "title": "PT_Document Features"
+        },
         "filterGroup": {
           "id": "0_6",
           "title": "Foco do país",
@@ -180,6 +225,9 @@
       },
       {
         "text": "Foco do país de baixa e média renda (LMIC)",
+        "section": {
+          "title": "PT_Document Features"
+        },
         "filterGroup": {
           "id": "0_9",
           "title": "Foco do LMIC"
@@ -195,6 +243,9 @@
     "answers": [
       {
         "text": "Documentos de sistemas de saúde de organizações intergovernamentais",
+        "section": {
+          "title": "PT_Complementary Content"
+        },
         "filterGroup": {
           "id": "0_17",
           "title": "Documentos intergovernamentais"
@@ -202,6 +253,9 @@
       },
       {
         "text": "Documentos de sistemas de saúde do Canadá",
+        "section": {
+          "title": "PT_Complementary Content"
+        },
         "filterGroup": {
           "id": "0_18",
           "title": "Documentos Canadenses"
@@ -209,6 +263,9 @@
       },
       {
         "text": "Documentos de sistemas de saúde do Ontário",
+        "section": {
+          "title": "PT_Complementary Content"
+        },
         "filterGroup": {
           "id": "0_19",
           "title": "Documentos de Ontário"

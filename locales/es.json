@@ -162,7 +162,7 @@
   },
   "reset_password_page": {
     "title": "Restablecer contraseña",
-    "password": “Contraseña",
+    "password": "Contraseña",
     "confirm_password": "Confirme la contraseña",
     "submit": "Restablecer contraseña"
   },

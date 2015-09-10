@@ -162,7 +162,7 @@
   },
   "reset_password_page": {
     "title": "Redefinir senha",
-    "password": “Senha",
+    "password": "Senha",
     "confirm_password": "Confirmar senha",
     "submit": "Redefinir senha"
   },

@@ -2,15 +2,20 @@ ApplicationHelper = require('mixins/application_helper')
 LayerToggle = require('components/layered_navigation/layer_toggle')
 SearchStore = require('stores/search_store')
 FilterStore = require('stores/filter_store')
+TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
   displayName: 'AnswerItem'
-  mixins: [ApplicationHelper]
+  mixins: [ApplicationHelper, TranslationHelper]
+  baseTranslation: ''
 
   propTypes:
     answer: React.PropTypes.object.isRequired
     onShowMenu: React.PropTypes.func.isRequired
     onHideMenu: React.PropTypes.func.isRequired
+
+  getTitle: (section, filterGroup) ->
+    @t('menus.filters.title', section_title: section.title, filter_group_title: filterGroup.title)
 
   getFilters: ->
     # TODO: this is super hacky figure out how to compose stores, filters should be
@@ -27,6 +32,7 @@ module.exports = React.createClass
     <li key="answer-item-simple" className="answer-item">
       <LayerToggle
         menu="filters"
+        title={@getTitle(answer.section, answer.filterGroup)}
         context={
           filterGroup: answer.filterGroup
           filters: @getFilters()
