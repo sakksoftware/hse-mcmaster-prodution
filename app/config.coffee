@@ -14,7 +14,7 @@ config =
     useMocks: false
     mockResponseTime: 500
     localesUrl: '//s3.amazonaws.com/my-hse-staging/locales/'
-    recaptchaKey: '6LfLr8cSAAAAACts3yEvJ7UsLSb0qBMcjzc_Skvn'
+    recaptchaKey: '6LeSqAwTAAAAAGRBFmdkvtCjqxWO2B5sPjWc0v1E'
     # TODO: implement
     # mockAlwaysSucceed: true
 
@@ -23,7 +23,7 @@ config =
     useMocks: false
     mockResponseTime: 500
     localesUrl: '/locales/'
-    recaptchaKey: '6LfLr8cSAAAAACts3yEvJ7UsLSb0qBMcjzc_Skvn'
+    recaptchaKey: '6LeSqAwTAAAAAGRBFmdkvtCjqxWO2B5sPjWc0v1E'
     # TODO: implement
     # mockAlwaysSucceed: true
 
