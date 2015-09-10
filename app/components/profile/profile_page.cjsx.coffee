@@ -39,7 +39,6 @@ module.exports = React.createClass
 
   updateUser: (user, form) ->
     user.country = parseInt(user.country, 10)
-    user = _.extend({}, @state.user, user)
     unsubscribe = UserActions.updateUser.completed.listen =>
       window.flash 'success', @t('successfully_updated')
       form.toggleReadOnly()

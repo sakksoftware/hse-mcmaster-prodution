@@ -107,7 +107,7 @@
       "year": "年份：",
       "quality": "质量：",
       "select": "选择：",
-      "not_available": "CN_Not available"
+      "not_available": "无法获取"
     },
     "result_list": {
       "no_results": "未找到相应结果。"
@@ -154,17 +154,17 @@
     }
   },
   "forgot_password_page": {
-    "title": "CN_Forgot Password",
+    "title": "忘记密码",
     "email": "电子邮件",
-    "instructions": "CN_Enter the email you use for login below and we will send you a link to reset your password",
-    "submit": "CN_Send email",
-    "on_success": "CN_A password reset token has been sent to your email"
+    "instructions": "请在下方输入您用于登陆的邮箱，我们将给您发送链接以重置密码",
+    "submit": "发送邮件",
+    "on_success": "密码重置提醒已经发送到您的邮箱"
   },
   "reset_password_page": {
-    "title": "CN_Reset Password",
+    "title": "重置密码",
     "password": "密码",
     "confirm_password": "确认密码",
-    "submit": "CN_Reset password"
+    "submit": "重置密码"
   },
   "errors": {
     "no_connection": "啊，无法加载数据，请检查您的网络链接。",
@@ -173,7 +173,7 @@
     "already_exists": "已经存在",
     "invalid_email": "无效邮箱",
     "too_short": "太短了，必须至少8个字符",
-    "invalid_login": "CN_wrong username or password",
-    "passwords_must_match": "CN_passwords must match"
+    "invalid_login": "用户名或密码错误",
+    "passwords_must_match": "密码必须匹配"
   }
 }
