@@ -41,7 +41,7 @@ module.exports = React.createClass
         </div>
       else if child.type == "input"
         <input key="editable-field-#{child.props.name}" className="editable-field editable-field-#{child.props.name}"
-          defaultValue={@props.object[child.props.name]} type={child.props.type} label={child.props.label} />
+          defaultValue={@props.object[child.props.name]} name={child.props.name} type={child.props.type} label={child.props.label} />
       else if child.type == "select"
         child
       else
