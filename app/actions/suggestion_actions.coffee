@@ -1,4 +1,4 @@
-config = require('config')[window.ENV]
+config = require('config')
 if config.useMocks
   module.exports = require('mocks/actions/suggestion_actions')
   return

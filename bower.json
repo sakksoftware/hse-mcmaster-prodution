@@ -18,7 +18,8 @@
     "react-toggle": "~1.2.3",
     "es5-shim": "~4.1.11",
     "es6-shim": "~0.33.3",
-    "jQuery-ajaxTransport-XDomainRequest": "~1.0.4"
+    "jQuery-ajaxTransport-XDomainRequest": "~1.0.4",
+    "jquery-mockjax": "~2.0.1"
   },
   "overrides": {
     "react": {

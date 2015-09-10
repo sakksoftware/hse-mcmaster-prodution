@@ -2,6 +2,8 @@ Button = ReactBootstrap.Button
 Form = require('components/shared/form')
 UserActions = require('actions/user_actions')
 TranslationHelper = require('mixins/translation_helper')
+Recaptcha = require('lib/recaptcha')
+config = require('config')
 
 module.exports = React.createClass
   displayName: "SignupMenu"
@@ -11,13 +13,7 @@ module.exports = React.createClass
   propTypes:
     onSignup: React.PropTypes.func.isRequired
 
-  # afterSaveContent: ->
-  #   <div>
-  #     <h3 className='confirmation-msg'>{@t('confirmation_msg')}</h3>
-  #     <small>{@t('did_not_recieve')}<a href="#">{@t('send_again')}</a></small>
-  #   </div>
-
-  handleSubmit: (user, success, error)->
+  handleSubmit: (user, success, error) ->
     # TODO: identical segments to Reset Password Page, refactor into a service? /validations folder?
     if user.confirm_password != user.password
       user.errors ||= {}
@@ -42,5 +38,6 @@ module.exports = React.createClass
       <input label={@t('confirm_password')} name="confirm_password" type="password" />
       <input label={@t('i_accept')} type='checkbox' name="accept_terms" />
       <a href="/terms" className="btn-terms" target="_blank">{@t('terms')}</a>
+      <Recaptcha sitekey={config.recaptchaKey} />
       <button className='btn-primary'>{@t('signup_button')}</button>
     </Form>

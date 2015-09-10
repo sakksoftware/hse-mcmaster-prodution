@@ -7,13 +7,19 @@ else if window.location.hostname == "staging.healthsystemsevidence.org"
 else
   window.ENV = params.ENV || 'production'
 
+# window.ENV = 'staging'
 console.log('ENV =', window.ENV)
-config = require('config')[window.ENV]
+config = require('config')
 stores = require('stores')
 
 localesUrl = config.localesUrl
-if params.remote_locales == "false"
-  localesUrl = require('config')['development'].localesUrl
+
+# TEST for failures
+# $.mockjax
+#   url: "api/*"
+#   status: 503
+#   responseTime: config.mockResponseTime
+#   responseText: "A text response from the server"
 
 initialize = ->
   language = stores.UserStore.state.language

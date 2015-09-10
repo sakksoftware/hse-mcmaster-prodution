@@ -1,5 +1,5 @@
 ContentActions = require('actions/content_actions')
-config = require('config')[ENV]
+config = require('config')
 
 module.exports = Reflux.createStore
   listenables: [ContentActions]

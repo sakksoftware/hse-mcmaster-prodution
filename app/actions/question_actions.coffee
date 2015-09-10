@@ -1,5 +1,5 @@
 UserStore = require('stores/user_store')
-config = require('config')[window.ENV]
+config = require('config')
 
 QuestionActions = Reflux.createActions
   loadQuestions: {asyncResult: true}

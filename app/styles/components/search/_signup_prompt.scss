@@ -85,11 +85,15 @@
     }
 
     .btn-primary {
-      display: block;
+      display: none;
       margin-top: $tiny-size;
       background-color: #333333;
       padding: $x-small-size;
       height: auto;
+    }
+
+    .g-recaptcha {
+      display: none;
     }
 
     @include desktop {

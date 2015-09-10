@@ -1,4 +1,4 @@
-config = require('config')[window.ENV]
+config = require('config')
 
 module.exports = class API
   @read: (url, options = {}) ->
@@ -53,6 +53,8 @@ module.exports = class API
     console.debug "[API] Successfully got: ", res
 
   @onError: (res, status) ->
+    # TODO: redirect to error pages generic if user can't recover from the error
+    # Otherwise give a chance for the component for handle this
     if res.status == 503
       flash 'error', 'Service is unavilable, please try <a href=".">refreshing the page</a>.
         If you continue seeing this, please contact us at
