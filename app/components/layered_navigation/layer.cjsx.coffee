@@ -37,7 +37,7 @@ module.exports = React.createClass
     <nav className="layer layer-#{@props.name}" role="navigation" style={style}>
       <div className="layer-header">
         <span className="layer-header-title" style={width: "#{titleWidth}px"}>{@props.title || "Menu"}</span>
-        <a className="layer-header-close" href="#" onClick={@handleClose}>x</a>
+        <a className="layer-header-close" href="#" onClick={@handleClose}>&#x00D7;</a>
       </div>
       <div className="layer-inner">
         <div className="layer-content">

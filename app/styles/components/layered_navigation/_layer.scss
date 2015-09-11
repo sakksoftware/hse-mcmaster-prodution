@@ -1,7 +1,7 @@
 .layer {
   height: 100%;
   width: $layer-width;
-  position: fixed;
+  position: absolute;
   right: 0;
   z-index: 1001;
   background-color: $menu-background-color;
@@ -39,12 +39,12 @@
   }
 
   .layer-inner {
-    height: 100%;
     // need the bottom padding to prevent content from cuttin off when scrolling
     // 100% refers to the entire window and doesn't account for the height of the
     // layer header
     padding-bottom: $menu-header-height;
     overflow-y: scroll;
+    background-color: #FFF;
   }
 
   .layer-content {
