@@ -3,4 +3,10 @@
     display: block;
     margin-bottom: $tiny-size;
   }
+
+  .recaptcha-group {
+    .help-block {
+      margin-top: -15px;
+    }
+  }
 }

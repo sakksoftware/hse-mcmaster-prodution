@@ -7,6 +7,7 @@ module.exports = React.createClass
   displayName: 'Form'
   propTypes:
     onSubmit: React.PropTypes.func.isRequired
+    onError: React.PropTypes.func.isRequired
     afterSave: React.PropTypes.func
     afterSaveContent: React.PropTypes.func
     replaceContent: React.PropTypes.bool
@@ -45,6 +46,7 @@ module.exports = React.createClass
       errors = _errors
 
     @setState(errors: errors, saved: false, submitted: true)
+    @props.onError?(errors)
 
   getFieldStyle: (field) ->
     return if !@state[field] && !@state.submitted
@@ -59,7 +61,7 @@ module.exports = React.createClass
     }, options
 
     if options.type == 'checkbox'
-      <Input type={options.type} label={label} key={options.name} name={options.name} ref={options.name} bsStyle={@getFieldStyle(options.name)} defaultValue={options.defaultValue} hasFeedback onChange={@handleChange} help={@state.errors[options.name]}>{label}</Input>
+      <Input type={options.type} label={label} key={options.name} name={options.name} ref={options.name} bsStyle={@getFieldStyle(options.name)} defaultValue={options.defaultValue} hasFeedback onChange={@handleChange} help={@state.errors[options.name]} />
     else
       <Input type={options.type} placeholder={label} key={options.name} name={options.name} ref={options.name} bsStyle={@getFieldStyle(options.name)} defaultValue={options.defaultValue} hasFeedback onChange={@handleChange} help={@state.errors[options.name]} />
 
