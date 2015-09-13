@@ -55,6 +55,7 @@ class Router
   visit: (url) ->
     @update(url)
     @_handleRouteChange()
+    window.scrollTo(0, 0)
 
   update: (url) ->
     if window.history?.pushState?
