@@ -62,7 +62,7 @@
       {
         "text": "评价过哪些方法的利弊？（或哪种方法有效？）",
         "section": {
-          "title": "CN_Type of Document"
+          "title": "文档类型"
         },
         "filterGroup": {
           "id": "0_10",
@@ -82,7 +82,7 @@
       {
         "text": "评价过哪些方法的利弊？（或哪种方法有效？）",
         "section": {
-          "title": "CN_Type of Document"
+          "title": "文档类型"
         },
         "filterGroup": {
           "id": "0_10",
@@ -98,7 +98,7 @@
       {
         "text": "我们还知道对某种方法或其解决的问题的哪些其他信息？",
         "section": {
-          "title": "CN_Type of Document"
+          "title": "文档类型"
         },
         "filterGroup": {
           "id": "0_10",
@@ -114,7 +114,7 @@
       {
         "text": "有哪些在其他方面做过的工作及记录的原理？",
         "section": {
-          "title": "CN_Type of Document"
+          "title": "文档类型"
         },
         "filterGroup": {
           "id": "0_10",
@@ -130,7 +130,7 @@
       {
         "text": "我们对在某一特定的卫生系统中的一个问题、各种方案和实施考虑因素的了解如何？",
         "section": {
-          "title": "CN_Type of Document"
+          "title": "文档类型"
         },
         "filterGroup": {
           "id": "0_10",
@@ -146,7 +146,7 @@
       {
         "text": "某一特定的卫生系统如何运转？",
         "section": {
-          "title": "CN_Type of Document"
+          "title": "文档类型"
         },
         "filterGroup": {
           "id": "0_10",
@@ -215,7 +215,7 @@
       {
         "text": "关注的国家",
         "section": {
-          "title": "CN_Document Features"
+          "title": "文件特征"
         },
         "filterGroup": {
           "id": "0_6",
@@ -226,7 +226,7 @@
       {
         "text": "关注中低收入国家",
         "section": {
-          "title": "CN_Document Features"
+          "title": "文件特征"
         },
         "filterGroup": {
           "id": "0_9",
@@ -244,7 +244,7 @@
       {
         "text": "政府间组织的卫生系统文件",
         "section": {
-          "title": "CN_Complementary Content"
+          "title": "补充内容"
         },
         "filterGroup": {
           "id": "0_17",
@@ -254,7 +254,7 @@
       {
         "text": "加拿大的卫生系统文件",
         "section": {
-          "title": "CN_Complementary Content"
+          "title": "补充内容"
         },
         "filterGroup": {
           "id": "0_18",
@@ -264,7 +264,7 @@
       {
         "text": "安大略省的卫生系统文件",
         "section": {
-          "title": "CN_Complementary Content"
+          "title": "补充内容"
         },
         "filterGroup": {
           "id": "0_19",

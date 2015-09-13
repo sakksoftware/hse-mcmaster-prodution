@@ -55,14 +55,14 @@
     "filters": [
       {
         "id": "0_21",
-        "title": "type de document"
+        "title": "Type de document"
       }
     ],
     "answers": [
       {
         "text": "Quelles approches ont été évaluées pour leurs avantages et leurs inconvénients? (ou quelle approche fonctionne?)",
         "section": {
-          "title": "FR_Type of Document"
+          "title": "Type de document"
         },
         "filterGroup": {
           "id": "0_10",
@@ -82,7 +82,7 @@
       {
         "text": "Quelles approches ont été évaluées pour leur rapport coût-efficacité? (ou est une approche rentable?)",
         "section": {
-          "title": "FR_Type of Document"
+          "title": "Type de document"
         },
         "filterGroup": {
           "id": "0_10",
@@ -98,7 +98,7 @@
       {
         "text": "Que savons-nous d'autre sur une approche ou un problème qu'il vise à résoudre?",
         "section": {
-          "title": "FR_Type of Document"
+          "title": "Type de document"
         },
         "filterGroup": {
           "id": "0_10",
@@ -114,7 +114,7 @@
       {
         "text": "Qu'est-ce qui a été essayé ailleurs et quelle est la justification? (et avec quels impacts)?",
         "section": {
-          "title": "FR_Type of Document"
+          "title": "Type de document"
         },
         "filterGroup": {
           "id": "0_10",
@@ -130,7 +130,7 @@
       {
         "text": "Que savons-nous d'un problème, des options et des implications de mise en œuvre dans un système de santé particulier?",
         "section": {
-          "title": "FR_Type of Document"
+          "title": "Type de document"
         },
         "filterGroup": {
           "id": "0_10",
@@ -146,7 +146,7 @@
       {
         "text": "Comment fonctionne un système de santé en particulier?",
         "section": {
-          "title": "FR_Type of Document"
+          "title": "Type de document"
         },
         "filterGroup": {
           "id": "0_10",
@@ -215,7 +215,7 @@
       {
         "text": "Cibler pays",
         "section": {
-          "title": "FR_Document Features"
+          "title": "Caractéristiques des documents"
         },
         "filterGroup": {
           "id": "0_6",
@@ -226,7 +226,7 @@
       {
         "text": "Cibler pays à faible et moyen revenu (PFMRs)",
         "section": {
-          "title": "FR_Document Features"
+          "title": "Caractéristiques des documents"
         },
         "filterGroup": {
           "id": "0_9",
@@ -244,7 +244,7 @@
       {
         "text": "Documents liés aux systèmes de santé d'organisations intergouvernementales",
         "section": {
-          "title": "FR_Complementary Content"
+          "title": "Contenu complémentaire"
         },
         "filterGroup": {
           "id": "0_17",
@@ -254,7 +254,7 @@
       {
         "text": "Documents liés aux systèmes de santé du Canada",
         "section": {
-          "title": "FR_Complementary Content"
+          "title": "Contenu complémentaire"
         },
         "filterGroup": {
           "id": "0_18",
@@ -264,7 +264,7 @@
       {
         "text": "Documents liés au système de santé de l'Ontario",
         "section": {
-          "title": "FR_Complementary Content"
+          "title": "Contenu complémentaire"
         },
         "filterGroup": {
           "id": "0_19",

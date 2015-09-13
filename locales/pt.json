@@ -14,7 +14,11 @@
   },
   "menus": {
     "account": {
-      "title": "Minha conta"
+      "title": "Minha conta",
+      "profile": "PT_Profile",
+      "saved_documents": "PT_Saved documents",
+      "saved_searches": "PT_Saved searches",
+      "complementary_content": "PT_Complementary Content"
     },
     "help": {
       "title": "Ajuda",
