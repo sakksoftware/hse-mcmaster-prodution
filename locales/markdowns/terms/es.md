@@ -82,7 +82,7 @@ Ante la revocación de licencia de un Usuario, además de cualesquiera otros rec
 ##22. Divisibilidad
 Si alguna de estas condiciones se considerase inválida, nula o, por cualquier razón, inexigible, dicha condición se considerará divisible y no afectará la validez y exigibilidad de cualquier condición restante.
 
-##23. Our Contact Information
+##23. Nuestra información de contacto
 McMaster Health Forum  
 1280 Main St. West MML-417  
 Hamilton, ON, Canada L8S 4L6  

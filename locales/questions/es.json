@@ -55,14 +55,14 @@
     "filters": [
       {
         "id": "0_21",
-        "title": "tipo de documento"
+        "title": “Tipo de documento"
       }
     ],
     "answers": [
       {
         "text": "¿Qué enfoques se han evaluado respecto de sus ventajas y desventajas? (o ¿qué enfoque funciona?)",
         "section": {
-          "title": "ES_Type of Document"
+          "title": "Tipo de documento"
         },
         "filterGroup": {
           "id": "0_10",
@@ -82,7 +82,7 @@
       {
         "text": "¿Qué enfoques se han evaluado respecto de su rentabilidad? (o sea una rentable enfoque?)",
         "section": {
-          "title": "ES_Type of Document"
+          "title": "Tipo de documento"
         },
         "filterGroup": {
           "id": "0_10",
@@ -98,7 +98,7 @@
       {
         "text": "¿Qué más sabemos acerca de un enfoque o del problema que este aborda?",
         "section": {
-          "title": "ES_Type of Document"
+          "title": "Tipo de documento"
         },
         "filterGroup": {
           "id": "0_10",
@@ -114,7 +114,7 @@
       {
         "text": "¿Qué se ha probado en otros lugares y cuáles son las justificaciones documentadas? (y con qué impactos)?",
         "section": {
-          "title": "ES_Type of Document"
+          "title": "Tipo de documento"
         },
         "filterGroup": {
           "id": "0_10",
@@ -130,7 +130,7 @@
       {
         "text": "¿Qué se sabe acerca de un problema, las opciones y las consideraciones de implementación en un sistema de salud determinado?",
         "section": {
-          "title": "ES_Type of Document"
+          "title": "Tipo de documento"
         },
         "filterGroup": {
           "id": "0_10",
@@ -146,7 +146,7 @@
       {
         "text": "¿Cómo funciona un sistema de salud determinado?",
         "section": {
-          "title": "ES_Type of Document"
+          "title": "Tipo de documento"
         },
         "filterGroup": {
           "id": "0_10",
@@ -215,7 +215,7 @@
       {
         "text": "Centrado en países",
         "section": {
-          "title": "ES_Document Features"
+          "title": "Características del documento"
         },
         "filterGroup": {
           "id": "0_6",
@@ -226,7 +226,7 @@
       {
         "text": "Centrado en países de ingresos bajos y medios (LMIC)",
         "section": {
-          "title": "ES_Document Features"
+          "title": "Características del documento"
         },
         "filterGroup": {
           "id": "0_9",
@@ -244,7 +244,7 @@
       {
         "text": "Documentos de sistemas de salud de organizaciones intergubernamentales",
         "section": {
-          "title": "ES_Complementary Content"
+          "title": "Contenido gratuito"
         },
         "filterGroup": {
           "id": "0_17",
@@ -254,7 +254,7 @@
       {
         "text": "Documentos de sistemas de salud de Canadá",
         "section": {
-          "title": "ES_Complementary Content"
+          "title": "Contenido gratuito"
         },
         "filterGroup": {
           "id": "0_18",
@@ -264,7 +264,7 @@
       {
         "text": "Documentos de sistemas de salud de Ontario",
         "section": {
-          "title": "ES_Complementary Content"
+          "title": "Contenido gratuito"
         },
         "filterGroup": {
           "id": "0_19",

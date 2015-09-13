@@ -14,7 +14,11 @@
   },
   "menus": {
     "account": {
-      "title": "我的账户"
+      "title": "我的账户",
+      "profile": "CN_Profile",
+      "saved_documents": "CN_Saved documents",
+      "saved_searches": "CN_Saved searches",
+      "complementary_content": "CN_Complementary Content"
     },
     "help": {
       "title": "帮助",
