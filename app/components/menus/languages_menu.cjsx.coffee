@@ -5,16 +5,25 @@ languages = require('constants/languages')
 module.exports = React.createClass
   displayName: 'LanguagesMenu'
 
+  componentWillMount: ->
+    @unsubscribe = UserStore.listen(@userStoreUpdated)
+
+  componentWillUnmount: ->
+    @unsubscribe()
+
+  userStoreUpdated: (state) ->
+    @setState(langauge: state.language)
+
+  getInitialState: ->
+    language: UserStore.state.language
+
   handleSelectLanguage: (language) ->
     (e) =>
       e.preventDefault()
       UserActions.changeLanguage(language)
 
-  getCurrentLanguage: ->
-    UserStore.state.language
-
   renderCheckMark: (language) ->
-    if @getCurrentLanguage() == language.name
+    if @state.language == language.name
       <i className="checkmark"></i>
 
   renderLanguages: ->
