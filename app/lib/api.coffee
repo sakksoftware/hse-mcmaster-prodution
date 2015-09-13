@@ -53,10 +53,14 @@ module.exports = class API
     console.debug "[API] Successfully got: ", res
 
   @onError: (res, status) ->
-    if res.status == 503
-      flash 'error', 'Service is unavilable, please try <a href=".">refreshing the page</a>.
-        If you continue seeing this, please contact us at
-        <a target="_blank" href="mailto:michael.yagudaev@func-i.com">michael.yagudaev@func-i.com</a>'
+    router = require('lib/router')
+
+    if res.status >= 500 && res.status <= 599
+      router.render('/500')
+
+    if status == 'parsererror'
+      Rollbar.error('parse error', res)
+      router.render('/500')
 
     if ENV is 'production'
       return

@@ -2,8 +2,8 @@ App = require('components/app')
 class Router
   constructor: ->
     @el = document.getElementById('react-root')
-    window.addEventListener('hashchange', @handleRouteChange.bind(@))
-    window.addEventListener('popstate', @handleRouteChange.bind(@))
+    window.addEventListener('hashchange', @_handleRouteChange.bind(@))
+    window.addEventListener('popstate', @_handleRouteChange.bind(@))
 
   routes:
     '/$': ->
@@ -31,6 +31,9 @@ class Router
     'reset_password': ->
       React.render <App page="reset_password" />, @el
 
+    '500': ->
+      React.render <App page="server_error" />, @el
+
     '.*': ->
       @visit('/') # redirect to homepage
       # React.render <App page="page_not_found" />, @el
@@ -47,43 +50,46 @@ class Router
         window.location = '/#!' + window.location.pathname
         return
 
-    @handleRouteChange()
+    @_handleRouteChange()
 
   visit: (url) ->
     @update(url)
-    @handleRouteChange()
+    @_handleRouteChange()
 
   update: (url) ->
     if window.history?.pushState?
       @history.push(window.location.pathname + window.location.search)
       window.history.pushState(null, "HSE", url)
     else
-      @history.push(@getHash())
+      @history.push(@_getHash())
       url = '/' + url if url[0] != '/'
       window.location.hash = '!' + url
 
   hasHistory: -> @history.length > 0
 
-  handleRouteChange: ->
-    path = @getPath()
-    [action, params] = @findActionFor(path)
-
-    throw new Error("Cannot find action for path #{path}") unless action
-    action.apply(@, params)
-
   getPath: ->
     if window.history?.pushState?
       path = window.location.pathname
     else
-      path = @getHash().replace(/\?.+/, '')
+      path = @_getHash().replace(/\?.+/, '')
 
     path = '/' + path if path[0] != '/'
     path
 
-  getHash: ->
+  render: (path) ->
+    [action, params] = @_findActionFor(path)
+
+    throw new Error("Cannot find action for path #{path}") unless action
+    action.apply(@, params)
+
+  _handleRouteChange: ->
+    path = @getPath()
+    @render(path)
+
+  _getHash: ->
     window.location.hash.replace(/^#!\//, '')
 
-  findActionFor: (path) ->
+  _findActionFor: (path) ->
     params = []
     if action = @routes[path]
     else
