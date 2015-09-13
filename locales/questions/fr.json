@@ -55,7 +55,7 @@
     "filters": [
       {
         "id": "0_21",
-        "title": “Type de document"
+        "title": "Type de document"
       }
     ],
     "answers": [
@@ -244,7 +244,7 @@
       {
         "text": "Documents liés aux systèmes de santé d'organisations intergouvernementales",
         "section": {
-          "title": “Contenu complémentaire"
+          "title": "Contenu complémentaire"
         },
         "filterGroup": {
           "id": "0_17",
