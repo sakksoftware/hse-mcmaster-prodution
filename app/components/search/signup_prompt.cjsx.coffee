@@ -53,7 +53,7 @@ module.exports = React.createClass
       <div className="signup-prompt-title">
         Sign up to view more than 20 results, to save documents and searches,
         and to subscribe to email alerts
-        <a href="#" className="signup-prompt-dismiss" onClick={@onDismiss}>x</a>
+        <a href="#" className="signup-prompt-dismiss" onClick={@onDismiss}>&#x00D7;</a>
       </div>
       {@renderStep()}
     </div>
