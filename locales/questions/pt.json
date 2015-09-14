@@ -11,7 +11,7 @@
       {
         "text": "Como as decisões (sobre cuidados) são tomadas ",
         "section": {
-          "title": "PT_Topics of Interest"
+          "title": "Temas de interesse"
         },
         "filterGroup": {
           "id": "1_1",
@@ -21,7 +21,7 @@
       {
         "text": "Como são pagos os cuidados",
         "section": {
-          "title": "PT_Topics of Interest"
+          "title": "Temas de interesse"
         },
         "filterGroup": {
           "id": "1_2",
@@ -31,7 +31,7 @@
       {
         "text": "Como são organizados os cuidados",
         "section": {
-          "title": "PT_Topics of Interest"
+          "title": "Temas de interesse"
         },
         "filterGroup": {
           "id": "1_3",
@@ -41,7 +41,7 @@
       {
         "text": "Como as mudanças podem ser induzidas",
         "section": {
-          "title": "PT_Topics of Interest"
+          "title": "Temas de interesse"
         },
         "filterGroup": {
           "id": "1_4",
@@ -170,7 +170,7 @@
       {
         "text": "Doenças (doenças infecciosas, doenças não transmissíveis ou outras condições)",
         "section": {
-          "title": "PT_Domains"
+          "title": "Domínios"
         },
         "filterGroup": {
           "id": "2_1",
@@ -180,7 +180,7 @@
       {
         "text": "Tecnologias (diagnósticos, vacinas, medicamentos, dispositivos, cirurgias)",
         "section": {
-          "title": "PT_Domains"
+          "title": "Domínios"
         },
         "filterGroup": {
           "id": "2_2",
@@ -190,7 +190,7 @@
       {
         "text": "Setores (cuidados domiciliares, cuidados primários, cuidados hospitalares, reabilitação, cuidados de longa duração e saúde pública)",
         "section": {
-          "title": "PT_Domains"
+          "title": "Domínios"
         },
         "filterGroup": {
           "id": "2_3",
@@ -200,7 +200,7 @@
       {
         "text": "Fornecedores (médicos generalistas, médicos especialistas, enfermeiros, farmacêuticos, etc.)",
         "section": {
-          "title": "PT_Domains"
+          "title": "Domínios"
         },
         "filterGroup": {
           "id": "2_4",

@@ -11,7 +11,7 @@
       {
         "text": "Comment les décisions (sur les soins) sont-elles prises",
         "section": {
-          "title": "FR_Topics of Interest"
+          "title": "Sujets d'intérêt"
         },
         "filterGroup": {
           "id": "1_1",
@@ -21,7 +21,7 @@
       {
         "text": "Comment les soins sont-ils payés",
         "section": {
-          "title": "FR_Topics of Interest"
+          "title": "Sujets d'intérêt"
         },
         "filterGroup": {
           "id": "1_2",
@@ -31,7 +31,7 @@
       {
         "text": "Comment les soins sont-ils organisés",
         "section": {
-          "title": "FR_Topics of Interest"
+          "title": "Sujets d'intérêt"
         },
         "filterGroup": {
           "id": "1_3",
@@ -41,7 +41,7 @@
       {
         "text": "Comment favoriser le changement",
         "section": {
-          "title": "FR_Topics of Interest"
+          "title": "Sujets d'intérêt"
         },
         "filterGroup": {
           "id": "1_4",
@@ -170,7 +170,7 @@
       {
         "text": "Maladies (maladies infectieuses, maladies non transmissibles ou autres conditions)",
         "section": {
-          "title": "FR_Domains"
+          "title": "Domaines"
         },
         "filterGroup": {
           "id": "2_1",
@@ -180,7 +180,7 @@
       {
         "text": "Technologies (diagnostics, vaccins, médicaments, dispositifs, chirurgies)",
         "section": {
-          "title": "FR_Domains"
+          "title": "Domaines"
         },
         "filterGroup": {
           "id": "2_2",
@@ -190,7 +190,7 @@
       {
         "text": "Secteurs (soins à domicile, soins primaires, soins hospitaliers, réadaptation, soins de longue durée et santé publique)",
         "section": {
-          "title": "FR_Domains"
+          "title": "Domaines"
         },
         "filterGroup": {
           "id": "2_3",
@@ -200,7 +200,7 @@
       {
         "text": "Fournisseurs (médecins généralistes, médecins spécialistes, infirmières, pharmaciens, etc.)",
         "section": {
-          "title": "FR_Domains"
+          "title": "Domaines"
         },
         "filterGroup": {
           "id": "2_4",

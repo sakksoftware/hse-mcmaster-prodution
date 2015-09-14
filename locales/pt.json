@@ -15,10 +15,10 @@
   "menus": {
     "account": {
       "title": "Minha conta",
-      "profile": "PT_Profile",
-      "saved_documents": "PT_Saved documents",
-      "saved_searches": "PT_Saved searches",
-      "complementary_content": "PT_Complementary Content"
+      "profile": "Perfil",
+      "saved_documents": "Documentos salvos",
+      "saved_searches": "Pesquisas salvas",
+      "complementary_content": "Complementaridade de conteúdos"
     },
     "help": {
       "title": "Ajuda",

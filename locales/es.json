@@ -15,10 +15,10 @@
   "menus": {
     "account": {
       "title": "Mi cuenta",
-      "profile": "ES_Profile",
-      "saved_documents": "ES_Saved documents",
-      "saved_searches": "ES_Saved searches",
-      "complementary_content": "ES_Complementary Content"
+      "profile": "Perfil",
+      "saved_documents": "Documentos guardados",
+      "saved_searches": "Búsquedas guardadas",
+      "complementary_content": "Contenido gratuito"
     },
     "help": {
       "title": "Ayuda",

@@ -15,10 +15,10 @@
   "menus": {
     "account": {
       "title": "我的账户",
-      "profile": "CN_Profile",
-      "saved_documents": "CN_Saved documents",
-      "saved_searches": "CN_Saved searches",
-      "complementary_content": "CN_Complementary Content"
+      "profile": "我的资料",
+      "saved_documents": "已保存的文件",
+      "saved_searches": "保存检索",
+      "complementary_content": "补充内容"
     },
     "help": {
       "title": "帮助",
