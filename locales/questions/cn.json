@@ -11,7 +11,7 @@
       {
         "text": "如何进行（卫生保健）决策",
         "section": {
-          "title": "CN_Topics of Interest"
+          "title": "感兴趣的主题"
         },
         "filterGroup": {
           "id": "1_1",
@@ -21,7 +21,7 @@
       {
         "text": "如何支付卫生保健",
         "section": {
-          "title": "CN_Topics of Interest"
+          "title": "感兴趣的主题"
         },
         "filterGroup": {
           "id": "1_2",
@@ -31,7 +31,7 @@
       {
         "text": "如何组织卫生保健",
         "section": {
-          "title": "CN_Topics of Interest"
+          "title": "感兴趣的主题"
         },
         "filterGroup": {
           "id": "1_3",
@@ -41,7 +41,7 @@
       {
         "text": "如何带来改变",
         "section": {
-          "title": "CN_Topics of Interest"
+          "title": "感兴趣的主题"
         },
         "filterGroup": {
           "id": "1_4",
@@ -170,7 +170,7 @@
       {
         "text": "疾病（传染病、非传染性疾病或其他疾病）",
         "section": {
-          "title": "CN_Domains"
+          "title": "领域"
         },
         "filterGroup": {
           "id": "2_1",
@@ -180,7 +180,7 @@
       {
         "text": "技术（诊断、疫苗、药物、设备、手术）",
         "section": {
-          "title": "CN_Domains"
+          "title": "领域"
         },
         "filterGroup": {
           "id": "2_2",
@@ -190,7 +190,7 @@
       {
         "text": "部门（家庭保健、初级卫生保健、医院保健、康复、长期保健和公共卫生）",
         "section": {
-          "title": "CN_Domains"
+          "title": "领域"
         },
         "filterGroup": {
           "id": "2_3",
@@ -200,7 +200,7 @@
       {
         "text": "卫生保健提供者（全科医生、专科医生、护士、药师等）",
         "section": {
-          "title": "CN_Domains"
+          "title": "领域"
         },
         "filterGroup": {
           "id": "2_4",

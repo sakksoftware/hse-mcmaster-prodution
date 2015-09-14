@@ -12,21 +12,40 @@
     color: $primary-color;
     padding-left: 0;
     font-weight: 300;
+    vertical-align: middle;
+    line-height: $large-size;
 
-    .icon {
+    &:before {
+      content: "";
       margin-right: $x-tiny-size;
       height: $small-size;
       width: $small-size;
       background: url('/images/tip_icon.svg');
       display: inline-block;
+      vertical-align: inherit;
     }
   }
 
   .layer-toggle-filter-groups {
+    @include btn-default;
+    background-color: $primary-color;
+    color: $primary-complementary-color;
+    padding: $tiny-size $small-size;
+    font-weight: 400;
+    font-size: $x-small-size + 1;
+
     float: right;
     text-transform: uppercase;
     position: relative;
     overflow: visible;
+
+    span {
+      vertical-align: top;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
 
     @include desktop {
       display: none;

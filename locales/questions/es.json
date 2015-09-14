@@ -11,7 +11,7 @@
       {
         "text": "Cómo se toman las decisiones (acerca de la atención)",
         "section": {
-          "title": "ES_Topics of Interest"
+          "title": "Temas de interés"
         },
         "filterGroup": {
           "id": "1_1",
@@ -21,7 +21,7 @@
       {
         "text": "Cómo se paga la atención",
         "section": {
-          "title": "ES_Topics of Interest"
+          "title": "Temas de interés"
         },
         "filterGroup": {
           "id": "1_2",
@@ -31,7 +31,7 @@
       {
         "text": "Cómo se organiza la atención",
         "section": {
-          "title": "ES_Topics of Interest"
+          "title": "Temas de interés"
         },
         "filterGroup": {
           "id": "1_3",
@@ -41,7 +41,7 @@
       {
         "text": "Cómo se pueden implementar los cambios",
         "section": {
-          "title": "ES_Topics of Interest"
+          "title": "Temas de interés"
         },
         "filterGroup": {
           "id": "1_4",
@@ -170,7 +170,7 @@
       {
         "text": "Enfermedades (infecciosas, no transmisibles u otras)",
         "section": {
-          "title": "ES_Domains"
+          "title": "Dominios"
         },
         "filterGroup": {
           "id": "2_1",
@@ -180,7 +180,7 @@
       {
         "text": "Tecnologías (diagnóstico, vacunas, medicamentos, dispositivos, cirugías)",
         "section": {
-          "title": "ES_Domains"
+          "title": "Dominios"
         },
         "filterGroup": {
           "id": "2_2",
@@ -190,7 +190,7 @@
       {
         "text": "Sectores (atención domiciliaria, atención primaria, atención hospitalaria, rehabilitación, atención a largo plazo y salud pública)",
         "section": {
-          "title": "ES_Domains"
+          "title": "Dominios"
         },
         "filterGroup": {
           "id": "2_3",
@@ -200,7 +200,7 @@
       {
         "text": "Proveedores (médicos de cabecera, médicos especialistas, enfermeros, farmacéuticos, etc.)",
         "section": {
-          "title": "ES_Domains"
+          "title": "Dominios"
         },
         "filterGroup": {
           "id": "2_4",
