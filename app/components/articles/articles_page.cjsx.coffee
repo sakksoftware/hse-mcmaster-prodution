@@ -22,20 +22,10 @@ module.exports = React.createClass
     params = require('lib/url').params()
     lang = UserStore.state.language
     title = params.t # 10 character of the title to protect against scrapping
-    ArticleActions.loadArticle(@props.id, title, lang).then(@handleLoad).catch(@handleError)
+    ArticleActions.loadArticle(@props.id, title, lang).then(@handleLoad)
 
   handleLoad: (article) ->
     @setState(article: article)
-
-  handleError: (xhr, errorText, response) ->
-    console.log("Failed to load article #{@props.id}")
-    if xhr.status != 404
-      if errorText == "parseText"
-        flash('error', @t('errors.unexpected_server_response'))
-      else
-        flash('error', @t('errors.no_connection'))
-
-    @setState(errors: [{type: 'page_not_found'}])
 
   backLink: ->
     router = require('lib/router')
@@ -43,9 +33,6 @@ module.exports = React.createClass
       <Link to="back" className="btn-back">{@t('back_to_results')}</Link>
 
   render: ->
-    if @state.errors?[0].type == 'page_not_found'
-      <PageNotFound />
-
     body =
       if @state.article
         id = @state.article.id

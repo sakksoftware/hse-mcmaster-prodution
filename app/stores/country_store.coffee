@@ -9,10 +9,9 @@ module.exports = Reflux.createStore
   getInitialState: ->
     countries: []
     loaded: false
-    errors: null
 
   onLoadCountriesCompleted: (countries) ->
-    @setState(countries: countries, loaded: true, errors: null)
+    @setState(countries: countries, loaded: true)
 
   onLoadCountriesFailed: (xhr) ->
-    @setState(loaded: false, errors: [xhr.responseText])
+    @setState(loaded: false)

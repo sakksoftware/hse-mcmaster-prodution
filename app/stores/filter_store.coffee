@@ -8,7 +8,6 @@ module.exports = Reflux.createStore
   getInitialState: ->
     filters: []
     loaded: false
-    errors: null
 
   #############
   # Data access
@@ -20,10 +19,10 @@ module.exports = Reflux.createStore
   # Events
   #############
   onLoadFiltersCompleted: (filters, lang) ->
-    @setState(filters: filters, loaded: true, errors: null)
+    @setState(filters: filters, loaded: true)
 
   onLoadFiltersFailed: (xhr, statusCode, responseText) ->
-    @setState(loaded: false, errors: responseText)
+    @setState(loaded: false)
 
   # private
   _findFilterRecursive: (filterId, filters) ->

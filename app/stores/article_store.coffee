@@ -8,10 +8,9 @@ module.exports = Reflux.createStore
   getInitialState: ->
     article: null
     loaded: false
-    errros: null
 
   loadArticleCompleted: (article) ->
     @setState(article: article, loaded: true)
 
   loadArticleFailed: (xhr) ->
-    @setState(errors: ['load_article_failed'], loaded: false)
+    @setState(loaded: false)

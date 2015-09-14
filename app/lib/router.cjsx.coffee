@@ -31,12 +31,17 @@ class Router
     'reset_password': ->
       React.render <App page="reset_password" />, @el
 
-    '500': ->
+    '5xx': ->
       React.render <App page="server_error" />, @el
+
+    '4xx': ->
+      React.render <App page="application_error" />, @el
+
+    '404': ->
+      React.render <App page="page_not_found" />, @el
 
     '.*': ->
       @visit('/') # redirect to homepage
-      # React.render <App page="page_not_found" />, @el
 
   history: []
 

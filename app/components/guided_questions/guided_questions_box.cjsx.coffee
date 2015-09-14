@@ -18,7 +18,7 @@ module.exports = React.createClass
     filtersLoaded: SearchStore.state.loaded || FilterStore.state.loaded
 
   componentWillMount: ->
-    QuestionActions.loadQuestions().then(@handleQuestionsLoaded).catch(@handleError)
+    QuestionActions.loadQuestions().then(@handleQuestionsLoaded)
     @unsubscribeSearch = SearchStore.listen(@handleSearchLoaded)
     @unsubscirbeFilters = FilterStore.listen(@handleFiltersLoaded)
 
@@ -30,11 +30,6 @@ module.exports = React.createClass
 
   handleFiltersLoaded: (state) ->
     @setState(filtersLoaded: state.loaded)
-
-  # TODO: refactor into mixin
-  handleError: (xhr, statusCode, responseText) ->
-    console.log("Failed to load questions", xhr, statusCode, responseText)
-    flash("error", "cannot load list of questions")
 
   getQuestion: ->
     if @state.questions.length > 0

@@ -7,6 +7,7 @@ ForgotPasswordPage = require('components/forgot_password/forgot_password_page')
 ResetPasswordPage = require('components/reset_password/reset_password_page')
 PageNotFound = require('components/error_pages/page_not_found')
 ServerErrorPage = require('components/error_pages/server_error_page')
+ApplicationErrorPage = require('components/error_pages/application_error_page')
 
 Layer = require('components/layered_navigation/layer')
 LayerGroup = require('components/layered_navigation/layer_group')
@@ -120,6 +121,8 @@ module.exports = React.createClass
         <PageNotFound />
       when 'reset_password'
         <ResetPasswordPage lfe={params.lfe} />
+      when 'application_error'
+        <ApplicationErrorPage />
       when 'server_error'
         <ServerErrorPage />
       else

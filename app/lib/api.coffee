@@ -38,7 +38,7 @@ module.exports = class API
         if token = Cookies.get('token')
           xhr.setRequestHeader('Authorization', token)
       success: [options.success || (->), @onSuccess]
-      error: [options.error || (->), @onError]
+      error: [options.error || (->), @onError(options.skipErrorHandlingFor)]
     }, options
 
     if options.method != 'GET'
@@ -52,20 +52,30 @@ module.exports = class API
 
     console.debug "[API] Successfully got: ", res
 
-  @onError: (res, status) ->
-    router = require('lib/router')
+  @onError: (errorsToSkip = []) ->
+    (res, errorTypeText) =>
+      errorsToSkip = [errorsToSkip] unless _.isArray(errorsToSkip)
+      return if errorsToSkip.indexOf(res.status) >= 0
 
-    if res.status >= 500 && res.status <= 599
-      router.render('/500')
+      router = require('lib/router')
 
-    if status == 'parsererror'
-      Rollbar.error('parse error', res)
-      router.render('/500')
+      # TODO: add timemout error handling
 
-    if ENV is 'production'
-      return
+      if res.status >= 500 && res.status <= 599
+        router.render('/5xx')
+      else if errorTypeText == 'parsererror'
+        Rollbar.error('parse error', res)
+        router.render('/5xx')
+      else if res.status == 404
+        router.render('/404')
+      else if res.status > 400 && res.status <= 499 && res.status != 422
+        Rollbar.error('Application Error', res)
+        router.render('/4xx')
 
-    console.debug "[API] Error: ", res
+      if ENV is 'production'
+        return
+
+        console.debug "[API] Error: ", res
 
   @_isRelativePath: (url) ->
     url.substr(0, 4) != 'http' and url.substr(0, 3) != 'ws:'
