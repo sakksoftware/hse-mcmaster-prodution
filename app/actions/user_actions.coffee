@@ -26,7 +26,7 @@ UserActions.updateUser.listen (user) ->
   API.update('user', user).done(@completed).fail(@failed)
 
 UserActions.loginUser.listen (user) ->
-  API.create('user/login', user)
+  API.create('user/login', user, skipErrorHandlingFor: 403)
     .fail (xhr) =>
       errors = null
 

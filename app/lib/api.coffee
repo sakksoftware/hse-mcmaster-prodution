@@ -1,4 +1,4 @@
-config = require('config')
+config = require('config')[window.ENV]
 
 module.exports = class API
   @read: (url, options = {}) ->
@@ -38,7 +38,7 @@ module.exports = class API
         if token = Cookies.get('token')
           xhr.setRequestHeader('Authorization', token)
       success: [options.success || (->), @onSuccess]
-      error: [options.error || (->), @onError]
+      error: [options.error || (->), @onError(options.skipErrorHandlingFor)]
     }, options
 
     if options.method != 'GET'
@@ -52,18 +52,30 @@ module.exports = class API
 
     console.debug "[API] Successfully got: ", res
 
-  @onError: (res, status) ->
-    # TODO: redirect to error pages generic if user can't recover from the error
-    # Otherwise give a chance for the component for handle this
-    if res.status == 503
-      flash 'error', 'Service is unavilable, please try <a href=".">refreshing the page</a>.
-        If you continue seeing this, please contact us at
-        <a target="_blank" href="mailto:michael.yagudaev@func-i.com">michael.yagudaev@func-i.com</a>'
+  @onError: (errorsToSkip = []) ->
+    (res, errorTypeText) =>
+      errorsToSkip = [errorsToSkip] unless _.isArray(errorsToSkip)
+      return if errorsToSkip.indexOf(res.status) >= 0
 
-    if ENV is 'production'
-      return
+      router = require('lib/router')
 
-    console.debug "[API] Error: ", res
+      # TODO: add timemout error handling
+
+      if res.status >= 500 && res.status <= 599
+        router.render('/5xx')
+      else if errorTypeText == 'parsererror'
+        Rollbar.error('parse error', res)
+        router.render('/5xx')
+      else if res.status == 404
+        router.render('/404')
+      else if res.status > 400 && res.status <= 499 && res.status != 422
+        Rollbar.error('Application Error', res)
+        router.render('/4xx')
+
+      if ENV is 'production'
+        return
+
+        console.debug "[API] Error: ", res
 
   @_isRelativePath: (url) ->
     url.substr(0, 4) != 'http' and url.substr(0, 3) != 'ws:'

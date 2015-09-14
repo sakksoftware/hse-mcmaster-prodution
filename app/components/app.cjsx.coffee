@@ -6,6 +6,8 @@ ComplementaryContentPage = require('components/complementary_content/complementa
 ForgotPasswordPage = require('components/forgot_password/forgot_password_page')
 ResetPasswordPage = require('components/reset_password/reset_password_page')
 PageNotFound = require('components/error_pages/page_not_found')
+ServerErrorPage = require('components/error_pages/server_error_page')
+ApplicationErrorPage = require('components/error_pages/application_error_page')
 
 Layer = require('components/layered_navigation/layer')
 LayerGroup = require('components/layered_navigation/layer_group')
@@ -78,7 +80,7 @@ module.exports = React.createClass
 
   renderHeader: ->
     <nav className="top-nav">
-      <h1><Link to="/">Health Systems Evidence</Link></h1>
+      <h1><a href="/">Health Systems Evidence</a></h1>
       <LayerToggle menu="main" onToggle={@toggleMenu}>
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>
@@ -119,6 +121,10 @@ module.exports = React.createClass
         <PageNotFound />
       when 'reset_password'
         <ResetPasswordPage lfe={params.lfe} />
+      when 'application_error'
+        <ApplicationErrorPage />
+      when 'server_error'
+        <ServerErrorPage />
       else
         # should never reach here, programming error.
         throw new Error("Page not found! Please check the URL")

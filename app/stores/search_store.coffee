@@ -50,9 +50,6 @@ module.exports = Reflux.createStore
   onSearchFailed: (xhr) ->
     if xhr.status == 403
       @setState(errors: ['reached_search_limit'], loaded: true)
-    else
-      console.log('The search has failed')
-    # flash('error', @t('errors.no_connection'))
 
   updateUrl: ->
     Router = require('lib/router')

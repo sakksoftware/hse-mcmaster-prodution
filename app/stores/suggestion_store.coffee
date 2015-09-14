@@ -14,4 +14,4 @@ module.exports = Reflux.createStore
     @setState(suggestions: suggestions, loaded: true)
 
   onSuggestionsFailed: ->
-    console.log('Failed to retrieve suggestions')
+    
