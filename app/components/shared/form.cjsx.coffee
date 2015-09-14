@@ -3,6 +3,9 @@ Button = ReactBootstrap.Button
 Util = require('lib/util')
 TranslationHelper = require('mixins/translation_helper')
 
+# TODO: either replace with React-Form or refactor to be more like form_for in rails
+# i.e. we get passed a model (required) and based on that do all sorts of validations
+# and display things
 module.exports = React.createClass
   displayName: 'Form'
   propTypes:
@@ -11,6 +14,7 @@ module.exports = React.createClass
     afterSave: React.PropTypes.func
     afterSaveContent: React.PropTypes.func
     replaceContent: React.PropTypes.bool
+    model: React.PropTypes.object
 
   # TODO: think of how to remove dependency on translations helper in
   # this generic form component
@@ -19,6 +23,9 @@ module.exports = React.createClass
 
   getInitialState: ->
     {errors: {}, saved: false, submitted: false}
+
+  componentWillMount: ->
+    @setState(errors: @props.model.errors || {}) if @props.model
 
   componentDidUpdate: ->
     @state.saved == true && @props.afterSave?(@model())
@@ -69,7 +76,10 @@ module.exports = React.createClass
     fields = [fields] unless _.isArray(fields)
     fields.map (field) =>
       if field?.type is 'input'
-        @renderInput field.props.label, _.omit(field.props, 'label')
+        options = _.omit(field.props, 'label')
+        options.defaultValue = @props.model[field.props.name] if @props.model
+        console.log('options', options, 'props', field.props, 'model', @props.model)
+        @renderInput field.props.label, options
       else if _.isArray(field)
         @renderFields(field)
       else

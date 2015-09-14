@@ -43,6 +43,8 @@ module.exports = React.createClass
     @unsubscribeSearch = SearchStore.listen(@searchStoreUpdated)
     @unsubscribeFilters = FilterStore.listen(@filterStoreUpdated)
 
+    # @pageQueue = []
+
     # TODO: remove when passing results as an attribute from server a bit hacky now
     if @state.search.query == null
       @fetchFilters()
@@ -81,8 +83,23 @@ module.exports = React.createClass
 
   handleLoadMore: (page) ->
     if @state.errors?[0] != 'reached_search_limit'
-      @state.search.page = page
-      SearchActions.search(@state.search)
+      search = _.clone(@state.search)
+      search.page = page
+      SearchActions.search(search)
+
+    # @pageQueue.push(page)
+    #
+    # if @pageQueue.length == 1
+    #   if @state.errors?[0] == 'reached_search_limit'
+    #     @pageQueue = []
+    #   else
+    #     execute = (page) =>
+    #       search = _.clone(@state.search)
+    #       search.page = page
+    #       SearchActions.search(search).then =>
+    #         page = @pageQueue.pop()
+    #         execute(page)
+    #     execute(page)
 
   handleSortChange: (sortBy) ->
     SearchActions.sortBy(sortBy)

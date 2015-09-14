@@ -5,20 +5,11 @@ module.exports =
 
   componentDidMount: ->
     @page ||= @props.page
+    @scrollListener = _.throttle(@_scrollListener, 150)
     @attachScrollListener()
 
   componentDidUpdate: ->
     @attachScrollListener()
-
-  scrollListener: ->
-    el = @getDOMNode()
-    scrollTop = if window.pageYOffset != undefined then window.pageYOffset else (document.documentElement or document.body.parentNode or document.body).scrollTop
-    if topPosition(el) + el.offsetHeight - scrollTop - (window.innerHeight) < Number(@props.threshold)
-      @detachScrollListener()
-      # call loadMore after detachScrollListener to allow
-      # for non-async loadMore functions
-      @page = @page + 1
-      @loadMore @page
 
   attachScrollListener: ->
     return if !@hasMore()
@@ -33,6 +24,16 @@ module.exports =
 
   componentWillUnmount: ->
     @detachScrollListener()
+
+  _scrollListener: ->
+    el = @getDOMNode()
+    scrollTop = if window.pageYOffset != undefined then window.pageYOffset else (document.documentElement or document.body.parentNode or document.body).scrollTop
+    if topPosition(el) + el.offsetHeight - scrollTop - (window.innerHeight) < Number(@props.threshold)
+      @detachScrollListener()
+      # call loadMore after detachScrollListener to allow
+      # for non-async loadMore functions
+      @page = @page + 1
+      @loadMore @page
 
 # private
 topPosition = (domElt) ->

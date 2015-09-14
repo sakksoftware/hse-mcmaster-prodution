@@ -7,6 +7,18 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 
+  .signup-prompt-content {
+    padding: $tiny-size;
+    padding-top: $small-size;
+    margin: 0 auto;
+    width: 700px;
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
   .signup-prompt-title {
     background-color: rgba(0, 0, 0, 0.5);
     padding: $tiny-size;
@@ -68,20 +80,35 @@
     width: auto;
   }
 
-  .signup-menu {
-    padding: $tiny-size;
-    padding-top: $small-size;
-    margin: 0 auto;
-    width: 700px;
-    display: none;
+  .button + .button {
+    margin-left: $small-size;
+  }
 
+  .button {
+    margin-top: $x-tiny-size;
+    display: inline-block;
+    background-color: #333333;
+
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+
+  .signup-menu {
     .btn-terms {
       display: inline-block;
       margin-left: $x-tiny-size;
       vertical-align: middle;
-      margin-top: $tiny-size;
       color: $primary-complementary-color;
       text-decoration: underline;
+    }
+
+    .form-group:nth-child(4) {
+      margin-left: 0;
+    }
+
+    .form-group:nth-child(4), .btn-terms {
+      margin-top: $tiny-size;
     }
 
     .btn-primary {
@@ -94,10 +121,6 @@
 
     .g-recaptcha {
       display: none;
-    }
-
-    @include desktop {
-      display: block;
     }
   }
 }

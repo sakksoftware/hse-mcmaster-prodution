@@ -121,6 +121,9 @@
       "relevance": "Meilleure correspondance",
       "most_recent": "Le plus récent",
       "most_popular": "Le plus populaire"
+    },
+    "signup_prompt": {
+      "instructions": "FR_Sign up to view more than 20 results, to save documents and searches, and to subscribe to email alerts"
     }
   },
   "profile_page": {
@@ -178,6 +181,7 @@
     "invalid_email": "courriel est invalide",
     "too_short": "est trop court, doit être d'au moins 8 caractères",
     "invalid_login": "Nom d'utilisateur ou mot de passe incorrect",
-    "passwords_must_match": "Les mots de passe doivent correspondre"
+    "passwords_must_match": "Les mots de passe doivent correspondre",
+    "invalid": "FR_invalid"
   }
 }

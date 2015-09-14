@@ -121,6 +121,9 @@
       "relevance": "Mejor coincidencia",
       "most_recent": "Más reciente",
       "most_popular": "Más popular"
+    },
+    "signup_prompt": {
+      "instructions": "ES_Sign up to view more than 20 results, to save documents and searches, and to subscribe to email alerts"
     }
   },
   "profile_page": {
@@ -178,6 +181,7 @@
     "invalid_email": "correo electrónico inválido",
     "too_short": "es demasiado corto, debe contener un mínimo de 8 caracteres",
     "invalid_login": "Nombre de usuario o contraseña incorrectos",
-    "passwords_must_match": "Las contraseñas deben coincidir"
+    "passwords_must_match": "Las contraseñas deben coincidir",
+    "invalid": "ES_invalid"
   }
 }

@@ -12,6 +12,7 @@ module.exports = React.createClass
 
   propTypes:
     onSignup: React.PropTypes.func.isRequired
+    user: React.PropTypes.object
 
   getInitialState: ->
     errors: null
@@ -56,7 +57,8 @@ module.exports = React.createClass
     <Form className="signup-menu"
       onSubmit={@handleSubmit}
       afterSave={@props.onSignup}
-      onError={@handleError}>
+      onError={@handleError}
+      model={@props.user}>
       <input label={@t('email')} name="email" type="email" />
       <input label={@t('password')} name="password" type="password" />
       <input label={@t('confirm_password')} name="confirm_password" type="password" />

@@ -121,6 +121,9 @@
       "relevance": "最相关",
       "most_recent": "最近发表",
       "most_popular": "最多关注"
+    },
+    "signup_prompt": {
+      "instructions": "CN_Sign up to view more than 20 results, to save documents and searches, and to subscribe to email alerts"
     }
   },
   "profile_page": {
@@ -178,6 +181,7 @@
     "invalid_email": "无效邮箱",
     "too_short": "太短了，必须至少8个字符",
     "invalid_login": "用户名或密码错误",
-    "passwords_must_match": "密码必须匹配"
+    "passwords_must_match": "密码必须匹配",
+    "invalid": "CN_invalid"
   }
 }

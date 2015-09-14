@@ -1,7 +1,12 @@
 .signup-menu {
+  .form-group:nth-child(4) {
+    display: inline-block;
+  }
+
   .btn-terms {
-    display: block;
+    display: inline;
     margin-bottom: $tiny-size;
+    margin-left: $x-tiny-size;
   }
 
   .recaptcha-group {
