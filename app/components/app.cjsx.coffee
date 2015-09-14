@@ -8,6 +8,7 @@ ResetPasswordPage = require('components/reset_password/reset_password_page')
 PageNotFound = require('components/error_pages/page_not_found')
 ServerErrorPage = require('components/error_pages/server_error_page')
 ApplicationErrorPage = require('components/error_pages/application_error_page')
+TimeoutErrorPage = require('components/error_pages/timeout_error_page')
 
 Layer = require('components/layered_navigation/layer')
 LayerGroup = require('components/layered_navigation/layer_group')
@@ -125,6 +126,8 @@ module.exports = React.createClass
         <ApplicationErrorPage />
       when 'server_error'
         <ServerErrorPage />
+      when 'timeout_error'
+        <TimeoutErrorPage />
       else
         # should never reach here, programming error.
         throw new Error("Page not found! Please check the URL")

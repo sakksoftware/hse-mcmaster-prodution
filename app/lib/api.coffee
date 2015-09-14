@@ -34,6 +34,7 @@ module.exports = class API
       method: method
       contentType: 'application/json; charset=UTF-8' # always send json to the server
       dataType: options.dataType || 'json' # always recieve json back from the server
+      timeout: 30 * 1000
       beforeSend: (xhr) =>
         if token = Cookies.get('token')
           xhr.setRequestHeader('Authorization', token)
@@ -59,18 +60,19 @@ module.exports = class API
 
       router = require('lib/router')
 
-      # TODO: add timemout error handling
-
       if res.status >= 500 && res.status <= 599
-        router.render('/5xx')
-      else if errorTypeText == 'parsererror'
-        Rollbar.error('parse error', res)
         router.render('/5xx')
       else if res.status == 404
         router.render('/404')
       else if res.status > 400 && res.status <= 499 && res.status != 422
         Rollbar.error('Application Error', res)
         router.render('/4xx')
+      else if errorTypeText == 'parsererror'
+        Rollbar.error('parse error', res)
+        router.render('/5xx')
+      else if errorTypeText == 'timeout'
+        Rollbar.error('request timedout', res)
+        router.render('/timeout')
 
       if ENV is 'production'
         return
