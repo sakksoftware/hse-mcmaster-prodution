@@ -1,4 +1,4 @@
-config = require('config')[window.ENV]
+config = require('config')
 
 module.exports = class API
   @read: (url, options = {}) ->
