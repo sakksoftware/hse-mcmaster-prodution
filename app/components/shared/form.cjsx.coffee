@@ -78,7 +78,6 @@ module.exports = React.createClass
       if field?.type is 'input'
         options = _.omit(field.props, 'label')
         options.defaultValue = @props.model[field.props.name] if @props.model
-        console.log('options', options, 'props', field.props, 'model', @props.model)
         @renderInput field.props.label, options
       else if _.isArray(field)
         @renderFields(field)
