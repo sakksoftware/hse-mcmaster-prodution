@@ -44,6 +44,13 @@
       text-transform: uppercase;
     }
 
+    .beta {
+      margin-left: $x-tiny-size;
+      color: orange;
+      font-style: italic;
+      text-transform: none;
+    }
+
     button, a, label {
       color: $primary-complementary-color;
 
