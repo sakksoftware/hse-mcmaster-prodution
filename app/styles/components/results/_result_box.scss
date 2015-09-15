@@ -1,0 +1,16 @@
+.result-box {
+  .result-box-header {
+    overflow: auto;
+  }
+
+  .sort-order, .result-box-count {
+    display: inline-block;
+  }
+
+  .sort-order {
+    float: left;
+  }
+  .result-box-count {
+    float: right;
+  }
+}

@@ -113,6 +113,9 @@
       "select": "选择：",
       "not_available": "无法获取"
     },
+    "result_box": {
+      "results": "CN_results"
+    },
     "result_list": {
       "no_results": "未找到相应结果。"
     },

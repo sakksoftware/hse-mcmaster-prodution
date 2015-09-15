@@ -113,6 +113,9 @@
       "select": "Seleccionar:",
       "not_available": "No disponible"
     },
+    "result_box": {
+      "results": "ES_results"
+    },
     "result_list": {
       "no_results": "No se encontraron resultados."
     },
