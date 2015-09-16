@@ -7,9 +7,7 @@ module.exports =
   deserializeSearchUrl: ->
     params = Url.params()
 
-    if _.isEmpty(params.applied_filters)
-      applied_filters = []
-    else
+    if !_.isEmpty(params.applied_filters)
       applied_filters = params.applied_filters?.split(';')
 
     # set applied filters until we fetch filers from search
@@ -22,7 +20,7 @@ module.exports =
         id: f, applied: true, type: ''
 
     {
-      query: if params.q? then params.q else null
+      query: if params.q? then params.q else ''
       sort_by: params.sort_by || 'relevance'
       results: null
       results_count: 0

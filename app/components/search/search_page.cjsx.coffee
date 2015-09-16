@@ -1,5 +1,4 @@
 Button = ReactBootstrap.Button
-FilterActions = require('actions/filter_actions')
 SearchActions = require('actions/search_actions')
 
 SearchBox = require('components/search/search_box')
@@ -13,7 +12,6 @@ SearchSerializationService = require('services/search_serialization_service')
 
 UserStore = require('stores/user_store')
 SearchStore = require('stores/search_store')
-FilterStore = require('stores/filter_store')
 
 TranslationHelper = require('mixins/translation_helper')
 
@@ -41,15 +39,10 @@ module.exports = React.createClass
   componentWillMount: ->
     @unsubscribeUser = UserStore.listen(@userStoreUpdated)
     @unsubscribeSearch = SearchStore.listen(@searchStoreUpdated)
-    @unsubscribeFilters = FilterStore.listen(@filterStoreUpdated)
 
     # @pageQueue = []
 
-    # TODO: remove when passing results as an attribute from server a bit hacky now
-    if @state.search.query == null
-      @fetchFilters()
-    else
-      @fetchResults()
+    @fetchFilters()
 
   componentWillUnmount: ->
     @unsubscribeUser()
@@ -65,12 +58,9 @@ module.exports = React.createClass
     step = 'results' if state.search.results_count > 0
     @setState(search: state.search, step: step, errors: state.errors)
 
-  filterStoreUpdated: (state) ->
-    @state.search.filters = state.filters
-    @setState(filtersLoaded: state.loaded)
-
   fetchFilters: ->
-    FilterActions.loadFilters(UserStore.state.language)
+    SearchActions.search(@state.search).then =>
+      @setState(step: 'pending_search', filtersLoaded: true)
 
   fetchResults: ->
     @setState(step: 'searching')
