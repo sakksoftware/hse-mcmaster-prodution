@@ -4,6 +4,20 @@ $search-bar-line: 1px solid darken($border-color, 10%);
   overflow: visible;
   position: relative;
 
+  .btn-clear {
+    position: absolute;
+    top: $small-size;
+    right: $small-size;
+    width: $small-size;
+    height: $small-size;
+    font-size: 0;
+    background-image: url('/images/clear_icon.svg');
+
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+
   .react-autosuggest input {
     background-color: white;
 

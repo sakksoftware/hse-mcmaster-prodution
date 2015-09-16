@@ -2,6 +2,7 @@ Input = ReactBootstrap.Input
 SuggestionActions = require('actions/suggestion_actions')
 TranslationHelper = require('mixins/translation_helper')
 UserStore = require('stores/user_store')
+Button = require('components/shared/button')
 
 module.exports = React.createClass
   displayName: 'SearchBar'
@@ -12,6 +13,11 @@ module.exports = React.createClass
   propTypes:
     search: React.PropTypes.object
     onSearch: React.PropTypes.func.isRequired
+
+  getInitialState: ->
+    query: @props.search.query
+    # HACK: to clear the
+    count: 0
 
   dismissKeyboard: -> document.activeElement.blur()
   handleSubmit: (e) ->
@@ -30,6 +36,10 @@ module.exports = React.createClass
   getSuggestionValue: (suggestion, input) ->
     suggestion.query
 
+  clearInput: ->
+    @setState(query: '', count: ++@state.count)
+    @onSearch('')
+
   renderSuggestion: (suggestion, input) ->
     # TODO: add back suggestion count below once we have it implemented
     # ({suggestion.count})
@@ -41,16 +51,18 @@ module.exports = React.createClass
   render: ->
     inputAttributes =
       placeholder: @t('placeholder')
-      value: @props.search.query
+      value: @state.query
       id: 'search'
       ref: 'search'
 
-    <form action="#" onSubmit={@handleSubmit} className="search-bar">
+    <form ref="searchForm" action="#" onSubmit={@handleSubmit} className="search-bar">
       <Autosuggest
+        key={"autosuggest-#{@state.count}"}
         suggestions={@fetchSuggestions}
         suggestionValue={@getSuggestionValue}
         suggestionRenderer={@renderSuggestion}
         inputAttributes={inputAttributes}
         onSuggestionSelected={(suggestion) => @onSearch(suggestion.query)}
       />
+      <Button className="btn-clear" onClick={@clearInput}>&#x00D7;</Button>
     </form>
