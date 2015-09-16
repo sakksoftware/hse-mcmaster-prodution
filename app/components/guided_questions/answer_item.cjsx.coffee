@@ -34,7 +34,7 @@ module.exports = React.createClass
         menu="filters"
         title={@getTitle(answer.section, answer.filterGroup)}
         context={
-          filterGroup: answer.filterGroup
+          filterGroup: SearchStore.findFilter(answer.filterGroup)
           filters: @getFilters()
           onDismiss: @props.onHideMenu
           }
