@@ -115,7 +115,7 @@
       "not_available": "无法获取"
     },
     "result_box": {
-      "results": "CN_results"
+      "results": "结果"
     },
     "result_list": {
       "no_results": "未找到相应结果。"
@@ -127,7 +127,7 @@
       "most_popular": "最多关注"
     },
     "signup_prompt": {
-      "instructions": "CN_Sign up to view more than 20 results, to save documents and searches, and to subscribe to email alerts"
+      "instructions": "注册以查看20条以后的结果，保存文档和检索，发送电子邮件和导出文件，以及订阅邮件提醒"
     }
   },
   "profile_page": {
@@ -186,6 +186,6 @@
     "too_short": "太短了，必须至少8个字符",
     "invalid_login": "用户名或密码错误",
     "passwords_must_match": "密码必须匹配",
-    "invalid": "CN_invalid"
+    "invalid": "无效"
   }
 }

@@ -115,7 +115,7 @@
       "not_available": "Não disponível"
     },
     "result_box": {
-      "results": "PT_results"
+      "results": “Resultados"
     },
     "result_list": {
       "no_results": "Nenhum resultado encontrado."
@@ -127,7 +127,7 @@
       "most_popular": "Mais popular"
     },
     "signup_prompt": {
-      "instructions": "PT_Sign up to view more than 20 results, to save documents and searches, and to subscribe to email alerts"
+      "instructions": "Inscreva-se para exibir mais de 20 resultados, salvar documentos e pesquisas, enviar e-mails com documentos e exportá-los e para assinar alertas por e-mail"
     }
   },
   "profile_page": {
@@ -186,6 +186,6 @@
     "too_short": "é muito curto, debe conter pelo menos 8 caracteres",
     "invalid_login": "Nome de usuário e senha incorretos",
     "passwords_must_match": "As senhas devem coincidir",
-    "invalid": "PT_invalid"
+    "invalid": “Não é válido"
   }
 }
