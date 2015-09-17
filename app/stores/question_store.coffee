@@ -8,10 +8,9 @@ module.exports = Reflux.createStore
   getInitialState: ->
     questions: []
     loaded: false
-    errors: null
 
   onLoadQuestionsCompleted: (questions) ->
     @setState(questions: questions, loaded: true)
 
   onLoadQuestionsFailed: ->
-    @setState(errors: 'Cannot load questions', loaded: false)
+    @setState(loaded: false)
