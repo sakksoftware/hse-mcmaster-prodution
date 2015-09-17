@@ -115,7 +115,7 @@
       "not_available": "No disponible"
     },
     "result_box": {
-      "results": “Resultados"
+      "results": "Resultados"
     },
     "result_list": {
       "no_results": "No se encontraron resultados."
@@ -186,6 +186,6 @@
     "too_short": "es demasiado corto, debe contener un mínimo de 8 caracteres",
     "invalid_login": "Nombre de usuario o contraseña incorrectos",
     "passwords_must_match": "Las contraseñas deben coincidir",
-    "invalid": “Inválido"
+    "invalid": "Inválido"
   }
 }
