@@ -38,7 +38,7 @@ module.exports = React.createClass
       </header>
       <section className="result-item-description">
         <h2 className="result-item-title">
-          <Link to={"/articles/#{@props.result.id}?t=#{@props.result.t}"}>{@props.result.title}</Link>
+          <Link to={"/articles/#{@props.result.id}?t=#{@props.result.traversal}"}>{@props.result.title}</Link>
         </h2>
         <div className="result-item-categories">
           {@props.result.category} | {@props.result.country_groupings}
