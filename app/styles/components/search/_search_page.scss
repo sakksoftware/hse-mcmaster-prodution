@@ -1,3 +1,15 @@
+#app.search {
+  @include desktop {
+    #page-content {
+      max-width: 632px;
+    }
+
+    .layered-navigation-content {
+      padding-right: $layer-width + $small-size;
+    }
+  }
+}
+
 .search-page {
   .result-box {
     min-height: 200px;

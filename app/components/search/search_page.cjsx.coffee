@@ -27,13 +27,12 @@ module.exports = React.createClass
     setOverlayContent: React.PropTypes.func.isRequired
 
   # steps
-  # pending_search
   # searching
   # results
   getInitialState: ->
     search: SearchStore.state.search
     filtersLoaded: false
-    step: 'pending_search'
+    step: 'results'
     guidedSearch: UserStore.state.guidedSearch
 
   componentWillMount: ->
@@ -42,7 +41,7 @@ module.exports = React.createClass
 
     # @pageQueue = []
 
-    @fetchFilters()
+    @fetchResults()
 
   componentWillUnmount: ->
     @unsubscribeUser()
@@ -52,14 +51,9 @@ module.exports = React.createClass
     @setState(guidedSearch: state.guidedSearch)
 
   searchStoreUpdated: (state) ->
-    # TODO: rethink were to put the search steps state
     step = @state.step
     step = 'results' if state.search.results_count > 0
     @setState(search: state.search, step: step, errors: state.errors)
-
-  fetchFilters: ->
-    SearchActions.search(@state.search).then =>
-      @setState(step: 'pending_search', filtersLoaded: true)
 
   fetchResults: ->
     @setState(step: 'searching')

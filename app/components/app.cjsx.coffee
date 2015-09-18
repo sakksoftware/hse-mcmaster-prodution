@@ -1,3 +1,4 @@
+HomePage = require('components/home/home_page')
 ArticlesPage = require('components/articles/articles_page')
 SearchPage = require('components/search/search_page')
 StaticPage = require('components/static/static_page')
@@ -99,6 +100,11 @@ module.exports = React.createClass
     # TODO: can be generalized by invoking the right factory based on page name passed in
     # and passing the arguments
     switch @props.page
+      when 'home'
+        <HomePage
+          onShowMenu={@toggleMenu}
+          dismissMenu={@dismissMenu}
+        />
       when 'search'
         <SearchPage key="search-page"
           onShowMenu={@toggleMenu}
@@ -172,7 +178,7 @@ module.exports = React.createClass
     </LayerGroup>
 
   render: ->
-    <LayeredNavigation ref="layaredNavigation" className="app" id="app">
+    <LayeredNavigation ref="layaredNavigation" className="app #{@props.page}" id="app">
       {@renderLayerGroup()}
       {@renderHeader()}
       <div id="page-content">

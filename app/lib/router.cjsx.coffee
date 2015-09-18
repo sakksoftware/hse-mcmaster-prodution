@@ -7,6 +7,9 @@ class Router
 
   routes:
     '/$': ->
+      React.render <App page="home" />, @el
+
+    '/search': ->
       React.render <App page="search" />, @el
 
     'articles/:id': (id) ->

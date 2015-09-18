@@ -38,7 +38,8 @@ module.exports = React.createClass
 
   clearInput: ->
     @setState(query: '', count: ++@state.count)
-    @onSearch('')
+    router = require('lib/router')
+    router.visit('/')
 
   renderSuggestion: (suggestion, input) ->
     # TODO: add back suggestion count below once we have it implemented
