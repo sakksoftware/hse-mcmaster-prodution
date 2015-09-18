@@ -6,9 +6,10 @@ module.exports = React.createClass
     question: React.PropTypes.object.isRequired
     onShowMenu: React.PropTypes.func.isRequired
     onHideMenu: React.PropTypes.func.isRequired
+    expanded: React.PropTypes.bool
 
   getInitialState: ->
-    expanded: false
+    expanded: @props.expanded || false
 
   toggle: (e) ->
     e.preventDefault()

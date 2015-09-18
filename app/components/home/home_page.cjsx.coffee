@@ -37,7 +37,7 @@ module.exports = React.createClass
 
   renderGuidedSearch: ->
     if @state.guidedSearch
-      <GuidedQuestionsBox onShowMenu={@props.onShowMenu} />
+      <GuidedQuestionsBox expanded=true onShowMenu={@props.onShowMenu} />
 
   render: ->
     <div className="home-page">

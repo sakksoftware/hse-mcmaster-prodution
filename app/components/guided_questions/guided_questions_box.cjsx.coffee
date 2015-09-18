@@ -10,6 +10,7 @@ module.exports = React.createClass
 
   propTypes:
     onShowMenu: React.PropTypes.func.isRequired
+    expanded: React.PropTypes.bool
 
   getInitialState: ->
     questionIndex: 0
@@ -85,7 +86,7 @@ module.exports = React.createClass
         [
           <CarouselIndicators key="carousel-indicators" onClick={@setQuestion} index={@state.questionIndex} length={@state.questions.length} />
           @prevButton()
-          <GuidedQuestion onShowMenu={@props.onShowMenu} onHideMenu={@nextQuestion} key="guided-question" question={@getQuestion()} />
+          <GuidedQuestion expanded={@props.expanded} onShowMenu={@props.onShowMenu} onHideMenu={@nextQuestion} key="guided-question" question={@getQuestion()} />
           @nextButton()
         ]
       else

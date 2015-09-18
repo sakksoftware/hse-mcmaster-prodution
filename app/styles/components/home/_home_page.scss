@@ -1,8 +1,16 @@
 #app.home {
   background: $background-gradient-end; // no gradient support fallback
   background: linear-gradient(to right, $background-gradient-start, $background-gradient-end);
-  background-size: 100% 400px;
+  background-size: 100% 448px;
   background-repeat: no-repeat;
+
+  @media (min-width: 500px) {
+    background-size: 100% 400px;
+  }
+
+  @include desktop {
+    background-size: 100% 480px;
+  }
 
   .top-nav {
     background: none;
@@ -24,6 +32,10 @@
     color: $primary-complementary-color;
     text-align: center;
     text-transform: uppercase;
+
+    @include desktop {
+      margin-top: $desktop-xx-large-size;
+    }
   }
 
   p {
@@ -33,7 +45,8 @@
     font-family: "Georgia";
     font-weight: 100;
     font-size: $x-small-size;
-    padding-bottom: $xx-large-size;
+    margin-top: $x-large-size;
+    margin-bottom: 0;
   }
 
   .home-page-header {
@@ -41,13 +54,64 @@
 
   .guided-questions-box {
     margin-top: $xx-large-size;
+
+    @include desktop {
+      .btn-prev, .btn-next, .guided-question {
+        background: none;
+      }
+
+      .btn-toggle {
+        display: none;
+      }
+
+      .btn-prev, .btn-next {
+        margin-top: 80px;
+      }
+
+      .btn-prev {
+        width: 64px;
+        height: 64px;
+        i:before {
+          background: url('/images/home_back_arrow.svg');
+          width: 64px;
+          height: 64px;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      .btn-next {
+        width: 64px;
+        height: 64px;
+        i:before {
+          background: url('/images/home_next_arrow.svg');
+          width: 64px;
+          height: 64px;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      .guided-question {
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+    }
   }
 
-  .search-box .layer-toggle-help {
-    color: $primary-complementary-color;
+  .search-box {
+    margin-top: $xx-large-size;
 
-    &:before {
-      background: url('/images/tip_w_icon.svg');
+    @include desktop {
+      margin-top: $desktop-xx-large-size;
+    }
+
+    .layer-toggle-help {
+      color: $primary-complementary-color;
+
+      &:before {
+        background: url('/images/tip_w_icon.svg');
+      }
     }
   }
 

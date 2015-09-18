@@ -89,6 +89,7 @@
         position: absolute;
         top: $small-size;
         left: -2px;
+        color: rgba(255,255,255, 0.3);
 
         &:first-child:before {
           display: none;

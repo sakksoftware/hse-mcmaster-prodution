@@ -1,7 +1,7 @@
 #app.search {
   @include desktop {
     #page-content {
-      max-width: 632px;
+      max-width: $desktop-max-page-width;
     }
 
     .layered-navigation-content {
