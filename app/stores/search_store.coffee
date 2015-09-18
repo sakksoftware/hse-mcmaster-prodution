@@ -130,6 +130,9 @@ module.exports = Reflux.createStore
       filter.end = end
       @onAddFilter(filter)
 
+  onLoadFiltersCompleted: (search) ->
+    @setState(search: search, errors: null, loaded: true)
+
   # private
   _findFilterRecursive: (filterId, filters) ->
     for filter in filters

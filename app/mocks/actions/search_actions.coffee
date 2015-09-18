@@ -19,8 +19,17 @@ SearchActions = Reflux.createActions
   toggleCountryFilter: {}
   toggleDateRangeFilter: {}
   search: {asyncResult: true}
+  loadFilters: {asyncResult: true}
 
-SearchActions.search.listen (search) ->
+SearchActions.search.listen (search) -> performSearch.call(@, search)
+SearchActions.loadFilters.listen ->
+  search = require('stores/search_store').state.search
+  performSearch.call(@, search)
+
+module.exports = SearchActions
+
+# private
+performSearch = (search) ->
   language = UserStore.state.language
   allFilters = FiltersHelper.getFilters()
   applied_filters = getAppliedFilters(search.filters)
@@ -38,9 +47,6 @@ SearchActions.search.listen (search) ->
 
   StoreMock.send(res, (=> @completed(res)), "/search#{query}")
 
-module.exports = SearchActions
-
-# private
 addAppliedProperty = (filters, appliedFilters) ->
   _(filters).each (f) =>
     if f.id

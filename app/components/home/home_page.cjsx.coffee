@@ -28,11 +28,10 @@ module.exports = React.createClass
     @setState(guidedSearch: state.guidedSearch)
 
   fetchFilters: ->
-    SearchActions.search(SearchStore.state.search).then =>
-      @setState(step: 'pending_search', filtersLoaded: true)
+    SearchActions.loadFilters()
 
   redirectToSearch: (query) ->
-    @search.query = query
+    SearchStore.state.search.query = query
     router = require('lib/router')
     router.visit('/search')
 
