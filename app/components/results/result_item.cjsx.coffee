@@ -12,9 +12,6 @@ module.exports = React.createClass
     resultNumber: React.PropTypes.number.isRequired
     result: React.PropTypes.object.isRequired
 
-  getShortTitle: ->
-    @props.result.title[0..9]
-
   shortRating: (quality) ->
     if match = quality?.match(/[0-9]{1,2}\/[0-9]{1,2}/)
       match
@@ -41,7 +38,7 @@ module.exports = React.createClass
       </header>
       <section className="result-item-description">
         <h2 className="result-item-title">
-          <Link to={"/articles/#{@props.result.id}?t=#{@getShortTitle()}"}>{@props.result.title}</Link>
+          <Link to={"/articles/#{@props.result.id}?t=#{@props.result.t}"}>{@props.result.title}</Link>
         </h2>
         <div className="result-item-categories">
           {@props.result.category} | {@props.result.country_groupings}
