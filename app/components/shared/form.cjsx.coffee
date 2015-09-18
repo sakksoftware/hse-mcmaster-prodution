@@ -10,7 +10,7 @@ module.exports = React.createClass
   displayName: 'Form'
   propTypes:
     onSubmit: React.PropTypes.func.isRequired
-    onError: React.PropTypes.func.isRequired
+    onError: React.PropTypes.func
     afterSave: React.PropTypes.func
     afterSaveContent: React.PropTypes.func
     replaceContent: React.PropTypes.bool
