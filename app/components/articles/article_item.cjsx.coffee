@@ -99,7 +99,7 @@ module.exports = React.createClass
   render: ->
     article = @props.article
     documentSubTypes =
-      <li key="article-item-document-type-sub-type">{@renderDocumentSubTypes()}</li>
+
 
     # <ArticleField visible={article.related_documents_visible}>
     #   <h2>{@props.article.label_related_documents}</h2>
@@ -113,8 +113,8 @@ module.exports = React.createClass
       <ArticleField>
         <h2>{@props.article.label_document_type}</h2>
         <ul className="article-item-document-type">
-          <li key="article-item-document-type-main">{article.document_type}</li>
-          {documentSubTypes}
+          <li key="article-item-document-type-main">{article.document_type.title}</li>
+          <li key="article-item-document-type-sub-type">{@renderDocumentSubTypes()}</li>
         </ul>
       </ArticleField>
 
