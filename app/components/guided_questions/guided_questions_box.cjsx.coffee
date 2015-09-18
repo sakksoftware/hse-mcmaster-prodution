@@ -22,6 +22,10 @@ module.exports = React.createClass
     @unsubscribeSearch = SearchStore.listen(@handleSearchLoaded)
     @unsubscirbeFilters = FilterStore.listen(@handleFiltersLoaded)
 
+  componentWillUnmount: ->
+    @unsubscribeSearch()
+    @unsubscirbeFilters()
+
   handleQuestionsLoaded: (questions) ->
     @setState(questions: questions, questionIndex: 0, questionsLoaded: true)
 
