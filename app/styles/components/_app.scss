@@ -3,6 +3,7 @@
     max-width: $max-page-width;
     margin: 0 auto;
     padding: $small-size;
+    z-index: 1;
   }
 
   .layer-toggle-main {
@@ -32,6 +33,7 @@
     color: $menu-header-color;
     line-height: $small-size;
     height: $xx-large-size;
+    z-index: 2;
 
     h1 {
       display: inline-block;
