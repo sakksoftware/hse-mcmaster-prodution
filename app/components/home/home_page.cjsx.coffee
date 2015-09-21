@@ -35,6 +35,11 @@ module.exports = React.createClass
   fetchFilters: ->
     SearchActions.loadFilters()
 
+  showFiltersMenu: ->
+    router = require('lib/router')
+    router.visit('/search')
+    @props.onShowMenu.apply(@, arguments)
+
   redirectToSearch: (query) ->
     SearchStore.state.search.query = query
     router = require('lib/router')
@@ -42,7 +47,7 @@ module.exports = React.createClass
 
   renderGuidedSearch: ->
     if @state.guidedSearch
-      <GuidedQuestionsBox expanded=true onShowMenu={@props.onShowMenu} />
+      <GuidedQuestionsBox expanded=true onShowMenu={@showFiltersMenu} />
 
   render: ->
     <div className="home-page">
