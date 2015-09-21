@@ -2,11 +2,16 @@ SearchActions = require('actions/search_actions')
 SearchStore = require('stores/search_store')
 UserStore = require('stores/user_store')
 
+TranslationHelper = require('mixins/translation_helper')
+
 SearchBox = require('components/search/search_box')
 GuidedQuestionsBox = require('components/guided_questions/guided_questions_box')
 
 module.exports = React.createClass
   displayName: 'HomePage'
+
+  mixins: [TranslationHelper]
+  baseTranslation: 'home_page'
 
   propTypes:
     onShowMenu: React.PropTypes.func.isRequired
@@ -43,11 +48,7 @@ module.exports = React.createClass
     <div className="home-page">
       <div className="home-page-header">
         <h1>Health Systems Evidence</h1>
-        <p className="intro">
-          The world's most compherhansive, freeaccess poinnt with for evidence support policy makers,
-          stakeholders and researches interested in how to strengthen or reform health systems or in how to
-          get cost-effective programs services and drugs to those who need them
-        </p>
+        <p className="intro">{@t('intro')}</p>
         <SearchBox
           search={@search}
           onSearch={@redirectToSearch}

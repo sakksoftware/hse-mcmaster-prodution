@@ -79,6 +79,9 @@
       "placeholder": "AAAA"
     }
   },
+  "home_page": {
+    "intro": "FR_The world's most compherhansive, free access point for evidence support policy makers, stakeholders and researches interested in how to strengthen or reform health systems or in how to get cost-effective programs services and drugs to those who need them"
+  },
   "articles_page": {
     "no_studies_conducted_in": "Non disponible",
     "no_full_text_report": "Aucun rapport intégral disponible",
