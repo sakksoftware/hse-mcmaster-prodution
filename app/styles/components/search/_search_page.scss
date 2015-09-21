@@ -1,5 +1,7 @@
 #app.search {
   @include desktop {
+    min-height: 1500px;
+
     #page-content {
       max-width: $desktop-max-page-width;
     }
@@ -54,9 +56,5 @@
     @include desktop {
       display: block;
     }
-  }
-
-  @include desktop {
-    min-height: 1400px;
   }
 }
