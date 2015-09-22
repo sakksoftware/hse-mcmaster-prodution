@@ -236,39 +236,98 @@
     ]
   },
   {
-    "filters": [
-      "0_5"
-    ],
-    "text": "¿Desea conocer qué han escrito sobre el tema organismos internacionales como la OMS y el Banco Mundial? (y \"gobiernos y organizaciones interesadas canadienses\", si se encuentra en Canadá, y \"el gobierno y la organización interesada de Ontario\", si se encuentra en Ontario)",
-    "answers": [
+    "regions": [
       {
-        "text": "Documentos de sistemas de salud de organizaciones intergubernamentales",
-        "section": {
-          "title": "Contenido gratuito"
-        },
-        "filterGroup": {
-          "id": "0_17",
-          "title": "Documentos intergubernamentales"
+        "name": "ontario",
+        "question": {
+          "filters": [
+            "0_5"
+          ],
+          "text": "ES_Do you want to see what international agencies like WHO and the World Bank, and what Ontario and other Canadian government and stakeholder organizations, have written on the topic?",
+          "answers": [
+            {
+              "text": "ES_Intergovernmental Organizations' Health Systems Documents",
+              "section": {
+                "title": "ES_Complementary Content"
+              },
+              "filterGroup": {
+                "id": "0_17",
+                "title": "ES_Intergovernmental documents"
+              }
+            },
+            {
+              "text": "ES_Canada's Health Systems Documents",
+              "section": {
+                "title": "ES_Complementary Content"
+              },
+              "filterGroup": {
+                "id": "0_18",
+                "title": "ES_Canadian documents"
+              }
+            },
+            {
+              "text": "ES_Ontario's Health Systems Documents",
+              "section": {
+                "title": "ES_Complementary Content"
+              },
+              "filterGroup": {
+                "id": "0_19",
+                "title": "ES_Ontario's documents"
+              }
+            }
+          ]
         }
       },
       {
-        "text": "Documentos de sistemas de salud de Canadá",
-        "section": {
-          "title": "Contenido gratuito"
-        },
-        "filterGroup": {
-          "id": "0_18",
-          "title": "Documentos Canadienses"
+        "name": "canada",
+        "question": {
+          "filters": [
+            "0_5"
+          ],
+          "text": "ES_Do you want to see what international agencies like WHO and the World Bank, and what Canadian governments and stakeholder organizations, have written on the topic?",
+          "answers": [
+            {
+              "text": "ES_Intergovernmental Organizations' Health Systems Documents",
+              "section": {
+                "title": "ES_Complementary Content"
+              },
+              "filterGroup": {
+                "id": "0_17",
+                "title": "ES_Intergovernmental documents"
+              }
+            },
+            {
+              "text": "ES_Canada's Health Systems Documents",
+              "section": {
+                "title": "ES_Complementary Content"
+              },
+              "filterGroup": {
+                "id": "0_18",
+                "title": "ES_Canadian documents"
+              }
+            }
+          ]
         }
       },
       {
-        "text": "Documentos de sistemas de salud de Ontario",
-        "section": {
-          "title": "Contenido gratuito"
-        },
-        "filterGroup": {
-          "id": "0_19",
-          "title": "Documentos de Ontario"
+        "name": "worldwide",
+        "question": {
+          "filters": [
+            "0_5"
+          ],
+          "text": "ES_Do you want to see what international agencies like WHO and the World Bank have written on the topic?",
+          "answers": [
+            {
+              "text": "ES_Intergovernmental Organizations' Health Systems Documents",
+              "section": {
+                "title": "ES_Complementary Content"
+              },
+              "filterGroup": {
+                "id": "0_17",
+                "title": "ES_Intergovernmental documents"
+              }
+            }
+          ]
         }
       }
     ]

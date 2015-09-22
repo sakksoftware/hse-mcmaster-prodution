@@ -1,6 +1,7 @@
 GuidedQuestion = require('components/guided_questions/guided_question')
 CarouselIndicators = require('components/shared/carousel_indicators')
 QuestionActions = require('actions/question_actions')
+UserActions = require('actions/user_actions')
 SearchStore = require('stores/search_store')
 FilterStore = require('stores/filter_store')
 QuestionStore = require('stores/question_store')
@@ -20,6 +21,7 @@ module.exports = React.createClass
 
   componentWillMount: ->
     QuestionActions.loadQuestions().then(@handleQuestionsLoaded)
+    UserActions.loadRegion()
     @unsubscribeSearch = SearchStore.listen(@handleSearchLoaded)
     @unsubscirbeFilters = FilterStore.listen(@handleFiltersLoaded)
 

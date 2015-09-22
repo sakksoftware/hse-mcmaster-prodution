@@ -12,7 +12,7 @@ UserActions = Reflux.createActions
   loadUser: {asyncResult: true}
   forgotPassword: {asyncResult: true}
   resetPassword: {asyncResult: true}
-
+  loadRegion: {asyncResult: true}
 
 UserActions.createUser.listen (user) ->
   user.errors = {}
@@ -62,4 +62,9 @@ UserActions.resetPassword.listen (data) ->
   API.read('/user').done (user) =>
     StoreMock.send data, (=> @completed(user)), 'POST /user/reset_password'
 
+UserActions.loadRegion.listen ->
+  $.getJSON('//freegeoip.net/json/').done(@completed).fail =>
+    API.onError().apply(@failed, arguments)
+    @failed.apply(@failed, arguments)
+    
 module.exports = UserActions

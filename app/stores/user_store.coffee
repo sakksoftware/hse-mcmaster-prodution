@@ -2,6 +2,8 @@ API = require('lib/api')
 UserActions = require('actions/user_actions')
 RefluxStateMixin = require('lib/reflux_state_mixin')(Reflux)
 
+params = require('lib/url').params()
+
 module.exports = Reflux.createStore
   listenables: [UserActions]
   mixins: [RefluxStateMixin]
@@ -12,11 +14,14 @@ module.exports = Reflux.createStore
     else
       guidedSearch = true
 
+    # TODO: instead of having language outside of the guest object and then updating it,
+    # have an guest user object. Can even query the API for guest users.
     user: null
     loaded: false
     errors: null
     language: Cookies.get('lang') || 'en'
     guidedSearch: guidedSearch
+    region: params.region || 'worldwide'
 
   onLoadUserCompleted: (user) ->
     @setState(user: user, loaded: true, errors: null, language: user.language)
@@ -84,3 +89,13 @@ module.exports = Reflux.createStore
 
   onResetPasswordFailed: ->
     @setState(errors: ['failed_password_reset'])
+
+  onLoadRegionCompleted: (geo) ->
+    if geo.region_code == 'ON'
+      region = 'ontario'
+    else if geo.country_code == 'CA'
+      region = 'canada'
+    else
+      region = 'worldwide'
+
+    @setState(region: params.region || region)

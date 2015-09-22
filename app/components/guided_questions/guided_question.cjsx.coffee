@@ -1,4 +1,5 @@
 AnswerList = require('components/guided_questions/answer_list')
+UserStore = require('stores/user_store')
 
 module.exports = React.createClass
   displayName: 'GuidedQuestion'
@@ -15,14 +16,28 @@ module.exports = React.createClass
     e.preventDefault()
     @setState(expanded: !@state.expanded)
 
+  getQuestion: ->
+    if @props.question.regions
+      @_getByRegion()
+    else
+      @props.question
+
+  _getByRegion: ->
+    if UserStore.state.region == 'ontario'
+      _.findWhere(@props.question.regions, name: 'ontario').question
+    else if UserStore.state.region == 'canada'
+      _.findWhere(@props.question.regions, name: 'canada').question
+    else
+      _.findWhere(@props.question.regions, name: 'worldwide').question
+
   render: ->
     toggleClass = "collapsed"
     toggleClass = "expanded" if @state.expanded
 
     <div className="guided-question #{toggleClass}">
       <div className="guided-question-text">
-        {@props.question.text}
+        {@getQuestion().text}
         <a className="btn-toggle" href="#" onClick={@toggle}></a>
       </div>
-      <AnswerList answers={@props.question.answers} onShowMenu={@props.onShowMenu} onHideMenu={@props.onHideMenu} />
+      <AnswerList answers={@getQuestion().answers} onShowMenu={@props.onShowMenu} onHideMenu={@props.onHideMenu} />
     </div>

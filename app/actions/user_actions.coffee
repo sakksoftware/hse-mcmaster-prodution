@@ -14,6 +14,7 @@ UserActions = Reflux.createActions
   loadUser: {asyncResult: true}
   forgotPassword: {asyncResult: true}
   resetPassword: {asyncResult: true}
+  loadRegion: {asyncResult: true}
 
 UserActions.createUser.listen (user) ->
   user.language = Cookies.get('lang')
@@ -47,5 +48,10 @@ UserActions.forgotPassword.listen (data) ->
 
 UserActions.resetPassword.listen (data) ->
   API.create('user/reset_password', data).done(@completed).fail(@failed)
+
+UserActions.loadRegion.listen ->
+  $.getJSON('//freegeoip.net/json/').done(@completed).fail =>
+    API.onError().apply(@failed, arguments)
+    @failed.apply(@failed, arguments)
 
 module.exports = UserActions
