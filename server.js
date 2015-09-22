@@ -22,7 +22,7 @@ if(NODE_ENV == 'staging') {
   app.use(basicAuth('hse', 'withgreatpower'));
 }
 
-if(NODE_ENV == 'production') {
+if(NODE_ENV == 'production' || NODE_ENV == 'staging') {
   // force ssl
   app.use(function(req, res, next) {
     if(req.headers['x-forwarded-proto'] !== 'https') {
