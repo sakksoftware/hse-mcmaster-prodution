@@ -1,4 +1,5 @@
 .article-item {
+  position: relative;
 
   h1 {
     color: $primary-color;
@@ -89,6 +90,61 @@
 
     h2:last-child {
       margin-bottom: 0;
+    }
+  }
+
+  @include desktop {
+    padding-left: 220px + $large-size;
+
+    h1 {
+      border-bottom: 2px solid $border-color;
+      padding-bottom: $desktop-large-size;
+      margin-bottom: $xx-large-size;
+    }
+
+    .article-field:nth-child(5n) {
+      padding-bottom: $xx-large-size;
+      margin-bottom: $xx-large-size;
+      border-bottom: 2px solid $border-color;
+    }
+
+    .highlighted-section {
+      text-align: right;
+      background: none;
+      width: 220px;
+      margin-left: 0;
+      position: absolute;
+      left: 0;
+      top: 170px;
+      padding: 0;
+      color: lighten($primary-text-color, 20%);
+
+      .article-field:nth-child(5n) {
+        border: none;
+        margin-bottom: inherit;
+        padding-bottom: inherit;
+      }
+
+      &.desktop-sidebar-second {
+        top: 575px;
+      }
+
+      &.desktop-sidebar-first {
+
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      a {
+        color: lighten($primary-text-color, 20%);
+      }
+
+      h2 {
+        font-size: 11px;
+        color: $primary-text-color;
+      }
     }
   }
 }

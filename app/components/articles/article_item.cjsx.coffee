@@ -123,11 +123,6 @@ module.exports = React.createClass
         {article.year_published}
       </ArticleField>
 
-      <ArticleField visible={article.last_year_literature_searched_visible}>
-        <h2>{@props.article.label_last_year_literature_searched}</h2>
-        {@ifNotEmpty @props.article.last_year_literature_searched, @t('no_last_year_literature_searched')}
-      </ArticleField>
-
       <ArticleField visible={article.quality_rating_visible}>
         <h2>{@props.article.label_quality_rating}</h2>
         {article.quality} ({article.quality_note})
@@ -143,7 +138,7 @@ module.exports = React.createClass
         <ul>{@ifNotEmpty @renderNestedList(@props.article.priority_areas, 'priority_areas', 'priority_area'), @t('no_priority_areas')}</ul>
       </ArticleField>
 
-      <div className="highlighted-section">
+      <div className="highlighted-section desktop-sidebar-second">
         <ArticleField>
           <h2>{@props.article.label_domains}</h2>
           <ul>{@ifNotEmpty @renderNestedList(@props.article.domains, 'domains', 'domain'), @t('no_domains')}</ul>
@@ -177,7 +172,7 @@ module.exports = React.createClass
         </div>
       </ArticleField>
 
-      <div className="highlighted-section">
+      <div className="highlighted-section desktop-sidebar-first">
         <ArticleField visible={article.summary_visible}>
           <h2>{@props.article.label_summary}</h2>
           {@ifNotEmpty @renderLinksList('summary-link', article.summary_links), @t('no_summary_links')}
@@ -225,8 +220,8 @@ module.exports = React.createClass
       </ArticleField>
 
       <ArticleField visible={article.registry_record_visible}>
-        <h2>{@props.article.label_registry_record_links}</h2>
-        {@ifNotEmpty @props.article.registry_record_links, @t('no_registry_record_links')}
+        <h2>{@props.article.label_registry_record}</h2>
+        {@ifNotEmpty @props.article.label_registry_record, @t('no_registry_record_links')}
       </ArticleField>
 
       <ArticleField visible={article.who_links_visible}>
