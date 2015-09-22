@@ -77,7 +77,7 @@
     text-decoration: underline;
   }
 
-  .highlighted-section {
+  .section:nth-child(odd) {
     background-color: #F3F3F3;
     width: 300%;
     margin-left: -100%;
@@ -108,29 +108,25 @@
       border-bottom: 2px solid $border-color;
     }
 
-    .highlighted-section {
-      text-align: right;
+    .section:nth-child(odd) {
       background: none;
-      width: 220px;
       margin-left: 0;
+      width: 100%;
+      padding: 0;
+    }
+
+    .desktop-sidebar {
+      width: 220px;
       position: absolute;
       left: 0;
       top: 170px;
-      padding: 0;
       color: lighten($primary-text-color, 20%);
+      text-align: right;
 
       .article-field:nth-child(5n) {
         border: none;
         margin-bottom: inherit;
         padding-bottom: inherit;
-      }
-
-      &.desktop-sidebar-second {
-        top: 575px;
-      }
-
-      &.desktop-sidebar-first {
-
       }
 
       ul {

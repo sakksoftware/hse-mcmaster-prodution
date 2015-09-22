@@ -110,35 +110,37 @@ module.exports = React.createClass
     <div className="article-item">
       <h1>{article.title}</h1>
 
-      <ArticleField>
-        <h2>{@props.article.label_document_type}</h2>
-        <ul className="article-item-document-type">
-          <li key="article-item-document-type-main">{article.document_type.title}</li>
-          <li key="article-item-document-type-sub-type">{@renderDocumentSubTypes()}</li>
-        </ul>
-      </ArticleField>
+      <div className="section">
+        <ArticleField>
+          <h2>{@props.article.label_document_type}</h2>
+          <ul className="article-item-document-type">
+            <li key="article-item-document-type-main">{article.document_type.title}</li>
+            <li key="article-item-document-type-sub-type">{@renderDocumentSubTypes()}</li>
+          </ul>
+        </ArticleField>
 
-      <ArticleField visible={article.year_published_visible}>
-        <h2>{@props.article.label_year_published}</h2>
-        {article.year_published}
-      </ArticleField>
+        <ArticleField visible={article.year_published_visible}>
+          <h2>{@props.article.label_year_published}</h2>
+          {article.year_published}
+        </ArticleField>
 
-      <ArticleField visible={article.quality_rating_visible}>
-        <h2>{@props.article.label_quality_rating}</h2>
-        {article.quality} ({article.quality_note})
-      </ArticleField>
+        <ArticleField visible={article.quality_rating_visible}>
+          <h2>{@props.article.label_quality_rating}</h2>
+          {article.quality} ({article.quality_note})
+        </ArticleField>
 
-      <ArticleField visible={article.countries_in_which_studies_were_conducted_visible}>
-        <h2>{@props.article.label_studies_conducted_in}</h2>
-        {@ifNotEmpty @renderStudiesConductedIn(), @t('no_studies_conducted_in')}
-      </ArticleField>
+        <ArticleField visible={article.countries_in_which_studies_were_conducted_visible}>
+          <h2>{@props.article.label_studies_conducted_in}</h2>
+          {@ifNotEmpty @renderStudiesConductedIn(), @t('no_studies_conducted_in')}
+        </ArticleField>
 
-      <ArticleField visible={article.priority_area_visible}>
-        <h2>{@props.article.label_priority_areas}</h2>
-        <ul>{@ifNotEmpty @renderNestedList(@props.article.priority_areas, 'priority_areas', 'priority_area'), @t('no_priority_areas')}</ul>
-      </ArticleField>
+        <ArticleField visible={article.priority_area_visible}>
+          <h2>{@props.article.label_priority_areas}</h2>
+          <ul>{@ifNotEmpty @renderNestedList(@props.article.priority_areas, 'priority_areas', 'priority_area'), @t('no_priority_areas')}</ul>
+        </ArticleField>
+      </div>
 
-      <div className="highlighted-section desktop-sidebar-second">
+      <div className="section">
         <ArticleField>
           <h2>{@props.article.label_domains}</h2>
           <ul>{@ifNotEmpty @renderNestedList(@props.article.domains, 'domains', 'domain'), @t('no_domains')}</ul>
@@ -150,82 +152,88 @@ module.exports = React.createClass
         </ArticleField>
       </div>
 
-      <ArticleField visible={article.theme_visible}>
-        <h2>{@props.article.label_themes}</h2>
-        <ul>{@ifNotEmpty @renderNestedList(@props.article.themes, 'themes', 'theme'), @t('no_themes')}</ul>
-      </ArticleField>
-
-      <ArticleField visible={article.country_focus_visible}>
-        <h2>{@props.article.label_country_focus}</h2>
-        {@ifNotEmpty article.country_groupings, @t('no_country_groupings')}
-      </ArticleField>
-
-      <ArticleField visible={article.who_region_visible}>
-        <h2>{@props.article.label_who_regions}</h2>
-        {@ifNotEmpty @joinList(_.compact(_.pluck(@props.article.who_regions, 'title'))), @t('no_who_regions')}
-      </ArticleField>
-
-      <ArticleField visible={article.lmic_focus_visible}>
-        <h2>{@props.article.label_lmic_focus}</h2>
-        <div className="article-item-lmic-focus">
-          {@ifNotEmpty @joinList(_.compact(_.pluck(@props.article.lmic_focus, 'title'))), @t('no_lmic_focus')}
-        </div>
-      </ArticleField>
-
-      <div className="highlighted-section desktop-sidebar-first">
-        <ArticleField visible={article.summary_visible}>
-          <h2>{@props.article.label_summary}</h2>
-          {@ifNotEmpty @renderLinksList('summary-link', article.summary_links), @t('no_summary_links')}
+      <div className="section">
+        <ArticleField visible={article.theme_visible}>
+          <h2>{@props.article.label_themes}</h2>
+          <ul>{@ifNotEmpty @renderNestedList(@props.article.themes, 'themes', 'theme'), @t('no_themes')}</ul>
         </ArticleField>
 
-        <ArticleField visible={article.scientific_abstract_visible}>
-          <h2>{@props.article.label_scientific_abstract}</h2>
-          {@ifNotEmpty @renderLinksList('abstract-links', article.abstract_links), @t('no_scientific_abstract')}
+        <ArticleField visible={article.country_focus_visible}>
+          <h2>{@props.article.label_country_focus}</h2>
+          {@ifNotEmpty article.country_groupings, @t('no_country_groupings')}
         </ArticleField>
 
-        <ArticleField visible={article.full_text_report_visible}>
-          <h2>{@props.article.label_full_text_report}</h2>
-          {@ifNotEmpty @renderLinksList('full-text-report', article.full_text_link), @t('no_full_text_report')}
+        <ArticleField visible={article.who_region_visible}>
+          <h2>{@props.article.label_who_regions}</h2>
+          {@ifNotEmpty @joinList(_.compact(_.pluck(@props.article.who_regions, 'title'))), @t('no_who_regions')}
         </ArticleField>
 
-        <ArticleField>
-          <h2>{@props.article.label_citation}</h2>
-          {article.citation}
-        </ArticleField>
-
-        <ArticleField>
-          <h2>{@props.article.label_doi}</h2>
-          {@ifNotEmpty article.doi, @t('no_doi')}
+        <ArticleField visible={article.lmic_focus_visible}>
+          <h2>{@props.article.label_lmic_focus}</h2>
+          <div className="article-item-lmic-focus">
+            {@ifNotEmpty @joinList(_.compact(_.pluck(@props.article.lmic_focus, 'title'))), @t('no_lmic_focus')}
+          </div>
         </ArticleField>
       </div>
 
-      <ArticleField>
-        <h2>{@props.article.label_question_type}</h2>
-        {article.question_type}
-      </ArticleField>
+      <div className="desktop-sidebar">
+        <div className="section">
+          <ArticleField visible={article.summary_visible}>
+            <h2>{@props.article.label_summary}</h2>
+            {@ifNotEmpty @renderLinksList('summary-link', article.summary_links), @t('no_summary_links')}
+          </ArticleField>
 
-      <ArticleField>
-        <h2>{@props.article.label_focus}</h2>
-        {@ifNotEmpty article.focus, @t('no_focus')}
-      </ArticleField>
+          <ArticleField visible={article.scientific_abstract_visible}>
+            <h2>{@props.article.label_scientific_abstract}</h2>
+            {@ifNotEmpty @renderLinksList('abstract-links', article.abstract_links), @t('no_scientific_abstract')}
+          </ArticleField>
 
-      <ArticleField>
-        <h2>{@props.article.label_targets}</h2>
-        {@ifNotEmpty @renderTargets(), @t('no_targets')}
-      </ArticleField>
+          <ArticleField visible={article.full_text_report_visible}>
+            <h2>{@props.article.label_full_text_report}</h2>
+            {@ifNotEmpty @renderLinksList('full-text-report', article.full_text_link), @t('no_full_text_report')}
+          </ArticleField>
 
-      <ArticleField visible={article.author_email_visible}>
-        <h2>{@props.article.label_author_email}</h2>
-        {@ifNotEmpty @props.article.author_email, @t('no_author_email')}
-      </ArticleField>
+          <ArticleField>
+            <h2>{@props.article.label_citation}</h2>
+            {article.citation}
+          </ArticleField>
 
-      <ArticleField visible={article.registry_record_visible}>
-        <h2>{@props.article.label_registry_record}</h2>
-        {@ifNotEmpty @props.article.label_registry_record, @t('no_registry_record_links')}
-      </ArticleField>
+          <ArticleField>
+            <h2>{@props.article.label_doi}</h2>
+            {@ifNotEmpty article.doi, @t('no_doi')}
+          </ArticleField>
+        </div>
 
-      <ArticleField visible={article.who_links_visible}>
-        <h2>{@props.article.label_who_links}</h2>
-        {@ifNotEmpty @props.article.who_links, @t('no_who_links')}
-      </ArticleField>
+        <div className="section">
+          <ArticleField>
+            <h2>{@props.article.label_question_type}</h2>
+            {article.question_type}
+          </ArticleField>
+
+          <ArticleField>
+            <h2>{@props.article.label_focus}</h2>
+            {@ifNotEmpty article.focus, @t('no_focus')}
+          </ArticleField>
+
+          <ArticleField>
+            <h2>{@props.article.label_targets}</h2>
+            {@ifNotEmpty @renderTargets(), @t('no_targets')}
+          </ArticleField>
+
+          <ArticleField visible={article.author_email_visible}>
+            <h2>{@props.article.label_author_email}</h2>
+            {@ifNotEmpty @props.article.author_email, @t('no_author_email')}
+          </ArticleField>
+
+          <ArticleField visible={article.registry_record_visible}>
+            <h2>{@props.article.label_registry_record}</h2>
+            {@ifNotEmpty @props.article.label_registry_record, @t('no_registry_record_links')}
+          </ArticleField>
+
+          <ArticleField visible={article.who_links_visible}>
+            <h2>{@props.article.label_who_links}</h2>
+            {@ifNotEmpty @props.article.who_links, @t('no_who_links')}
+          </ArticleField>
+        </div>
+      </div>
     </div>
