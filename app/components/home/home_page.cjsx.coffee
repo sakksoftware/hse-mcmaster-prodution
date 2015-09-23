@@ -52,7 +52,7 @@ module.exports = React.createClass
   render: ->
     <div className="home-page">
       <div className="home-page-header">
-        <h1>Health Systems Evidence</h1>
+        <h1>Health Systems Evidence<span className="beta">{@t('/beta')}</span></h1>
         <p className="intro">{@t('intro')}</p>
         <SearchBox
           search={@search}

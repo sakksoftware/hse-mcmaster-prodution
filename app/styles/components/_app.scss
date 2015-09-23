@@ -46,17 +46,6 @@
       text-transform: uppercase;
     }
 
-    .beta {
-      margin-left: $x-tiny-size + 1;
-      color: orange;
-      font-style: italic;
-      text-transform: none;
-
-      @include desktop {
-        margin-left: $tiny-size;
-      }
-    }
-
     button, a, label {
       color: $primary-complementary-color;
 
