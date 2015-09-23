@@ -74,13 +74,13 @@ searchData = {
   "results": [
     {
       "id": "all_filled_all_visible",
-      "title": "All fields Filled & Visible",
+      "title": "All <B>fields</B> Filled & Visible",
       "created_at": "2014-09-20 11:33:00Z",
       "updated_at": "2014-09-20 11:33:00Z",
       "quality": "7/11",
-      "description": "Some Crazy long description goes here.....",
-      "category": "International Organizations Document",
-      "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
+      "description": "Some <B>Crazy</B> long description goes here.....",
+      "category": "<B>International</B> Organizations Document",
+      "country_groupings": "<B>USA</B> (26); UK (2); Australia (1); Turkey (1)"
     },
     {
       "id": "not_filled_all_visible",

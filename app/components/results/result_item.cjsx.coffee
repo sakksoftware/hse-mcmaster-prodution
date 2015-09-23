@@ -1,4 +1,5 @@
 Link = require('components/shared/link')
+HighlightFormat = require('components/shared/highlight_format')
 ApplicationHelper = require('mixins/application_helper')
 TranslationHelper = require('mixins/translation_helper')
 
@@ -38,11 +39,11 @@ module.exports = React.createClass
       </header>
       <section className="result-item-description">
         <h2 className="result-item-title">
-          <Link to={"/articles/#{@props.result.id}?t=#{@props.result.traversal}"}>{@props.result.title}</Link>
+          <Link to={"/articles/#{@props.result.id}?t=#{@props.result.traversal}"}><HighlightFormat>{@props.result.title}</HighlightFormat></Link>
         </h2>
         <div className="result-item-categories">
-          {@props.result.category} | {@props.result.country_groupings}
+          <HighlightFormat>{@props.result.category}</HighlightFormat> | <HighlightFormat>{@props.result.country_groupings}</HighlightFormat>
         </div>
-        {@ellipsis(@props.result.description, 250)}
+        <HighlightFormat>{@ellipsis(@props.result.description, 250)}</HighlightFormat>
       </section>
     </li>
