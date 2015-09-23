@@ -30,6 +30,7 @@ module.exports = React.createClass
       user.errors.password = @t('/errors.cant_be_blank')
 
     if _.isEmpty(user.captcha)
+      user.errors ||= {}
       user.errors.captcha = @t('/errors.cant_be_blank')
 
     if user.errors
