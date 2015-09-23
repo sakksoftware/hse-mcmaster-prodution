@@ -17,7 +17,7 @@ module.exports = React.createClass
     type: 'image'
 
   componentDidMount: ->
-    grecaptcha.render @props.elementID,
+    @grecaptchaId = grecaptcha.render @props.elementID,
       sitekey: @props.sitekey
       callback: if @props.verifyCallback then @props.verifyCallback else undefined
       theme: @props.theme
@@ -27,6 +27,12 @@ module.exports = React.createClass
       $(@getDOMNode()).find('.g-recaptcha-response').attr('name', 'captcha')
     ), 200)
 
+  componentWillUnmount: ->
+    console.log("resetting ", @grecaptchaId)
+    grecaptcha.reset(@grecaptchaId)
+
   render: ->
+
+
     <div id={this.props.elementID} className="g-recaptcha">
     </div>
