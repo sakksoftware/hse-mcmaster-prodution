@@ -22,7 +22,7 @@ UserActions.createUser.listen (user) ->
     user.errors.password = "can't be blank!"
   if _.isEmpty(user.confirm_password)
     user.errors.confirm_password = "can't be blank!"
-  if user.accept_terms != "on"
+  if user.accept_terms != "on" && user.accept_terms != true
     user.errors.accept_terms = "must_accept_terms"
 
   if _.isEmpty(user.errors)
@@ -30,7 +30,7 @@ UserActions.createUser.listen (user) ->
       user = _.extend(u, user)
       StoreMock.send(user, (=> @completed(user)), 'POST /users')
   else
-    StoreMock.sendError(400, user, null, (=> @failed({}, 'bad data', user)), 'POST /users')
+    StoreMock.sendError(400, user, (=> @failed({}, 'bad data', user)), 'POST /users')
 
 UserActions.loadUser.listen ->
   API.read('/user').done(@completed).fail(@failed)
@@ -50,7 +50,7 @@ UserActions.loginUser.listen (user) ->
       user = _.extend(u, user)
       StoreMock.send user, (=> @completed(user)), 'POST /login/login'
   else
-    StoreMock.sendError 400, user, null, (=> @failed({}, "bad input", user)), 'POST /users/login'
+    StoreMock.sendError 400, user, (=> @failed({}, "bad input", user)), 'POST /users/login'
 
 UserActions.logoutUser.listen (user) ->
   StoreMock.send user, (=> @completed(user)), 'GET /user/logout'
@@ -66,5 +66,5 @@ UserActions.loadRegion.listen ->
   $.getJSON('//freegeoip.net/json/').done(@completed).fail =>
     API.onError().apply(@failed, arguments)
     @failed.apply(@failed, arguments)
-    
+
 module.exports = UserActions
