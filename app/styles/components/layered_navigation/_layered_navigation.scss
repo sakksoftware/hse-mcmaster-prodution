@@ -11,6 +11,10 @@
     transition: $menu-animation-time $menu-animation-type;
     position: relative;
     min-height: 100vh;
+
+    @include desktop {
+      z-index: 1;
+    }
   }
 
   .layered-navigation-overlay {
