@@ -6,7 +6,7 @@ module.exports = React.createClass
 
   removeTags: (str) ->
     # remove tags other than bold tag (<b></b>)
-    str.replace /<(?>\/?)(?:[^bB]|[bB][^\s>\/])[^>]*>/g, ''
+    str.replace /<(?=(\/?))\1(?:[^bB]|[bB][^\s>\/])[^>]*>/g, ''
 
   render: ->
     <span dangerouslySetInnerHTML={__html: @props.children} />
