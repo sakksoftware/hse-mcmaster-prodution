@@ -2,6 +2,10 @@
   @include desktop {
     min-height: 1500px;
 
+    &.layer-toggled {
+      min-height: inherit;
+    }
+
     #page-content {
       max-width: $desktop-max-page-width;
     }

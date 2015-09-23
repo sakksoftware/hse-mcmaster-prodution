@@ -43,8 +43,10 @@
     // 100% refers to the entire window and doesn't account for the height of the
     // layer header
     padding-bottom: $menu-header-height;
-    overflow-y: scroll;
     background-color: #FFF;
+    height: 100vh;
+    height: calc(100vh - 48px);
+    overflow-y: scroll;
   }
 
   .layer-content {
