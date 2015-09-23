@@ -243,36 +243,36 @@
           "filters": [
             "0_5"
           ],
-          "text": "PT_Do you want to see what international agencies like WHO and the World Bank, and what Ontario and other Canadian government and stakeholder organizations, have written on the topic?",
+          "text": "Deseja visualizar o que agências internacionais como a OMS e o Banco Mundial, e o que o Ontário, outro governo canadense e organizações de partes interessadas, escreveram sobre o tema?",
           "answers": [
             {
-              "text": "PT_Intergovernmental Organizations' Health Systems Documents",
+              "text": "Documentos relacionados aos sistemas de saúde de organizações intergovernamentais",
               "section": {
-                "title": "PT_Complementary Content"
+                "title": "Complementaridade de conteúdos"
               },
               "filterGroup": {
                 "id": "0_17",
-                "title": "PT_Intergovernmental documents"
+                "title": "Documentos intergovernamentais"
               }
             },
             {
-              "text": "PT_Canada's Health Systems Documents",
+              "text": "Documentos de sistemas de saúde do Canadá",
               "section": {
-                "title": "PT_Complementary Content"
+                "title": "Complementaridade de conteúdos"
               },
               "filterGroup": {
                 "id": "0_18",
-                "title": "PT_Canadian documents"
+                "title": "Documentos Canadenses"
               }
             },
             {
-              "text": "PT_Ontario's Health Systems Documents",
+              "text": "Documentos de sistemas de saúde do Ontário",
               "section": {
-                "title": "PT_Complementary Content"
+                "title": "Complementaridade de conteúdos"
               },
               "filterGroup": {
                 "id": "0_19",
-                "title": "PT_Ontario's documents"
+                "title": "Documentos do Ontário"
               }
             }
           ]
@@ -284,26 +284,26 @@
           "filters": [
             "0_5"
           ],
-          "text": "PT_Do you want to see what international agencies like WHO and the World Bank, and what Canadian governments and stakeholder organizations, have written on the topic?",
+          "text": "Deseja visualizar o que agências internacionais como a OMS e o Banco Mundial, e o que os governos canadenses e organizações de partes interessadas, escreveram sobre o tema?",
           "answers": [
             {
-              "text": "PT_Intergovernmental Organizations' Health Systems Documents",
+              "text": "Documentos relacionados aos sistemas de saúde de organizações intergovernamentais",
               "section": {
-                "title": "PT_Complementary Content"
+                "title": "Complementaridade de conteúdos"
               },
               "filterGroup": {
                 "id": "0_17",
-                "title": "PT_Intergovernmental documents"
+                "title": "Documentos intergovernamentais"
               }
             },
             {
-              "text": "PT_Canada's Health Systems Documents",
+              "text": "Documentos de sistemas de saúde do Canadá",
               "section": {
-                "title": "PT_Complementary Content"
+                "title": "Complementaridade de conteúdos"
               },
               "filterGroup": {
                 "id": "0_18",
-                "title": "PT_Canadian documents"
+                "title": "Documentos Canadenses"
               }
             }
           ]
@@ -315,16 +315,16 @@
           "filters": [
             "0_5"
           ],
-          "text": "PT_Do you want to see what international agencies like WHO and the World Bank have written on the topic?",
+          "text": "Deseja visualizar o que agências internacionais como a OMS e o Banco Mundial escreveram sobre o tema?",
           "answers": [
             {
-              "text": "PT_Intergovernmental Organizations' Health Systems Documents",
+              "text": "Documentos relacionados aos sistemas de saúde de organizações intergovernamentais",
               "section": {
-                "title": "PT_Complementary Content"
+                "title": "Complementaridade de conteúdos"
               },
               "filterGroup": {
                 "id": "0_17",
-                "title": "PT_Intergovernmental documents"
+                "title": "Documentos intergovernamentais"
               }
             }
           ]

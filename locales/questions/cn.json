@@ -243,36 +243,36 @@
           "filters": [
             "0_5"
           ],
-          "text": "CN_Do you want to see what international agencies like WHO and the World Bank, and what Ontario and other Canadian government and stakeholder organizations, have written on the topic?",
+          "text": "您是否想了解国际机构（如世界卫生组织和世界银行）和安大略省及其他加拿大政府和利益相关组织就该主题开展了哪些研究？",
           "answers": [
             {
-              "text": "CN_Intergovernmental Organizations' Health Systems Documents",
+              "text": "政府间组织的卫生系统文件",
               "section": {
-                "title": "CN_Complementary Content"
+                "title": "补充内容"
               },
               "filterGroup": {
                 "id": "0_17",
-                "title": "CN_Intergovernmental documents"
+                "title": "政府间组织的卫生系统文件"
               }
             },
             {
-              "text": "CN_Canada's Health Systems Documents",
+              "text": "加拿大卫生系统文件",
               "section": {
-                "title": "CN_Complementary Content"
+                "title": "补充内容"
               },
               "filterGroup": {
                 "id": "0_18",
-                "title": "CN_Canadian documents"
+                "title": "加拿大卫生系统文件"
               }
             },
             {
-              "text": "CN_Ontario's Health Systems Documents",
+              "text": "安大略省的卫生系统文件",
               "section": {
-                "title": "CN_Complementary Content"
+                "title": "补充内容"
               },
               "filterGroup": {
                 "id": "0_19",
-                "title": "CN_Ontario's documents"
+                "title": "安大略省的卫生系统文件"
               }
             }
           ]
@@ -284,26 +284,26 @@
           "filters": [
             "0_5"
           ],
-          "text": "CN_Do you want to see what international agencies like WHO and the World Bank, and what Canadian governments and stakeholder organizations, have written on the topic?",
+          "text": "您是否想了解国际机构（如世界卫生组织和世界银行）和加拿大政府及利益相关组织就该主题开展了哪些研究？",
           "answers": [
             {
-              "text": "CN_Intergovernmental Organizations' Health Systems Documents",
+              "text": "政府间组织的卫生系统文件",
               "section": {
-                "title": "CN_Complementary Content"
+                "title": "补充内容"
               },
               "filterGroup": {
                 "id": "0_17",
-                "title": "CN_Intergovernmental documents"
+                "title": "政府间组织的卫生系统文件"
               }
             },
             {
-              "text": "CN_Canada's Health Systems Documents",
+              "text": "加拿大卫生系统文件",
               "section": {
-                "title": "CN_Complementary Content"
+                "title": "补充内容"
               },
               "filterGroup": {
                 "id": "0_18",
-                "title": "CN_Canadian documents"
+                "title": "加拿大卫生系统文件"
               }
             }
           ]
@@ -315,16 +315,16 @@
           "filters": [
             "0_5"
           ],
-          "text": "CN_Do you want to see what international agencies like WHO and the World Bank have written on the topic?",
+          "text": "您是否想了解国际机构（如世界卫生组织和世界银行）就该主题开展了哪些研究？",
           "answers": [
             {
-              "text": "CN_Intergovernmental Organizations' Health Systems Documents",
+              "text": "政府间组织的卫生系统文件",
               "section": {
-                "title": "CN_Complementary Content"
+                "title": "补充内容"
               },
               "filterGroup": {
                 "id": "0_17",
-                "title": "CN_Intergovernmental documents"
+                "title": "政府间组织的卫生系统文件"
               }
             }
           ]
