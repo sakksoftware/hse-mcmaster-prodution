@@ -2,7 +2,7 @@ module.exports = React.createClass
   displayName: "HighlightFormat"
 
   propTypes:
-    children: React.PropTypes.any.isREquired
+    children: React.PropTypes.any.isRequired
 
   removeTags: (str) ->
     # remove tags other than bold tag (<b></b>)
