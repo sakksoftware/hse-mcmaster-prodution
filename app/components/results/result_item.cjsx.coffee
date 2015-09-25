@@ -26,7 +26,7 @@ module.exports = React.createClass
           <span className="result-item-number">{@props.resultNumber}.</span>
           <div className="field result-item-published">
             <span className="field-name">{@t('year')}</span>
-            <span className="field-value">{moment(@props.result.pub_year).format('YYYY')}</span>
+            <span className="field-value">{@props.result.pub_year}</span>
           </div>
           <div className="field result-item-quality">
             <span className="field-name">{@t('quality')}</span>
