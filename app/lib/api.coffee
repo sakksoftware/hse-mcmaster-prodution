@@ -64,7 +64,7 @@ module.exports = class API
         router.render('/5xx')
       else if res.status == 404
         router.render('/404')
-      else if res.status >= 400 && res.status <= 499 && res.status != 422
+      else if (res.status >= 400 && res.status <= 499 && res.status != 422) || (res.status == 0 && errorTypeText == 'error')
         Rollbar.error('Application Error', res)
         router.render('/4xx')
       else if errorTypeText == 'parsererror'
