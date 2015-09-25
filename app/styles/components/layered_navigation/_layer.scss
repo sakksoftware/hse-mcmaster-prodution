@@ -46,7 +46,7 @@
     background-color: #FFF;
     height: 100vh;
     height: calc(100vh - 48px);
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   .layer-content {
