@@ -34,6 +34,9 @@ class Router
     'reset_password': ->
       React.render <App page="reset_password" />, @el
 
+    'top_5': ->
+      React.render <App page="top_5" />, @el
+
     'timeout': ->
       React.render <App page="timeout_error" />, @el
 

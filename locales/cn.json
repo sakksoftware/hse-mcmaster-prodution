@@ -167,6 +167,12 @@
       "description": "对于那些使用安大略省IP地址登录的人"
     }
   },
+  "top_5_page": {
+    "title": {
+      "all": "用户访问最多的五个页面",
+      "policy_makers": "决策者访问最多的五个页面"
+    }
+  },
   "forgot_password_page": {
     "title": "忘记密码",
     "email": "电子邮件",

@@ -167,6 +167,12 @@
       "description": "Para aqueles que fazem login usando um endereço IP localizado em Ontário"
     }
   },
+  "top_5_page": {
+    "title": {
+      "all": "Cinco principais resumos de 1 página acessados por todos os usuários",
+      "policy_makers": "Cinco principais resumos de 1 página acessados por formuladores de políticas"
+    }
+  },
   "forgot_password_page": {
     "title": "Esqueci a senha",
     "email": "E-mail",

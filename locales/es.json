@@ -167,6 +167,12 @@
       "description": "Para todo aquel que inicie sesión desde una dirección IP con origen en Ontario"
     }
   },
+  "top_5_page": {
+    "title": {
+      "all": "Cinco documentos de 1 página de mayor acceso por los usuarios",
+      "policy_makers": "Cinco documentos de 1 página de mayor acceso por los formuladores de políticas"
+    }
+  },
   "forgot_password_page": {
     "title": "Olvidó su contraseña",
     "email": "Correo electrónico",

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "all_filled_all_visible",
+    "title": "All <B>fields</B> Filled & Visible",
+    "created_at": "2014-09-20 11:33:00Z",
+    "updated_at": "2014-09-20 11:33:00Z",
+    "quality": "7/11",
+    "description": "Some <B>Crazy</B> long description goes here.....",
+    "category": "<B>International</B> Organizations Document",
+    "country_groupings": "<B>USA</B> (26); UK (2); Australia (1); Turkey (1)"
+  },
+  {
+    "id": "not_filled_all_visible",
+    "title": "All optional fields are emtpy & visible",
+    "created_at": "2013-08-20 11:33:00Z",
+    "updated_at": "2013-08-20 11:33:00Z",
+    "quality": "7/11",
+    "description": "Lots of stuff goes here! Very Interesting right?.....",
+    "category": "Superhero Marvel Movies",
+    "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
+  },
+  {
+    "id": "all_hidden",
+    "title": "All fields are hidden",
+    "created_at": "2013-08-20 11:33:00Z",
+    "updated_at": "2013-08-20 11:33:00Z",
+    "quality": "7/11",
+    "description": "Lots of stuff goes here! Very Interesting right?.....",
+    "category": "Superhero Marvel Movies",
+    "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
+  },
+  {
+    "id": "all_visible",
+    "title": "Article D",
+    "created_at": "2013-08-20 11:33:00Z",
+    "updated_at": "2013-08-20 11:33:00Z",
+    "quality": "7/11",
+    "description": "Lots of stuff goes here! Very Interesting right?.....",
+    "category": "Superhero Marvel Movies",
+    "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
+  },
+  {
+    "id": "all_visible",
+    "title": "Article E",
+    "created_at": "2013-08-20 11:33:00Z",
+    "updated_at": "2013-08-20 11:33:00Z",
+    "quality": "7/11",
+    "description": "Lots of stuff goes here! Very Interesting right?.....",
+    "category": "Superhero Marvel Movies",
+    "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
+  }
+]

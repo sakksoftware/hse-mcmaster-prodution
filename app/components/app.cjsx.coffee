@@ -4,6 +4,7 @@ SearchPage = require('components/search/search_page')
 StaticPage = require('components/static/static_page')
 ProfilePage = require('components/profile/profile_page')
 ComplementaryContentPage = require('components/complementary_content/complementary_content_page')
+Top5Page = require('components/top_5/top_5_page')
 ForgotPasswordPage = require('components/forgot_password/forgot_password_page')
 ResetPasswordPage = require('components/reset_password/reset_password_page')
 PageNotFound = require('components/error_pages/page_not_found')
@@ -122,6 +123,8 @@ module.exports = React.createClass
         <ProfilePage key="profile-page" />
       when 'complementary_content'
         <ComplementaryContentPage key="complementary-content-page" />
+      when 'top_5'
+        <Top5Page />
       when 'forgot_password'
         <ForgotPasswordPage />
       when 'page_not_found'

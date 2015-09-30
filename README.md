@@ -16,12 +16,21 @@ Front end search
 
 ## Deployment
 
-For deployment we use a `koa` server on heroku. It will eventually be integrated to a .NET project.
+For deployment we use an `express` server on heroku.
 
-If you want to try it out run: `node --harmony server.js`.
+If you want to try it out run: `node server.js`.
+
+### Staging
 
 username: hse
 password: withgreatpower
+
+### PHCPI
+
+To create a custom version for PHCPI we created a separte branch and a new app. Make sure to merge all
+changes into that branch and deploy to the app using the following command:
+
+    git push phcpi phcpi:master
 
 ## API END POINTS
 
@@ -51,7 +60,6 @@ aws s3 sync . s3://my-hse-staging/locales
 
 If you deploy to heroku or do an `npm install` and get the following error:
 
-
 ```
 npm ERR! code ELIFECYCLE
 npm ERR! hse-frontend@0.0.1 postinstall: `gem install sass && bower install && brunch build --production`
@@ -70,7 +78,3 @@ npm ERR! There is likely additional logging output above.
 This probably means one of the scss or coffeescript files failed to compile. Check out and try running it locally again.
 
 ## Known Issues
-
-`app/styles/components/search/guide_question.scss compiled, but not written. Check your stylesheets.joinTo config.`
-
-This warning will appear during compile time. We still don't know how to get rid of those. If you do, please do!
