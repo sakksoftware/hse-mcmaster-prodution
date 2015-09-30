@@ -18,6 +18,7 @@ SearchActions = Reflux.createActions
   toggleFilter: {}
   toggleCountryFilter: {}
   toggleDateRangeFilter: {}
+  loadMore: {}
   search: {asyncResult: true}
   loadFilters: {asyncResult: true}
 

@@ -8,14 +8,14 @@ config =
     recaptchaKey: '6LdQsAwTAAAAALZ8cZ2TOCW_BQ_faBRoL_Ffc3I1'
 
   staging:
-    apiBase: '//staging.api.healthsystemsevidence.org'
+    apiBase: 'https://staging-api.healthsystemsevidence.org'
     useMocks: false
     mockResponseTime: 500
     localesUrl: '//s3.amazonaws.com/my-hse-staging/locales/'
     recaptchaKey: '6LdQsAwTAAAAALZ8cZ2TOCW_BQ_faBRoL_Ffc3I1'
 
   production:
-    apiBase: '//api.healthsystemsevidence.org'
+    apiBase: 'https://api.healthsystemsevidence.org'
     useMocks: false
     mockResponseTime: 500
     localesUrl: '/locales/'
