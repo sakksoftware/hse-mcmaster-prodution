@@ -167,6 +167,12 @@
       "description": "Pour ceux qui se connectent en utilisant une adresse IP basée en Ontario"
     }
   },
+  "top_5_page": {
+    "title": {
+      "all": "Top cinq des résumés de 1 page qui ont été visités par tous les utilisateurs",
+      "policy_makers": "Top cinq des résumés de 1 page qui ont été visités par des responsables de politiques"
+    }
+  },
   "forgot_password_page": {
     "title": "Mot de passe oublié",
     "email": "Courriel",

@@ -167,6 +167,12 @@
       "description": "For those who log in Ontario-based IP address"
     }
   },
+  "top_5_page": {
+    "title": {
+      "all": "Top five 1-pagers accessed by all users",
+      "policy_makers": "Top five 1-pagers accessed by policymakers"
+    }
+  },
   "forgot_password_page": {
     "title": "Forgot Password",
     "email": "Email",
