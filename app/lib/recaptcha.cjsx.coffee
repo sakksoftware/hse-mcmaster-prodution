@@ -28,7 +28,6 @@ module.exports = React.createClass
     ), 200)
 
   componentWillUnmount: ->
-    console.log("resetting ", @grecaptchaId)
     grecaptcha.reset(@grecaptchaId)
 
   render: ->

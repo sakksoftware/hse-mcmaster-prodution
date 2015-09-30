@@ -14,6 +14,7 @@ UserStore = require('stores/user_store')
 SearchStore = require('stores/search_store')
 
 TranslationHelper = require('mixins/translation_helper')
+Transition = React.addons.CSSTransitionGroup
 
 module.exports = React.createClass
   displayName: 'SearchPage'
@@ -34,6 +35,7 @@ module.exports = React.createClass
     filtersLoaded: false
     step: 'results'
     guidedSearch: UserStore.state.guidedSearch
+    showSignupPrompt: false
 
   componentWillMount: ->
     @unsubscribeUser = UserStore.listen(@userStoreUpdated)
@@ -62,27 +64,15 @@ module.exports = React.createClass
 
   handleSearch: (query) ->
     @state.search.query = query
+    @state.search.page = 1
     @fetchResults()
 
   handleLoadMore: (page) ->
-    if @state.errors?[0] != 'reached_search_limit'
-      search = _.clone(@state.search)
-      search.page = page
-      SearchActions.search(search)
+    if UserStore.state.user == null && page > 2 || @state.errors?[0] == 'reached_search_limit'
+      @setState(showSignupPrompt: true)
+      return
 
-    # @pageQueue.push(page)
-    #
-    # if @pageQueue.length == 1
-    #   if @state.errors?[0] == 'reached_search_limit'
-    #     @pageQueue = []
-    #   else
-    #     execute = (page) =>
-    #       search = _.clone(@state.search)
-    #       search.page = page
-    #       SearchActions.search(search).then =>
-    #         page = @pageQueue.pop()
-    #         execute(page)
-    #     execute(page)
+    SearchActions.loadMore(page)
 
   handleSortChange: (sortBy) ->
     SearchActions.sortBy(sortBy)
@@ -116,8 +106,12 @@ module.exports = React.createClass
       />
 
   renderSignupPrompt: ->
-    if @state.errors?[0] == 'reached_search_limit'
-      <SignupPrompt />
+    <Transition transitionName="signup-prompt-slide" component="div">
+      {
+        if @state.showSignupPrompt
+          <SignupPrompt />
+      }
+    </Transition>
 
   render: ->
     <div className="search-page">

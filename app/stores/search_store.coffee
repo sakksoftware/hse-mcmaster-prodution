@@ -51,6 +51,11 @@ module.exports = Reflux.createStore
     if xhr.status == 403
       @setState(errors: ['reached_search_limit'], loaded: true)
 
+  onLoadMore: (page) ->
+    search = _.clone(@state.search)
+    search.page = page
+    SearchActions.search(search)
+
   updateUrl: ->
     Router = require('lib/router')
     Router.update(@serializeSearchUrl(@state.search, UserStore.state.language))

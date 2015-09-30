@@ -6,6 +6,18 @@
   height: auto;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  transition: transform 500ms;
+
+  &.signup-prompt-slide {
+    &-enter {
+      transform: translateY(150px);
+    }
+    &-enter-active { transform: translateY(0px); }
+    &-leave {
+      transform: translateY(0px);
+    }
+    &-leave-active { transform: translateY(150px); }
+  }
 
   .signup-prompt-content {
     padding: $tiny-size;
