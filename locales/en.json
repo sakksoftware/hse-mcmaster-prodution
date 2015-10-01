@@ -7,19 +7,19 @@
     "home": "Home",
     "about": "About HSE",
     "walkthrough": "Walk through",
-    "guided_search": "Guided Search",
+    "guided_search": "Guided search",
     "select_language": "Select language",
-    "create_account": "Create Account",
+    "create_account": "Create account",
     "login": "Log in",
     "logout": "Logout"
   },
   "menus": {
     "account": {
-      "title": "My Account",
+      "title": "My account",
       "profile": "Profile",
       "saved_documents": "Saved documents",
       "saved_searches": "Saved searches",
-      "complementary_content": "Complementary Content"
+      "complementary_content": "Complementary content"
     },
     "help": {
       "title": "Help",
@@ -125,9 +125,9 @@
     },
     "sort_order": {
       "sorted_by": "Results sorted by",
-      "relevance": "Best Match",
-      "most_recent": "Most Recent",
-      "most_popular": "Most Popular"
+      "relevance": "Best match",
+      "most_recent": "Most recent",
+      "most_popular": "Most popular"
     },
     "signup_prompt": {
       "instructions": "Sign up to view more than 20 results, to save documents and searches, and to subscribe to email alerts"
