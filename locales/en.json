@@ -178,7 +178,7 @@
     "email": "Email",
     "instructions": "Enter the email you use for login below and we will send you a link to reset your password",
     "submit": "Send email",
-    "on_success": "A password rest token has been sent to your email"
+    "on_success": "An email that will allow you to re-set your password has been sent to your email account."
   },
   "reset_password_page": {
     "title": "Reset Password",
