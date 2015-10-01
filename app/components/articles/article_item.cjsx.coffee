@@ -124,6 +124,11 @@ module.exports = React.createClass
           {article.year_published}
         </ArticleField>
 
+        <ArticleField visible={article.last_year_literature_searched_visible}>
+          <h2>{@props.article.label_last_year_literature_searched}</h2>
+          {@ifNotEmpty @props.article.last_year_literature_searched, @t('no_last_year_literature_searched')}
+        </ArticleField>
+
         <ArticleField visible={article.quality_rating_visible}>
           <h2>{@props.article.label_quality_rating}</h2>
           {article.quality} ({article.quality_note})
