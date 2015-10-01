@@ -30,7 +30,8 @@ module.exports = React.createClass
     return unless @props.article.studies_conducted_in?.countries
     items =
       for country, i in @props.article.studies_conducted_in.countries
-        <li key="country-item-#{i}" className="country-item">{country.name_abbreviation} ({country.conducted_count})</li>
+        conductedCount = if country.conducted_count then "(#{country.conducted_count})" else ""
+        <li key="country-item-#{i}" className="country-item">{country.name_abbreviation}{conductedCount}</li>
     <ul className="article-item-countries">{items}</ul>
 
   renderAuthorList: (authors) ->
@@ -56,10 +57,10 @@ module.exports = React.createClass
     <ul className="article-item-region-list">{items}</ul>
 
   renderStudiesConductedIn: ->
-    return unless @props.article.studies_conducted_in?.length > 0
+    return unless @props.article.studies_conducted_in?.countries?.length > 0
     <div className="studies-conducted-in">
-      @renderCountryList()
-      @renderRegionList()
+      {@renderCountryList()}
+      {@renderRegionList()}
     </div>
 
   renderLinksList: (name, links)->
