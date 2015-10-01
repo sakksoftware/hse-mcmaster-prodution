@@ -45,14 +45,19 @@ First download the locales:
 
 ```
 cd locales/
-aws s3 sync s3://my-hse-staging/locales .
+aws s3 sync s3://my-hse-staging/locales/hse .
 ```
 
 Then upload them
 
 ```
-aws s3 sync . s3://my-hse-staging/locales
+aws s3 sync . s3://my-hse-staging/locales/hse
 ```
+
+NOTE: please upload the S3 files to the proper folder based on the branch you are on.
+For master it will be uploaded to hse, and for phcpi to phcpi. The reason we elected
+not to use this file structure locally is so we can more easily merge text changes
+from master to phcpi when adding new features to hse.
 
 ## Troubleshooting
 
