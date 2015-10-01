@@ -75,7 +75,10 @@ module.exports = React.createClass
   render: ->
     @currentColorIndex = 0
     @allFilter = _.clone(@filterGroup)
-    @allFilter.title = @t('all_filters', filter_title: @filterGroup.title[0].toLowerCase() + @filterGroup.title.substring(1))
+    title = @filterGroup.title
+    if title != 'LMICs'
+      title = title[0].toLowerCase() + title.substring(1)
+    @allFilter.title = @t('all_filters', filter_title: title)
 
     <div className="filters-menu nested-menu">
       <ul className="menu-list">
