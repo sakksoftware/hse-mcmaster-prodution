@@ -1,7 +1,5 @@
 #About HSE
 
-## Why use it and who's behind it?
-
 Health Systems Evidence is a continuously updated repository of syntheses of research evidence about governance, financial and delivery arrangements within health systems, and about implementation strategies that can support change in health systems. The types of syntheses include evidence briefs for policy, overviews of systematic reviews, systematic reviews, systematic reviews in progress (i.e. protocols for systematic reviews), and systematic reviews being planned (i.e. registered titles for systematic reviews). Health Systems Evidence also contains a continuously updated repository of economic evaluations in these same domains, descriptions of health system reforms (with links to syntheses and economic evaluations when possible), and descriptions of health systems (to assist with assessments of the local applicability of research evidence and of how reforms are embedded within health systems). For all types of documents, Health Systems Evidence provides links to user-friendly summaries, scientific abstracts, and full-text reports (if applicable and when freely available). For each systematic review, Health Systems Evidence also provides links to the studies contained in the review.
 
 Health Systems Evidence has been endorsed by a diverse range of organizations interested in evidence-informed decision-making. For example:
