@@ -154,16 +154,12 @@
   "complementary_content_page": {
     "title": "COMPLEMENTARY CONTENT",
     "description": "Enable viewing of complementary content",
-    "complementary_content_1": {
-      "title": "Intergovernmental Organizations' Health Systems Documents",
-      "description": "For those who..."
-    },
     "complementary_content_2": {
       "title": "CANADA'S HEALTH SYSTEMS DOCUMENTS",
       "description": "For those who do not designate their country as Canada or log in using a Canada-based IP address"
     },
     "complementary_content_3": {
-      "title": "Ontario's Health System Documents",
+      "title": "ONTARIO'S HEALTH SYSTEM DOCUMENTS",
       "description": "For those who log in Ontario-based IP address"
     }
   },

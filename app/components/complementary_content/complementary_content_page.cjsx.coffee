@@ -29,18 +29,6 @@ module.exports = React.createClass
         <li className="complementary-content-item">
           <label>
             <p className="complementary-content-title">
-              {@t('complementary_content_1.title')}
-            </p>
-            <p className="complementary-content-description">
-              {@t('complementary_content_1.description')}
-            </p>
-            <Toggle defaultChecked={UserStore.state.user?.complementary_1}
-              onChange={@handleToggle('complementary_1')} />
-          </label>
-        </li>
-        <li className="complementary-content-item">
-          <label>
-            <p className="complementary-content-title">
               {@t('complementary_content_2.title')}
             </p>
             <p className="complementary-content-description">

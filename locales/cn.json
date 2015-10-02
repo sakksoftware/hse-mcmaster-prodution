@@ -154,10 +154,6 @@
   "complementary_content_page": {
     "title": "补充内容",
     "description": "允许查看补充内容",
-    "complementary_content_1": {
-      "title": "政府间组织的卫生系统文件",
-      "description": "对于那些……的人"
-    },
     "complementary_content_2": {
       "title": "加拿大卫生系统文件",
       "description": "对于那些国家不是加拿大或者没有使用加拿大IP地址登录的人"

@@ -154,10 +154,6 @@
   "complementary_content_page": {
     "title": "COMPLEMENTARIDADE DE CONTEÚDOS",
     "description": "Permitir visualização de conteúdo complementar",
-    "complementary_content_1": {
-      "title": "DOCUMENTOS DOS SISTEMAS DE SAÚDE DE ORGANIZAÇÕES INTERGOVERNAMENTAIS",
-      "description": "Para aqueles que…"
-    },
     "complementary_content_2": {
       "title": "DOCUMENTOS DOS SISTEMAS DE SAÚDE DO CANADÁ",
       "description": "Para aqueles que pertencem a um país que não seja Canadá ou que fazem login usando um endereço IP localizado no Canadá"

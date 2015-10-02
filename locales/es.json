@@ -154,10 +154,6 @@
   "complementary_content_page": {
     "title": "CONTENIDO GRATUITO",
     "description": "Permitir la visualización del contenido complementario",
-    "complementary_content_1": {
-      "title": "DOCUMENTOS DE SISTEMAS DE SALUD DE ORGANIZACIONES INTERGUBERNAMENTALES",
-      "description": "Para todo aquel que…"
-    },
     "complementary_content_2": {
       "title": "DOCUMENTOS DE SISTEMAS DE SALUD DE CANADÁ",
       "description": "Para todo aquel que no indique que su país es Canadá o inicie su sesión desde una dirección IP con origen en Canadá"
