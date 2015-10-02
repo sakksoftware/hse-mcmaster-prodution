@@ -50,8 +50,6 @@ UserActions.resetPassword.listen (data) ->
   API.create('user/reset_password', data).done(@completed).fail(@failed)
 
 UserActions.loadRegion.listen ->
-  $.getJSON('//freegeoip.net/json/').done(@completed).fail =>
-    API.onError().apply(@failed, arguments)
-    @failed.apply(@failed, arguments)
+  API.read('geo').done(@completed).fail(@failed)
 
 module.exports = UserActions

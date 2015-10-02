@@ -37,7 +37,6 @@ module.exports = Reflux.createStore
     @setState(errors: responseText, loaded: true)
 
   onChangeLanguage: (language) ->
-    Cookies.set('lang', language)
     if @state.loaded
       UserActions.updateUser({language: language}).then =>
         window.location.reload()
@@ -91,11 +90,4 @@ module.exports = Reflux.createStore
     @setState(errors: ['failed_password_reset'])
 
   onLoadRegionCompleted: (geo) ->
-    if geo.region_code == 'ON'
-      region = 'ontario'
-    else if geo.country_code == 'CA'
-      region = 'canada'
-    else
-      region = 'worldwide'
-
-    @setState(region: params.region || region)
+    @setState(region: params.region || geo.region)
