@@ -45,9 +45,15 @@ module.exports = React.createClass
     router = require('lib/router')
     router.visit('/search')
 
+  isMobile: ->
+    if window.innerWidth < 1024
+      true
+    else
+      false
+
   renderGuidedSearch: ->
     if @state.guidedSearch
-      <GuidedQuestionsBox expanded=true onShowMenu={@showFiltersMenu} />
+      <GuidedQuestionsBox expanded={!@isMobile()} onShowMenu={@showFiltersMenu} />
 
   render: ->
     <div className="home-page">
