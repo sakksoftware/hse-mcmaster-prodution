@@ -46,6 +46,9 @@ class Router
     '4xx': ->
       React.render <App page="application_error" />, @el
 
+    '403': ->
+      React.render <App page="quota_exceeded_error" />, @el
+
     '404': ->
       React.render <App page="page_not_found" />, @el
 
