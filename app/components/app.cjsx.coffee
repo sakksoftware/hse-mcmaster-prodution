@@ -68,6 +68,8 @@ module.exports = React.createClass
 
   logout: ->
     UserActions.logoutUser()
+    if window.location.pathname == '/profile'
+      require('lib/router').visit('/')
     @dismissMenu()
 
   signup: (user) ->
