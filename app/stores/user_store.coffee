@@ -19,12 +19,12 @@ module.exports = Reflux.createStore
     user: null
     loaded: false
     errors: null
-    language: params.lang || Cookies.get('lang') || 'en'
+    language: Cookies.get('lang') || 'en'
     guidedSearch: guidedSearch
     region: params.region || 'worldwide'
 
   onLoadUserCompleted: (user) ->
-    @setState(user: user, loaded: true, errors: null, language: params.lang || user.language)
+    @setState(user: user, loaded: true, errors: null, language: user.language)
 
   onLoadUserFailed: (xhr, statusCode, responseText) ->
     @setState(errors: responseText, loaded: true)
