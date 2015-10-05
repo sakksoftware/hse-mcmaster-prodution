@@ -37,6 +37,7 @@ module.exports = Reflux.createStore
     @setState(errors: responseText, loaded: true)
 
   onChangeLanguage: (language) ->
+    Cookies.set('lang', language)
     if @state.loaded
       UserActions.updateUser({language: language}).then =>
         window.location.reload()
