@@ -7,19 +7,19 @@
     "home": "Home",
     "about": "About HSE",
     "walkthrough": "Walk through",
-    "guided_search": "Guided Search",
+    "guided_search": "Guided search",
     "select_language": "Select language",
-    "create_account": "Create Account",
+    "create_account": "Create account",
     "login": "Log in",
     "logout": "Logout"
   },
   "menus": {
     "account": {
-      "title": "My Account",
+      "title": "My account",
       "profile": "Profile",
       "saved_documents": "Saved documents",
       "saved_searches": "Saved searches",
-      "complementary_content": "Complementary Content"
+      "complementary_content": "Complementary content"
     },
     "help": {
       "title": "Help",
@@ -125,9 +125,9 @@
     },
     "sort_order": {
       "sorted_by": "Results sorted by",
-      "relevance": "Best Match",
-      "most_recent": "Most Recent",
-      "most_popular": "Most Popular"
+      "relevance": "Best match",
+      "most_recent": "Most recent",
+      "most_popular": "Most popular"
     },
     "signup_prompt": {
       "instructions": "Sign up to view more than 20 results, to save documents and searches, and to subscribe to email alerts"
@@ -154,16 +154,12 @@
   "complementary_content_page": {
     "title": "COMPLEMENTARY CONTENT",
     "description": "Enable viewing of complementary content",
-    "complementary_content_1": {
-      "title": "Intergovernmental Organizations' Health Systems Documents",
-      "description": "For those who..."
-    },
     "complementary_content_2": {
       "title": "CANADA'S HEALTH SYSTEMS DOCUMENTS",
       "description": "For those who do not designate their country as Canada or log in using a Canada-based IP address"
     },
     "complementary_content_3": {
-      "title": "Ontario's Health System Documents",
+      "title": "ONTARIO'S HEALTH SYSTEM DOCUMENTS",
       "description": "For those who log in Ontario-based IP address"
     }
   },
@@ -178,7 +174,7 @@
     "email": "Email",
     "instructions": "Enter the email you use for login below and we will send you a link to reset your password",
     "submit": "Send email",
-    "on_success": "A password rest token has been sent to your email"
+    "on_success": "An email that will allow you to re-set your password has been sent to your email account."
   },
   "reset_password_page": {
     "title": "Reset Password",

@@ -30,7 +30,8 @@ module.exports = React.createClass
     return unless @props.article.studies_conducted_in?.countries
     items =
       for country, i in @props.article.studies_conducted_in.countries
-        <li key="country-item-#{i}" className="country-item">{country.name_abbreviation} ({country.conducted_count})</li>
+        conductedCount = if country.conducted_count then "(#{country.conducted_count})" else ""
+        <li key="country-item-#{i}" className="country-item">{country.name_abbreviation}{conductedCount}</li>
     <ul className="article-item-countries">{items}</ul>
 
   renderAuthorList: (authors) ->
@@ -56,10 +57,10 @@ module.exports = React.createClass
     <ul className="article-item-region-list">{items}</ul>
 
   renderStudiesConductedIn: ->
-    return unless @props.article.studies_conducted_in?.length > 0
+    return unless @props.article.studies_conducted_in?.countries?.length > 0
     <div className="studies-conducted-in">
-      @renderCountryList()
-      @renderRegionList()
+      {@renderCountryList()}
+      {@renderRegionList()}
     </div>
 
   renderLinksList: (name, links)->
@@ -122,6 +123,11 @@ module.exports = React.createClass
         <ArticleField visible={article.year_published_visible}>
           <h2>{@props.article.label_year_published}</h2>
           {article.year_published}
+        </ArticleField>
+
+        <ArticleField visible={article.last_year_literature_searched_visible}>
+          <h2>{@props.article.label_last_year_literature_searched}</h2>
+          {@ifNotEmpty @props.article.last_year_literature_searched, @t('no_last_year_literature_searched')}
         </ArticleField>
 
         <ArticleField visible={article.quality_rating_visible}>

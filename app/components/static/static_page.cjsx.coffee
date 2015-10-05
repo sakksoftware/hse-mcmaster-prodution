@@ -25,5 +25,5 @@ module.exports = React.createClass
         <Loader loaded={false} />
       </div>
     else
-      <div className="#{@props.name}-page" dangerouslySetInnerHTML={__html: markdown.toHTML(@state.content)}>
+      <div className="#{@props.name}-page" dangerouslySetInnerHTML={__html: marked(@state.content, 'Maruku')}>
       </div>

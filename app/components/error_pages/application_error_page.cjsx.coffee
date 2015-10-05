@@ -7,7 +7,7 @@ module.exports = React.createClass
 
   render: ->
     <div className="application-error-page">
-      <h1>Application Error</h1>
+      <h1>Application error</h1>
       <p>
         Opps, we didn't expect that. Try <a href="#" onClick={@reloadPage}>refreshing the page</a>.
       </p>

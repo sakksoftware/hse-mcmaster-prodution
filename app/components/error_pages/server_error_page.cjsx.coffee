@@ -7,7 +7,7 @@ module.exports = React.createClass
 
   render: ->
     <div className="server-error-page">
-      <h1>Server Error</h1>
+      <h1>Server error</h1>
       <p>
         Service is unavilable, please try <a href="#" onClick={@reloadPage}>refreshing the page</a>.
       </p>

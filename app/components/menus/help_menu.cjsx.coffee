@@ -17,5 +17,5 @@ module.exports = React.createClass
     #   The results would show who won the Champions Leauge and the WorldCup lately.
     # </p>
 
-    <div className="help-menu" dangerouslySetInnerHTML={__html: markdown.toHTML @t('instructions')}>
+    <div className="help-menu" dangerouslySetInnerHTML={__html: marked @t('instructions')}>
     </div>

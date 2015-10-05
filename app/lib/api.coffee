@@ -62,6 +62,9 @@ module.exports = class API
 
       if res.status >= 500 && res.status <= 599
         router.render('/5xx')
+      else if res.status == 403
+        Rollbar.error('Quota Exceeded Error', res)
+        router.render('/403')
       else if res.status == 404
         router.render('/404')
       else if (res.status >= 400 && res.status <= 499 && res.status != 422) || (res.status == 0 && errorTypeText == 'error')

@@ -26,14 +26,14 @@ UserActions.createUser.listen (user) ->
     user.errors.accept_terms = "must_accept_terms"
 
   if _.isEmpty(user.errors)
-    API.read('/user').done (u) =>
+    API.read('user').done (u) =>
       user = _.extend(u, user)
       StoreMock.send(user, (=> @completed(user)), 'POST /users')
   else
     StoreMock.sendError(400, user, (=> @failed({}, 'bad data', user)), 'POST /users')
 
 UserActions.loadUser.listen ->
-  API.read('/user').done(@completed).fail(@failed)
+  API.read('user').done(@completed).fail(@failed)
 
 UserActions.updateUser.listen (user) ->
   @completed(user)
@@ -46,7 +46,7 @@ UserActions.loginUser.listen (user) ->
     user.errors.password = "can't be blank!"
 
   if _.isEmpty(user.errors)
-    API.read('/user').done (u) =>
+    API.read('user').done (u) =>
       user = _.extend(u, user)
       StoreMock.send user, (=> @completed(user)), 'POST /login/login'
   else
@@ -59,12 +59,10 @@ UserActions.forgotPassword.listen (data) ->
   StoreMock.send data, (=> @completed(data)), 'POST /user/forgotPassword'
 
 UserActions.resetPassword.listen (data) ->
-  API.read('/user').done (user) =>
+  API.read('user').done (user) =>
     StoreMock.send data, (=> @completed(user)), 'POST /user/reset_password'
 
 UserActions.loadRegion.listen ->
-  $.getJSON('//freegeoip.net/json/').done(@completed).fail =>
-    API.onError().apply(@failed, arguments)
-    @failed.apply(@failed, arguments)
+  API.read('geo').done(@completed).fail(@failed)
 
 module.exports = UserActions

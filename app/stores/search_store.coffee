@@ -47,10 +47,6 @@ module.exports = Reflux.createStore
 
     @setState(search: search, errors: null, loaded: true)
 
-  onSearchFailed: (xhr) ->
-    if xhr.status == 403
-      @setState(errors: ['reached_search_limit'], loaded: true)
-
   onLoadMore: (page) ->
     search = _.clone(@state.search)
     search.page = page

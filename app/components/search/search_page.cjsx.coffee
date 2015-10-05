@@ -68,7 +68,7 @@ module.exports = React.createClass
     @fetchResults()
 
   handleLoadMore: (page) ->
-    if UserStore.state.user == null && page > 2 || @state.errors?[0] == 'reached_search_limit'
+    if UserStore.state.user == null && page > 2
       @setState(showSignupPrompt: true)
       return
 

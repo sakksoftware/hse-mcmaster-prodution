@@ -23,7 +23,7 @@ SearchActions = Reflux.createActions
 
 SearchActions.search.listen (search) ->
   language = UserStore.state.language
-  API.read("search#{serializeSearchUrl(search, language, includePage: true)}", skipErrorHandlingFor: [403]).
+  API.read("search#{serializeSearchUrl(search, language, includePage: true)}").
     done(@completed).fail(@failed)
 
 SearchActions.loadFilters.listen ->

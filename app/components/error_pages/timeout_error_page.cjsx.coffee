@@ -7,7 +7,7 @@ module.exports = React.createClass
 
   render: ->
     <div className="timeout-error-page">
-      <h1>Connection Timeout</h1>
+      <h1>Connection timeout</h1>
       <p>
         Opps, look like we could not reach our server.
         Check your internet connection and try <a href="#" onClick={@reloadPage}>refreshing the page</a>.
