@@ -19,12 +19,12 @@ module.exports = Reflux.createStore
     user: null
     loaded: false
     errors: null
-    language: Cookies.get('lang') || 'en'
+    language: params.lang || 'en'
     guidedSearch: guidedSearch
     region: params.region || 'worldwide'
 
   onLoadUserCompleted: (user) ->
-    @setState(user: user, loaded: true, errors: null, language: user.language)
+    @setState(user: user, loaded: true, errors: null, language: params.lang || user.language)
 
   onLoadUserFailed: (xhr, statusCode, responseText) ->
     @setState(errors: responseText, loaded: true)
@@ -37,7 +37,6 @@ module.exports = Reflux.createStore
     @setState(errors: responseText, loaded: true)
 
   onChangeLanguage: (language) ->
-    Cookies.set('lang', language)
     if @state.loaded
       UserActions.updateUser({language: language}).then =>
         window.location.reload()
@@ -91,4 +90,11 @@ module.exports = Reflux.createStore
     @setState(errors: ['failed_password_reset'])
 
   onLoadRegionCompleted: (geo) ->
-    @setState(region: params.region || geo.region)
+    if geo.region_code == 'ON'
+      region = 'ontario'
+    else if geo.country_code == 'CA'
+      region = 'canada'
+    else
+      region = 'worldwide'
+
+    @setState(region: params.region || region)

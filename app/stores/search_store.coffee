@@ -1,3 +1,5 @@
+UrlActions = require('actions/url_actions')
+
 SearchActions = require('actions/search_actions')
 SearchSerializationService = require('services/search_serialization_service')
 SearchDeserializationService = require('services/search_deserialization_service')
@@ -39,7 +41,7 @@ module.exports = Reflux.createStore
 
   onSearch: (search) ->
     @setState(loaded: false)
-    @updateUrl()
+    @_updateUrl()
 
   onSearchCompleted: (search) ->
     if search.page > 1
@@ -52,16 +54,14 @@ module.exports = Reflux.createStore
     search.page = page
     SearchActions.search(search)
 
-  updateUrl: ->
-    Router = require('lib/router')
-    Router.update(@serializeSearchUrl(@state.search, UserStore.state.language))
+
 
   onSortBy: (sortBy) ->
     search = _.clone(@state.search)
     search.sort_by = sortBy
     search.page = 1
     @setState(search: search)
-    @updateUrl()
+    @_updateUrl()
     SearchActions.search(@state.search)
 
   onAddFilter: (filter) ->
@@ -79,7 +79,7 @@ module.exports = Reflux.createStore
     search = _.clone(@state.search)
     search.page = 1
     @setState(search: search)
-    @updateUrl()
+    @_updateUrl()
     SearchActions.search(@state.search)
 
   onChangeParentFilterValue: (parentFilter, value) ->
@@ -88,7 +88,7 @@ module.exports = Reflux.createStore
     search = _.clone(@state.search)
     search.page = 1
     @setState(search: search)
-    @updateUrl()
+    @_updateUrl()
     SearchActions.search(@state.search)
 
   onToggleNestedFilter: (filter) ->
@@ -117,7 +117,7 @@ module.exports = Reflux.createStore
     @setState(search: @state.search)
     search = _.clone(@state.search)
     search.page = 1
-    @updateUrl()
+    @_updateUrl()
     SearchActions.search(@state.search)
 
   onToggleDateRangeFilter: (filter, start, end) ->
@@ -135,6 +135,9 @@ module.exports = Reflux.createStore
     @setState(search: search, errors: null, loaded: true)
 
   # private
+  _updateUrl: ->
+    UrlActions.setParams(@serializeSearchParams(@state.search))
+
   _findFilterRecursive: (filterId, filters) ->
     for filter in filters
       if filter.id == filterId
