@@ -43,6 +43,11 @@ app.get('/one-page-summary.aspx', function(req, res) {
 });
 
 app.get('/r.aspx', function(req, res) {
+  if(!req.query.x) {
+    console.log('[Unknown Redirect] request recieved with no data ');
+    return res.redirect('/');
+  }
+
   data = decrypt(req.query.x);
   if(match = data.match(/A=([0-9]+).*R=one-page-summary\.aspx\0T=(.{10})/i)) {
     id = match[1];
