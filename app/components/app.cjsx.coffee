@@ -33,6 +33,8 @@ AccountMenu = require('components/menus/account_menu')
 
 TranslationHelper = require('mixins/translation_helper')
 
+UrlActions = require('actions/url_actions')
+UrlStore = require('stores/url_store')
 UserActions = require('actions/user_actions')
 UserStore = require('stores/user_store')
 
@@ -69,13 +71,14 @@ module.exports = React.createClass
   logout: ->
     UserActions.logoutUser()
     if window.location.pathname == '/profile'
-      require('lib/router').visit('/')
+      UrlActions.navigateTo('/')
     @dismissMenu()
 
   signup: (user) ->
     @dismissMenu()
 
   toggleMenu: (menuName, title, menuContext = {}) ->
+    # TODO: fix spelling error in another commit
     @refs.layaredNavigation.toggleMenu(menuName, title, menuContext)
 
   dismissMenu: ->
@@ -86,7 +89,7 @@ module.exports = React.createClass
 
   renderHeader: ->
     <nav className="top-nav">
-      <h1><a href="/">Health Systems Evidence</a><span className="beta">{@t('/beta')}</span></h1>
+      <h1><Link to="/">Health Systems Evidence</Link><span className="beta">{@t('/beta')}</span></h1>
       <LayerToggle menu="main" onToggle={@toggleMenu}>
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>

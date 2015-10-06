@@ -6,16 +6,19 @@ serializeSearchParams = (search, language, options = {}) ->
   query = search.query || ""
   sortBy = search.sort_by || "relevance"
   applied_filters = serializeAppliedFilters(search.filters)
-  if options.includePage
-    page = search.page || 1
-  else
-    page = undefined
 
-  q: query
-  sort_by: sortBy
-  language: language
-  applied_filters: applied_filters
-  page: page
+  params =
+    q: query
+    sort_by: sortBy
+    applied_filters: applied_filters
+
+  if options.includePage
+    params.page = search.page || 1
+
+  if language
+    params.lang = language
+
+  params
 
 module.exports =
   serializeSearchParams: serializeSearchParams
@@ -37,8 +40,6 @@ serializeAppliedFilters = (filters) ->
       result.push filter.id
 
   result.join(';')
-
-
 
 getAppliedFilters = (filters) ->
   filters = FilterNormalizationService.getFiltersArray(filters)

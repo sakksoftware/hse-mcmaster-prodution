@@ -1,11 +1,11 @@
-Url = require('lib/url')
+UrlStore = require('stores/url_store')
 
 dateRangePattern = /^\[(\d+_\d+),(\d{4})?,?(\d{4})?\]/
 countriesPattern = /^\[(\d+_\d+),([a-z_]+)\]/
 
 module.exports =
   deserializeSearchUrl: ->
-    params = Url.params()
+    params = UrlStore.state.params
 
     if !_.isEmpty(params.applied_filters)
       applied_filters = params.applied_filters?.split(';')

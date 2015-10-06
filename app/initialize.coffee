@@ -15,7 +15,7 @@ stores = require('stores')
 localesUrl = config.localesUrl
 
 initialize = ->
-  language = params.language || 'en'
+  language = stores.UrlStore.state.params.lang || 'en'
   $.i18n.init
     lng: language
     fallbackLng: 'en'

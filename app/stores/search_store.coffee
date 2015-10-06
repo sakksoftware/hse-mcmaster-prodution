@@ -14,6 +14,9 @@ module.exports = Reflux.createStore
   init: ->
     UserStore.listen(@onUserStoreUpdated)
 
+  resetState: ->
+    # DO STUFF
+
   getInitialState: ->
     search: @deserializeSearchUrl()
     errors: null
@@ -53,8 +56,6 @@ module.exports = Reflux.createStore
     search = _.clone(@state.search)
     search.page = page
     SearchActions.search(search)
-
-
 
   onSortBy: (sortBy) ->
     search = _.clone(@state.search)
