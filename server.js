@@ -3,10 +3,12 @@ var app = express();
 var path = require('path');
 var basicAuth = require('basic-auth-connect');
 var crypto = require('crypto');
+var rollbar = require('rollbar');
 
 var NODE_ENV = process.env.NODE_ENV || 'development';
 var AES_KEY = process.env.AES_KEY || '';
 var AES_IV = process.env.AES_IV || '';
+var ROLLBAR_SERVER_SECRET = process.env.ROLLBAR_SERVER_SECRET || '';
 
 function decrypt(crypted) {
   var crypto = require('crypto');
@@ -32,6 +34,7 @@ if(NODE_ENV == 'production' || NODE_ENV == 'staging') {
   });
 }
 
+app.use(rollbar.errorHandler(ROLLBAR_SERVER_SECRET));
 app.use(express.static('public'));
 
 app.get('/one-page-summary.aspx', function(req, res) {
@@ -59,6 +62,11 @@ app.get('/r.aspx', function(req, res) {
     console.log('[Unknown Redirect] request recieved with data ', data);
     res.redirect('/');
   }
+});
+
+app.get('/rollbar-error-test', function(req, res) {
+  rollbar.reportMessage("Testing rollbars from node server", "error");
+  res.send('testing rollbars');
 });
 
 app.get('*', function(req, res) {
