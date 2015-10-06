@@ -8,7 +8,10 @@
     "node": "~0.12.1",
     "npm": "~2.5.1"
   },
-  "cacheDirectories": ["node_modules", "bower_components"],
+  "cacheDirectories": [
+    "node_modules",
+    "bower_components"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/func-i/hse-frontend"
@@ -33,6 +36,7 @@
     "express": "^4.13.3",
     "javascript-brunch": ">= 1.0 < 1.8",
     "node-sass": "^3.2.0",
+    "rollbar": "^0.5.8",
     "sass-brunch": "^1.8.10",
     "uglify-js-brunch": ">= 1.0 < 1.8"
   }
