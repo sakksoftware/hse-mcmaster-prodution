@@ -126,8 +126,7 @@
     "sort_order": {
       "sorted_by": "Results sorted by",
       "relevance": "Best match",
-      "most_recent": "Most recent",
-      "most_popular": "Most popular"
+      "most_recent": "Most recent"
     },
     "signup_prompt": {
       "instructions": "Sign up to view more than 20 results, to save documents and searches, and to subscribe to email alerts"
