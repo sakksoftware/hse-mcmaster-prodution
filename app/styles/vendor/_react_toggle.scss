@@ -53,11 +53,11 @@ $react-toggle-thumb-width: 22px;
 }
 
 .react-toggle--checked .react-toggle-track {
-  background-color: $primary-color;
+  background-color: $link-color;
 }
 
 .react-toggle.react-toggle--checked:hover .react-toggle-track {
-  background-color: darken($primary-color, 10%);
+  background-color: darken($link-color, 10%);
 }
 
 .react-toggle-track-check {
@@ -127,7 +127,7 @@ $react-toggle-thumb-width: 22px;
 
 .react-toggle--checked .react-toggle-thumb {
   left: $react-toggle-width - $react-toggle-thumb-width - 1;
-  border-color: #19AB27;
+  border-color: #A09F9F;
 }
 
 .react-toggle--focus .react-toggle-thumb {
