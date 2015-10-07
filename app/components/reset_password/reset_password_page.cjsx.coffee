@@ -1,7 +1,7 @@
 UserActions = require('actions/user_actions')
+# UrlStore = require('stores/url_store')
 Form = require('components/shared/form')
 TranslationHelper = require('mixins/translation_helper')
-
 
 module.exports = React.createClass
   displayName: 'ResetPasswordPage'
@@ -11,6 +11,12 @@ module.exports = React.createClass
 
   propTypes:
     lfe: React.PropTypes.string.isRequired
+
+  componentWillMount: ->
+    params = require('lib/url').params()
+    @initiated = params.i
+    # TODO: switch to this version when we merge development branch into master
+    # @initiated = UrlStore.state.params.i
 
   handleAfterSave: ->
     router = require('lib/router')
@@ -37,6 +43,7 @@ module.exports = React.createClass
     <Form className="reset-password-page" onSubmit={@handleSubmit} afterSave={@handleAfterSave}>
       <h1>{@t('title')}</h1>
       <input name="lfe" label="lfe" type="hidden" defaultValue={@props.lfe} />
+      <input name="i" label="initiated" type="hidden" defaultValue={@initiated} />
       <input name="password" label={@t('password')} type="password" />
       <input name="confirm_password" label={@t('confirm_password')} type="password" />
       <button>{@t('submit')}</button>

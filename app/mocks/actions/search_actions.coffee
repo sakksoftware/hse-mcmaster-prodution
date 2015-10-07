@@ -107,7 +107,7 @@ searchData = {
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     },
     {
-      "id": "all_visible",
+      "id": "all_filled_all_visible",
       "traversal": "tencharacters",
       "title": "Article D",
       "created_at": "2013-08-20 11:33:00Z",
@@ -118,7 +118,7 @@ searchData = {
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     },
     {
-      "id": "all_visible",
+      "id": "all_filled_all_visible",
       "traversal": "tencharacters",
       "title": "Article E",
       "created_at": "2013-08-20 11:33:00Z",
@@ -129,7 +129,7 @@ searchData = {
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     },
     {
-      "id": "all_visible",
+      "id": "all_filled_all_visible",
       "traversal": "tencharacters",
       "title": "Article F",
       "created_at": "2013-08-20 11:33:00Z",
@@ -140,7 +140,7 @@ searchData = {
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     },
     {
-      "id": "all_visible",
+      "id": "all_filled_all_visible",
       "traversal": "tencharacters",
       "title": "Article G",
       "created_at": "2013-08-20 11:33:00Z",
@@ -151,7 +151,7 @@ searchData = {
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     },
     {
-      "id": "all_visible",
+      "id": "all_filled_all_visible",
       "traversal": "tencharacters",
       "title": "Article H",
       "created_at": "2013-08-20 11:33:00Z",
@@ -162,7 +162,7 @@ searchData = {
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     },
     {
-      "id": "all_visible",
+      "id": "all_filled_all_visible",
       "traversal": "tencharacters",
       "title": "Article I",
       "created_at": "2013-08-20 11:33:00Z",
@@ -173,7 +173,7 @@ searchData = {
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     },
     {
-      "id": "all_visible",
+      "id": "all_filled_all_visible",
       "traversal": "tencharacters",
       "title": "Article J",
       "created_at": "2013-08-20 11:33:00Z",

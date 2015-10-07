@@ -50,10 +50,12 @@ module.exports = Reflux.createStore
     Cookies.set('guided_search', @state.guidedSearch)
 
   onToggleComplementaryContent: (fieldName) ->
+    data = {}
     user = @state.user
     user[fieldName] = !user[fieldName]
+    data[fieldName] = !user[fieldName]
     @setState(user: user)
-    UserActions.updateUser(user)
+    UserActions.updateUser(data)
 
   onCreateUserCompleted: (user) ->
     @setState(user: user, loaded: true, language: user.language)
