@@ -20,6 +20,12 @@ For deployment we use an `express` server on heroku.
 
 If you want to try it out run: `node server.js`.
 
+To deploy to both PHCPI & HSE McMaster simply run the deploy task, it will warn you about any merge conflicts.
+
+```
+./deploy
+```
+
 ### Staging
 
 username: hse
