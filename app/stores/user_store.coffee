@@ -1,8 +1,9 @@
 API = require('lib/api')
 UserActions = require('actions/user_actions')
+UrlActions = require('actions/url_actions')
 RefluxStateMixin = require('lib/reflux_state_mixin')(Reflux)
 
-params = require('lib/url').params()
+UrlStore = require('stores/url_store')
 
 module.exports = Reflux.createStore
   listenables: [UserActions]
@@ -19,12 +20,12 @@ module.exports = Reflux.createStore
     user: null
     loaded: false
     errors: null
-    language: Cookies.get('lang') || 'en'
+    language: UrlStore.state.params.lang || 'en'
     guidedSearch: guidedSearch
-    region: params.region || 'worldwide'
+    region: UrlStore.state.params.region || 'worldwide'
 
   onLoadUserCompleted: (user) ->
-    @setState(user: user, loaded: true, errors: null, language: user.language)
+    @setState(user: user, loaded: true, errors: null, language: UrlStore.state.params.lang || user.language)
 
   onLoadUserFailed: (xhr, statusCode, responseText) ->
     @setState(errors: responseText, loaded: true)
@@ -37,12 +38,12 @@ module.exports = Reflux.createStore
     @setState(errors: responseText, loaded: true)
 
   onChangeLanguage: (language) ->
-    Cookies.set('lang', language)
+    UrlActions.setParams(lang: language)
     if @state.loaded
-      UserActions.updateUser({language: language}).then =>
+      UserActions.updateUser(language: language).then =>
         window.location.reload()
     else
-      window.location.reload()
+      _.defer -> window.location.reload()
 
   onToggleGuidedSearch: (language) ->
     @setState(guidedSearch: !@state.guidedSearch)
@@ -91,4 +92,11 @@ module.exports = Reflux.createStore
     @setState(errors: ['failed_password_reset'])
 
   onLoadRegionCompleted: (geo) ->
-    @setState(region: params.region || geo.region)
+    if geo.region_code == 'ON'
+      region = 'ontario'
+    else if geo.country_code == 'CA'
+      region = 'canada'
+    else
+      region = 'worldwide'
+
+    @setState(region: UrlStore.state.params.region || region)

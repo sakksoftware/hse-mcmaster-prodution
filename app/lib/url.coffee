@@ -13,3 +13,8 @@ module.exports =
       urlParams[decode(match[1])] = decode(match[2])
 
     urlParams
+
+  serializeParams: (params) ->
+    result = _(params).map((v, k) -> "#{k}=#{v}" if v)
+    result = _(result).compact().join('&')
+    "?#{result}"

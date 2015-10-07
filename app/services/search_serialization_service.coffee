@@ -1,18 +1,29 @@
+serializeParams = require('lib/url').serializeParams
 FilterNormalizationService = require('services/filter_normalization_service')
 
+serializeSearchParams = (search, language, options = {}) ->
+  options = _.extend({includePage: false}, options)
+  query = search.query || ""
+  sortBy = search.sort_by || "relevance"
+  applied_filters = serializeAppliedFilters(search.filters)
+
+  params =
+    q: query
+    sort_by: sortBy
+    applied_filters: applied_filters
+
+  if options.includePage
+    params.page = search.page || 1
+
+  if language
+    params.lang = language
+
+  params
+
 module.exports =
-  serializeSearchUrl: (search, language, options = {}) ->
-    options = _.extend({includePage: false}, options)
-    query = search.query || ""
-    sortBy = search.sort_by || "relevance"
-    applied_filters = serializeAppliedFilters(search.filters)
-    lang = "&lang=#{language}"
-    if options.includePage
-      page = search.page || 1
-      page = "&page=#{page}"
-    else
-      page = ''
-    "?q=#{query}&sort_by=#{sortBy}#{lang}&applied_filters=#{applied_filters}#{page}"
+  serializeSearchParams: serializeSearchParams
+  serializeSearchUrl: (search, language, options) ->
+    serializeParams(serializeSearchParams(search, language, options))
 
 # private
 serializeAppliedFilters = (filters) ->
@@ -29,8 +40,6 @@ serializeAppliedFilters = (filters) ->
       result.push filter.id
 
   result.join(';')
-
-
 
 getAppliedFilters = (filters) ->
   filters = FilterNormalizationService.getFiltersArray(filters)

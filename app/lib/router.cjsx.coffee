@@ -1,56 +1,58 @@
 App = require('components/app')
 class Router
   constructor: ->
-    @el = document.getElementById('react-root')
     window.addEventListener('hashchange', @_handleRouteChange.bind(@))
     window.addEventListener('popstate', @_handleRouteChange.bind(@))
 
+  el: ->
+    @_el ||= document.getElementById('react-root')
+
   routes:
     '/$': ->
-      React.render <App page="home" />, @el
+      React.render <App page="home" />, @el()
 
     '/search': ->
-      React.render <App page="search" />, @el
+      React.render <App page="search" />, @el()
 
     'articles/:id': (id) ->
       args = {id: id}
-      React.render <App page="articles" args={args} />, @el
+      React.render <App page="articles" args={args} />, @el()
 
     'about': ->
-      React.render <App page="about" />, @el
+      React.render <App page="about" />, @el()
 
     'terms': ->
-      React.render <App page="terms" />, @el
+      React.render <App page="terms" />, @el()
 
     'profile': ->
-      React.render <App page="profile" />, @el
+      React.render <App page="profile" />, @el()
 
     'complementary_content': ->
-      React.render <App page="complementary_content" />, @el
+      React.render <App page="complementary_content" />, @el()
 
     'forgot_password': ->
-      React.render <App page="forgot_password" />, @el
+      React.render <App page="forgot_password" />, @el()
 
     'reset_password': ->
-      React.render <App page="reset_password" />, @el
+      React.render <App page="reset_password" />, @el()
 
     'top_5': ->
-      React.render <App page="top_5" />, @el
+      React.render <App page="top_5" />, @el()
 
     'timeout': ->
-      React.render <App page="timeout_error" />, @el
+      React.render <App page="timeout_error" />, @el()
 
     '5xx': ->
-      React.render <App page="server_error" />, @el
+      React.render <App page="server_error" />, @el()
 
     '4xx': ->
-      React.render <App page="application_error" />, @el
+      React.render <App page="application_error" />, @el()
 
     '403': ->
-      React.render <App page="quota_exceeded_error" />, @el
+      React.render <App page="quota_exceeded_error" />, @el()
 
     '404': ->
-      React.render <App page="page_not_found" />, @el
+      React.render <App page="page_not_found" />, @el()
 
     '.*': ->
       @visit('/') # redirect to homepage

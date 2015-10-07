@@ -18,6 +18,7 @@ module.exports = class API
       if url[0] != '/'
         url = '/' + url
 
+      # TODO: should we replace this with a URI class?
       parser = document.createElement('a')
       parser.href = url
       path = parser.pathname

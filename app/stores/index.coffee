@@ -6,3 +6,4 @@ module.exports =
   ContentStore: require('stores/content_store')
   QuestionStore: require('stores/question_store')
   SuggestionStore: require('stores/suggestion_store')
+  UrlStore: require('stores/url_store')
