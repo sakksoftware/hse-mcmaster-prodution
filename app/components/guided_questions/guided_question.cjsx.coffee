@@ -23,9 +23,9 @@ module.exports = React.createClass
       @props.question
 
   _getByRegion: ->
-    if UserStore.state.region == 'ontario'
+    if UserStore.state.user?.complementary_3 || (!UserStore.state.user && UserStore.state.region == 'ontario')
       _.findWhere(@props.question.regions, name: 'ontario').question
-    else if UserStore.state.region == 'canada'
+    else if UserStore.state.user?.complementary_2 || (!UserStore.state.user && UserStore.state.region == 'canada')
       _.findWhere(@props.question.regions, name: 'canada').question
     else
       _.findWhere(@props.question.regions, name: 'worldwide').question

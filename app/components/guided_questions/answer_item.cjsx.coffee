@@ -29,12 +29,17 @@ module.exports = React.createClass
 
   render: ->
     answer = @props.answer
+    filterGroup = SearchStore.findFilter(answer.filterGroup)
+
+    # in case filter is not found, we don't want to crash the whole site
+    return false unless filterGroup
+
     <li key="answer-item-simple" className="answer-item">
       <LayerToggle
         menu="filters"
         title={@getTitle(answer.section, answer.filterGroup)}
         context={
-          filterGroup: SearchStore.findFilter(answer.filterGroup)
+          filterGroup: filterGroup
           filters: @getFilters()
           onDismiss: @props.onHideMenu
           }
