@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo "deploying to McMaster HSE"
+git push production master
+
+echo "merging & deploying to PHCPI"
+git checkout phcpi
+git merge master
+git push phcpi phcpi:master
+
+echo "returning you back to master"
+git checkout master
