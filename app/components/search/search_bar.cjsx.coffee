@@ -30,7 +30,9 @@ module.exports = React.createClass
 
   fetchSuggestions: (query, callback) ->
     handleLoadSuggestions = (suggestions) ->
-      suggestions.splice(0, 0, {query: query, count: null})
+      suggestions = _.clone(suggestions)
+      if suggestions.length == 0 || suggestions[0].query.toLowerCase() != query.toLowerCase()
+        suggestions.splice(0, 0, {query: query, count: null})
       callback(null, suggestions)
     @props.search.query = query
     SuggestionActions.suggestions(@props.search, UserStore.state.language).then(handleLoadSuggestions)
@@ -46,10 +48,20 @@ module.exports = React.createClass
   renderSuggestion: (suggestion, input) ->
     # TODO: add back suggestion count below once we have it implemented
     # ({suggestion.count})
-    <span>
-      <strong>{suggestion.query.slice(0, input.length)}</strong>
-      {suggestion.query.slice(input.length)}
-    </span>
+    index = suggestion.query.toLowerCase().indexOf(input.toLowerCase())
+    if index >= 0
+      start = suggestion.query.slice(0, index)
+      match = suggestion.query.slice(index, index + input.length)
+      end = suggestion.query.slice(index + input.length)
+      <span>
+        {start}
+        <strong>{match}</strong>
+        {end}
+      </span>
+    else
+      <span>
+        {suggestion.query}
+      </span>
 
   render: ->
     inputAttributes =
