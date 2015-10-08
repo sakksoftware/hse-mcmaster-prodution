@@ -69,7 +69,7 @@
       "no_countries_found": "No countries found.",
       "predicates": {
         "target": "Target of document",
-        "at_least_one_study": "At least one study from are"
+        "at_least_one_study": "At least one study from country"
       }
     },
     "date_range": {
