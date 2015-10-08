@@ -31,7 +31,8 @@ module.exports = React.createClass
   fetchSuggestions: (query, callback) ->
     handleLoadSuggestions = (suggestions) ->
       suggestions = _.clone(suggestions)
-      suggestions.splice(0, 0, {query: query, count: null})
+      if suggestions.length == 0 || suggestions[0].query.toLowerCase() != query.toLowerCase()
+        suggestions.splice(0, 0, {query: query, count: null})
       callback(null, suggestions)
     @props.search.query = query
     SuggestionActions.suggestions(@props.search, UserStore.state.language).then(handleLoadSuggestions)
