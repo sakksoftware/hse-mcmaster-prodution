@@ -1,4 +1,8 @@
 #!/bin/sh
+echo "[STAGING] merging & deploying to McMaster HSE"
+git checkout develop
+git merge master
+git push staging develop:master
 
 echo "deploying to McMaster HSE"
 git push production master
