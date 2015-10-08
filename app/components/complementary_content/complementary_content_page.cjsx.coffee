@@ -10,18 +10,23 @@ module.exports = React.createClass
   mixins: [TranslationHelper]
   baseTranslation: 'complementary_content_page'
 
+  getInitialState: ->
+    user: null
+
   componentWillMount: ->
     @unsubscribe = UserStore.listen (state) =>
-      window.flash('success', 'Successfully updated')
+      @setState(user: state.user)
 
   componentWillUnmount: ->
     @unsubscribe()
 
   handleToggle: (fieldName) ->
     =>
-      UserActions.toggleComplementaryContent(fieldName)
+      UserActions.toggleComplementaryContent(fieldName).then =>
+        window.flash('success', 'Successfully updated')
 
   render: ->
+    console.log('complementary_2', @state.user?.complementary_2)
     <div className="complementary-content-page">
       <h1>{@t('title')}</h1>
       <p>{@t('description')}</p>
@@ -34,7 +39,7 @@ module.exports = React.createClass
             <p className="complementary-content-description">
               {@t('complementary_content_2.description')}
             </p>
-            <Toggle defaultChecked={UserStore.state.user?.complementary_2}
+            <Toggle key="complementary-#{@state.user?.complementary_2}" defaultChecked={@state.user?.complementary_2}
               onChange={@handleToggle('complementary_2')} />
           </label>
         </li>
@@ -46,7 +51,7 @@ module.exports = React.createClass
             <p className="complementary-content-description">
               {@t('complementary_content_3.description')}
             </p>
-            <Toggle defaultChecked={UserStore.state.user?.complementary_3}
+            <Toggle key="complementary-#{@state.user?.complementary_3}" defaultChecked={@state.user?.complementary_3}
               onChange={@handleToggle('complementary_3')} />
           </label>
         </li>

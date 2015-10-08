@@ -51,10 +51,7 @@ module.exports = Reflux.createStore
 
   onToggleComplementaryContent: (fieldName) ->
     data = {}
-    user = @state.user
-    user[fieldName] = !user[fieldName]
-    data[fieldName] = !user[fieldName]
-    @setState(user: user)
+    data[fieldName] = !@state.user[fieldName]
     UserActions.updateUser(data)
 
   onCreateUserCompleted: (user) ->
