@@ -26,6 +26,10 @@ $search-bar-line: 1px solid darken($border-color, 10%);
     }
   }
 
+  .suggestion-count {
+    margin-left: $x-tiny-size;
+  }
+
   @include desktop {
     &:after {
       content: " ";

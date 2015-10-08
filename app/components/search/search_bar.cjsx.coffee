@@ -46,9 +46,12 @@ module.exports = React.createClass
     router.visit('/')
 
   renderSuggestion: (suggestion, input) ->
-    # TODO: add back suggestion count below once we have it implemented
-    # ({suggestion.count})
     index = suggestion.query.toLowerCase().indexOf(input.toLowerCase())
+
+    suggestionCount = ""
+    if suggestion.count
+      suggestionCount = <span className="suggestion-count">({suggestion.count})</span>
+
     if index >= 0
       start = suggestion.query.slice(0, index)
       match = suggestion.query.slice(index, index + input.length)
@@ -57,10 +60,12 @@ module.exports = React.createClass
         {start}
         <strong>{match}</strong>
         {end}
+        {suggestionCount}
       </span>
     else
       <span>
         {suggestion.query}
+        {suggestionCount}
       </span>
 
   render: ->
