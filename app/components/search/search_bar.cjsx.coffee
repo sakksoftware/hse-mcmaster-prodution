@@ -16,7 +16,7 @@ module.exports = React.createClass
 
   getInitialState: ->
     query: @props.search.query
-    # HACK: to clear the
+    # HACK: to clear the autosuggest state
     count: 0
 
   dismissKeyboard: -> document.activeElement.blur()

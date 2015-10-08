@@ -61,7 +61,7 @@
     },
     "filters": {
       "title": "Sélectionner %{section_title}: %{filter_group_title}",
-      "all_filters": "Tous %{filter_title}"
+      "any_filters": "Tous %{filter_title}"
     },
     "countries": {
       "title": "Pays",
