@@ -61,7 +61,7 @@
     },
     "filters": {
       "title": "选择 %{section_title}: %{filter_group_title}",
-      "all_filters": "全部 %{filter_title}"
+      "any_filters": "全部 %{filter_title}"
     },
     "countries": {
       "title": "国家",

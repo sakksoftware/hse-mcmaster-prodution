@@ -65,7 +65,7 @@ module.exports = React.createClass
   renderAllFilter: ->
     return if @state.filters.length <= 1
     result =
-      <MenuFilterItem className="all-filters" key="all-filter-#{@filterGroup.id}" indicatorColor={@currentColor()}
+      <MenuFilterItem className="any-filters" key="any-filter-#{@filterGroup.id}" indicatorColor={@currentColor()}
         filter={@allFilter} onToggle={@onToggleFilter} />
 
     @nextColor()
@@ -78,7 +78,7 @@ module.exports = React.createClass
     title = @filterGroup.title
     if title != 'LMICs'
       title = title[0].toLowerCase() + title.substring(1)
-    @allFilter.title = @t('all_filters', filter_title: title)
+    @allFilter.title = @t('any_filters', filter_title: title)
 
     <div className="filters-menu nested-menu">
       <ul className="menu-list">
