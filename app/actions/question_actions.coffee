@@ -1,4 +1,4 @@
-UserStore = require('stores/user_store')
+UrlStore = require('stores/url_store')
 config = require('config')
 API = require('lib/api')
 
@@ -6,7 +6,7 @@ QuestionActions = Reflux.createActions
   loadQuestions: {asyncResult: true}
 
 QuestionActions.loadQuestions.listen ->
-  language = UserStore.state.language
+  language = UrlStore.state.params.lang || 'en'
 
   $.getJSON("#{config.localesUrl}questions/#{language}.json").
     done(@completed).

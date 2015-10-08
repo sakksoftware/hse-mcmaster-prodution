@@ -32,6 +32,12 @@ module.exports = Reflux.createStore
 
   onUpdateUserCompleted: (user) ->
     user = _.extend({}, @state.user, user)
+
+    # language changed?
+    if @state.user.language != user.language
+      UrlActions.setParams(lang: user.language)
+      _.defer -> window.location.reload()
+
     @setState(user: user, loaded: true, errors: null, language: user.language)
 
   onUpdateUserFailed: (xhr, statusCode, responseText) ->
@@ -40,8 +46,7 @@ module.exports = Reflux.createStore
   onChangeLanguage: (language) ->
     UrlActions.setParams(lang: language)
     if @state.loaded
-      UserActions.updateUser(language: language).then =>
-        window.location.reload()
+      UserActions.updateUser(language: language)
     else
       _.defer -> window.location.reload()
 

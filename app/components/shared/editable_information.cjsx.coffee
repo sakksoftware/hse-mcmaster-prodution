@@ -26,7 +26,9 @@ module.exports = React.createClass
 
   getValue: (props, child)->
     if child.type == "select"
-      (_(child.props.children).find (c) => c.props.value == props.object[child.props.name]).props.children
+      selectedOption = _(child.props.children).find (c) =>
+        "" + c.props.value == "" + props.object[child.props.name]
+      selectedOption.props.children
     else if child.props.type == "password"
       "******"
     else
