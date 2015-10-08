@@ -94,12 +94,17 @@
   }
 
   @include desktop {
-    padding-left: 220px + $large-size;
+    $sidebar-width: 220px;
+    .article-item-body {
+      padding-left: $sidebar-width + $large-size;
+      position: relative;
+    }
 
     h1 {
       border-bottom: 2px solid $border-color;
       padding-bottom: $desktop-large-size;
       margin-bottom: $xx-large-size;
+      margin-left: $sidebar-width + $large-size;
     }
 
     .article-field:nth-child(5n) {
@@ -116,10 +121,10 @@
     }
 
     .desktop-sidebar {
-      width: 220px;
+      width: $sidebar-width;
       position: absolute;
       left: 0;
-      top: 120px;
+      top: 0;
       color: lighten($primary-text-color, 20%);
       text-align: right;
 
@@ -127,6 +132,10 @@
         border: none;
         margin-bottom: inherit;
         padding-bottom: inherit;
+      }
+
+      .section:first-child {
+        margin-top: 0;
       }
 
       ul {
