@@ -37,6 +37,8 @@ module.exports = React.createClass
     if formData.errors
       error(responseText: JSON.stringify(formData))
     else
+      # TODO: remove this once it is properly implemented in the backend
+      formData.px = formData.lfe
       UserActions.resetPassword(formData).then(success, error)
 
   render: ->
