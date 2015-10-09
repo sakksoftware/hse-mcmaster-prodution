@@ -11,7 +11,7 @@ module.exports = React.createClass
   baseTranslation: 'complementary_content_page'
 
   getInitialState: ->
-    user: null
+    user: UserStore.state.user
 
   componentWillMount: ->
     @unsubscribe = UserStore.listen (state) =>
