@@ -42,7 +42,14 @@ module.exports = React.createClass
           <Link to={["/articles/#{@props.result.id}", t: @props.result.traversal]}><HighlightFormat>{@props.result.title}</HighlightFormat></Link>
         </h2>
         <div className="result-item-categories">
-          <HighlightFormat>{@props.result.category}</HighlightFormat> | <HighlightFormat>{@props.result.country_groupings}</HighlightFormat>
+          {
+            if @props.result.category
+              <HighlightFormat>{@props.result.category}</HighlightFormat>
+          }
+          {
+            if @props.result.country_groupings
+              <HighlightFormat>{@props.result.country_groupings}</HighlightFormat>
+          }
         </div>
         <HighlightFormat>{@ellipsis(@props.result.description, 250)}</HighlightFormat>
       </section>

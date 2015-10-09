@@ -35,8 +35,12 @@ $result-header-text-color: #999999;
   .result-item-categories {
     color: $result-header-text-color;
     margin-bottom: $x-small-size;
-  }
 
+    span + span:before {
+      content: "|";
+      padding: 0 $tiny-size;
+    }
+  }
   .result-item-header-left {
     float: left;
     width: 80%;

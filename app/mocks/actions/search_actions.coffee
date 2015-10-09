@@ -170,7 +170,7 @@ searchData = {
       "quality": "7/11",
       "description": "Lots of stuff goes here! Very Interesting right?.....",
       "category": "Superhero Marvel Movies",
-      "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
+      "country_groupings": null
     },
     {
       "id": "all_filled_all_visible",
