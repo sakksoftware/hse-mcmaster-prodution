@@ -8,6 +8,7 @@ module.exports = React.createClass
   baseTranslation: 'forgot_password_page'
 
   handleSubmit: (formData, success, error) ->
+    formData.from = 'hse'
     UserActions.forgotPassword(formData).then(success, error)
 
   afterSaveContent: ->
