@@ -46,7 +46,7 @@ module.exports = React.createClass
       @setState(countries: @state.countries, mode: mode)
       appliedFilters = @getAppliedFilters()
 
-      # foce search if there are country filters already applied
+      # force search if there are country filters already applied
       if appliedFilters.length > 0
         @onToggleFilter(@filterGroup)
 
@@ -64,7 +64,8 @@ module.exports = React.createClass
       <i className="checkmark"></i>
 
   renderCountries: ->
-    _.map @state.countries, (filter) =>
+    _.map @state.countries, (f) =>
+      filter = SearchStore.findFilter(f)
       <MenuFilterItem filter={filter} key="filter-#{filter.id}" onToggle={@onToggleFilter} />
 
   renderPredicates: ->
