@@ -3,6 +3,7 @@ LayerToggle = require('components/layered_navigation/layer_toggle')
 TranslationHelper = require('mixins/translation_helper')
 SearchActions = require('actions/search_actions')
 SearchStore = require('stores/search_store')
+Util = require('lib/util')
 
 module.exports = React.createClass
   displayName: 'FilterGroupsMenu'
@@ -40,7 +41,8 @@ module.exports = React.createClass
     SearchActions.removeFilterGroup(filter)
 
   getTitle: (section, filterGroup) ->
-    @t('menus.filters.title', section_title: section.title, filter_group_title: filterGroup.title)
+    title = @t('menus.filters.title', section_title: section.title, filter_group_title: filterGroup.title)
+    Util.sentenceCase(title)
 
   getMenuContext: (filterGroup) ->
     filterGroup: filterGroup
