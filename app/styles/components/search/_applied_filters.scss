@@ -1,6 +1,12 @@
 .applied-filters {
   list-style: none;
   padding-left: 0;
+  overflow: auto;
+
+  .applied-filter-item {
+    float: left;
+    clear: both;
+  }
 
   .applied-filter-item + .applied-filter-item {
     margin-top: $tiny-size;
