@@ -107,7 +107,7 @@
   "search_page": {
     "search_box": {
       "view_results_count": "View %{results_count} results",
-      "tips": "Tips for more powerful search",
+      "tips": "Search tips",
       "filters": "Filters",
       "placeholder": "Search..."
     },
