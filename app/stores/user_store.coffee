@@ -25,6 +25,12 @@ module.exports = Reflux.createStore
     region: UrlStore.state.params.region || 'worldwide'
 
   onLoadUserCompleted: (user) ->
+    if user.id == 0
+      # session expired or something else is wrong
+      UrlActions.navigateTo('/login')
+      Cookies.remove('token')
+      return
+
     @setState(user: user, loaded: true, errors: null, language: UrlStore.state.params.lang || user.language)
 
   onLoadUserFailed: (xhr, statusCode, responseText) ->
