@@ -80,14 +80,13 @@ module.exports = React.createClass
     @dismissMenu()
 
   toggleMenu: (menuName, title, menuContext = {}) ->
-    # TODO: fix spelling error in another commit
-    @refs.layaredNavigation.toggleMenu(menuName, title, menuContext)
+    @refs.layeredNavigation.toggleMenu(menuName, title, menuContext)
 
   dismissMenu: ->
-    @refs.layaredNavigation.dismissMenu()
+    @refs.layeredNavigation.dismissMenu()
 
   setOverlayContent: (content) ->
-    @refs.layaredNavigation.setOverlayContent(content)
+    @refs.layeredNavigation.setOverlayContent(content)
 
   renderHeader: ->
     <nav className="top-nav">
@@ -198,7 +197,7 @@ module.exports = React.createClass
     </LayerGroup>
 
   render: ->
-    <LayeredNavigation ref="layaredNavigation" className="app #{@props.page}" id="app">
+    <LayeredNavigation ref="layeredNavigation" className="app #{@props.page}" id="app">
       {@renderLayerGroup()}
       {@renderHeader()}
       <div id="page-content">
