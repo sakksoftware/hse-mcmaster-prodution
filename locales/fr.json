@@ -179,7 +179,8 @@
     "title": "Réinitialiser le mot de passe",
     "password": "Mot de passe",
     "confirm_password": "Confirmer le mot de passe",
-    "submit": "Réinitialiser le mot de passe"
+    "submit": "Réinitialiser le mot de passe",
+    "password_retained": "FR_Thank you. Your original password has been retained."
   },
   "errors": {
     "no_connection": "Oups, incapable de charger les données. Vérifiez votre connexion internet.",

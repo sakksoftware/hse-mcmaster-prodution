@@ -179,7 +179,8 @@
     "title": "Reset Password",
     "password": "Password",
     "confirm_password": "Confirm password",
-    "submit": "Reset password"
+    "submit": "Reset password",
+    "password_retained": "Thank you. Your original password has been retained."
   },
   "errors": {
     "no_connection": "Oops, could not load data. Check your internet connection.",

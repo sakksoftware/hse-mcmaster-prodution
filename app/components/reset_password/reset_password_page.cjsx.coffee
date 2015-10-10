@@ -42,11 +42,17 @@ module.exports = React.createClass
       UserActions.resetPassword(formData).then(success, error)
 
   render: ->
-    <Form className="reset-password-page" onSubmit={@handleSubmit} afterSave={@handleAfterSave}>
-      <h1>{@t('title')}</h1>
-      <input name="lfe" label="lfe" type="hidden" defaultValue={@props.lfe} />
-      <input name="i" label="initiated" type="hidden" defaultValue={@initiated} />
-      <input name="password" label={@t('password')} type="password" />
-      <input name="confirm_password" label={@t('confirm_password')} type="password" />
-      <button>{@t('submit')}</button>
-    </Form>
+    if @initiated == "0"
+      <div className="reset-password-page">
+        <h1>{@t('title')}</h1>
+        {@t('password_retained')}
+      </div>
+    else
+      <Form className="reset-password-page" onSubmit={@handleSubmit} afterSave={@handleAfterSave}>
+        <h1>{@t('title')}</h1>
+        <input name="lfe" label="lfe" type="hidden" defaultValue={@props.lfe} />
+        <input name="i" label="initiated" type="hidden" defaultValue={@initiated} />
+        <input name="password" label={@t('password')} type="password" />
+        <input name="confirm_password" label={@t('confirm_password')} type="password" />
+        <button>{@t('submit')}</button>
+      </Form>

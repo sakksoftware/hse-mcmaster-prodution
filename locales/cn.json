@@ -179,7 +179,8 @@
     "title": "重置密码",
     "password": "密码",
     "confirm_password": "确认密码",
-    "submit": "重置密码"
+    "submit": "重置密码",
+    "password_retained": "CN_Thank you. Your original password has been retained."
   },
   "errors": {
     "no_connection": "啊，无法加载数据，请检查您的网络链接。",

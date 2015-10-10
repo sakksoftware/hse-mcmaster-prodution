@@ -179,7 +179,8 @@
     "title": "Restablecer contraseña",
     "password": "Contraseña",
     "confirm_password": "Confirme la contraseña",
-    "submit": "Restablecer contraseña"
+    "submit": "Restablecer contraseña",
+    "password_retained": "ES_Thank you. Your original password has been retained."
   },
   "errors": {
     "no_connection": "No fue posible cargar los datos. Verifique su conexión de Internet.",

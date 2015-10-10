@@ -179,7 +179,8 @@
     "title": "Redefinir senha",
     "password": "Senha",
     "confirm_password": "Confirmar senha",
-    "submit": "Redefinir senha"
+    "submit": "Redefinir senha",
+    "password_retained": "PT_Thank you. Your original password has been retained."
   },
   "errors": {
     "no_connection": "Opa, não foi possível carregar dados. Verifique sua conexão com a Internet.",
