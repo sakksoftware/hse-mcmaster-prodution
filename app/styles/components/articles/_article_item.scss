@@ -28,8 +28,12 @@
     }
   }
 
-  .article-field + .article-field {
+  .article-field {
     margin-top: $medium-size;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
   }
 
   .article-item-document-type {
