@@ -41,8 +41,6 @@ module.exports = React.createClass
     @unsubscribeUser = UserStore.listen(@userStoreUpdated)
     @unsubscribeSearch = SearchStore.listen(@searchStoreUpdated)
 
-    # @pageQueue = []
-
     @fetchResults()
 
   componentWillUnmount: ->
