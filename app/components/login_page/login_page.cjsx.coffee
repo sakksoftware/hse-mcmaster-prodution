@@ -1,5 +1,6 @@
 LoginMenu = require('components/menus/login_menu')
 TranslationHelper = require('mixins/translation_helper')
+UrlStore = require('stores/url_store')
 UrlActions = require('actions/url_actions')
 
 module.exports = React.createClass
@@ -9,7 +10,10 @@ module.exports = React.createClass
   baseTranslation: ''
 
   onLogin: ->
-    UrlActions.navigateTo('/')
+    if UrlStore.hasHistory()
+      UrlActions.back()
+    else
+      UrlActions.navigateTo('/')
 
   render: ->
     <div className="login-page">

@@ -17,6 +17,13 @@ module.exports = Reflux.createStore
     params = _.omit(@state.params, 'children')
     serializeParams(params)
 
+  # note: params is used internally by reflux, cannot use that as a method name
+  getParam: (key) ->
+    @state.params[key]
+
+  hasHistory: ->
+    @router().hasHistory()
+
   ##
   # Events
   ##

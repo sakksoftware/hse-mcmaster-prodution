@@ -5,6 +5,7 @@ UserStore = require('stores/user_store')
 CountryActions = require('actions/country_actions')
 CountryStore = require('stores/country_store')
 TranslationHelper = require('mixins/translation_helper')
+UrlActions = require('actions/url_actions')
 
 module.exports = React.createClass
   displayName: 'ProfilePage'
@@ -25,6 +26,7 @@ module.exports = React.createClass
 
   componentWillUnmount: ->
     @unsubscribeUserStore()
+    @unsubscribeCountryStore()
 
   onUserStoreUpdated: (state) ->
     userState = _.omit(state, 'loaded')
