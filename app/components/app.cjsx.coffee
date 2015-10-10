@@ -12,6 +12,8 @@ ServerErrorPage = require('components/error_pages/server_error_page')
 ApplicationErrorPage = require('components/error_pages/application_error_page')
 TimeoutErrorPage = require('components/error_pages/timeout_error_page')
 QuotaExceededErrorPage = require('components/error_pages/quota_exceeded_error_page')
+LoginPage = require('components/login_page/login_page')
+SignupPage = require('components/signup_page/signup_page')
 
 Layer = require('components/layered_navigation/layer')
 LayerGroup = require('components/layered_navigation/layer_group')
@@ -131,6 +133,13 @@ module.exports = React.createClass
         <ComplementaryContentPage key="complementary-content-page" />
       when 'top_5'
         <Top5Page />
+      when 'login'
+        <LoginPage />
+      when 'signup'
+        <SignupPage />
+      ##
+      # Errors
+      ##
       when 'forgot_password'
         <ForgotPasswordPage />
       when 'page_not_found'

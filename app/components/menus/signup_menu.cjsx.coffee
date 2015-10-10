@@ -11,8 +11,11 @@ module.exports = React.createClass
   baseTranslation: 'menus.signup'
 
   propTypes:
-    onSignup: React.PropTypes.func.isRequired
+    onSignup: React.PropTypes.func
     user: React.PropTypes.object
+
+  getDefaultProps: ->
+    onSignup: (->)
 
   getInitialState: ->
     errors: null

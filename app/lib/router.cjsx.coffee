@@ -39,6 +39,12 @@ class Router
     'top_5': ->
       React.render <App page="top_5" />, @el()
 
+    'login': ->
+      React.render <App page="login" />, @el()
+
+    'signup': ->
+      React.render <App page="signup" />, @el()
+
     'timeout': ->
       React.render <App page="timeout_error" />, @el()
 

@@ -12,8 +12,12 @@ module.exports = React.createClass
   baseTranslation: 'menus.login'
 
   propTypes:
-    onLogin: React.PropTypes.func.isRequired
-    onForgotPasswordClick: React.PropTypes.func.isRequired
+    onLogin: React.PropTypes.func
+    onForgotPasswordClick: React.PropTypes.func
+
+  getDefaultProps: ->
+    onLogin: (->)
+    onForgotPasswordClick: (->)
 
   componentWillMount: ->
     @unsubscribe = UserStore.listen(@userUpdated)
