@@ -2,6 +2,7 @@
 echo "[STAGING] merging & deploying to McMaster HSE"
 git checkout develop
 git merge master
+git push
 git push staging develop:master
 
 echo "deploying to McMaster HSE"
@@ -10,6 +11,7 @@ git push production master
 echo "merging & deploying to PHCPI"
 git checkout phcpi
 git merge master
+git push
 git push phcpi phcpi:master
 
 echo "returning you back to master"
