@@ -14,50 +14,50 @@ class Router
     '/search': ->
       React.render <App page="search" />, @el()
 
-    'articles/:id': (id) ->
+    '/articles/:id': (id) ->
       args = {id: id}
       React.render <App page="articles" args={args} />, @el()
 
-    'about': ->
+    '/about': ->
       React.render <App page="about" />, @el()
 
-    'terms': ->
+    '/terms': ->
       React.render <App page="terms" />, @el()
 
-    'profile': ->
+    '/profile': ->
       React.render <App page="profile" />, @el()
 
-    'complementary_content': ->
+    '/complementary_content': ->
       React.render <App page="complementary_content" />, @el()
 
-    'forgot_password': ->
+    '/forgot_password': ->
       React.render <App page="forgot_password" />, @el()
 
-    'reset_password': ->
+    '/reset_password': ->
       React.render <App page="reset_password" />, @el()
 
-    'top_5': ->
+    '/top_5': ->
       React.render <App page="top_5" />, @el()
 
-    'login': ->
+    '/login': ->
       React.render <App page="login" />, @el()
 
-    'signup': ->
+    '/signup': ->
       React.render <App page="signup" />, @el()
 
-    'timeout': ->
+    '/timeout': ->
       React.render <App page="timeout_error" />, @el()
 
-    '5xx': ->
+    '/5xx': ->
       React.render <App page="server_error" />, @el()
 
-    '4xx': ->
+    '/4xx': ->
       React.render <App page="application_error" />, @el()
 
-    '403': ->
+    '/403': ->
       React.render <App page="quota_exceeded_error" />, @el()
 
-    '404': ->
+    '/404': ->
       React.render <App page="page_not_found" />, @el()
 
     '.*': ->
