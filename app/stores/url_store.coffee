@@ -29,7 +29,8 @@ module.exports = Reflux.createStore
     @updateUrl()
 
   onNavigateTo: (to, params = {}) ->
-    # TODO: should we add lang parameter here instead of in addition to in the link?
+    defaultParams = {lang: @state.params.lang}
+    params = _.extend defaultParams, params
     @setState(params: params)
     @router().visit(to + @serializeParams())
 
