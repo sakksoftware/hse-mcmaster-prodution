@@ -106,6 +106,8 @@ module.exports = React.createClass
     # </ArticleField>
 
     # TODO: possibly use the description field
+    # TODO: can be refactored to use @renderFields(['document_type', 'year_published', 'last_year_literature_searched', etc]) for each section
+    # see more here: https://github.com/facebook/react/issues/5119#issuecomment-147112602
     <div className="article-item">
       <h1>{article.title}</h1>
 
