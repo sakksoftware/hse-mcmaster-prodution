@@ -81,7 +81,7 @@
     text-decoration: underline;
   }
 
-  .section:nth-child(odd) {
+  .article-item-body > .section:nth-child(odd), .article-item-body > .desktop-sidebar > .section:nth-child(even) {
     background-color: #F3F3F3;
     width: 300%;
     margin-left: -100%;
@@ -117,7 +117,7 @@
       border-bottom: 2px solid $border-color;
     }
 
-    .section:nth-child(odd) {
+    .article-item-body > .section:nth-child(odd), .article-item-body > .desktop-sidebar > .section:nth-child(even) {
       background: none;
       margin-left: 0;
       width: 100%;
@@ -138,7 +138,7 @@
         padding-bottom: inherit;
       }
 
-      .section:first-child {
+      .section:first-child, h2:first-child {
         margin-top: 0;
       }
 
