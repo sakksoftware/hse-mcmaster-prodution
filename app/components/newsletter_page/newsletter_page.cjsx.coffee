@@ -4,6 +4,7 @@ UserStore = require('stores/user_store')
 TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
+  displayName: 'NewsletterPage'
   mixins: [TranslationHelper]
   baseTranslation: 'newsletter_page'
 

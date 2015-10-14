@@ -111,3 +111,6 @@ module.exports = Reflux.createStore
       region = 'worldwide'
 
     @setState(region: UrlStore.state.params.region || region)
+
+  onUnsubscribeCompleted: ->
+    # do nothing for now...

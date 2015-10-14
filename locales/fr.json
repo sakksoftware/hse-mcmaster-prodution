@@ -185,6 +185,12 @@
     "submit": "Réinitialiser le mot de passe",
     "password_retained": "FR_Thank you. Your original password has been retained."
   },
+  "unsubscribe_page": {
+    "title": "FR_Unsubscribe",
+    "confirmation_msg": "FR_Please click the button below to confirm that you would like to unsubscribe from the Evidence Service",
+    "unsubscribe": "FR_Unsubscribe",
+    "success": "FR_Successfully unsubscribed from newsletter"
+  },
   "errors": {
     "no_connection": "Oups, incapable de charger les données. Vérifiez votre connexion internet.",
     "cant_be_blank": "ne peut pas être vide!",

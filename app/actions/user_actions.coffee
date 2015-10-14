@@ -15,6 +15,7 @@ UserActions = Reflux.createActions
   forgotPassword: {asyncResult: true}
   resetPassword: {asyncResult: true}
   loadRegion: {asyncResult: true}
+  unsubscribe: {asyncResult: true}
 
 UserActions.createUser.listen (user) ->
   user.language = Cookies.get('lang')
@@ -50,5 +51,8 @@ UserActions.resetPassword.listen (data) ->
 
 UserActions.loadRegion.listen ->
   API.read('geo').done(@completed).fail(@failed)
+
+UserActions.unsubscribe.listen ->
+  API.create('unsubscribe').done(@completed).fail(@failed)
 
 module.exports = UserActions

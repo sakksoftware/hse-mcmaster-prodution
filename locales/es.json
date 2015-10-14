@@ -185,6 +185,12 @@
   "newsletter_page": {
     "title": "Boletín informativo"
   },
+  "unsubscribe_page": {
+    "title": "ES_Unsubscribe",
+    "confirmation_msg": "ES_Please click the button below to confirm that you would like to unsubscribe from the Evidence Service",
+    "unsubscribe": "ES_Unsubscribe",
+    "success": "ES_Successfully unsubscribed from newsletter"
+  },
   "errors": {
     "no_connection": "No fue posible cargar los datos. Verifique su conexión de Internet.",
     "cant_be_blank": "no puede estar en blanco",

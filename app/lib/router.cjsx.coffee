@@ -48,6 +48,9 @@ class Router
     '/newsletters/:id': (id) ->
       React.render <App page="newsletter" args={id: id}/>, @el()
 
+    '/unsubscribe': ->
+      React.render <App page="unsubscribe" />, @el()
+
     '/timeout': ->
       React.render <App page="timeout_error" />, @el()
 

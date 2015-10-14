@@ -185,6 +185,12 @@
   "newsletter_page": {
     "title": "新闻简报"
   },
+  "unsubscribe_page": {
+    "title": "CN_Unsubscribe",
+    "confirmation_msg": "CN_Please click the button below to confirm that you would like to unsubscribe from the Evidence Service",
+    "unsubscribe": "CN_Unsubscribe",
+    "success": "CN_Successfully unsubscribed from newsletter"
+  },
   "errors": {
     "no_connection": "啊，无法加载数据，请检查您的网络链接。",
     "cant_be_blank": "不能为空！",

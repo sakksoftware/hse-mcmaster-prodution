@@ -185,6 +185,12 @@
   "newsletter_page": {
     "title": "Newsletter"
   },
+  "unsubscribe_page": {
+    "title": "Unsubscribe",
+    "confirmation_msg": "Please click the button below to confirm that you would like to unsubscribe from the Evidence Service",
+    "unsubscribe": "Unsubscribe",
+    "success": "Successfully unsubscribed from newsletter"
+  },
   "errors": {
     "no_connection": "Oops, could not load data. Check your internet connection.",
     "cant_be_blank": "can't be blank!",

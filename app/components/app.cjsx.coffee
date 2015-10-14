@@ -15,6 +15,7 @@ QuotaExceededErrorPage = require('components/error_pages/quota_exceeded_error_pa
 LoginPage = require('components/login_page/login_page')
 SignupPage = require('components/signup_page/signup_page')
 NewsletterPage = require('components/newsletter_page/newsletter_page')
+UnsubscribePage = require('components/unsubscribe_page/unsubscribe_page')
 
 Layer = require('components/layered_navigation/layer')
 LayerGroup = require('components/layered_navigation/layer_group')
@@ -139,6 +140,8 @@ module.exports = React.createClass
       when 'newsletter'
         id = @props.args.id
         <NewsletterPage id={id}/>
+      when 'unsubscribe'
+        <UnsubscribePage />
       ##
       # Errors
       ##

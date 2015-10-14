@@ -13,6 +13,7 @@ UserActions = Reflux.createActions
   forgotPassword: {asyncResult: true}
   resetPassword: {asyncResult: true}
   loadRegion: {asyncResult: true}
+  unsubscribe: {asyncResult: true}
 
 UserActions.createUser.listen (user) ->
   user.errors = {}
@@ -64,5 +65,9 @@ UserActions.resetPassword.listen (data) ->
 
 UserActions.loadRegion.listen ->
   API.read('geo').done(@completed).fail(@failed)
+
+UserActions.unsubscribe.listen (x) ->
+  data = {x: x}
+  StoreMock.send data, (=> @completed(data)), 'POST /unsubscribe'
 
 module.exports = UserActions
