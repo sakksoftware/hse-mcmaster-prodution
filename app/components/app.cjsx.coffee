@@ -105,8 +105,7 @@ module.exports = React.createClass
     </nav>
 
   renderPage: ->
-    # TODO: can be generalized by invoking the right factory based on page name passed in
-    # and passing the arguments
+    # TODO: replace with react router
     switch @props.page
       when 'home'
         <HomePage

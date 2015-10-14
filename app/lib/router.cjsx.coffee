@@ -1,4 +1,5 @@
 App = require('components/app')
+# TODO: replace with react router
 class Router
   constructor: ->
     window.addEventListener('hashchange', @_handleRouteChange.bind(@))

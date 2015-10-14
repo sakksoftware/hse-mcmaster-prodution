@@ -31,7 +31,6 @@ UserActions.loginUser.listen (user) ->
     .fail (xhr) =>
       errors = null
 
-      # TODO: does this belong here? server error JSON adapter
       if xhr.status == 403
         user = { errors: {email: 'invalid', password: 'invalid'} }
         xhr.responseText = JSON.stringify(user)
