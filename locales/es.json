@@ -186,9 +186,9 @@
     "title": "Boletín informativo"
   },
   "unsubscribe_page": {
-    "title": "ES_Unsubscribe",
+    "title": "Cancelar suscripción",
     "confirmation_msg": "ES_Please click the button below to confirm that you would like to unsubscribe from the Evidence Service",
-    "unsubscribe": "ES_Unsubscribe",
+    "unsubscribe": "Cancelar suscripción",
     "success": "ES_Successfully unsubscribed from newsletter"
   },
   "errors": {

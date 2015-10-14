@@ -186,9 +186,9 @@
     "title": "新闻简报"
   },
   "unsubscribe_page": {
-    "title": "CN_Unsubscribe",
+    "title": "取消订阅",
     "confirmation_msg": "CN_Please click the button below to confirm that you would like to unsubscribe from the Evidence Service",
-    "unsubscribe": "CN_Unsubscribe",
+    "unsubscribe": "取消订阅",
     "success": "CN_Successfully unsubscribed from newsletter"
   },
   "errors": {

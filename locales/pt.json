@@ -186,9 +186,9 @@
     "title": "Boletim de notícias"
   },
   "unsubscribe_page": {
-    "title": "PT_Unsubscribe",
+    "title": "Cancelar assinatura",
     "confirmation_msg": "PT_Please click the button below to confirm that you would like to unsubscribe from the Evidence Service",
-    "unsubscribe": "PT_Unsubscribe",
+    "unsubscribe": "Cancelar assinatura",
     "success": "PT_Successfully unsubscribed from newsletter"
   },
   "errors": {
