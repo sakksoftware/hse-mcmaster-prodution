@@ -185,6 +185,9 @@
     "submit": "Redefinir senha",
     "password_retained": "PT_Thank you. Your original password has been retained."
   },
+  "newsletter_page": {
+    "title": "Boletim de notícias"
+  },
   "errors": {
     "no_connection": "Opa, não foi possível carregar dados. Verifique sua conexão com a Internet.",
     "cant_be_blank": "não pode ficar em branco",
