@@ -68,6 +68,6 @@ UserActions.loadRegion.listen ->
 
 UserActions.unsubscribe.listen (x) ->
   data = {x: x}
-  StoreMock.send data, (=> @completed(data)), 'POST /unsubscribe'
+  StoreMock.send data, (=> @completed(data)), 'POST /user/unsubscribe'
 
 module.exports = UserActions

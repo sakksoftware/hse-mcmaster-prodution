@@ -53,6 +53,6 @@ UserActions.loadRegion.listen ->
   API.read('geo').done(@completed).fail(@failed)
 
 UserActions.unsubscribe.listen ->
-  API.create('unsubscribe').done(@completed).fail(@failed)
+  API.create('user/unsubscribe').done(@completed).fail(@failed)
 
 module.exports = UserActions
