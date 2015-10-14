@@ -182,6 +182,9 @@
     "submit": "Restablecer contraseña",
     "password_retained": "ES_Thank you. Your original password has been retained."
   },
+  "newsletter_page": {
+    "title": "Boletín informativo"
+  },
   "errors": {
     "no_connection": "No fue posible cargar los datos. Verifique su conexión de Internet.",
     "cant_be_blank": "no puede estar en blanco",

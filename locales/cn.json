@@ -182,6 +182,9 @@
     "submit": "重置密码",
     "password_retained": "CN_Thank you. Your original password has been retained."
   },
+  "newsletter_page": {
+    "title": "新闻简报"
+  },
   "errors": {
     "no_connection": "啊，无法加载数据，请检查您的网络链接。",
     "cant_be_blank": "不能为空！",

@@ -182,6 +182,9 @@
     "submit": "Reset password",
     "password_retained": "Thank you. Your original password has been retained."
   },
+  "newsletter_page": {
+    "title": "Newsletter"
+  },
   "errors": {
     "no_connection": "Oops, could not load data. Check your internet connection.",
     "cant_be_blank": "can't be blank!",

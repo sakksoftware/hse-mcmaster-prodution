@@ -31,6 +31,9 @@
         "Esta abordagem pesquisará documentos com foco em equipes que fornecem cuidados para pacientes oncológicos ou diabéticos, mas que não envolvem enfermeiros."
       ]
     },
+    "newsletter_page": {
+      "title": "Boletim de Notícias"
+    },
     "signup": {
       "title": "Inscrever-se",
       "email": "E-mail",

@@ -31,6 +31,9 @@
         "Cette approche permettra de rechercher des documents qui mettent l'accent sur les équipes qui fournissent des soins pour les patients atteints de cancer ou de diabète, mais qui n'impliquent pas des infirmières."
       ]
     },
+    "newsletter_page": {
+      "title": "Bulletin d'information"
+    },
     "signup": {
       "title": "Inscrivez-vous",
       "email": "Courriel",

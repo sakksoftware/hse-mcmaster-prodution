@@ -16,8 +16,7 @@ class Router
       React.render <App page="search" />, @el()
 
     '/articles/:id': (id) ->
-      args = {id: id}
-      React.render <App page="articles" args={args} />, @el()
+      React.render <App page="articles" args={id: id} />, @el()
 
     '/about': ->
       React.render <App page="about" />, @el()
@@ -45,6 +44,9 @@ class Router
 
     '/signup': ->
       React.render <App page="signup" />, @el()
+
+    '/newsletters/:id': (id) ->
+      React.render <App page="newsletter" args={id: id}/>, @el()
 
     '/timeout': ->
       React.render <App page="timeout_error" />, @el()
