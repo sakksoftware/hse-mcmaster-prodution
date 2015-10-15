@@ -32,7 +32,10 @@
     }
 
     &:after {
-      content: '>';
+      content: '';
+      background: url('/images/right_arrow.svg') no-repeat;
+      height: $small-size;
+      width: $x-small-size;
       font-weight: 600;
       position: absolute;
       right: 10px;
