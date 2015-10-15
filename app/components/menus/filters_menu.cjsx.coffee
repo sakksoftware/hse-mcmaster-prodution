@@ -78,7 +78,7 @@ module.exports = React.createClass
     title = @filterGroup.title
     if title != 'LMICs'
       title = title[0].toLowerCase() + title.substring(1)
-    @allFilter.title = @t('any_filters', filter_title: title)
+    @allFilter.title = @t('any_filters', filter_title: pluralize(title, 1))
 
     <div className="filters-menu nested-menu">
       <ul className="menu-list">
