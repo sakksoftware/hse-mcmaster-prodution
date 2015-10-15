@@ -54,6 +54,9 @@ class Router
     '/timeout': ->
       React.render <App page="timeout_error" />, @el()
 
+    '/cookies_disabled': ->
+      React.render <App page="cookies_disabled" />, @el()
+
     '/5xx': ->
       React.render <App page="server_error" />, @el()
 

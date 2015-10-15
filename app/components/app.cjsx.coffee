@@ -7,15 +7,17 @@ ComplementaryContentPage = require('components/complementary_content/complementa
 Top5Page = require('components/top_5/top_5_page')
 ForgotPasswordPage = require('components/forgot_password/forgot_password_page')
 ResetPasswordPage = require('components/reset_password/reset_password_page')
+LoginPage = require('components/login_page/login_page')
+SignupPage = require('components/signup_page/signup_page')
+NewsletterPage = require('components/newsletter_page/newsletter_page')
+UnsubscribePage = require('components/unsubscribe_page/unsubscribe_page')
+
 PageNotFound = require('components/error_pages/page_not_found')
 ServerErrorPage = require('components/error_pages/server_error_page')
 ApplicationErrorPage = require('components/error_pages/application_error_page')
 TimeoutErrorPage = require('components/error_pages/timeout_error_page')
 QuotaExceededErrorPage = require('components/error_pages/quota_exceeded_error_page')
-LoginPage = require('components/login_page/login_page')
-SignupPage = require('components/signup_page/signup_page')
-NewsletterPage = require('components/newsletter_page/newsletter_page')
-UnsubscribePage = require('components/unsubscribe_page/unsubscribe_page')
+CookiesDisabledPage = require('components/error_pages/cookies_disabled')
 
 Layer = require('components/layered_navigation/layer')
 LayerGroup = require('components/layered_navigation/layer_group')
@@ -45,6 +47,7 @@ UserStore = require('stores/user_store')
 ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
 params = require('lib/url').params()
+Util = require('lib/util')
 
 module.exports = React.createClass
   displayName: 'App'
@@ -61,6 +64,7 @@ module.exports = React.createClass
   componentWillMount: ->
     if Cookies.get('token') # only get user if there is a token saved
       UserActions.loadUser()
+
     @unsubscribe = UserStore.listen(@updateUser)
 
   componentWillUnmount: ->
@@ -107,6 +111,9 @@ module.exports = React.createClass
     </nav>
 
   renderPage: ->
+    if !Util.areCookiesEnabled() && @props.page != 'cookies_disabled'
+      UrlActions.navigateTo('/cookies_disabled')
+
     # TODO: replace with react router
     switch @props.page
       when 'home'
@@ -142,6 +149,8 @@ module.exports = React.createClass
         <NewsletterPage id={id}/>
       when 'unsubscribe'
         <UnsubscribePage />
+      when 'cookies_disabled'
+        <CookiesDisabledPage />
       ##
       # Errors
       ##
