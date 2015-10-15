@@ -103,14 +103,7 @@ module.exports = Reflux.createStore
     @setState(errors: ['failed_password_reset'])
 
   onLoadRegionCompleted: (geo) ->
-    if geo.region_code == 'ON'
-      region = 'ontario'
-    else if geo.country_code == 'CA'
-      region = 'canada'
-    else
-      region = 'worldwide'
-
-    @setState(region: UrlStore.state.params.region || region)
+    @setState(region: UrlStore.state.params.region || geo.region)
 
   onUnsubscribeCompleted: ->
     # do nothing for now...
