@@ -1,0 +1,12 @@
+[{
+  "id": 1,
+  "query": "HIV in african countries",
+  "subscribed": true,
+  "applied_filters": "0_2;1_2"
+},
+{
+  "id": 2,
+  "query": "HIV/AIDS infections over the last decade",
+  "subscribed": false,
+  "applied_filters": "0_2;1_3"
+}]

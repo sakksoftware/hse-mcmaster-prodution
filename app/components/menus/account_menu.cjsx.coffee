@@ -30,7 +30,7 @@ module.exports = React.createClass
       </li>
       <li className="menu-item menu-item-saved-searches">
         <span className="menu-item-icon"></span>
-        <Link className="menu-item-text" onClick={@onLinkClick} to="/saved_searches">{@t('saved_searches')}</Link>
+        <Link className="menu-item-text" onClick={@onLinkClick} to="/user/searches">{@t('saved_searches')}</Link>
       </li>
       <li className="menu-item menu-item-complementary-content">
         <span className="menu-item-icon"></span>

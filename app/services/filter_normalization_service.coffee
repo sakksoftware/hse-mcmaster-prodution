@@ -2,7 +2,8 @@ module.exports =
   isFilterObject: (obj) -> obj?.id
   getFiltersArray: (filters) ->
     results = []
-
+    return results unless filters
+    
     for filter in filters
       nestedFilters = _.clone(filter.filters)
 

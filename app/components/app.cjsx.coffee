@@ -11,6 +11,7 @@ LoginPage = require('components/login_page/login_page')
 SignupPage = require('components/signup_page/signup_page')
 NewsletterPage = require('components/newsletter_page/newsletter_page')
 UnsubscribePage = require('components/unsubscribe_page/unsubscribe_page')
+SavedSearchPage = require('components/saved_search/saved_search_page')
 
 PageNotFound = require('components/error_pages/page_not_found')
 ServerErrorPage = require('components/error_pages/server_error_page')
@@ -151,6 +152,8 @@ module.exports = React.createClass
         <UnsubscribePage />
       when 'cookies_disabled'
         <CookiesDisabledPage />
+      when 'saved_search'
+        <SavedSearchPage />
       ##
       # Errors
       ##
