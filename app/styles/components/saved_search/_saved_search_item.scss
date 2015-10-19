@@ -1,10 +1,12 @@
 .saved-search-item {
   .saved-search-item-header {
     overflow: auto;
+    margin-bottom: $medium-size;
   }
 
   h2 {
     margin-top: 0;
+    margin-bottom: 0;
     float: left;
   }
 
@@ -17,8 +19,8 @@
 
     .react-toggle {
       float: right;
-      margin-top: 4px;
-      margin-left: 8px;
+      margin-top: $x-tiny-size;
+      margin-left: $tiny-size;
     }
   }
 }

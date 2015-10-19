@@ -1,7 +1,4 @@
 .saved-search-list {
-  .saved-search-item {
-  }
-
   .saved-search-list-actions {
     float: right;
 
@@ -12,6 +9,22 @@
 
     .action:last-child {
       padding-right: 0;
+    }
+  }
+
+  .remove-selected {
+    position: relative;
+    padding-left: $small-size + $x-tiny-size;
+
+    &:before {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      left: 0;
+      background-image: url('/images/trash_icon.svg');
+      background-repeat: no-repeat;
+      height: $small-size;
+      width: $small-size;
     }
   }
 }
