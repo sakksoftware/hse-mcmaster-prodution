@@ -1,0 +1,15 @@
+.list {
+  list-style: none;
+  padding: 0;
+
+  .list-item {
+    border-top: 2px solid $border-color;
+    margin-top: $xx-large-size;
+    padding-top: $xx-large-size;
+
+    &:last-child {
+      padding-bottom: $xx-large-size;
+      border-bottom: 2px solid $border-color;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.saved-search-page {
+  .saved-search-header {
+    overflow: auto;
+    margin-bottom: $x-large-size;
+
+    h1 {
+      display: inline;
+    }
+
+    .saved-search-subscribed-only {
+      float: right;
+      line-height: $x-large-size;
+    }
+  }
+
+  label {
+    font-weight: inherit;
+  }
+}

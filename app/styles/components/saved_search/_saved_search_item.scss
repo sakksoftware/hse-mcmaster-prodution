@@ -1,0 +1,24 @@
+.saved-search-item {
+  .saved-search-item-header {
+    overflow: auto;
+  }
+
+  h2 {
+    margin-top: 0;
+    float: left;
+  }
+
+  .saved-search-select {
+    float: right;
+  }
+
+  .saved-search-control {
+    line-height: $large-size;
+
+    .react-toggle {
+      float: right;
+      margin-top: 4px;
+      margin-left: 8px;
+    }
+  }
+}

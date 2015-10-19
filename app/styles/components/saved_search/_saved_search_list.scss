@@ -1,0 +1,17 @@
+.saved-search-list {
+  .saved-search-item {
+  }
+
+  .saved-search-list-actions {
+    float: right;
+
+    .action + .action:before {
+      content: "|";
+      margin-right: $tiny-size;
+    }
+
+    .action:last-child {
+      padding-right: 0;
+    }
+  }
+}

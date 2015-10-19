@@ -123,6 +123,10 @@ form {
   }
 }
 
+.action {
+  user-select: none;
+}
+
 .beta {
   margin-left: $x-tiny-size + 1;
   color: orange;

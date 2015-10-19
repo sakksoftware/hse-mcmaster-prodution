@@ -11,6 +11,17 @@ module.exports = React.createClass
       <SavedSearchItem search={search} key="saved-search-item-#{search.id}"/>
 
   render: ->
-    <ul className="saved-search-list">
-      {@renderItems()}
-    </ul>
+    <div className="saved-search-list">
+      <div className="saved-search-list-header">
+        <span>You can subscribe upto one saved search and one curated search</span>
+        <ul className="saved-search-list-actions list-inline">
+          <li className="action">Remove selected</li>
+          <li className="action">
+            <label>Select all <input type="checkbox" name="search_to_delete"/></label>
+          </li>
+        </ul>
+      </div>
+      <ul className="saved-search-list-content list">
+        {@renderItems()}
+      </ul>
+    </div>

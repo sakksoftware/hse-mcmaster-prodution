@@ -26,12 +26,11 @@ module.exports = React.createClass
         window.flash('success', 'Successfully updated')
 
   render: ->
-    console.log('complementary_2', @state.user?.complementary_2)
     <div className="complementary-content-page">
       <h1>{@t('title')}</h1>
       <p>{@t('description')}</p>
-      <ul className="complementary-content-list">
-        <li className="complementary-content-item">
+      <ul className="complementary-content-list list">
+        <li className="complementary-content-item list-item">
           <label>
             <p className="complementary-content-title">
               {@t('complementary_content_2.title')}
@@ -43,7 +42,7 @@ module.exports = React.createClass
               onChange={@handleToggle('complementary_2')} />
           </label>
         </li>
-        <li className="complementary-content-item">
+        <li className="complementary-content-item list-item">
           <label>
             <p className="complementary-content-title">
               {@t('complementary_content_3.title')}

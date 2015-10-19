@@ -15,8 +15,9 @@ module.exports = React.createClass
 
   render: ->
     <div className="saved-search-page">
-      <h1>Saved searches</h1>
-      <p>You can subscribe upto one saved search and one curated search</p>
-
+      <div className="saved-search-header">
+        <h1>Saved searches</h1>
+        <label className="saved-search-subscribed-only action">Show only subscribed searches <input type="checkbox" /></label>
+      </div>
       <SavedSearchList searches={@state.searches} />
     </div>

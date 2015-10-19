@@ -4,6 +4,7 @@
 @import 'fonts';
 @import 'mixins';
 @import 'base';
+@import 'list';
 
 @import 'components/layered_navigation/layered_navigation';
 
@@ -52,3 +53,7 @@
 @import 'components/login_page/login_page';
 
 @import 'components/static/about_page';
+
+@import 'components/saved_search/saved_search_page';
+@import 'components/saved_search/saved_search_list';
+@import 'components/saved_search/saved_search_item';
