@@ -107,3 +107,6 @@ module.exports = Reflux.createStore
 
   onUnsubscribeCompleted: ->
     # do nothing for now...
+
+  onSaveSearchCompleted: ->
+    # do nothing for now...

@@ -1,7 +1,10 @@
+Button = require('components/shared/button')
 SearchBar = require('components/search/search_bar')
 LayerToggle = require('components/layered_navigation/layer_toggle')
 FilterNormalizationService = require('services/filter_normalization_service')
 TranslationHelper = require('mixins/translation_helper')
+
+UserActions = require('actions/user_actions')
 
 module.exports = React.createClass
   displayName: 'SearchBox'
@@ -43,6 +46,15 @@ module.exports = React.createClass
         <a href="#" onClick={@handleBackToSearchResults}>{@t('view_results_count', results_count: @props.search.results_count)}</a>
       </div>
 
+  saveSearch: ->
+    search = @props.search
+    search = _.pick(search, 'query', 'applied_filters', 'sort_by', 'saved', 'subscribed')
+    UserActions.saveSearch(search)
+
+  saveAndSubscribe: ->
+    @props.search.subscribed = true
+    @saveSearch()
+
   render: ->
     <div className="search-box">
       <SearchBar search={@props.search} onSearch={@props.onSearch} />
@@ -62,6 +74,10 @@ module.exports = React.createClass
           {@t('filters')}
           {@renderFilterCount()}
         </LayerToggle>
+        <div className="saved-search-buttons">
+          <Button className="btn-save #{'btn-save-on' if @props.search.saved}" onClick={@saveSearch}>{@t('save')}</Button>
+          <Button className="btn-save-and-subscribe" onClick={@saveAndSubscribe}>{@t('save_and_subscribe')}</Button>
+        </div>
       </div>
       {@renderResultCountFooter()}
     </div>

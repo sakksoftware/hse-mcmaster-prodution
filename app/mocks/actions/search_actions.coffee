@@ -71,7 +71,8 @@ searchData = {
   "results_per_page": 10,
   "results_count": 55,
   "sort_by": "relevance",
-  "saved": false,
+  "saved": true,
+  "subscribed": false,
   "results": [
     {
       "id": "all_filled_all_visible",

@@ -11,4 +11,6 @@ module.exports = React.createClass
     @props.onClick?(e)
 
   render: ->
-    <a href="#" className="button #{@props.className}" onClick={@onClick}>{@props.children}</a>
+    className = "button"
+    className += " #{@props.className}" if @props.className
+    <a href="#" className={className} onClick={@onClick}>{@props.children}</a>

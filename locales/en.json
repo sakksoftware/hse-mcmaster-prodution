@@ -109,7 +109,9 @@
       "view_results_count": "View %{results_count} results",
       "tips": "Search tips",
       "filters": "Filters",
-      "placeholder": "Search..."
+      "placeholder": "Search...",
+      "save": "Save search",
+      "save_and_subscribe": "Save and subscribe"
     },
     "result_item": {
       "year": "Year:",

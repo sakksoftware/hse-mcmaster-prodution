@@ -16,6 +16,7 @@ UserActions = Reflux.createActions
   resetPassword: {asyncResult: true}
   loadRegion: {asyncResult: true}
   unsubscribe: {asyncResult: true}
+  saveSearch: {asyncResult: true}
 
 UserActions.createUser.listen (user) ->
   user.language = Cookies.get('lang')
@@ -51,8 +52,12 @@ UserActions.resetPassword.listen (data) ->
 
 UserActions.loadRegion.listen ->
   API.read('geo').done(@completed).fail(@failed)
+  # Promise.resolve({region: 'ontario'})
 
 UserActions.unsubscribe.listen ->
   API.create('user/unsubscribe').done(@completed).fail(@failed)
+
+UserActions.saveSearch.listen (search) ->
+  API.create('/user/searches', search).done(@completed).fail(@failed)
 
 module.exports = UserActions

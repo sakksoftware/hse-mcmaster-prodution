@@ -65,6 +65,65 @@
   .result-count {
     display: none;
   }
+
+  .saved-search-buttons {
+    float: right;
+    margin-top: $tiny-size;
+
+    a {
+      color: $primary-text-color;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .button + .button {
+      margin-left: $tiny-size;
+      padding-left: $small-size + $tiny-size + $tiny-size;
+      border-left: 1px solid black;
+
+      &:before {
+        left: $tiny-size;
+      }
+    }
+
+    .button {
+      position: relative;
+      padding-left: $small-size + $tiny-size;
+
+      &:before {
+        display: block;
+        content: "";
+        width: $small-size;
+        height: $small-size;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    .btn-save {
+      &.btn-save-on {
+        &:before {
+          background-image: url('/images/save_search_on.svg');
+        }
+      }
+
+      &:before {
+        background-image: url('/images/save_search_off.svg');
+      }
+
+      &:hover:before {
+        background-image: url('/images/save_search_on.svg');
+      }
+    }
+
+    .btn-save-and-subscribe {
+      &:before {
+        background-image: url('/images/m_subscribed_search.svg');
+      }
+    }
+  }
 }
 
 .layer-toggled {
