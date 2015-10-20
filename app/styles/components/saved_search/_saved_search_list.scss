@@ -1,14 +1,54 @@
 .saved-search-list {
-  .saved-search-list-actions {
-    float: right;
+  h2 {
+    font-size: $medium-size - 4;
+    max-width: calc(100% - 60px);
 
-    .action + .action:before {
-      content: "|";
-      margin-right: $tiny-size;
+    @include desktop {
+      font-size: $medium-size;
+    }
+  }
+
+  .saved-search-list-header {
+    overflow: auto;
+  }
+
+  .saved-search-list-actions {
+    margin-left: 0;
+
+    @include desktop {
+      float: right;
+
+      .action + .action:before {
+        content: "|";
+        margin-right: $tiny-size;
+      }
+    }
+
+    .action a {
+      color: $primary-text-color;
     }
 
     .action:last-child {
       padding-right: 0;
+      float: right;
+
+      @include desktop {
+        float: none;
+      }
+    }
+  }
+
+  .list-item:first-child {
+    margin-top: 0;
+  }
+
+  .saved-search-list-instructions {
+    display: block;
+    margin-bottom: $x-medium-size;
+
+    @include desktop {
+      display: inline;
+      margin-bottom: inherit;
     }
   }
 

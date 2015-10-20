@@ -14,7 +14,7 @@ module.exports = React.createClass
   render: ->
     <div className="saved-search-list">
       <div className="saved-search-list-header">
-        <span>You can subscribe upto one saved search and one curated search</span>
+        <span className="saved-search-list-instructions">You can subscribe upto one saved search and one curated search</span>
         <ul className="saved-search-list-actions list-inline">
           <li className="action remove-selected"><Button>Remove selected</Button></li>
           <li className="action">

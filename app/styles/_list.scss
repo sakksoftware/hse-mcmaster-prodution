@@ -4,12 +4,21 @@
 
   .list-item {
     border-top: 2px solid $border-color;
-    margin-top: $xx-large-size;
-    padding-top: $xx-large-size;
+    margin-top: $medium-size;
+    padding-top: $medium-size;
+
+    @include desktop {
+      margin-top: $xx-large-size;
+      padding-top: $xx-large-size;
+    }
 
     &:last-child {
-      padding-bottom: $xx-large-size;
+      padding-bottom: $medium-size;
       border-bottom: 2px solid $border-color;
+
+      @include desktop {
+        padding-bottom: $xx-large-size;
+      }
     }
   }
 }

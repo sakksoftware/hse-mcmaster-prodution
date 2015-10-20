@@ -23,6 +23,12 @@ button {
   }
 }
 
+.button {
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}
+
 select {
   display: inline-block;
   background-color: $control-background-color;
