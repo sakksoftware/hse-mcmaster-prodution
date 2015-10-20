@@ -1,10 +1,8 @@
-Button = require('components/shared/button')
 SearchBar = require('components/search/search_bar')
+SavedSearchButtons = require('components/search/saved_search_buttons')
 LayerToggle = require('components/layered_navigation/layer_toggle')
 FilterNormalizationService = require('services/filter_normalization_service')
 TranslationHelper = require('mixins/translation_helper')
-
-UserActions = require('actions/user_actions')
 
 module.exports = React.createClass
   displayName: 'SearchBox'
@@ -15,6 +13,10 @@ module.exports = React.createClass
     onSearch: React.PropTypes.func.isRequired
     onShowMenu: React.PropTypes.func.isRequired
     overlayContent: React.PropTypes.string
+    showSavedSearchButtons: React.PropTypes.bool
+
+  getDefaultProps: ->
+    showSavedSearchButtons: true
 
   getInitialState: ->
     showingFiltersMenu: false
@@ -46,16 +48,9 @@ module.exports = React.createClass
         <a href="#" onClick={@handleBackToSearchResults}>{@t('view_results_count', results_count: @props.search.results_count)}</a>
       </div>
 
-  saveSearch: ->
-    search = @props.search
-    @props.search.saved = !@props.search.saved
-    @forceUpdate()
-    search = _.pick(search, 'query', 'applied_filters', 'sort_by', 'saved', 'subscribed')
-    UserActions.saveSearch(search)
-
-  saveAndSubscribe: ->
-    @props.search.subscribed = !@props.search.subscribed
-    @saveSearch()
+  renderSavedSearchButtons: ->
+    if @props.showSavedSearchButtons
+      <SavedSearchButtons search={@props.search} />
 
   render: ->
     <div className="search-box">
@@ -76,10 +71,7 @@ module.exports = React.createClass
           {@t('filters')}
           {@renderFilterCount()}
         </LayerToggle>
-        <div className="saved-search-buttons">
-          <Button className="btn-save #{'btn-save-on' if @props.search.saved}" onClick={@saveSearch}>{@t('save')}</Button>
-          <Button className="btn-save-and-subscribe" onClick={@saveAndSubscribe}>{@t('save_and_subscribe')}</Button>
-        </div>
+        {@renderSavedSearchButtons()}
       </div>
       {@renderResultCountFooter()}
     </div>

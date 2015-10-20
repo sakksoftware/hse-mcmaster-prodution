@@ -1,0 +1,28 @@
+Button = require('components/shared/button')
+UserActions = require('actions/user_actions')
+TranslationHelper = require('mixins/translation_helper')
+
+module.exports = React.createClass
+  display: 'SavedSearchButtons'
+  mixins: [TranslationHelper]
+  baseTranslation: 'search_page.search_box'
+
+  propTypes:
+    search: React.PropTypes.object.isRequired
+
+  saveSearch: ->
+    search = @props.search
+    @props.search.saved = !@props.search.saved
+    @forceUpdate()
+    search = _.pick(search, 'query', 'applied_filters', 'sort_by', 'saved', 'subscribed')
+    UserActions.saveSearch(search)
+
+  saveAndSubscribe: ->
+    @props.search.subscribed = !@props.search.subscribed
+    @saveSearch()
+
+  render: ->
+    <div className="saved-search-buttons">
+      <Button className="btn-save #{'btn-save-on' if @props.search.saved}" onClick={@saveSearch}>{@t('save')}</Button>
+      <Button className="btn-save-and-subscribe" onClick={@saveAndSubscribe}>{@t('save_and_subscribe')}</Button>
+    </div>

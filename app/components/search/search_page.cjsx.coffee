@@ -97,8 +97,7 @@ module.exports = React.createClass
       </div>
     else if @state.step == 'results'
       <ResultBox sortBy={@state.search.sort_by}
-        results={@state.search.results}
-        resultsCount={@state.search.results_count}
+        search={@state.search}
         onSortChange={@handleSortChange}
         onLoadMore={@handleLoadMore}
       />

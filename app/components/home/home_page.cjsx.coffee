@@ -65,6 +65,7 @@ module.exports = React.createClass
           onSearch={@redirectToSearch}
           onShowMenu={@props.onShowMenu}
           dismissMenu={@props.dismissMenu}
+          showSavedSearchButtons={false}
         />
       </div>
       {@renderGuidedSearch()}

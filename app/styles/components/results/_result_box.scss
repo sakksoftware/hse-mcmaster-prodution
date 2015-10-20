@@ -1,6 +1,9 @@
 .result-box {
   .result-box-header {
     overflow: auto;
+    border-bottom: 1px solid $border-color;
+    padding-bottom: $x-tiny-size;
+    margin-bottom: $tiny-size;
   }
 
   .sort-order, .result-box-count {
@@ -12,5 +15,11 @@
   }
   .result-box-count {
     float: right;
+  }
+
+  @include desktop {
+    .saved-search-buttons {
+      display: none;
+    }
   }
 }
