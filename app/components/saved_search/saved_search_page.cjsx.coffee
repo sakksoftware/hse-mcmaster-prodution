@@ -6,6 +6,7 @@ module.exports = React.createClass
 
   getInitialState: ->
     searches: []
+    subscribedOnly: false
 
   componentWillMount: ->
     API.read('/user/searches').done(@loadSearches)
@@ -13,11 +14,21 @@ module.exports = React.createClass
   loadSearches: (searches) ->
     @setState(searches: searches)
 
+  toggleSubscribedOnly: ->
+    @setState(subscribedOnly: !@state.subscribedOnly)
+
+  getSearches: ->
+    if @state.subscribedOnly
+      @state.searches.filter (s) -> s.subscribed
+    else
+      @state.searches
+
+
   render: ->
     <div className="saved-search-page">
       <div className="saved-search-header">
         <h1>Saved searches</h1>
-        <label className="saved-search-subscribed-only action">Show only subscribed searches <input type="checkbox" /></label>
+        <label className="saved-search-subscribed-only action">Show only subscribed searches <input type="checkbox" onClick={@toggleSubscribedOnly}/></label>
       </div>
-      <SavedSearchList searches={@state.searches} />
+      <SavedSearchList searches={@getSearches()} />
     </div>

@@ -9,6 +9,10 @@ module.exports = React.createClass
 
   propTypes:
     search: React.PropTypes.object.isRequired
+    selected: React.PropTypes.bool
+
+  getDefaultParams: ->
+    selected: false
 
   getUrlParams: ->
     "#{@serializeSearchUrl()}"
@@ -19,7 +23,7 @@ module.exports = React.createClass
         <h2>
           <Link to={['/search', @serializeSearchParams(@props.search)]}>{@props.search.query}</Link>
         </h2>
-        <label className="saved-search-select action">Select: <input type="checkbox" /></label>
+        <label className="saved-search-select action">Select: <input type="checkbox" defaultChecked={@props.selected} /></label>
       </div>
       <label className="saved-search-control">
         Subscribe to search
