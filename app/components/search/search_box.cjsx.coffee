@@ -48,11 +48,13 @@ module.exports = React.createClass
 
   saveSearch: ->
     search = @props.search
+    @props.search.saved = !@props.search.saved
+    @forceUpdate()
     search = _.pick(search, 'query', 'applied_filters', 'sort_by', 'saved', 'subscribed')
     UserActions.saveSearch(search)
 
   saveAndSubscribe: ->
-    @props.search.subscribed = true
+    @props.search.subscribed = !@props.search.subscribed
     @saveSearch()
 
   render: ->

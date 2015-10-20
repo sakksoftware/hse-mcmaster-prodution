@@ -14,6 +14,7 @@ UserActions = Reflux.createActions
   resetPassword: {asyncResult: true}
   loadRegion: {asyncResult: true}
   unsubscribe: {asyncResult: true}
+  saveSearch: {asyncResult: true}
 
 UserActions.createUser.listen (user) ->
   user.errors = {}
@@ -69,5 +70,8 @@ UserActions.loadRegion.listen ->
 UserActions.unsubscribe.listen (x) ->
   data = {x: x}
   StoreMock.send data, (=> @completed(data)), 'POST /user/unsubscribe'
+
+UserActions.saveSearch.listen (search) ->
+  Promise.resolve(search).then(@completed)
 
 module.exports = UserActions
