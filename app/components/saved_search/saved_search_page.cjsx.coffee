@@ -28,7 +28,7 @@ module.exports = React.createClass
     <div className="saved-search-page">
       <div className="saved-search-header">
         <h1>Saved searches</h1>
-        <label className="saved-search-subscribed-only action">Show only subscribed searches <input type="checkbox" onClick={@toggleSubscribedOnly}/></label>
+        <label className="saved-search-subscribed-only action">Show only subscribed searches <input type="checkbox" onClick={@toggleSubscribedOnly} /></label>
       </div>
       <SavedSearchList searches={@getSearches()} />
     </div>

@@ -17,6 +17,7 @@ UserActions = Reflux.createActions
   loadRegion: {asyncResult: true}
   unsubscribe: {asyncResult: true}
   saveSearch: {asyncResult: true}
+  removeSearches: {asyncResult: true}
 
 UserActions.createUser.listen (user) ->
   user.language = Cookies.get('lang')
@@ -59,5 +60,13 @@ UserActions.unsubscribe.listen ->
 
 UserActions.saveSearch.listen (search) ->
   API.create('/user/searches', search).done(@completed).fail(@failed)
+
+UserActions.removeSearches.listen (searches) ->
+  # TODO: will need a different API endpoint to remove all searches by id
+  requests = []
+  for search in searches
+    requests.push API.destroy("/user/searches/#{search.id}")
+
+  $.when(requests).done(@completed).fail(@failed)
 
 module.exports = UserActions
