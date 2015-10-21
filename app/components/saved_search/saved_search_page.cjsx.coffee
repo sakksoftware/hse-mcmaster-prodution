@@ -1,8 +1,12 @@
 API = require('lib/api')
 SavedSearchList = require('components/saved_search/saved_search_list')
+TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
   displayName: 'SavedSearchPage'
+
+  mixins: [TranslationHelper]
+  baseTranslation: 'saved_search_page'
 
   getInitialState: ->
     searches: []
@@ -27,8 +31,8 @@ module.exports = React.createClass
   render: ->
     <div className="saved-search-page">
       <div className="saved-search-header">
-        <h1>Saved searches</h1>
-        <label className="saved-search-subscribed-only action">Show only subscribed searches <input type="checkbox" onClick={@toggleSubscribedOnly} /></label>
+        <h1>{@t('title')}</h1>
+        <label className="saved-search-subscribed-only action">{@t('subscribed_only')}<input type="checkbox" onClick={@toggleSubscribedOnly} /></label>
       </div>
       <SavedSearchList searches={@getSearches()} />
     </div>

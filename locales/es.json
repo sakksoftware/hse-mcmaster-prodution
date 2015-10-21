@@ -191,6 +191,15 @@
     "unsubscribe": "Cancelar suscripción",
     "success": "ES_Successfully unsubscribed from newsletter"
   },
+  "saved_search_page": {
+    "title": "ES_Saved searches",
+    "subscribed_only": "ES_Show only subscribed searches",
+    "instructions": "ES_You can subscribe upto one saved search and one curated search",
+    "remove_selected": "ES_Remove selected",
+    "select_all": "ES_Select all",
+    "select": "ES_Select:",
+    "subscribe": "ES_Subscribe to search"
+  },
   "errors": {
     "no_connection": "No fue posible cargar los datos. Verifique su conexión de Internet.",
     "cant_be_blank": "no puede estar en blanco",

@@ -39,6 +39,10 @@
     font-weight: inherit;
   }
 
+  span + input {
+    margin-left: $tiny-size;
+  }
+
   .saved-search-list {
     margin-top: $tiny-size;
   }

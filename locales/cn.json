@@ -191,6 +191,15 @@
     "unsubscribe": "取消订阅",
     "success": "CN_Successfully unsubscribed from newsletter"
   },
+  "saved_search_page": {
+    "title": "CN_Saved searches",
+    "subscribed_only": "CN_Show only subscribed searches",
+    "instructions": "CN_You can subscribe upto one saved search and one curated search",
+    "remove_selected": "CN_Remove selected",
+    "select_all": "CN_Select all",
+    "select": "CN_Select:",
+    "subscribe": "CN_Subscribe to search"
+  },
   "errors": {
     "no_connection": "啊，无法加载数据，请检查您的网络链接。",
     "cant_be_blank": "不能为空！",

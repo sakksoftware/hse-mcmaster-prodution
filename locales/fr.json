@@ -191,6 +191,15 @@
     "unsubscribe": "Se désinscrire",
     "success": "FR_Successfully unsubscribed from newsletter"
   },
+  "saved_search_page": {
+    "title": "FR_Saved searches",
+    "subscribed_only": "FR_Show only subscribed searches",
+    "instructions": "FR_You can subscribe upto one saved search and one curated search",
+    "remove_selected": "FR_Remove selected",
+    "select_all": "FR_Select all",
+    "select": "FR_Select:",
+    "subscribe": "FR_Subscribe to search"
+  },
   "errors": {
     "no_connection": "Oups, incapable de charger les données. Vérifiez votre connexion internet.",
     "cant_be_blank": "ne peut pas être vide!",

@@ -1,9 +1,13 @@
 SavedSearchItem = require('components/saved_search/saved_search_item')
 Button = require('components/shared/button')
 UserActions = require('actions/user_actions')
+TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
   displayName: 'SavedSearchList'
+
+  mixins: [TranslationHelper]
+  baseTranslation: 'saved_search_page'
 
   propTypes:
     searches: React.PropTypes.array.isRequired
@@ -35,11 +39,11 @@ module.exports = React.createClass
   render: ->
     <div className="saved-search-list">
       <div className="saved-search-list-header">
-        <span className="saved-search-list-instructions">You can subscribe upto one saved search and one curated search</span>
+        <span className="saved-search-list-instructions">{@t('instructions')}</span>
         <ul className="saved-search-list-actions list-inline">
-          <li className="action remove-selected"><Button onClick={@removeSelected}>Remove selected</Button></li>
+          <li className="action remove-selected"><Button onClick={@removeSelected}>{@t('remove_selected')}</Button></li>
           <li className="action">
-            <label>Select all <input type="checkbox" onChange={@toggleSelectAll} name="search_to_delete"/></label>
+            <label>{@t('select_all')}<input type="checkbox" onChange={@toggleSelectAll} name="search_to_delete"/></label>
           </li>
         </ul>
       </div>

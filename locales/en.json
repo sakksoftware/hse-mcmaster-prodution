@@ -193,6 +193,15 @@
     "unsubscribe": "Unsubscribe",
     "success": "Successfully unsubscribed from newsletter"
   },
+  "saved_search_page": {
+    "title": "Saved searches",
+    "subscribed_only": "Show only subscribed searches",
+    "instructions": "You can subscribe upto one saved search and one curated search",
+    "remove_selected": "Remove selected",
+    "select_all": "Select all",
+    "select": "Select:",
+    "subscribe": "Subscribe to search"
+  },
   "errors": {
     "no_connection": "Oops, could not load data. Check your internet connection.",
     "cant_be_blank": "can't be blank!",

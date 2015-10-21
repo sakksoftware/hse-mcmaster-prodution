@@ -191,6 +191,15 @@
     "unsubscribe": "Cancelar assinatura",
     "success": "PT_Successfully unsubscribed from newsletter"
   },
+  "saved_search_page": {
+    "title": "PT_Saved searches",
+    "subscribed_only": "PT_Show only subscribed searches",
+    "instructions": "PT_You can subscribe upto one saved search and one curated search",
+    "remove_selected": "PT_Remove selected",
+    "select_all": "PT_Select all",
+    "select": "PT_Select:",
+    "subscribe": "PT_Subscribe to search"
+  },
   "errors": {
     "no_connection": "Opa, não foi possível carregar dados. Verifique sua conexão com a Internet.",
     "cant_be_blank": "não pode ficar em branco",
