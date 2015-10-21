@@ -14,6 +14,7 @@ module.exports = React.createClass
     onShowMenu: React.PropTypes.func.isRequired
     overlayContent: React.PropTypes.string
     showSavedSearchButtons: React.PropTypes.bool
+    onSaveAndSubscribe: React.PropTypes.func.isRequired
 
   getDefaultProps: ->
     showSavedSearchButtons: true
@@ -50,7 +51,7 @@ module.exports = React.createClass
 
   renderSavedSearchButtons: ->
     if @props.showSavedSearchButtons
-      <SavedSearchButtons search={@props.search} />
+      <SavedSearchButtons search={@props.search} onSaveAndSubscribe={@props.onSaveAndSubscribe} />
 
   render: ->
     <div className="search-box">

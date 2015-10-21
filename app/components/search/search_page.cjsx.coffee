@@ -14,6 +14,8 @@ UserStore = require('stores/user_store')
 SearchStore = require('stores/search_store')
 
 TranslationHelper = require('mixins/translation_helper')
+NotificationActions = require('actions/notification_actions')
+
 Transition = React.addons.CSSTransitionGroup
 
 module.exports = React.createClass
@@ -75,6 +77,14 @@ module.exports = React.createClass
   handleSortChange: (sortBy) ->
     SearchActions.sortBy(sortBy)
 
+  toggleSubscription: ->
+    console.log('toggle subscription')
+    # UserActions.
+
+  confirmSubscriptionToggle: ->
+    base = '/saved_search_page.dialog.'
+    NotificationActions.showDialog(message: @t("#{base}message"), cancelText: @t("#{base}cancel"), confirmText: @t("#{base}confirm"), onConfirm: @toggleSubscription)
+
   renderDesktopFiltersMenu: ->
     if @state.filtersLoaded
       <div className="filter-groups-menu-wrapper">
@@ -100,6 +110,7 @@ module.exports = React.createClass
         search={@state.search}
         onSortChange={@handleSortChange}
         onLoadMore={@handleLoadMore}
+        onSaveAndSubscribe={@confirmSubscriptionToggle}
       />
 
   renderSignupPrompt: ->
@@ -117,6 +128,7 @@ module.exports = React.createClass
         onSearch={@handleSearch}
         onShowMenu={@props.onShowMenu}
         dismissMenu={@props.dismissMenu}
+        onSaveAndSubscribe={@confirmSubscriptionToggle}
       />
       {@renderGuidedSearch()}
       {@renderDesktopFiltersMenu()}

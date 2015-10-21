@@ -9,6 +9,10 @@ module.exports = React.createClass
 
   propTypes:
     search: React.PropTypes.object.isRequired
+    onSaveAndSubscribe: React.PropTypes.func
+
+  getDefaultProps: ->
+    onSaveAndSubscribe: ->
 
   saveSearch: ->
     search = @props.search
@@ -19,7 +23,7 @@ module.exports = React.createClass
 
   saveAndSubscribe: ->
     @props.search.subscribed = !@props.search.subscribed
-    @saveSearch()
+    @props.onSaveAndSubscribe(@saveSearch)
 
   render: ->
     <div className="saved-search-buttons">
