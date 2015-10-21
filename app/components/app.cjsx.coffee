@@ -38,12 +38,15 @@ LoginMenu = require('components/menus/login_menu')
 LanguagesMenu = require('components/menus/languages_menu')
 AccountMenu = require('components/menus/account_menu')
 
+Dialog = require('components/shared/dialog')
+
 TranslationHelper = require('mixins/translation_helper')
 
 UrlActions = require('actions/url_actions')
 UrlStore = require('stores/url_store')
 UserActions = require('actions/user_actions')
 UserStore = require('stores/user_store')
+NotificationStore = require('stores/notification_store')
 
 ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
@@ -60,19 +63,26 @@ module.exports = React.createClass
     page: React.PropTypes.string.isRequired
 
   getInitialState: ->
-    currentUser: null
+    currentUser: UserStore.state.user
+    notifications: NotificationStore.state.notifications
+    dialogs: NotificationStore.state.dialogs
 
   componentWillMount: ->
     if Cookies.get('token') # only get user if there is a token saved
       UserActions.loadUser()
 
-    @unsubscribe = UserStore.listen(@updateUser)
+    @unsubscribeUserStore = UserStore.listen(@updateUser)
+    @unsubscribeNotificationStore = NotificationStore.listen(@updateNotifications)
 
   componentWillUnmount: ->
-    @unsubscribe()
+    @unsubscribeUserStore()
+    @unsubscribeNotificationStore()
 
   updateUser: (state) ->
     @setState(currentUser: state.user)
+
+  updateNotifications: (state) ->
+    @setState(notifications: state.notifications, dialogs: state.dialogs)
 
   login: (user) ->
     @dismissMenu()
@@ -214,6 +224,14 @@ module.exports = React.createClass
       </Layer>
     </LayerGroup>
 
+  renderDialog: ->
+    for dialog, i in @state.dialogs
+      <Dialog key={"dialog-#{i}"} title={dialog.title} message={dialog.message} onConfirm={dialog.onConfirm} />
+
+  renderDialogBackDrop: ->
+    if @state.dialogs.length > 0
+      <div key="dialog-backdrop" className="modal-backdrop fade in" />
+
   render: ->
     <LayeredNavigation ref="layeredNavigation" className="app #{@props.page}" id="app">
       {@renderLayerGroup()}
@@ -230,4 +248,6 @@ module.exports = React.createClass
         </div>
         <Link className="terms" to="/terms">{@t('terms_of_use')}</Link>
       </footer>
+      {@renderDialog()}
+      {@renderDialogBackDrop()}
     </LayeredNavigation>

@@ -1,5 +1,6 @@
 SearchSerializationService = require('services/search_serialization_service')
 Link = require('components/shared/link')
+NotificationActions = require('actions/notification_actions')
 Toggle = ReactToggle
 TranslationHelper = require('mixins/translation_helper')
 
@@ -14,7 +15,7 @@ module.exports = React.createClass
     onSelect: React.PropTypes.func
     selected: React.PropTypes.bool
 
-  getDefaultParams: ->
+  getDefaultProps: ->
     selected: false
     onSelect: ->
 
@@ -23,6 +24,12 @@ module.exports = React.createClass
 
   getUrlParams: ->
     "#{@serializeSearchUrl()}"
+
+  confirmSubscriptionToggle: ->
+    NotificationActions.showDialog(message: @t('dialog.message'), cancelText: @t('dialog.cancel'), confirmText: @t('dialog.confirm'), onConfirm: @toggleSubscription)
+
+  toggleSubscription: ->
+    console.log('toggling your subscription')
 
   render: ->
     <li className="saved-search-item list-item">
@@ -37,6 +44,6 @@ module.exports = React.createClass
       </div>
       <label className="saved-search-control">
         <span>{@t('subscribe')}</span>
-        <Toggle defaultChecked={@props.search.subscribed} />
+        <Toggle defaultChecked={@props.search.subscribed} onClick={@confirmSubscriptionToggle} />
       </label>
     </li>

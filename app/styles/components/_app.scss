@@ -108,7 +108,7 @@
   // desktop
   @include desktop {
     .top-nav {
-      z-index: 3000;
+      z-index: 1000;
       position: fixed;
       left: 0;
       right: 0;

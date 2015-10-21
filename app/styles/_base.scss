@@ -143,3 +143,16 @@ form {
     margin-left: $tiny-size;
   }
 }
+
+.modal {
+  display: block;
+  opacity: 1.0;
+
+  &-dialog {
+    top: 150px;
+  }
+
+  &-header {
+    border-bottom: none;
+  }
+}

@@ -200,7 +200,12 @@
     "remove_selected": "Remove selected",
     "select_all": "Select all",
     "select": "Select:",
-    "subscribe": "Subscribe to search"
+    "subscribe": "Subscribe to search",
+    "dialog": {
+      "message": "Creating a new subscribed search will unsubscribe you from your current one. Are you sure you want to do this?",
+      "cancel": "Cancel",
+      "confirm": "New search"
+    }
   },
   "errors": {
     "no_connection": "Oops, could not load data. Check your internet connection.",

@@ -7,3 +7,4 @@ module.exports =
   QuestionStore: require('stores/question_store')
   SuggestionStore: require('stores/suggestion_store')
   UrlStore: require('stores/url_store')
+  NotificationStore: require('stores/notification_store')
