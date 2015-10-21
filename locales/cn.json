@@ -109,7 +109,9 @@
       "view_results_count": "查看 %{results_count} 结果",
       "tips": "如何实现更有效检索",
       "filters": "限定项",
-      "placeholder": "检索……"
+      "placeholder": "检索……",
+      "save": "CN_Save search",
+      "save_and_subscribe": "CN_Save and subscribe"
     },
     "result_item": {
       "year": "年份：",

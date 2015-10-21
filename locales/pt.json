@@ -109,7 +109,9 @@
       "view_results_count": "Exibir %{results_count} resultados",
       "tips": "Dicas para uma pesquisa mais eficaz",
       "filters": "Filtros",
-      "placeholder": "Pesquisar..."
+      "placeholder": "Pesquisar...",
+      "save": "PT_Save search",
+      "save_and_subscribe": "PT_Save and subscribe"
     },
     "result_item": {
       "year": "Ano:",

@@ -109,7 +109,9 @@
       "view_results_count": "Ver %{results_count} resultados",
       "tips": "Sugerencias para una búsqueda más eficaz",
       "filters": "Filtros",
-      "placeholder": "Buscar…"
+      "placeholder": "Buscar…",
+      "save": "ES_Save search",
+      "save_and_subscribe": "ES_Save and subscribe"
     },
     "result_item": {
       "year": "Año:",

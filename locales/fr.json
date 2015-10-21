@@ -112,7 +112,9 @@
       "view_results_count": "Voir %{results_count} résultats",
       "tips": "Conseils pour une recherche plus puissante",
       "filters": "Filtres",
-      "placeholder": "Recherche…"
+      "placeholder": "Recherche…",
+      "save": "FR_Save search",
+      "save_and_subscribe": "FR_Save and subscribe"
     },
     "result_item": {
       "year": "Année:",
