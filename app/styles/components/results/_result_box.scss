@@ -4,6 +4,12 @@
     border-bottom: 1px solid $border-color;
     padding-bottom: $x-tiny-size;
     margin-bottom: $tiny-size;
+
+    @include desktop {
+      &.logged-in {
+        padding-top: $small-size + $small-size;
+      }
+    }
   }
 
   .sort-order, .result-box-count {
@@ -15,9 +21,54 @@
   }
   .result-box-count {
     float: right;
+
+    @include desktop {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .saved-articles-actions {
+    position: fixed;
+    bottom: 0;
+    background-color: $input-border;
+    height: $x-large-size;
+    line-height: $x-large-size;
+    text-align: center;
+    margin-left: -100%;
+    width: 300%;
+
+    @include desktop {
+      position: static;
+      background-color: transparent;
+      height: auto;
+      line-height: inherit;
+      text-align: left;
+      margin-left: inherit;
+      width: auto;
+      float: right;
+    }
+
+    .select-all-action {
+      display: none;
+      margin-left: $tiny-size;
+
+      &:before {
+        content: "|";
+        margin-right: $tiny-size;
+        color: $border-color;
+      }
+
+      @include desktop {
+        display: inline;
+      }
+    }
   }
 
   @include desktop {
+
+
     .saved-search-buttons {
       display: none;
     }

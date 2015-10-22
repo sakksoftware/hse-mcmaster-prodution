@@ -42,8 +42,7 @@ $result-header-text-color: #999999;
     }
   }
   .result-item-header-left {
-    float: left;
-    width: 100%;
+    display: inline;
 
     .field {
       display: inline-block;
@@ -69,10 +68,9 @@ $result-header-text-color: #999999;
   }
 
   .result-item-header-right {
-    display: block;
-    float: left;
-    width: 20%;
+    display: inline-block;
     text-align: right;
+    float: right;
 
     p {
       margin: 0;

@@ -20,6 +20,14 @@
     }
   }
 
+  .select-all-action {
+    float: right;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
   @include desktop {
     .button {
       position: relative;

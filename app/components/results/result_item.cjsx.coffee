@@ -42,7 +42,7 @@ module.exports = React.createClass
             <span className="field-value">{@shortRating(@props.result.quality)}</span>
           </div>
         </div>
-        <div className="result-item-header-right">
+        <div className="result-item-header-right action">
           {
             if UserStore.isLoggedIn()
               <label>{@t('select')}<input type="checkbox" onClick={@onSelectToggle} /></label>

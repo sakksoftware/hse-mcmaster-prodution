@@ -43,7 +43,7 @@ module.exports = React.createClass
         <ul className="saved-search-list-actions list-inline">
           <li className="action remove-selected"><Button onClick={@removeSelected}>{@t('remove_selected')}</Button></li>
           <li className="action">
-            <label>{@t('select_all')}<input type="checkbox" onChange={@toggleSelectAll} name="search_to_delete"/></label>
+            <label>{@t('/select_all')}<input type="checkbox" onChange={@toggleSelectAll} name="search_to_delete"/></label>
           </li>
         </ul>
       </div>

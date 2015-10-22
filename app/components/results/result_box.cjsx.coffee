@@ -30,11 +30,12 @@ module.exports = React.createClass
         <Button className="icon icon-email" onClick={@exportArticles}>Email</Button>
         <Button className="icon icon-save-article" onClick={@saveArticles}>Save</Button>
         <Link className="icon icon-view-saved-articles button" to="/user/articles">View saved</Link>
+        <label className="select-all-action action">{@t('/select_all')}<input type="checkbox" onChange={@toggleSelectAll} /></label>
       </div>
 
   render: ->
     <div className="result-box">
-      <div className="result-box-header">
+      <div className="result-box-header #{'logged-in' if UserStore.isLoggedIn()}">
         <SortOrder sortBy={@props.sortBy} onChange={@props.onSortChange} />
         <div className="result-box-count">{@props.search.results_count} {@t('results')}</div>
         {@renderSavedArticlesButtons()}

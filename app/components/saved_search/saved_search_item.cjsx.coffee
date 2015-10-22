@@ -38,7 +38,7 @@ module.exports = React.createClass
           <Link to={['/search', @serializeSearchParams(@props.search)]}>{@props.search.query}</Link>
         </h2>
         <label className="saved-search-select action">
-          <span>{@t('select')}</span>
+          <span>{@t('/select')}</span>
           <input type="checkbox" onClick={@onSelect} defaultChecked={@props.selected} />
         </label>
       </div>
