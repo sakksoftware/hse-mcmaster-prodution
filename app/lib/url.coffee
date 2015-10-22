@@ -15,6 +15,6 @@ module.exports =
     urlParams
 
   serializeParams: (params) ->
-    result = _(params).map((v, k) -> "#{k}=#{v}" if v)
+    result = _(params).map((v, k) -> "#{k}=#{encodeURIComponent(v)}" if v)
     result = _(result).compact().join('&')
     "?#{result}"
