@@ -11,7 +11,10 @@ module.exports = React.createClass
   propTypes:
     results: React.PropTypes.array.isRequired
     resultsCount: React.PropTypes.number.isRequired
-    onLoadMore: React.PropTypes.func.isRequired
+    onLoadMore: React.PropTypes.func
+
+  defaultProps: ->
+    onLoadMore: ->
 
   loadMore: (page) ->
     @props.onLoadMore(page)

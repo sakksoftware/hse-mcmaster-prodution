@@ -54,6 +54,9 @@ class Router
     '^/user/searches': ->
       React.render <App page="saved_search" />, @el()
 
+    '^/user/articles': ->
+      React.render <App page="saved_articles" />, @el()
+
     '^/timeout': ->
       React.render <App page="timeout_error" />, @el()
 

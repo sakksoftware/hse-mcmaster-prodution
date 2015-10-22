@@ -21,5 +21,5 @@ module.exports = React.createClass
     <div className="newsletter-page">
       <h1>{@t('title')}</h1>
       <h2>{moment(@state.newsletter.date).format('MMMM YYYY')}</h2>
-      <ResultList results={@state.newsletter.articles} resultsCount={@state.newsletter.articles.length || 0} onLoadMore={=>} />
+      <ResultList results={@state.newsletter.articles} resultsCount={@state.newsletter.articles.length || 0} />
     </div>
