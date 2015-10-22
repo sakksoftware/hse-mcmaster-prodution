@@ -3,6 +3,14 @@ $result-header-text-color: #999999;
 .result-item {
   margin-bottom: 25px;
 
+  label {
+    font-weight: 400;
+  }
+
+  label > input {
+    margin-left: $tiny-size;
+  }
+
   h2 {
     color: $link-color;
     font-size: $small-size;

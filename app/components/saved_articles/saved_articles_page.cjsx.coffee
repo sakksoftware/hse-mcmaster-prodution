@@ -14,9 +14,12 @@ module.exports = React.createClass
   loadArticles: (articles) ->
     @setState(articles: articles)
 
+  exportSelected: ->
+    @refs.resultList.exportArticles()
+
   renderExportButtons: ->
     <div className="export-buttons">
-      <Button className="btn btn-primary">Export selected</Button>
+      <Button className="btn btn-primary" onClick={@exportSelected}>Export selected</Button>
       <Button className="btn btn-primary">Email Selected</Button>
     </div>
 
@@ -28,5 +31,5 @@ module.exports = React.createClass
         You can email or export those documents.
       </p>
       {@renderExportButtons()}
-      <ResultList results={@state.articles} resultsCount={@state.articles.length} />
+      <ResultList ref="resultList" results={@state.articles} resultsCount={@state.articles.length} />
     </div>
