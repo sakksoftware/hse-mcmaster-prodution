@@ -21,10 +21,13 @@ module.exports = React.createClass
   saveArticles: ->
     @refs.resultList.saveArticles()
 
+  exportArticles: ->
+    @refs.resultList.exportArticles()
+
   renderSavedArticlesButtons: ->
     if UserStore.isLoggedIn()
       <div className="saved-articles-actions">
-        <Button className="icon icon-email">Email</Button>
+        <Button className="icon icon-email" onClick={@exportArticles}>Email</Button>
         <Button className="icon icon-save-article" onClick={@saveArticles}>Save</Button>
         <Link className="icon icon-view-saved-articles button" to="/user/articles">View saved</Link>
       </div>

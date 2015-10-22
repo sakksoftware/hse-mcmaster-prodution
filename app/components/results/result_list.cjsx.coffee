@@ -3,6 +3,8 @@ TranslationHelper = require('mixins/translation_helper')
 InfiniteScroll = require('mixins/infinite_scroll')
 
 UserActions = require('actions/user_actions')
+UserStore = require('stores/user_store')
+config = require('config')
 
 module.exports = React.createClass
   displayName: 'ResultList'
@@ -33,6 +35,57 @@ module.exports = React.createClass
   saveArticles: ->
     UserActions.saveArticles(@state.selectedArticles).then =>
       flash('success', 'saved articles')
+
+  getCSVDataUrl: (data) ->
+    csvContent = 'data:text/csv;charset=utf-8,'
+    csvContent += Papa.unparse data, {
+    	quotes: true,
+    	delimiter: ",",
+    	newline: "\r\n"
+    }
+
+    csvContent
+
+  openNewWindow: (csvContent) ->
+    encodedUri = encodeURI(csvContent)
+    window.open(encodedUri)
+
+  exportArticles: ->
+    lang = UserStore.state.language
+    data = [
+      [
+        'Title'
+        'URL'
+        'Description'
+        'Details'
+        'ShortDetails'
+        'Resource'
+        'Type'
+        'Identifiers'
+        'Db'
+        'EntrezUID'
+        'Properties'
+      ]
+    ]
+
+    # TODO: verify the data is correct
+    for article in @state.selectedArticles
+      data.push [
+        article.title
+        "#{config.siteUrl}/articles/#{article.id}?t=#{article.traversal}&lang=#{lang}"
+        article.citation
+        "doi: #{article.doi}"
+        "??? publisher ???"
+        "PubMed"
+        "citation"
+        article.id
+        "pubmed",
+        article.id
+        "create date:#{article.created_at}"
+      ]
+
+
+    @openNewWindow(@getCSVDataUrl(data))
 
   loadMore: (page) ->
     @props.onLoadMore(page)
