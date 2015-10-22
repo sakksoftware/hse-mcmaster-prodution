@@ -4,6 +4,8 @@ LayerToggle = require('components/layered_navigation/layer_toggle')
 FilterNormalizationService = require('services/filter_normalization_service')
 TranslationHelper = require('mixins/translation_helper')
 
+UserStore = require('stores/user_store')
+
 module.exports = React.createClass
   displayName: 'SearchBox'
   mixins: [FilterNormalizationService, TranslationHelper]
@@ -50,7 +52,7 @@ module.exports = React.createClass
       </div>
 
   renderSavedSearchButtons: ->
-    if @props.showSavedSearchButtons
+    if @props.showSavedSearchButtons && UserStore.isLoggedIn()
       <SavedSearchButtons search={@props.search} onSaveAndSubscribe={@props.onSaveAndSubscribe} />
 
   render: ->
