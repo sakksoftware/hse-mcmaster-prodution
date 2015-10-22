@@ -16,6 +16,7 @@ UserActions = Reflux.createActions
   unsubscribe: {asyncResult: true}
   saveSearch: {asyncResult: true}
   removeSearches: {asyncResult: true}
+  saveArticles: {asyncResult: true}
 
 UserActions.createUser.listen (user) ->
   user.errors = {}
@@ -76,6 +77,11 @@ UserActions.saveSearch.listen (search) ->
   Promise.resolve(search).then(@completed)
 
 UserActions.removeSearches.listen (searches) ->
+  Promise.resolve({status: 'OK'})
+
+UserActions.saveArticles.listen (articles) ->
+  ids = _.pluck(articles, 'id')
+  console.log('saving articles', ids)
   Promise.resolve({status: 'OK'})
 
 module.exports = UserActions

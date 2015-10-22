@@ -18,6 +18,7 @@ UserActions = Reflux.createActions
   unsubscribe: {asyncResult: true}
   saveSearch: {asyncResult: true}
   removeSearches: {asyncResult: true}
+  saveArticles: {asyncResult: true}
 
 UserActions.createUser.listen (user) ->
   user.language = Cookies.get('lang')
@@ -68,5 +69,10 @@ UserActions.removeSearches.listen (searches) ->
     requests.push API.destroy("/user/searches/#{search.id}")
 
   $.when(requests).done(@completed).fail(@failed)
+
+UserActions.saveArticles.listen (articles) ->
+  ids = _.pluck(articles, 'id')
+  console.log('saving articles', ids)
+  API.create('/user/articles/save', ids).done(@completed).fail(@failed)
 
 module.exports = UserActions

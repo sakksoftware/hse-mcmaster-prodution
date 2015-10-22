@@ -3,6 +3,8 @@ HighlightFormat = require('components/shared/highlight_format')
 ApplicationHelper = require('mixins/application_helper')
 TranslationHelper = require('mixins/translation_helper')
 
+UserStore = require('stores/user_store')
+
 module.exports = React.createClass
   displayName: 'ResultItem'
 
@@ -12,12 +14,19 @@ module.exports = React.createClass
   propTypes:
     resultNumber: React.PropTypes.number.isRequired
     result: React.PropTypes.object.isRequired
+    onSelectToggle: React.PropTypes.func
+
+  defaultProps: ->
+    showSelect: false
 
   shortRating: (quality) ->
     if match = quality?.match(/[0-9]{1,2}\/[0-9]{1,2}/)
       match
     else
       @t('not_available')
+
+  onSelectToggle: ->
+    @props.onSelectToggle(@props.result)
 
   render: ->
     <li className="result-item">
@@ -34,7 +43,10 @@ module.exports = React.createClass
           </div>
         </div>
         <div className="result-item-header-right">
-          {@t('select')}<input type="radio" title="not yet implemented" disabled />
+          {
+            if UserStore.isLoggedIn()
+              <label>{@t('select')}<input type="checkbox" onClick={@onSelectToggle} /></label>
+          }
         </div>
       </header>
       <section className="result-item-description">

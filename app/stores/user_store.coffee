@@ -118,3 +118,6 @@ module.exports = Reflux.createStore
 
   onSaveSearchCompleted: ->
     # do nothing for now...
+
+  onSaveArticlesCompleted: ->
+    # do nothing for now...

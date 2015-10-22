@@ -18,11 +18,14 @@ module.exports = React.createClass
   mixins: [TranslationHelper]
   baseTranslation: 'search_page.result_box'
 
+  saveArticles: ->
+    @refs.resultList.saveArticles()
+
   renderSavedArticlesButtons: ->
     if UserStore.isLoggedIn()
       <div className="saved-articles-actions">
         <Button className="icon icon-email">Email</Button>
-        <Button className="icon icon-save-article">Save</Button>
+        <Button className="icon icon-save-article" onClick={@saveArticles}>Save</Button>
         <Link className="icon icon-view-saved-articles button" to="/user/articles">View saved</Link>
       </div>
 
@@ -34,5 +37,5 @@ module.exports = React.createClass
         {@renderSavedArticlesButtons()}
       </div>
       <SavedSearchButtons search={@props.search} />
-      <ResultList results={@props.search.results} resultsCount={@props.search.results_count} onLoadMore={@props.onLoadMore} />
+      <ResultList ref="resultList" results={@props.search.results} resultsCount={@props.search.results_count} onLoadMore={@props.onLoadMore} />
     </div>
