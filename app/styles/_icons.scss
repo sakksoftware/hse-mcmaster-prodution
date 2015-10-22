@@ -1,0 +1,48 @@
+.icon {
+  padding-left: $small-size + $tiny-size;
+  color: $primary-text-color;
+  position: relative;
+
+  &:hover, &:focus {
+    color: $primary-text-color;
+  }
+
+  &:before {
+    display: block;
+    content: "";
+    width: $small-size;
+    height: $small-size;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-repeat: no-repeat;
+  }
+
+  &-save-article:before {
+    background-image: url('/images/m_saved_documents.svg');
+  }
+
+  &-email {
+    padding-left: 18 + $tiny-size;
+
+    &:before{
+      background-image: url('/images/email_icon.svg');
+      width: 18px;
+      top: 2px;
+    }
+  }
+
+  &-view-saved-articles {
+    padding-left: 24 + $tiny-size;
+
+    &:before {
+      background-image: url('/images/view_saved_icon.svg');
+      width: 24px;
+      top: 1px;
+    }
+  }
+}
+
+.icon + .icon {
+  margin-left: $tiny-size;
+}

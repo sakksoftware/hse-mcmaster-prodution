@@ -24,6 +24,14 @@ module.exports = Reflux.createStore
     guidedSearch: guidedSearch
     region: UrlStore.state.params.region || 'worldwide'
 
+  ##
+  # Data accessors
+  ##
+  isLoggedIn: -> !!@state.user
+
+  ##
+  # Event listeners
+  ##
   onLoadUserCompleted: (user) ->
     if user.id == 0
       # session expired or something else is wrong

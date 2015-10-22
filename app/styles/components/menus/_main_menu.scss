@@ -131,7 +131,7 @@
         right: $tiny-size;
         left: auto;
         top: $medium-size;
-        background: url('/images/dropdown_grey.svg');
+        background: url('/images/dropdown_grey.svg') no-repeat;
       }
 
       .languages-menu {
@@ -164,8 +164,7 @@
         top: $medium-size;
         height: $small-size;
         width: $small-size;
-        background: url('/images/dropdown_grey.svg');
-        background-repeat: no-repeat;
+        background: url('/images/dropdown_grey.svg') no-repeat;
       }
 
       .account-menu {

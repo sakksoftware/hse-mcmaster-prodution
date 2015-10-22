@@ -14,7 +14,7 @@ module.exports = React.createClass
     onShowMenu: React.PropTypes.func.isRequired
     overlayContent: React.PropTypes.string
     showSavedSearchButtons: React.PropTypes.bool
-    onSaveAndSubscribe: React.PropTypes.func.isRequired
+    onSaveAndSubscribe: React.PropTypes.func
 
   getDefaultProps: ->
     showSavedSearchButtons: true

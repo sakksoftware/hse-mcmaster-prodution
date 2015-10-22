@@ -69,8 +69,7 @@ $result-header-text-color: #999999;
   }
 
   .result-item-header-right {
-    // TODO: unhide when implementing saved documents
-    display: none;
+    display: block;
     float: left;
     width: 20%;
     text-align: right;
