@@ -65,6 +65,11 @@ h2 {
 
 label {
   margin-bottom: 0;
+  font-weight: inherit;
+
+  input, input[type="radio"], input[type="checkbox"] {
+    margin-left: $tiny-size;
+  }
 }
 
 @include placeholder {

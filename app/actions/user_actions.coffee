@@ -18,11 +18,12 @@ UserActions = Reflux.createActions
   resetPassword: {asyncResult: true}
   loadRegion: {asyncResult: true}
   unsubscribe: {asyncResult: true}
-  loadSearches: {asyncResults: true}
+  loadSearches: {asyncResult: true}
   saveSearch: {asyncResult: true}
   removeSearches: {asyncResult: true}
   saveArticles: {asyncResult: true}
   loadArticles: {asyncResult: true}
+  removeArticles: {asyncResult: true}
 
 UserActions.createUser.listen (user) ->
   user.language = Cookies.get('lang')

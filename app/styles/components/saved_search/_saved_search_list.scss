@@ -12,32 +12,6 @@
     overflow: auto;
   }
 
-  .saved-search-list-actions {
-    margin-left: 0;
-
-    @include desktop {
-      float: right;
-
-      .action + .action:before {
-        content: "|";
-        margin-right: $tiny-size;
-      }
-    }
-
-    .action a {
-      color: $primary-text-color;
-    }
-
-    .action:last-child {
-      padding-right: 0;
-      float: right;
-
-      @include desktop {
-        float: none;
-      }
-    }
-  }
-
   .list-item:first-child {
     margin-top: 0;
   }
@@ -49,22 +23,6 @@
     @include desktop {
       display: inline;
       margin-bottom: inherit;
-    }
-  }
-
-  .remove-selected {
-    position: relative;
-    padding-left: $small-size + $x-tiny-size;
-
-    &:before {
-      position: absolute;
-      content: "";
-      display: inline-block;
-      left: 0;
-      background-image: url('/images/trash_icon.svg');
-      background-repeat: no-repeat;
-      height: $small-size;
-      width: $small-size;
     }
   }
 }

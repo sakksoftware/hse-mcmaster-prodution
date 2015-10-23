@@ -87,6 +87,10 @@ module.exports = React.createClass
 
     @openNewWindow(@getCSVDataUrl(data))
 
+  removeUserArticles: ->
+    UserActions.removeArticles(@state.selectedArticles).then =>
+      flash('success', @t('on_remove', documents_count: @state.selectedArticles.length))
+
   loadMore: (page) ->
     @props.onLoadMore(page)
 

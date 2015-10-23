@@ -23,6 +23,7 @@ UserActions = Reflux.createActions
   removeSearches: {asyncResult: true}
   saveArticles: {asyncResult: true}
   loadArticles: {asyncResult: true}
+  removeArticles: {asyncResult: true}
 
 UserActions.createUser.listen (user) ->
   user.errors = {}
@@ -95,9 +96,15 @@ UserActions.saveArticles.listen (articles) ->
   ids = _.pluck(articles, 'id')
   console.log('saving articles', ids)
   articlesData = articlesData.concat(articles)
+  articlesData = _(articlesData).uniq (x, y) -> x.id != y.id
   Promise.resolve(articles)
 
 UserActions.loadArticles.listen ->
   Promise.resolve(articlesData).then(@completed)
+
+UserActions.removeArticles.listen (articles) ->
+  toDelete = _(articlesData).filter (a) -> _.findWhere(articles, id: a.id)
+  articlesData = _.difference(articlesData, toDelete)
+  Promise.resolve(toDelete).then(@completed)
 
 module.exports = UserActions

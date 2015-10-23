@@ -5,6 +5,7 @@
   "toggle_navigation": "Toggle navigation",
   "select_all": "Select all",
   "select": "Select:",
+  "remove_selected": "Remove selected",
   "main_menu": {
     "home": "Home",
     "about": "About HSE",
@@ -125,7 +126,8 @@
       "results": "results"
     },
     "result_list": {
-      "no_results": "No results found."
+      "no_results": "No results found.",
+      "on_remove": "Successfully removed %{documents_count} documents"
     },
     "sort_order": {
       "sorted_by": "Sort by",
@@ -198,14 +200,17 @@
   "saved_search_page": {
     "title": "Saved searches",
     "subscribed_only": "Show only subscribed searches",
-    "instructions": "You can subscribe upto one saved search and one curated search",
-    "remove_selected": "Remove selected",
+    "instructions": "You can subscribe up to one saved search and one curated search",
     "subscribe": "Subscribe to search",
     "dialog": {
       "message": "Creating a new subscribed search will unsubscribe you from your current one. Are you sure you want to do this?",
       "cancel": "Cancel",
       "confirm": "New search"
     }
+  },
+  "saved_articles_page": {
+    "title": "Saved documents",
+    "warning": "Documents you saved will be kept on this page for up to 6 hours. You can email or export those documents."
   },
   "errors": {
     "no_connection": "Oops, could not load data. Check your internet connection.",

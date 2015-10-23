@@ -129,3 +129,7 @@ module.exports = Reflux.createStore
 
   onSaveArticlesCompleted: ->
     # do nothing for now...
+
+  onRemoveArticlesCompleted: (toDelete) ->
+    articles = _.difference(@state.articles, toDelete)
+    @setState(articles: articles)
