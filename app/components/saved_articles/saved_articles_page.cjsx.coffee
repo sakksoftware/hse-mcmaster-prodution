@@ -2,17 +2,24 @@ API = require('lib/api')
 ResultList = require('components/results/result_list')
 Button = require('components/shared/button')
 
+UserActions = require('actions/user_actions')
+UserStore = require('stores/user_store')
+
 module.exports = React.createClass
   displayName: 'SavedArticlesPage'
 
   getInitialState: ->
-    articles: []
+    articles: UserStore.state.articles
 
   componentWillMount: ->
-    API.read('/user/articles').done(@loadArticles)
+    UserActions.loadArticles()
+    @unsubscribeUserStore = UserStore.listen(@userStoreUpdated)
 
-  loadArticles: (articles) ->
-    @setState(articles: articles)
+  componentWillUnmount: ->
+    @unsubscribeUserStore()
+
+  userStoreUpdated: (data) ->
+    @setState(articles: data.articles)
 
   exportSelected: ->
     @refs.resultList.exportArticles()

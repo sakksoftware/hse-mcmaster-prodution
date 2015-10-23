@@ -2,6 +2,9 @@ API = require('lib/api')
 SavedSearchList = require('components/saved_search/saved_search_list')
 TranslationHelper = require('mixins/translation_helper')
 
+UserActions = require('actions/user_actions')
+UserStore = require('stores/user_store')
+
 module.exports = React.createClass
   displayName: 'SavedSearchPage'
 
@@ -13,10 +16,14 @@ module.exports = React.createClass
     subscribedOnly: false
 
   componentWillMount: ->
-    API.read('/user/searches').done(@loadSearches)
+    UserActions.loadSearches()
+    @unsubscribeUserStore = UserStore.listen(@userStoreUpdated)
 
-  loadSearches: (searches) ->
-    @setState(searches: searches)
+  componentWillUnmount: ->
+    @unsubscribeUserStore()
+
+  userStoreUpdated: (data) ->
+    @setState(searches: data.searches)
 
   toggleSubscribedOnly: ->
     @setState(subscribedOnly: !@state.subscribedOnly)
@@ -26,7 +33,6 @@ module.exports = React.createClass
       @state.searches.filter (s) -> s.subscribed
     else
       @state.searches
-
 
   render: ->
     <div className="saved-search-page">

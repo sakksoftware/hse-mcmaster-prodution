@@ -23,6 +23,8 @@ module.exports = Reflux.createStore
     language: UrlStore.state.params.lang || 'en'
     guidedSearch: guidedSearch
     region: UrlStore.state.params.region || 'worldwide'
+    articles: []
+    searches: []
 
   ##
   # Data accessors
@@ -112,6 +114,12 @@ module.exports = Reflux.createStore
 
   onLoadRegionCompleted: (geo) ->
     @setState(region: UrlStore.state.params.region || geo.region)
+
+  onLoadSearchesCompleted: (searches) ->
+    @setState(searches: searches)
+
+  onLoadArticlesCompleted: (articles) ->
+    @setState(articles: articles)
 
   onUnsubscribeCompleted: ->
     # do nothing for now...

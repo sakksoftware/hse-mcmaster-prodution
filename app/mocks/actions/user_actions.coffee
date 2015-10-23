@@ -1,6 +1,10 @@
 API = require('lib/api')
 StoreMock = require('mocks/support/store_mock')
 
+# private Data
+articlesData = []
+searchesData = []
+
 UserActions = Reflux.createActions
   changeLanguage: {}
   toggleGuidedSearch: {}
@@ -14,9 +18,11 @@ UserActions = Reflux.createActions
   resetPassword: {asyncResult: true}
   loadRegion: {asyncResult: true}
   unsubscribe: {asyncResult: true}
+  loadSearches: {asyncResult: true}
   saveSearch: {asyncResult: true}
   removeSearches: {asyncResult: true}
   saveArticles: {asyncResult: true}
+  loadArticles: {asyncResult: true}
 
 UserActions.createUser.listen (user) ->
   user.errors = {}
@@ -73,15 +79,25 @@ UserActions.unsubscribe.listen (x) ->
   data = {x: x}
   StoreMock.send data, (=> @completed(data)), 'POST /user/unsubscribe'
 
+UserActions.loadSearches.listen ->
+  Promise.resolve(searchesData).then(@completed)
+
 UserActions.saveSearch.listen (search) ->
+  searchesData.push(search)
   Promise.resolve(search).then(@completed)
 
 UserActions.removeSearches.listen (searches) ->
-  Promise.resolve({status: 'OK'})
+  toDelete = _(searchesData).filter (s) -> _.findWhere(searches, id: s.id)
+  searchesData = _.difference(searchesData, toDelete)
+  Promise.resolve(searchesData)
 
 UserActions.saveArticles.listen (articles) ->
   ids = _.pluck(articles, 'id')
   console.log('saving articles', ids)
-  Promise.resolve({status: 'OK'})
+  articlesData = articlesData.concat(articles)
+  Promise.resolve(articles)
+
+UserActions.loadArticles.listen ->
+  Promise.resolve(articlesData).then(@completed)
 
 module.exports = UserActions
