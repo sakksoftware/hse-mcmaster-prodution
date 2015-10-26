@@ -65,35 +65,35 @@ UserActions.unsubscribe.listen ->
   API.create('user/unsubscribe').done(@completed).fail(@failed)
 
 UserActions.loadSearches.listen ->
-  mocks.loadSearches().then(@completed)
+  # mocks.loadSearches().then(@completed)
   # TODO: switch when implemented
-  # API.read('/user/searches').done(@completed).fail(@failed)
+  API.read('/user/searches', apiBase: 'http://hse.stage2.droxic.com').done(@completed).fail(@failed)
 
 UserActions.saveSearch.listen (search) ->
-  mocks.saveSearch(search).then(@completed)
+  # mocks.saveSearch(search).then(@completed)
   # TODO: switch when implemented
-  # API.create('/user/searches', search).done(@completed).fail(@failed)
+  API.create('/user/searches', search, apiBase: 'http://hse.stage2.droxic.com').done(@completed).fail(@failed)
 
 UserActions.removeSearches.listen (searches) ->
-  mocks.removeSearches(searches).then(@completed)
+  # mocks.removeSearches(searches).then(@completed)
   # TODO: switch when implemented
-  # API.create('/user/searches/remove', _.pluck(searches, 'id'))
+  API.create('/user/searches/remove', _.pluck(searches, 'id'), apiBase: 'http://hse.stage2.droxic.com')
   # TODO: will need a different API endpoint to remove all searches by id
   # requests = []
   # for search in searches
   #   requests.push API.destroy("/user/searches/#{search.id}")
 
-  $.when(requests).done(@completed).fail(@failed)
+  # $.when(requests).done(@completed).fail(@failed)
 
 UserActions.saveArticles.listen (articles) ->
-  mocks.saveArticles(articles).then(@completed)
+  # mocks.saveArticles(articles).then(@completed)
   # TODO: uncomment when implemented
-  # ids = _.pluck(articles, 'id')
-  # API.create('/user/articles/save', ids).done(@completed).fail(@failed)
+  ids = _.pluck(articles, 'id')
+  API.create('/user/articles/save', ids, apiBase: 'http://hse.stage2.droxic.com').done(@completed).fail(@failed)
 
 UserActions.loadArticles.listen ->
-  mocks.loadArticles().then(@completed)
+  # mocks.loadArticles().then(@completed)
   # TODO: uncomment when implemented
-  # API.read('/user/articles').done(@completed).fail(@failed)
+  API.read('/user/articles', apiBase: 'http://hse.stage2.droxic.com').done(@completed).fail(@failed)
 
 module.exports = UserActions

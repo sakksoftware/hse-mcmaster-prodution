@@ -24,11 +24,13 @@ module.exports = class API
       path = parser.pathname
       path = '/' + path if path[0] != '/'
 
+      apiBase = options.apiBase || config.apiBase
+
       if ENV is 'development'
         url = "/fake_api" + path + ".json" + parser.search + parser.hash
       else
         url = path + parser.search + parser.hash
-        url = config.apiBase + "/api#{url}"
+        url = apiBase + "/api#{url}"
 
     options = $.extend {
       url: url
