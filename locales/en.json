@@ -132,7 +132,8 @@
     "sort_order": {
       "sorted_by": "Sort by",
       "relevance": "Best match",
-      "most_recent": "Most recent"
+      "most_recent": "Most recent",
+      "highest_quality": "Highest quality"
     },
     "signup_prompt": {
       "instructions": "Sign up to view more than 20 results, to save documents and searches, and to subscribe to email alerts"
