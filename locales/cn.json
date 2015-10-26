@@ -126,7 +126,8 @@
     "sort_order": {
       "sorted_by": "按……排序的结果",
       "relevance": "最相关",
-      "most_recent": "最近发表"
+      "most_recent": "最近发表",
+      "highest_quality": "CN_Highest quality"
     },
     "signup_prompt": {
       "instructions": "注册以查看20条以后的结果，保存文档和检索，发送电子邮件和导出文件，以及订阅邮件提醒"

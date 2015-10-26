@@ -126,7 +126,8 @@
     "sort_order": {
       "sorted_by": "Resultados classificados por",
       "relevance": "Melhor correspondência",
-      "most_recent": "Mais recente"
+      "most_recent": "Mais recente",
+      "highest_quality": "PT_Highest quality"
     },
     "signup_prompt": {
       "instructions": "Inscreva-se para exibir mais de 20 resultados, salvar documentos e pesquisas, enviar e-mails com documentos e exportá-los e para assinar alertas por e-mail"
