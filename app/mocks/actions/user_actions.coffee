@@ -105,6 +105,6 @@ UserActions.loadArticles.listen ->
 UserActions.removeArticles.listen (articles) ->
   toDelete = _(articlesData).filter (a) -> _.findWhere(articles, id: a.id)
   articlesData = _.difference(articlesData, toDelete)
-  Promise.resolve(toDelete).then(@completed)
+  Promise.resolve(_.pluck(toDelete, 'id')).then(@completed)
 
 module.exports = UserActions

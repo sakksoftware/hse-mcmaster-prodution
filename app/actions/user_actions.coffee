@@ -87,6 +87,6 @@ UserActions.loadArticles.listen ->
 
 UserActions.removeArticles.listen (articles) ->
   # mocks.removeArticles(articles).then(@completed)
-  API.create('/user/articles/remove', _.pluck(articles, 'id'), apiBase: 'http://hse.stage2.droxic.com')
+  API.create('/user/articles/remove', _.pluck(articles, 'id'), apiBase: 'http://hse.stage2.droxic.com').done(@completed).fail(@failed)
 
 module.exports = UserActions
