@@ -24,6 +24,9 @@ module.exports = React.createClass
   exportArticles: ->
     @refs.resultList.exportArticles()
 
+  toggleSelectAll: ->
+    @refs.resultList.toggleSelectAll()
+
   renderSavedArticlesButtons: ->
     if UserStore.isLoggedIn()
       <div className="saved-articles-actions">
@@ -40,6 +43,6 @@ module.exports = React.createClass
         <div className="result-box-count">{@props.search.results_count} {@t('results')}</div>
         {@renderSavedArticlesButtons()}
       </div>
-      <SavedSearchButtons search={@props.search} />
+      <SavedSearchButtons search={@props.search} toggleSelectAll={@toggleSelectAll} />
       <ResultList ref="resultList" results={@props.search.results} resultsCount={@props.search.results_count} onLoadMore={@props.onLoadMore} />
     </div>

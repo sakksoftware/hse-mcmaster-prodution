@@ -18,6 +18,7 @@ module.exports = React.createClass
 
   defaultProps: ->
     showSelect: false
+    selected: false
 
   shortRating: (quality) ->
     if match = quality?.match(/[0-9]{1,2}\/[0-9]{1,2}/)
@@ -45,7 +46,7 @@ module.exports = React.createClass
         <div className="result-item-header-right action">
           {
             if UserStore.isLoggedIn()
-              <label>{@t('select')}<input type="checkbox" onClick={@onSelectToggle} /></label>
+              <label>{@t('select')}<input type="checkbox" onChange={@onSelectToggle} checked={@props.selected} /></label>
           }
         </div>
       </header>

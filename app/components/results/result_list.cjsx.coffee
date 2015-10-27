@@ -21,19 +21,19 @@ module.exports = React.createClass
     onLoadMore: ->
 
   getInitialState: ->
-    selectedArticles: []
+    selected: []
 
   onSelectToggle: (article) ->
-    selectedArticles = _.clone @state.selectedArticles
-    if selectedArticle = _.findWhere(selectedArticles, id: article.id)
-      selectedArticles = _.reject selectedArticles, (a) -> a.id == selectedArticle.id
+    selected = _.clone @state.selected
+    if selectedArticle = _.findWhere(selected, id: article.id)
+      selected = _.reject selected, (a) -> a.id == selectedArticle.id
     else
-      selectedArticles.push(article)
+      selected.push(article)
 
-    @setState(selectedArticles: selectedArticles)
+    @setState(selected: selected)
 
   saveArticles: ->
-    UserActions.saveArticles(@state.selectedArticles).then =>
+    UserActions.saveArticles(@state.selected).then =>
       flash('success', 'saved articles')
 
   getCSVDataUrl: (data) ->
@@ -69,7 +69,7 @@ module.exports = React.createClass
     ]
 
     # TODO: verify the data is correct
-    for article in @state.selectedArticles
+    for article in @state.selected
       data.push [
         article.title
         "#{config.siteUrl}/articles/#{article.id}?t=#{article.traversal}&lang=#{lang}"
@@ -88,8 +88,12 @@ module.exports = React.createClass
     @openNewWindow(@getCSVDataUrl(data))
 
   removeUserArticles: ->
-    UserActions.removeArticles(@state.selectedArticles).then =>
-      flash('success', @t('on_remove', documents_count: @state.selectedArticles.length))
+    UserActions.removeArticles(@state.selected).then =>
+      flash('success', @t('on_remove', documents_count: @state.selected.length))
+
+  toggleSelectAll: (ev) ->
+    articles = _.difference(@props.results, @state.selected)
+    @setState(selected: articles)
 
   loadMore: (page) ->
     @props.onLoadMore(page)
@@ -102,7 +106,8 @@ module.exports = React.createClass
       return <p className="no-results">{@t('no_results')}</p>
 
     for result, i in @props.results
-      <ResultItem result={result} resultNumber={i + 1} key="result-#{i}" onSelectToggle={@onSelectToggle} />
+      selected = !!_.findWhere(@state.selected, id: result.id)
+      <ResultItem result={result} resultNumber={i + 1} key="result-#{i}" onSelectToggle={@onSelectToggle} selected={selected} />
 
   render: ->
     <ol className="result-list">

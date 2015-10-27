@@ -31,6 +31,9 @@ module.exports = React.createClass
   removeSelected: ->
     @refs.resultList.removeUserArticles()
 
+  toggleSelectAll: ->
+    @refs.resultList.toggleSelectAll()
+
   renderExportButtons: ->
     <div className="export-buttons">
       <Button className="btn btn-primary" onClick={@exportSelected}>Export selected</Button>

@@ -2,7 +2,17 @@ API = require('lib/api')
 StoreMock = require('mocks/support/store_mock')
 
 # private Data
-articlesData = []
+articlesData = [{
+  "id": "all_filled_all_visible",
+  "traversal": "tencharacters",
+  "title": "All <B>fields</B> Filled & Visible",
+  "created_at": "2014-09-20 11:33:00Z",
+  "updated_at": "2014-09-20 11:33:00Z",
+  "quality": "7/11",
+  "description": "Some <B>Crazy</B> long description goes here.....",
+  "category": "<B>International</B> Organizations Document",
+  "country_groupings": "<B>USA</B> (26); UK (2); Australia (1); Turkey (1)"
+}]
 searchesData = []
 
 UserActions = Reflux.createActions
@@ -96,7 +106,7 @@ UserActions.saveArticles.listen (articles) ->
   ids = _.pluck(articles, 'id')
   console.log('saving articles', ids)
   articlesData = articlesData.concat(articles)
-  articlesData = _(articlesData).uniq (x, y) -> x.id != y.id
+  articlesData = _(articlesData).uniq (a) -> a.id
   Promise.resolve(articles)
 
 UserActions.loadArticles.listen ->
