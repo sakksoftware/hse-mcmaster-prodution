@@ -34,7 +34,7 @@ module.exports = React.createClass
 
   saveArticles: ->
     UserActions.saveArticles(@state.selected).then =>
-      flash('success', @t('on_save'))
+      flash('success', @t('on_save', documents_count: @state.selected.length))
 
   getCSVDataUrl: (data) ->
     csvContent = 'data:text/csv;charset=utf-8,'
