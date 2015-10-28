@@ -126,7 +126,8 @@
     },
     "result_list": {
       "no_results": "No results found.",
-      "on_remove": "Successfully removed %{documents_count} documents"
+      "on_remove": "Successfully removed %{documents_count} documents",
+      "on_email": "An email was sent to %{email} with %{documents_count} documents"
     },
     "sort_order": {
       "sorted_by": "Sort by",

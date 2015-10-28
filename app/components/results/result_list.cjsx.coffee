@@ -95,6 +95,12 @@ module.exports = React.createClass
     articles = _.difference(@props.results, @state.selected)
     @setState(selected: articles)
 
+  emailArticles: ->
+    UserActions.emailArticles(@state.selected).then =>
+      email = UserStore.state.user.email
+      count = @state.selected.length
+      flash('success', @t('on_email', email: email, documents_count: count))
+
   loadMore: (page) ->
     @props.onLoadMore(page)
 

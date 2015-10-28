@@ -34,10 +34,13 @@ module.exports = React.createClass
   toggleSelectAll: ->
     @refs.resultList.toggleSelectAll()
 
+  sendEmail: ->
+    @refs.resultList.emailArticles()
+
   renderExportButtons: ->
     <div className="export-buttons fixed-footer">
       <Button className="btn btn-primary" onClick={@exportSelected}>Export selected</Button>
-      <Button className="btn btn-primary">Email selected</Button>
+      <Button className="btn btn-primary" onClick={@sendEmail}>Email selected</Button>
     </div>
 
   renderListActions: ->

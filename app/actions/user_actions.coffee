@@ -24,6 +24,7 @@ UserActions = Reflux.createActions
   saveArticles: {asyncResult: true}
   loadArticles: {asyncResult: true}
   removeArticles: {asyncResult: true}
+  emailArticles: {asyncResult: true}
 
 UserActions.createUser.listen (user) ->
   user.language = Cookies.get('lang')
@@ -88,5 +89,9 @@ UserActions.loadArticles.listen ->
 UserActions.removeArticles.listen (articles) ->
   # mocks.removeArticles(articles).then(@completed)
   API.create('/user/articles/remove', _.pluck(articles, 'id'), apiBase: 'http://hse.stage2.droxic.com').done(@completed).fail(@failed)
+
+UserActions.emailArticles.listen (articles) ->
+  mocks.emailArticles(articles).then(@completed)
+  # API.create('/user/articles/email', _.pluck(articles, 'id'), apiBase: 'http://hse.stage2.droxic.com').done(@completed).fail(@failed)
 
 module.exports = UserActions
