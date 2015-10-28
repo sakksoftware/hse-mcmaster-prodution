@@ -20,6 +20,7 @@
       padding-bottom: $tiny-size;
       border-bottom: 1px solid $border-color;
       margin-bottom: $tiny-size;
+      padding-right: $tiny-size;
 
       @include desktop {
         float: right;

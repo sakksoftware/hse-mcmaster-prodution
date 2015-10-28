@@ -17,7 +17,9 @@ module.exports = React.createClass
 
   getDefaultProps: ->
     selected: false
+    onToggleSubscription: ->
     onSelect: ->
+
 
   onSelect: (e) ->
     @props.onSelect(@props.search)
@@ -25,11 +27,16 @@ module.exports = React.createClass
   getUrlParams: ->
     "#{@serializeSearchUrl()}"
 
-  confirmSubscriptionToggle: ->
-    NotificationActions.showDialog(message: @t('dialog.message'), cancelText: @t('dialog.cancel'), confirmText: @t('dialog.confirm'), onConfirm: @toggleSubscription)
-
   toggleSubscription: ->
-    console.log('toggling your subscription')
+    @props.onToggleSubscription(@props.search)
+
+  confirmSubscriptionToggle: ->
+    if !@props.search.subscribed
+      NotificationActions.showDialog
+        message: @t('dialog.message'),
+        cancelText: @t('dialog.cancel'),
+        confirmText: @t('dialog.confirm'),
+        onConfirm: @toggleSubscription
 
   render: ->
     <li className="saved-search-item list-item">
@@ -39,11 +46,11 @@ module.exports = React.createClass
         </h2>
         <label className="saved-search-select action">
           <span>{@t('/select')}</span>
-          <input type="checkbox" onClick={@onSelect} defaultChecked={@props.selected} />
+          <input type="checkbox" onChange={@onSelect} defaultChecked={@props.selected} />
         </label>
       </div>
       <label className="saved-search-control">
         <span>{@t('subscribe')}</span>
-        <Toggle defaultChecked={@props.search.subscribed} onClick={@confirmSubscriptionToggle} />
+        <Toggle checked={@props.search.subscribed} onChange={@confirmSubscriptionToggle} />
       </label>
     </li>

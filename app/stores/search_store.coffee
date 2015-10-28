@@ -47,6 +47,7 @@ module.exports = Reflux.createStore
     @_updateUrl()
 
   onSearchCompleted: (search) ->
+    # TODO: probably want to do a deep clone here before modify search
     if search.page > 1
       search.results = @state.search.results.concat(search.results)
 

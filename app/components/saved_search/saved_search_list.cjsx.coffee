@@ -19,6 +19,9 @@ module.exports = React.createClass
     searches = _.difference(@props.searches, @state.selectedSearches)
     @setState(selectedSearches: searches)
 
+  toggleSubscription: (search) ->
+    UserActions.subscribeToSearch(search)
+
   addSelected: (search) ->
     selectedSearches = @state.selectedSearches
     selectedSearches.push(search)
@@ -34,6 +37,7 @@ module.exports = React.createClass
         key="saved-search-item-#{search.id}-#{'selected' if selected}"
         selected={selected}
         onSelect={@addSelected}
+        onToggleSubscription={@toggleSubscription}
       />
 
   render: ->

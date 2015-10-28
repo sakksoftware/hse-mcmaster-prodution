@@ -1,3 +1,4 @@
+require('lib/extensions/underscore')
 params = require('lib/url').params()
 
 if window.location.hostname == "localhost"

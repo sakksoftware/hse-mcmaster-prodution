@@ -20,6 +20,7 @@ UserActions = Reflux.createActions
   unsubscribe: {asyncResult: true}
   loadSearches: {asyncResult: true}
   saveSearch: {asyncResult: true}
+  subscribeToSearch: {asyncResult: true}
   removeSearches: {asyncResult: true}
   saveArticles: {asyncResult: true}
   loadArticles: {asyncResult: true}

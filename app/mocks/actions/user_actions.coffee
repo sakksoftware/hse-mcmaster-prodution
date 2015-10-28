@@ -13,7 +13,18 @@ articlesData = [{
   "category": "<B>International</B> Organizations Document",
   "country_groupings": "<B>USA</B> (26); UK (2); Australia (1); Turkey (1)"
 }]
-searchesData = []
+searchesData = [{
+  "id": 1,
+  "query": "HIV in african countries",
+  "subscribed": true,
+  "applied_filters": "0_2;1_2"
+},
+{
+  "id": 2,
+  "query": "HIV/AIDS infections over the last decade and their effect on our society",
+  "subscribed": false,
+  "applied_filters": "0_2;1_3"
+}]
 
 UserActions = Reflux.createActions
   changeLanguage: {}
@@ -30,6 +41,7 @@ UserActions = Reflux.createActions
   unsubscribe: {asyncResult: true}
   loadSearches: {asyncResult: true}
   saveSearch: {asyncResult: true}
+  subscribeToSearch: {asyncResult: true}
   removeSearches: {asyncResult: true}
   saveArticles: {asyncResult: true}
   loadArticles: {asyncResult: true}
@@ -120,5 +132,10 @@ UserActions.removeArticles.listen (articles) ->
 
 UserActions.emailArticles.listen (articles) ->
   Promise.resolve(_.pluck(articles, 'id')).then(@completed)
+
+UserActions.subscribeToSearch.listen (search) ->
+  search = _.clone(search)
+  search.subscribed = true
+  Promise.resolve(search).then(@completed)
 
 module.exports = UserActions

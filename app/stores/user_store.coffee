@@ -133,3 +133,12 @@ module.exports = Reflux.createStore
   onRemoveArticlesCompleted: (removedIds) ->
     articles = _(@state.articles).reject (a) -> removedIds.indexOf(a.id) >= 0
     @setState(articles: articles)
+
+  onSubscribeToSearchCompleted: (search) ->
+    searches = _.deepClone(@state.searches)
+
+    searches.map (s) -> s.subscribed = false
+    search = _(searches).findWhere(id: search.id)
+    search.subscribed = true
+
+    @setState(searches: searches)
