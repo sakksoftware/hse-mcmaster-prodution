@@ -161,3 +161,16 @@ form {
     border-bottom: none;
   }
 }
+
+.fixed-footer {
+  color: $primary-complementary-color;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  left: 0;
+  right: 0;
+  padding: $x-small-size;
+  font-size: $small-size;
+  text-align: center;
+  bottom: 0;
+  font-weight: 300;
+}

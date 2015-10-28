@@ -35,7 +35,7 @@ module.exports = React.createClass
     @refs.resultList.toggleSelectAll()
 
   renderExportButtons: ->
-    <div className="export-buttons">
+    <div className="export-buttons fixed-footer">
       <Button className="btn btn-primary" onClick={@exportSelected}>Export selected</Button>
       <Button className="btn btn-primary">Email selected</Button>
     </div>
@@ -49,12 +49,15 @@ module.exports = React.createClass
     </ul>
 
   render: ->
-    <div className="saved_articles_page">
+    <div className="saved-articles-page">
       <h1>{@t('title')}</h1>
-      <p>
-        {@t('warning')}
-      </p>
-      {@renderExportButtons()}
-      {@renderListActions()}
+      <div className="saved-articles-instructions">
+        <p>{@t('warning')}</p>
+        <p>{@t('instructions')}</p>
+      </div>
+      <div className="saved-articles-list-header">
+        {@renderExportButtons()}
+        {@renderListActions()}
+      </div>
       <ResultList ref="resultList" results={@state.articles} resultsCount={@state.articles.length} />
     </div>

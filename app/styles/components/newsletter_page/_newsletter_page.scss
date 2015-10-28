@@ -1,4 +1,15 @@
 .newsletter-page {
+  // TODO: repeated in multiple places like search_page, top_5, news_letter and saved_articles
+  // should this instead use a mixin like this? Where would we put it then?
+  // @include result-list-margin;
+  .result-list {
+    margin: $large-size 0;
+
+    @include desktop {
+      margin-top: $x-large-size;
+    }
+  }
+
   .result-item-header-right {
     display: none;
   }

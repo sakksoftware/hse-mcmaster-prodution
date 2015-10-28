@@ -1,3 +1,65 @@
 .saved-articles-page {
-  
+  h1 {
+    margin-bottom: $large-size;
+    @include desktop {
+      margin-bottom: $x-large-size;
+    }
+  }
+
+  // TODO: repeated in multiple places like search_page, top_5, news_letter and saved_articles
+  // should this instead use a mixin like this? Where would we put it then?
+  // @include result-list-margin;
+  .result-list {
+    margin: $large-size 0;
+
+    @include desktop {
+      margin-top: $x-large-size;
+    }
+  }
+
+  .saved-articles-instructions {
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .btn + .btn {
+    margin-left: $tiny-size;
+  }
+
+  .btn {
+    width: calc(50% - #{$tiny-size / 2});
+  }
+
+  .saved-articles-list-header {
+    overflow: auto;
+    margin-top: $large-size;
+
+    @include desktop {
+      margin-top: $x-large-size;
+    }
+  }
+
+  @include desktop {
+    .export-buttons {
+      position: static;
+      background: transparent;
+      left: auto;
+      right: auto;
+      padding: 0;
+      font-size: $small-size;
+      text-align: left;
+      float: left;
+    }
+
+
+    .list-actions {
+      margin-top: $tiny-size;
+      margin-bottom: 0;
+    }
+
+    .btn {
+      width: auto;
+    }
+  }
 }

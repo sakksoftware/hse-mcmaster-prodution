@@ -45,6 +45,7 @@
 
     @include desktop {
       float: none;
+      padding-right: $tiny-size;
     }
   }
 

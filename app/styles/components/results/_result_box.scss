@@ -62,13 +62,16 @@
 
       @include desktop {
         display: inline;
+        padding-right: $tiny-size;
       }
     }
   }
 
+  .result-list {
+    margin: $large-size 0;
+  }
+
   @include desktop {
-
-
     .saved-search-buttons {
       display: none;
     }

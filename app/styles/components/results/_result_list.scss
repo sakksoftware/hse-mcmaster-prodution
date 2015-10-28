@@ -1,7 +1,17 @@
 .result-list {
   list-style: none;
   padding: 0;
-  margin: $large-size 0;
+
+  .result-item-header {
+    margin-left: -$small-size;
+    margin-right: -$small-size;
+
+    @include desktop {
+      margin-left: 0;
+      margin-right: 0;
+      padding-right: $tiny-size;
+    }
+  }
 
   .no-results {
     margin-top: 10px;

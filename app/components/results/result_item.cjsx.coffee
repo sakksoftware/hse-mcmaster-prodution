@@ -46,7 +46,7 @@ module.exports = React.createClass
         <div className="result-item-header-right action">
           {
             if UserStore.isLoggedIn()
-              <label>{@t('select')}<input type="checkbox" onChange={@onSelectToggle} checked={@props.selected} /></label>
+              <label>{@t('/select')}<input type="checkbox" onChange={@onSelectToggle} checked={@props.selected} /></label>
           }
         </div>
       </header>
