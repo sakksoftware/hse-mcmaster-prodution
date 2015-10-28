@@ -126,7 +126,8 @@
     },
     "result_list": {
       "no_results": "Aucun résultat trouvé.",
-      "on_remove": "FR_Successfully removed %{documents_count} documents"
+      "on_remove": "FR_Successfully removed %{documents_count} documents",
+      "on_email": "FR_An email has been sent to %{email} with %{documents_count} documents"
     },
     "sort_order": {
       "sorted_by": "Résultats triés par",

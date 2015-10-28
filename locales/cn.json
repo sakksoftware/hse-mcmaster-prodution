@@ -126,7 +126,8 @@
     },
     "result_list": {
       "no_results": "未找到相应结果。",
-      "on_remove": "CN_Successfully removed %{documents_count} documents"
+      "on_remove": "CN_Successfully removed %{documents_count} documents",
+      "on_email": "CN_An email was sent to %{email} with %{documents_count} documents"
     },
     "sort_order": {
       "sorted_by": "按……排序的结果",
