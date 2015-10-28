@@ -3,6 +3,9 @@
   "terms_of_use": "Condiciones de uso",
   "back_to_results": "Volver a los resultados",
   "toggle_navigation": "Alternar navegación",
+  "select_all": "ES_Select all",
+  "select": "Seleccionar:",
+  "remove_selected": "ES_Remove selected",
   "main_menu": {
     "home": "Inicio",
     "about": "¿Qué es HSE?",
@@ -116,14 +119,14 @@
     "result_item": {
       "year": "Año:",
       "quality": "Calidad:",
-      "select": "Seleccionar:",
       "not_available": "No disponible"
     },
     "result_box": {
       "results": "Resultados"
     },
     "result_list": {
-      "no_results": "No se encontraron resultados."
+      "no_results": "No se encontraron resultados.",
+      "on_remove": "ES_Successfully removed %{documents_count} documents"
     },
     "sort_order": {
       "sorted_by": "Resultados ordenados por",
@@ -197,11 +200,18 @@
   "saved_search_page": {
     "title": "ES_Saved searches",
     "subscribed_only": "ES_Show only subscribed searches",
-    "instructions": "ES_You can subscribe upto one saved search and one curated search",
-    "remove_selected": "ES_Remove selected",
-    "select_all": "ES_Select all",
-    "select": "ES_Select:",
-    "subscribe": "ES_Subscribe to search"
+    "instructions": "ES_You can subscribe up to one saved search and one curated search",
+    "subscribe": "ES_Subscribe to search",
+    "dialog": {
+      "message": "ES_Creating a new subscribed search will unsubscribe you from your current one. Are you sure you want to do this?",
+      "cancel": "ES_Cancel",
+      "confirm": "ES_New search"
+    }
+  },
+  "saved_articles_page": {
+    "title": "ES_Saved documents",
+    "warning": "ES_Documents you saved will be kept on this page for up to 6 hours.",
+    "instructions": "ES_You can email or export those documents."
   },
   "errors": {
     "no_connection": "No fue posible cargar los datos. Verifique su conexión de Internet.",

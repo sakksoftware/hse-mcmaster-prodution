@@ -119,7 +119,6 @@
     "result_item": {
       "year": "Year:",
       "quality": "Quality:",
-      "select": "Select:",
       "not_available": "Not available"
     },
     "result_box": {
@@ -211,7 +210,8 @@
   },
   "saved_articles_page": {
     "title": "Saved documents",
-    "warning": "Documents you saved will be kept on this page for up to 6 hours. You can email or export those documents."
+    "warning": "Documents you saved will be kept on this page for up to 6 hours.",
+    "instructions": "You can email or export those documents."
   },
   "errors": {
     "no_connection": "Oops, could not load data. Check your internet connection.",
