@@ -127,7 +127,8 @@
     "result_list": {
       "no_results": "Nenhum resultado encontrado.",
       "on_remove": "PT_Successfully removed %{documents_count} documents",
-      "on_email": "ES_An email has been sent to %{email} with %{documents_count} documents"
+      "on_email": "PT_An email has been sent to %{email} with %{documents_count} documents",
+      "on_save": "PT_Saved %{documents_count} documents"
     },
     "sort_order": {
       "sorted_by": "Resultados classificados por",

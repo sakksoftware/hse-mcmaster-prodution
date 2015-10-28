@@ -108,7 +108,7 @@ UserActions.saveArticles.listen (articles) ->
   console.log('saving articles', ids)
   articlesData = articlesData.concat(articles)
   articlesData = _(articlesData).uniq (a) -> a.id
-  Promise.resolve(articles)
+  Promise.resolve(articles).then(@completed)
 
 UserActions.loadArticles.listen ->
   Promise.resolve(articlesData).then(@completed)
