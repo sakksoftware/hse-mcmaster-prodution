@@ -4,6 +4,7 @@ var path = require('path');
 var basicAuth = require('basic-auth-connect');
 var crypto = require('crypto');
 var rollbar = require('rollbar');
+var compression = require('compression')
 
 var NODE_ENV = process.env.NODE_ENV || 'development';
 var AES_KEY = process.env.AES_KEY || '';
@@ -36,6 +37,7 @@ if(NODE_ENV == 'production') {
   });
 }
 
+app.use(compression());
 app.use(rollbar.errorHandler(ROLLBAR_SERVER_SECRET));
 app.use(express.static('public'));
 
