@@ -1,7 +1,6 @@
 {
   "beta": "测试版",
   "terms_of_use": "使用条款",
-  "back_to_results": "返回结果",
   "toggle_navigation": "切换导航",
   "select_all": "CN_Select all",
   "select": "选择：",
@@ -86,6 +85,10 @@
     "intro": "CN_The world's most comprehensive, free access point for evidence to support policy makers, stakeholders and researches interested in how to strengthen or reform health systems or in how to get cost-effective programs, services and drugs to those who need them."
   },
   "articles_page": {
+    "back_to_results": "返回结果",
+    "back_to_newsletter": "CN_Back to newsletter",
+    "back_to_top_5": "CN_Back to top five",
+    "back_to_saved_documents": "CN_Back to saved documents",
     "no_studies_conducted_in": "无法获取",
     "no_full_text_report": "无免费全文",
     "no_doi": "尚不能获取",

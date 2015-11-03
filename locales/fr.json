@@ -1,7 +1,6 @@
 {
   "beta": "bêta",
   "terms_of_use": "Conditions d'utilisation",
-  "back_to_results": "Retour aux résultats",
   "toggle_navigation": "Faire disparaître le menu de navigation",
   "select_all": "FR_Select all",
   "select": "Sélectionnez:",
@@ -86,6 +85,10 @@
     "intro": "FR_The world's most comprehensive, free access point for evidence to support policy makers, stakeholders and researches interested in how to strengthen or reform health systems or in how to get cost-effective programs, services and drugs to those who need them."
   },
   "articles_page": {
+    "back_to_results": "Retour aux résultats",
+    "back_to_newsletter": "FR_Back to newsletter",
+    "back_to_top_5": "FR_Back to top five",
+    "back_to_saved_documents": "FR_Back to saved documents",
     "no_studies_conducted_in": "Non disponible",
     "no_full_text_report": "Aucun rapport intégral disponible",
     "no_doi": "Pas encore disponible",

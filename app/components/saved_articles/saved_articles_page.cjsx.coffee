@@ -62,5 +62,5 @@ module.exports = React.createClass
         {@renderExportButtons()}
         {@renderListActions()}
       </div>
-      <ResultList ref="resultList" results={@state.articles} resultsCount={@state.articles.length} />
+      <ResultList ref="resultList" results={@state.articles} resultsCount={@state.articles.length} source="saved_documents" />
     </div>
