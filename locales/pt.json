@@ -32,7 +32,7 @@
       ]
     },
     "signup": {
-      "title": "Inscrever-se",
+      "title": "Criar conta",
       "email": "E-mail",
       "password": "Senha",
       "confirm_password": "Confirmar senha",
