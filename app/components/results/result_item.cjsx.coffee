@@ -12,6 +12,10 @@ module.exports = React.createClass
   propTypes:
     resultNumber: React.PropTypes.number.isRequired
     result: React.PropTypes.object.isRequired
+    source: React.PropTypes.string
+
+  getDefaultProps: ->
+    source: 'search'
 
   shortRating: (quality) ->
     if match = quality?.match(/[0-9]{1,2}\/[0-9]{1,2}/)
@@ -39,7 +43,7 @@ module.exports = React.createClass
       </header>
       <section className="result-item-description">
         <h2 className="result-item-title">
-          <Link to={["/articles/#{@props.result.id}", t: @props.result.traversal]}><HighlightFormat>{@props.result.title}</HighlightFormat></Link>
+          <Link to={["/articles/#{@props.result.id}", t: @props.result.traversal, source: @props.source]}><HighlightFormat>{@props.result.title}</HighlightFormat></Link>
         </h2>
         <div className="result-item-categories">
           {

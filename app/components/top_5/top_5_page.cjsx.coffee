@@ -25,5 +25,5 @@ module.exports = React.createClass
         else
           <h1>{@t('title.all')}</h1>
       }
-      <ResultList results={@state.results} resultsCount={5} onLoadMore={=>} />
+      <ResultList results={@state.results} resultsCount={5} source="top_5" />
     </div>

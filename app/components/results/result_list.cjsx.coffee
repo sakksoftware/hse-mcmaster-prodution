@@ -11,10 +11,10 @@ module.exports = React.createClass
   propTypes:
     results: React.PropTypes.array.isRequired
     resultsCount: React.PropTypes.number.isRequired
-    onLoadMore: React.PropTypes.func.isRequired
+    onLoadMore: React.PropTypes.func
 
   loadMore: (page) ->
-    @props.onLoadMore(page)
+    @props.onLoadMore?(page)
 
   hasMore: ->
     @props.resultsCount > 0 and @props.resultsCount > @props.results.length
@@ -24,7 +24,7 @@ module.exports = React.createClass
       return <p className="no-results">{@t('no_results')}</p>
 
     for result, i in @props.results
-      <ResultItem result={result} resultNumber={i + 1} key="result-#{i}" />
+      <ResultItem result={result} resultNumber={i + 1} key="result-#{i}" {...@props} />
 
   render: ->
     <ol className="result-list">
