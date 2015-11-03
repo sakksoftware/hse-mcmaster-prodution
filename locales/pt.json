@@ -195,11 +195,11 @@
   "quota_exceeded_error_page": {
     "title": "PT_Limit exceeded",
     "body": [
-      "PT_Looks like you have exceeded your quota by making too many requests in a short period of time.",
+      "PT_Limit exceeded. You have made too many requests in a short period of time than we allow.",
       "",
-      "PT_We limit the number of allowed requests to prevent abuse and protect our service from malicious use.",
+      "PT_We limit the number of allowed requests to protect Health Systems Evidence from inappropriate use.",
       "",
-      "PT_If you feel this is an error on our part, please contact us at [michael.yagudaev@func-i.com](michael.yagudaev@func-i.com)"
+      "PT_If you feel this is an error on our part, please email [michael.yagudaev@func-i.com](michael.yagudaev@func-i.com)"
     ]
   },
   "errors": {
@@ -212,6 +212,6 @@
     "invalid_login": "Nome de usuário e senha incorretos",
     "passwords_must_match": "As senhas devem coincidir",
     "invalid": "Não é válido",
-    "signup_to_increase_limit": "PT_You have exceeded your limit please signup if you wish to get access to more articles"
+    "signup_to_increase_limit": "PT_You have exceeded our record limit. Please log in (or create an account for free) if you wish to access more documents."
   }
 }

@@ -195,11 +195,11 @@
   "quota_exceeded_error_page": {
     "title": "CN_Limit exceeded",
     "body": [
-      "CN_Looks like you have exceeded your quota by making too many requests in a short period of time.",
+      "CN_Limit exceeded. You have made too many requests in a short period of time than we allow.",
       "",
-      "CN_We limit the number of allowed requests to prevent abuse and protect our service from malicious use.",
+      "CN_We limit the number of allowed requests to protect Health Systems Evidence from inappropriate use.",
       "",
-      "CN_If you feel this is an error on our part, please contact us at [michael.yagudaev@func-i.com](michael.yagudaev@func-i.com)"
+      "CN_If you feel this is an error on our part, please email [michael.yagudaev@func-i.com](michael.yagudaev@func-i.com)"
     ]
   },
   "errors": {
@@ -212,6 +212,6 @@
     "invalid_login": "用户名或密码错误",
     "passwords_must_match": "密码必须匹配",
     "invalid": "无效",
-    "signup_to_increase_limit": "CN_You have exceeded your limit please signup if you wish to get access to more articles"
+    "signup_to_increase_limit": "CN_You have exceeded our record limit. Please log in (or create an account for free) if you wish to access more documents."
   }
 }

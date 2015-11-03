@@ -195,11 +195,11 @@
   "quota_exceeded_error_page": {
     "title": "FR_Limit exceeded",
     "body": [
-      "FR_Looks like you have exceeded your quota by making too many requests in a short period of time.",
+      "FR_Limit exceeded. You have made too many requests in a short period of time than we allow.",
       "",
-      "FR_We limit the number of allowed requests to prevent abuse and protect our service from malicious use.",
+      "FR_We limit the number of allowed requests to protect Health Systems Evidence from inappropriate use.",
       "",
-      "FR_If you feel this is an error on our part, please contact us at [michael.yagudaev@func-i.com](michael.yagudaev@func-i.com)"
+      "FR_If you feel this is an error on our part, please email [michael.yagudaev@func-i.com](michael.yagudaev@func-i.com)"
     ]
   },
   "errors": {
@@ -212,6 +212,6 @@
     "invalid_login": "Nom d'utilisateur ou mot de passe incorrect",
     "passwords_must_match": "Les mots de passe doivent correspondre",
     "invalid": "Invalide",
-    "signup_to_increase_limit": "FR_You have exceeded your limit please signup if you wish to get access to more articles"
+    "signup_to_increase_limit": "FR_You have exceeded our record limit. Please log in (or create an account for free) if you wish to access more documents."
   }
 }
