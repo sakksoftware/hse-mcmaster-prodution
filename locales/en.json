@@ -192,6 +192,16 @@
     "unsubscribe": "Unsubscribe",
     "success": "Successfully unsubscribed from newsletter"
   },
+  "quota_exceeded_error_page": {
+    "title": "Limit exceeded",
+    "body": [
+      "Looks like you have exceeded your quota by making too many requests in a short period of time.",
+      "",
+      "We limit the number of allowed requests to prevent abuse and protect our service from malicious use.",
+      "",
+      "If you feel this is an error on our part, please contact us at [michael.yagudaev@func-i.com](michael.yagudaev@func-i.com)"
+    ]
+  },
   "errors": {
     "no_connection": "Oops, could not load data. Check your internet connection.",
     "cant_be_blank": "can't be blank!",
@@ -201,6 +211,7 @@
     "too_short": "is too short, must be at least 8 characters",
     "invalid_login": "wrong username or password",
     "passwords_must_match": "passwords must match",
-    "invalid": "invalid"
+    "invalid": "invalid",
+    "signup_to_increase_limit": "You have exceeded your limit please signup if you wish to get access to more articles"
   }
 }

@@ -192,6 +192,16 @@
     "unsubscribe": "Se désinscrire",
     "success": "FR_Successfully unsubscribed from newsletter"
   },
+  "quota_exceeded_error_page": {
+    "title": "FR_Limit exceeded",
+    "body": [
+      "FR_Looks like you have exceeded your quota by making too many requests in a short period of time.",
+      "",
+      "FR_We limit the number of allowed requests to prevent abuse and protect our service from malicious use.",
+      "",
+      "FR_If you feel this is an error on our part, please contact us at [michael.yagudaev@func-i.com](michael.yagudaev@func-i.com)"
+    ]
+  },
   "errors": {
     "no_connection": "Oups, incapable de charger les données. Vérifiez votre connexion internet.",
     "cant_be_blank": "ne peut pas être vide!",
@@ -201,6 +211,7 @@
     "too_short": "est trop court, doit être d'au moins 8 caractères",
     "invalid_login": "Nom d'utilisateur ou mot de passe incorrect",
     "passwords_must_match": "Les mots de passe doivent correspondre",
-    "invalid": "Invalide"
+    "invalid": "Invalide",
+    "signup_to_increase_limit": "FR_You have exceeded your limit please signup if you wish to get access to more articles"
   }
 }
