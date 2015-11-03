@@ -34,7 +34,7 @@
       ]
     },
     "signup": {
-      "title": "Signup",
+      "title": "Create account",
       "email": "Email",
       "password": "Password",
       "confirm_password": "Confirm password",
@@ -43,7 +43,9 @@
       "signup_button": "Create account",
       "did_not_recieve": "Didn't receive an email?",
       "send_again": "Send again",
-      "confirmation_msg": "A confirmation email has been sent to you. Please confirm your registration to activate your account!"
+      "confirmation_msg": "A confirmation email has been sent to you. Please confirm your registration to activate your account!",
+      "already_have_account": "Already have an account?",
+      "login": "Log in"
     },
     "main": {
       "title": "Menu"
@@ -218,6 +220,16 @@
     "warning": "Documents you saved will be kept on this page for up to 6 hours.",
     "instructions": "You can email or export those documents."
   },
+  "quota_exceeded_error_page": {
+    "title": "Limit exceeded",
+    "body": [
+      "Limit exceeded. You have made too many requests in a short period of time than we allow.",
+      "",
+      "We limit the number of allowed requests to protect Health Systems Evidence from inappropriate use.",
+      "",
+      "If you feel this is an error on our part, please email [michael.yagudaev@func-i.com](michael.yagudaev@func-i.com)"
+    ]
+  },
   "errors": {
     "no_connection": "Oops, could not load data. Check your internet connection.",
     "cant_be_blank": "can't be blank!",
@@ -227,6 +239,7 @@
     "too_short": "is too short, must be at least 8 characters",
     "invalid_login": "wrong username or password",
     "passwords_must_match": "passwords must match",
-    "invalid": "invalid"
+    "invalid": "invalid",
+    "signup_to_increase_limit": "You have exceeded our record limit. Please log in (or create an account for free) if you wish to access more documents."
   }
 }

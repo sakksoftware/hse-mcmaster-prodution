@@ -34,7 +34,7 @@
       ]
     },
     "signup": {
-      "title": "Inscrivez-vous",
+      "title": "Créer un compte",
       "email": "Courriel",
       "password": "Mot de passe",
       "confirm_password": "Confirmez le mot de passe",
@@ -43,7 +43,9 @@
       "signup_button": "Créer un compte",
       "did_not_recieve": "Vous n'avez pas reçu un courriel?",
       "send_again": "Envoyer encore une fois",
-      "confirmation_msg": "Un courriel de confirmation vous a été envoyé. SVP, confirmez votre inscription pour activer votre compte!"
+      "confirmation_msg": "Un courriel de confirmation vous a été envoyé. SVP, confirmez votre inscription pour activer votre compte!",
+      "already_have_account": "FR_Already have an account?",
+      "login": "Ouvrir une session"
     },
     "main": {
       "title": "Menu"
@@ -218,6 +220,16 @@
     "warning": "FR_Documents you saved will be kept on this page for up to 6 hours.",
     "instructions": "FR_You can email or export those documents."
   },
+  "quota_exceeded_error_page": {
+    "title": "FR_Limit exceeded",
+    "body": [
+      "FR_Limit exceeded. You have made too many requests in a short period of time than we allow.",
+      "",
+      "FR_We limit the number of allowed requests to protect Health Systems Evidence from inappropriate use.",
+      "",
+      "FR_If you feel this is an error on our part, please email [michael.yagudaev@func-i.com](michael.yagudaev@func-i.com)"
+    ]
+  },
   "errors": {
     "no_connection": "Oups, incapable de charger les données. Vérifiez votre connexion internet.",
     "cant_be_blank": "ne peut pas être vide!",
@@ -227,6 +239,7 @@
     "too_short": "est trop court, doit être d'au moins 8 caractères",
     "invalid_login": "Nom d'utilisateur ou mot de passe incorrect",
     "passwords_must_match": "Les mots de passe doivent correspondre",
-    "invalid": "Invalide"
+    "invalid": "Invalide",
+    "signup_to_increase_limit": "FR_You have exceeded our record limit. Please log in (or create an account for free) if you wish to access more documents."
   }
 }

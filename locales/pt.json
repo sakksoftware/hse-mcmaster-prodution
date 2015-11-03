@@ -34,7 +34,7 @@
       ]
     },
     "signup": {
-      "title": "Inscrever-se",
+      "title": "Criar conta",
       "email": "E-mail",
       "password": "Senha",
       "confirm_password": "Confirmar senha",
@@ -43,7 +43,9 @@
       "signup_button": "Criar conta",
       "did_not_recieve": "Não recebeu um e-mail?",
       "send_again": "Enviar novamente",
-      "confirmation_msg": "Foi-lhe enviado um e-mail de confirmação. Confirme o seu registro para ativar a sua conta!"
+      "confirmation_msg": "Foi-lhe enviado um e-mail de confirmação. Confirme o seu registro para ativar a sua conta!",
+      "already_have_account": "PT_Already have an account?",
+      "login": "Iniciar sessão"
     },
     "main": {
       "title": "Menu"
@@ -218,6 +220,16 @@
     "warning": "PT_Documents you saved will be kept on this page for up to 6 hours.",
     "instructions": "PT_You can email or export those documents."
   },
+  "quota_exceeded_error_page": {
+    "title": "PT_Limit exceeded",
+    "body": [
+      "PT_Limit exceeded. You have made too many requests in a short period of time than we allow.",
+      "",
+      "PT_We limit the number of allowed requests to protect Health Systems Evidence from inappropriate use.",
+      "",
+      "PT_If you feel this is an error on our part, please email [michael.yagudaev@func-i.com](michael.yagudaev@func-i.com)"
+    ]
+  },
   "errors": {
     "no_connection": "Opa, não foi possível carregar dados. Verifique sua conexão com a Internet.",
     "cant_be_blank": "não pode ficar em branco",
@@ -227,6 +239,7 @@
     "too_short": "é muito curto, debe conter pelo menos 8 caracteres",
     "invalid_login": "Nome de usuário e senha incorretos",
     "passwords_must_match": "As senhas devem coincidir",
-    "invalid": "Não é válido"
+    "invalid": "Não é válido",
+    "signup_to_increase_limit": "PT_You have exceeded our record limit. Please log in (or create an account for free) if you wish to access more documents."
   }
 }

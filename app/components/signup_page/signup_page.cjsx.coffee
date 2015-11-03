@@ -1,18 +1,21 @@
 SignupMenu = require('components/menus/signup_menu')
 TranslationHelper = require('mixins/translation_helper')
 UrlActions = require('actions/url_actions')
+Link = require('components/shared/link')
 
 module.exports = React.createClass
   displayName: 'SignupPage'
 
   mixins: [TranslationHelper]
-  baseTranslation: ''
+  baseTranslation: 'menus.signup'
 
   onSignup: ->
     UrlActions.navigateTo('/')
 
   render: ->
     <div className="signup-page">
-      <h1>{@t('menus.signup.title')}</h1>
+      <h1>{@t('title')}</h1>
       <SignupMenu onSignup={@onSignup} />
+      <hr />
+      <p>{@t('already_have_account')} <Link to="/login">{@t('login')}</Link></p>
     </div>

@@ -34,7 +34,7 @@
       ]
     },
     "signup": {
-      "title": "Registrarse",
+      "title": "Crear cuenta",
       "email": "Correo electrónico",
       "password": "Contraseña",
       "confirm_password": "Confirmar contraseña",
@@ -43,7 +43,9 @@
       "signup_button": "Crear cuenta",
       "did_not_recieve": "¿No recibió un correo electrónico?",
       "send_again": "Enviar nuevamente",
-      "confirmation_msg": "Se le ha enviado un correo electrónico de confirmación. Confirme su registro para activar su cuenta."
+      "confirmation_msg": "Se le ha enviado un correo electrónico de confirmación. Confirme su registro para activar su cuenta.",
+      "already_have_account": "ES_Already have an account?",
+      "login": "Iniciar sesión"
     },
     "main": {
       "title": "Menú"
@@ -218,6 +220,16 @@
     "warning": "ES_Documents you saved will be kept on this page for up to 6 hours.",
     "instructions": "ES_You can email or export those documents."
   },
+  "quota_exceeded_error_page": {
+    "title": "ES_Limit exceeded",
+    "body": [
+      "ES_Limit exceeded. You have made too many requests in a short period of time than we allow.",
+      "",
+      "ES_We limit the number of allowed requests to protect Health Systems Evidence from inappropriate use.",
+      "",
+      "ES_If you feel this is an error on our part, please email [michael.yagudaev@func-i.com](michael.yagudaev@func-i.com)"
+    ]
+  },
   "errors": {
     "no_connection": "No fue posible cargar los datos. Verifique su conexión de Internet.",
     "cant_be_blank": "no puede estar en blanco",
@@ -227,6 +239,7 @@
     "too_short": "es demasiado corto, debe contener un mínimo de 8 caracteres",
     "invalid_login": "Nombre de usuario o contraseña incorrectos",
     "passwords_must_match": "Las contraseñas deben coincidir",
-    "invalid": "Inválido"
+    "invalid": "Inválido",
+    "signup_to_increase_limit": "ES_You have exceeded our record limit. Please log in (or create an account for free) if you wish to access more documents."
   }
 }
