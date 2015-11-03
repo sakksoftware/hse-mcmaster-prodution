@@ -14,18 +14,32 @@ module.exports = React.createClass
 
   getInitialState: ->
     selectedSearches: []
+    allSelected: false
 
   toggleSelectAll: (ev) ->
-    searches = _.difference(@props.searches, @state.selectedSearches)
-    @setState(selectedSearches: searches)
+    selectedSearches = @props.searches
+    allSelected = false
+
+    if @state.selectedSearches.length > 0
+      selectedSearches = []
+      allSelected = false
+    else
+      allSelected = true
+
+    @setState(selectedSearches: selectedSearches, allSelected: allSelected)
 
   toggleSubscription: (search) ->
     UserActions.subscribeToSearch(search)
 
-  addSelected: (search) ->
-    selectedSearches = @state.selectedSearches
-    selectedSearches.push(search)
-    @setState(selectedSearches: selectedSearches)
+  toggleSelect: (search) ->
+    selectedSearches = _.clone(@state.selectedSearches)
+    if found = _(selectedSearches).findWhere(id: search.id)
+      selectedSearches = _(selectedSearches).without(found)
+    else
+      selectedSearches.push(search)
+
+    allSelected = selectedSearches.length == @props.searches.length
+    @setState(selectedSearches: selectedSearches, allSelected: allSelected)
 
   removeSelected: ->
     UserActions.removeSearches(@state.selectedSearches)
@@ -36,7 +50,7 @@ module.exports = React.createClass
       <SavedSearchItem search={search}
         key="saved-search-item-#{search.id}-#{'selected' if selected}"
         selected={selected}
-        onSelect={@addSelected}
+        onSelect={@toggleSelect}
         onToggleSubscription={@toggleSubscription}
       />
 
@@ -45,9 +59,17 @@ module.exports = React.createClass
       <div className="saved-search-list-header">
         <span className="saved-search-list-instructions">{@t('instructions')}</span>
         <ul className="saved-search-list-actions list-actions list-inline">
-          <li className="action remove-selected"><Button onClick={@removeSelected}>{@t('/remove_selected')}</Button></li>
+          {
+            if @state.selectedSearches.length > 0
+              <li className="action remove-selected">
+                <Button onClick={@removeSelected}>{@t('/remove_selected')}</Button>
+              </li>
+          }
           <li className="action">
-            <label>{@t('/select_all')}<input type="checkbox" onChange={@toggleSelectAll} name="search_to_delete"/></label>
+            <label>
+              {@t('/select_all')}
+              <input type="checkbox" checked={@state.allSelected} onChange={@toggleSelectAll} name="search_to_delete"/>
+            </label>
           </li>
         </ul>
       </div>
