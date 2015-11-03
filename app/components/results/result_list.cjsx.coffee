@@ -17,7 +17,7 @@ module.exports = React.createClass
     resultsCount: React.PropTypes.number.isRequired
     onLoadMore: React.PropTypes.func
 
-  defaultProps: ->
+  getDefaultProps: ->
     onLoadMore: ->
 
   getInitialState: ->
@@ -102,7 +102,7 @@ module.exports = React.createClass
       flash('success', @t('on_email', email: email, documents_count: count))
 
   loadMore: (page) ->
-    @props.onLoadMore(page)
+    @props.onLoadMore?(page)
 
   hasMore: ->
     @props.resultsCount > 0 and @props.resultsCount > @props.results.length
@@ -113,7 +113,8 @@ module.exports = React.createClass
 
     for result, i in @props.results
       selected = !!_.findWhere(@state.selected, id: result.id)
-      <ResultItem result={result} resultNumber={i + 1} key="result-#{i}" onSelectToggle={@onSelectToggle} selected={selected} />
+      <ResultItem result={result} resultNumber={i + 1} key="result-#{i}" onSelectToggle={@onSelectToggle} selected={selected} {...@props} />
+
 
   render: ->
     <ol className="result-list">
