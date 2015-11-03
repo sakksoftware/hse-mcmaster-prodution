@@ -41,7 +41,9 @@
       "signup_button": "Create account",
       "did_not_recieve": "Didn't receive an email?",
       "send_again": "Send again",
-      "confirmation_msg": "A confirmation email has been sent to you. Please confirm your registration to activate your account!"
+      "confirmation_msg": "A confirmation email has been sent to you. Please confirm your registration to activate your account!",
+      "already_have_account": "Already have an account?",
+      "login": "Log in"
     },
     "main": {
       "title": "Menu"

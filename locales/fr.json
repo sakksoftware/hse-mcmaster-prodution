@@ -44,7 +44,9 @@
       "signup_button": "Créer un compte",
       "did_not_recieve": "Vous n'avez pas reçu un courriel?",
       "send_again": "Envoyer encore une fois",
-      "confirmation_msg": "Un courriel de confirmation vous a été envoyé. SVP, confirmez votre inscription pour activer votre compte!"
+      "confirmation_msg": "Un courriel de confirmation vous a été envoyé. SVP, confirmez votre inscription pour activer votre compte!",
+      "already_have_account": "FR_Already have an account?",
+      "login": "Ouvrir une session"
     },
     "main": {
       "title": "Menu"

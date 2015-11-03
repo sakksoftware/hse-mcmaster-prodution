@@ -41,7 +41,9 @@
       "signup_button": "Crear cuenta",
       "did_not_recieve": "¿No recibió un correo electrónico?",
       "send_again": "Enviar nuevamente",
-      "confirmation_msg": "Se le ha enviado un correo electrónico de confirmación. Confirme su registro para activar su cuenta."
+      "confirmation_msg": "Se le ha enviado un correo electrónico de confirmación. Confirme su registro para activar su cuenta.",
+      "already_have_account": "ES_Already have an account?",
+      "login": "Iniciar sesión"
     },
     "main": {
       "title": "Menú"

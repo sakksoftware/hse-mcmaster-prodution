@@ -41,7 +41,9 @@
       "signup_button": "注册",
       "did_not_recieve": "还没收到邮件？",
       "send_again": "再次发送",
-      "confirmation_msg": "确认邮件已经发送至您的邮箱，请确认注册以激活您的账号！"
+      "confirmation_msg": "确认邮件已经发送至您的邮箱，请确认注册以激活您的账号！",
+      "already_have_account": "CN_Already have an account?",
+      "login": "登陆"
     },
     "main": {
       "title": "菜单"
