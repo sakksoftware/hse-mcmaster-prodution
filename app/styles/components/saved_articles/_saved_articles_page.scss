@@ -34,22 +34,35 @@
   .saved-articles-list-header {
     overflow: auto;
     margin-top: $large-size;
+    border-bottom: 1px solid $border-color;
+    padding-bottom: $x-tiny-size;
 
     @include desktop {
       margin-top: $x-large-size;
     }
   }
 
+  .export-buttons {
+
+  }
+
+  .fixed-footer {
+    background-color: #D7D7D7;
+    padding: 7px $tiny-size;
+  }
+
   @include desktop {
     .export-buttons {
+      color: $primary-text-color;
       position: static;
       background: transparent;
       left: auto;
       right: auto;
       padding: 0;
-      font-size: $small-size;
       text-align: left;
       float: left;
+      font-weight: normal;
+      font-size: 14px;
     }
 
 

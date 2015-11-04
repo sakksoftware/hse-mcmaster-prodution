@@ -19,6 +19,8 @@
   }
 
   &-save-article:before {
+    height: $small-size + 2px;
+    top: -2px;
     background-image: url('/images/m_saved_documents.svg');
   }
 
@@ -40,6 +42,12 @@
       width: 24px;
       top: 1px;
     }
+  }
+
+  &-export:before {
+    height: $small-size + 2px;
+    top: -2px;
+    background-image: url('/images/export_icon.svg');
   }
 }
 
