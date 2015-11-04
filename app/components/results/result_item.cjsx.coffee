@@ -21,6 +21,7 @@ module.exports = React.createClass
     showSelect: false
     selected: false
     source: 'search'
+    onSelectToggle: ->
 
   shortRating: (quality) ->
     if match = quality?.match(/[0-9]{1,2}\/[0-9]{1,2}/)

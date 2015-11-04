@@ -14,6 +14,31 @@ module.exports = React.createClass
 
   getInitialState: ->
     articles: UserStore.state.articles
+    selected: []
+
+  # TODO: duplicate logic between saved_search, saved_articles and result_list
+  toggleSelect: (article) ->
+    selected = _.clone @state.selected
+    if found = _.findWhere(selected, id: article.id)
+      selected = _(selected).without(found)
+    else
+      selected.push(article)
+
+    @setState(selected: selected)
+
+  toggleSelectAll: (ev) ->
+    selected = @state.articles
+    allSelected = false
+
+    if @state.selected.length > 0
+      selected = []
+      allSelected = false
+    else
+      allSelected = true
+
+    @setState(selected: selected, allSelected: allSelected)
+
+    @refs.resultList.toggleSelectAll()
 
   componentWillMount: ->
     UserActions.loadArticles()
@@ -31,17 +56,15 @@ module.exports = React.createClass
   removeSelected: ->
     @refs.resultList.removeUserArticles()
 
-  toggleSelectAll: ->
-    @refs.resultList.toggleSelectAll()
-
   sendEmail: ->
     @refs.resultList.emailArticles()
 
   renderExportButtons: ->
-    <div className="export-buttons fixed-footer">
-      <Button className="btn btn-primary" onClick={@exportSelected}>Export selected</Button>
-      <Button className="btn btn-primary" onClick={@sendEmail}>Email selected</Button>
-    </div>
+    if @state.selected.length > 0
+      <div className="export-buttons fixed-footer">
+        <Button className="icon icon-export" onClick={@exportSelected}>Export</Button>
+        <Button className="icon icon-email" onClick={@sendEmail}>Email</Button>
+      </div>
 
   renderListActions: ->
     <ul className="list-actions list-inline">
@@ -62,5 +85,5 @@ module.exports = React.createClass
         {@renderExportButtons()}
         {@renderListActions()}
       </div>
-      <ResultList ref="resultList" results={@state.articles} resultsCount={@state.articles.length} source="saved_documents" />
+      <ResultList ref="resultList" results={@state.articles} resultsCount={@state.articles.length} source="saved_documents" onSelectToggle={@toggleSelect} />
     </div>

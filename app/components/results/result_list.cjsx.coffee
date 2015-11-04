@@ -16,21 +16,38 @@ module.exports = React.createClass
     results: React.PropTypes.array.isRequired
     resultsCount: React.PropTypes.number.isRequired
     onLoadMore: React.PropTypes.func
+    onSelectToggle: React.PropTypes.func
 
   getDefaultProps: ->
     onLoadMore: ->
+    onSelectToggle: ->
 
   getInitialState: ->
     selected: []
 
+  # TODO: duplicate logic between saved_search, saved_articles and result_list
   onSelectToggle: (article) ->
     selected = _.clone @state.selected
-    if selectedArticle = _.findWhere(selected, id: article.id)
-      selected = _.reject selected, (a) -> a.id == selectedArticle.id
+    if found = _.findWhere(selected, id: article.id)
+      selected = _(selected).without(found)
     else
       selected.push(article)
 
     @setState(selected: selected)
+
+    @props.onSelectToggle(article)
+
+  toggleSelectAll: (ev) ->
+    selected = @props.results
+    allSelected = false
+
+    if @state.selected.length > 0
+      selected = []
+      allSelected = false
+    else
+      allSelected = true
+
+    @setState(selected: selected, allSelected: allSelected)
 
   saveArticles: ->
     UserActions.saveArticles(@state.selected).then =>
@@ -91,10 +108,6 @@ module.exports = React.createClass
     UserActions.removeArticles(@state.selected).then =>
       flash('success', @t('on_remove', documents_count: @state.selected.length))
 
-  toggleSelectAll: (ev) ->
-    articles = _.difference(@props.results, @state.selected)
-    @setState(selected: articles)
-
   emailArticles: ->
     UserActions.emailArticles(@state.selected).then =>
       email = UserStore.state.user.email
@@ -113,7 +126,7 @@ module.exports = React.createClass
 
     for result, i in @props.results
       selected = !!_.findWhere(@state.selected, id: result.id)
-      <ResultItem result={result} resultNumber={i + 1} key="result-#{i}" onSelectToggle={@onSelectToggle} selected={selected} {...@props} />
+      <ResultItem {...@props} result={result} resultNumber={i + 1} key="result-#{i}-#{selected}" selected={selected} onSelectToggle={@onSelectToggle} />
 
 
   render: ->
