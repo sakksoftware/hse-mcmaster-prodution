@@ -76,7 +76,7 @@ UserActions.saveSearch.listen (search) ->
 
 UserActions.removeSearches.listen (searches) ->
   # mocks.removeSearches(searches).then(@completed)
-  API.create('/user/searches/remove', _.pluck(searches, 'id'), apiBase: 'http://hse.stage2.droxic.com')
+  API.create('/user/searches/remove', _.pluck(searches, 'id'), apiBase: 'http://hse.stage2.droxic.com').done(@completed).fail(@failed)
 
 UserActions.saveArticles.listen (articles) ->
   # mocks.saveArticles(articles).then(@completed)
@@ -92,7 +92,7 @@ UserActions.removeArticles.listen (articles) ->
   API.create('/user/articles/remove', _.pluck(articles, 'id'), apiBase: 'http://hse.stage2.droxic.com').done(@completed).fail(@failed)
 
 UserActions.emailArticles.listen (articles) ->
-  mocks.emailArticles(articles).then(@completed)
-  # API.create('/user/articles/email', _.pluck(articles, 'id'), apiBase: 'http://hse.stage2.droxic.com').done(@completed).fail(@failed)
+  # mocks.emailArticles(articles).then(@completed)
+  API.create('/user/articles/email', _.pluck(articles, 'id'), apiBase: 'http://hse.stage2.droxic.com').done(@completed).fail(@failed)
 
 module.exports = UserActions
