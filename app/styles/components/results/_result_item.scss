@@ -82,4 +82,13 @@ $result-header-text-color: #999999;
       margin: 0;
     }
   }
+
+  .result-item-select {
+    span {
+      display: none;
+      @include desktop {
+        display: inline;
+      }
+    }
+  }
 }
