@@ -40,7 +40,7 @@ module.exports = React.createClass
 
   render: ->
     <li className="saved-search-item list-item">
-      <div className="saved-search-item-header">
+      <div className="saved-search-item-header clearfix">
         <h2>
           <Link to={['/search', @serializeSearchParams(@props.search)]}>{@props.search.query}</Link>
         </h2>

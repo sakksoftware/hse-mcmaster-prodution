@@ -36,7 +36,7 @@ module.exports = React.createClass
 
   render: ->
     <div className="saved-search-page">
-      <div className="saved-search-header">
+      <div className="saved-search-header clearfix">
         <h1>{@t('title')}</h1>
         <label className="saved-search-subscribed-only action">{@t('subscribed_only')}<input type="checkbox" onClick={@toggleSubscribedOnly} /></label>
       </div>
