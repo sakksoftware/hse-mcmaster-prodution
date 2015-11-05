@@ -218,7 +218,9 @@
   "saved_articles_page": {
     "title": "PT_Saved documents",
     "warning": "PT_Documents you saved will be kept on this page for up to 6 hours.",
-    "instructions": "PT_You can email or export those documents."
+    "instructions": "PT_You can email or export those documents.",
+    "email": "E-mail",
+    "export": "FR_Export"
   },
   "quota_exceeded_error_page": {
     "title": "PT_Limit exceeded",

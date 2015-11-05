@@ -62,8 +62,8 @@ module.exports = React.createClass
   renderExportButtons: ->
     if @state.selected.length > 0
       <div className="export-buttons fixed-footer">
-        <Button className="icon icon-export" onClick={@exportSelected}>Export</Button>
-        <Button className="icon icon-email" onClick={@sendEmail}>Email</Button>
+        <Button className="icon icon-export" onClick={@exportSelected}>{@t('export')}</Button>
+        <Button className="icon icon-email" onClick={@sendEmail}>{@t('email')}</Button>
       </div>
 
   renderListActions: ->

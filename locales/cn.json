@@ -218,7 +218,9 @@
   "saved_articles_page": {
     "title": "CN_Saved documents",
     "warning": "CN_Documents you saved will be kept on this page for up to 6 hours.",
-    "instructions": "CN_You can email or export those documents."
+    "instructions": "CN_You can email or export those documents.",
+    "email": "电子邮件",
+    "export": "CN_Export"
   },
   "quota_exceeded_error_page": {
     "title": "CN_Limit exceeded",

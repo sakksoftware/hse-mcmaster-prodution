@@ -218,7 +218,9 @@
   "saved_articles_page": {
     "title": "FR_Saved documents",
     "warning": "FR_Documents you saved will be kept on this page for up to 6 hours.",
-    "instructions": "FR_You can email or export those documents."
+    "instructions": "FR_You can email or export those documents.",
+    "email": "Courriel",
+    "export": "FR_Export"
   },
   "quota_exceeded_error_page": {
     "title": "FR_Limit exceeded",

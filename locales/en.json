@@ -218,7 +218,9 @@
   "saved_articles_page": {
     "title": "Saved documents",
     "warning": "Documents you saved will be kept on this page for up to 6 hours.",
-    "instructions": "You can email or export those documents."
+    "instructions": "You can email or export those documents.",
+    "email": "Email",
+    "export": "Export"
   },
   "quota_exceeded_error_page": {
     "title": "Limit exceeded",
