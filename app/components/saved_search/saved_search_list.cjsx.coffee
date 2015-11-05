@@ -13,40 +13,42 @@ module.exports = React.createClass
     searches: React.PropTypes.array.isRequired
 
   getInitialState: ->
-    selectedSearches: []
+    selected: []
     allSelected: false
 
   toggleSelectAll: (ev) ->
-    selectedSearches = @props.searches
+    selected = @props.searches
     allSelected = false
 
-    if @state.selectedSearches.length > 0
-      selectedSearches = []
+    if @state.selected.length > 0
+      selected = []
       allSelected = false
     else
       allSelected = true
 
-    @setState(selectedSearches: selectedSearches, allSelected: allSelected)
+    @setState(selected: selected, allSelected: allSelected)
 
   toggleSubscription: (search) ->
     UserActions.subscribeToSearch(search)
 
   toggleSelect: (search) ->
-    selectedSearches = _.clone(@state.selectedSearches)
-    if found = _(selectedSearches).findWhere(id: search.id)
-      selectedSearches = _(selectedSearches).without(found)
+    selected = _.clone(@state.selected)
+    if found = _(selected).findWhere(id: search.id)
+      selected = _(selected).without(found)
     else
-      selectedSearches.push(search)
+      selected.push(search)
 
-    allSelected = selectedSearches.length == @props.searches.length
-    @setState(selectedSearches: selectedSearches, allSelected: allSelected)
+    allSelected = selected.length == @props.searches.length
+    @setState(selected: selected, allSelected: allSelected)
 
   removeSelected: ->
-    UserActions.removeSearches(@state.selectedSearches)
+    UserActions.removeSearches(@state.selected).then =>
+      flash('success', @t('on_remove', searches_count: @state.selected.length))
+      @setState(selected: [])
 
   renderItems: ->
     for search in @props.searches
-      selected = !!_.findWhere(@state.selectedSearches, id: search.id)
+      selected = !!_.findWhere(@state.selected, id: search.id)
       <SavedSearchItem search={search}
         key="saved-search-item-#{search.id}-#{'selected' if selected}"
         selected={selected}
@@ -60,7 +62,7 @@ module.exports = React.createClass
         <span className="saved-search-list-instructions">{@t('instructions')}</span>
         <ul className="saved-search-list-actions list-actions list-inline">
           {
-            if @state.selectedSearches.length > 0
+            if @state.selected.length > 0
               <li className="action remove-selected">
                 <Button onClick={@removeSelected}>{@t('/remove_selected')}</Button>
               </li>

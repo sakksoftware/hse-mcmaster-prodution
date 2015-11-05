@@ -130,6 +130,10 @@ module.exports = Reflux.createStore
   onSaveArticlesCompleted: ->
     # do nothing for now...
 
+  onRemoveSearchesCompleted: (removedIds) ->
+    searches = _(@state.searches).reject (s) -> removedIds.indexOf(s.id) >= 0
+    @setState(searches: searches)
+
   onRemoveArticlesCompleted: (removedIds) ->
     articles = _(@state.articles).reject (a) -> removedIds.indexOf(a.id) >= 0
     @setState(articles: articles)

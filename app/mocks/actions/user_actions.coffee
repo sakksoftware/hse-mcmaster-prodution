@@ -113,7 +113,7 @@ UserActions.saveSearch.listen (search) ->
 UserActions.removeSearches.listen (searches) ->
   toDelete = _(searchesData).filter (s) -> _.findWhere(searches, id: s.id)
   searchesData = _.difference(searchesData, toDelete)
-  Promise.resolve(searchesData)
+  Promise.resolve(_.pluck(toDelete, 'id')).then(@completed)
 
 UserActions.saveArticles.listen (articles) ->
   ids = _.pluck(articles, 'id')

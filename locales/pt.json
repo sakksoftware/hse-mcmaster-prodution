@@ -213,7 +213,8 @@
       "message": "PT_Creating a new subscribed search will unsubscribe you from your current one. Are you sure you want to do this?",
       "cancel": "PT_Cancel",
       "confirm": "PT_New search"
-    }
+    },
+    "on_remove": "PT_Successfully removed %{searches_count} searches"
   },
   "saved_articles_page": {
     "title": "PT_Saved documents",

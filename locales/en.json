@@ -213,7 +213,8 @@
       "message": "Creating a new subscribed search will unsubscribe you from your current one. Are you sure you want to do this?",
       "cancel": "Cancel",
       "confirm": "New search"
-    }
+    },
+    "on_remove": "Successfully removed %{searches_count} searches"
   },
   "saved_articles_page": {
     "title": "Saved documents",

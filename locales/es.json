@@ -213,7 +213,8 @@
       "message": "ES_Creating a new subscribed search will unsubscribe you from your current one. Are you sure you want to do this?",
       "cancel": "ES_Cancel",
       "confirm": "ES_New search"
-    }
+    },
+    "on_remove": "CN_Successfully removed %{searches_count} searches"
   },
   "saved_articles_page": {
     "title": "ES_Saved documents",
