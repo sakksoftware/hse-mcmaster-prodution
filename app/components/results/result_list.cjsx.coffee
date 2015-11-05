@@ -53,56 +53,14 @@ module.exports = React.createClass
     UserActions.saveArticles(@state.selected).then =>
       flash('success', @t('on_save', documents_count: @state.selected.length))
 
-  getCSVDataUrl: (data) ->
-    csvContent = 'data:text/csv;charset=utf-8,'
-    csvContent += Papa.unparse data, {
-    	quotes: true,
-    	delimiter: ",",
-    	newline: "\r\n"
-    }
-
-    csvContent
-
   openNewWindow: (csvContent) ->
     encodedUri = encodeURI(csvContent)
     window.open(encodedUri)
 
   exportArticles: ->
-    lang = UserStore.state.language
-    data = [
-      [
-        'Title'
-        'URL'
-        'Description'
-        'Details'
-        'ShortDetails'
-        'Resource'
-        'Type'
-        'Identifiers'
-        'Db'
-        'EntrezUID'
-        'Properties'
-      ]
-    ]
-
-    # TODO: verify the data is correct
-    for article in @state.selected
-      data.push [
-        article.title
-        "#{config.siteUrl}/articles/#{article.id}?t=#{article.traversal}&lang=#{lang}"
-        article.citation
-        "doi: #{article.doi}"
-        "??? publisher ???"
-        "PubMed"
-        "citation"
-        article.id
-        "pubmed",
-        article.id
-        "create date:#{article.created_at}"
-      ]
-
-
-    @openNewWindow(@getCSVDataUrl(data))
+    ids = _.pluck(@state.selected, 'id')
+    url = "#{config.apiBase}/api/user/articles.csv?ids=#{encodeURIComponent(ids.join(';'))}"
+    @openNewWindow(url)
 
   removeUserArticles: ->
     UserActions.removeArticles(@state.selected).then =>
