@@ -107,6 +107,7 @@ module.exports = React.createClass
   removeUserArticles: ->
     UserActions.removeArticles(@state.selected).then =>
       flash('success', @t('on_remove', documents_count: @state.selected.length))
+      @setState(selected: [])
 
   emailArticles: ->
     UserActions.emailArticles(@state.selected).then =>
