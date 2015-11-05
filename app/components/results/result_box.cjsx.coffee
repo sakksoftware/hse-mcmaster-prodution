@@ -48,8 +48,9 @@ module.exports = React.createClass
   saveArticles: ->
     @refs.resultList.saveArticles()
 
-  exportArticles: ->
-    @refs.resultList.exportArticles()
+  emailArticles: ->
+    @refs.resultList.emailArticles()
+
 
   renderSavedArticlesButtons: ->
     if UserStore.isLoggedIn()
@@ -57,7 +58,7 @@ module.exports = React.createClass
         {
           if @state.selected.length > 0
             [
-              <Button key="icon-email" className="icon icon-email" onClick={@exportArticles}>Email</Button>
+              <Button key="icon-email" className="icon icon-email" onClick={@emailArticles}>Email</Button>
               <Button key="icon-save-article" className="icon icon-save-article" onClick={@saveArticles}>Save</Button>
             ]
         }
