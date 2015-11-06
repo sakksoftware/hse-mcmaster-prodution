@@ -83,6 +83,7 @@ module.exports = React.createClass
         suggestionRenderer={@renderSuggestion}
         inputAttributes={inputAttributes}
         onSuggestionSelected={(suggestion) => @onSearch(suggestion.query)}
+        cache={false}
       />
       <Button className="btn-clear" onClick={@clearInput}>&#x00D7;</Button>
     </form>
