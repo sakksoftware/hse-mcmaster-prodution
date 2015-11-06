@@ -1,4 +1,5 @@
 {
+  "site_name": "Health Systems Evidence",
   "beta": "beta",
   "terms_of_use": "Terms of use",
   "back_to_results": "Back to results",
@@ -136,8 +137,8 @@
     }
   },
   "profile_page": {
+    "title": "My profile",
     "successfully_updated": "Successfully updated profile",
-    "my_profile": "My Profile",
     "account_information": "Account Information",
     "email": "Email",
     "password": "Password",
@@ -154,7 +155,7 @@
     "cancel": "Cancel"
   },
   "complementary_content_page": {
-    "title": "COMPLEMENTARY CONTENT",
+    "title": "Complementary content",
     "description": "Enable viewing of complementary content",
     "complementary_content_2": {
       "title": "CANADA'S HEALTH SYSTEMS DOCUMENTS",
@@ -166,6 +167,7 @@
     }
   },
   "top_5_page": {
+    "title_short": "Top five",
     "title": {
       "all": "Top five 1-pagers accessed by all users",
       "policy_makers": "Top five 1-pagers accessed by policymakers"

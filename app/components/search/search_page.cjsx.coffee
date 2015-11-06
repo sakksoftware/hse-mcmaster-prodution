@@ -38,6 +38,8 @@ module.exports = React.createClass
     showSignupPrompt: false
 
   componentWillMount: ->
+    document.title = "#{@t('search_page.search_box.placeholder')} | #{@t('/site_name')}"
+
     @unsubscribeUser = UserStore.listen(@userStoreUpdated)
     @unsubscribeSearch = SearchStore.listen(@searchStoreUpdated)
 
@@ -57,6 +59,7 @@ module.exports = React.createClass
 
   fetchResults: ->
     @setState(step: 'searching')
+    document.title = "#{@state.search.query} | #{@t('/site_name')}"
     SearchActions.search(@state.search).then =>
       @setState(step: 'results', filtersLoaded: true)
 

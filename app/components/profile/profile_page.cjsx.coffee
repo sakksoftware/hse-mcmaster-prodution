@@ -24,6 +24,9 @@ module.exports = React.createClass
     @unsubscribeUserStore = UserStore.listen(@onUserStoreUpdated)
     @unsubscribeCountryStore = CountryStore.listen(@onCoutnryStoreUpdated)
 
+  componentDidMount: ->
+    document.title = "#{@t('title')} | #{@t('/site_name')}"
+
   componentWillUnmount: ->
     @unsubscribeUserStore()
     @unsubscribeCountryStore()
@@ -72,7 +75,7 @@ module.exports = React.createClass
     # TODO: desktop needs to support columns
     if @state.userLoaded && !@state.errors
       <div className="profile-page">
-        <h1>{@t('my_profile')}</h1>
+        <h1>{@t('title')}</h1>
 
         <EditableInformation title={@t('account_information')}
           onSubmit={@updateUser}

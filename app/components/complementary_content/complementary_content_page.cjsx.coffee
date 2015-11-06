@@ -17,6 +17,9 @@ module.exports = React.createClass
     @unsubscribe = UserStore.listen (state) =>
       @setState(user: state.user)
 
+  componentDidMount: ->
+    document.title = "#{@t('title')} | #{@t('/site_name')}"
+
   componentWillUnmount: ->
     @unsubscribe()
 
@@ -26,7 +29,6 @@ module.exports = React.createClass
         window.flash('success', 'Successfully updated')
 
   render: ->
-    console.log('complementary_2', @state.user?.complementary_2)
     <div className="complementary-content-page">
       <h1>{@t('title')}</h1>
       <p>{@t('description')}</p>

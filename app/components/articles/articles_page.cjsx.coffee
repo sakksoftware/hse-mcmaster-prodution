@@ -26,6 +26,7 @@ module.exports = React.createClass
 
   handleLoad: (article) ->
     @setState(article: article)
+    document.title = "#{article.title} | #{@t('site_name')}"
 
   backLink: ->
     router = require('lib/router')

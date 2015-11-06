@@ -1,4 +1,5 @@
 {
+  "site_name": "Health Systems Evidence",
   "beta": "beta",
   "terms_of_use": "Termos de uso",
   "back_to_results": "Voltar aos resultados",
@@ -136,8 +137,8 @@
     }
   },
   "profile_page": {
+    "title": "Meu perfil",
     "successfully_updated": "Perfil atualizado com sucesso",
-    "my_profile": "Meu perfil",
     "account_information": "Informações da conta",
     "email": "E-mail",
     "password": "Senha",
@@ -166,6 +167,7 @@
     }
   },
   "top_5_page": {
+    "title_short": "PT_Top five",
     "title": {
       "all": "Cinco principais resumos de 1 página acessados por todos os usuários",
       "policy_makers": "Cinco principais resumos de 1 página acessados por formuladores de políticas"

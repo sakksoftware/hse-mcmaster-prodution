@@ -9,6 +9,9 @@ module.exports = React.createClass
   mixins: [TranslationHelper]
   baseTranslation: 'unsubscribe_page'
 
+  componentDidMount: ->
+    document.title = "#{@t('title')} | #{@t('/site_name')}"
+
   unsubscribe: ->
     UserActions.unsubscribe(UrlStore.getParam('x')).then =>
       flash('success', @t('success'))

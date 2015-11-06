@@ -1,4 +1,5 @@
 {
+  "site_name": "Health Systems Evidence",
   "beta": "测试版",
   "terms_of_use": "使用条款",
   "back_to_results": "返回结果",
@@ -136,8 +137,8 @@
     }
   },
   "profile_page": {
+    "title": "我的资料",
     "successfully_updated": "成功更新资料",
-    "my_profile": "我的资料",
     "account_information": "账户信息",
     "email": "电子邮件",
     "password": "密码",
@@ -166,6 +167,7 @@
     }
   },
   "top_5_page": {
+    "title_short": "CN_Top five",
     "title": {
       "all": "用户访问最多的五个页面",
       "policy_makers": "决策者访问最多的五个页面"
