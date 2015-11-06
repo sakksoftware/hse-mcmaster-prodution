@@ -1,10 +1,15 @@
 ContentActions = require('actions/content_actions')
+Util = require('lib/util')
+TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
   displayName: 'StaticPage'
 
   propTypes:
     name: React.PropTypes.string.isRequired
+
+  mixins: [TranslationHelper]
+  baseTranslation: ''
 
   componentWillMount: ->
     ContentActions.loadMarkdownFile(@props.name, @handleContentLoaded, @handleContentError)
@@ -14,6 +19,7 @@ module.exports = React.createClass
 
   handleContentLoaded: (content) ->
     @setState(content: content)
+    document.title = "#{Util.sentenceCase(@props.name)} | #{@t('site_name')}"
 
   handleContentError: (xhr, statusCode, responseText) ->
     console.log('Failed to load content', statusCode, responseText)

@@ -9,6 +9,9 @@ module.exports = React.createClass
   mixins: [TranslationHelper]
   baseTranslation: 'menus.signup'
 
+  componentDidMount: ->
+    document.title = "#{@t('title')} | #{@t('/site_name')}"
+
   onSignup: ->
     UrlActions.navigateTo('/')
 

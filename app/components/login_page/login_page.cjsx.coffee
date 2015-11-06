@@ -7,7 +7,10 @@ module.exports = React.createClass
   display: 'LoginPage'
 
   mixins: [TranslationHelper]
-  baseTranslation: ''
+  baseTranslation: 'menus.login'
+
+  componentDidMount: ->
+    document.title = "#{@t('title')} | #{@t('/site_name')}"
 
   onLogin: ->
     if UrlStore.hasHistory()
@@ -17,6 +20,6 @@ module.exports = React.createClass
 
   render: ->
     <div className="login-page">
-      <h1>{@t('menus.login.title')}</h1>
+      <h1>{@t('title')}</h1>
       <LoginMenu onLogin={@onLogin}/>
     </div>

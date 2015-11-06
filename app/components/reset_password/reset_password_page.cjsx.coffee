@@ -1,5 +1,5 @@
 UserActions = require('actions/user_actions')
-# UrlStore = require('stores/url_store')
+UrlStore = require('stores/url_store')
 Form = require('components/shared/form')
 TranslationHelper = require('mixins/translation_helper')
 
@@ -13,10 +13,10 @@ module.exports = React.createClass
     lfe: React.PropTypes.string.isRequired
 
   componentWillMount: ->
-    params = require('lib/url').params()
-    @initiated = params.i
-    # TODO: switch to this version when we merge development branch into master
-    # @initiated = UrlStore.state.params.i
+    @initiated = UrlStore.state.params.i
+
+  componentDidMount: ->
+    document.title = "#{@t('title')} | #{@t('/site_name')}"
 
   handleAfterSave: ->
     router = require('lib/router')

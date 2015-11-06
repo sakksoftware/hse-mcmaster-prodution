@@ -17,6 +17,9 @@ module.exports = React.createClass
   componentWillMount: ->
     API.read("newsletters/#{@props.id}?lang=#{UserStore.state.language}").done (newsletter) => @setState(newsletter: newsletter)
 
+  componentDidMount: ->
+    document.title = "#{@t('title')} | #{@t('/site_name')}"
+
   render: ->
     <div className="newsletter-page">
       <h1>{@t('title')}</h1>

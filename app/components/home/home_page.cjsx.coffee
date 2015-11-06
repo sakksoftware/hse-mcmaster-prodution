@@ -29,6 +29,9 @@ module.exports = React.createClass
   componentWillUnmount: ->
     @unsubscribeUser()
 
+  componentDidMount: ->
+    document.title = "#{@t('/site_name')}"
+
   userStoreUpdated: (state) ->
     @setState(guidedSearch: state.guidedSearch)
 

@@ -17,6 +17,9 @@ module.exports = React.createClass
     @unsubscribe = UserStore.listen (state) =>
       @setState(user: state.user)
 
+  componentDidMount: ->
+    document.title = "#{@t('title')} | #{@t('/site_name')}"
+
   componentWillUnmount: ->
     @unsubscribe()
 

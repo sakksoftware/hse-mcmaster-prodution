@@ -16,6 +16,7 @@ module.exports = React.createClass
 
   componentWillMount: ->
     API.read("top_5?type=#{params.type || 'all'}&lang=#{UserStore.state.language}").done (results) => @setState(results: results)
+    document.title = "#{@t('title_short')} | #{@t('/site_name')}"
 
   render: ->
     <div className="top-5-page">

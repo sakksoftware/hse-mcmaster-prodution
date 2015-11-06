@@ -27,6 +27,7 @@ module.exports = React.createClass
 
   handleLoad: (article) ->
     @setState(article: article)
+    document.title = "#{article.title} | #{@t('site_name')}"
 
   backText: ->
     switch UrlStore.getParam('source')

@@ -7,6 +7,9 @@ module.exports = React.createClass
   mixins: [TranslationHelper]
   baseTranslation: 'forgot_password_page'
 
+  componentDidMount: ->
+    document.title = "#{@t('title')} | #{@t('/site_name')}"
+
   handleSubmit: (formData, success, error) ->
     formData.from = 'hse'
     UserActions.forgotPassword(formData).then(success, error)
