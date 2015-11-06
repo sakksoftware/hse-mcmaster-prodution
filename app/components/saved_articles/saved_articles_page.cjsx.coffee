@@ -68,7 +68,12 @@ module.exports = React.createClass
 
   renderListActions: ->
     <ul className="list-actions list-inline">
-      <li className="action remove-selected"><Button onClick={@removeSelected}>{@t('/remove_selected')}</Button></li>
+      {
+        if @state.selected.length > 0
+          <li className="action remove-selected">
+            <Button onClick={@removeSelected}>{@t('/remove_selected')}</Button>
+          </li>
+      }
       <li className="action">
         <label>{@t('/select_all')}<input type="checkbox" onChange={@toggleSelectAll} name="search_to_delete"/></label>
       </li>
