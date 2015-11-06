@@ -22,6 +22,9 @@ module.exports = React.createClass
   componentWillUnmount: ->
     @unsubscribeUserStore()
 
+  componentDidMount: ->
+    document.title = "#{@t('title')} | #{@t('/site_name')}"
+
   userStoreUpdated: (data) ->
     @setState(searches: data.searches)
 

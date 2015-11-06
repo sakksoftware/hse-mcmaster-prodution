@@ -16,6 +16,9 @@ module.exports = React.createClass
     articles: UserStore.state.articles
     selected: []
 
+  componentDidMount: ->
+    document.title = "#{@t('title')} | #{@t('/site_name')}"
+
   # TODO: duplicate logic between saved_search, saved_articles and result_list
   toggleSelect: (article) ->
     selected = _.clone @state.selected
