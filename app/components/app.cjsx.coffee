@@ -151,39 +151,39 @@ module.exports = React.createClass
       when 'complementary_content'
         <ComplementaryContentPage key="complementary-content-page" />
       when 'top_5'
-        <Top5Page />
+        <Top5Page key="top-5" />
       when 'login'
-        <LoginPage />
+        <LoginPage key="login" />
       when 'signup'
-        <SignupPage />
+        <SignupPage key="signup" />
       when 'newsletter'
         id = @props.args.id
-        <NewsletterPage id={id}/>
+        <NewsletterPage id={id} key="newsletter-#{id}" />
       when 'unsubscribe'
-        <UnsubscribePage />
+        <UnsubscribePage key="unsubscribe" />
       when 'cookies_disabled'
-        <CookiesDisabledPage />
+        <CookiesDisabledPage key="cookies-disabled"/>
       when 'saved_search'
-        <SavedSearchPage />
+        <SavedSearchPage key="saved-search-page" />
       when 'saved_articles'
-        <SavedArticlesPage />
+        <SavedArticlesPage key="saved-articles-page" />
       ##
       # Errors
       ##
       when 'forgot_password'
-        <ForgotPasswordPage />
+        <ForgotPasswordPage key="forgot-password" />
       when 'page_not_found'
-        <PageNotFound />
+        <PageNotFound key="page-not-found" />
       when 'reset_password'
-        <ResetPasswordPage lfe={params.lfe} />
+        <ResetPasswordPage lfe={params.lfe} key="reset-password"/>
       when 'application_error'
-        <ApplicationErrorPage />
+        <ApplicationErrorPage key="application-error" />
       when 'server_error'
-        <ServerErrorPage />
+        <ServerErrorPage key="server-error" />
       when 'quota_exceeded_error'
-        <QuotaExceededErrorPage />
+        <QuotaExceededErrorPage key="quota-exceeded-error" />
       when 'timeout_error'
-        <TimeoutErrorPage />
+        <TimeoutErrorPage key="timeout-error" />
       else
         # should never reach here, programming error.
         throw new Error("Page not found! Please check the URL")
