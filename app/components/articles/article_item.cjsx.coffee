@@ -181,6 +181,11 @@ module.exports = React.createClass
               {@ifNotEmpty @joinList(_.compact(_.pluck(article.lmic_focus, 'title'))), @t('no_lmic_focus')}
             </div>
           </ArticleField>
+
+          <ArticleField visible={!article.country_focus_visible}>
+            <h2>{article.label_country_focus}</h2>
+            {@ifNotEmpty @joinList(_.compact(_.pluck(article.country_groups, 'title'))), @t('no_country_groupings')}
+          </ArticleField>
         </div>
 
         <div className="desktop-sidebar">
