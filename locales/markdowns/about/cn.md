@@ -45,4 +45,4 @@
   [生殖健康图书馆](http://apps.who.int/rhl/en/)  
   SUPPORT 协作组  </p>
 
-  <p class="text-center">**Health Systems Evidence wishes to acknowledge the following groups for the contributions made to Health Systems Evidence earlier in its development:**    [Rx for Change](https://www.cadth.ca/rx-change)    (which identified and coded systematic reviews about implementation strategies and prepared user-friendly summaries that we provide links to)    [Centre for Reviews and Dissemination](http://www.york.ac.uk/crd/)    (which identified systematic reviews of effects, systematic reviews being planned (i.e., titles registered in PROSPERO) and economic evaluations, and prepared user-friendly summaries that we provide links to)</p></footer>
+  <p class="text-center">**卫生系统证据将感谢在其早期开发阶段提供帮助的以下组织：**    [Rx for Change](https://www.cadth.ca/rx-change)    (确认并编码了实施策略方面的系统评价，并提供了我们链接到的用户友好型总结)    [Centre for Reviews and Dissemination](http://www.york.ac.uk/crd/)    (确认关注效果的系统评价、计划中的系统评价（即在PROSPERO中注册的题目）及经济学评价，并提供了我们链接到的用户友好型总结)</p></footer>
