@@ -112,7 +112,8 @@
       "view_results_count": "Exibir %{results_count} resultados",
       "tips": "Dicas para uma pesquisa mais eficaz",
       "filters": "Filtros",
-      "placeholder": "Pesquisar..."
+      "placeholder": "Pesquisar...",
+      "advanced_search": "PT_Advanced search"
     },
     "result_item": {
       "year": "Ano:",

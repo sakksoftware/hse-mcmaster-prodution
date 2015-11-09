@@ -112,7 +112,8 @@
       "view_results_count": "View %{results_count} results",
       "tips": "Search tips",
       "filters": "Filters",
-      "placeholder": "Search..."
+      "placeholder": "Search...",
+      "advanced_search": "Advanced search"
     },
     "result_item": {
       "year": "Year:",

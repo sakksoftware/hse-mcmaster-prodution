@@ -112,7 +112,8 @@
       "view_results_count": "查看 %{results_count} 结果",
       "tips": "如何实现更有效检索",
       "filters": "限定项",
-      "placeholder": "检索……"
+      "placeholder": "检索……",
+      "advanced_search": "CN_Advanced search"
     },
     "result_item": {
       "year": "年份：",

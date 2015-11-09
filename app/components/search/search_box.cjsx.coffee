@@ -1,3 +1,4 @@
+Link = require('components/shared/link')
 SearchBar = require('components/search/search_bar')
 LayerToggle = require('components/layered_navigation/layer_toggle')
 FilterNormalizationService = require('services/filter_normalization_service')
@@ -62,6 +63,7 @@ module.exports = React.createClass
           {@t('filters')}
           {@renderFilterCount()}
         </LayerToggle>
+        <Link to="/search" className="advanced-search">{@t('advanced_search')}</Link>
       </div>
       {@renderResultCountFooter()}
     </div>

@@ -112,7 +112,8 @@
       "view_results_count": "Ver %{results_count} resultados",
       "tips": "Sugerencias para una búsqueda más eficaz",
       "filters": "Filtros",
-      "placeholder": "Buscar…"
+      "placeholder": "Buscar…",
+      "advanced_search": "ES_Advanced search"
     },
     "result_item": {
       "year": "Año:",
