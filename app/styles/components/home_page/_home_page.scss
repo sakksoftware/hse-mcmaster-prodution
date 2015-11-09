@@ -125,4 +125,11 @@
       border: none;
     }
   }
+
+  .layer-toggles .advanced-search {
+    display: inline-block;
+    float: right;
+    color: white;
+    line-height: $large-size;
+  }
 }

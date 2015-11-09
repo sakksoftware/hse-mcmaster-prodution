@@ -120,7 +120,8 @@
       "filters": "Filtros",
       "placeholder": "Buscar…",
       "save": "ES_Save search",
-      "save_and_subscribe": "ES_Save and subscribe"
+      "save_and_subscribe": "ES_Save and subscribe",
+      "advanced_search": "ES_Advanced search"
     },
     "result_item": {
       "year": "Año:",

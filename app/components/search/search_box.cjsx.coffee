@@ -1,3 +1,4 @@
+Link = require('components/shared/link')
 SearchBar = require('components/search/search_bar')
 SavedSearchButtons = require('components/search/saved_search_buttons')
 LayerToggle = require('components/layered_navigation/layer_toggle')
@@ -75,6 +76,7 @@ module.exports = React.createClass
           {@renderFilterCount()}
         </LayerToggle>
         {@renderSavedSearchButtons()}
+        <Link to="/search" className="advanced-search">{@t('advanced_search')}</Link>
       </div>
       {@renderResultCountFooter()}
     </div>

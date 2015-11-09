@@ -120,7 +120,8 @@
       "filters": "限定项",
       "placeholder": "检索……",
       "save": "CN_Save search",
-      "save_and_subscribe": "CN_Save and subscribe"
+      "save_and_subscribe": "CN_Save and subscribe",
+      "advanced_search": "CN_Advanced search"
     },
     "result_item": {
       "year": "年份：",

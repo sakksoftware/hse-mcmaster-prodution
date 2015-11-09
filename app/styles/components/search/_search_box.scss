@@ -36,6 +36,10 @@
     }
   }
 
+  .advanced-search {
+    display: none;
+  }
+
   .layer-toggle-filter-groups {
     @include btn-default;
     background-color: $primary-color;

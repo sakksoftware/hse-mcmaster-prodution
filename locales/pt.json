@@ -120,7 +120,8 @@
       "filters": "Filtros",
       "placeholder": "Pesquisar...",
       "save": "PT_Save search",
-      "save_and_subscribe": "PT_Save and subscribe"
+      "save_and_subscribe": "PT_Save and subscribe",
+      "advanced_search": "PT_Advanced search"
     },
     "result_item": {
       "year": "Ano:",

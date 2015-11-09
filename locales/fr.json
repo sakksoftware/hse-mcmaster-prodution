@@ -120,7 +120,8 @@
       "filters": "Filtres",
       "placeholder": "Recherche…",
       "save": "FR_Save search",
-      "save_and_subscribe": "FR_Save and subscribe"
+      "save_and_subscribe": "FR_Save and subscribe",
+      "advanced_search": "FR_Advanced search"
     },
     "result_item": {
       "year": "Année:",
