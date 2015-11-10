@@ -30,6 +30,7 @@ module.exports = React.createClass
     setOverlayContent: React.PropTypes.func.isRequired
 
   # steps
+  # pending_search
   # searching
   # results
   getInitialState: ->
@@ -56,14 +57,18 @@ module.exports = React.createClass
 
   searchStoreUpdated: (state) ->
     step = @state.step
-    step = 'results' if state.search.results_count > 0
-    @setState(search: state.search, step: step, errors: state.errors)
+    search = state.search
+    if _.isEmpty(search.query.trim()) && _.isEmpty(search.applied_filters)
+      step = 'pending_search'
+    else if search.results_count > 0
+      step = 'results'
+
+    @setState(search: state.search, step: step, errors: state.errors, filtersLoaded: true)
 
   fetchResults: ->
     @setState(step: 'searching')
     document.title = "#{@state.search.query} | #{@t('/site_name')}"
-    SearchActions.search(@state.search).then =>
-      @setState(step: 'results', filtersLoaded: true)
+    SearchActions.search(@state.search)
 
   handleSearch: (query) ->
     @state.search.query = query
@@ -107,6 +112,10 @@ module.exports = React.createClass
     if @state.step == 'searching'
       <div className="result-box">
         <Loader loaded={@state.step == 'results'} />
+      </div>
+    else if @state.step == 'pending_search'
+      <div className="result-box">
+        {@t('search_page.result_box.pending_search')}
       </div>
     else if @state.step == 'results'
       <ResultBox sortBy={@state.search.sort_by}
