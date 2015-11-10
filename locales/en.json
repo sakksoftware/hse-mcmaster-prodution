@@ -122,7 +122,8 @@
       "not_available": "Not available"
     },
     "result_box": {
-      "results": "results"
+      "results": "results",
+      "pending_search": "Perform a search by entering a keyword above or selecting the appropriate filters from the list on the right."
     },
     "result_list": {
       "no_results": "No results found."

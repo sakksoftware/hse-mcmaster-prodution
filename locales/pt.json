@@ -125,7 +125,8 @@
       "results": "Resultados"
     },
     "result_list": {
-      "no_results": "Nenhum resultado encontrado."
+      "no_results": "Nenhum resultado encontrado.",
+      "pending_search": "PT_Perform a search by entering a keyword above or selecting the appropriate filters"
     },
     "sort_order": {
       "sorted_by": "Resultados classificados por",

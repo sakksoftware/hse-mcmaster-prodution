@@ -125,7 +125,8 @@
       "results": "Resultados"
     },
     "result_list": {
-      "no_results": "No se encontraron resultados."
+      "no_results": "No se encontraron resultados.",
+      "pending_search": "ES_Perform a search by entering a keyword above or selecting the appropriate filters from the list on the right."
     },
     "sort_order": {
       "sorted_by": "Resultados ordenados por",

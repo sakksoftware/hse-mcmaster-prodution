@@ -125,7 +125,8 @@
       "results": "结果"
     },
     "result_list": {
-      "no_results": "未找到相应结果。"
+      "no_results": "未找到相应结果。",
+      "pending_search": "CN_Perform a search by entering a keyword above or selecting the appropriate filters from the list on the right."
     },
     "sort_order": {
       "sorted_by": "按……排序的结果",
