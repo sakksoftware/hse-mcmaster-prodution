@@ -95,4 +95,10 @@ UserActions.emailArticles.listen (articles) ->
   # mocks.emailArticles(articles).then(@completed)
   API.create('/user/articles/email', _.pluck(articles, 'id')).done(@completed).fail(@failed)
 
+UserActions.subscribeToSearch.listen (search) ->
+  if search.subscribed
+    API.create("/user/searches/#{search.id}/unsubscribe").done(@completed).fail(@failed)
+  else
+    API.create("/user/searches/#{search.id}/subscribe").done(@completed).fail(@failed)
+
 module.exports = UserActions
