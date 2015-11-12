@@ -58,13 +58,10 @@ module.exports = React.createClass
   searchStoreUpdated: (state) ->
     step = @state.step
     search = state.search
-    
+
     if _.isEmpty(search.query.trim()) && _.isEmpty(search.applied_filters)
       step = 'pending_search'
-    else if search.results_count > 0
-      step = 'results'
-
-    if search.results_count > 0
+    else if search.results != null
       step = 'results'
 
     @setState(search: state.search, step: step, errors: state.errors, filtersLoaded: true)
