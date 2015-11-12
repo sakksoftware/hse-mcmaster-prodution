@@ -58,12 +58,11 @@ module.exports = React.createClass
   searchStoreUpdated: (state) ->
     step = @state.step
     search = state.search
-    # TODO: temporarily disabled until a bug in the API is fixed. see
-    # https://trello.com/c/NE46z30e/462-search-endpoint-not-echoing-applied-filters
-    # if _.isEmpty(search.query.trim()) && _.isEmpty(search.applied_filters)
-    #   step = 'pending_search'
-    # else if search.results_count > 0
-    #   step = 'results'
+    
+    if _.isEmpty(search.query.trim()) && _.isEmpty(search.applied_filters)
+      step = 'pending_search'
+    else if search.results_count > 0
+      step = 'results'
 
     if search.results_count > 0
       step = 'results'
