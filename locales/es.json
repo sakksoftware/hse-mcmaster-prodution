@@ -209,7 +209,7 @@
     "success": "ES_Successfully unsubscribed from newsletter"
   },
   "saved_search_page": {
-    "title": "ES_Saved searches",
+    "title": "Búsquedas guardadas",
     "subscribed_only": "Mostrar solamente las búsquedas suscriptas",
     "instructions": "Puede suscribirse a hasta una búsqueda guardada y una búsqueda protegida.",
     "subscribe": "Suscribirse a la búsqueda",
@@ -218,7 +218,7 @@
       "cancel": "Cancelar",
       "confirm": "Nueva búsqueda"
     },
-    "on_remove": "ES_Successfully removed %{searches_count} searches"
+    "on_remove": "Se quitaron %{documents_count} documentos con éxito"
   },
   "saved_articles_page": {
     "title": "Documentos guardados",

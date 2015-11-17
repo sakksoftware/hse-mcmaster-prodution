@@ -209,7 +209,7 @@
     "success": "PT_Successfully unsubscribed from newsletter"
   },
   "saved_search_page": {
-    "title": "PT_Saved searches",
+    "title": "Pesquisas salvadas",
     "subscribed_only": "Mostrar apenas pesquisas assinadas",
     "instructions": "Pode assinar uma pesquisa salvada e uma pesquisa com curadoria",
     "subscribe": "Assinar pesquisa",
@@ -218,7 +218,7 @@
       "cancel": "Cancelar",
       "confirm": "Nova pesquisa"
     },
-    "on_remove": "PT_Successfully removed %{searches_count} searches"
+    "on_remove": "Removeu com êxito %{documents_count} documentos"
   },
   "saved_articles_page": {
     "title": "Documentos salvados",
