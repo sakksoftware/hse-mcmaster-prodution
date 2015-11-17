@@ -85,7 +85,7 @@
     }
   },
   "home_page": {
-    "intro": "CN_The world's most comprehensive, free access point for evidence to support policy makers, stakeholders and researches interested in how to strengthen or reform health systems or in how to get cost-effective programs, services and drugs to those who need them."
+    "intro": "CN_The world's most comprehensive, free access point for evidence to support policy makers, stakeholders and researchers interested in how to strengthen or reform health systems or in how to get cost-effective programs, services and drugs to those who need them."
   },
   "articles_page": {
     "back_to_results": "返回结果",
@@ -129,14 +129,14 @@
       "not_available": "无法获取"
     },
     "result_box": {
-      "results": "结果"
+      "results": "结果",
+      "pending_search": "CN_Perform a search by entering a keyword above or selecting the appropriate filters from the list on the right."
     },
     "result_list": {
       "no_results": "未找到相应结果。",
       "on_remove": "CN_Successfully removed %{documents_count} documents",
-      "on_email": "CN_An email was sent to %{email} with %{documents_count} documents",
-      "on_save": "CN_Saved %{documents_count} documents",
-      "pending_search": "CN_Perform a search by entering a keyword above or selecting the appropriate filters from the list on the right."
+      "on_email": "CN_An email has been sent to %{email} with %{documents_count} documents",
+      "on_save": "CN_Saved %{documents_count} documents"
     },
     "sort_order": {
       "sorted_by": "按……排序的结果",
@@ -232,9 +232,9 @@
     "body": [
       "CN_Limit exceeded. You have made too many requests in a short period of time than we allow.",
       "",
-      "CN_We limit the number of allowed requests to protect Health Systems Evidence from inappropriate use.",
+      "We limit the number of allowed requests to protect Health Systems Evidence from inappropriate use.",
       "",
-      "CN_If you feel this is an error on our part, please email [michael.yagudaev@func-i.com](michael.yagudaev@func-i.com)"
+      "If you feel this is an error on our part, please email [michael.yagudaev@func-i.com](michael.yagudaev@func-i.com)"
     ]
   },
   "errors": {
