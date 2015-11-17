@@ -31,8 +31,6 @@ module.exports = React.createClass
   fetchSuggestions: (query, callback) ->
     handleLoadSuggestions = (suggestions) ->
       suggestions = _.clone(suggestions)
-      if suggestions.length == 0 || suggestions[0].query.toLowerCase() != query.toLowerCase()
-        suggestions.splice(0, 0, {query: query, count: null})
       callback(null, suggestions)
     @props.search.query = query
     SuggestionActions.suggestions(@props.search, UserStore.state.language).then(handleLoadSuggestions)
@@ -83,7 +81,7 @@ module.exports = React.createClass
         suggestionRenderer={@renderSuggestion}
         inputAttributes={inputAttributes}
         # delay transitioning to the new page to prevent odd scroll bug when users
-        # clicks on a suggestion (mouse click) it will scroll to bottom of the page. 
+        # clicks on a suggestion (mouse click) it will scroll to bottom of the page.
         onSuggestionSelected={(suggestion) => _.delay((=> @onSearch(suggestion.query)), 10)}
         cache={false}
       />
