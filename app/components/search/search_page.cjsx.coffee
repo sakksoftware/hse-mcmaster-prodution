@@ -10,6 +10,8 @@ SignupPrompt = require('components/search/signup_prompt')
 FilterNormalizationService = require('services/filter_normalization_service')
 SearchSerializationService = require('services/search_serialization_service')
 
+UserActions = require('actions/user_actions')
+
 UserStore = require('stores/user_store')
 SearchStore = require('stores/search_store')
 
@@ -87,8 +89,8 @@ module.exports = React.createClass
     SearchActions.sortBy(sortBy)
 
   toggleSubscription: ->
-    console.log('toggle subscription')
-    # UserActions.
+    UserActions.subscribeToSearch(@state.search).then =>
+      flash('success', @t('search_page.on_save_and_subscribe'))
 
   confirmSubscriptionToggle: ->
     base = '/saved_search_page.dialog.'

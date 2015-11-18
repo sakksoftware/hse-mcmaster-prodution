@@ -114,6 +114,9 @@
     "no_last_year_literature_searched": "Não disponível"
   },
   "search_page": {
+    "on_save_search": "PT_Successfully saved search",
+    "on_unsave_search": "PT_Successfully removed saved search",
+    "on_save_and_subscribe": "PT_Successfully saved and subscribed to search",
     "search_box": {
       "view_results_count": "Exibir %{results_count} resultados",
       "tips": "Dicas para uma pesquisa mais eficaz",

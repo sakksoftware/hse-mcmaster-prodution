@@ -17,14 +17,39 @@ searchesData = [{
   "id": 1,
   "query": "HIV in african countries",
   "subscribed": true,
-  "applied_filters": "0_2;1_2"
+  "applied_filters": ["0_2", "1_2"]
+  "filters": [
+    {
+      "id": "0_2",
+      "title": "LMIC countries",
+      "applied": true
+    },
+    {
+      "id": "1_2",
+      "title": "Governance arrangements",
+      "applied": true
+    }
+  ]
 },
 {
   "id": 2,
   "query": "HIV/AIDS infections over the last decade and their effect on our society",
   "subscribed": false,
-  "applied_filters": "0_2;1_3"
+  "applied_filters": ["0_2", "1_3"],
+  "filters": [
+    {
+      "id": "0_2",
+      "title": "LMIC Countries",
+      "applied": true
+    },
+    {
+      "id": "1_3",
+      "title": "Stuff",
+      "applied": true
+    }
+  ]
 }]
+maxSearchId = 2
 
 UserActions = Reflux.createActions
   changeLanguage: {}
@@ -107,6 +132,7 @@ UserActions.loadSearches.listen ->
   Promise.resolve(searchesData).then(@completed)
 
 UserActions.saveSearch.listen (search) ->
+  search.id = ++maxSearchId
   searchesData.push(search)
   Promise.resolve(search).then(@completed)
 
@@ -117,7 +143,6 @@ UserActions.removeSearches.listen (searches) ->
 
 UserActions.saveArticles.listen (articles) ->
   ids = _.pluck(articles, 'id')
-  console.log('saving articles', ids)
   articlesData = articlesData.concat(articles)
   articlesData = _(articlesData).uniq (a) -> a.id
   Promise.resolve(articles).then(@completed)
@@ -136,6 +161,10 @@ UserActions.emailArticles.listen (articles) ->
 UserActions.subscribeToSearch.listen (search) ->
   search = _.clone(search)
   search.subscribed = true
-  Promise.resolve(search).then(@completed)
+  if search.saved
+    Promise.resolve(search).then(@completed)
+  else
+    UserActions.saveSearch(search).then (search) =>
+      Promise.resolve(search).then(@completed)
 
 module.exports = UserActions

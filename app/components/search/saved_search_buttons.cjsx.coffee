@@ -20,7 +20,11 @@ module.exports = React.createClass
     @props.search.saved = !@props.search.saved
     @forceUpdate()
     search = _.pick(search, 'query', 'applied_filters', 'sort_by', 'saved', 'subscribed')
-    UserActions.saveSearch(search)
+    UserActions.saveSearch(search).then (search) =>
+      if search.saved
+        flash('success', @t('/search_page.on_save_search'))
+      else
+        flash('success', @t('/search_page.on_unsave_search'))
 
   saveAndSubscribe: ->
     @props.search.subscribed = !@props.search.subscribed

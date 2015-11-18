@@ -122,13 +122,22 @@ module.exports = Reflux.createStore
     @setState(articles: articles)
 
   onUnsubscribeCompleted: ->
-    # do nothing for now...
+    searches = _.deepClone(@state.searches)
 
-  onSaveSearchCompleted: ->
-    # do nothing for now...
+    search = _(searches).findWhere(id: search.id)
+    search.subscribed = false
 
-  onSaveArticlesCompleted: ->
-    # do nothing for now...
+    @setState(searches: searches)
+
+  onSaveSearchCompleted: (search) ->
+    searches = _.deepClone(@state.searches)
+    searches.push(search)
+    @setState(searches: searches)
+
+  onSaveArticlesCompleted: (article) ->
+    articles = _.deepClone(@state.articles)
+    articles.push(article)
+    @setState(articles: articles)
 
   onRemoveSearchesCompleted: (removedIds) ->
     searches = _(@state.searches).reject (s) -> removedIds.indexOf(s.id) >= 0
