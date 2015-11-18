@@ -61,38 +61,30 @@ UserActions.resetPassword.listen (data) ->
 
 UserActions.loadRegion.listen ->
   API.read('geo').done(@completed).fail(@failed)
-  # Promise.resolve({region: 'ontario'})
 
 UserActions.unsubscribe.listen ->
   API.create('user/unsubscribe').done(@completed).fail(@failed)
 
 UserActions.loadSearches.listen ->
-  # mocks.loadSearches().then(@completed)
   API.read('/user/searches').done(@completed).fail(@failed)
 
 UserActions.saveSearch.listen (search) ->
-  # mocks.saveSearch(search).then(@completed)
   API.create('/user/searches', search).done(@completed).fail(@failed)
 
 UserActions.removeSearches.listen (searches) ->
-  # mocks.removeSearches(searches).then(@completed)
   API.create('/user/searches/remove', _.pluck(searches, 'id')).done(@completed).fail(@failed)
 
 UserActions.saveArticles.listen (articles) ->
-  # mocks.saveArticles(articles).then(@completed)
   ids = _.pluck(articles, 'id')
   API.create('/user/articles/save', ids).done(@completed).fail(@failed)
 
 UserActions.loadArticles.listen ->
-  # mocks.loadArticles().then(@completed)
   API.read('/user/articles').done(@completed).fail(@failed)
 
 UserActions.removeArticles.listen (articles) ->
-  # mocks.removeArticles(articles).then(@completed)
   API.create('/user/articles/remove', _.pluck(articles, 'id')).done(@completed).fail(@failed)
 
 UserActions.emailArticles.listen (articles) ->
-  # mocks.emailArticles(articles).then(@completed)
   API.create('/user/articles/email', _.pluck(articles, 'id')).done(@completed).fail(@failed)
 
 UserActions.subscribeToSearch.listen (search) ->
