@@ -21,7 +21,8 @@ module.exports = React.createClass
       flash('success', @t('on_remove', searches_count: @getSelected().length))
 
   getSelected: ->
-    @refs.selectableList?.getSelected() || []
+    for child in @refs.selectableList.getSelected()
+      child.props.search
 
   allSelected: ->
     @refs.selectableList.allSelected()

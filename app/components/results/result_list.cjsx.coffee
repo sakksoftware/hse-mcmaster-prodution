@@ -31,8 +31,12 @@ module.exports = React.createClass
     encodedUri = encodeURI(csvContent)
     window.open(encodedUri)
 
+  getSelected: ->
+    @refs.selectableList.getSelected().map (child) ->
+      child.props.result
+
   exportArticles: ->
-    ids = _.pluck(@refs.selectableList.getSelected(), 'id')
+    ids = _.pluck(@getSelected(), 'id')
     url = "#{config.apiBase}/api/user/articles.csv?ids=#{encodeURIComponent(ids.join(';'))}"
     @openNewWindow(url)
 
@@ -63,7 +67,7 @@ module.exports = React.createClass
     if @props.results.length == 0
       return <p className="no-results">{@t('no_results')}</p>
 
-    for result, i in @props.results
+    @props.results.map (result, i) =>
       selected = !!_.findWhere(@refs.selectableList?.getSelected(), id: result.id)
       <ResultItem {...@props} result={result} resultNumber={i + 1} key="result-#{i}-#{selected}" selected={selected} onSelectToggle={@onSelectToggle} />
 
