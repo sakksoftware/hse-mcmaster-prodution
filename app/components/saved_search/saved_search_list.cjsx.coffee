@@ -1,5 +1,6 @@
 SavedSearchItem = require('components/saved_search/saved_search_item')
 Button = require('components/shared/button')
+SelectableList = require('components/shared/selectable_list')
 UserActions = require('actions/user_actions')
 TranslationHelper = require('mixins/translation_helper')
 
@@ -12,43 +13,22 @@ module.exports = React.createClass
   propTypes:
     searches: React.PropTypes.array.isRequired
 
-  getInitialState: ->
-    selected: []
-    allSelected: false
-
-  toggleSelectAll: (ev) ->
-    selected = @props.searches
-    allSelected = false
-
-    if @state.selected.length > 0
-      selected = []
-      allSelected = false
-    else
-      allSelected = true
-
-    @setState(selected: selected, allSelected: allSelected)
-
   toggleSubscription: (search) ->
     UserActions.subscribeToSearch(search)
 
-  toggleSelect: (search) ->
-    selected = _.clone(@state.selected)
-    if found = _(selected).findWhere(id: search.id)
-      selected = _(selected).without(found)
-    else
-      selected.push(search)
-
-    allSelected = selected.length == @props.searches.length
-    @setState(selected: selected, allSelected: allSelected)
-
   removeSelected: ->
-    UserActions.removeSearches(@state.selected).then =>
-      flash('success', @t('on_remove', searches_count: @state.selected.length))
-      @setState(selected: [])
+    UserActions.removeSearches(@getSelected()).then =>
+      flash('success', @t('on_remove', searches_count: @getSelected().length))
+
+  getSelected: ->
+    @refs.selectableList?.getSelected() || []
+
+  allSelected: ->
+    @refs.selectableList.allSelected()
 
   renderItems: ->
     for search in @props.searches
-      selected = !!_.findWhere(@state.selected, id: search.id)
+      selected = !!_.findWhere(@getSelected(), id: search.id)
       <SavedSearchItem search={search}
         key="saved-search-item-#{search.id}-#{'selected' if selected}"
         selected={selected}
@@ -62,7 +42,7 @@ module.exports = React.createClass
         <span className="saved-search-list-instructions">{@t('instructions')}</span>
         <ul className="saved-search-list-actions list-actions list-inline">
           {
-            if @state.selected.length > 0
+            if @getSelected().length > 0
               <li className="action remove-selected">
                 <Button onClick={@removeSelected}>{@t('/remove_selected')}</Button>
               </li>
@@ -70,12 +50,12 @@ module.exports = React.createClass
           <li className="action">
             <label>
               {@t('/select_all')}
-              <input type="checkbox" checked={@state.allSelected} onChange={@toggleSelectAll} name="search_to_delete"/>
+              <input type="checkbox" checked={@allSelected} onChange={@toggleSelectAll} name="search_to_delete"/>
             </label>
           </li>
         </ul>
       </div>
-      <ul className="saved-search-list-content list">
+      <SelectableList ref="selectableList" className="saved-search-list-content list">
         {@renderItems()}
-      </ul>
+      </SelectableList>
     </div>

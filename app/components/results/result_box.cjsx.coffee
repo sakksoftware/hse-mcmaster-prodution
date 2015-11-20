@@ -1,5 +1,6 @@
 SortOrder = require('components/results/sort_order')
 ResultList = require('components/results/result_list')
+SelectableList = require('components/shared/selectable_list')
 TranslationHelper = require('mixins/translation_helper')
 SavedSearchButtons = require('components/search/saved_search_buttons')
 Button = require('components/shared/button')
@@ -18,45 +19,20 @@ module.exports = React.createClass
   mixins: [TranslationHelper]
   baseTranslation: 'search_page.result_box'
 
-  getInitialState: ->
-    selected: []
-
-  # TODO: duplicate logic between saved_search, saved_articles and result_list
-  toggleSelect: (article) ->
-    selected = _.clone @state.selected
-    if found = _.findWhere(selected, id: article.id)
-      selected = _(selected).without(found)
-    else
-      selected.push(article)
-
-    @setState(selected: selected)
-
-  toggleSelectAll: (ev) ->
-    selected = @props.search.results
-    allSelected = false
-
-    if @state.selected.length > 0
-      selected = []
-      allSelected = false
-    else
-      allSelected = true
-
-    @setState(selected: selected, allSelected: allSelected)
-
-    @refs.resultList.toggleSelectAll()
-
   saveArticles: ->
     @refs.resultList.saveArticles()
 
   emailArticles: ->
     @refs.resultList.emailArticles()
 
+  toggleSelectAll: ->
+    @refs.resultList.toggleSelectAll()
 
   renderSavedArticlesButtons: ->
     if UserStore.isLoggedIn()
       <div className="saved-articles-actions">
         {
-          if @state.selected.length > 0
+          if @refs.resultList?.hasSelectedItems()
             [
               <Button key="icon-email" className="icon icon-email" onClick={@emailArticles}>Email</Button>
               <Button key="icon-save-article" className="icon icon-save-article" onClick={@saveArticles}>Save</Button>

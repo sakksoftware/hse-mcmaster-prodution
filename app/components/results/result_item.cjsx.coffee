@@ -1,5 +1,7 @@
 Link = require('components/shared/link')
 HighlightFormat = require('components/shared/highlight_format')
+SelectableItem = require('components/shared/selectable_item')
+
 ApplicationHelper = require('mixins/application_helper')
 TranslationHelper = require('mixins/translation_helper')
 
@@ -33,7 +35,7 @@ module.exports = React.createClass
     @props.onSelectToggle(@props.result)
 
   render: ->
-    <li className="result-item">
+    <SelectableItem className="result-item">
       <header className="result-item-header">
         <div className="result-item-header-left">
           <span className="result-item-number">{@props.resultNumber}.</span>
@@ -69,4 +71,4 @@ module.exports = React.createClass
         </div>
         <HighlightFormat>{@ellipsis(@props.result.description, 250)}</HighlightFormat>
       </section>
-    </li>
+    </SelectableItem>
