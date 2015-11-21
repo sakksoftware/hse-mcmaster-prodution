@@ -76,3 +76,9 @@
     }
   }
 }
+
+.menu-item.filter-applied a {
+  font-weight: 600;
+  font-style: italic;
+  color: $primary-color;
+}

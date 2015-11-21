@@ -64,6 +64,9 @@ module.exports = React.createClass
 
     @onShowFilterGroup(menu, title, @getMenuContext(filterGroup))
 
+  hasApplied: (filter) ->
+    SearchStore.hasAppliedFiltersFor(filter)
+
   renderMenu: (section, filterGroup) ->
     <LayerToggle
       className="menu-item-text"
@@ -79,6 +82,7 @@ module.exports = React.createClass
       if section.filters
         for filterGroup, i in section.filters
           className = "menu-item"
+          className += " filter-applied" if @hasApplied(filterGroup)
           className += " filter-group-#{filterGroup.type.replace('_', '-')}" if filterGroup.type
           <li className={className} key="filter-group-#{i}">
             {@renderMenu(section, filterGroup)}

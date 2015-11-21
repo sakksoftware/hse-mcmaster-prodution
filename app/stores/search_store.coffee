@@ -28,6 +28,16 @@ module.exports = Reflux.createStore
   findFilter: (filter) ->
     @_findFilterRecursive @_getId(filter), @state.search.filters
 
+  hasAppliedFiltersFor: (filter) ->
+    return true if filter.applied
+    return false unless filter.filters
+
+    for f in filter.filters
+      return true if f.applied
+      return true if f.filters && @hasAppliedFiltersFor(f)
+
+    return false
+
   getAppliedFilterGroups: ->
     @_getAppliedFilterGroups(@state.search.filters)
 
