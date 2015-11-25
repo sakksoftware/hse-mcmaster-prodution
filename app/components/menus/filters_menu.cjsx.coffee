@@ -62,7 +62,7 @@ module.exports = React.createClass
 
     result
 
-  renderAllFilter: ->
+  renderAnyFilter: ->
     return if @state.filters.length <= 1
     result =
       <MenuFilterItem className="any-filters" key="any-filter-#{@filterGroup.id}" indicatorColor={@currentColor()}
@@ -82,7 +82,7 @@ module.exports = React.createClass
 
     <div className="filters-menu nested-menu">
       <ul className="menu-list">
-        {@renderAllFilter()}
+        {@renderAnyFilter()}
         {@renderItems(@state.filters)}
       </ul>
     </div>
