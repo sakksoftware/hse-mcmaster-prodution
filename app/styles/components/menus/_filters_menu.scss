@@ -66,6 +66,23 @@
   li + .nested-filters {
     margin-bottom: $tiny-size;
   }
+
+  // support for 3rd level navigation
+  .nested-filters .nested-filters {
+    padding-left: 0;
+
+    &:before {
+      display: none;
+    }
+
+    li {
+      padding-left: 2 * $small-size;
+    }
+
+    li:before {
+      left: $tiny-size - 2 + $small-size;
+    }
+  }
 }
 
 .layer-filters {
