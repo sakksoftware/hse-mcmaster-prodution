@@ -96,6 +96,7 @@ module.exports = Reflux.createStore
   onLogoutUserCompleted: ->
     @setState(user: null, loaded: false, errors: null)
     Cookies.remove('token')
+    _.defer -> window.location = '/'
 
   onLogoutUserFailed: ->
     @setState(errors: ['faild_logout'])
