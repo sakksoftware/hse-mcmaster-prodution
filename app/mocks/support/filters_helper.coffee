@@ -16,1023 +16,1033 @@ filterData = [
     "attributes": null,
     "count": 0,
     "filters": [
-      {
-        "applied": 0,
-        "attributes": null,
-        "count": 3328,
-        "filters": [
-          {
-            "applied": 0,
-            "attributes": null,
-            "count": 2059,
-            "filters": [
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 1017,
-                "filters": null,
-                "id": "1_22",
-                "title": "Centralization/decentralization of policy authority",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 1270,
-                "filters": null,
-                "id": "1_23",
-                "title": "Accountability of the state sector's role in financing & delivery",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 245,
-                "filters": null,
-                "id": "1_24",
-                "title": "Stewardship of the non-state sector's role in financing & delivery",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 621,
-                "filters": null,
-                "id": "1_25",
-                "title": "Decision-making authority about who is covered and what can or must be provided to them",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 57,
-                "filters": null,
-                "id": "1_26",
-                "title": "Corruption protections",
-                "type": ""
-              }
-            ],
-            "id": "1_5",
-            "title": "Policy authority",
-            "type": ""
-          },
-          {
-            "applied": 0,
-            "attributes": null,
-            "count": 1703,
-            "filters": [
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 416,
-                "filters": null,
-                "id": "1_27",
-                "title": "Ownership",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 969,
-                "filters": null,
-                "id": "1_28",
-                "title": "Management approaches",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 151,
-                "filters": null,
-                "id": "1_29",
-                "title": "Accreditation",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 851,
-                "filters": null,
-                "id": "1_30",
-                "title": "Networks/multi-institutional arrangements",
-                "type": ""
-              }
-            ],
-            "id": "1_6",
-            "title": "Organizational authority",
-            "type": ""
-          },
-          {
-            "applied": 0,
-            "attributes": null,
-            "count": 516,
-            "filters": [
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 153,
-                "filters": null,
-                "id": "1_31",
-                "title": "Licensure & registration requirements",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 78,
-                "filters": null,
-                "id": "1_32",
-                "title": "Patents & profits",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 332,
-                "filters": null,
-                "id": "1_33",
-                "title": "Pricing & purchasing",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 125,
-                "filters": null,
-                "id": "1_34",
-                "title": "Marketing",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 169,
-                "filters": null,
-                "id": "1_35",
-                "title": "Sales & dispensing",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 58,
-                "filters": null,
-                "id": "1_36",
-                "title": "Commercial liability",
-                "type": ""
-              }
-            ],
-            "id": "1_7",
-            "title": "Commercial authority",
-            "type": ""
-          },
-          {
-            "applied": 0,
-            "attributes": null,
-            "count": 1264,
-            "filters": [
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 610,
-                "filters": null,
-                "id": "1_37",
-                "title": "Training & licensure requirements",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 587,
-                "filters": null,
-                "id": "1_38",
-                "title": "Scope of practice",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 360,
-                "filters": null,
-                "id": "1_39",
-                "title": "Setting of practice",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 308,
-                "filters": null,
-                "id": "1_40",
-                "title": "Continuing competence",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 286,
-                "filters": null,
-                "id": "1_41",
-                "title": "Quality & safety",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 239,
-                "filters": null,
-                "id": "1_42",
-                "title": "Professional liability",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 1,
-                "filters": null,
-                "id": "1_132",
-                "title": "Strike/job action\r\n",
-                "type": ""
-              }
-            ],
-            "id": "1_8",
-            "title": "Professional authority",
-            "type": ""
-          },
-          {
-            "applied": 0,
-            "attributes": null,
-            "count": 1098,
-            "filters": [
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 398,
-                "filters": null,
-                "id": "1_43",
-                "title": "Consumer participation in policy & organizational decisions",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 142,
-                "filters": null,
-                "id": "1_44",
-                "title": "Consumer participation in system monitoring",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 192,
-                "filters": null,
-                "id": "1_45",
-                "title": "Consumer participation in service delivery",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 102,
-                "filters": null,
-                "id": "1_46",
-                "title": "Consumer complaints management",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 754,
-                "filters": null,
-                "id": "1_47",
-                "title": "Stakeholder participation in policy & organizational decisions (or monitoring)",
-                "type": ""
-              }
-            ],
-            "id": "1_9",
-            "title": "Consumer & stakeholder involvement",
-            "type": ""
-          }
-        ],
-        "id": "1_1",
-        "title": "Governance arrangement",
-        "type": ""
-      },
-      {
-        "applied": 0,
-        "attributes": null,
-        "count": 2419,
-        "filters": [
-          {
-            "applied": 0,
-            "attributes": null,
-            "count": 1093,
-            "filters": [
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 468,
-                "filters": null,
-                "id": "1_48",
-                "title": "Taxation",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 495,
-                "filters": null,
-                "id": "1_49",
-                "title": "Social health insurance",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 34,
-                "filters": null,
-                "id": "1_50",
-                "title": "Community-based health insurance",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 12,
-                "filters": null,
-                "id": "1_51",
-                "title": "Community loan funds",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 336,
-                "filters": null,
-                "id": "1_52",
-                "title": "Private insurance",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 53,
-                "filters": null,
-                "id": "1_53",
-                "title": "Health savings accounts (Individually financed)",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 314,
-                "filters": null,
-                "id": "1_54",
-                "title": "User fees",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 60,
-                "filters": null,
-                "id": "1_55",
-                "title": "Donor contributions",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 1,
-                "filters": null,
-                "id": "1_131",
-                "title": "Fundraising",
-                "type": ""
-              }
-            ],
-            "id": "1_10",
-            "title": "Financing systems",
-            "type": ""
-          },
-          {
-            "applied": 0,
-            "attributes": null,
-            "count": 522,
-            "filters": [
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 110,
-                "filters": null,
-                "id": "1_56",
-                "title": "Fee-for-service (Funding)",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 81,
-                "filters": null,
-                "id": "1_57",
-                "title": "Capitation (Funding)",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 118,
-                "filters": null,
-                "id": "1_58",
-                "title": "Global budget",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 92,
-                "filters": null,
-                "id": "1_59",
-                "title": "Prospective payment (Funding)",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 9,
-                "filters": null,
-                "id": "1_60",
-                "title": "Indicative budgets (Funding)",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 178,
-                "filters": null,
-                "id": "1_61",
-                "title": "Targeted payments/penalties (Funding)",
-                "type": ""
-              }
-            ],
-            "id": "1_11",
-            "title": "Funding organizations",
-            "type": ""
-          },
-          {
-            "applied": 0,
-            "attributes": null,
-            "count": 873,
-            "filters": [
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 278,
-                "filters": null,
-                "id": "1_62",
-                "title": "Fee-for-service (Remuneration)",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 136,
-                "filters": null,
-                "id": "1_63",
-                "title": "Capitation (Remuneration)",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 230,
-                "filters": null,
-                "id": "1_64",
-                "title": "Salary",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 36,
-                "filters": null,
-                "id": "1_65",
-                "title": "Prospective payment (Remuneration)",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 20,
-                "filters": null,
-                "id": "1_66",
-                "title": "Fundholding",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 8,
-                "filters": null,
-                "id": "1_67",
-                "title": "Indicative budgets (Remuneration)",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 557,
-                "filters": null,
-                "id": "1_68",
-                "title": "Targeted payments/penalties (Remuneration)",
-                "type": ""
-              }
-            ],
-            "id": "1_12",
-            "title": "Remunerating providers",
-            "type": ""
-          },
-          {
-            "applied": 0,
-            "attributes": null,
-            "count": 842,
-            "filters": [
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 515,
-                "filters": null,
-                "id": "1_69",
-                "title": "Scope & nature of insurance plans",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 629,
-                "filters": null,
-                "id": "1_70",
-                "title": "Lists of covered/reimbursed organizations, providers, services & products",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 140,
-                "filters": null,
-                "id": "1_71",
-                "title": "Restrictions in coverage/reimbursement rates for organizations, providers, services & products",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 120,
-                "filters": null,
-                "id": "1_72",
-                "title": "Caps on coverage/reimbursement for organizations, providers, services & products",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 43,
-                "filters": null,
-                "id": "1_73",
-                "title": "Prior approval requirements for organizations, providers, services & products",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 100,
-                "filters": null,
-                "id": "1_74",
-                "title": "Lists of substitutable services & products",
-                "type": ""
-              }
-            ],
-            "id": "1_13",
-            "title": "Purchasing products & services",
-            "type": ""
-          },
-          {
-            "applied": 0,
-            "attributes": null,
-            "count": 810,
-            "filters": [
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 200,
-                "filters": null,
-                "id": "1_75",
-                "title": "Premium (level & features)",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 395,
-                "filters": null,
-                "id": "1_76",
-                "title": "Cost-sharing",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 33,
-                "filters": null,
-                "id": "1_77",
-                "title": "Health savings accounts (Third party contributions)",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 407,
-                "filters": null,
-                "id": "1_78",
-                "title": "Targeted payments/penalties (Incentivizing consumers)",
-                "type": ""
-              }
-            ],
-            "id": "1_14",
-            "title": "Incentivizing consumers",
-            "type": ""
-          }
-        ],
-        "id": "1_2",
-        "title": "Financial arrangement",
-        "type": ""
-      },
-      {
-        "applied": 0,
-        "attributes": null,
-        "count": 9646,
-        "filters": [
-          {
-            "applied": 0,
-            "attributes": null,
-            "count": 5268,
-            "filters": [
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 2101,
-                "filters": null,
-                "id": "1_79",
-                "title": "Availability of care",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 1071,
-                "filters": null,
-                "id": "1_80",
-                "title": "Timely access to care",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 1252,
-                "filters": null,
-                "id": "1_81",
-                "title": "Culturally appropriate care",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 1010,
-                "filters": null,
-                "id": "1_82",
-                "title": "Case management",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 2403,
-                "filters": null,
-                "id": "1_83",
-                "title": "Package of care/care pathways/disease management",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 335,
-                "filters": null,
-                "id": "1_84",
-                "title": "Group care",
-                "type": ""
-              }
-            ],
-            "id": "1_15",
-            "title": "How care is designed to meet consumers' needs",
-            "type": ""
-          },
-          {
-            "applied": 0,
-            "attributes": null,
-            "count": 5378,
-            "filters": [
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 863,
-                "filters": null,
-                "id": "1_85",
-                "title": "System - Need, demand & supply",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 703,
-                "filters": null,
-                "id": "1_86",
-                "title": "System - Recruitment, retention & transitions",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 669,
-                "filters": null,
-                "id": "1_87",
-                "title": "System - Performance management",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 376,
-                "filters": null,
-                "id": "1_88",
-                "title": "Workplace conditions - Provider satisfaction",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 344,
-                "filters": null,
-                "id": "1_89",
-                "title": "Workplace conditions - Health & safety",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 670,
-                "filters": null,
-                "id": "1_90",
-                "title": "Skill mix - Role performance",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 548,
-                "filters": null,
-                "id": "1_91",
-                "title": "Skill mix - Role expansion or extension",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 536,
-                "filters": null,
-                "id": "1_92",
-                "title": "Skill mix - Task shifting / substitution",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 1386,
-                "filters": null,
-                "id": "1_93",
-                "title": "Skill mix - Multidisciplinary teams",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 398,
-                "filters": null,
-                "id": "1_94",
-                "title": "Skill mix - Volunteers or informal/family caregivers",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 363,
-                "filters": null,
-                "id": "1_95",
-                "title": "Skill mix - Communication & case discussion between distant health professionals",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 1457,
-                "filters": null,
-                "id": "1_96",
-                "title": "Staff - Training",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 415,
-                "filters": null,
-                "id": "1_97",
-                "title": "Staff - Support",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 501,
-                "filters": null,
-                "id": "1_98",
-                "title": "Staff - Workload/workflow/intensity",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 915,
-                "filters": null,
-                "id": "1_99",
-                "title": "Staff - Continuity of care",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 345,
-                "filters": null,
-                "id": "1_100",
-                "title": "Staff/self - Shared decision-making",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 1033,
-                "filters": null,
-                "id": "1_101",
-                "title": "Self-management",
-                "type": ""
-              }
-            ],
-            "id": "1_16",
-            "title": "By whom care is provided",
-            "type": ""
-          },
-          {
-            "applied": 0,
-            "attributes": null,
-            "count": 3413,
-            "filters": [
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 1695,
-                "filters": null,
-                "id": "1_102",
-                "title": "Site of service delivery",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 643,
-                "filters": null,
-                "id": "1_103",
-                "title": "Physical structure, facilities & equipment",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 255,
-                "filters": null,
-                "id": "1_104",
-                "title": "Organizational scale",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 1031,
-                "filters": null,
-                "id": "1_105",
-                "title": "Integration of services",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 985,
-                "filters": null,
-                "id": "1_106",
-                "title": "Continuity of care",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 828,
-                "filters": null,
-                "id": "1_107",
-                "title": "Outreach",
-                "type": ""
-              }
-            ],
-            "id": "1_17",
-            "title": "Where care is provided",
-            "type": ""
-          },
-          {
-            "applied": 0,
-            "attributes": null,
-            "count": 3600,
-            "filters": [
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 197,
-                "filters": null,
-                "id": "1_108",
-                "title": "Health record systems",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 608,
-                "filters": null,
-                "id": "1_109",
-                "title": "Electronic health record",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 1640,
-                "filters": null,
-                "id": "1_110",
-                "title": "Other ICT that support individuals who provide care",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 1923,
-                "filters": null,
-                "id": "1_111",
-                "title": "ICT that support individuals who receive care",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 956,
-                "filters": null,
-                "id": "1_112",
-                "title": "Quality monitoring and improvement systems",
-                "type": ""
-              },
-              {
-                "applied": 0,
-                "attributes": null,
-                "count": 465,
-                "filters": null,
-                "id": "1_113",
-                "title": "Safety monitoring and improvement systems",
-                "type": ""
-              }
-            ],
-            "id": "1_18",
-            "title": "With what supports is care provided",
-            "type": ""
-          }
-        ],
-        "id": "1_3",
-        "title": "Delivery arrangement",
-        "type": ""
-      },
-      {
+      {
+        "applied": 0,
+        "attributes": null,
+        "count": 0,
+        "filters": [
+          {
+            "applied": 0,
+            "attributes": null,
+            "count": 3328,
+            "filters": [
+              {
+                "applied": 0,
+                "attributes": null,
+                "count": 2059,
+                "filters": [
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 1017,
+                    "filters": null,
+                    "id": "1_22",
+                    "title": "Centralization/decentralization of policy authority",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 1270,
+                    "filters": null,
+                    "id": "1_23",
+                    "title": "Accountability of the state sector's role in financing & delivery",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 245,
+                    "filters": null,
+                    "id": "1_24",
+                    "title": "Stewardship of the non-state sector's role in financing & delivery",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 621,
+                    "filters": null,
+                    "id": "1_25",
+                    "title": "Decision-making authority about who is covered and what can or must be provided to them",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 57,
+                    "filters": null,
+                    "id": "1_26",
+                    "title": "Corruption protections",
+                    "type": ""
+                  }
+                ],
+                "id": "1_5",
+                "title": "Policy authority",
+                "type": ""
+              },
+              {
+                "applied": 0,
+                "attributes": null,
+                "count": 1703,
+                "filters": [
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 416,
+                    "filters": null,
+                    "id": "1_27",
+                    "title": "Ownership",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 969,
+                    "filters": null,
+                    "id": "1_28",
+                    "title": "Management approaches",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 151,
+                    "filters": null,
+                    "id": "1_29",
+                    "title": "Accreditation",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 851,
+                    "filters": null,
+                    "id": "1_30",
+                    "title": "Networks/multi-institutional arrangements",
+                    "type": ""
+                  }
+                ],
+                "id": "1_6",
+                "title": "Organizational authority",
+                "type": ""
+              },
+              {
+                "applied": 0,
+                "attributes": null,
+                "count": 516,
+                "filters": [
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 153,
+                    "filters": null,
+                    "id": "1_31",
+                    "title": "Licensure & registration requirements",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 78,
+                    "filters": null,
+                    "id": "1_32",
+                    "title": "Patents & profits",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 332,
+                    "filters": null,
+                    "id": "1_33",
+                    "title": "Pricing & purchasing",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 125,
+                    "filters": null,
+                    "id": "1_34",
+                    "title": "Marketing",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 169,
+                    "filters": null,
+                    "id": "1_35",
+                    "title": "Sales & dispensing",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 58,
+                    "filters": null,
+                    "id": "1_36",
+                    "title": "Commercial liability",
+                    "type": ""
+                  }
+                ],
+                "id": "1_7",
+                "title": "Commercial authority",
+                "type": ""
+              },
+              {
+                "applied": 0,
+                "attributes": null,
+                "count": 1264,
+                "filters": [
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 610,
+                    "filters": null,
+                    "id": "1_37",
+                    "title": "Training & licensure requirements",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 587,
+                    "filters": null,
+                    "id": "1_38",
+                    "title": "Scope of practice",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 360,
+                    "filters": null,
+                    "id": "1_39",
+                    "title": "Setting of practice",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 308,
+                    "filters": null,
+                    "id": "1_40",
+                    "title": "Continuing competence",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 286,
+                    "filters": null,
+                    "id": "1_41",
+                    "title": "Quality & safety",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 239,
+                    "filters": null,
+                    "id": "1_42",
+                    "title": "Professional liability",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 1,
+                    "filters": null,
+                    "id": "1_132",
+                    "title": "Strike/job action\r\n",
+                    "type": ""
+                  }
+                ],
+                "id": "1_8",
+                "title": "Professional authority",
+                "type": ""
+              },
+              {
+                "applied": 0,
+                "attributes": null,
+                "count": 1098,
+                "filters": [
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 398,
+                    "filters": null,
+                    "id": "1_43",
+                    "title": "Consumer participation in policy & organizational decisions",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 142,
+                    "filters": null,
+                    "id": "1_44",
+                    "title": "Consumer participation in system monitoring",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 192,
+                    "filters": null,
+                    "id": "1_45",
+                    "title": "Consumer participation in service delivery",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 102,
+                    "filters": null,
+                    "id": "1_46",
+                    "title": "Consumer complaints management",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 754,
+                    "filters": null,
+                    "id": "1_47",
+                    "title": "Stakeholder participation in policy & organizational decisions (or monitoring)",
+                    "type": ""
+                  }
+                ],
+                "id": "1_9",
+                "title": "Consumer & stakeholder involvement",
+                "type": ""
+              }
+            ],
+            "id": "1_1",
+            "title": "Governance arrangement",
+            "type": ""
+          },
+          {
+            "applied": 0,
+            "attributes": null,
+            "count": 2419,
+            "filters": [
+              {
+                "applied": 0,
+                "attributes": null,
+                "count": 1093,
+                "filters": [
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 468,
+                    "filters": null,
+                    "id": "1_48",
+                    "title": "Taxation",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 495,
+                    "filters": null,
+                    "id": "1_49",
+                    "title": "Social health insurance",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 34,
+                    "filters": null,
+                    "id": "1_50",
+                    "title": "Community-based health insurance",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 12,
+                    "filters": null,
+                    "id": "1_51",
+                    "title": "Community loan funds",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 336,
+                    "filters": null,
+                    "id": "1_52",
+                    "title": "Private insurance",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 53,
+                    "filters": null,
+                    "id": "1_53",
+                    "title": "Health savings accounts (Individually financed)",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 314,
+                    "filters": null,
+                    "id": "1_54",
+                    "title": "User fees",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 60,
+                    "filters": null,
+                    "id": "1_55",
+                    "title": "Donor contributions",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 1,
+                    "filters": null,
+                    "id": "1_131",
+                    "title": "Fundraising",
+                    "type": ""
+                  }
+                ],
+                "id": "1_10",
+                "title": "Financing systems",
+                "type": ""
+              },
+              {
+                "applied": 0,
+                "attributes": null,
+                "count": 522,
+                "filters": [
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 110,
+                    "filters": null,
+                    "id": "1_56",
+                    "title": "Fee-for-service (Funding)",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 81,
+                    "filters": null,
+                    "id": "1_57",
+                    "title": "Capitation (Funding)",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 118,
+                    "filters": null,
+                    "id": "1_58",
+                    "title": "Global budget",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 92,
+                    "filters": null,
+                    "id": "1_59",
+                    "title": "Prospective payment (Funding)",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 9,
+                    "filters": null,
+                    "id": "1_60",
+                    "title": "Indicative budgets (Funding)",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 178,
+                    "filters": null,
+                    "id": "1_61",
+                    "title": "Targeted payments/penalties (Funding)",
+                    "type": ""
+                  }
+                ],
+                "id": "1_11",
+                "title": "Funding organizations",
+                "type": ""
+              },
+              {
+                "applied": 0,
+                "attributes": null,
+                "count": 873,
+                "filters": [
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 278,
+                    "filters": null,
+                    "id": "1_62",
+                    "title": "Fee-for-service (Remuneration)",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 136,
+                    "filters": null,
+                    "id": "1_63",
+                    "title": "Capitation (Remuneration)",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 230,
+                    "filters": null,
+                    "id": "1_64",
+                    "title": "Salary",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 36,
+                    "filters": null,
+                    "id": "1_65",
+                    "title": "Prospective payment (Remuneration)",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 20,
+                    "filters": null,
+                    "id": "1_66",
+                    "title": "Fundholding",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 8,
+                    "filters": null,
+                    "id": "1_67",
+                    "title": "Indicative budgets (Remuneration)",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 557,
+                    "filters": null,
+                    "id": "1_68",
+                    "title": "Targeted payments/penalties (Remuneration)",
+                    "type": ""
+                  }
+                ],
+                "id": "1_12",
+                "title": "Remunerating providers",
+                "type": ""
+              },
+              {
+                "applied": 0,
+                "attributes": null,
+                "count": 842,
+                "filters": [
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 515,
+                    "filters": null,
+                    "id": "1_69",
+                    "title": "Scope & nature of insurance plans",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 629,
+                    "filters": null,
+                    "id": "1_70",
+                    "title": "Lists of covered/reimbursed organizations, providers, services & products",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 140,
+                    "filters": null,
+                    "id": "1_71",
+                    "title": "Restrictions in coverage/reimbursement rates for organizations, providers, services & products",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 120,
+                    "filters": null,
+                    "id": "1_72",
+                    "title": "Caps on coverage/reimbursement for organizations, providers, services & products",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 43,
+                    "filters": null,
+                    "id": "1_73",
+                    "title": "Prior approval requirements for organizations, providers, services & products",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 100,
+                    "filters": null,
+                    "id": "1_74",
+                    "title": "Lists of substitutable services & products",
+                    "type": ""
+                  }
+                ],
+                "id": "1_13",
+                "title": "Purchasing products & services",
+                "type": ""
+              },
+              {
+                "applied": 0,
+                "attributes": null,
+                "count": 810,
+                "filters": [
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 200,
+                    "filters": null,
+                    "id": "1_75",
+                    "title": "Premium (level & features)",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 395,
+                    "filters": null,
+                    "id": "1_76",
+                    "title": "Cost-sharing",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 33,
+                    "filters": null,
+                    "id": "1_77",
+                    "title": "Health savings accounts (Third party contributions)",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 407,
+                    "filters": null,
+                    "id": "1_78",
+                    "title": "Targeted payments/penalties (Incentivizing consumers)",
+                    "type": ""
+                  }
+                ],
+                "id": "1_14",
+                "title": "Incentivizing consumers",
+                "type": ""
+              }
+            ],
+            "id": "1_2",
+            "title": "Financial arrangement",
+            "type": ""
+          },
+          {
+            "applied": 0,
+            "attributes": null,
+            "count": 9646,
+            "filters": [
+              {
+                "applied": 0,
+                "attributes": null,
+                "count": 5268,
+                "filters": [
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 2101,
+                    "filters": null,
+                    "id": "1_79",
+                    "title": "Availability of care",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 1071,
+                    "filters": null,
+                    "id": "1_80",
+                    "title": "Timely access to care",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 1252,
+                    "filters": null,
+                    "id": "1_81",
+                    "title": "Culturally appropriate care",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 1010,
+                    "filters": null,
+                    "id": "1_82",
+                    "title": "Case management",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 2403,
+                    "filters": null,
+                    "id": "1_83",
+                    "title": "Package of care/care pathways/disease management",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 335,
+                    "filters": null,
+                    "id": "1_84",
+                    "title": "Group care",
+                    "type": ""
+                  }
+                ],
+                "id": "1_15",
+                "title": "How care is designed to meet consumers' needs",
+                "type": ""
+              },
+              {
+                "applied": 0,
+                "attributes": null,
+                "count": 5378,
+                "filters": [
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 863,
+                    "filters": null,
+                    "id": "1_85",
+                    "title": "System - Need, demand & supply",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 703,
+                    "filters": null,
+                    "id": "1_86",
+                    "title": "System - Recruitment, retention & transitions",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 669,
+                    "filters": null,
+                    "id": "1_87",
+                    "title": "System - Performance management",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 376,
+                    "filters": null,
+                    "id": "1_88",
+                    "title": "Workplace conditions - Provider satisfaction",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 344,
+                    "filters": null,
+                    "id": "1_89",
+                    "title": "Workplace conditions - Health & safety",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 670,
+                    "filters": null,
+                    "id": "1_90",
+                    "title": "Skill mix - Role performance",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 548,
+                    "filters": null,
+                    "id": "1_91",
+                    "title": "Skill mix - Role expansion or extension",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 536,
+                    "filters": null,
+                    "id": "1_92",
+                    "title": "Skill mix - Task shifting / substitution",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 1386,
+                    "filters": null,
+                    "id": "1_93",
+                    "title": "Skill mix - Multidisciplinary teams",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 398,
+                    "filters": null,
+                    "id": "1_94",
+                    "title": "Skill mix - Volunteers or informal/family caregivers",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 363,
+                    "filters": null,
+                    "id": "1_95",
+                    "title": "Skill mix - Communication & case discussion between distant health professionals",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 1457,
+                    "filters": null,
+                    "id": "1_96",
+                    "title": "Staff - Training",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 415,
+                    "filters": null,
+                    "id": "1_97",
+                    "title": "Staff - Support",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 501,
+                    "filters": null,
+                    "id": "1_98",
+                    "title": "Staff - Workload/workflow/intensity",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 915,
+                    "filters": null,
+                    "id": "1_99",
+                    "title": "Staff - Continuity of care",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 345,
+                    "filters": null,
+                    "id": "1_100",
+                    "title": "Staff/self - Shared decision-making",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 1033,
+                    "filters": null,
+                    "id": "1_101",
+                    "title": "Self-management",
+                    "type": ""
+                  }
+                ],
+                "id": "1_16",
+                "title": "By whom care is provided",
+                "type": ""
+              },
+              {
+                "applied": 0,
+                "attributes": null,
+                "count": 3413,
+                "filters": [
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 1695,
+                    "filters": null,
+                    "id": "1_102",
+                    "title": "Site of service delivery",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 643,
+                    "filters": null,
+                    "id": "1_103",
+                    "title": "Physical structure, facilities & equipment",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 255,
+                    "filters": null,
+                    "id": "1_104",
+                    "title": "Organizational scale",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 1031,
+                    "filters": null,
+                    "id": "1_105",
+                    "title": "Integration of services",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 985,
+                    "filters": null,
+                    "id": "1_106",
+                    "title": "Continuity of care",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 828,
+                    "filters": null,
+                    "id": "1_107",
+                    "title": "Outreach",
+                    "type": ""
+                  }
+                ],
+                "id": "1_17",
+                "title": "Where care is provided",
+                "type": ""
+              },
+              {
+                "applied": 0,
+                "attributes": null,
+                "count": 3600,
+                "filters": [
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 197,
+                    "filters": null,
+                    "id": "1_108",
+                    "title": "Health record systems",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 608,
+                    "filters": null,
+                    "id": "1_109",
+                    "title": "Electronic health record",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 1640,
+                    "filters": null,
+                    "id": "1_110",
+                    "title": "Other ICT that support individuals who provide care",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 1923,
+                    "filters": null,
+                    "id": "1_111",
+                    "title": "ICT that support individuals who receive care",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 956,
+                    "filters": null,
+                    "id": "1_112",
+                    "title": "Quality monitoring and improvement systems",
+                    "type": ""
+                  },
+                  {
+                    "applied": 0,
+                    "attributes": null,
+                    "count": 465,
+                    "filters": null,
+                    "id": "1_113",
+                    "title": "Safety monitoring and improvement systems",
+                    "type": ""
+                  }
+                ],
+                "id": "1_18",
+                "title": "With what supports is care provided",
+                "type": ""
+              }
+            ],
+            "id": "1_3",
+            "title": "Delivery arrangement",
+            "type": ""
+          }
+        ],
+        "id": "0_1",
+        "title": "System arrangements",
+        "type": ""
+      },
+      {
         "applied": 0,
         "attributes": null,
         "count": 5414,
@@ -1222,18 +1232,8 @@ filterData = [
         ],
         "id": "1_4",
         "title": "Implementation strategy",
-        "type": ""
-      }
-    ],
-    "id": "0_1",
-    "title": "Topics of interest",
-    "type": ""
-  },
-  {
-    "applied": 0,
-    "attributes": null,
-    "count": 0,
-    "filters": [
+        "type": ""        
+      },
       {
         "applied": 0,
         "attributes": null,
