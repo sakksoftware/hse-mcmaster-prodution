@@ -133,6 +133,7 @@ module.exports = Reflux.createStore
   onSaveSearchCompleted: (search) ->
     searches = _.deepClone(@state.searches)
     searches.push(search)
+    require('stores/search_store').notifySaved(search.saved)
     @setState(searches: searches)
 
   onSaveArticlesCompleted: (article) ->
@@ -148,11 +149,12 @@ module.exports = Reflux.createStore
     articles = _(@state.articles).reject (a) -> removedIds.indexOf(a.id) >= 0
     @setState(articles: articles)
 
-  onSubscribeToSearchCompleted: (search) ->
+  onSubscribeToSavedSearchCompleted: (saved_search) ->
     searches = _.deepClone(@state.searches)
 
     searches.map (s) -> s.subscribed = false
-    search = _(searches).findWhere(id: search.id)
+    search = _(searches).findWhere(id: saved_search.id)
     search.subscribed = true
+    require('stores/search_store').notifySubscribed(search.subscribed)
 
     @setState(searches: searches)

@@ -41,7 +41,7 @@ module.exports = React.createClass
 
   renderAppliedFilters: ->
     filters = @props.search.filters
-    return if filters.length <= 0
+    return if !filters || filters.length <= 0
 
     " (#{@ellipsis(_.pluck(filters, 'title').join(', '), 30)})"
 

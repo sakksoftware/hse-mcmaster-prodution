@@ -67,6 +67,7 @@ UserActions = Reflux.createActions
   loadSearches: {asyncResult: true}
   saveSearch: {asyncResult: true}
   subscribeToSearch: {asyncResult: true}
+  subscribeToSavedSearch: {asyncResult: true}
   removeSearches: {asyncResult: true}
   saveArticles: {asyncResult: true}
   loadArticles: {asyncResult: true}
@@ -132,7 +133,9 @@ UserActions.loadSearches.listen ->
   Promise.resolve(searchesData).then(@completed)
 
 UserActions.saveSearch.listen (search) ->
+  search = _.clone(search)
   search.id = ++maxSearchId
+  search.saved = true
   searchesData.push(search)
   Promise.resolve(search).then(@completed)
 
@@ -160,11 +163,17 @@ UserActions.emailArticles.listen (articles) ->
 
 UserActions.subscribeToSearch.listen (search) ->
   search = _.clone(search)
-  search.subscribed = true
+  saved_search = _.omit(search, ['results', 'filters'])
+  saved_search.filters = []
   if search.saved
-    Promise.resolve(search).then(@completed)
+    UserActions.subscribeToSavedSearch(saved_search).then(@completed)
   else
     UserActions.saveSearch(search).then (search) =>
       Promise.resolve(search).then(@completed)
+
+UserActions.subscribeToSavedSearch.listen (saved_search) ->
+  saved_search = _.clone(saved_search)
+  saved_search.subscribed = true
+  Promise.resolve(saved_search).then(@completed)
 
 module.exports = UserActions

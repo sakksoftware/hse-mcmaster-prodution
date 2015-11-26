@@ -33,6 +33,6 @@ module.exports = React.createClass
   render: ->
     <div className="saved-search-buttons">
       <Button className="btn-save #{'btn-save-on' if @props.search.saved}" onClick={@saveSearch}>{@t('save')}</Button>
-      <Button className="btn-save-and-subscribe" onClick={@saveAndSubscribe}>{@t('save_and_subscribe')}</Button>
+      <Button className="btn-save-and-subscribe #{'btn-save-and-subscribe-on' if @props.search.subscribed}" onClick={@saveAndSubscribe}>{@t('save_and_subscribe')}</Button>
       <label className="select-all-action action">{@t('/select_all')}<input type="checkbox" onChange={@props.toggleSelectAll} name="search_to_delete"/></label>
     </div>

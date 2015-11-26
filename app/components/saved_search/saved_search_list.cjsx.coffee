@@ -28,15 +28,15 @@ module.exports = React.createClass
 
     @setState(selected: selected, allSelected: allSelected)
 
-  toggleSubscription: (search) ->
-    UserActions.subscribeToSearch(search)
+  toggleSubscription: (saved_search) ->
+    UserActions.subscribeToSavedSearch(saved_search.id, saved_search.subscribed)
 
-  toggleSelect: (search) ->
+  toggleSelect: (saved_search) ->
     selected = _.clone(@state.selected)
-    if found = _(selected).findWhere(id: search.id)
+    if found = _(selected).findWhere(id: saved_search.id)
       selected = _(selected).without(found)
     else
-      selected.push(search)
+      selected.push(saved_search)
 
     allSelected = selected.length == @props.searches.length
     @setState(selected: selected, allSelected: allSelected)
