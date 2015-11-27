@@ -1,4 +1,5 @@
 SearchActions = require('actions/search_actions')
+UrlActions = require('actions/url_actions')
 SearchStore = require('stores/search_store')
 UserStore = require('stores/user_store')
 
@@ -44,9 +45,7 @@ module.exports = React.createClass
     @props.onShowMenu.apply(@, arguments)
 
   redirectToSearch: (query) ->
-    SearchStore.state.search.query = query
-    router = require('lib/router')
-    router.visit('/search')
+    UrlActions.navigateTo("/search", q: query)
 
   isMobile: ->
     if window.innerWidth < 1024

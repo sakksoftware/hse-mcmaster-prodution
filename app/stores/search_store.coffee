@@ -17,6 +17,9 @@ module.exports = Reflux.createStore
   resetState: ->
     # DO STUFF
 
+  updateStateFromUrl: ->
+    @setState(search: @deserializeSearchUrl())
+
   getInitialState: ->
     search: @deserializeSearchUrl()
     errors: null

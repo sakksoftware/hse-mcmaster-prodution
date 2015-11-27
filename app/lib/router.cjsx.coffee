@@ -13,6 +13,8 @@ class Router
       React.render <App page="home" />, @el()
 
     '^/search': ->
+      SearchStore = require('stores/search_store')
+      SearchStore.updateStateFromUrl()
       React.render <App page="search" />, @el()
 
     '^/articles/:id': (id) ->

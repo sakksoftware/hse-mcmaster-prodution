@@ -39,11 +39,6 @@ module.exports = React.createClass
         confirmText: @t('dialog.confirm'),
         onConfirm: @toggleSubscription
 
-  # TODO: only a temporary fix for the state issue and relationship between
-  # url and search store
-  updateSearchStore: ->
-    SearchStore.state.search = @props.search
-
   renderAppliedFilters: ->
     filters = @props.search.filters
     return if !filters || filters.length <= 0
@@ -54,7 +49,7 @@ module.exports = React.createClass
     <li className="saved-search-item list-item">
       <div className="saved-search-item-header clearfix">
         <h2>
-          <Link to={['/search', @serializeSearchParams(@props.search)]} onClick={@updateSearchStore}>
+          <Link to={['/search', @serializeSearchParams(@props.search)]}>
             {@props.search.query}
             {@renderAppliedFilters()}
           </Link>

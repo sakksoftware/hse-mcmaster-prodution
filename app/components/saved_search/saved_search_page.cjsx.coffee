@@ -12,7 +12,7 @@ module.exports = React.createClass
   baseTranslation: 'saved_search_page'
 
   getInitialState: ->
-    searches: []
+    searches: UserStore.state.searches
     subscribedOnly: false
 
   componentWillMount: ->
