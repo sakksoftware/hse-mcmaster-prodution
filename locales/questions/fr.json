@@ -14,7 +14,7 @@
           "title": "Sujets d'intérêt"
         },
         "filterGroup": {
-          "id": "1_1",
+          "id": "2_1001",
           "title": "Arrangements de gouvernance"
         }
       },
@@ -24,7 +24,7 @@
           "title": "Sujets d'intérêt"
         },
         "filterGroup": {
-          "id": "1_2",
+          "id": "2_1002",
           "title": "Arrangements financiers"
         }
       },
@@ -34,7 +34,7 @@
           "title": "Sujets d'intérêt"
         },
         "filterGroup": {
-          "id": "1_3",
+          "id": "2_1003",
           "title": "Arrangements relatifs à la prestation de services"
         }
       },
@@ -44,7 +44,7 @@
           "title": "Sujets d'intérêt"
         },
         "filterGroup": {
-          "id": "1_4",
+          "id": "2_1004",
           "title": "Stratégies de mise en œuvre"
         }
       }

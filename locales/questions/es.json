@@ -14,7 +14,7 @@
           "title": "Temas de interés"
         },
         "filterGroup": {
-          "id": "1_1",
+          "id": "2_1001",
           "title": "Los acuerdos de gobernanza"
         }
       },
@@ -24,7 +24,7 @@
           "title": "Temas de interés"
         },
         "filterGroup": {
-          "id": "1_2",
+          "id": "2_1002",
           "title": "Acuerdos financieros"
         }
       },
@@ -34,7 +34,7 @@
           "title": "Temas de interés"
         },
         "filterGroup": {
-          "id": "1_3",
+          "id": "2_1003",
           "title": "Planificación de las prestaciones"
         }
       },
@@ -44,7 +44,7 @@
           "title": "Temas de interés"
         },
         "filterGroup": {
-          "id": "1_4",
+          "id": "2_1004",
           "title": "Estrategias de implementación"
         }
       }
