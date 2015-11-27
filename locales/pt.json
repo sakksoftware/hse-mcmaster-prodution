@@ -117,6 +117,7 @@
     "on_save_search": "PT_Successfully saved search",
     "on_unsave_search": "PT_Successfully removed saved search",
     "on_save_and_subscribe": "PT_Successfully saved and subscribed to search",
+    "on_unsubscribe": "Successfully unsubscribed from search",
     "search_box": {
       "view_results_count": "Exibir %{results_count} resultados",
       "tips": "Dicas para uma pesquisa mais eficaz",

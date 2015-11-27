@@ -19,6 +19,7 @@ UserActions = Reflux.createActions
   loadRegion: {asyncResult: true}
   unsubscribe: {asyncResult: true}
   loadSearches: {asyncResult: true}
+  toggleSaveSearch: {asyncResult: true}
   saveSearch: {asyncResult: true}
   subscribeToSearch: {asyncResult: true}
   subscribeToSavedSearch: {asyncResult: true}
@@ -69,6 +70,12 @@ UserActions.unsubscribe.listen ->
 UserActions.loadSearches.listen ->
   API.read('/user/searches').done(@completed).fail(@failed)
 
+UserActions.toggleSaveSearch.listen (search) ->
+  if search.saved
+    UserActions.removeSearches [{id: search.saved_search_id}].then(@completed).catch(@failed)
+  else
+    UserActions.saveSearch(search).then(@completed).catch(@failed)
+
 UserActions.saveSearch.listen (search) ->
   search = _.omit(search, ['results', 'filters'])
   API.create('/user/searches', search).done(@completed).fail(@failed)
@@ -89,14 +96,14 @@ UserActions.removeArticles.listen (articles) ->
 UserActions.emailArticles.listen (articles) ->
   API.create('/user/articles/email', _.pluck(articles, 'id')).done(@completed).fail(@failed)
 
-UserActions.subscribeToSearch.listen (search) ->
+UserActions.toggleSubscribeToSearch.listen (search) ->
   if search.saved
-    UserActions.subscribeToSavedSearch(search.saved_search_id, search.subscribed).then(@completed).catch(@failed)
+    UserActions.toggleSubscribeToSavedSearch(search.saved_search_id, search.subscribed).then(@completed).catch(@failed)
   else
     UserActions.saveSearch(search).catch(@failed).then (saved_search) =>
-      UserActions.subscribeToSavedSearch(saved_search.id, saved_search.subscribed).then(@completed).catch(@failed)
+      UserActions.toggleSubscribeToSavedSearch(saved_search.id, saved_search.subscribed).then(@completed).catch(@failed)
 
-UserActions.subscribeToSavedSearch.listen (id, subscribed) ->
+UserActions.toggleSubscribeToSavedSearch.listen (id, subscribed) ->
   if subscribed
     API.create("/user/searches/#{id}/unsubscribe").done(@completed).fail(@failed)
   else

@@ -117,6 +117,7 @@
     "on_save_search": "CN_Successfully saved search",
     "on_unsave_search": "CN_Successfully removed saved search",
     "on_save_and_subscribe": "CN_Successfully saved and subscribed to search",
+    "on_unsubscribe": "CN_Successfully unsubscribed from search",
     "search_box": {
       "view_results_count": "查看 %{results_count} 结果",
       "tips": "如何实现更有效检索",

@@ -41,9 +41,15 @@ module.exports = Reflux.createStore
   getAppliedFilterGroups: ->
     @_getAppliedFilterGroups(@state.search.filters)
 
-  notifySaved: (value) ->
+  notifySaved: (value, id) ->
     search = _.clone(@state.search)
     search.saved = value
+    search.saved_search_id = id
+    # cannot remain subscribed if search is not saved
+    if value == false
+      search.subscribed = false
+      search.saved_search_id = null
+
     @setState(search: search)
 
   notifySubscribed: (value) ->

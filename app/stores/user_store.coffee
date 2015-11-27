@@ -130,10 +130,10 @@ module.exports = Reflux.createStore
 
     @setState(searches: searches)
 
-  onSaveSearchCompleted: (search) ->
+  onSaveSearchCompleted: (savedSearch) ->
     searches = _.deepClone(@state.searches)
-    searches.push(search)
-    require('stores/search_store').notifySaved(search.saved)
+    searches.push(savedSearch)
+    require('stores/search_store').notifySaved(true, savedSearch.id)
     @setState(searches: searches)
 
   onSaveArticlesCompleted: (article) ->
@@ -143,18 +143,24 @@ module.exports = Reflux.createStore
 
   onRemoveSearchesCompleted: (removedIds) ->
     searches = _(@state.searches).reject (s) -> removedIds.indexOf(s.id) >= 0
+    searchStore = require('stores/search_store')
+    currentSearch = searchStore.state.search.saved_search_id
+    if removedIds.indexOf(currentSearch.saved_search_id)
+      searchStore.notifySaved(false, null)
+
     @setState(searches: searches)
 
   onRemoveArticlesCompleted: (removedIds) ->
     articles = _(@state.articles).reject (a) -> removedIds.indexOf(a.id) >= 0
     @setState(articles: articles)
 
-  onSubscribeToSavedSearchCompleted: (saved_search) ->
+  onToggleSubscribeToSavedSearchCompleted: (saved_search) ->
     searches = _.deepClone(@state.searches)
 
     searches.map (s) -> s.subscribed = false
     search = _(searches).findWhere(id: saved_search.id)
-    search.subscribed = true
-    require('stores/search_store').notifySubscribed(search.subscribed)
+    if search
+      search.subscribed = saved_search.subscribed
+      require('stores/search_store').notifySubscribed(saved_search.subscribed)
 
     @setState(searches: searches)

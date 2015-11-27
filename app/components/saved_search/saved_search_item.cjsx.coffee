@@ -21,7 +21,6 @@ module.exports = React.createClass
     onToggleSubscription: ->
     onSelect: ->
 
-
   onSelect: (e) ->
     @props.onSelect(@props.search)
 

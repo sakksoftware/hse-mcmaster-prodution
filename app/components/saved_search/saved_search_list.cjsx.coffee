@@ -29,7 +29,7 @@ module.exports = React.createClass
     @setState(selected: selected, allSelected: allSelected)
 
   toggleSubscription: (saved_search) ->
-    UserActions.subscribeToSavedSearch(saved_search.id, saved_search.subscribed)
+    UserActions.toggleSubscribeToSavedSearch(saved_search.id, saved_search.subscribed)
 
   toggleSelect: (saved_search) ->
     selected = _.clone(@state.selected)

@@ -65,9 +65,10 @@ UserActions = Reflux.createActions
   loadRegion: {asyncResult: true}
   unsubscribe: {asyncResult: true}
   loadSearches: {asyncResult: true}
+  toggleSaveSearch: {asyncResult: true}
   saveSearch: {asyncResult: true}
-  subscribeToSearch: {asyncResult: true}
-  subscribeToSavedSearch: {asyncResult: true}
+  toggleSubscribeToSearch: {asyncResult: true}
+  toggleSubscribeToSavedSearch: {asyncResult: true}
   removeSearches: {asyncResult: true}
   saveArticles: {asyncResult: true}
   loadArticles: {asyncResult: true}
@@ -132,6 +133,12 @@ UserActions.unsubscribe.listen (x) ->
 UserActions.loadSearches.listen ->
   Promise.resolve(searchesData).then(@completed)
 
+UserActions.toggleSaveSearch.listen (search) ->
+  if search.saved
+    UserActions.removeSearches([{id: search.saved_search_id}]).then(@completed).catch(@failed)
+  else
+    UserActions.saveSearch(search).then(@completed).catch(@failed)
+
 UserActions.saveSearch.listen (search) ->
   search = _.clone(search)
   search.id = ++maxSearchId
@@ -161,19 +168,22 @@ UserActions.removeArticles.listen (articles) ->
 UserActions.emailArticles.listen (articles) ->
   Promise.resolve(_.pluck(articles, 'id')).then(@completed)
 
-UserActions.subscribeToSearch.listen (search) ->
+UserActions.toggleSubscribeToSearch.listen (search) ->
   search = _.clone(search)
-  saved_search = _.omit(search, ['results', 'filters'])
+  saved_search = _.omit(search, ['results', 'filters', 'saved_search_id'])
+  saved_search.id = search.saved_search_id
   saved_search.filters = []
   if search.saved
-    UserActions.subscribeToSavedSearch(saved_search).then(@completed)
+    UserActions.toggleSubscribeToSavedSearch(saved_search.id, saved_search.subscribed).then(@completed)
   else
     UserActions.saveSearch(search).then (search) =>
-      Promise.resolve(search).then(@completed)
+      saved_search = _.omit(search, ['results', 'filters'])
+      UserActions.toggleSubscribeToSavedSearch(saved_search.id, saved_search.subscribed).then(@completed).catch(@error)
 
-UserActions.subscribeToSavedSearch.listen (saved_search) ->
-  saved_search = _.clone(saved_search)
-  saved_search.subscribed = true
+UserActions.toggleSubscribeToSavedSearch.listen (id, subscribed) ->
+  saved_search = _.clone(_.findWhere(searchesData, id: id))
+  console.log('subscribed action ', subscribed, saved_search)
+  saved_search.subscribed = !subscribed
   Promise.resolve(saved_search).then(@completed)
 
 module.exports = UserActions

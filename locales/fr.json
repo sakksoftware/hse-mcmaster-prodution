@@ -117,6 +117,7 @@
     "on_save_search": "FR_Successfully saved search",
     "on_unsave_search": "FR_Successfully removed saved search",
     "on_save_and_subscribe": "FR_Successfully saved and subscribed to search",
+    "on_unsubscribe": "FR_Successfully unsubscribed from search",
     "search_box": {
       "view_results_count": "Voir %{results_count} résultats",
       "tips": "Conseils pour une recherche plus puissante",
