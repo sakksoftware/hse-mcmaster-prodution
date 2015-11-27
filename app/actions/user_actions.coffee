@@ -21,8 +21,8 @@ UserActions = Reflux.createActions
   loadSearches: {asyncResult: true}
   toggleSaveSearch: {asyncResult: true}
   saveSearch: {asyncResult: true}
-  subscribeToSearch: {asyncResult: true}
-  subscribeToSavedSearch: {asyncResult: true}
+  toggleSubscribeToSearch: {asyncResult: true}
+  toggleSubscribeToSavedSearch: {asyncResult: true}
   removeSearches: {asyncResult: true}
   saveArticles: {asyncResult: true}
   loadArticles: {asyncResult: true}
