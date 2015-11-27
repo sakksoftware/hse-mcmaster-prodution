@@ -4,6 +4,7 @@ NotificationActions = require('actions/notification_actions')
 Toggle = ReactToggle
 ApplicationHelper = require('mixins/application_helper')
 TranslationHelper = require('mixins/translation_helper')
+SearchStore = require('stores/search_store')
 
 module.exports = React.createClass
   displayName: 'SavedSearchItem'
@@ -38,6 +39,11 @@ module.exports = React.createClass
         confirmText: @t('dialog.confirm'),
         onConfirm: @toggleSubscription
 
+  # TODO: only a temporary fix for the state issue and relationship between
+  # url and search store
+  updateSearchStore: ->
+    SearchStore.state.search = @props.search
+
   renderAppliedFilters: ->
     filters = @props.search.filters
     return if !filters || filters.length <= 0
@@ -48,7 +54,7 @@ module.exports = React.createClass
     <li className="saved-search-item list-item">
       <div className="saved-search-item-header clearfix">
         <h2>
-          <Link to={['/search', @serializeSearchParams(@props.search)]}>
+          <Link to={['/search', @serializeSearchParams(@props.search)]} onClick={@updateSearchStore}>
             {@props.search.query}
             {@renderAppliedFilters()}
           </Link>
