@@ -19,7 +19,8 @@ module.exports = React.createClass
     str
 
   content: ->
-    @closeUnclosedTags(@removeTags(@props.children))
+    if @props.children
+      @closeUnclosedTags(@removeTags(@props.children))
 
   render: ->
     <span dangerouslySetInnerHTML={__html: @content()} />
