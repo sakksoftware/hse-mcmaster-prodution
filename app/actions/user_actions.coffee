@@ -72,7 +72,12 @@ UserActions.loadSearches.listen ->
 
 UserActions.toggleSaveSearch.listen (search) ->
   if search.saved
-    UserActions.removeSearches([{id: search.saved_search_id}]).then(@completed).catch(@failed)
+    # TODO: very HACKY! need to grab state from the store since the state of the
+    # search param might be stale and does not contain the saved_search_id
+    SearchStore = require('stores/search_store')
+    id = search.saved_search_id || SearchStore.state.search?.saved_search_id
+
+    UserActions.removeSearches([{id: id}]).then(@completed).catch(@failed)
   else
     UserActions.saveSearch(search).then(@completed).catch(@failed)
 
