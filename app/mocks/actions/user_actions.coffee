@@ -182,7 +182,6 @@ UserActions.toggleSubscribeToSearch.listen (search) ->
 
 UserActions.toggleSubscribeToSavedSearch.listen (id, subscribed) ->
   saved_search = _.clone(_.findWhere(searchesData, id: id))
-  console.log('subscribed action ', subscribed, saved_search)
   saved_search.subscribed = !subscribed
   Promise.resolve(saved_search).then(@completed)
 
