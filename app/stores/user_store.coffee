@@ -145,7 +145,7 @@ module.exports = Reflux.createStore
     searches = _(@state.searches).reject (s) -> removedIds.indexOf(s.id) >= 0
     searchStore = require('stores/search_store')
     currentSearch = searchStore.state.search.saved_search_id
-    if removedIds.indexOf(currentSearch.saved_search_id)
+    if currentSearch && removedIds.indexOf(currentSearch.saved_search_id)
       searchStore.notifySaved(false, null)
 
     @setState(searches: searches)

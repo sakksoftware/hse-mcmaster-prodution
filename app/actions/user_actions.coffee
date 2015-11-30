@@ -72,7 +72,7 @@ UserActions.loadSearches.listen ->
 
 UserActions.toggleSaveSearch.listen (search) ->
   if search.saved
-    UserActions.removeSearches [{id: search.saved_search_id}].then(@completed).catch(@failed)
+    UserActions.removeSearches([{id: search.saved_search_id}]).then(@completed).catch(@failed)
   else
     UserActions.saveSearch(search).then(@completed).catch(@failed)
 
