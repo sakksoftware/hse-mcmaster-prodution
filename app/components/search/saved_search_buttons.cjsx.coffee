@@ -18,8 +18,8 @@ module.exports = React.createClass
   saveSearch: ->
     search = @props.search
     search = _.pick(search, 'query', 'applied_filters', 'sort_by', 'saved', 'subscribed')
-    UserActions.toggleSaveSearch(search).then (search) =>
-      if search.saved
+    UserActions.toggleSaveSearch(search).then (saved_search) =>
+      if saved_search.saved
         flash('success', @t('/search_page.on_save_search'))
       else
         flash('success', @t('/search_page.on_unsave_search'))
