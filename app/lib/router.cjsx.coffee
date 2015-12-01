@@ -126,6 +126,11 @@ class Router
     action.apply(@, params)
 
   _handleRouteChange: ->
+    # TODO: review this, feels super hacky!
+    # NEED TO UPDATE the Url Store
+    UrlStore = require('stores/url_store')
+    UrlStore.resetState()
+
     path = @getPath()
     @render(path)
 

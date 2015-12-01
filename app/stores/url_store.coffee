@@ -11,6 +11,9 @@ module.exports = Reflux.createStore
   getInitialState: ->
     params: url.params()
 
+  resetState: ->
+    @setState(@getInitialState())
+
   # accessors
   serializeParams: ->
     # TODO: figure out why in the world children is added to the store state
