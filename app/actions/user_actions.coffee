@@ -68,7 +68,7 @@ UserActions.loadRegion.listen ->
   API.read('geo').done(@completed).fail(@failed)
 
 UserActions.unsubscribe.listen ->
-  API.create('user/unsubscribe').done(@completed).fail(@failed)
+  API.update('user/unsubscribe').done(@completed).fail(@failed)
 
 UserActions.loadSearches.listen ->
   API.read('/user/searches').done(@completed).fail(@failed)
