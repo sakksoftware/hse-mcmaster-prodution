@@ -40,6 +40,8 @@ module.exports = React.createClass
         cancelText: @t('dialog.cancel'),
         confirmText: @t('dialog.confirm'),
         onConfirm: @toggleSubscription
+    else
+      @toggleSubscription()
 
   renderAppliedFilters: ->
     filters = @props.search.filters
