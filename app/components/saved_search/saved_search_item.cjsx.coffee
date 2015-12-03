@@ -16,9 +16,11 @@ module.exports = React.createClass
     search: React.PropTypes.object.isRequired
     onSelect: React.PropTypes.func
     selected: React.PropTypes.bool
+    showSelect: React.PropTypes.bool
 
   getDefaultProps: ->
     selected: false
+    showSelect: true
     onToggleSubscription: ->
     onSelect: ->
 
@@ -54,10 +56,13 @@ module.exports = React.createClass
             {@renderAppliedFilters()}
           </Link>
         </h2>
-        <label className="saved-search-select action">
-          <span>{@t('/select')}</span>
-          <input type="checkbox" onChange={@onSelect} defaultChecked={@props.selected} />
-        </label>
+        {
+          if @props.showSelect
+            <label className="saved-search-select action">
+              <span>{@t('/select')}</span>
+              <input type="checkbox" onChange={@onSelect} defaultChecked={@props.selected} />
+            </label>
+        }
       </div>
       <label className="saved-search-control">
         <span>{@t('subscribe')}</span>

@@ -53,11 +53,15 @@ module.exports = React.createClass
 
   render: ->
     <div className="saved-search-page">
-      <div className="saved-search-header clearfix">
-        <h1>{@t('title')}</h1>
-        <label className="saved-search-subscribed-only action">{@t('subscribed_only')}<input type="checkbox" onClick={@toggleSubscribedOnly} /></label>
+      <div className="saved-searches">
+        <div className="saved-search-header clearfix">
+          <h1>{@t('title')}</h1>
+          <label className="saved-search-subscribed-only action">{@t('subscribed_only')}<input type="checkbox" onClick={@toggleSubscribedOnly} /></label>
+        </div>
+        <SavedSearchList searches={@getSearches()} toggleSubscription={@toggleSubscriptionSavedSearch} />
       </div>
-      <SavedSearchList searches={@getSearches()} toggleSubscription={@toggleSubscriptionSavedSearch} />
-      <h1>{@t('curated_searches')}</h1>
-      <SavedSearchList searches={@getCuratedSearches()} toggleSubscription={@toggleSubscriptionCuratedSearch} />
+      <div className="curated-searches">
+        <h1>{@t('curated_searches')}</h1>
+        <SavedSearchList searches={@getCuratedSearches()} toggleSubscription={@toggleSubscriptionCuratedSearch} showHeader={false} showSelect={false}/>
+      </div>
     </div>

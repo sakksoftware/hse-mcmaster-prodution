@@ -12,6 +12,12 @@ module.exports = React.createClass
   propTypes:
     searches: React.PropTypes.array.isRequired
     toggleSubscription: React.PropTypes.func.isRequired
+    showHeader: React.PropTypes.bool
+    showSelect: React.PropTypes.bool
+
+  getDefaultProps: ->
+    showHeader: true
+    showSelect: true
 
   getInitialState: ->
     selected: []
@@ -55,10 +61,11 @@ module.exports = React.createClass
         selected={selected}
         onSelect={@toggleSelect}
         onToggleSubscription={@toggleSubscription}
+        showSelect={@props.showSelect}
       />
 
-  render: ->
-    <div className="saved-search-list">
+  renderHeader: ->
+    if @props.showHeader
       <div className="saved-search-list-header">
         <span className="saved-search-list-instructions">{@t('instructions')}</span>
         <ul className="saved-search-list-actions list-actions list-inline">
@@ -76,6 +83,10 @@ module.exports = React.createClass
           </li>
         </ul>
       </div>
+
+  render: ->
+    <div className="saved-search-list">
+      {@renderHeader()}
       <ul className="saved-search-list-content list">
         {@renderItems()}
       </ul>
