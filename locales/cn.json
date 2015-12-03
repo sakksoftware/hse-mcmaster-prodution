@@ -222,7 +222,8 @@
       "cancel": "CN_Cancel",
       "confirm": "CN_New search"
     },
-    "on_remove": "CN_Successfully removed %{searches_count} searches"
+    "on_remove": "CN_Successfully removed %{searches_count} searches",
+    "curated_searches": "CN_Curated searches"
   },
   "saved_articles_page": {
     "title": "CN_Saved documents",

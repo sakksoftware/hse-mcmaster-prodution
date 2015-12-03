@@ -222,7 +222,8 @@
       "cancel": "Cancelar",
       "confirm": "Nova pesquisa"
     },
-    "on_remove": "Removeu com êxito %{documents_count} documentos"
+    "on_remove": "Removeu com êxito %{documents_count} documentos",
+    "curated_searches": "PT_Curated searches"
   },
   "saved_articles_page": {
     "title": "Documentos salvados",

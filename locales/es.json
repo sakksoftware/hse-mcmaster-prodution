@@ -222,7 +222,8 @@
       "cancel": "Cancelar",
       "confirm": "Nueva búsqueda"
     },
-    "on_remove": "Se quitaron %{documents_count} documentos con éxito"
+    "on_remove": "Se quitaron %{documents_count} documentos con éxito",
+    "curated_searches": "ES_Curated searches"
   },
   "saved_articles_page": {
     "title": "Documentos guardados",
