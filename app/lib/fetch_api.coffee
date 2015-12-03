@@ -37,17 +37,16 @@ module.exports = class API
     headers = {}
     if token = Cookies.get('token')
       headers['Authorization'] = token
+      headers['Content-Type'] = 'application/json; charset=UTF-8' # always send json to the server
 
     options = _.extend {
       method: method
-      contentType: 'application/json; charset=UTF-8' # always send json to the server
-      dataType: options.dataType || 'json' # always receive json back from the server
       timeout: 30 * 1000
       headers: headers
     }, options
 
     if options.method != 'GET'
-      options.data = JSON.stringify(data)
+      options.body = JSON.stringify(data)
 
     fetch(url, options)
       .then(@_checkStatus(options.skipErrorHandlingFor))
@@ -105,10 +104,15 @@ module.exports = class API
     @interceptors.push({url: url, method: method, callback: callback})
 
   @findInterceptor: (url, method) ->
-    record = @interceptors.find (interceptor) ->
-      url.match(interceptor.url) && method == interceptor.method
+    record = @interceptors.find (interceptor) =>
+        @_isMatch(url, interceptor.url) &&
+        method == interceptor.method
 
     record?.callback
+
+  @_isMatch: (str, exp) ->
+    (_.isRegExp(exp) && str.match(exp)) ||
+      (str == exp)
 
   @_isRelativePath: (url) ->
     url.substr(0, 4) != 'http' and url.substr(0, 3) != 'ws:'

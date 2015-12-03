@@ -1,5 +1,6 @@
 API = require('lib/api')
 StoreMock = require('mocks/support/store_mock')
+FetchAPI = require('lib/fetch_api')
 
 # private Data
 articlesData = [{
@@ -70,6 +71,7 @@ UserActions = Reflux.createActions
   saveSearch: {asyncResult: true}
   toggleSubscribeToSearch: {asyncResult: true}
   toggleSubscribeToSavedSearch: {asyncResult: true}
+  toggleSubscribeToCuratedSearch: {asyncResult: true}
   removeSearches: {asyncResult: true}
   saveArticles: {asyncResult: true}
   loadArticles: {asyncResult: true}
@@ -186,8 +188,17 @@ UserActions.toggleSubscribeToSavedSearch.listen (id, subscribed) ->
   saved_search.subscribed = !subscribed
   Promise.resolve(saved_search).then(@completed)
 
+UserActions.toggleSubscribeToCuratedSearch.listen (curated_search) ->
+  if curated_search.subscribed
+    id = curated_search.saved_search_id
+    FetchAPI.create("/user/searches/#{id}/unsubscribe").then(@completed).catch(@failed)
+  else
+    search = curated_search
+    FetchAPI.create("/user/searches", search).then (saved_search) =>
+      id = saved_search.id
+      FetchAPI.create("/user/searches/#{id}/subscribe").then(@completed).catch(@failed)
+
 UserActions.loadCuratedSearches.listen ->
-  FetchAPI = require('lib/fetch_api')
   FetchAPI.read('/user/curated_searches').then(@completed).catch(@failed)
 
 module.exports = UserActions

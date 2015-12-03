@@ -45,13 +45,19 @@ module.exports = React.createClass
     else
       @state.curatedSearches
 
+  toggleSubscriptionSavedSearch: (saved_search) ->
+    UserActions.toggleSubscribeToSavedSearch(saved_search.id, saved_search.subscribed)
+
+  toggleSubscriptionCuratedSearch: (curated_search) ->
+    UserActions.toggleSubscribeToCuratedSearch(curated_search)
+
   render: ->
     <div className="saved-search-page">
       <div className="saved-search-header clearfix">
         <h1>{@t('title')}</h1>
         <label className="saved-search-subscribed-only action">{@t('subscribed_only')}<input type="checkbox" onClick={@toggleSubscribedOnly} /></label>
       </div>
-      <SavedSearchList searches={@getSearches()} />
+      <SavedSearchList searches={@getSearches()} toggleSubscription={@toggleSubscriptionSavedSearch} />
       <h1>{@t('curated_searches')}</h1>
-      <SavedSearchList searches={@getCuratedSearches()} />
+      <SavedSearchList searches={@getCuratedSearches()} toggleSubscription={@toggleSubscriptionCuratedSearch} />
     </div>

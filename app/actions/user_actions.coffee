@@ -25,6 +25,7 @@ UserActions = Reflux.createActions
   saveSearch: {asyncResult: true}
   toggleSubscribeToSearch: {asyncResult: true}
   toggleSubscribeToSavedSearch: {asyncResult: true}
+  toggleSubscribeToCuratedSearch: {asyncResult: true}
   removeSearches: {asyncResult: true}
   saveArticles: {asyncResult: true}
   loadArticles: {asyncResult: true}
@@ -115,6 +116,16 @@ UserActions.toggleSubscribeToSavedSearch.listen (id, subscribed) ->
     API.create("/user/searches/#{id}/unsubscribe").done(@completed).fail(@failed)
   else
     API.create("/user/searches/#{id}/subscribe").done(@completed).fail(@failed)
+
+UserActions.toggleSubscribeToCuratedSearch.listen (curated_search) ->
+  if curated_search.subscribed
+    id = curated_search.saved_search_id
+    FetchAPI.create("/user/searches/#{id}/unsubscribe").then(@completed).catch(@failed)
+  else
+    search = curated_search
+    FetchAPI.create("/user/searches", search).then (saved_search) =>
+      id = saved_search.id
+      FetchAPI.create("/user/searches/#{id}/subscribe").then(@completed).catch(@failed)
 
 UserActions.loadCuratedSearches.listen ->
   FetchAPI.read('/user/curated_searches').then(@completed).catch(@failed)

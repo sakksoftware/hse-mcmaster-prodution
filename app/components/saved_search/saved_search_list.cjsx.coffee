@@ -11,6 +11,7 @@ module.exports = React.createClass
 
   propTypes:
     searches: React.PropTypes.array.isRequired
+    toggleSubscription: React.PropTypes.func.isRequired
 
   getInitialState: ->
     selected: []
@@ -29,7 +30,7 @@ module.exports = React.createClass
     @setState(selected: selected, allSelected: allSelected)
 
   toggleSubscription: (saved_search) ->
-    UserActions.toggleSubscribeToSavedSearch(saved_search.id, saved_search.subscribed)
+    @props.toggleSubscription(saved_search)
 
   toggleSelect: (saved_search) ->
     selected = _.clone(@state.selected)

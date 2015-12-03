@@ -166,5 +166,19 @@ module.exports = Reflux.createStore
 
     @setState(searches: searches)
 
+  onToggleSubscribeToCuratedSearchCompleted: (saved_search) ->
+    searches = _.deepClone(@state.curatedSearches)
+
+    searches.map (s) -> s.subscribed = false
+    search = _(searches).find (s) ->
+      s.query == saved_search.query &&
+      s.applied_filters.toString() == saved_search.applied_filters.toString()
+
+    if search
+      search.subscribed = saved_search.subscribed
+      require('stores/search_store').notifySubscribed(saved_search.subscribed)
+
+    @setState(curatedSearches: searches)
+
   onLoadCuratedSearchesCompleted: (curatedSearches) ->
     @setState(curatedSearches: curatedSearches)
