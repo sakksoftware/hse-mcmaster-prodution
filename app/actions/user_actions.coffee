@@ -1,4 +1,5 @@
 API = require('lib/api')
+FetchAPI = require('lib/fetch_api')
 config = require('config')
 mocks = require('mocks/actions/user_actions')
 
@@ -19,6 +20,7 @@ UserActions = Reflux.createActions
   loadRegion: {asyncResult: true}
   unsubscribe: {asyncResult: true}
   loadSearches: {asyncResult: true}
+  loadCuratedSearches: {asyncResult: true}
   toggleSaveSearch: {asyncResult: true}
   saveSearch: {asyncResult: true}
   toggleSubscribeToSearch: {asyncResult: true}
@@ -113,5 +115,8 @@ UserActions.toggleSubscribeToSavedSearch.listen (id, subscribed) ->
     API.create("/user/searches/#{id}/unsubscribe").done(@completed).fail(@failed)
   else
     API.create("/user/searches/#{id}/subscribe").done(@completed).fail(@failed)
+
+UserActions.loadCuratedSearches.listen ->
+  FetchAPI.read('/user/curated_searches').then(@completed).catch(@failed)
 
 module.exports = UserActions

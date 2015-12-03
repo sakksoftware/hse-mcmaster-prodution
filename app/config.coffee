@@ -1,12 +1,12 @@
 config =
   development:
-    apiBase: '//hse.functionalimperative.com'
+    apiBase: '//localhost:3333'
     useMocks: true
     mockResponseTime: 500
     # localesUrl: '//s3.amazonaws.com/my-hse-staging/locales/'
     localesUrl: '/locales/'
     recaptchaKey: '6LdQsAwTAAAAALZ8cZ2TOCW_BQ_faBRoL_Ffc3I1'
-    siteUrl: 'http://localhost:3000'
+    siteUrl: 'http://localhost:3333'
 
   staging:
     apiBase: 'https://staging-api.healthsystemsevidence.org'

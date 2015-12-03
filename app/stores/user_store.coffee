@@ -25,6 +25,7 @@ module.exports = Reflux.createStore
     region: UrlStore.state.params.region || 'worldwide'
     articles: []
     searches: []
+    curatedSearches: []
 
   ##
   # Data accessors
@@ -164,3 +165,6 @@ module.exports = Reflux.createStore
       require('stores/search_store').notifySubscribed(saved_search.subscribed)
 
     @setState(searches: searches)
+
+  onLoadCuratedSearchesCompleted: (curatedSearches) ->
+    @setState(curatedSearches: curatedSearches)

@@ -65,6 +65,7 @@ UserActions = Reflux.createActions
   loadRegion: {asyncResult: true}
   unsubscribe: {asyncResult: true}
   loadSearches: {asyncResult: true}
+  loadCuratedSearches: {asyncResult: true}
   toggleSaveSearch: {asyncResult: true}
   saveSearch: {asyncResult: true}
   toggleSubscribeToSearch: {asyncResult: true}
@@ -184,5 +185,9 @@ UserActions.toggleSubscribeToSavedSearch.listen (id, subscribed) ->
   saved_search = _.clone(_.findWhere(searchesData, id: id))
   saved_search.subscribed = !subscribed
   Promise.resolve(saved_search).then(@completed)
+
+UserActions.loadCuratedSearches.listen ->
+  FetchAPI = require('lib/fetch_api')
+  FetchAPI.read('/user/curated_searches').then(@completed).catch(@failed)
 
 module.exports = UserActions

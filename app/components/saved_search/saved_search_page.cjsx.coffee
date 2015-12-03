@@ -14,9 +14,11 @@ module.exports = React.createClass
   getInitialState: ->
     searches: UserStore.state.searches
     subscribedOnly: false
+    curatedSearches: UserStore.state.curatedSearches
 
   componentWillMount: ->
     UserActions.loadSearches()
+    UserActions.loadCuratedSearches()
     @unsubscribeUserStore = UserStore.listen(@userStoreUpdated)
 
   componentWillUnmount: ->
@@ -26,7 +28,7 @@ module.exports = React.createClass
     document.title = "#{@t('title')} | #{@t('/site_name')}"
 
   userStoreUpdated: (data) ->
-    @setState(searches: data.searches)
+    @setState(searches: data.searches, curatedSearches: data.curatedSearches)
 
   toggleSubscribedOnly: ->
     @setState(subscribedOnly: !@state.subscribedOnly)
@@ -37,6 +39,12 @@ module.exports = React.createClass
     else
       @state.searches
 
+  getCuratedSearches: ->
+    if @state.subscribedOnly
+      @state.curatedSearches.filter (s) -> s.subscribed
+    else
+      @state.curatedSearches
+
   render: ->
     <div className="saved-search-page">
       <div className="saved-search-header clearfix">
@@ -44,4 +52,6 @@ module.exports = React.createClass
         <label className="saved-search-subscribed-only action">{@t('subscribed_only')}<input type="checkbox" onClick={@toggleSubscribedOnly} /></label>
       </div>
       <SavedSearchList searches={@getSearches()} />
+      <h1>{@t('curated_searches')}</h1>
+      <SavedSearchList searches={@getCuratedSearches()} />
     </div>

@@ -15,6 +15,9 @@ stores = require('stores')
 
 localesUrl = config.localesUrl
 
+if config.useMocks
+  require('mocks/url')
+
 initialize = ->
   language = stores.UrlStore.state.params.lang || 'en'
   $.i18n.init
