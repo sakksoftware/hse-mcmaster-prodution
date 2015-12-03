@@ -60,8 +60,11 @@ module.exports = React.createClass
         </div>
         <SavedSearchList searches={@getSearches()} toggleSubscription={@toggleSubscriptionSavedSearch} />
       </div>
-      <div className="curated-searches">
-        <h1>{@t('curated_searches')}</h1>
-        <SavedSearchList searches={@getCuratedSearches()} toggleSubscription={@toggleSubscriptionCuratedSearch} showHeader={false} showSelect={false}/>
-      </div>
+      {
+        if !_.isEmpty(@getCuratedSearches())
+          <div className="curated-searches">
+            <h1>{@t('curated_searches')}</h1>
+            <SavedSearchList searches={@getCuratedSearches()} toggleSubscription={@toggleSubscriptionCuratedSearch} showHeader={false} showSelect={false}/>
+          </div>
+      }
     </div>
