@@ -67,7 +67,6 @@ module.exports = React.createClass
   renderHeader: ->
     if @props.showHeader
       <div className="saved-search-list-header">
-        <span className="saved-search-list-instructions">{@t('instructions')}</span>
         <ul className="saved-search-list-actions list-actions list-inline">
           {
             if @state.selected.length > 0

@@ -215,10 +215,9 @@
   "saved_search_page": {
     "title": "已保存的检索",
     "subscribed_only": "只显示订阅检索",
-    "instructions": "您可订阅一个已保存的检索和一个策划检索",
     "subscribe": "订阅检索",
     "dialog": {
-      "message": "建立新的检索订阅将取消您之前所建立的，是否确认？",
+      "message": "CN_Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?",
       "cancel": "取消",
       "confirm": "新的检索"
     },

@@ -215,10 +215,9 @@
   "saved_search_page": {
     "title": "Búsquedas guardadas",
     "subscribed_only": "Mostrar solamente las búsquedas suscriptas",
-    "instructions": "Puede suscribirse a hasta una búsqueda guardada y una búsqueda protegida.",
     "subscribe": "Suscribirse a la búsqueda",
     "dialog": {
-      "message": "Crear una nueva búsqueda suscripta anulará su suscripción a su búsqueda actual. ¿Está seguro de que desea hacer esto?",
+      "message": "ES_Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?",
       "cancel": "Cancelar",
       "confirm": "Nueva búsqueda"
     },

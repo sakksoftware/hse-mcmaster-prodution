@@ -215,10 +215,9 @@
   "saved_search_page": {
     "title": "Saved searches",
     "subscribed_only": "Show only subscribed searches",
-    "instructions": "You can subscribe up to one saved search and one curated search",
     "subscribe": "Subscribe to search",
     "dialog": {
-      "message": "Creating a new subscribed search will unsubscribe you from your current one. Are you sure you want to do this?",
+      "message": "Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?",
       "cancel": "Cancel",
       "confirm": "New search"
     },

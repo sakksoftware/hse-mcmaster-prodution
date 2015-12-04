@@ -158,7 +158,6 @@ module.exports = Reflux.createStore
   onToggleSubscribeToSavedSearchCompleted: (saved_search) ->
     searches = _.deepClone(@state.searches)
 
-    searches.map (s) -> s.subscribed = false
     search = _(searches).findWhere(id: saved_search.id)
     if search
       search.subscribed = saved_search.subscribed
@@ -169,7 +168,6 @@ module.exports = Reflux.createStore
   onToggleSubscribeToCuratedSearchCompleted: (saved_search) ->
     searches = _.deepClone(@state.curatedSearches)
 
-    searches.map (s) -> s.subscribed = false
     search = _(searches).find (s) ->
       s.query == saved_search.query &&
       s.applied_filters.toString() == saved_search.applied_filters.toString()

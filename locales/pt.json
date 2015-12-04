@@ -215,10 +215,9 @@
   "saved_search_page": {
     "title": "Pesquisas salvadas",
     "subscribed_only": "Mostrar apenas pesquisas assinadas",
-    "instructions": "Pode assinar uma pesquisa salvada e uma pesquisa com curadoria",
     "subscribe": "Assinar pesquisa",
     "dialog": {
-      "message": "A criação de uma nova pesquisa assinada cancelará a assinatura relativa à sua pesquisa atual. Tem certeza que deseja executar essa ação?",
+      "message": "PT_Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?",
       "cancel": "Cancelar",
       "confirm": "Nova pesquisa"
     },
