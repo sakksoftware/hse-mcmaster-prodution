@@ -114,10 +114,6 @@
     "no_last_year_literature_searched": "Not available"
   },
   "search_page": {
-    "on_save_search": "Successfully saved search",
-    "on_unsave_search": "Successfully removed saved search",
-    "on_save_and_subscribe": "Successfully saved and subscribed to search",
-    "on_unsubscribe": "Successfully unsubscribed from search",
     "search_box": {
       "view_results_count": "View %{results_count} results",
       "tips": "Search tips",
@@ -150,7 +146,11 @@
     },
     "signup_prompt": {
       "instructions": "Sign up to view more than 20 results, to save documents and searches, and to subscribe to email alerts"
-    }
+    },
+    "on_save_search": "Successfully saved search",
+    "on_unsave_search": "Successfully removed saved search",
+    "on_save_and_subscribe": "Successfully saved and subscribed to search",
+    "on_unsubscribe": "Successfully unsubscribed from search"
   },
   "profile_page": {
     "title": "My profile",

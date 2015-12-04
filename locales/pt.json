@@ -114,10 +114,6 @@
     "no_last_year_literature_searched": "Não disponível"
   },
   "search_page": {
-    "on_save_search": "PT_Successfully saved search",
-    "on_unsave_search": "PT_Successfully removed saved search",
-    "on_save_and_subscribe": "PT_Successfully saved and subscribed to search",
-    "on_unsubscribe": "Successfully unsubscribed from search",
     "search_box": {
       "view_results_count": "Exibir %{results_count} resultados",
       "tips": "Dicas para uma pesquisa mais eficaz",
@@ -125,7 +121,7 @@
       "placeholder": "Pesquisar...",
       "save": "Pesquisas salvadas",
       "save_and_subscribe": "Salvar e assinar",
-      "advanced_search": "PT_Advanced search"
+      "advanced_search": "Pesquisa avançada"
     },
     "result_item": {
       "year": "Ano:",
@@ -134,7 +130,7 @@
     },
     "result_box": {
       "results": "Resultados",
-      "pending_search": "PT_Perform a search by entering a keyword above or selecting the appropriate filters from the list on the right."
+      "pending_search": "Realize uma pesquisa inserindo uma palavra-chave acima ou selecionando os filtros adequados na lista exibida do lado direito."
     },
     "result_list": {
       "no_results": "Nenhum resultado encontrado.",
@@ -143,14 +139,18 @@
       "on_save": "Salvou %{documents_count} documentos"
     },
     "sort_order": {
-      "sorted_by": "Resultados classificados por",
+      "sorted_by": "Classificar por",
       "relevance": "Melhor correspondência",
       "most_recent": "Mais recente",
       "highest_quality": "Mais alta qualidade"
     },
     "signup_prompt": {
       "instructions": "Inscreva-se para exibir mais de 20 resultados, salvar documentos e pesquisas, enviar e-mails com documentos e exportá-los e para assinar alertas por e-mail"
-    }
+    },
+    "on_save_search": "PT_Successfully saved search",
+    "on_unsave_search": "PT_Successfully removed saved search",
+    "on_save_and_subscribe": "PT_Successfully saved and subscribed to search",
+    "on_unsubscribe": "PT_Successfully unsubscribed from search"
   },
   "profile_page": {
     "title": "Meu perfil",
@@ -183,7 +183,7 @@
     }
   },
   "top_5_page": {
-    "title_short": "PT_Top five",
+    "title_short": "Principais cinco",
     "title": {
       "all": "Cinco principais resumos de 1 página acessados por todos os usuários",
       "policy_makers": "Cinco principais resumos de 1 página acessados por formuladores de políticas"
@@ -201,16 +201,16 @@
     "password": "Senha",
     "confirm_password": "Confirmar senha",
     "submit": "Redefinir senha",
-    "password_retained": "PT_Thank you. Your original password has been retained."
+    "password_retained": "Obrigado. Sua senha original foi retida."
   },
   "newsletter_page": {
     "title": "Boletim informativo"
   },
   "unsubscribe_page": {
     "title": "Cancelar assinatura",
-    "confirmation_msg": "PT_Please click the button below to confirm that you would like to unsubscribe from the Evidence Service",
+    "confirmation_msg": "Clique no botão abaixo para confirmar que gostaria de cancelar a assinatura do Serviço Evidência",
     "unsubscribe": "Cancelar assinatura",
-    "success": "PT_Successfully unsubscribed from newsletter"
+    "success": "Assinatura do boletim cancelada com êxito"
   },
   "saved_search_page": {
     "title": "Pesquisas salvadas",
@@ -237,7 +237,7 @@
     "body": [
       "Limite excedido. Você fez demasiadas solicitações em um curto período de tempo além das permitidas.",
       "",
-      "Limitamos o número de solicitações permitas para proteger o Health Systems Evidence de uso indevido.\r",
+      "Limitamos o número de solicitações permitas para proteger o Health Systems Evidence de uso indevido.",
       "",
       "Se considera que isso é um erro da nossa parte, envie um e-mail para [michael.yagudaev@func-i.com](michael.yagudaev@func-i.com)"
     ]
