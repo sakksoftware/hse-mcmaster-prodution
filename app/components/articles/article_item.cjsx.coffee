@@ -165,8 +165,8 @@ module.exports = React.createClass
             <ul>{@ifNotEmpty @renderNestedList(article.themes, 'themes', 'theme'), @t('no_themes')}</ul>
           </ArticleField>
 
-          <ArticleField visible={article.country_focus_visible}>
-            <h2>{article.label_country_focus}</h2>
+          <ArticleField visible={article.country_groupings_visible}>
+            <h2>{article.label_country_groupings}</h2>
             {@ifNotEmpty article.country_groupings, @t('no_country_groupings')}
           </ArticleField>
 
