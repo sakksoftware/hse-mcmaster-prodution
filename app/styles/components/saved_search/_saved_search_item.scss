@@ -1,6 +1,6 @@
 .saved-search-item {
   .saved-search-item-header {
-    margin-bottom: $medium-size;
+    margin-bottom: $small-size;
   }
 
   h2 {
@@ -22,5 +22,28 @@
       margin-top: $x-tiny-size;
       margin-left: $tiny-size;
     }
+  }
+
+  .applied-filters {
+    padding-left: 0;
+    margin-top: 0;
+    clear: both;
+    display: block;
+    overflow: hidden;
+    margin-bottom: $large-size;
+  }
+
+  .applied-filter-item {
+    display: inline-block;
+    float: none;
+
+    .applied-filter-item-content {
+      padding-right: $tiny-size;
+    }
+  }
+
+  .applied-filter-item + .applied-filter-item {
+    margin-top: 0;
+    margin-left: $tiny-size;
   }
 }

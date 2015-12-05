@@ -47,7 +47,16 @@ module.exports = React.createClass
     filters = @props.search.filters
     return if !filters || filters.length <= 0
 
-    " (#{@ellipsis(_.pluck(filters, 'title').join(', '), 30)})"
+    <ul className="applied-filters">
+      {
+        for filter in filters
+          <li className="applied-filter-item">
+            <div className="applied-filter-item-content">
+              <span className="applied-filter-item-filters">{filter.title}</span>
+            </div>
+          </li>
+      }
+    </ul>
 
   render: ->
     <li className="saved-search-item list-item">
@@ -55,7 +64,6 @@ module.exports = React.createClass
         <h2>
           <Link to={['/search', @serializeSearchParams(@props.search)]}>
             {@props.search.query}
-            {@renderAppliedFilters()}
           </Link>
         </h2>
         {
@@ -66,6 +74,7 @@ module.exports = React.createClass
             </label>
         }
       </div>
+      {@renderAppliedFilters()}
       <label className="saved-search-control">
         <span>{@t('subscribe')}</span>
         <Toggle checked={@props.search.subscribed} onChange={@confirmSubscriptionToggle} />
