@@ -82,8 +82,8 @@ FetchAPI.registerInterceptor /^\/user\/searches\/[0-9]+\/unsubscribe$/, 'POST', 
   }
   Promise.resolve({status: 200, json: -> saved_search})
 
-FetchAPI.registerInterceptor /^\/user\/searches\/[0-9]+\/?$/, 'DELETE', (url, options) ->
-  saved_search = {
+FetchAPI.registerInterceptor /^\/user\/searches\/remove$/, 'POST', (url, options) ->
+  saved_search = [{
     "applied_filters": [
       "22_31"
     ],
@@ -99,5 +99,5 @@ FetchAPI.registerInterceptor /^\/user\/searches\/[0-9]+\/?$/, 'DELETE', (url, op
     "saved": false,
     "subscribed": false,
     "userid": 0
-  }
+  }]
   Promise.resolve({status: 200, json: -> saved_search})
