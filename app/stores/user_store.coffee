@@ -174,6 +174,7 @@ module.exports = Reflux.createStore
 
     if search
       search.subscribed = saved_search.subscribed
+      search.saved_search_id = saved_search.id
       require('stores/search_store').notifySubscribed(saved_search.subscribed)
 
     @setState(curatedSearches: searches)

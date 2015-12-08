@@ -15,7 +15,7 @@ config =
     localesUrl: '/locales/'
     # localesUrl: '//s3.amazonaws.com/my-hse-staging/locales/hse/'
     recaptchaKey: '6LdQsAwTAAAAALZ8cZ2TOCW_BQ_faBRoL_Ffc3I1'
-    siteUrl: 'https://www.healthsystemsevidence.org'
+    siteUrl: 'https://staging.healthsystemsevidence.org'
 
   production:
     apiBase: 'https://api.healthsystemsevidence.org'
