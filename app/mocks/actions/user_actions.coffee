@@ -191,13 +191,14 @@ UserActions.toggleSubscribeToSavedSearch.listen (id, subscribed) ->
 UserActions.toggleSubscribeToCuratedSearch.listen (curated_search) ->
   if curated_search.subscribed
     id = curated_search.saved_search_id
-    FetchAPI.create("/user/searches/#{id}/unsubscribe").catch(@failed).then (saved_search) =>
-      FetchAPI.create("/user/searches/remove").catch(@failed).then => @completed(saved_search)
+    FetchAPI.create("/user/searches/remove", [id]).catch(@failed).then =>
+      curated_search.saved = false
+      curated_search.subscribed = false
+      @completed(curated_search)
   else
     search = curated_search
-    FetchAPI.create("/user/searches", search).catch(@failed).then (saved_search) =>
-      id = saved_search.id
-      FetchAPI.create("/user/searches/#{id}/subscribe").then(@completed).catch(@failed)
+    search.subscribed = true
+    FetchAPI.create("/user/searches", search).catch(@failed).then(@completed)
 
 UserActions.loadCuratedSearches.listen ->
   FetchAPI.read('/user/curated_searches').then(@completed).catch(@failed)

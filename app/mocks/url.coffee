@@ -23,6 +23,7 @@ FetchAPI.registerInterceptor '/user/curated_searches', (url, options) ->
   Promise.resolve({status: 200, json: -> curated_searches})
 
 FetchAPI.registerInterceptor '/user/searches', 'POST', (url, options) ->
+  params = JSON.parse(options.body)
   saved_search = {
     "applied_filters": [
       "22_31"
@@ -37,7 +38,7 @@ FetchAPI.registerInterceptor '/user/searches', 'POST', (url, options) ->
     "id": 35,
     "query": "HIV Positive",
     "saved": true,
-    "subscribed": false,
+    "subscribed": params.subscribed,
     "userid": 0
   }
   Promise.resolve({status: 200, json: -> saved_search})
