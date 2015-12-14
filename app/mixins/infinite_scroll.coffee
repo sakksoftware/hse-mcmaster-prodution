@@ -5,7 +5,7 @@ module.exports =
 
   componentDidMount: ->
     @page ||= @props.page
-    @scrollListener = _.throttle(@_scrollListener, 150)
+    @scrollListener = _.throttle(@_scrollListener, 300)
     @attachScrollListener()
 
   componentDidUpdate: ->
