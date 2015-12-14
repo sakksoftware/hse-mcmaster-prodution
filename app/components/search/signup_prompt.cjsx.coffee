@@ -1,5 +1,5 @@
 SignupMenu = require('components/menus/signup_menu')
-Recaptcha = require('lib/recaptcha')
+Recaptcha = require('components/shared/recaptcha')
 config = require('config')
 UserActions = require('actions/user_actions')
 TranslationHelper = require('mixins/translation_helper')

@@ -4,12 +4,12 @@ module.exports = React.createClass
     sitekey: React.PropTypes.string.isRequired
     className: React.PropTypes.string
     onloadCallbackName: React.PropTypes.string
-    elementID: React.PropTypes.string
+    elementId: React.PropTypes.string
     onloadCallback: React.PropTypes.func
     verifyCallback: React.PropTypes.func
 
   getDefaultProps: ->
-    elementID: 'g-recaptcha'
+    elementId: 'g-recaptcha'
     onloadCallback: null
     verifyCallback: null
     render: 'onload'
@@ -17,21 +17,24 @@ module.exports = React.createClass
     type: 'image'
 
   componentDidMount: ->
-    @grecaptchaId = grecaptcha.render @props.elementID,
+    if window.recaptcha == undefined
+      window.grecaptchaCallback = => @renderRecaptcha()
+      $.getScript("https://www.google.com/recaptcha/api.js?&render=explicit&onload=grecaptchaCallback")
+    else
+      @renderRecaptcha()
+
+  renderRecaptcha: ->
+    @grecaptchaId = grecaptcha.render @props.elementId,
       sitekey: @props.sitekey
       callback: if @props.verifyCallback then @props.verifyCallback else undefined
       theme: @props.theme
       type: @props.type
-
-    _.delay((=>
-      $(@getDOMNode()).find('.g-recaptcha-response').attr('name', 'captcha')
-    ), 200)
+    $(@getDOMNode()).find('.g-recaptcha-response').attr('name', 'captcha')
 
   componentWillUnmount: ->
     grecaptcha.reset(@grecaptchaId)
+    window.grecaptchaCallback = (->)
 
   render: ->
-
-
-    <div id={this.props.elementID} className="g-recaptcha">
+    <div id={this.props.elementId} className="g-recaptcha">
     </div>
