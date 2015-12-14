@@ -36,6 +36,7 @@
     "es6-module-transpiler-brunch": "0.0.6",
     "express": "^4.13.3",
     "javascript-brunch": ">= 1.0 < 1.8",
+    "morgan": "^1.6.1",
     "node-sass": "^3.2.0",
     "rollbar": "^0.5.8",
     "sass-brunch": "^1.8.10",

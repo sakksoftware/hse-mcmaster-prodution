@@ -1,6 +1,6 @@
 config =
   development:
-    apiBase: '//localhost:3333'
+    apiBase: '//localhost:3000'
     useMocks: true
     mockResponseTime: 500
     # localesUrl: '//s3.amazonaws.com/my-hse-staging/locales/'
