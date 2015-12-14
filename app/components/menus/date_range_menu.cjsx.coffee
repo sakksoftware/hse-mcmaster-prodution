@@ -16,7 +16,7 @@ module.exports = React.createClass
 
   componentWillMount: ->
     @filterGroup = @props.context.filterGroup
-    @setState(start: @filterGroup.start, end: @filterGroup.end)
+    @setState(start: @filterGroup.attributes?[0], end: @filterGroup.attributes?[1])
 
   applyOnEnter: (ev) ->
     if ev.keyCode == 13

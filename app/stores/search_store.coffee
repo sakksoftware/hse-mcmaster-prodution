@@ -144,7 +144,7 @@ module.exports = Reflux.createStore
     else
       filterGroup.applied = false
 
-    filterGroup.mode = mode
+    filterGroup.attributes = [mode]
     @setState(search: @state.search)
     search = _.clone(@state.search)
     search.page = 1
@@ -158,8 +158,7 @@ module.exports = Reflux.createStore
       @onRemoveFilter(filter)
     else
       filter.applied = false
-      filter.start = start
-      filter.end = end
+      filter.attributes = [start, end]
       @onAddFilter(filter)
 
   onLoadFiltersCompleted: (search) ->
@@ -187,6 +186,7 @@ module.exports = Reflux.createStore
 
   _changeParentFilterValue: (parentFilter, value) ->
     parentFilter.applied = value
+    return unless parentFilter.filters
     for filter in parentFilter.filters
       filter.applied = value
       if filter.filters
