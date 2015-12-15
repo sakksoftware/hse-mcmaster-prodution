@@ -5,8 +5,8 @@ $link-color: #CC4921;
 $background-gradient-start: $primary-color; // or #1925E3
 $background-gradient-end: #1925E3;
 $icon-font-path: '/fonts/';
-$seperator-color: lighten($primary-text-color, 90%);
-$border-color: lighten($primary-text-color, 35%);
+$seperator-color: #F4F4F4;
+$border-color: lighten($primary-text-color, 45%);
 $control-background-color: #F2F2F2;
 $secondary-background-color: #E8E8E8;
 
