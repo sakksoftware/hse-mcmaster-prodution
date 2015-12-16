@@ -68,8 +68,7 @@ module.exports = React.createClass
       return <p className="no-results">{@t('no_results')}</p>
 
     @props.results.map (result, i) =>
-      selected = !!_.findWhere(@refs.selectableList?.getSelected(), id: result.id)
-      <ResultItem {...@props} result={result} resultNumber={i + 1} key="result-#{i}-#{selected}" selected={selected} onSelectToggle={@onSelectToggle} />
+      <ResultItem {...@props} result={result} resultNumber={i + 1} key="result-#{i}" onSelectToggle={@onSelectToggle} />
 
   render: ->
     <SelectableList ref="selectableList" items={@props.results} className="result-list">

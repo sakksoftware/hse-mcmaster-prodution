@@ -1,53 +1,63 @@
+TranslationHelper = require('mixins/translation_helper')
+
 module.exports = React.createClass
   displayName: 'SelectableList'
+
+  baseTranslation: ''
+  mixins: [TranslationHelper]
 
   propTypes:
     className: React.PropTypes.string
 
+  componentWillMount: ->
+    @children = []
+
   getInitialState: ->
     selected: []
-    allSelected: false
 
-  toggleSelect: (article) ->
+  toggleSelect: (child) ->
     selected = _.clone @state.selected
-    if found = _.findWhere(selected, id: article.id)
+    if found = _.find(selected, (c) -> c.props.id == child.props.id)
       selected = _(selected).without(found)
     else
-      selected.push(article)
+      selected.push(child)
 
     @setState(selected: selected)
 
   toggleSelectAll: (ev) ->
-    selected = @props.items
-    allSelected = false
+    selected = @children
 
     if @state.selected.length > 0
       selected = []
-      allSelected = false
-    else
-      allSelected = true
 
-    @setState(selected: selected, allSelected: allSelected)
+    @setState(selected: selected)
 
   getSelected: -> @state.selected
   allSelected: ->
-    # TODO: probably don't even need a state for this
-    @state.allSelected
+    @state.selected.length == @props.children.length
 
   hasSelectedItems: ->
     @state.selected > 0
 
   renderListItems: ->
-    for child in @props.children
+    @children = []
+    for child, i in @props.children
       props = _.clone(child.props)
       props.toggleSelect = @toggleSelect
-      # TODO: figure out how to associate between json data and related
-      props.selected = true
+      props.selected = !!_.find(@state.selected, (c) -> c.props.id == i)
+      props.id = i
+      props.key = "item-#{i}"
+      props.key += "-selected" if props.selected
 
-      child = React.cloneElement(child, props)
-      child
+      @children.push React.cloneElement(child, props)
+
+    @children
 
   render: ->
     <ol className="selectable-list #{@props.className}">
+      <label>
+        {@t('/select_all')}
+        <input type="checkbox" checked={@allSelected()} onChange={@toggleSelectAll} name="search_to_delete"/>
+      </label>
       {@renderListItems()}
     </ol>

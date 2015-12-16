@@ -43,17 +43,10 @@ module.exports = React.createClass
         <span className="saved-search-list-instructions">{@t('instructions')}</span>
         <ul className="saved-search-list-actions list-actions list-inline">
           {
-            if @getSelected().length > 0
-              <li className="action remove-selected">
-                <Button onClick={@removeSelected}>{@t('/remove_selected')}</Button>
-              </li>
+            <li className="action remove-selected">
+              <Button onClick={@removeSelected}>{@t('/remove_selected')}</Button>
+            </li>
           }
-          <li className="action">
-            <label>
-              {@t('/select_all')}
-              <input type="checkbox" checked={@allSelected} onChange={@toggleSelectAll} name="search_to_delete"/>
-            </label>
-          </li>
         </ul>
       </div>
       <SelectableList ref="selectableList" className="saved-search-list-content list">

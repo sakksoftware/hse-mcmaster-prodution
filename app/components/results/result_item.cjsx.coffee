@@ -35,7 +35,7 @@ module.exports = React.createClass
     @props.onSelectToggle(@props.result)
 
   render: ->
-    <SelectableItem className="result-item">
+    <SelectableItem {...@props} className="result-item">
       <header className="result-item-header">
         <div className="result-item-header-left">
           <span className="result-item-number">{@props.resultNumber}.</span>
@@ -47,12 +47,6 @@ module.exports = React.createClass
             <span className="field-name">{@t('quality')}</span>
             <span className="field-value">{@shortRating(@props.result.quality)}</span>
           </div>
-        </div>
-        <div className="result-item-header-right action">
-          {
-            if UserStore.isLoggedIn()
-              <label className="result-item-select">{@t('/select')}<input type="checkbox" onChange={@onSelectToggle} checked={@props.selected} /></label>
-          }
         </div>
       </header>
       <section className="result-item-description">

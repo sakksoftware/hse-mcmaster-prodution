@@ -8,11 +8,16 @@ module.exports = React.createClass
 
   propTypes:
     className: React.PropTypes.string
+    selected: React.PropTypes.bool
+    toggleSelect: React.PropTypes.func
+
+  toggleSelect: ->
+    @props.toggleSelect(@)
 
   render: ->
-    <li  className="selectable-item #{@props.className}">
+    <li className="selectable-item #{@props.className}">
       <label className="result-item-select">{@t('/select')}
-        <input type="checkbox" onChange={@props.toggleSelect} checked={@props.selected} />
+        <input type="checkbox" onChange={@toggleSelect} checked={@props.selected} />
       </label>
       {@props.children}
     </li>
