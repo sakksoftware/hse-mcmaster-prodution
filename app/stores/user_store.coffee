@@ -42,7 +42,12 @@ module.exports = Reflux.createStore
       Cookies.remove('token')
       return
 
-    @setState(user: user, loaded: true, errors: null, language: UrlStore.state.params.lang || user.language)
+    language = UrlStore.state.params.lang || user.language
+    if language != @state.language
+      UrlActions.setParams(lang: language)
+      _.defer -> window.location.reload()
+
+    @setState(user: user, loaded: true, errors: null, language: language)
 
   onLoadUserFailed: (xhr, statusCode, responseText) ->
     @setState(errors: responseText, loaded: true)
@@ -85,6 +90,11 @@ module.exports = Reflux.createStore
     @setState(errors: responseText, loaded: true)
 
   onLoginUserCompleted: (user) ->
+    # language changed?
+    if @state.language != user.language
+      UrlActions.setParams(lang: user.language)
+      _.defer -> window.location.reload()
+
     @setState(user: user, loaded: true, language: user.language)
     Cookies.set('token', user.token)
 

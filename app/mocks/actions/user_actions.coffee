@@ -112,7 +112,7 @@ UserActions.loginUser.listen (user) ->
   if _.isEmpty(user.errors)
     API.read('user').done (u) =>
       user = _.extend(u, user)
-      StoreMock.send user, (=> @completed(user)), 'POST /login/login'
+      StoreMock.send user, (=> @completed(user)), 'POST /users/login'
   else
     StoreMock.sendError 400, user, (=> @failed({}, "bad input", user)), 'POST /users/login'
 
