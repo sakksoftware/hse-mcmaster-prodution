@@ -2,6 +2,7 @@ API = require('lib/api')
 FetchAPI = require('lib/fetch_api')
 config = require('config')
 mocks = require('mocks/actions/user_actions')
+SearchSerializationService = require('services/search_serialization_service')
 
 if config.useMocks
   return module.exports = mocks

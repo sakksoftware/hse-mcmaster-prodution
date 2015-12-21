@@ -6,6 +6,7 @@ module.exports = function(app) {
     var language = params.lang || 'en';
 
     var data = deepClone(searchData);
+    data.appliedFilters = params.applied_filters.split(';');
     data.filters = deepClone(filterHelper.getFilters());
     data.query = params.q || '';
     data.sort_by = params.sort_by || '';

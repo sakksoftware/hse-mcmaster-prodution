@@ -1,11 +1,26 @@
 serializeParams = require('lib/url').serializeParams
 FilterNormalizationService = require('services/filter_normalization_service')
 
+# private
+serializeAppliedFilters = (filters) ->
+  appliedFilters = getAppliedFilters(filters) || []
+  result = []
+
+  for filter in appliedFilters
+    if filter.type == 'countries_countries'
+      result.push "[#{filter.id},#{filter.attributes?[0]}]"
+    else if filter.type == 'date_range'
+      result.push "[#{filter.id},#{filter.attributes?[0] || ''},#{filter.attributes?[1] || ''}]"
+    else
+      result.push filter.id
+
+  result
+
 serializeSearchParams = (search, language, options = {}) ->
   options = _.extend({includePage: false}, options)
   query = search.query || ""
   sortBy = search.sort_by || "relevance"
-  applied_filters = serializeAppliedFilters(search.filters)
+  applied_filters = serializeAppliedFilters(search.filters).join(';')
 
   params =
     q: query
@@ -20,26 +35,14 @@ serializeSearchParams = (search, language, options = {}) ->
 
   params
 
+getAppliedFilters = (filters) ->
+  filters = FilterNormalizationService.getFiltersArray(filters)
+  filters.filter((e) -> e.applied)
+
+# public
 module.exports =
   serializeSearchParams: serializeSearchParams
   serializeSearchUrl: (search, language, options) ->
     serializeParams(serializeSearchParams(search, language, options))
 
-# private
-serializeAppliedFilters = (filters) ->
-  appliedFilters = getAppliedFilters(filters) || []
-  result = []
-
-  for filter in appliedFilters
-    if filter.type == 'countries_countries'
-      result.push "[#{filter.id},#{filter.attributes?[0]}]"
-    else if filter.type == 'date_range'
-      result.push "[#{filter.id},#{filter.attributes?[0] || ''},#{filter.attributes?[1] || ''}]"
-    else
-      result.push filter.id
-
-  result.join(';')
-
-getAppliedFilters = (filters) ->
-  filters = FilterNormalizationService.getFiltersArray(filters)
-  filters.filter((e) -> e.applied)
+  serializeAppliedFilters: serializeAppliedFilters

@@ -80,6 +80,8 @@ module.exports = Reflux.createStore
     if search.page > 1
       search.results = @state.search.results.concat(search.results)
 
+    # TODO: remove once server does proper serialization
+    search.applied_filters = SearchSerializationService.serializeAppliedFilters(search.filters).join(';')
     @setState(search: search, errors: null, loaded: true)
 
   onLoadMore: (page) ->
