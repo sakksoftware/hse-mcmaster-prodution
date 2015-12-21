@@ -6,13 +6,13 @@ module.exports = function(app) {
     var language = params.lang || 'en';
 
     var data = deepClone(searchData);
-    data.appliedFilters = params.applied_filters.split(';');
     data.filters = deepClone(filterHelper.getFilters());
     data.query = params.q || '';
     data.sort_by = params.sort_by || '';
     data.page = params.page || 1;
 
     var appliedFilters = params.applied_filters && params.applied_filters.split(';') || [];
+    data.applied_filters = appliedFilters;
     appliedFilters = appliedFilters.map(function(f) {
       if (match = f.match(/^\[(.*)\]$/)) {
         var parts = match[1].split(',');

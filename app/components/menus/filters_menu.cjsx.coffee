@@ -32,10 +32,11 @@ module.exports = React.createClass
   componentWillUnmount: ->
     @unsubscribe()
 
-  onSearchUpdated: ->
-    @filterGroup = SearchStore.findFilter(@filterGroup)
-    filters = @filterGroup.filters
-    @setState(filters: filters)
+  onSearchUpdated: (search) ->
+    if search.filters
+      @filterGroup = SearchStore.findFilter(@filterGroup)
+      filters = @filterGroup.filters
+      @setState(filters: filters)
 
   onToggleFilter: (filter) ->
     SearchActions.toggleFilter(filter)
