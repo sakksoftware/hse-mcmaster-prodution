@@ -42,6 +42,14 @@ app.use(rollbar.errorHandler(ROLLBAR_SERVER_SECRET));
 app.use(express.static('public'));
 
 if(NODE_ENV == 'development') {
+  var autoreload = require('connect-autoreload')
+  var config = {
+    watch_dirs: 'js html css/compiled thirdparty/frontend',
+    ignore_regex: /\.sw[poax]$/,
+    delay: 150,  // wait 150ms before reloading
+  };
+  app.use(autoreload(config));
+
   app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");

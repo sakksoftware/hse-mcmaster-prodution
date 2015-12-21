@@ -9,6 +9,10 @@ Front end search
 
 ## Usage
 
+run `npm start`
+
+## Development
+
 - `brunch watch --server` — watches the project with continuous rebuild. This will also launch HTTP server with [pushState](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history).
 - `brunch build --production` — builds minified project for production
 - `public/` dir is fully auto-generated and served by HTTP server.  Write your code in `app/` dir.

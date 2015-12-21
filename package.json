@@ -17,7 +17,7 @@
     "url": "https://github.com/func-i/hse-frontend"
   },
   "scripts": {
-    "start": "brunch watch --server",
+    "start": "brunch build && node server.js",
     "test": "brunch test",
     "postinstall": "bower install && brunch build --production"
   },
@@ -32,6 +32,7 @@
     "clean-css-brunch": ">= 1.0 < 1.8",
     "coffee-script-brunch": "^1.8.1",
     "compression": "^1.6.0",
+    "connect-autoreload": "0.0.6",
     "css-brunch": ">= 1.0 < 1.8",
     "es6-module-transpiler-brunch": "0.0.6",
     "express": "^4.13.3",
