@@ -1,13 +1,9 @@
-API = require('lib/api')
-config = require('config')
-
-if config.useMocks
-  return module.exports = require('mocks/actions/article_actions')
+FetchAPI = require('lib/fetch_api')
 
 ArticleActions = Reflux.createActions
   loadArticle: {asyncResult: true}
 
 ArticleActions.loadArticle.listen (id, title, lang) ->
-  API.read("articles/#{id}?lang=#{lang}&t=#{title}").done(@completed).fail(@failed)
+  FetchAPI.read("articles/#{id}?lang=#{lang}&t=#{title}").then(@completed).catch(@failed)
 
 module.exports = ArticleActions
