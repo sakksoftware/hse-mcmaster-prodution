@@ -97,6 +97,9 @@ module.exports = React.createClass
     if @props.article.targets?.length > 0
       <div className="article-item-targets">{@joinList(_.pluck(@props.article.targets, 'title'))}</div>
 
+  renderCountries: (countries) ->
+    @joinList(_.compact(_.map(countries, (country) -> "#{country.title} (#{country.conducted_count})")))
+
   render: ->
     article = @props.article
 
@@ -167,7 +170,7 @@ module.exports = React.createClass
 
           <ArticleField visible={article.country_groupings_visible}>
             <h2>{article.label_country_groupings}</h2>
-            {@ifNotEmpty article.country_groupings, @t('no_country_groupings')}
+            {@ifNotEmpty @renderCountries(article.country_groupings), @t('no_country_groupings')}
           </ArticleField>
 
           <ArticleField visible={article.who_region_visible}>
@@ -182,9 +185,9 @@ module.exports = React.createClass
             </div>
           </ArticleField>
 
-          <ArticleField visible={!article.country_focus_visible}>
+          <ArticleField visible={article.country_focus_visible}>
             <h2>{article.label_country_focus}</h2>
-            {@ifNotEmpty @joinList(_.compact(_.pluck(article.country_groups, 'title'))), @t('no_country_groupings')}
+            {@ifNotEmpty article.country_focus, @t('no_country_focus')}
           </ArticleField>
         </div>
 
