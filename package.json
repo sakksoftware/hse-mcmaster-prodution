@@ -26,6 +26,7 @@
     "auto-reload-brunch": "^1.7.5",
     "autoprefixer-brunch": "^1.8.5",
     "basic-auth-connect": "^1.0.0",
+    "body-parser": "^1.14.2",
     "bower": "^1.4.1",
     "brunch": "^1.8.3",
     "cjsx-react-brunch": "0.0.2",
