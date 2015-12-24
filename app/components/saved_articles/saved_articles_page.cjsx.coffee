@@ -34,7 +34,7 @@ module.exports = React.createClass
     @unsubscribeUserStore()
 
   userStoreUpdated: (data) ->
-    @setState(articles: data.articles)
+    @setState(articles: data.articles, hasSelected: false, allSelected: false)
 
   exportSelected: ->
     @refs.resultList.exportArticles()
@@ -60,9 +60,12 @@ module.exports = React.createClass
             <Button onClick={@removeSelected}>{@t('/remove_selected')}</Button>
           </li>
       }
-      <li className="action">
-        <label>{@t('/select_all')}<input type="checkbox" onChange={@toggleSelectAll} checked={@state.allSelected} name="search_to_delete"/></label>
-      </li>
+      {
+        if @state.articles.length > 0
+          <li className="action">
+            <label>{@t('/select_all')}<input type="checkbox" onChange={@toggleSelectAll} checked={@state.allSelected} name="search_to_delete"/></label>
+          </li>
+      }
     </ul>
 
   render: ->

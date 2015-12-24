@@ -43,6 +43,9 @@ module.exports = React.createClass
   allSelected: ->
     @state.selected.length == @props.children.length
 
+  clearSelected: ->
+    @setState(selected: [])
+
   hasSelectedItems: ->
     @state.selected > 0
 

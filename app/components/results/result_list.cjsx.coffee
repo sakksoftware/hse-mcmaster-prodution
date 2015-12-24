@@ -44,6 +44,7 @@ module.exports = React.createClass
     selected = @getSelected()
     UserActions.removeArticles(selected).then =>
       flash('success', @t('on_remove', searches_count: @refs.selectableList.getSelected().length))
+      @clearSelected()
 
   emailArticles: ->
     selected = @getSelected()
@@ -54,6 +55,9 @@ module.exports = React.createClass
 
   toggleSelectAll: ->
     @refs.selectableList.toggleSelectAll()
+
+  clearSelected: ->
+    @refs.selectableList.clearSelected()
 
   loadMore: (page) ->
     @props.onLoadMore?(page)
