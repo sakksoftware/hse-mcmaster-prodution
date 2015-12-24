@@ -14,17 +14,15 @@ module.exports = React.createClass
 
   propTypes:
     search: React.PropTypes.object.isRequired
-    onSelect: React.PropTypes.func
+    toggleSelect: React.PropTypes.func
     selected: React.PropTypes.bool
+    showSelect: React.PropTypes.bool
 
   getDefaultProps: ->
     selected: false
+    showSelect: true
     onToggleSubscription: ->
-    onSelect: ->
-
-
-  onSelect: (e) ->
-    @props.onSelect(@props.search)
+    toggleSelect: ->
 
   getUrlParams: ->
     "#{@serializeSearchUrl()}"
@@ -47,7 +45,7 @@ module.exports = React.createClass
     " (#{@ellipsis(_.pluck(filters, 'title').join(', '), 30)})"
 
   render: ->
-    <SelectableItem {...@props} className="saved-search-item list-item">
+    <SelectableItem {...@props} showSelect={false} className="saved-search-item list-item">
       <div className="saved-search-item-header clearfix">
         <h2>
           <Link to={['/search', @serializeSearchParams(@props.search)]}>
@@ -55,6 +53,13 @@ module.exports = React.createClass
             {@renderAppliedFilters()}
           </Link>
         </h2>
+        {
+          if @props.showSelect
+            <label className="saved-search-select action">
+              <span>{@t('/select')}</span>
+              <input type="checkbox" onChange={=> @props.toggleSelect(@)} defaultChecked={@props.selected} />
+            </label>
+        }
       </div>
       <label className="saved-search-control">
         <span>{@t('subscribe')}</span>

@@ -17,11 +17,10 @@ module.exports = React.createClass
     results: React.PropTypes.array.isRequired
     resultsCount: React.PropTypes.number.isRequired
     onLoadMore: React.PropTypes.func
-    onSelectToggle: React.PropTypes.func
+    toggleSelect: React.PropTypes.func
 
   getDefaultProps: ->
     onLoadMore: ->
-    onSelectToggle: ->
 
   saveArticles: ->
     UserActions.saveArticles(@refs.selectableList.getSelected()).then =>
@@ -68,9 +67,9 @@ module.exports = React.createClass
       return <p className="no-results">{@t('no_results')}</p>
 
     @props.results.map (result, i) =>
-      <ResultItem {...@props} result={result} resultNumber={i + 1} key="result-#{i}" onSelectToggle={@onSelectToggle} />
+      <ResultItem {...@props} result={result} resultNumber={i + 1} key="result-#{i}" />
 
   render: ->
-    <SelectableList ref="selectableList" items={@props.results} className="result-list">
+    <SelectableList ref="selectableList" showSelectAll={false} items={@props.results} className="result-list" toggleSelect={@props.toggleSelect}>
       {@renderList()}
     </SelectableList>

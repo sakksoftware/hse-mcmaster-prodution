@@ -13,8 +13,18 @@ module.exports = React.createClass
   propTypes:
     searches: React.PropTypes.array.isRequired
 
+  getInitialState: ->
+    allSelected: false
+    hasSelected: false
+
+  toggleSelect: (selected) ->
+    @setState(hasSelected: selected.length > 0, allSelected: selected.length == @props.searches.length)
+
   toggleSubscription: (search) ->
     UserActions.subscribeToSearch(search)
+
+  toggleSelectAll: ->
+    @refs.selectableList.toggleSelectAll()
 
   removeSelected: ->
     UserActions.removeSearches(@getSelected()).then =>
@@ -24,16 +34,10 @@ module.exports = React.createClass
     for child in @refs.selectableList.getSelected()
       child.props.search
 
-  allSelected: ->
-    @refs.selectableList.allSelected()
-
   renderItems: ->
     for search in @props.searches
-      selected = !!_.findWhere(@getSelected(), id: search.id)
       <SavedSearchItem search={search}
-        key="saved-search-item-#{search.id}-#{'selected' if selected}"
-        selected={selected}
-        onSelect={@toggleSelect}
+        key="saved-search-item-#{search.id}"
         onToggleSubscription={@toggleSubscription}
       />
 
@@ -43,13 +47,20 @@ module.exports = React.createClass
         <span className="saved-search-list-instructions">{@t('instructions')}</span>
         <ul className="saved-search-list-actions list-actions list-inline">
           {
-            <li className="action remove-selected">
-              <Button onClick={@removeSelected}>{@t('/remove_selected')}</Button>
-            </li>
+            if @state.hasSelected
+              <li className="action remove-selected">
+                <Button onClick={@removeSelected}>{@t('/remove_selected')}</Button>
+              </li>
           }
+          <li className="action">
+            <label>
+              {@t('/select_all')}
+              <input type="checkbox" checked={@state.allSelected} onChange={@toggleSelectAll} name="search_to_delete"/>
+            </label>
+          </li>
         </ul>
       </div>
-      <SelectableList ref="selectableList" className="saved-search-list-content list">
+      <SelectableList ref="selectableList" className="saved-search-list-content list" toggleSelect={@toggleSelect} showSelectAll={false}>
         {@renderItems()}
       </SelectableList>
     </div>

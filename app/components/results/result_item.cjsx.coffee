@@ -16,14 +16,13 @@ module.exports = React.createClass
   propTypes:
     resultNumber: React.PropTypes.number.isRequired
     result: React.PropTypes.object.isRequired
-    onSelectToggle: React.PropTypes.func
     source: React.PropTypes.string
+    toggleSelect: React.PropTypes.func
 
   getDefaultProps: ->
     showSelect: false
     selected: false
     source: 'search'
-    onSelectToggle: ->
 
   shortRating: (quality) ->
     if match = quality?.match(/[0-9]{1,2}\/[0-9]{1,2}/)
@@ -31,11 +30,8 @@ module.exports = React.createClass
     else
       @t('not_available')
 
-  onSelectToggle: ->
-    @props.onSelectToggle(@props.result)
-
   render: ->
-    <SelectableItem {...@props} className="result-item">
+    <SelectableItem {...@props} showSelect={false} className="result-item">
       <header className="result-item-header">
         <div className="result-item-header-left">
           <span className="result-item-number">{@props.resultNumber}.</span>
@@ -47,6 +43,12 @@ module.exports = React.createClass
             <span className="field-name">{@t('quality')}</span>
             <span className="field-value">{@shortRating(@props.result.quality)}</span>
           </div>
+        </div>
+        <div className="result-item-header-right action">
+          {
+            if UserStore.isLoggedIn()
+              <label className="result-item-select">{@t('/select')}<input type="checkbox" onChange={=> @props.toggleSelect(@)} checked={@props.selected} /></label>
+          }
         </div>
       </header>
       <section className="result-item-description">

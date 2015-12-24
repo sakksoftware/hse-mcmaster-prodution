@@ -8,6 +8,10 @@ module.exports = React.createClass
 
   propTypes:
     className: React.PropTypes.string
+    showSelectAll: React.PropTypes.bool
+
+  getDefaultProps: ->
+    showSelectAll: true
 
   componentWillMount: ->
     @children = []
@@ -23,6 +27,7 @@ module.exports = React.createClass
       selected.push(child)
 
     @setState(selected: selected)
+    selected
 
   toggleSelectAll: (ev) ->
     selected = @children
@@ -31,6 +36,8 @@ module.exports = React.createClass
       selected = []
 
     @setState(selected: selected)
+    # notify of a new selection
+    @props.toggleSelect(selected)
 
   getSelected: -> @state.selected
   allSelected: ->
@@ -43,7 +50,9 @@ module.exports = React.createClass
     @children = []
     for child, i in @props.children
       props = _.clone(child.props)
-      props.toggleSelect = @toggleSelect
+      props.toggleSelect = (child) =>
+        selected = @toggleSelect(child)
+        @props.toggleSelect(selected)
       props.selected = !!_.find(@state.selected, (c) -> c.props.id == i)
       props.id = i
       props.key = "item-#{i}"
@@ -55,9 +64,12 @@ module.exports = React.createClass
 
   render: ->
     <ol className="selectable-list #{@props.className}">
-      <label>
-        {@t('/select_all')}
-        <input type="checkbox" checked={@allSelected()} onChange={@toggleSelectAll} name="search_to_delete"/>
-      </label>
+      {
+        if @props.showSelectAll
+          <label>
+            {@t('/select_all')}
+            <input type="checkbox" checked={@allSelected()} onChange={@toggleSelectAll} name="search_to_delete"/>
+          </label>
+      }
       {@renderListItems()}
     </ol>

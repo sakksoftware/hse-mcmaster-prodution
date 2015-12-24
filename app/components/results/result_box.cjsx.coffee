@@ -19,11 +19,18 @@ module.exports = React.createClass
   mixins: [TranslationHelper]
   baseTranslation: 'search_page.result_box'
 
+  getInitialState: ->
+    hasSelected: false
+    allSelected: false
+
   saveArticles: ->
     @refs.resultList.saveArticles()
 
   emailArticles: ->
     @refs.resultList.emailArticles()
+
+  toggleSelect: (selected) ->
+    @setState(hasSelected: selected.length > 0, allSelected: selected.length == @props.search.results.length)
 
   toggleSelectAll: ->
     @refs.resultList.toggleSelectAll()
@@ -32,14 +39,14 @@ module.exports = React.createClass
     if UserStore.isLoggedIn()
       <div className="saved-articles-actions">
         {
-          if @refs.resultList?.hasSelectedItems()
+          if @state.hasSelected
             [
               <Button key="icon-email" className="icon icon-email" onClick={@emailArticles}>Email</Button>
               <Button key="icon-save-article" className="icon icon-save-article" onClick={@saveArticles}>Save</Button>
             ]
         }
         <Link className="icon icon-view-saved-articles button" to="/user/articles">View saved</Link>
-        <label className="select-all-action action">{@t('/select_all')}<input type="checkbox" onChange={@toggleSelectAll} /></label>
+        <label className="select-all-action action">{@t('/select_all')}<input type="checkbox" checked={@state.allSelected} onChange={@toggleSelectAll} /></label>
       </div>
 
   render: ->
@@ -50,5 +57,5 @@ module.exports = React.createClass
         {@renderSavedArticlesButtons()}
       </div>
       <SavedSearchButtons search={@props.search} toggleSelectAll={@toggleSelectAll} />
-      <ResultList ref="resultList" results={@props.search.results} resultsCount={@props.search.results_count} onLoadMore={@props.onLoadMore} onSelectToggle={@toggleSelect} />
+      <ResultList ref="resultList" results={@props.search.results} resultsCount={@props.search.results_count} onLoadMore={@props.onLoadMore} toggleSelect={@toggleSelect} />
     </div>
