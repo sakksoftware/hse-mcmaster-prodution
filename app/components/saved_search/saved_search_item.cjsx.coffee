@@ -49,8 +49,8 @@ module.exports = React.createClass
 
     <ul className="applied-filters">
       {
-        for filter in filters
-          <li className="applied-filter-item">
+        for filter, i in filters
+          <li className="applied-filter-item" key="filter-#{i}">
             <div className="applied-filter-item-content">
               <span className="applied-filter-item-filters">{filter.title}</span>
             </div>
