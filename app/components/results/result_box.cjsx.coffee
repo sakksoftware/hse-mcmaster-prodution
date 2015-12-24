@@ -31,7 +31,8 @@ module.exports = React.createClass
     @refs.resultList.emailArticles()
 
   toggleSelect: (selected) ->
-    @setState(hasSelected: selected.length > 0, allSelected: selected.length == @props.search.results.length)
+    allSelected = selected.length > 0 && selected.length == @props.search.results.length
+    @setState(hasSelected: selected.length > 0, allSelected: allSelected)
 
   toggleSelectAll: ->
     @refs.resultList.toggleSelectAll()

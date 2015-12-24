@@ -25,7 +25,8 @@ module.exports = React.createClass
     hasSelected: false
 
   toggleSelect: (selected) ->
-    @setState(hasSelected: selected.length > 0, allSelected: selected.length == @props.searches.length)
+    allSelected = selected.length > 0 && selected.length == @props.searches.length
+    @setState(hasSelected: selected.length > 0, allSelected: allSelected)
 
   toggleSubscription: (saved_search) ->
     @props.toggleSubscription(saved_search)
@@ -34,8 +35,9 @@ module.exports = React.createClass
     @refs.selectableList.toggleSelectAll()
 
   removeSelected: ->
-    UserActions.removeSearches(@getSelected()).then =>
-      flash('success', @t('on_remove', searches_count: @getSelected().length))
+    selected = @getSelected()
+    UserActions.removeSearches(selected).then =>
+      flash('success', @t('on_remove', searches_count: selected.length))
 
   getSelected: ->
     for child in @refs.selectableList.getSelected()

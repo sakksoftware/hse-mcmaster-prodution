@@ -23,8 +23,9 @@ module.exports = React.createClass
     onLoadMore: ->
 
   saveArticles: ->
-    UserActions.saveArticles(@refs.selectableList.getSelected()).then =>
-      flash('success', @t('on_save', documents_count: @refs.selectableList.getSelected().length))
+    selected = @getSelected()
+    UserActions.saveArticles(selected).then =>
+      flash('success', @t('on_save', documents_count: selected.length))
 
   openNewWindow: (csvContent) ->
     encodedUri = encodeURI(csvContent)
@@ -40,14 +41,15 @@ module.exports = React.createClass
     @openNewWindow(url)
 
   removeUserArticles: ->
-    UserActions.removeArticles(@refs.selectableList.getSelected()).then =>
+    selected = @getSelected()
+    UserActions.removeArticles(selected).then =>
       flash('success', @t('on_remove', searches_count: @refs.selectableList.getSelected().length))
-      @setState(selected: [])
 
   emailArticles: ->
-    UserActions.emailArticles(@refs.selectableList.getSelected()).then =>
+    selected = @getSelected()
+    UserActions.emailArticles(selected).then =>
       email = UserStore.state.user.email
-      count = @refs.selectableList.getSelected().length
+      count = selected.length
       flash('success', @t('on_email', email: email, documents_count: count))
 
   toggleSelectAll: ->
