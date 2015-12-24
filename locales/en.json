@@ -114,9 +114,6 @@
     "no_last_year_literature_searched": "Not available"
   },
   "search_page": {
-    "on_save_search": "Successfully saved search",
-    "on_unsave_search": "Successfully removed saved search",
-    "on_save_and_subscribe": "Successfully saved and subscribed to search",
     "search_box": {
       "view_results_count": "View %{results_count} results",
       "tips": "Search tips",
@@ -149,7 +146,11 @@
     },
     "signup_prompt": {
       "instructions": "Sign up to view more than 20 results, to save documents and searches, and to subscribe to email alerts"
-    }
+    },
+    "on_save_search": "Successfully saved search",
+    "on_unsave_search": "Successfully removed saved search",
+    "on_save_and_subscribe": "Successfully saved and subscribed to search",
+    "on_unsubscribe": "Successfully unsubscribed from search"
   },
   "profile_page": {
     "title": "My profile",
@@ -214,14 +215,14 @@
   "saved_search_page": {
     "title": "Saved searches",
     "subscribed_only": "Show only subscribed searches",
-    "instructions": "You can subscribe up to one saved search and one curated search",
     "subscribe": "Subscribe to search",
     "dialog": {
-      "message": "Creating a new subscribed search will unsubscribe you from your current one. Are you sure you want to do this?",
+      "message": "Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?",
       "cancel": "Cancel",
       "confirm": "New search"
     },
-    "on_remove": "Successfully removed %{searches_count} searches"
+    "on_remove": "Successfully removed %{searches_count} searches",
+    "curated_searches": "Curated searches"
   },
   "saved_articles_page": {
     "title": "Saved documents",

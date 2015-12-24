@@ -20,7 +20,7 @@ module.exports = React.createClass
 
   renderFilters: ->
     for filterSection, i in @getAppliedFilterGroups()
-      for filterGroup, j in filterSection.filters
+      for filterGroup, j in (filterSection?.filters || [])
         <AppliedFilterItem section={filterSection} filter={filterGroup} key="filter-#{filterGroup.id}"
           onShowFilterGroup={@onShowFilterGroup}
           onRemoveFilter={@onRemoveFilter} />

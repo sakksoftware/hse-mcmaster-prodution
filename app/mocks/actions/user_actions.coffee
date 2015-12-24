@@ -1,5 +1,6 @@
 API = require('lib/api')
 StoreMock = require('mocks/support/store_mock')
+FetchAPI = require('lib/fetch_api')
 
 # private Data
 articlesData = [{
@@ -65,8 +66,12 @@ UserActions = Reflux.createActions
   loadRegion: {asyncResult: true}
   unsubscribe: {asyncResult: true}
   loadSearches: {asyncResult: true}
+  loadCuratedSearches: {asyncResult: true}
+  toggleSaveSearch: {asyncResult: true}
   saveSearch: {asyncResult: true}
-  subscribeToSearch: {asyncResult: true}
+  toggleSubscribeToSearch: {asyncResult: true}
+  toggleSubscribeToSavedSearch: {asyncResult: true}
+  toggleSubscribeToCuratedSearch: {asyncResult: true}
   removeSearches: {asyncResult: true}
   saveArticles: {asyncResult: true}
   loadArticles: {asyncResult: true}
@@ -107,7 +112,7 @@ UserActions.loginUser.listen (user) ->
   if _.isEmpty(user.errors)
     API.read('user').done (u) =>
       user = _.extend(u, user)
-      StoreMock.send user, (=> @completed(user)), 'POST /login/login'
+      StoreMock.send user, (=> @completed(user)), 'POST /users/login'
   else
     StoreMock.sendError 400, user, (=> @failed({}, "bad input", user)), 'POST /users/login'
 
@@ -131,8 +136,16 @@ UserActions.unsubscribe.listen (x) ->
 UserActions.loadSearches.listen ->
   Promise.resolve(searchesData).then(@completed)
 
+UserActions.toggleSaveSearch.listen (search) ->
+  if search.saved
+    UserActions.removeSearches([{id: search.saved_search_id}]).then(@completed).catch(@failed)
+  else
+    UserActions.saveSearch(search).then(@completed).catch(@failed)
+
 UserActions.saveSearch.listen (search) ->
+  search = _.clone(search)
   search.id = ++maxSearchId
+  search.saved = true
   searchesData.push(search)
   Promise.resolve(search).then(@completed)
 
@@ -158,13 +171,36 @@ UserActions.removeArticles.listen (articles) ->
 UserActions.emailArticles.listen (articles) ->
   Promise.resolve(_.pluck(articles, 'id')).then(@completed)
 
-UserActions.subscribeToSearch.listen (search) ->
+UserActions.toggleSubscribeToSearch.listen (search) ->
   search = _.clone(search)
-  search.subscribed = true
+  saved_search = _.omit(search, ['results', 'filters', 'saved_search_id'])
+  saved_search.id = search.saved_search_id
+  saved_search.filters = []
   if search.saved
-    Promise.resolve(search).then(@completed)
+    UserActions.toggleSubscribeToSavedSearch(saved_search.id, saved_search.subscribed).then(@completed)
   else
     UserActions.saveSearch(search).then (search) =>
-      Promise.resolve(search).then(@completed)
+      saved_search = _.omit(search, ['results', 'filters'])
+      UserActions.toggleSubscribeToSavedSearch(saved_search.id, saved_search.subscribed).then(@completed).catch(@error)
+
+UserActions.toggleSubscribeToSavedSearch.listen (id, subscribed) ->
+  saved_search = _.clone(_.findWhere(searchesData, id: id))
+  saved_search.subscribed = !subscribed
+  Promise.resolve(saved_search).then(@completed)
+
+UserActions.toggleSubscribeToCuratedSearch.listen (curated_search) ->
+  if curated_search.subscribed
+    id = curated_search.saved_search_id
+    FetchAPI.create("/user/searches/remove", [id]).catch(@failed).then =>
+      curated_search.saved = false
+      curated_search.subscribed = false
+      @completed(curated_search)
+  else
+    search = curated_search
+    search.subscribed = true
+    FetchAPI.create("/user/searches", search).catch(@failed).then(@completed)
+
+UserActions.loadCuratedSearches.listen ->
+  FetchAPI.read('/user/curated_searches').then(@completed).catch(@failed)
 
 module.exports = UserActions

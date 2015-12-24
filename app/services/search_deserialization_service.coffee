@@ -13,9 +13,9 @@ module.exports =
     # set applied filters until we fetch filers from search
     filters = applied_filters?.map (f) ->
       if match = f.match(dateRangePattern)
-        id: match[1], applied: true, start: match[2], end: match[3], type: 'date_range'
+        id: match[1], applied: true, attributes: [match[2], match[3]], type: 'date_range'
       else if match = f.match(countriesPattern)
-        id: match[1], applied: true, mode: match[2], type: 'countries'
+        id: match[1], applied: true, attributes: [match[2]], type: 'countries_countries'
       else
         id: f, applied: true, type: ''
 

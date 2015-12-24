@@ -1,6 +1,8 @@
 API = require('lib/api')
+FetchAPI = require('lib/fetch_api')
 config = require('config')
 mocks = require('mocks/actions/user_actions')
+SearchSerializationService = require('services/search_serialization_service')
 
 if config.useMocks
   return module.exports = mocks
@@ -19,8 +21,12 @@ UserActions = Reflux.createActions
   loadRegion: {asyncResult: true}
   unsubscribe: {asyncResult: true}
   loadSearches: {asyncResult: true}
+  loadCuratedSearches: {asyncResult: true}
+  toggleSaveSearch: {asyncResult: true}
   saveSearch: {asyncResult: true}
-  subscribeToSearch: {asyncResult: true}
+  toggleSubscribeToSearch: {asyncResult: true}
+  toggleSubscribeToSavedSearch: {asyncResult: true}
+  toggleSubscribeToCuratedSearch: {asyncResult: true}
   removeSearches: {asyncResult: true}
   saveArticles: {asyncResult: true}
   loadArticles: {asyncResult: true}
@@ -63,12 +69,24 @@ UserActions.loadRegion.listen ->
   API.read('geo').done(@completed).fail(@failed)
 
 UserActions.unsubscribe.listen ->
-  API.create('user/unsubscribe').done(@completed).fail(@failed)
+  API.update('user/unsubscribe').done(@completed).fail(@failed)
 
 UserActions.loadSearches.listen ->
   API.read('/user/searches').done(@completed).fail(@failed)
 
+UserActions.toggleSaveSearch.listen (search) ->
+  if search.saved
+    # TODO: very HACKY! need to grab state from the store since the state of the
+    # search param might be stale and does not contain the saved_search_id
+    SearchStore = require('stores/search_store')
+    id = search.saved_search_id || SearchStore.state.search?.saved_search_id
+
+    UserActions.removeSearches([{id: id}]).then(@completed).catch(@failed)
+  else
+    UserActions.saveSearch(search).then(@completed).catch(@failed)
+
 UserActions.saveSearch.listen (search) ->
+  search = _.omit(search, ['results', 'filters'])
   API.create('/user/searches', search).done(@completed).fail(@failed)
 
 UserActions.removeSearches.listen (searches) ->
@@ -87,10 +105,32 @@ UserActions.removeArticles.listen (articles) ->
 UserActions.emailArticles.listen (articles) ->
   API.create('/user/articles/email', _.pluck(articles, 'id')).done(@completed).fail(@failed)
 
-UserActions.subscribeToSearch.listen (search) ->
-  if search.subscribed
-    API.create("/user/searches/#{search.id}/unsubscribe").done(@completed).fail(@failed)
+UserActions.toggleSubscribeToSearch.listen (search) ->
+  if search.saved
+    UserActions.toggleSubscribeToSavedSearch(search.saved_search_id, search.subscribed).then(@completed).catch(@failed)
   else
-    API.create("/user/searches/#{search.id}/subscribe").done(@completed).fail(@failed)
+    UserActions.saveSearch(search).catch(@failed).then (saved_search) =>
+      UserActions.toggleSubscribeToSavedSearch(saved_search.id, saved_search.subscribed).then(@completed).catch(@failed)
+
+UserActions.toggleSubscribeToSavedSearch.listen (id, subscribed) ->
+  if subscribed
+    API.create("/user/searches/#{id}/unsubscribe").done(@completed).fail(@failed)
+  else
+    API.create("/user/searches/#{id}/subscribe").done(@completed).fail(@failed)
+
+UserActions.toggleSubscribeToCuratedSearch.listen (curated_search) ->
+  if curated_search.subscribed
+    id = curated_search.saved_search_id
+    FetchAPI.create("/user/searches/remove", [id]).catch(@failed).then =>
+      curated_search.saved = false
+      curated_search.subscribed = false
+      @completed(curated_search)
+  else
+    search = curated_search
+    search.subscribed = true
+    FetchAPI.create("/user/searches", search).catch(@failed).then(@completed)
+
+UserActions.loadCuratedSearches.listen ->
+  FetchAPI.read('/user/curated_searches').then(@completed).catch(@failed)
 
 module.exports = UserActions

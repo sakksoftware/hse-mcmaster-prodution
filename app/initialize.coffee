@@ -1,7 +1,7 @@
 require('lib/extensions/underscore')
 params = require('lib/url').params()
 
-if window.location.hostname == "localhost"
+if window.location.hostname == "localhost" || window.location.hostname == "hse.dev" || window.location.hostname == "phcpi.hse.dev"
   window.ENV = params.ENV || 'development'
 else if window.location.hostname == "staging.healthsystemsevidence.org"
   window.ENV = params.ENV || 'staging'
@@ -14,6 +14,9 @@ config = require('config')
 stores = require('stores')
 
 localesUrl = config.localesUrl
+
+if config.useMocks
+  require('mocks/url')
 
 initialize = ->
   language = stores.UrlStore.state.params.lang || 'en'

@@ -32,10 +32,11 @@ module.exports = React.createClass
   componentWillUnmount: ->
     @unsubscribe()
 
-  onSearchUpdated: ->
-    @filterGroup = SearchStore.findFilter(@filterGroup)
-    filters = @filterGroup.filters
-    @setState(filters: filters)
+  onSearchUpdated: (search) ->
+    if search.filters
+      @filterGroup = SearchStore.findFilter(@filterGroup)
+      filters = @filterGroup.filters
+      @setState(filters: filters)
 
   onToggleFilter: (filter) ->
     SearchActions.toggleFilter(filter)
@@ -62,7 +63,7 @@ module.exports = React.createClass
 
     result
 
-  renderAllFilter: ->
+  renderAnyFilter: ->
     return if @state.filters.length <= 1
     result =
       <MenuFilterItem className="any-filters" key="any-filter-#{@filterGroup.id}" indicatorColor={@currentColor()}
@@ -82,7 +83,7 @@ module.exports = React.createClass
 
     <div className="filters-menu nested-menu">
       <ul className="menu-list">
-        {@renderAllFilter()}
+        {@renderAnyFilter()}
         {@renderItems(@state.filters)}
       </ul>
     </div>

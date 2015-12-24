@@ -13,7 +13,7 @@ module.exports = React.createClass
     if @props.filter.filters
       _(@getFiltersArray(@props.filter.filters)).pluck('title').join(', ').substring(0, 50)
     else if @props.filter.type == 'date_range'
-      "#{@props.filter.title}: #{@props.filter.start || ''}-#{@props.filter.end || ''}"
+      "#{@props.filter.title}: #{@props.filter.attributes?[0] || ''}-#{@props.filter.attributes?[1] || ''}"
 
   handleShowFilterGroup: (e) ->
     e.preventDefault()

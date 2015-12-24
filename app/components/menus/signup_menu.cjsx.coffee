@@ -1,8 +1,8 @@
 Button = ReactBootstrap.Button
 Form = require('components/shared/form')
+Recaptcha = require('components/shared/recaptcha')
 UserActions = require('actions/user_actions')
 TranslationHelper = require('mixins/translation_helper')
-Recaptcha = require('lib/recaptcha')
 config = require('config')
 
 module.exports = React.createClass

@@ -12,11 +12,13 @@ module.exports = React.createClass
   baseTranslation: 'saved_search_page'
 
   getInitialState: ->
-    searches: []
+    searches: UserStore.state.searches
     subscribedOnly: false
+    curatedSearches: UserStore.state.curatedSearches
 
   componentWillMount: ->
     UserActions.loadSearches()
+    UserActions.loadCuratedSearches()
     @unsubscribeUserStore = UserStore.listen(@userStoreUpdated)
 
   componentWillUnmount: ->
@@ -26,7 +28,7 @@ module.exports = React.createClass
     document.title = "#{@t('title')} | #{@t('/site_name')}"
 
   userStoreUpdated: (data) ->
-    @setState(searches: data.searches)
+    @setState(searches: data.searches, curatedSearches: data.curatedSearches)
 
   toggleSubscribedOnly: ->
     @setState(subscribedOnly: !@state.subscribedOnly)
@@ -37,11 +39,32 @@ module.exports = React.createClass
     else
       @state.searches
 
+  getCuratedSearches: ->
+    if @state.subscribedOnly
+      @state.curatedSearches.filter (s) -> s.subscribed
+    else
+      @state.curatedSearches
+
+  toggleSubscriptionSavedSearch: (saved_search) ->
+    UserActions.toggleSubscribeToSavedSearch(saved_search.id, saved_search.subscribed)
+
+  toggleSubscriptionCuratedSearch: (curated_search) ->
+    UserActions.toggleSubscribeToCuratedSearch(curated_search)
+
   render: ->
     <div className="saved-search-page">
-      <div className="saved-search-header clearfix">
-        <h1>{@t('title')}</h1>
-        <label className="saved-search-subscribed-only action">{@t('subscribed_only')}<input type="checkbox" onClick={@toggleSubscribedOnly} /></label>
+      <div className="saved-searches">
+        <div className="saved-search-header clearfix">
+          <h1>{@t('title')}</h1>
+          <label className="saved-search-subscribed-only action">{@t('subscribed_only')}<input type="checkbox" onClick={@toggleSubscribedOnly} /></label>
+        </div>
+        <SavedSearchList searches={@getSearches()} toggleSubscription={@toggleSubscriptionSavedSearch} />
       </div>
-      <SavedSearchList searches={@getSearches()} />
+      {
+        if !_.isEmpty(@getCuratedSearches())
+          <div className="curated-searches">
+            <h1>{@t('curated_searches')}</h1>
+            <SavedSearchList searches={@getCuratedSearches()} toggleSubscription={@toggleSubscriptionCuratedSearch} showHeader={false} showSelect={false}/>
+          </div>
+      }
     </div>

@@ -62,7 +62,33 @@
       ]}
     ]
   },
-  "country_groupings": "G7; G20; CommonWealth",
+  "country_groupings": [
+    {
+       "conducted_count":"0",
+       "name_abbreviation":"OECD countries",
+       "title":"OECD countries"
+    },
+    {
+       "conducted_count":"0",
+       "name_abbreviation":"Francophonie",
+       "title":"Francophonie"
+    },
+    {
+       "conducted_count":"0",
+       "name_abbreviation":"G7",
+       "title":"G7"
+    },
+    {
+       "conducted_count":"0",
+       "name_abbreviation":"G20",
+       "title":"G20"
+    },
+    {
+       "conducted_count":"0",
+       "name_abbreviation":"European Union",
+       "title":"European Union"
+    }
+  ],
   "who_regions": [{"title": "At least one study was conducted in a low- or middle- income country"}],
   "lmic_focus": "At least one study was conducted in a low- or middle- income country",
   "domains": [

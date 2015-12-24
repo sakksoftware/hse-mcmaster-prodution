@@ -13,6 +13,8 @@ class Router
       React.render <App page="home" />, @el()
 
     '^/search': ->
+      SearchStore = require('stores/search_store')
+      SearchStore.updateStateFromUrl()
       React.render <App page="search" />, @el()
 
     '^/articles/:id': (id) ->
@@ -124,6 +126,11 @@ class Router
     action.apply(@, params)
 
   _handleRouteChange: ->
+    # TODO: review this, feels super hacky!
+    # NEED TO UPDATE the Url Store
+    UrlStore = require('stores/url_store')
+    UrlStore.resetState()
+
     path = @getPath()
     @render(path)
 

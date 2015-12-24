@@ -62,34 +62,33 @@
       ]}
     ]
   },
-  "country_groupings": "USA (55); Germany (4); OECD countries (3); Australia (2); Belgium (2); UK (2); Canada (1); Global (1); Japan (1); Netherlands (1); Spain (1)",
-  "country_groups":[
-      {
-         "conducted_count":"0",
-         "name_abbreviation":"OECD countries",
-         "title":"OECD countries"
-      },
-      {
-         "conducted_count":"0",
-         "name_abbreviation":"Francophonie",
-         "title":"Francophonie"
-      },
-      {
-         "conducted_count":"0",
-         "name_abbreviation":"G7",
-         "title":"G7"
-      },
-      {
-         "conducted_count":"0",
-         "name_abbreviation":"G20",
-         "title":"G20"
-      },
-      {
-         "conducted_count":"0",
-         "name_abbreviation":"European Union",
-         "title":"European Union"
-      }
-   ],
+  "country_groupings": [
+    {
+       "conducted_count":"0",
+       "name_abbreviation":"OECD countries",
+       "title":"OECD countries"
+    },
+    {
+       "conducted_count":"0",
+       "name_abbreviation":"Francophonie",
+       "title":"Francophonie"
+    },
+    {
+       "conducted_count":"0",
+       "name_abbreviation":"G7",
+       "title":"G7"
+    },
+    {
+       "conducted_count":"0",
+       "name_abbreviation":"G20",
+       "title":"G20"
+    },
+    {
+       "conducted_count":"0",
+       "name_abbreviation":"European Union",
+       "title":"European Union"
+    }
+  ],
   "who_regions": [{"title": "At least one study was conducted in a low- or middle- income country"}],
   "lmic_focus": "At least one study was conducted in a low- or middle- income country",
   "domains": [
@@ -146,7 +145,7 @@
   "label_document_type": "Type of Document",
   "label_studies_conducted_in": "Countries in which studies (included in the synthesis) were conducted",
   "label_domains": "Domains",
-  "label_country_focus": "Country groupings",
+  "label_country_groupings": "Country groupings",
   "label_who_regions": "World Health Organization regions",
   "label_lmic_focus": "Low- and middle-income regions (LMIC) focus",
   "label_question_type": "Type of question",
@@ -166,7 +165,7 @@
   "author_email_visible": "true",
   "priority_area_visible": "true",
   "countries_in_which_studies_were_conducted_visible": "true",
-  "country_focus_visible": "true",
+  "country_groupings_visible": "true",
   "document_summary_visible": "true",
   "full_text_report_visible": "true",
   "initiative_translation_eihr_visible": "true",

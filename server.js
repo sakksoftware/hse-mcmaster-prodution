@@ -4,7 +4,9 @@ var path = require('path');
 var basicAuth = require('basic-auth-connect');
 var crypto = require('crypto');
 var rollbar = require('rollbar');
-var compression = require('compression')
+var compression = require('compression');
+var logger = require('morgan');
+var bodyParser = require('body-parser')
 
 var NODE_ENV = process.env.NODE_ENV || 'development';
 var AES_KEY = process.env.AES_KEY || '';
@@ -25,9 +27,7 @@ if(NODE_ENV == 'staging') {
   app.use(basicAuth('hse', 'withgreatpower'));
 }
 
-// TODO: temporary disble https on staging
-// if(NODE_ENV == 'production' || NODE_ENV == 'staging') {
-if(NODE_ENV == 'production') {
+if(NODE_ENV == 'production' || NODE_ENV == 'staging') {
   // force ssl
   app.use(function(req, res, next) {
     if(req.headers['x-forwarded-proto'] !== 'https') {
@@ -37,9 +37,29 @@ if(NODE_ENV == 'production') {
   });
 }
 
+app.use(logger('dev'));
 app.use(compression());
+app.use(bodyParser.json());
 app.use(rollbar.errorHandler(ROLLBAR_SERVER_SECRET));
 app.use(express.static('public'));
+
+if(NODE_ENV == 'development') {
+  var autoreload = require('connect-autoreload')
+  var config = {
+    watch_dirs: 'js html css/compiled thirdparty/frontend',
+    ignore_regex: /\.sw[poax]$/,
+    delay: 150,  // wait 150ms before reloading
+  };
+  app.use(autoreload(config));
+
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    next();
+  });
+
+  require('./server/mocks/routes')(app);
+}
 
 app.get('/one-page-summary.aspx', function(req, res) {
   id = req.query.A;

@@ -90,7 +90,7 @@
   "articles_page": {
     "back_to_results": "Retour aux résultats",
     "back_to_newsletter": "Retour au bulletin",
-    "back_to_top_5": "Retour au top cinq ",
+    "back_to_top_5": "Retour au top cinq",
     "back_to_saved_documents": "Retour aux documents sauvegardés",
     "no_studies_conducted_in": "Non disponible",
     "no_full_text_report": "Aucun rapport intégral disponible",
@@ -114,9 +114,6 @@
     "no_last_year_literature_searched": "Non disponible"
   },
   "search_page": {
-    "on_save_search": "FR_Successfully saved search",
-    "on_unsave_search": "FR_Successfully removed saved search",
-    "on_save_and_subscribe": "FR_Successfully saved and subscribed to search",
     "search_box": {
       "view_results_count": "Voir %{results_count} résultats",
       "tips": "Conseils pour une recherche plus puissante",
@@ -124,7 +121,7 @@
       "placeholder": "Recherche…",
       "save": "Recherches sauvegardées",
       "save_and_subscribe": "Sauvegarder et s'abonner",
-      "advanced_search": "FR_Advanced search"
+      "advanced_search": "Recherche avancée"
     },
     "result_item": {
       "year": "Année:",
@@ -133,7 +130,7 @@
     },
     "result_box": {
       "results": "Résultats",
-      "pending_search": "FR_Perform a search by entering a keyword above or selecting the appropriate filters from the list on the right."
+      "pending_search": "Effectuez une recherche en inscrivant un mot clé ci-dessus ou en sélectionnant les filtres appropriés à partir de la liste à droite."
     },
     "result_list": {
       "no_results": "Aucun résultat trouvé.",
@@ -142,14 +139,18 @@
       "on_save": "%{documents_count} ont été sauvegardés"
     },
     "sort_order": {
-      "sorted_by": "Résultats triés par",
+      "sorted_by": "Trier par",
       "relevance": "Meilleure correspondance",
       "most_recent": "Le plus récent",
       "highest_quality": "Qualité élevée"
     },
     "signup_prompt": {
       "instructions": "Inscrivez-vous pour afficher plus de 20 résultats, pour sauvegarder des documents et des recherches, pour envoyer par courriel et exporter des documents, et pour vous abonner aux alertes par courriel"
-    }
+    },
+    "on_save_search": "FR_Successfully saved search",
+    "on_unsave_search": "FR_Successfully removed saved search",
+    "on_save_and_subscribe": "FR_Successfully saved and subscribed to search",
+    "on_unsubscribe": "FR_Successfully unsubscribed from search"
   },
   "profile_page": {
     "title": "Mon profil",
@@ -182,7 +183,7 @@
     }
   },
   "top_5_page": {
-    "title_short": "FR_Top five",
+    "title_short": "Top cinq",
     "title": {
       "all": "Top cinq des résumés de 1 page qui ont été visités par tous les utilisateurs",
       "policy_makers": "Top cinq des résumés de 1 page qui ont été visités par des responsables de politiques"
@@ -200,28 +201,28 @@
     "password": "Mot de passe",
     "confirm_password": "Confirmer le mot de passe",
     "submit": "Réinitialiser le mot de passe",
-    "password_retained": "FR_Thank you. Your original password has been retained."
+    "password_retained": "Merci. Votre ancien mot de passe a été conservé."
   },
   "newsletter_page": {
     "title": "Bulletin d'information"
   },
   "unsubscribe_page": {
     "title": "Se désinscrire",
-    "confirmation_msg": "FR_Please click the button below to confirm that you would like to unsubscribe from the Evidence Service",
+    "confirmation_msg": "SVP, cliquez sur le bouton ci-dessous pour confirmer que vous souhaitez vous désinscrire du Service de données probantes",
     "unsubscribe": "Se désinscrire",
-    "success": "FR_Successfully unsubscribed from newsletter"
+    "success": "Votre désabonnement au bulletin d'information est confirmé"
   },
   "saved_search_page": {
     "title": "Recherches sauvegardées",
     "subscribed_only": "Ne montrez que les recherches pour lesquelles vous êtes abonné",
-    "instructions": "Vous pouvez vous abonner jusqu'à une recherche sauvegardée et une recherche organisée",
     "subscribe": "S'abonner à la recherche",
     "dialog": {
-      "message": "Créer un nouvel abonnement annulera votre abonnement actuel. Êtes-vous certain de vouloir poursuivre?",
+      "message": "FR_Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?",
       "cancel": "Annuler",
       "confirm": "Nouvelle recherche"
     },
-    "on_remove": "Les %{documents_count} documents ont été supprimés avec succès"
+    "on_remove": "Les %{documents_count} documents ont été supprimés avec succès",
+    "curated_searches": "FR_Curated searches"
   },
   "saved_articles_page": {
     "title": "Documents sauvegardés",

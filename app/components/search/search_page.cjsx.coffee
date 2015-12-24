@@ -89,8 +89,11 @@ module.exports = React.createClass
     SearchActions.sortBy(sortBy)
 
   toggleSubscription: ->
-    UserActions.subscribeToSearch(@state.search).then =>
-      flash('success', @t('search_page.on_save_and_subscribe'))
+    UserActions.toggleSubscribeToSearch(@state.search).then (saved_search) =>
+      if saved_search.subscribed
+        flash('success', @t('search_page.on_save_and_subscribe'))
+      else
+        flash('success', @t('search_page.on_unsubscribe'))
 
   confirmSubscriptionToggle: ->
     base = '/saved_search_page.dialog.'

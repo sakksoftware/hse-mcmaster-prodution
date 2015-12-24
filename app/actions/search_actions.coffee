@@ -1,8 +1,4 @@
-config = require('config')
-if config.useMocks
-  return module.exports = require('mocks/actions/search_actions')
-
-API = require('lib/api')
+FetchAPI = require('lib/fetch_api')
 serializeSearchUrl = require('services/search_serialization_service').serializeSearchUrl
 UserStore = require('stores/user_store')
 
@@ -23,10 +19,9 @@ SearchActions = Reflux.createActions
 
 SearchActions.search.listen (search) ->
   language = UserStore.state.language
-  API.read("search#{serializeSearchUrl(search, language, includePage: true)}").
-    done(@completed).fail(@failed)
+  FetchAPI.read("search#{serializeSearchUrl(search, language, includePage: true)}").then(@completed).catch(@failed)
 
 SearchActions.loadFilters.listen ->
-  API.read("search?q=").done(@completed).fail(@failed)
+  FetchAPI.read("search?q=").then(@completed).catch(@failed)
 
 module.exports = SearchActions

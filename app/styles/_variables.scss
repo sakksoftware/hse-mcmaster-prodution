@@ -1,13 +1,14 @@
 $primary-color: #178EEE;
 $primary-complementary-color: white;
-$primary-text-color: #8D8D8D;
-$link-color: #D9783E;
+$primary-text-color: #666666;
+$link-color: #CC4921;
 $background-gradient-start: $primary-color; // or #1925E3
 $background-gradient-end: #1925E3;
 $icon-font-path: '/fonts/';
-$seperator-color: lighten($primary-text-color, 90%);
-$border-color: lighten($primary-text-color, 35%);
+$seperator-color: #F4F4F4;
+$border-color: lighten($primary-text-color, 45%);
 $control-background-color: #F2F2F2;
+$secondary-background-color: #E8E8E8;
 
 // bootstrap override
 $border-radius-base:  0px;
@@ -16,6 +17,7 @@ $border-radius-small: 0px;
 $body-bg: #E8E8E8;
 $input-border: #D7D7D7;
 $icon-font-bootstrap-path: $icon-font-path + 'bootstrap/';
+$font-family-sans-serif: 'Open Sans', sans-serif;
 
 // layered navigation overrides
 $menu-header-color: $primary-complementary-color;

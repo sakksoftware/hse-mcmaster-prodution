@@ -1,71 +1,67 @@
-console.log('loaded mock search')
+var filterHelper = require('../support/filter_helper');
 
-API = require('lib/api')
-StoreMock = require('mocks/support/store_mock')
-FilterNormalizationService = require('services/filter_normalization_service')
-SearchSerializationService = require('services/search_serialization_service')
-FiltersHelper = require('mocks/support/filters_helper')
-UserStore = require('stores/user_store')
+module.exports = function(app) {
+  app.get('/api/search', function (req, res) {
+    var params = req.query
+    var language = params.lang || 'en';
 
-SearchActions = Reflux.createActions
-  sortBy: {}
-  addFilter: {}
-  removeFilter: {}
-  removeFilterGroup: {}
-  changeFilterValue: {}
-  changeParentFilterValue: {}
-  toggleNestedFilter: {}
-  toggleFilter: {}
-  toggleCountryFilter: {}
-  toggleDateRangeFilter: {}
-  loadMore: {}
-  search: {asyncResult: true}
-  loadFilters: {asyncResult: true}
+    var data = deepClone(searchData);
+    data.filters = deepClone(filterHelper.getFilters());
+    data.query = params.q || '';
+    data.sort_by = params.sort_by || '';
+    data.page = params.page || 1;
 
-SearchActions.search.listen (search) -> performSearch.call(@, search)
-SearchActions.loadFilters.listen ->
-  search = require('stores/search_store').state.search
-  performSearch.call(@, search)
+    var appliedFilters = params.applied_filters && params.applied_filters.split(';') || [];
+    data.applied_filters = appliedFilters;
+    appliedFilters = appliedFilters.map(function(f) {
+      if (match = f.match(/^\[(.*)\]$/)) {
+        var parts = match[1].split(',');
+        return {id: parts.shift(), attributes: parts};
+      } else {
+        return f
+      }
+    });
+    data.filters = markFilters(data.filters, appliedFilters);
 
-module.exports = SearchActions
+    lastResultIndex = Math.min(data.results_count - (data.results_per_page * (data.page - 1)), data.results_per_page) - 1;
 
-# private
-performSearch = (search) ->
-  language = UserStore.state.language
-  allFilters = FiltersHelper.getFilters()
-  applied_filters = getAppliedFilters(search.filters)
-  addAppliedProperty(allFilters, applied_filters)
-  query = SearchSerializationService.serializeSearchUrl(search, language, includePage: true)
+    data.results = data.results.slice(0, lastResultIndex + 1);
 
-  res = _.clone(searchData)
-  res.applied_filters = applied_filters
-  res.filters = allFilters
-  res.query = search.query
-  res.sort_by = search.sort_by
-  res.page = search.page
-  lastResultIndex = Math.min(res.results_count - (res.results_per_page * (res.page - 1)), res.results_per_page) - 1
-  res.results = res.results[0..lastResultIndex]
+    data.results.forEach((function(_this) {
+      return function(result, i) {
+        return result.id = i + 1 + ((data.page - 1) * data.results_per_page);
+      };
+    })(this));
 
-  StoreMock.send(res, (=> @completed(res)), "/search#{query}")
+    res.json(data);
+  });
+};
 
-addAppliedProperty = (filters, appliedFilters) ->
-  _(filters).each (f) =>
-    if f.id
-      appliedFilter = _(appliedFilters).find (af) -> af.id == f.id
-      f.applied = appliedFilter?.applied || false
-      if appliedFilter?.type == "countries_countries"
-        f.mode = appliedFilter.mode
-      if appliedFilter?.type == "date_range"
-        f.start = appliedFilter.start
-        f.end = appliedFilter.end
-    if f.filters
-      addAppliedProperty(f.filters, appliedFilters)
+function markFilters(filters, appliedFilters) {
+  return filters.map(function(filter) {
+    var f = appliedFilters.find(function(f) { return f === filter.id || (typeof f === 'object' && f.id === filter.id) });
+    if (f) {
+      filter.applied = true;
+      if (typeof f === 'object') {
+        filter.attributes = f.attributes;
+      }
+    } else {
+      filter.applied = false;
+    }
 
-getAppliedFilters = (filters) ->
-  filters = FilterNormalizationService.getFiltersArray(filters)
-  filters.filter((e) -> e.applied)
+    if (filter.filters) {
+      filter.filters = markFilters(filter.filters, appliedFilters);
+    }
 
-searchData = {
+    return filter;
+  });
+}
+
+function deepClone(data) {
+  return JSON.parse(JSON.stringify(data));
+}
+
+var searchData = {
   "query": "HIV",
   "page": 1,
   "results_per_page": 10,
@@ -75,7 +71,7 @@ searchData = {
   "subscribed": false,
   "results": [
     {
-      "id": "all_filled_all_visible",
+      "id": "TBD",
       "traversal": "tencharacters",
       "title": "All <B>fields</B> Filled & Visible",
       "created_at": "2014-09-20 11:33:00Z",
@@ -84,9 +80,8 @@ searchData = {
       "description": "Some <B>Crazy</B> long description goes here.....",
       "category": "<B>International</B> Organizations Document",
       "country_groupings": "<B>USA</B> (26); UK (2); Australia (1); Turkey (1)"
-    },
-    {
-      "id": "not_filled_all_visible",
+    }, {
+      "id": "TBD",
       "traversal": "tencharacters",
       "title": "All optional fields are emtpy & visible",
       "created_at": "2013-08-20 11:33:00Z",
@@ -95,9 +90,8 @@ searchData = {
       "description": "Lots of stuff goes here! Very Interesting right?.....",
       "category": "Superhero Marvel Movies",
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
-    },
-    {
-      "id": "all_hidden",
+    }, {
+      "id": "TBD",
       "traversal": "tencharacters",
       "title": "All fields are hidden",
       "created_at": "2013-08-20 11:33:00Z",
@@ -106,9 +100,8 @@ searchData = {
       "description": "Lots of stuff goes here! Very Interesting right?.....",
       "category": "Superhero Marvel Movies",
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
-    },
-    {
-      "id": "all_filled_all_visible",
+    }, {
+      "id": "TBD",
       "traversal": "tencharacters",
       "title": "Article D",
       "created_at": "2013-08-20 11:33:00Z",
@@ -117,9 +110,8 @@ searchData = {
       "description": "Lots of stuff goes here! Very Interesting right?.....",
       "category": "Superhero Marvel Movies",
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
-    },
-    {
-      "id": "all_filled_all_visible",
+    }, {
+      "id": "TBD",
       "traversal": "tencharacters",
       "title": "Article E",
       "created_at": "2013-08-20 11:33:00Z",
@@ -128,9 +120,8 @@ searchData = {
       "description": "Lots of stuff goes here! Very Interesting right?.....",
       "category": "Superhero Marvel Movies",
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
-    },
-    {
-      "id": "all_filled_all_visible",
+    }, {
+      "id": "TBD",
       "traversal": "tencharacters",
       "title": "Article F",
       "created_at": "2013-08-20 11:33:00Z",
@@ -139,9 +130,8 @@ searchData = {
       "description": "Lots of stuff goes here! Very Interesting right?.....",
       "category": "Superhero Marvel Movies",
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
-    },
-    {
-      "id": "all_filled_all_visible",
+    }, {
+      "id": "TBD",
       "traversal": "tencharacters",
       "title": "Article G",
       "created_at": "2013-08-20 11:33:00Z",
@@ -150,9 +140,8 @@ searchData = {
       "description": "Lots of stuff goes here! Very Interesting right?.....",
       "category": "Superhero Marvel Movies",
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
-    },
-    {
-      "id": "all_filled_all_visible",
+    }, {
+      "id": "TBD",
       "traversal": "tencharacters",
       "title": "Article H",
       "created_at": "2013-08-20 11:33:00Z",
@@ -161,9 +150,8 @@ searchData = {
       "description": "Lots of stuff goes here! Very Interesting right?.....",
       "category": "Superhero Marvel Movies",
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
-    },
-    {
-      "id": "all_filled_all_visible",
+    }, {
+      "id": "TBD",
       "traversal": "tencharacters",
       "title": "Article I",
       "created_at": "2013-08-20 11:33:00Z",
@@ -172,9 +160,8 @@ searchData = {
       "description": "Lots of stuff goes here! Very Interesting right?.....",
       "category": "Superhero Marvel Movies",
       "country_groupings": null
-    },
-    {
-      "id": "all_filled_all_visible",
+    }, {
+      "id": "TBD",
       "traversal": "tencharacters",
       "title": "Article J",
       "created_at": "2013-08-20 11:33:00Z",
@@ -186,4 +173,4 @@ searchData = {
     }
   ],
   "filters": {}
-}
+};

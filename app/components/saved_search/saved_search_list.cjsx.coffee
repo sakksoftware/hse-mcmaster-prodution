@@ -12,6 +12,13 @@ module.exports = React.createClass
 
   propTypes:
     searches: React.PropTypes.array.isRequired
+    toggleSubscription: React.PropTypes.func.isRequired
+    showHeader: React.PropTypes.bool
+    showSelect: React.PropTypes.bool
+
+  getDefaultProps: ->
+    showHeader: true
+    showSelect: true
 
   getInitialState: ->
     allSelected: false
@@ -20,8 +27,8 @@ module.exports = React.createClass
   toggleSelect: (selected) ->
     @setState(hasSelected: selected.length > 0, allSelected: selected.length == @props.searches.length)
 
-  toggleSubscription: (search) ->
-    UserActions.subscribeToSearch(search)
+  toggleSubscription: (saved_search) ->
+    @props.toggleSubscription(saved_search)
 
   toggleSelectAll: ->
     @refs.selectableList.toggleSelectAll()
@@ -39,12 +46,12 @@ module.exports = React.createClass
       <SavedSearchItem search={search}
         key="saved-search-item-#{search.id}"
         onToggleSubscription={@toggleSubscription}
+        showSelect={@props.showSelect}
       />
 
-  render: ->
-    <div className="saved-search-list">
+  renderHeader: ->
+    if @props.showHeader
       <div className="saved-search-list-header">
-        <span className="saved-search-list-instructions">{@t('instructions')}</span>
         <ul className="saved-search-list-actions list-actions list-inline">
           {
             if @state.hasSelected
@@ -60,6 +67,10 @@ module.exports = React.createClass
           </li>
         </ul>
       </div>
+
+  render: ->
+    <div className="saved-search-list">
+      {@renderHeader()}
       <SelectableList ref="selectableList" className="saved-search-list-content list" toggleSelect={@toggleSelect} showSelectAll={false}>
         {@renderItems()}
       </SelectableList>

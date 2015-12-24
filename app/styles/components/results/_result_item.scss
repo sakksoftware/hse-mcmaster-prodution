@@ -1,4 +1,4 @@
-$result-header-text-color: #999999;
+$result-header-text-color: #666666;
 
 .result-item {
   margin-bottom: 25px;
@@ -27,7 +27,7 @@ $result-header-text-color: #999999;
   .result-item-header {
     overflow: auto;
     color: $result-header-text-color;
-    background-color: #F3F3F3;
+    background-color: $secondary-background-color;
     font-weight: 300;
     padding: $x-tiny-size $small-size;
 

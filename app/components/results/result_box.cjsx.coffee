@@ -15,6 +15,7 @@ module.exports = React.createClass
     sortBy: React.PropTypes.string.isRequired
     onLoadMore: React.PropTypes.func.isRequired
     onSortChange: React.PropTypes.func.isRequired
+    onSaveAndSubscribe: React.PropTypes.func
 
   mixins: [TranslationHelper]
   baseTranslation: 'search_page.result_box'
@@ -56,6 +57,6 @@ module.exports = React.createClass
         <div className="result-box-count">{@props.search.results_count} {@t('results')}</div>
         {@renderSavedArticlesButtons()}
       </div>
-      <SavedSearchButtons search={@props.search} toggleSelectAll={@toggleSelectAll} />
+      <SavedSearchButtons search={@props.search} toggleSelectAll={@toggleSelectAll} onSaveAndSubscribe={@props.onSaveAndSubscribe} />
       <ResultList ref="resultList" results={@props.search.results} resultsCount={@props.search.results_count} onLoadMore={@props.onLoadMore} toggleSelect={@toggleSelect} />
     </div>

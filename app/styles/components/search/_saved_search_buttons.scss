@@ -58,8 +58,14 @@
   }
 
   .btn-save-and-subscribe {
+    &.btn-save-and-subscribe-on {
+      &:before {
+        background-image: url('/images/m_subscribed_search_on.svg');
+      }
+    }
+
     &:before {
-      background-image: url('/images/m_subscribed_search.svg');
+      background-image: url('/images/m_subscribed_search_off.svg');
     }
   }
 }

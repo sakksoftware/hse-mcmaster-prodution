@@ -114,9 +114,6 @@
     "no_last_year_literature_searched": "No disponible"
   },
   "search_page": {
-    "on_save_search": "ES_Successfully saved search",
-    "on_unsave_search": "ES_Successfully removed saved search",
-    "on_save_and_subscribe": "ES_Successfully saved and subscribed to search",
     "search_box": {
       "view_results_count": "Ver %{results_count} resultados",
       "tips": "Sugerencias para una búsqueda más eficaz",
@@ -124,7 +121,7 @@
       "placeholder": "Buscar…",
       "save": "Búsquedas guardadas",
       "save_and_subscribe": "Guardar y suscribirse",
-      "advanced_search": "ES_Advanced search"
+      "advanced_search": "Búsqueda avanzada"
     },
     "result_item": {
       "year": "Año:",
@@ -133,7 +130,7 @@
     },
     "result_box": {
       "results": "Resultados",
-      "pending_search": "ES_Perform a search by entering a keyword above or selecting the appropriate filters from the list on the right."
+      "pending_search": "Realice una búsqueda ingresando una palabra clave arriba o seleccionando los filtros adecuados de la lista a la derecha."
     },
     "result_list": {
       "no_results": "No se encontraron resultados.",
@@ -142,14 +139,18 @@
       "on_save": "Se guardaron %{documents_count} documentos"
     },
     "sort_order": {
-      "sorted_by": "Resultados ordenados por",
+      "sorted_by": "Ordenar por",
       "relevance": "Mejor coincidencia",
       "most_recent": "Más reciente",
       "highest_quality": "Calidad más alta"
     },
     "signup_prompt": {
       "instructions": "Regístrese para ver más de 20 resultados, guardar documentos y búsquedas, enviar por correo electrónico y exportar documentos y suscribirse a alertas de correo electrónico."
-    }
+    },
+    "on_save_search": "ES_Successfully saved search",
+    "on_unsave_search": "ES_Successfully removed saved search",
+    "on_save_and_subscribe": "ES_Successfully saved and subscribed to search",
+    "on_unsubscribe": "ES_Successfully unsubscribed from search"
   },
   "profile_page": {
     "title": "Mi perfil",
@@ -182,7 +183,7 @@
     }
   },
   "top_5_page": {
-    "title_short": "ES_Top five",
+    "title_short": "Cinco principales",
     "title": {
       "all": "Cinco documentos de 1 página de mayor acceso por los usuarios",
       "policy_makers": "Cinco documentos de 1 página de mayor acceso por los formuladores de políticas"
@@ -200,28 +201,28 @@
     "password": "Contraseña",
     "confirm_password": "Confirme la contraseña",
     "submit": "Restablecer contraseña",
-    "password_retained": "ES_Thank you. Your original password has been retained."
+    "password_retained": "Gracias. Su contraseña original fue retenida."
   },
   "newsletter_page": {
     "title": "Boletín informativo"
   },
   "unsubscribe_page": {
     "title": "Cancelar suscripción",
-    "confirmation_msg": "ES_Please click the button below to confirm that you would like to unsubscribe from the Evidence Service",
+    "confirmation_msg": "Haga clic en el botón a continuación para confirmar que quisiera cancelar su suscripción del Servicio sobre evidencias.",
     "unsubscribe": "Cancelar suscripción",
-    "success": "ES_Successfully unsubscribed from newsletter"
+    "success": "Canceló con éxito su suscripción al boletín."
   },
   "saved_search_page": {
     "title": "Búsquedas guardadas",
     "subscribed_only": "Mostrar solamente las búsquedas suscriptas",
-    "instructions": "Puede suscribirse a hasta una búsqueda guardada y una búsqueda protegida.",
     "subscribe": "Suscribirse a la búsqueda",
     "dialog": {
-      "message": "Crear una nueva búsqueda suscripta anulará su suscripción a su búsqueda actual. ¿Está seguro de que desea hacer esto?",
+      "message": "ES_Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?",
       "cancel": "Cancelar",
       "confirm": "Nueva búsqueda"
     },
-    "on_remove": "Se quitaron %{documents_count} documentos con éxito"
+    "on_remove": "Se quitaron %{documents_count} documentos con éxito",
+    "curated_searches": "ES_Curated searches"
   },
   "saved_articles_page": {
     "title": "Documentos guardados",

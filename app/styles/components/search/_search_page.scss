@@ -65,6 +65,12 @@
       }
     }
 
+    .applied-filters {
+      li {
+        border-top: none;
+      }
+    }
+
     @include desktop {
       display: block;
     }

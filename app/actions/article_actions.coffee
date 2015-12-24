@@ -1,9 +1,9 @@
-API = require('lib/api')
+FetchAPI = require('lib/fetch_api')
 
 ArticleActions = Reflux.createActions
   loadArticle: {asyncResult: true}
 
 ArticleActions.loadArticle.listen (id, title, lang) ->
-  API.read("articles/#{id}?lang=#{lang}&t=#{title}").done(@completed).fail(@failed)
+  FetchAPI.read("articles/#{id}?lang=#{lang}&t=#{title}").then(@completed).catch(@failed)
 
 module.exports = ArticleActions

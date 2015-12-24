@@ -35,6 +35,14 @@
     }
   }
 
+  .curated-searches {
+    margin-top: $xx-large-size;
+
+    h1 {
+      margin-bottom: $large-size;
+    }
+  }
+
   span + input {
     margin-left: $tiny-size;
   }

@@ -5,6 +5,7 @@ Toggle = ReactToggle
 ApplicationHelper = require('mixins/application_helper')
 TranslationHelper = require('mixins/translation_helper')
 SelectableItem = require('components/shared/selectable_item')
+SearchStore = require('stores/search_store')
 
 module.exports = React.createClass
   displayName: 'SavedSearchItem'
@@ -37,12 +38,23 @@ module.exports = React.createClass
         cancelText: @t('dialog.cancel'),
         confirmText: @t('dialog.confirm'),
         onConfirm: @toggleSubscription
+    else
+      @toggleSubscription()
 
   renderAppliedFilters: ->
     filters = @props.search.filters
-    return if filters.length <= 0
+    return if !filters || filters.length <= 0
 
-    " (#{@ellipsis(_.pluck(filters, 'title').join(', '), 30)})"
+    <ul className="applied-filters">
+      {
+        for filter in filters
+          <li className="applied-filter-item">
+            <div className="applied-filter-item-content">
+              <span className="applied-filter-item-filters">{filter.title}</span>
+            </div>
+          </li>
+      }
+    </ul>
 
   render: ->
     <SelectableItem {...@props} showSelect={false} className="saved-search-item list-item">
@@ -50,7 +62,6 @@ module.exports = React.createClass
         <h2>
           <Link to={['/search', @serializeSearchParams(@props.search)]}>
             {@props.search.query}
-            {@renderAppliedFilters()}
           </Link>
         </h2>
         {
@@ -61,6 +72,7 @@ module.exports = React.createClass
             </label>
         }
       </div>
+      {@renderAppliedFilters()}
       <label className="saved-search-control">
         <span>{@t('subscribe')}</span>
         <Toggle checked={@props.search.subscribed} onChange={@confirmSubscriptionToggle} />

@@ -25,6 +25,7 @@ module.exports = Reflux.createStore
     region: UrlStore.state.params.region || 'worldwide'
     articles: []
     searches: []
+    curatedSearches: []
 
   ##
   # Data accessors
@@ -41,7 +42,12 @@ module.exports = Reflux.createStore
       Cookies.remove('token')
       return
 
-    @setState(user: user, loaded: true, errors: null, language: UrlStore.state.params.lang || user.language)
+    language = UrlStore.state.params.lang || user.language
+    if language != @state.language
+      UrlActions.setParams(lang: language)
+      _.defer -> window.location.reload()
+
+    @setState(user: user, loaded: true, errors: null, language: language)
 
   onLoadUserFailed: (xhr, statusCode, responseText) ->
     @setState(errors: responseText, loaded: true)
@@ -84,6 +90,11 @@ module.exports = Reflux.createStore
     @setState(errors: responseText, loaded: true)
 
   onLoginUserCompleted: (user) ->
+    # language changed?
+    if @state.language != user.language
+      UrlActions.setParams(lang: user.language)
+      _.defer -> window.location.reload()
+
     @setState(user: user, loaded: true, language: user.language)
     Cookies.set('token', user.token)
 
@@ -96,6 +107,7 @@ module.exports = Reflux.createStore
   onLogoutUserCompleted: ->
     @setState(user: null, loaded: false, errors: null)
     Cookies.remove('token')
+    _.defer -> window.location = '/'
 
   onLogoutUserFailed: ->
     @setState(errors: ['faild_logout'])
@@ -129,9 +141,10 @@ module.exports = Reflux.createStore
 
     @setState(searches: searches)
 
-  onSaveSearchCompleted: (search) ->
+  onSaveSearchCompleted: (savedSearch) ->
     searches = _.deepClone(@state.searches)
-    searches.push(search)
+    searches.push(savedSearch)
+    require('stores/search_store').notifySaved(true, savedSearch.id)
     @setState(searches: searches)
 
   onSaveArticlesCompleted: (article) ->
@@ -141,17 +154,40 @@ module.exports = Reflux.createStore
 
   onRemoveSearchesCompleted: (removedIds) ->
     searches = _(@state.searches).reject (s) -> removedIds.indexOf(s.id) >= 0
+    searchStore = require('stores/search_store')
+    currentSearch = searchStore.state.search.saved_search_id
+    if currentSearch && removedIds.indexOf(currentSearch.saved_search_id)
+      searchStore.notifySaved(false, null)
+
     @setState(searches: searches)
 
   onRemoveArticlesCompleted: (removedIds) ->
     articles = _(@state.articles).reject (a) -> removedIds.indexOf(a.id) >= 0
     @setState(articles: articles)
 
-  onSubscribeToSearchCompleted: (search) ->
+  onToggleSubscribeToSavedSearchCompleted: (saved_search) ->
     searches = _.deepClone(@state.searches)
 
-    searches.map (s) -> s.subscribed = false
-    search = _(searches).findWhere(id: search.id)
-    search.subscribed = true
+    search = _(searches).findWhere(id: saved_search.id)
+    if search
+      search.subscribed = saved_search.subscribed
+      require('stores/search_store').notifySubscribed(saved_search.subscribed)
 
     @setState(searches: searches)
+
+  onToggleSubscribeToCuratedSearchCompleted: (saved_search) ->
+    searches = _.deepClone(@state.curatedSearches)
+
+    search = _(searches).find (s) ->
+      s.query == saved_search.query &&
+      s.applied_filters.toString() == saved_search.applied_filters.toString()
+
+    if search
+      search.subscribed = saved_search.subscribed
+      search.saved_search_id = saved_search.id
+      require('stores/search_store').notifySubscribed(saved_search.subscribed)
+
+    @setState(curatedSearches: searches)
+
+  onLoadCuratedSearchesCompleted: (curatedSearches) ->
+    @setState(curatedSearches: curatedSearches)

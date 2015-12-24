@@ -16,7 +16,7 @@ module.exports = React.createClass
   componentWillMount: ->
     @filters = @props.context.filters
     @filterGroup = _.clone(@props.context.filterGroup)
-    mode = @filterGroup.mode || @state.mode
+    mode = @filterGroup.attributes?[0] || @state.mode
     @setState(countries: @filters, mode: mode)
     @unsubscribe = SearchStore.listen(@onFiltersUpdated)
 
@@ -43,12 +43,13 @@ module.exports = React.createClass
       e.preventDefault()
       return if mode == @state.mode
 
-      @setState(countries: @state.countries, mode: mode)
+      @setState(mode: mode)
       appliedFilters = @getAppliedFilters()
 
       # force search if there are country filters already applied
       if appliedFilters.length > 0
-        @onToggleFilter(@filterGroup)
+        _.defer =>
+          @onToggleFilter(@filterGroup)
 
   filterCountries: ->
     query = @refs.countryFilter.getDOMNode().value
