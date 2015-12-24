@@ -1,5 +1,6 @@
 SortOrder = require('components/results/sort_order')
 ResultList = require('components/results/result_list')
+SelectableList = require('components/shared/selectable_list')
 TranslationHelper = require('mixins/translation_helper')
 SavedSearchButtons = require('components/search/saved_search_buttons')
 Button = require('components/shared/button')
@@ -20,31 +21,8 @@ module.exports = React.createClass
   baseTranslation: 'search_page.result_box'
 
   getInitialState: ->
-    selected: []
-
-  # TODO: duplicate logic between saved_search, saved_articles and result_list
-  toggleSelect: (article) ->
-    selected = _.clone @state.selected
-    if found = _.findWhere(selected, id: article.id)
-      selected = _(selected).without(found)
-    else
-      selected.push(article)
-
-    @setState(selected: selected)
-
-  toggleSelectAll: (ev) ->
-    selected = @props.search.results
-    allSelected = false
-
-    if @state.selected.length > 0
-      selected = []
-      allSelected = false
-    else
-      allSelected = true
-
-    @setState(selected: selected, allSelected: allSelected)
-
-    @refs.resultList.toggleSelectAll()
+    hasSelected: false
+    allSelected: false
 
   saveArticles: ->
     @refs.resultList.saveArticles()
@@ -52,19 +30,25 @@ module.exports = React.createClass
   emailArticles: ->
     @refs.resultList.emailArticles()
 
+  toggleSelect: (selected) ->
+    allSelected = selected.length > 0 && selected.length == @props.search.results.length
+    @setState(hasSelected: selected.length > 0, allSelected: allSelected)
+
+  toggleSelectAll: ->
+    @refs.resultList.toggleSelectAll()
 
   renderSavedArticlesButtons: ->
     if UserStore.isLoggedIn()
       <div className="saved-articles-actions">
         {
-          if @state.selected.length > 0
+          if @state.hasSelected
             [
               <Button key="icon-email" className="icon icon-email" onClick={@emailArticles}>Email</Button>
               <Button key="icon-save-article" className="icon icon-save-article" onClick={@saveArticles}>Save</Button>
             ]
         }
         <Link className="icon icon-view-saved-articles button" to="/user/articles">View saved</Link>
-        <label className="select-all-action action">{@t('/select_all')}<input type="checkbox" onChange={@toggleSelectAll} /></label>
+        <label className="select-all-action action">{@t('/select_all')}<input type="checkbox" checked={@state.allSelected} onChange={@toggleSelectAll} /></label>
       </div>
 
   render: ->
@@ -75,5 +59,5 @@ module.exports = React.createClass
         {@renderSavedArticlesButtons()}
       </div>
       <SavedSearchButtons search={@props.search} toggleSelectAll={@toggleSelectAll} onSaveAndSubscribe={@props.onSaveAndSubscribe} />
-      <ResultList ref="resultList" results={@props.search.results} resultsCount={@props.search.results_count} onLoadMore={@props.onLoadMore} onSelectToggle={@toggleSelect} />
+      <ResultList ref="resultList" results={@props.search.results} resultsCount={@props.search.results_count} onLoadMore={@props.onLoadMore} toggleSelect={@toggleSelect} />
     </div>

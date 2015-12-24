@@ -14,33 +14,16 @@ module.exports = React.createClass
 
   getInitialState: ->
     articles: UserStore.state.articles
-    selected: []
+    hasSelected: false
+    allSelected: false
 
   componentDidMount: ->
     document.title = "#{@t('title')} | #{@t('/site_name')}"
 
-  # TODO: duplicate logic between saved_search, saved_articles and result_list
-  toggleSelect: (article) ->
-    selected = _.clone @state.selected
-    if found = _.findWhere(selected, id: article.id)
-      selected = _(selected).without(found)
-    else
-      selected.push(article)
+  toggleSelect: (selected) ->
+    @setState(hasSelected: selected.length > 0, allSelected: selected.length == @state.articles.length)
 
-    @setState(selected: selected)
-
-  toggleSelectAll: (ev) ->
-    selected = @state.articles
-    allSelected = false
-
-    if @state.selected.length > 0
-      selected = []
-      allSelected = false
-    else
-      allSelected = true
-
-    @setState(selected: selected, allSelected: allSelected)
-
+  toggleSelectAll: (numSelected) ->
     @refs.resultList.toggleSelectAll()
 
   componentWillMount: ->
@@ -51,7 +34,7 @@ module.exports = React.createClass
     @unsubscribeUserStore()
 
   userStoreUpdated: (data) ->
-    @setState(articles: data.articles)
+    @setState(articles: data.articles, hasSelected: false, allSelected: false)
 
   exportSelected: ->
     @refs.resultList.exportArticles()
@@ -63,7 +46,7 @@ module.exports = React.createClass
     @refs.resultList.emailArticles()
 
   renderExportButtons: ->
-    if @state.selected.length > 0
+    if @state.hasSelected
       <div className="export-buttons fixed-footer">
         <Button className="icon icon-export" onClick={@exportSelected}>{@t('export')}</Button>
         <Button className="icon icon-email" onClick={@sendEmail}>{@t('email')}</Button>
@@ -72,14 +55,17 @@ module.exports = React.createClass
   renderListActions: ->
     <ul className="list-actions list-inline">
       {
-        if @state.selected.length > 0
+        if @state.hasSelected
           <li className="action remove-selected">
             <Button onClick={@removeSelected}>{@t('/remove_selected')}</Button>
           </li>
       }
-      <li className="action">
-        <label>{@t('/select_all')}<input type="checkbox" onChange={@toggleSelectAll} name="search_to_delete"/></label>
-      </li>
+      {
+        if @state.articles.length > 0
+          <li className="action">
+            <label>{@t('/select_all')}<input type="checkbox" onChange={@toggleSelectAll} checked={@state.allSelected} name="search_to_delete"/></label>
+          </li>
+      }
     </ul>
 
   render: ->
@@ -93,5 +79,12 @@ module.exports = React.createClass
         {@renderExportButtons()}
         {@renderListActions()}
       </div>
-      <ResultList ref="resultList" results={@state.articles} resultsCount={@state.articles.length} source="saved_documents" onSelectToggle={@toggleSelect} />
+      {
+        if @state.articles.length > 0
+          <ResultList ref="resultList" results={@state.articles} resultsCount={@state.articles.length} source="saved_documents" toggleSelect={@toggleSelect} />
+        else
+          <div className="result-list">
+            {@t('no_saved_articles')}
+          </div>
+      }
     </div>

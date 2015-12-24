@@ -4,6 +4,7 @@ NotificationActions = require('actions/notification_actions')
 Toggle = ReactToggle
 ApplicationHelper = require('mixins/application_helper')
 TranslationHelper = require('mixins/translation_helper')
+SelectableItem = require('components/shared/selectable_item')
 SearchStore = require('stores/search_store')
 
 module.exports = React.createClass
@@ -14,7 +15,7 @@ module.exports = React.createClass
 
   propTypes:
     search: React.PropTypes.object.isRequired
-    onSelect: React.PropTypes.func
+    toggleSelect: React.PropTypes.func
     selected: React.PropTypes.bool
     showSelect: React.PropTypes.bool
 
@@ -22,10 +23,7 @@ module.exports = React.createClass
     selected: false
     showSelect: true
     onToggleSubscription: ->
-    onSelect: ->
-
-  onSelect: (e) ->
-    @props.onSelect(@props.search)
+    toggleSelect: ->
 
   getUrlParams: ->
     "#{@serializeSearchUrl()}"
@@ -49,8 +47,8 @@ module.exports = React.createClass
 
     <ul className="applied-filters">
       {
-        for filter in filters
-          <li className="applied-filter-item">
+        for filter, i in filters
+          <li className="applied-filter-item" key="filter-#{i}">
             <div className="applied-filter-item-content">
               <span className="applied-filter-item-filters">{filter.title}</span>
             </div>
@@ -59,7 +57,7 @@ module.exports = React.createClass
     </ul>
 
   render: ->
-    <li className="saved-search-item list-item">
+    <SelectableItem {...@props} showSelect={false} className="saved-search-item list-item">
       <div className="saved-search-item-header clearfix">
         <h2>
           <Link to={['/search', @serializeSearchParams(@props.search)]}>
@@ -70,7 +68,7 @@ module.exports = React.createClass
           if @props.showSelect
             <label className="saved-search-select action">
               <span>{@t('/select')}</span>
-              <input type="checkbox" onChange={@onSelect} defaultChecked={@props.selected} />
+              <input type="checkbox" onChange={=> @props.toggleSelect(@)} defaultChecked={@props.selected} />
             </label>
         }
       </div>
@@ -79,4 +77,4 @@ module.exports = React.createClass
         <span>{@t('subscribe')}</span>
         <Toggle checked={@props.search.subscribed} onChange={@confirmSubscriptionToggle} />
       </label>
-    </li>
+    </SelectableItem>

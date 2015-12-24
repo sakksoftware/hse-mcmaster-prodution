@@ -222,14 +222,16 @@
       "confirm": "Nueva búsqueda"
     },
     "on_remove": "Se quitaron %{documents_count} documentos con éxito",
-    "curated_searches": "ES_Curated searches"
+    "curated_searches": "ES_Curated searches",
+    "no_saved_searches": "ES_There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar."
   },
   "saved_articles_page": {
     "title": "Documentos guardados",
     "warning": "Los documentos que guardó permanecerán en esta página por un máximo de 6 horas.",
     "instructions": "Puede enviar esos documentos por correo electrónico o puede exportarlos.",
     "email": "Correo electrónico",
-    "export": "Exportar"
+    "export": "Exportar",
+    "no_saved_articles": "ES_There are no saved documents. To add a saved document go to the search page, select the documents you would like to save and click save."
   },
   "quota_exceeded_error_page": {
     "title": "Límite excedido",

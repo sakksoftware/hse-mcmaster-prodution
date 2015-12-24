@@ -1,5 +1,6 @@
 SavedSearchItem = require('components/saved_search/saved_search_item')
 Button = require('components/shared/button')
+SelectableList = require('components/shared/selectable_list')
 UserActions = require('actions/user_actions')
 TranslationHelper = require('mixins/translation_helper')
 
@@ -20,46 +21,36 @@ module.exports = React.createClass
     showSelect: true
 
   getInitialState: ->
-    selected: []
     allSelected: false
+    hasSelected: false
 
-  toggleSelectAll: (ev) ->
-    selected = @props.searches
-    allSelected = false
-
-    if @state.selected.length > 0
-      selected = []
-      allSelected = false
-    else
-      allSelected = true
-
-    @setState(selected: selected, allSelected: allSelected)
+  toggleSelect: (selected) ->
+    allSelected = selected.length > 0 && selected.length == @props.searches.length
+    @setState(hasSelected: selected.length > 0, allSelected: allSelected)
 
   toggleSubscription: (saved_search) ->
     @props.toggleSubscription(saved_search)
 
-  toggleSelect: (saved_search) ->
-    selected = _.clone(@state.selected)
-    if found = _(selected).findWhere(id: saved_search.id)
-      selected = _(selected).without(found)
-    else
-      selected.push(saved_search)
-
-    allSelected = selected.length == @props.searches.length
-    @setState(selected: selected, allSelected: allSelected)
+  toggleSelectAll: ->
+    @refs.selectableList.toggleSelectAll()
 
   removeSelected: ->
-    UserActions.removeSearches(@state.selected).then =>
-      flash('success', @t('on_remove', searches_count: @state.selected.length))
-      @setState(selected: [])
+    selected = @getSelected()
+    UserActions.removeSearches(selected).then =>
+      flash('success', @t('on_remove', searches_count: selected.length))
+      @clearSelected()
+
+  clearSelected: ->
+    @refs.selectableList.clearSelected()
+
+  getSelected: ->
+    for child in @refs.selectableList.getSelected()
+      child.props.search
 
   renderItems: ->
     for search in @props.searches
-      selected = !!_.findWhere(@state.selected, id: search.id)
       <SavedSearchItem search={search}
-        key="saved-search-item-#{search.id}-#{'selected' if selected}"
-        selected={selected}
-        onSelect={@toggleSelect}
+        key="saved-search-item-#{search.id}"
         onToggleSubscription={@toggleSubscription}
         showSelect={@props.showSelect}
       />
@@ -69,7 +60,7 @@ module.exports = React.createClass
       <div className="saved-search-list-header">
         <ul className="saved-search-list-actions list-actions list-inline">
           {
-            if @state.selected.length > 0
+            if @state.hasSelected
               <li className="action remove-selected">
                 <Button onClick={@removeSelected}>{@t('/remove_selected')}</Button>
               </li>
@@ -86,7 +77,7 @@ module.exports = React.createClass
   render: ->
     <div className="saved-search-list">
       {@renderHeader()}
-      <ul className="saved-search-list-content list">
+      <SelectableList ref="selectableList" className="saved-search-list-content list" toggleSelect={@toggleSelect} showSelectAll={false}>
         {@renderItems()}
-      </ul>
+      </SelectableList>
     </div>

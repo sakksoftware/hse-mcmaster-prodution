@@ -222,14 +222,16 @@
       "confirm": "New search"
     },
     "on_remove": "Successfully removed %{searches_count} searches",
-    "curated_searches": "Curated searches"
+    "curated_searches": "Curated searches",
+    "no_saved_searches": "There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar."
   },
   "saved_articles_page": {
     "title": "Saved documents",
     "warning": "Documents you saved will be kept on this page for up to 6 hours.",
     "instructions": "You can email or export those documents.",
     "email": "Email",
-    "export": "Export"
+    "export": "Export",
+    "no_saved_articles": "There are no saved documents. To add a saved document go to the search page, select the documents you would like to save and click save."
   },
   "quota_exceeded_error_page": {
     "title": "Limit exceeded",
