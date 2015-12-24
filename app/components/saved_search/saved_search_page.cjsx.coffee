@@ -58,7 +58,16 @@ module.exports = React.createClass
           <h1>{@t('title')}</h1>
           <label className="saved-search-subscribed-only action">{@t('subscribed_only')}<input type="checkbox" onClick={@toggleSubscribedOnly} /></label>
         </div>
-        <SavedSearchList searches={@getSearches()} toggleSubscription={@toggleSubscriptionSavedSearch} />
+        {
+          if @state.searches.length > 0
+            <SavedSearchList searches={@getSearches()} toggleSubscription={@toggleSubscriptionSavedSearch} />
+          else
+            <div className="saved-search-list">
+              <ol className="saved-search-list-content list">
+                <li className="saved-search-item list-item">{@t('no_saved_searches')}</li>
+              </ol>
+            </div>
+        }
       </div>
       {
         if !_.isEmpty(@getCuratedSearches())

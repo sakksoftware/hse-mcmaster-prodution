@@ -222,14 +222,16 @@
       "confirm": "Nouvelle recherche"
     },
     "on_remove": "Les %{documents_count} documents ont été supprimés avec succès",
-    "curated_searches": "FR_Curated searches"
+    "curated_searches": "FR_Curated searches",
+    "no_saved_searches": "FR_There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar."
   },
   "saved_articles_page": {
     "title": "Documents sauvegardés",
     "warning": "Les documents que vous avez sauvegardés seront conservés sur cette page pour une période de 6 heures.",
     "instructions": "Vous pouvez envoyer ces documents par courriel ou les exporter.",
     "email": "Courriel",
-    "export": "Exporter"
+    "export": "Exporter",
+    "no_saved_articles": "FR_There are no saved documents. To add a saved document go to the search page, select the documents you would like to save and click save."
   },
   "quota_exceeded_error_page": {
     "title": "Limite dépassée",

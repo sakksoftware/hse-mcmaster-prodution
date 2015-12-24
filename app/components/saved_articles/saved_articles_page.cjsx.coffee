@@ -76,5 +76,12 @@ module.exports = React.createClass
         {@renderExportButtons()}
         {@renderListActions()}
       </div>
-      <ResultList ref="resultList" results={@state.articles} resultsCount={@state.articles.length} source="saved_documents" toggleSelect={@toggleSelect} />
+      {
+        if @state.articles.length > 0
+          <ResultList ref="resultList" results={@state.articles} resultsCount={@state.articles.length} source="saved_documents" toggleSelect={@toggleSelect} />
+        else
+          <div className="result-list">
+            {@t('no_saved_articles')}
+          </div>
+      }
     </div>

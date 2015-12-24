@@ -222,14 +222,16 @@
       "confirm": "新的检索"
     },
     "on_remove": "成功删除%{documents_count}个搜索",
-    "curated_searches": "CN_Curated searches"
+    "curated_searches": "CN_Curated searches",
+    "no_saved_searches": "CN_There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar."
   },
   "saved_articles_page": {
     "title": "已保存文件",
     "warning": "您所保存的文件在此页面中的时限为六小时。",
     "instructions": "您可通过电子邮件发送这些文件，或将其导出。",
     "email": "电子邮件",
-    "export": "导出"
+    "export": "导出",
+    "no_saved_articles": "CN_There are no saved documents. To add a saved document go to the search page, select the documents you would like to save and click save."
   },
   "quota_exceeded_error_page": {
     "title": "超限",
