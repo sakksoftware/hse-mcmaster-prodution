@@ -32,7 +32,8 @@ module.exports = React.createClass
   componentWillUnmount: ->
     @unsubscribe()
 
-  onSearchUpdated: (search) ->
+  onSearchUpdated: (state) ->
+    search = state.search
     if search.filters
       @filterGroup = SearchStore.findFilter(@filterGroup)
       filters = @filterGroup.filters
