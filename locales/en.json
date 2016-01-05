@@ -179,7 +179,7 @@
     },
     "complementary_content_3": {
       "title": "ONTARIO'S HEALTH SYSTEM DOCUMENTS",
-      "description": "For those who log in Ontario-based IP address"
+      "description": "For those who log in using an Ontario-based IP address"
     }
   },
   "top_5_page": {
@@ -228,7 +228,7 @@
   "saved_articles_page": {
     "title": "Saved documents",
     "warning": "Documents you saved will be kept on this page for up to 6 hours.",
-    "instructions": "You can email or export those documents.",
+    "instructions": "You can email or export these documents.",
     "email": "Email",
     "export": "Export",
     "no_saved_articles": "There are no saved documents. To add a saved document go to the search page, select the documents you would like to save and click save."
