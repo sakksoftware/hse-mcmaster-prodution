@@ -147,10 +147,10 @@
     "signup_prompt": {
       "instructions": "注册以查看20条以后的结果，保存文档和检索，发送电子邮件和导出文件，以及订阅邮件提醒"
     },
-    "on_save_search": "CN_Successfully saved search",
-    "on_unsave_search": "CN_Successfully removed saved search",
-    "on_save_and_subscribe": "CN_Successfully saved and subscribed to search",
-    "on_unsubscribe": "CN_Successfully unsubscribed from search"
+    "on_save_search": "成功保存检索",
+    "on_unsave_search": "成功删除保存的检索",
+    "on_save_and_subscribe": "成功保存和订阅检索",
+    "on_unsubscribe": "成功退订检索"
   },
   "profile_page": {
     "title": "我的资料",
@@ -217,12 +217,11 @@
     "subscribed_only": "只显示订阅检索",
     "subscribe": "订阅检索",
     "dialog": {
-      "message": "CN_Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?",
       "cancel": "取消",
       "confirm": "新的检索"
     },
     "on_remove": "成功删除%{documents_count}个搜索",
-    "curated_searches": "CN_Curated searches",
+    "curated_searches": "策划检索",
     "no_saved_searches": "CN_There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar."
   },
   "saved_articles_page": {

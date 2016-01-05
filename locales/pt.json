@@ -147,10 +147,10 @@
     "signup_prompt": {
       "instructions": "Inscreva-se para exibir mais de 20 resultados, salvar documentos e pesquisas, enviar e-mails com documentos e exportá-los e para assinar alertas por e-mail"
     },
-    "on_save_search": "PT_Successfully saved search",
-    "on_unsave_search": "PT_Successfully removed saved search",
-    "on_save_and_subscribe": "PT_Successfully saved and subscribed to search",
-    "on_unsubscribe": "PT_Successfully unsubscribed from search"
+    "on_save_search": "Pesquisa salva com sucesso",
+    "on_unsave_search": "Pesquisa salva eliminada com sucesso",
+    "on_save_and_subscribe": "Salva e suscrita para pesquisa com sucesso",
+    "on_unsubscribe": "Retirada da pesquisa com sucesso"
   },
   "profile_page": {
     "title": "Meu perfil",
@@ -217,12 +217,11 @@
     "subscribed_only": "Mostrar apenas pesquisas assinadas",
     "subscribe": "Assinar pesquisa",
     "dialog": {
-      "message": "PT_Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?",
       "cancel": "Cancelar",
       "confirm": "Nova pesquisa"
     },
     "on_remove": "Removeu com êxito %{documents_count} documentos",
-    "curated_searches": "PT_Curated searches",
+    "curated_searches": "Pesquisas compiladas",
     "no_saved_searches": "PT_There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar."
   },
   "saved_articles_page": {

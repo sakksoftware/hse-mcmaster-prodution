@@ -217,7 +217,6 @@
     "subscribed_only": "Ne montrez que les recherches pour lesquelles vous êtes abonné",
     "subscribe": "S'abonner à la recherche",
     "dialog": {
-      "message": "FR_Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?",
       "cancel": "Annuler",
       "confirm": "Nouvelle recherche"
     },
