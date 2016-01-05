@@ -218,7 +218,8 @@
     "subscribe": "Assinar pesquisa",
     "dialog": {
       "cancel": "Cancelar",
-      "confirm": "Nova pesquisa"
+      "confirm": "Nova pesquisa",
+      "message": "PT_Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?"
     },
     "on_remove": "Removeu com êxito %{documents_count} documentos",
     "curated_searches": "Pesquisas compiladas",

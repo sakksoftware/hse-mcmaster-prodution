@@ -218,7 +218,8 @@
     "subscribe": "订阅检索",
     "dialog": {
       "cancel": "取消",
-      "confirm": "新的检索"
+      "confirm": "新的检索",
+      "message": "CN_Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?"
     },
     "on_remove": "成功删除%{documents_count}个搜索",
     "curated_searches": "策划检索",

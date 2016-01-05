@@ -218,7 +218,8 @@
     "subscribe": "S'abonner à la recherche",
     "dialog": {
       "cancel": "Annuler",
-      "confirm": "Nouvelle recherche"
+      "confirm": "Nouvelle recherche",
+      "message": "FR_Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?"
     },
     "on_remove": "Les %{documents_count} documents ont été supprimés avec succès",
     "curated_searches": "FR_Curated searches",
