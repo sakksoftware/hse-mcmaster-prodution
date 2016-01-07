@@ -36,9 +36,11 @@ module.exports = React.createClass
       child.props.result
 
   exportArticles: ->
+    API = require('lib/api')
     ids = _.pluck(@getSelected(), 'id')
-    url = "#{config.apiBase}/api/user/articles.csv?ids=#{encodeURIComponent(ids.join(';'))}"
-    @openNewWindow(url)
+    API = API.create('/user/articles.csv', ids.join(';')).then (data) =>
+      url = config.apiBase + data.Link
+      @openNewWindow(url)
 
   removeUserArticles: ->
     selected = @getSelected()
