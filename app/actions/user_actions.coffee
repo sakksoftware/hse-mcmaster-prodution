@@ -68,8 +68,8 @@ UserActions.resetPassword.listen (data) ->
 UserActions.loadRegion.listen ->
   API.read('geo').done(@completed).fail(@failed)
 
-UserActions.unsubscribe.listen ->
-  API.update('user/unsubscribe').done(@completed).fail(@failed)
+UserActions.unsubscribe.listen (x) ->
+  FetchAPI.update('user/unsubscribe', {x: x}).then(@completed).catch(@failed)
 
 UserActions.loadSearches.listen ->
   API.read('/user/searches').done(@completed).fail(@failed)

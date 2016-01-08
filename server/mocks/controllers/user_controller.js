@@ -108,4 +108,8 @@ module.exports = function(app) {
 
     res.json(saved_search);
   });
+
+  app.put('/api/user/unsubscribe', function(req, res) {
+    res.json(req.query);
+  });
 }

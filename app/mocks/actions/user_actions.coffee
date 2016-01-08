@@ -130,8 +130,7 @@ UserActions.loadRegion.listen ->
   API.read('geo').done(@completed).fail(@failed)
 
 UserActions.unsubscribe.listen (x) ->
-  data = {x: x}
-  StoreMock.send data, (=> @completed(data)), 'POST /user/unsubscribe'
+  FetchAPI.update('user/unsubscribe', {x: x}).then(@completed).catch(@failed)
 
 UserActions.loadSearches.listen ->
   Promise.resolve(searchesData).then(@completed)
