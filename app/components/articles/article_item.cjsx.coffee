@@ -1,6 +1,7 @@
 TranslationHelper = require('mixins/translation_helper')
 ApplicationHelper = require('mixins/application_helper')
 ArticleField = require('components/articles/article_field')
+Link = require('components/shared/link')
 
 module.exports = React.createClass
   displayName: "ArticleItem"
@@ -100,13 +101,14 @@ module.exports = React.createClass
   renderCountries: (countries) ->
     @joinList(_.compact(_.map(countries, (country) -> "#{country.title} (#{country.conducted_count})")))
 
+  renderRelatedArticlesLink: ->
+    article = @props.article
+    <ArticleField visible={article.related_documents_visible}>
+      <Link className="btn btn-primary" to={["/search", related_article_id: article.id]}>{article.label_related_documents}</Link>
+    </ArticleField>
+
   render: ->
     article = @props.article
-
-    # <ArticleField visible={article.related_documents_visible}>
-    #   <h2>{@props.article.label_related_documents}</h2>
-    #   <span dangerouslySetInnerHTML={__html: @ifNotEmpty @props.article.related_documents, @t('no_related_documents')}></span>
-    # </ArticleField>
 
     # TODO: possibly use the description field
     # TODO: can be refactored to use @renderFields(['document_type', 'year_published', 'last_year_literature_searched', etc]) for each section
@@ -144,10 +146,13 @@ module.exports = React.createClass
             {@ifNotEmpty @renderStudiesConductedIn(), @t('no_studies_conducted_in')}
           </ArticleField>
 
+          {@renderRelatedArticlesLink()}
+
           <ArticleField visible={article.priority_area_visible}>
             <h2>{article.label_priority_areas}</h2>
             <ul>{@ifNotEmpty @renderNestedList(article.priority_areas, 'priority_areas', 'priority_area'), @t('no_priority_areas')}</ul>
           </ArticleField>
+
         </div>
 
         <div className="section">
@@ -190,6 +195,8 @@ module.exports = React.createClass
             {@ifNotEmpty article.country_focus, @t('no_country_focus')}
           </ArticleField>
         </div>
+
+        {@renderRelatedArticlesLink()}
 
         <div className="desktop-sidebar">
           <div className="section">

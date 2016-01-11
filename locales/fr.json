@@ -121,7 +121,8 @@
       "placeholder": "Recherche…",
       "save": "Recherches sauvegardées",
       "save_and_subscribe": "Sauvegarder et s'abonner",
-      "advanced_search": "Recherche avancée"
+      "advanced_search": "Recherche avancée",
+      "related_article": "FR_You are viewing documents related to"
     },
     "result_item": {
       "year": "Année:",

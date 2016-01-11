@@ -61,7 +61,7 @@ module.exports = React.createClass
     step = @state.step
     search = state.search
 
-    if _.isEmpty(search.query.trim()) && _.isEmpty(search.applied_filters)
+    if _.isEmpty(search.query.trim()) && _.isEmpty(search.applied_filters) && _.isEmpty(search.related_article)
       step = 'pending_search'
     else if search.results != null
       step = 'results'

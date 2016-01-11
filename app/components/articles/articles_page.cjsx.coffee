@@ -23,7 +23,7 @@ module.exports = React.createClass
     params = require('lib/url').params()
     lang = UserStore.state.language
     title = params.t # 10 character of the title to protect against scrapping
-    ArticleActions.loadArticle(@props.id, title, lang).then(@handleLoad)
+    ArticleActions.loadArticle(@props.id, title, lang).then(@handleLoad).catch (err) -> _.defer -> throw err
 
   handleLoad: (article) ->
     @setState(article: article)

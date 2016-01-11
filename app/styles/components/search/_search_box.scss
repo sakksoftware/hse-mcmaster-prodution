@@ -90,6 +90,22 @@
       display: block;
     }
   }
+
+  .related-article {
+    font-style: italic;
+    color: darken($border-color, 20%);
+
+    a {
+      color: darken($border-color, 20%);
+      margin-left: $x-tiny-size;
+      text-decoration: underline;
+
+      &:before, &:after {
+        content: '"';
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 .layer-toggled {

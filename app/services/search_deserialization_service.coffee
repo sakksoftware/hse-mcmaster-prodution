@@ -19,6 +19,10 @@ module.exports =
       else
         id: f, applied: true, type: ''
 
+    related_article = null
+    if params.related_article_id
+      related_article = {id: params.related_article_id}
+
     {
       query: if params.q? then params.q else ''
       sort_by: params.sort_by || 'relevance'
@@ -26,4 +30,5 @@ module.exports =
       results_count: 0
       applied_filters: applied_filters || []
       filters: filters || []
+      related_article: related_article || null
     }

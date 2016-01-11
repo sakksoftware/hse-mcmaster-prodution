@@ -79,6 +79,11 @@
   a {
     color: black;
     text-decoration: underline;
+
+    &.btn {
+      color: white;
+      text-decoration: none;
+    }
   }
 
   .article-item-body > .section:nth-child(odd), .article-item-body > .desktop-sidebar > .section:nth-child(even) {
@@ -111,7 +116,7 @@
       margin-left: $sidebar-width + $large-size;
     }
 
-    .article-field:nth-child(5n) {
+    .article-field:nth-child(6n) {
       padding-bottom: $large-size;
       margin-bottom: $large-size;
       border-bottom: 2px solid $border-color;

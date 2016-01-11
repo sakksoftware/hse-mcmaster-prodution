@@ -121,7 +121,8 @@
       "placeholder": "检索……",
       "save": "保存检索",
       "save_and_subscribe": "保存并订阅",
-      "advanced_search": "高级检索"
+      "advanced_search": "高级检索",
+      "related_article": "CN_You are viewing documents related to"
     },
     "result_item": {
       "year": "年份：",

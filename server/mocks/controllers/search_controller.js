@@ -33,6 +33,12 @@ module.exports = function(app) {
       };
     })(this));
 
+    if (params.related_article_id)
+      data.related_article = {
+        id: params.related_article_id,
+        title: "Effectiveness of multidisciplinary interventions to improve the quality of life for people with Parkinson's disease: A systematic review"
+      };
+
     res.json(data);
   });
 };

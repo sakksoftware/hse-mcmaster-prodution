@@ -21,6 +21,7 @@ serializeSearchParams = (search, language, options = {}) ->
   query = search.query || ""
   sortBy = search.sort_by || "relevance"
   applied_filters = serializeAppliedFilters(search.filters).join(';')
+  related_article_id = search.related_article?.id
 
   params =
     q: query
@@ -32,6 +33,9 @@ serializeSearchParams = (search, language, options = {}) ->
 
   if language
     params.lang = language
+
+  if related_article_id
+    params.related_article_id = related_article_id
 
   params
 

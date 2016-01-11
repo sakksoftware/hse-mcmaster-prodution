@@ -56,6 +56,15 @@ module.exports = React.createClass
     if @props.showSavedSearchButtons && UserStore.isLoggedIn()
       <SavedSearchButtons search={@props.search} onSaveAndSubscribe={@props.onSaveAndSubscribe} />
 
+  renderRelatedArticle: ->
+    related_article = @props.search.related_article
+
+    if related_article
+      <p className="related-article">
+        {@t('related_article')}
+        <Link to="articles/#{related_article.id}">{related_article.title}</Link>
+      </p>
+
   render: ->
     <div className="search-box">
       <SearchBar search={@props.search} onSearch={@props.onSearch} />
@@ -79,4 +88,5 @@ module.exports = React.createClass
         <Link to="/search" className="advanced-search">{@t('advanced_search')}</Link>
       </div>
       {@renderResultCountFooter()}
+      {@renderRelatedArticle()}
     </div>
