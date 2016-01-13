@@ -6,6 +6,7 @@
   "select_all": "Select all",
   "select": "Select:",
   "remove_selected": "Remove selected",
+  "clear": "clear",
   "main_menu": {
     "home": "Home",
     "about": "About HSE",
@@ -111,7 +112,8 @@
     "no_category": "Not available",
     "no_who_links": "Not available",
     "no_related_documents": "Not available",
-    "no_last_year_literature_searched": "Not available"
+    "no_last_year_literature_searched": "Not available",
+    "related_documents": "View more documents like this one"
   },
   "search_page": {
     "search_box": {
@@ -255,5 +257,6 @@
     "passwords_must_match": "passwords must match",
     "invalid": "invalid",
     "signup_to_increase_limit": "You have exceeded our record limit. Please log in (or create an account for free) if you wish to access more documents."
-  }
+  },
+  "clear": "clear"
 }

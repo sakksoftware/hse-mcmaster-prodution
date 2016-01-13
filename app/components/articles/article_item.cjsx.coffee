@@ -104,7 +104,7 @@ module.exports = React.createClass
   renderRelatedArticlesLink: ->
     article = @props.article
     <ArticleField visible={article.related_documents_visible}>
-      <Link className="btn btn-primary" to={["/search", related_article_id: article.id]}>{article.label_related_documents}</Link>
+      <Link className="btn btn-primary" to={["/search", related_article_id: article.id]}>{@t('related_documents')}</Link>
     </ArticleField>
 
   render: ->

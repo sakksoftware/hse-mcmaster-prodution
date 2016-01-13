@@ -111,7 +111,8 @@
     "no_category": "No disponible",
     "no_who_links": "No disponible",
     "no_related_documents": "No disponible",
-    "no_last_year_literature_searched": "No disponible"
+    "no_last_year_literature_searched": "No disponible",
+    "related_documents": "ES_View more documents like this one"
   },
   "search_page": {
     "search_box": {
@@ -255,5 +256,6 @@
     "passwords_must_match": "Las contraseñas deben coincidir",
     "invalid": "Inválido",
     "signup_to_increase_limit": "Superó el límite de registros. Inicie sesión (o cree una cuenta en forma gratuita) si desea tener acceso a más documentos."
-  }
+  },
+  "clear": "ES_clear"
 }

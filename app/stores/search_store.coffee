@@ -166,6 +166,13 @@ module.exports = Reflux.createStore
   onLoadFiltersCompleted: (search) ->
     @setState(search: search, errors: null, loaded: true)
 
+  onClearRelatedArticle: ->
+    search = _.clone(@state.search)
+    delete search.related_article
+    @setState(search: search)
+    UrlActions.unsetParam('related_article_id')
+    SearchActions.search(search)
+
   # private
   _updateUrl: ->
     UrlActions.setParams(@serializeSearchParams(@state.search))

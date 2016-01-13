@@ -111,7 +111,8 @@
     "no_category": "Não disponível",
     "no_who_links": "Não disponível",
     "no_related_documents": "Não disponível",
-    "no_last_year_literature_searched": "Não disponível"
+    "no_last_year_literature_searched": "Não disponível",
+    "related_documents": "PT_View more documents like this one"
   },
   "search_page": {
     "search_box": {
@@ -255,5 +256,6 @@
     "passwords_must_match": "As senhas devem coincidir",
     "invalid": "Não é válido",
     "signup_to_increase_limit": "Você excedeu nosso limite máximo. Inicie sessão (ou crie uma conta gratuita) se desejar acessar mais documentos."
-  }
+  },
+  "clear": "PT_clear"
 }

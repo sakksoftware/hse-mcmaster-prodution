@@ -95,7 +95,7 @@
     font-style: italic;
     color: darken($border-color, 20%);
 
-    a {
+    a:first-of-type {
       color: darken($border-color, 20%);
       margin-left: $x-tiny-size;
       text-decoration: underline;

@@ -38,6 +38,12 @@ module.exports = Reflux.createStore
     @setState(params: p)
     @updateUrl()
 
+  onUnsetParam: (param) ->
+    params = _.clone(@state.params)
+    delete params[param]
+    @setState(params: params)
+    console.log('unset', params)
+
   onNavigateTo: (to, params = {}) ->
     defaultParams = {lang: @state.params.lang}
     params = _.extend defaultParams, params

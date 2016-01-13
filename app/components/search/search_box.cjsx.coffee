@@ -4,7 +4,9 @@ SavedSearchButtons = require('components/search/saved_search_buttons')
 LayerToggle = require('components/layered_navigation/layer_toggle')
 FilterNormalizationService = require('services/filter_normalization_service')
 TranslationHelper = require('mixins/translation_helper')
+Button = require('components/shared/button')
 
+SearchActions = require('actions/search_actions')
 UserStore = require('stores/user_store')
 
 module.exports = React.createClass
@@ -63,7 +65,11 @@ module.exports = React.createClass
       <p className="related-article">
         {@t('related_article')}
         <Link to="articles/#{related_article.id}">{related_article.title}</Link>
+        <Button onClick={@clearSearch}>({@t('/clear')})</Button>
       </p>
+
+  clearSearch: ->
+    SearchActions.clearRelatedArticle()
 
   render: ->
     <div className="search-box">
