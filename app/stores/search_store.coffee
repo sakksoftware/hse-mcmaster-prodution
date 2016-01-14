@@ -4,6 +4,7 @@ SearchActions = require('actions/search_actions')
 SearchSerializationService = require('services/search_serialization_service')
 SearchDeserializationService = require('services/search_deserialization_service')
 RefluxStateMixin = require('lib/reflux_state_mixin')(Reflux)
+FilterNormalizationService = require('services/filter_normalization_service')
 
 UserStore = require('stores/user_store')
 
@@ -43,6 +44,10 @@ module.exports = Reflux.createStore
 
   getAppliedFilterGroups: ->
     @_getAppliedFilterGroups(@state.search.filters)
+
+  getAppliedFilters: ->
+    filters = FilterNormalizationService.getFiltersArray(@state.search.filters)
+    filters.filter((e) -> e.applied)
 
   notifySaved: (value, id) ->
     search = _.clone(@state.search)
@@ -86,11 +91,13 @@ module.exports = Reflux.createStore
 
     # analytics
     # TODO: change to new anlytics.js syntax after upgrade
+    config = require('config')
+    data = "QUERY: #{search.query} FILTERS: #{@getAppliedFilters()} URL: #{config.siteUrl}/search#{@serializeSearchUrl(search)}"
     if @state.search.results_count > 0
-      _gaq.push(['_trackEvent', 'search', 'found results', @serializeSearchUrl(search)])
+      _gaq.push(['_trackEvent', 'search', 'found results', data])
       # ga('send', 'event', 'search', 'found results', @serializeSearchUrl(search))
     else
-      _gaq.push(['_trackEvent', 'search', 'no results', @serializeSearchUrl(search)])
+      _gaq.push(['_trackEvent', 'search', 'no results', data])
       # ga('send', 'event', 'search', 'no results', @serializeSearchUrl(search))
 
   onLoadMore: (page) ->
