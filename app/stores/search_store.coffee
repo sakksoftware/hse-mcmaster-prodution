@@ -89,16 +89,7 @@ module.exports = Reflux.createStore
     search.applied_filters = SearchSerializationService.serializeAppliedFilters(search.filters).join(';')
     @setState(search: search, errors: null, loaded: true)
 
-    # analytics
-    # TODO: change to new anlytics.js syntax after upgrade
-    config = require('config')
-    data = "QUERY: #{search.query} FILTERS: #{@getAppliedFilters()} URL: #{config.siteUrl}/search#{@serializeSearchUrl(search)}"
-    if @state.search.results_count > 0
-      _gaq.push(['_trackEvent', 'search', 'found results', data])
-      # ga('send', 'event', 'search', 'found results', @serializeSearchUrl(search))
-    else
-      _gaq.push(['_trackEvent', 'search', 'no results', data])
-      # ga('send', 'event', 'search', 'no results', @serializeSearchUrl(search))
+    @_trackSearch(search)
 
   onLoadMore: (page) ->
     search = _.clone(@state.search)
@@ -230,3 +221,15 @@ module.exports = Reflux.createStore
         appliedFilters.push filter
 
     appliedFilters
+
+  _trackSearch: (search) ->
+    # TODO: change to new anlytics.js syntax after upgrade
+    config = require('config')
+    data = "QUERY: #{search.query} FILTERS: #{@getAppliedFilters().map((e) -> e.title).join(', ')} URL: #{config.siteUrl}/search#{@serializeSearchUrl(search)}"
+    console.log('google will get', data)
+    if @state.search.results_count > 0
+      _gaq.push(['_trackEvent', 'search', 'found results', data])
+      # ga('send', 'event', 'search', 'found results', @serializeSearchUrl(search))
+    else
+      _gaq.push(['_trackEvent', 'search', 'no results', data])
+      # ga('send', 'event', 'search', 'no results', @serializeSearchUrl(search))
