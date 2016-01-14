@@ -100,8 +100,13 @@
       text-decoration: underline;
     }
 
+    .contact-us {
+      margin-right: $x-tiny-size;
+    }
+
     .terms {
       display: inline-block;
+      margin-left: $x-tiny-size;
     }
   }
 

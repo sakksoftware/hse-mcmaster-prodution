@@ -257,5 +257,6 @@
     "invalid": "无效",
     "signup_to_increase_limit": "您已超出我们的记录允许，如果想要获取更多文件，请登陆或注册免费账号。"
   },
-  "clear": "CN_clear"
+  "clear": "CN_clear",
+  "contact_us": "CN_Contact us"
 }

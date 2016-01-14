@@ -249,6 +249,7 @@ module.exports = React.createClass
           <img src="/images/mcmaster_logo.svg" className="logo" />
           <img src="/images/mcmaster_forum_logo.svg" className="forum-logo" />
         </div>
+        <a href="mailto:hse@mcmaster.ca" target="_blank" className="contact-us">{@t('contact_us')}</a>|
         <Link className="terms" to="/terms">{@t('terms_of_use')}</Link>
       </footer>
       {@renderDialog()}

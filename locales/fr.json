@@ -257,5 +257,6 @@
     "invalid": "Invalide",
     "signup_to_increase_limit": "Vous avez dépassé la limite de sauvegarde. Veuillez vous connecter (ou créer un compte gratuitement) si vous souhaitez accéder à plus de documents."
   },
-  "clear": "FR_clear"
+  "clear": "FR_clear",
+  "contact_us": "FR_Contact us"
 }

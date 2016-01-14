@@ -257,5 +257,6 @@
     "invalid": "Inválido",
     "signup_to_increase_limit": "Superó el límite de registros. Inicie sesión (o cree una cuenta en forma gratuita) si desea tener acceso a más documentos."
   },
-  "clear": "ES_clear"
+  "clear": "ES_clear",
+  "contact_us": "ES_Contact us"
 }

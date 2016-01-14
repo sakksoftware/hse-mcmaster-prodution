@@ -6,7 +6,6 @@
   "select_all": "Select all",
   "select": "Select:",
   "remove_selected": "Remove selected",
-  "clear": "clear",
   "main_menu": {
     "home": "Home",
     "about": "About HSE",
@@ -258,5 +257,6 @@
     "invalid": "invalid",
     "signup_to_increase_limit": "You have exceeded our record limit. Please log in (or create an account for free) if you wish to access more documents."
   },
-  "clear": "clear"
+  "clear": "clear",
+  "contact_us": "Contact us"
 }
