@@ -16,6 +16,19 @@ module.exports =
     else
       other
 
-  ellipsis: (text, maxLength)->
-    return text[0..(maxLength - 3 - 1)].trim() + '...' if text?.length > maxLength
+  ellipsis: (text, maxLength) ->
+    offset = 3
+    return text if maxLength <= offset || !text
+
+    endFragment = text[(maxLength - offset)..(maxLength - 1)]
+
+    # special cases to prevent cutting off end highlight tags </b>
+    if endFragment.match(/^\/b>/)
+      offset = offset - 3 # don't replace those 3 characters
+    if endFragment.match(/^b>/)
+      offset = offset - 2 # missing either '<' or '</' leave the max length one
+    if endFragment.match(/^>/)
+      offset = offset - 1 # missing either '<b' or '</b' leave the max length one
+
+    return text[0..(maxLength - (offset + 1))].trim() + '...' if text.length > maxLength
     text

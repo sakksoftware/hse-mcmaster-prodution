@@ -153,7 +153,7 @@ var searchData = {
       "created_at": "2013-08-20 11:33:00Z",
       "updated_at": "2013-08-20 11:33:00Z",
       "quality": "7/11",
-      "description": "Lots of stuff goes here! Very Interesting right?.....",
+      "description": "...1<b>BACKGROUND</b>: <b>Heart</b> <b>failure</b> <b>is</b> <b>the</b> <b>leading</b> <b>cause</b> <b>of</b> <b>hospitalization</b> <b>and</b> <b>readmission</b> <b>in</b> <b>many</b> <b>hospitals</b> <b>worldwide</b>. <b>We</b> <b>performed</b> <b>a</b> <b>meta</b>-<b>analysis</b> <b>to</b> <b>evaluate</b> <b>the</b> <b>effectiveness</b> <b>of</b> <b>multidisciplinary</b> <b>heart</b> <b>failure</b> <b>management</b> <b>programs</b> <b>on</b> <b>hospital</b> <b>admission</b> rates...",
       "category": "Superhero Marvel Movies",
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     }, {
@@ -163,7 +163,7 @@ var searchData = {
       "created_at": "2013-08-20 11:33:00Z",
       "updated_at": "2013-08-20 11:33:00Z",
       "quality": "7/11",
-      "description": "Lots of stuff goes here! Very Interesting right?.....",
+      "description": "...12<b>BACKGROUND</b>: <b>Heart</b> <b>failure</b> <b>is</b> <b>the</b> <b>leading</b> <b>cause</b> <b>of</b> <b>hospitalization</b> <b>and</b> <b>readmission</b> <b>in</b> <b>many</b> <b>hospitals</b> <b>worldwide</b>. <b>We</b> <b>performed</b> <b>a</b> <b>meta</b>-<b>analysis</b> <b>to</b> <b>evaluate</b> <b>the</b> <b>effectiveness</b> <b>of</b> <b>multidisciplinary</b> <b>heart</b> <b>failure</b> <b>management</b> <b>programs</b> <b>on</b> <b>hospital</b> <b>admission</b> rates...",
       "category": "Superhero Marvel Movies",
       "country_groupings": null
     }, {
@@ -173,7 +173,7 @@ var searchData = {
       "created_at": "2013-08-20 11:33:00Z",
       "updated_at": "2013-08-20 11:33:00Z",
       "quality": "7/11",
-      "description": "Lots of stuff goes here! Very Interesting right?.....",
+      "description": "...<b>BACKGROUND</b>: <b>Heart</b> <b>failure</b> <b>is</b> <b>the</b> <b>leading</b> <b>cause</b> <b>of</b> <b>hospitalization</b> <b>and</b> <b>readmission</b> <b>in</b> <b>many</b> <b>hospitals</b> <b>worldwide</b>. <b>We</b> <b>performed</b> <b>a</b> <b>meta</b>-<b>analysis</b> <b>to</b> <b>evaluate</b> <b>the</b> <b>effectiveness</b> <b>of</b> <b>multidisciplinary</b> <b>heart</b> <b>failure</b> <b>management</b> <b>programs</b> <b>on</b> <b>hospital</b> <b>admission</b> rates...",
       "category": "Superhero Marvel Movies",
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     }
