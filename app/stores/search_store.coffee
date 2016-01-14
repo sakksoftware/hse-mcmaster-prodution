@@ -84,6 +84,15 @@ module.exports = Reflux.createStore
     search.applied_filters = SearchSerializationService.serializeAppliedFilters(search.filters).join(';')
     @setState(search: search, errors: null, loaded: true)
 
+    # analytics
+    # TODO: change to new anlytics.js syntax after upgrade
+    if @state.search.results_count > 0
+      _gaq.push(['_trackEvent', 'search', 'found results', @serializeSearchUrl(search)])
+      # ga('send', 'event', 'search', 'found results', @serializeSearchUrl(search))
+    else
+      _gaq.push(['_trackEvent', 'search', 'no results', @serializeSearchUrl(search)])
+      # ga('send', 'event', 'search', 'no results', @serializeSearchUrl(search))
+
   onLoadMore: (page) ->
     search = _.clone(@state.search)
     search.page = page
