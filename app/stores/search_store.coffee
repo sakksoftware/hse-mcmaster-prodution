@@ -225,8 +225,9 @@ module.exports = Reflux.createStore
   _trackSearch: (search) ->
     # TODO: change to new anlytics.js syntax after upgrade
     config = require('config')
-    data = "QUERY: #{search.query} FILTERS: #{@getAppliedFilters().map((e) -> e.title).join(', ')} URL: #{config.siteUrl}/search#{@serializeSearchUrl(search)}"
-    console.log('google will get', data)
+    filters = ""
+    filters = " FILTERS: #{@getAppliedFilters().map((e) -> e.title).join(', ')}" unless _.isEmpty(@getAppliedFilters())
+    data = "QUERY: #{search.query}#{filters} URL: #{config.siteUrl}/search#{@serializeSearchUrl(search)}"
     if @state.search.results_count > 0
       _gaq.push(['_trackEvent', 'search', 'found results', data])
       # ga('send', 'event', 'search', 'found results', @serializeSearchUrl(search))
