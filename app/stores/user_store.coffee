@@ -193,6 +193,5 @@ module.exports = Reflux.createStore
   # private
 
   _markIfStaff: (user) ->
-    console.log('Marking user as staff!')
-    if true # user.role == 'Staff'
+    if user.user_type == 'Staff'
       ga('set', 'dimension1', 'staff');
