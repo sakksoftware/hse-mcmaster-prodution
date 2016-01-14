@@ -229,8 +229,6 @@ module.exports = Reflux.createStore
     filters = " FILTERS: #{@getAppliedFilters().map((e) -> e.title).join(', ')}" unless _.isEmpty(@getAppliedFilters())
     data = "QUERY: #{search.query}#{filters} URL: #{config.siteUrl}/search#{@serializeSearchUrl(search)}"
     if @state.search.results_count > 0
-      _gaq.push(['_trackEvent', 'search', 'found results', data])
-      # ga('send', 'event', 'search', 'found results', @serializeSearchUrl(search))
+      ga('send', 'event', 'search', 'found results', data)
     else
-      _gaq.push(['_trackEvent', 'search', 'no results', data])
-      # ga('send', 'event', 'search', 'no results', @serializeSearchUrl(search))
+      ga('send', 'event', 'search', 'no results', data)
