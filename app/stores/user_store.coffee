@@ -49,6 +49,8 @@ module.exports = Reflux.createStore
 
     @setState(user: user, loaded: true, errors: null, language: language)
 
+    @_markIfStaff(user)
+
   onLoadUserFailed: (xhr, statusCode, responseText) ->
     @setState(errors: responseText, loaded: true)
 
@@ -97,6 +99,8 @@ module.exports = Reflux.createStore
 
     @setState(user: user, loaded: true, language: user.language)
     Cookies.set('token', user.token)
+
+    @_markIfStaff(user)
 
   onLoginUserFailed: (xhr) ->
     errors = ['unknown_error']
@@ -185,3 +189,10 @@ module.exports = Reflux.createStore
 
   onLoadCuratedSearchesCompleted: (curatedSearches) ->
     @setState(curatedSearches: curatedSearches)
+
+  # private
+
+  _markIfStaff: (user) ->
+    console.log('Marking user as staff!')
+    if true # user.role == 'Staff'
+      ga('set', 'user_type', 'staff');
