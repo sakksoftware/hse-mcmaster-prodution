@@ -15,6 +15,7 @@ module.exports = React.createClass
     context: React.PropTypes.object
     children: React.PropTypes.node
     className: React.PropTypes.string
+    style: React.PropTypes.any
 
   handleClick: (e) ->
     e.preventDefault()
@@ -23,7 +24,7 @@ module.exports = React.createClass
 
   render: ->
     menu = @props.menu.replace(/([A-Z])/g, "-$1").toLowerCase()
-    <a ref="btnOffcanvas" href="#" onClick={@handleClick} className={"layer-toggle layer-toggle-#{menu} #{@props.className}"}>
+    <a ref="btnOffcanvas" href="#" onClick={@handleClick} style={@props.style} className={"layer-toggle layer-toggle-#{menu} #{@props.className}"}>
       <span className="sr-only">{@t('toggle_navigation')}</span>
       {@props.children}
     </a>

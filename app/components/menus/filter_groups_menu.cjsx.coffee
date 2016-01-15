@@ -47,6 +47,7 @@ module.exports = React.createClass
   getMenuContext: (filterGroup) ->
     filterGroup: filterGroup
     filters: SearchStore.findFilter(filterGroup).filters
+    onShowFilterGroup: @onShowFilterGroup
 
   getMenuName: (filterGroup) ->
     menu = "filters"

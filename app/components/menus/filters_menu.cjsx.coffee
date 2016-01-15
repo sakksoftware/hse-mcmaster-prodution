@@ -2,6 +2,9 @@ MenuFilterItem = require('components/menus/menu_filter_item')
 TranslationHelper = require('mixins/translation_helper')
 SearchActions = require('actions/search_actions')
 SearchStore = require('stores/search_store')
+LayerToggle = require('components/layered_navigation/layer_toggle')
+
+SYSTEM_ARRANGMENTS_GROUP = '2_-1'
 
 module.exports = React.createClass
   displayName: 'FiltersMenu'
@@ -26,6 +29,7 @@ module.exports = React.createClass
 
   componentWillMount: ->
     @filterGroup = @props.context.filterGroup
+    @onShowFilterGroup = @props.context.onShowFilterGroup
     @currentColorIndex = 0
     @unsubscribe = SearchStore.listen(@onSearchUpdated)
 
@@ -48,21 +52,57 @@ module.exports = React.createClass
 
   currentColor: -> @colors[@currentColorIndex]
 
-  renderItems: (items) ->
-    result = []
+  hasApplied: (filter) ->
+    SearchStore.hasAppliedFiltersFor(filter)
+
+  renderSystemArrangements: (items) ->
+    results = []
 
     for item in items
-      result.push <MenuFilterItem key="filter-#{item.id}" indicatorColor={@currentColor()}
+      className="menu-item"
+      className += " filter-applied" if @hasApplied(item)
+      results.push <li className={className} key="filters-list-#{item.id}">
+          <LayerToggle
+            className="menu-item-text"
+            menu="filters"
+            title={item.title}
+            context={
+              filterGroup: item
+              filters: SearchStore.findFilter(item).filters
+            }
+            onToggle={@onShowFilterGroup}
+            style={
+              borderColor: @currentColor()
+              borderLeftWidth: "4px"
+              borderLeftStyle: "solid"
+            }
+            >
+            {item.title}
+          </LayerToggle>
+        </li>
+
+      @nextColor()
+
+    results
+
+  renderItems: (items) ->
+    results = []
+
+    if @filterGroup.id == SYSTEM_ARRANGMENTS_GROUP
+      return @renderSystemArrangements(items)
+
+    for item in items
+      results.push <MenuFilterItem key="filter-#{item.id}" indicatorColor={@currentColor()}
         filter={item} onToggle={@onToggleFilter} />
       if item.filters
-        result.push <li className="menu-item nested-filters" key="filters-list-#{item.id}">
+        results.push <li className="menu-item nested-filters" key="filters-list-#{item.id}">
           <ul className="menu-list">
             {@renderItems(item.filters)}
           </ul>
         </li>
         @nextColor()
 
-    result
+    results
 
   renderAnyFilter: ->
     return if @state.filters.length <= 1

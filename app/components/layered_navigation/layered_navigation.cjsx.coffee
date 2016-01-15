@@ -18,7 +18,7 @@ module.exports = React.createClass
     menuContext = title unless menuContext
 
     menus = _.clone(@state.menus)
-    return if _.find(menus, (menu) -> menu.name == menuName)
+    # return if _.find(menus, (menu) -> menu.name == menuName)
 
     # move focus away from button used to bring up the menu
     document.activeElement.blur()
