@@ -25,7 +25,6 @@ module.exports = React.createClass
 
   componentWillUnmount: ->
     @unsubscribeSearch()
-    @unsubscirbeFilters()
 
   handleQuestionsLoaded: (questions) ->
     @setState(questions: questions, questionIndex: 0, questionsLoaded: true)
