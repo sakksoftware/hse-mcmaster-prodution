@@ -117,7 +117,7 @@
   "search_page": {
     "search_box": {
       "view_results_count": "View %{count} result",
-      "view_results_plural": "View %{count} results",
+      "view_results_count_plural": "View %{count} results",
       "tips": "Search tips",
       "filters": "Filters",
       "placeholder": "Search...",
@@ -138,11 +138,11 @@
     "result_list": {
       "no_results": "No results found.",
       "on_remove": "Successfully removed %{count} document",
-      "on_email": "An email has been sent to %{email} with %{documents_count} document",
-      "on_save": "Saved %{documents_count} document",
-      "on_remove_plural": "Successfully removed %{documents_count} documents",
-      "on_email_plural": "An email has been sent to %{email} with %{documents_count} documents",
-      "on_save_plural": "Saved %{documents_count} documents"
+      "on_remove_plural": "Successfully removed %{count} documents",
+      "on_email": "An email has been sent to %{email} with %{count} document",
+      "on_email_plural": "An email has been sent to %{email} with %{count} documents",
+      "on_save": "Saved %{count} document",
+      "on_save_plural": "Saved %{count} documents"
     },
     "sort_order": {
       "sorted_by": "Sort by",
@@ -228,9 +228,9 @@
       "message": "Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?"
     },
     "on_remove": "Successfully removed %{count} search",
+    "on_remove_plural": "Successfully removed %{count} searches",
     "curated_searches": "Curated searches",
-    "no_saved_searches": "There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar.",
-    "on_remove_plural": "Successfully removed %{count} searches"
+    "no_saved_searches": "There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar."
   },
   "saved_articles_page": {
     "title": "Saved documents",

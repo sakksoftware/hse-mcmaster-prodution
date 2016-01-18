@@ -117,6 +117,7 @@
   "search_page": {
     "search_box": {
       "view_results_count": "Exibir %{results_count} resultados",
+      "view_results_count_plural": "Exibir %{results_count} resultados",
       "tips": "Dicas para uma pesquisa mais eficaz",
       "filters": "Filtros",
       "placeholder": "Pesquisar...",
@@ -226,10 +227,10 @@
       "confirm": "Nova pesquisa",
       "message": "PT_Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?"
     },
-    "on_remove": "Removeu com êxito %{documents_count} documentos",
+    "on_remove": "Removeu com êxito %{count} documentos",
+    "on_remove_plural": "Removeu com êxito %{count} documentos",
     "curated_searches": "Pesquisas compiladas",
-    "no_saved_searches": "PT_There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar.",
-    "on_remove_plural": "PT_Successfully removed %{count} searches"
+    "no_saved_searches": "PT_There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar."
   },
   "saved_articles_page": {
     "title": "Documentos salvados",
