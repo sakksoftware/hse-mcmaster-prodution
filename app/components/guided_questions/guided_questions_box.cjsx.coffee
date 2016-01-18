@@ -3,7 +3,6 @@ CarouselIndicators = require('components/shared/carousel_indicators')
 QuestionActions = require('actions/question_actions')
 UserActions = require('actions/user_actions')
 SearchStore = require('stores/search_store')
-FilterStore = require('stores/filter_store')
 QuestionStore = require('stores/question_store')
 
 module.exports = React.createClass
@@ -17,13 +16,12 @@ module.exports = React.createClass
     questionIndex: 0
     questions: QuestionStore.state.questions
     questionsLoaded: QuestionStore.state.loaded
-    filtersLoaded: SearchStore.state.loaded || FilterStore.state.loaded
+    filtersLoaded: SearchStore.state.loaded
 
   componentWillMount: ->
     QuestionActions.loadQuestions().then(@handleQuestionsLoaded)
     UserActions.loadRegion()
     @unsubscribeSearch = SearchStore.listen(@handleSearchLoaded)
-    @unsubscirbeFilters = FilterStore.listen(@handleFiltersLoaded)
 
   componentWillUnmount: ->
     @unsubscribeSearch()
@@ -33,9 +31,6 @@ module.exports = React.createClass
     @setState(questions: questions, questionIndex: 0, questionsLoaded: true)
 
   handleSearchLoaded: (state) ->
-    @setState(filtersLoaded: state.loaded)
-
-  handleFiltersLoaded: (state) ->
     @setState(filtersLoaded: state.loaded)
 
   getQuestion: ->
