@@ -37,7 +37,7 @@ module.exports = React.createClass
   removeSelected: ->
     selected = @getSelected()
     UserActions.removeSearches(selected).then =>
-      flash('success', @t('on_remove', searches_count: selected.length))
+      flash('success', @t('on_remove', count: selected.length))
       @clearSelected()
 
   clearSelected: ->

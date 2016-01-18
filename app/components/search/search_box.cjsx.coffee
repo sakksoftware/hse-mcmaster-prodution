@@ -51,7 +51,7 @@ module.exports = React.createClass
   renderResultCountFooter: ->
     if @state.showingFiltersMenu && @props.search?.results_count != null
       <div className="result-count">
-        <a href="#" onClick={@handleBackToSearchResults}>{@t('view_results_count', results_count: @props.search.results_count)}</a>
+        <a href="#" onClick={@handleBackToSearchResults}>{@t('view_results_count', count: @props.search.results_count)}</a>
       </div>
 
   renderSavedSearchButtons: ->

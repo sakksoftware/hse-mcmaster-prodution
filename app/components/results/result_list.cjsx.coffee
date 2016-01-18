@@ -25,7 +25,7 @@ module.exports = React.createClass
   saveArticles: ->
     selected = @getSelected()
     UserActions.saveArticles(selected).then =>
-      flash('success', @t('on_save', documents_count: selected.length))
+      flash('success', @t('on_save', count: selected.length))
 
   openNewWindow: (csvContent) ->
     encodedUri = encodeURI(csvContent)
@@ -45,7 +45,7 @@ module.exports = React.createClass
   removeUserArticles: ->
     selected = @getSelected()
     UserActions.removeArticles(selected).then =>
-      flash('success', @t('on_remove', searches_count: @refs.selectableList.getSelected().length))
+      flash('success', @t('on_remove', count: @refs.selectableList.getSelected().length))
       @clearSelected()
 
   emailArticles: ->
@@ -53,7 +53,7 @@ module.exports = React.createClass
     UserActions.emailArticles(selected).then =>
       email = UserStore.state.user.email
       count = selected.length
-      flash('success', @t('on_email', email: email, documents_count: count))
+      flash('success', @t('on_email', email: email, count: count))
 
   toggleSelectAll: ->
     @refs.selectableList.toggleSelectAll()

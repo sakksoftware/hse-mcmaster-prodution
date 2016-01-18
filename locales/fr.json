@@ -136,9 +136,12 @@
     },
     "result_list": {
       "no_results": "Aucun résultat trouvé.",
-      "on_remove": "Les %{documents_count} documents ont été supprimés avec succès",
-      "on_email": "Un courriel a été envoyé avec les %{documents_count} documents",
-      "on_save": "%{documents_count} ont été sauvegardés"
+      "on_remove": "Les %{count} documents ont été supprimés avec succès",
+      "on_remove_plural": "Les %{count} documents ont été supprimés avec succès",
+      "on_email": "Un courriel a été envoyé avec les %{count} documents",
+      "on_email_plural": "Un courriel a été envoyé avec les %{count} documents",
+      "on_save": "%{count} ont été sauvegardés",
+      "on_save_plural": "%{count} ont été sauvegardés"
     },
     "sort_order": {
       "sorted_by": "Trier par",
@@ -223,7 +226,8 @@
       "confirm": "Nouvelle recherche",
       "message": "FR_Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?"
     },
-    "on_remove": "Les %{documents_count} documents ont été supprimés avec succès",
+    "on_remove": "Les %{count} documents ont été supprimés avec succès",
+    "on_remove_plural": "Les %{count} documents ont été supprimés avec succès",
     "curated_searches": "FR_Curated searches",
     "no_saved_searches": "FR_There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar."
   },

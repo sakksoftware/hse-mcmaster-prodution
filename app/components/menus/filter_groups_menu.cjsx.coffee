@@ -34,7 +34,7 @@ module.exports = React.createClass
   setOverlayContent: (state) ->
     overlayContent = ""
     if state.search?.results_count != null
-      overlayContent = @t('/search_page.search_box.view_results_count', results_count: state.search.results_count)
+      overlayContent = @t('/search_page.search_box.view_results_count', count: state.search.results_count)
     @props.setOverlayContent(overlayContent)
 
   onRemoveFilterGroup: (filter) ->

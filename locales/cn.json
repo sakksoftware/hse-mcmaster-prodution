@@ -136,9 +136,12 @@
     },
     "result_list": {
       "no_results": "未找到相应结果。",
-      "on_remove": "成功删除%{documents_count}个文件",
-      "on_email": "电子邮件及%{documents_count}个文件已成功发送至%{email}",
-      "on_save": "已保存%{documents_count}个文件"
+      "on_remove": "成功删除%{count}个文件",
+      "on_remove_plural": "成功删除%{count}个文件",
+      "on_email": "电子邮件及%{count}个文件已成功发送至%{email}",
+      "on_email_plural": "电子邮件及%{count}个文件已成功发送至%{email}",
+      "on_save": "已保存%{count}个文件",
+      "on_save_plural": "已保存%{count}个文件"
     },
     "sort_order": {
       "sorted_by": "按……分为",
@@ -223,7 +226,8 @@
       "confirm": "新的检索",
       "message": "CN_Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?"
     },
-    "on_remove": "成功删除%{documents_count}个搜索",
+    "on_remove": "成功删除%{count}个搜索",
+    "on_remove_plural": "成功删除%{count}个搜索",
     "curated_searches": "策划检索",
     "no_saved_searches": "CN_There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar."
   },

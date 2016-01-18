@@ -136,9 +136,12 @@
     },
     "result_list": {
       "no_results": "Nenhum resultado encontrado.",
-      "on_remove": "Removeu com êxito %{documents_count} documentos",
-      "on_email": "Foi enviado um e-mail para %{email} com %{documents_count} documentos",
-      "on_save": "Salvou %{documents_count} documentos"
+      "on_remove": "Removeu com êxito %{count} documentos",
+      "on_remove_plural": "Removeu com êxito %{count} documentos",
+      "on_email": "Foi enviado um e-mail para %{email} com %{count} documentos",
+      "on_email_plural": "Foi enviado um e-mail para %{email} com %{count} documentos",
+      "on_save": "Salvou %{count} documentos",
+      "on_save_plural": "Salvou %{count} documentos"
     },
     "sort_order": {
       "sorted_by": "Classificar por",
@@ -225,7 +228,8 @@
     },
     "on_remove": "Removeu com êxito %{documents_count} documentos",
     "curated_searches": "Pesquisas compiladas",
-    "no_saved_searches": "PT_There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar."
+    "no_saved_searches": "PT_There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar.",
+    "on_remove_plural": "PT_Successfully removed %{count} searches"
   },
   "saved_articles_page": {
     "title": "Documentos salvados",
