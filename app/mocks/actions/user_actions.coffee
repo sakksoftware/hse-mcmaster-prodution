@@ -160,7 +160,7 @@ UserActions.saveArticles.listen (articles) ->
   Promise.resolve(articles).then(@completed)
 
 UserActions.loadArticles.listen ->
-  Promise.resolve(articlesData).then(@completed)
+  FetchAPI.read('/user/articles').then(@completed).catch(@failed)
 
 UserActions.removeArticles.listen (articles) ->
   toDelete = _(articlesData).filter (a) -> _.findWhere(articles, id: a.id)

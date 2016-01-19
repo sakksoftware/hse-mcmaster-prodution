@@ -36,10 +36,10 @@ module.exports = React.createClass
       child.props.result
 
   exportArticles: ->
-    API = require('lib/api')
+    FetchAPI = require('lib/fetch_api')
     ids = _.pluck(@getSelected(), 'id')
-    API = API.create('/user/articles.csv', ids.join(';')).then (data) =>
-      url = config.apiBase + data.Link
+    FetchAPI.create('/user/articles/export.csv', ids).then (data) =>
+      url = config.apiBase + data.file
       @openNewWindow(url)
 
   removeUserArticles: ->

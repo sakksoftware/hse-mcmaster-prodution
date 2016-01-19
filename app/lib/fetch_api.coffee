@@ -67,7 +67,6 @@ module.exports = class API
     if res.status >= 500 && res.status <= 599
       router.render('/5xx')
     else if res.status == 403
-      # TODO: complicated logic, does this really belong here?
       UserStore = require('stores/user_store')
       if UserStore.state.user
         Rollbar.error('Quota Exceeded Error (guest user)', res)
@@ -118,14 +117,14 @@ module.exports = class API
     url.substr(0, 4) != 'http' and url.substr(0, 3) != 'ws:'
 
   @_checkStatus: (skipErrorHandlingFor) ->
-    (response) ->
+    (response) =>
       if (response.status >= 200 && response.status < 300)
         return response
       else
         error = new Error(response.statusText)
         error.response = response
-        throw error
         @onError(response, response.statusText, skipErrorHandlingFor)
+        throw error
 
   @_parseJSON: (response) ->
     response.json()

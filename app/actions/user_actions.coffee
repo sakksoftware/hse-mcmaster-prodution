@@ -97,7 +97,7 @@ UserActions.saveArticles.listen (articles) ->
   API.create('/user/articles/save', ids).done(@completed).fail(@failed)
 
 UserActions.loadArticles.listen ->
-  API.read('/user/articles').done(@completed).fail(@failed)
+  FetchAPI.read('/user/articles').then(@completed).catch(@failed)
 
 UserActions.removeArticles.listen (articles) ->
   API.create('/user/articles/remove', _.pluck(articles, 'id')).done(@completed).fail(@failed)
