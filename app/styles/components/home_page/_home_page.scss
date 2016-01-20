@@ -1,5 +1,5 @@
 #app.home {
-  background: $background-gradient-end; // no gradient support fallback
+  background: url('/images/bg_hse_gradient.png'); // no gradient support fallback
   background: linear-gradient(to right, $background-gradient-start, $background-gradient-end);
   background-size: 100% 448px;
   background-repeat: no-repeat;
