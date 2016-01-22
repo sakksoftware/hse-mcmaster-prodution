@@ -95,15 +95,19 @@
     font-style: italic;
     color: darken($border-color, 20%);
 
-    a:first-of-type {
+    > a:first-of-type {
       color: darken($border-color, 20%);
       margin-left: $x-tiny-size;
       text-decoration: underline;
 
       &:before, &:after {
         content: '"';
-        text-decoration: none;
       }
+    }
+
+    .btn-clear {
+      margin-left: $tiny-size;
+      font-style: normal;
     }
   }
 }

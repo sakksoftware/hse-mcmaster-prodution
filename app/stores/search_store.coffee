@@ -16,7 +16,7 @@ module.exports = Reflux.createStore
     UserStore.listen(@onUserStoreUpdated)
 
   resetState: ->
-    # DO STUFF
+    @setState(@getInitialState())
 
   updateStateFromUrl: ->
     @setState(search: @deserializeSearchUrl())

@@ -1,7 +1,9 @@
 Input = ReactBootstrap.Input
 SuggestionActions = require('actions/suggestion_actions')
+UrlActions = require('actions/url_actions')
 TranslationHelper = require('mixins/translation_helper')
 UserStore = require('stores/user_store')
+SearchStore = require('stores/search_store')
 Button = require('components/shared/button')
 
 module.exports = React.createClass
@@ -42,6 +44,8 @@ module.exports = React.createClass
     @setState(query: '', count: ++@state.count)
     router = require('lib/router')
     router.visit('/')
+    UrlActions.unsetParam('related_article_id')
+    SearchStore.resetState()
 
   renderSuggestion: (suggestion, input) ->
     index = suggestion.query.toLowerCase().indexOf(input.toLowerCase())

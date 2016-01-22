@@ -65,7 +65,7 @@ module.exports = React.createClass
       <p className="related-article">
         {@t('related_article')}
         <Link to="articles/#{related_article.id}">{related_article.title}</Link>
-        <Button onClick={@clearSearch}>({@t('/clear')})</Button>
+        <Button className="btn-clear" onClick={@clearSearch}>[{@t('/clear')}]</Button>
       </p>
 
   clearSearch: ->
