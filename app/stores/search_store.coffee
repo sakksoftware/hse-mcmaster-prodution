@@ -223,8 +223,9 @@ module.exports = Reflux.createStore
     appliedFilters
 
   _trackSearch: (search) ->
-    # TODO: change to new anlytics.js syntax after upgrade
     config = require('config')
+    return unless window.ENV == 'production'
+
     filters = ""
     filters = " FILTERS: #{@getAppliedFilters().map((e) -> e.title).join(', ')}" unless _.isEmpty(@getAppliedFilters())
     data = "QUERY: #{search.query}#{filters} URL: #{config.siteUrl}/search#{@serializeSearchUrl(search)}"
