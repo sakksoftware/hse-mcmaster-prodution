@@ -153,10 +153,10 @@
     "signup_prompt": {
       "instructions": "Inscrivez-vous pour afficher plus de 20 résultats, pour sauvegarder des documents et des recherches, pour envoyer par courriel et exporter des documents, et pour vous abonner aux alertes par courriel"
     },
-    "on_save_search": "FR_Successfully saved search",
-    "on_unsave_search": "FR_Successfully removed saved search",
-    "on_save_and_subscribe": "FR_Successfully saved and subscribed to search",
-    "on_unsubscribe": "FR_Successfully unsubscribed from search"
+    "on_save_search": "Recherche sauvegardée avec succès",
+    "on_unsave_search": "Recherche supprimée avec succès",
+    "on_save_and_subscribe": "Sauvegardé avec succès et inscrit à la recherche",
+    "on_unsubscribe": "L'annulation de la recherche a été complétée avec succès"
   },
   "profile_page": {
     "title": "Mon profil",
@@ -225,12 +225,12 @@
     "dialog": {
       "cancel": "Annuler",
       "confirm": "Nouvelle recherche",
-      "message": "FR_Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?"
+      "message": "En vous inscrivant à cette recherche, vous recevrez automatiquement un condensé des nouveaux articles ajoutés à ce service. Êtes-vous certain que c’est ce que vous désirez?"
     },
     "on_remove": "Les %{count} documents ont été supprimés avec succès",
     "on_remove_plural": "Les %{count} documents ont été supprimés avec succès",
-    "curated_searches": "FR_Curated searches",
-    "no_saved_searches": "FR_There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar."
+    "curated_searches": "Recherches organisées",
+    "no_saved_searches": "Il n’y a pas de recherche sauvegardée. Pour créer une nouvelle recherche sauvegardée, allez à la page Recherche et cliquez sur l’icône étoilée sous la barre de recherche."
   },
   "saved_articles_page": {
     "title": "Documents sauvegardés",
@@ -238,7 +238,7 @@
     "instructions": "Vous pouvez envoyer ces documents par courriel ou les exporter.",
     "email": "Courriel",
     "export": "Exporter",
-    "no_saved_articles": "FR_There are no saved documents. To add a saved document go to the search page, select the documents you would like to save and click save."
+    "no_saved_articles": "Il n’y a pas de document sauvegardé. Pour ajouter un document sauvegardé, allez à la page Recherche et sélectionnez les documents que vous voulez sauvegarder et cliquez sur sauvegarder."
   },
   "quota_exceeded_error_page": {
     "title": "Limite dépassée",

@@ -225,12 +225,12 @@
     "dialog": {
       "cancel": "Cancelar",
       "confirm": "Nueva búsqueda",
-      "message": "ES_Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?"
+      "message": "Al suscribirse en esta búsqueda se le enviará un resumen por correo electrónico de los artículos nuevos agregados al servicio. ¿Está seguro de que desea hacer esto?"
     },
     "on_remove": "Se quitaron %{count} documentos con éxito",
     "on_remove_plural": "Se quitaron %{count} documentos con éxito",
     "curated_searches": "Búsquedas protegidas",
-    "no_saved_searches": "ES_There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar."
+    "no_saved_searches": "No hay búsquedas guardadas. Para crear una nueva búsqueda guardada vaya a la página Búsqueda y haga clic en el ícono de estrella debajo de la barra de búsqueda."
   },
   "saved_articles_page": {
     "title": "Documentos guardados",
@@ -238,7 +238,7 @@
     "instructions": "Puede enviar esos documentos por correo electrónico o puede exportarlos.",
     "email": "Correo electrónico",
     "export": "Exportar",
-    "no_saved_articles": "ES_There are no saved documents. To add a saved document go to the search page, select the documents you would like to save and click save."
+    "no_saved_articles": " No hay documentos guardados. Para agregar un documento guardado vaya a la página Búsqueda, seleccione los documentos que desea guardar y haga clic en Guardar."
   },
   "quota_exceeded_error_page": {
     "title": "Límite excedido",

@@ -225,12 +225,12 @@
     "dialog": {
       "cancel": "取消",
       "confirm": "新的检索",
-      "message": "CN_Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?"
+      "message": "订阅此检索，您将会收到添加到服务的新文献的邮件摘要。 您确定要这样做吗？"
     },
     "on_remove": "成功删除%{count}个搜索",
     "on_remove_plural": "成功删除%{count}个搜索",
     "curated_searches": "策划检索",
-    "no_saved_searches": "CN_There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar."
+    "no_saved_searches": "没有保存的检索。若想生成新的检索，请您在检索页面点击检索栏下方的星形图标。"
   },
   "saved_articles_page": {
     "title": "已保存文件",
@@ -238,7 +238,7 @@
     "instructions": "您可通过电子邮件发送这些文件，或将其导出。",
     "email": "电子邮件",
     "export": "导出",
-    "no_saved_articles": "CN_There are no saved documents. To add a saved document go to the search page, select the documents you would like to save and click save."
+    "no_saved_articles": "没有保存的文件。若想添加保存的文件，请您在检索页面选择想要保存的文件并点击保存。"
   },
   "quota_exceeded_error_page": {
     "title": "超限",

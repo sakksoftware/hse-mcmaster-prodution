@@ -116,8 +116,8 @@
   },
   "search_page": {
     "search_box": {
-      "view_results_count": "Exibir %{results_count} resultados",
-      "view_results_count_plural": "Exibir %{results_count} resultados",
+      "view_results_count": "Exibir %{count} resultados",
+      "view_results_count_plural": "Exibir %{count} resultados",
       "tips": "Dicas para uma pesquisa mais eficaz",
       "filters": "Filtros",
       "placeholder": "Pesquisar...",
@@ -225,12 +225,12 @@
     "dialog": {
       "cancel": "Cancelar",
       "confirm": "Nova pesquisa",
-      "message": "PT_Subscribing to this search will send you an email digest of the new articles added to the service. Are you sure you want to do this?"
+      "message": "Assinar esta pesquisa enviará para você ​​um digest de email​ dos novos artigos adicionados ao serviço. Tem certeza que deseja fazer isso?"
     },
     "on_remove": "Removeu com êxito %{count} documentos",
     "on_remove_plural": "Removeu com êxito %{count} documentos",
     "curated_searches": "Pesquisas compiladas",
-    "no_saved_searches": "PT_There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar."
+    "no_saved_searches": "Não existem pesquisas salvadas.​ Para criar uma nova pesquisa salvada vá para a página de pesquisa e clique no ícone de estrela por baixo da barra de pesquisa."
   },
   "saved_articles_page": {
     "title": "Documentos salvados",
@@ -238,7 +238,7 @@
     "instructions": "Pode enviar por e-mail ou exportar esses documentos.",
     "email": "E-mail",
     "export": "Exportar",
-    "no_saved_articles": "PT_There are no saved documents. To add a saved document go to the search page, select the documents you would like to save and click save."
+    "no_saved_articles": "Não existem documentos salvados. Para adicionar um documento salvado vá para a página de pesquisa, selecione os documentos que pretende salvar e clique em salvar.​"
   },
   "quota_exceeded_error_page": {
     "title": "Limite excedido",
