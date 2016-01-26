@@ -260,8 +260,9 @@
     "invalid_login": "用户名或密码错误",
     "passwords_must_match": "密码必须匹配",
     "invalid": "无效",
-    "signup_to_increase_limit": "您已超出我们的记录允许，如果想要获取更多文件，请登陆或注册免费账号。"
+    "signup_to_increase_limit": "您已超出我们的记录允许，如果想要获取更多文件，请登陆或注册免费账号。",
+    "old_browser": "CN_You are attempting to access Health Systems Evidence with a very old version of your web browser. You may lose some functionality as a result. We suggest that you upgrade your web browser before continuing."
   },
-  "clear": "CN_clear",
+  "clear": "CN_Clear",
   "contact_us": "CN_Contact us"
 }

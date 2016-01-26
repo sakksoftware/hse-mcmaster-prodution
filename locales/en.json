@@ -260,7 +260,8 @@
     "invalid_login": "wrong username or password",
     "passwords_must_match": "passwords must match",
     "invalid": "invalid",
-    "signup_to_increase_limit": "You have exceeded our record limit. Please log in (or create an account for free) if you wish to access more documents."
+    "signup_to_increase_limit": "You have exceeded our record limit. Please log in (or create an account for free) if you wish to access more documents.",
+    "old_browser": "You are attempting to access Health Systems Evidence with a very old version of your web browser. You may lose some functionality as a result. We suggest that you upgrade your web browser before continuing."
   },
   "clear": "Clear",
   "contact_us": "Contact us"

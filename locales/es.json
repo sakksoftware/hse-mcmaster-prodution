@@ -260,8 +260,9 @@
     "invalid_login": "Nombre de usuario o contraseña incorrectos",
     "passwords_must_match": "Las contraseñas deben coincidir",
     "invalid": "Inválido",
-    "signup_to_increase_limit": "Superó el límite de registros. Inicie sesión (o cree una cuenta en forma gratuita) si desea tener acceso a más documentos."
+    "signup_to_increase_limit": "Superó el límite de registros. Inicie sesión (o cree una cuenta en forma gratuita) si desea tener acceso a más documentos.",
+    "old_browser": "ES_You are attempting to access Health Systems Evidence with a very old version of your web browser. You may lose some functionality as a result. We suggest that you upgrade your web browser before continuing."
   },
-  "clear": "ES_clear",
+  "clear": "ES_Clear",
   "contact_us": "ES_Contact us"
 }
