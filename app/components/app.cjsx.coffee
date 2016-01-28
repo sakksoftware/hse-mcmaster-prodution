@@ -67,6 +67,7 @@ module.exports = React.createClass
     currentUser: UserStore.state.user
     notifications: NotificationStore.state.notifications
     dialogs: NotificationStore.state.dialogs
+    dismissBrowserWarning: false
 
   componentWillMount: ->
     if Cookies.get('token') # only get user if there is a token saved
@@ -235,10 +236,37 @@ module.exports = React.createClass
     if @state.dialogs.length > 0
       <div key="dialog-backdrop" className="modal-backdrop fade in" />
 
+  renderBrowserWarning: ->
+    browser = require('lib/browser')
+    Button = require('components/shared/button')
+
+    url = ''
+    if browser.name == 'ie'
+      url = 'http://windows.microsoft.com/en-CA/internet-explorer/download-ie'
+    if browser.name == 'chrome'
+      url = 'https://support.google.com/chrome/answer/95414?hl=en'
+    if browser.name == 'firefox'
+      url = 'https://support.mozilla.org/en-US/kb/update-firefox-latest-version'
+    if browser.name == 'safari'
+      url = 'https://support.apple.com/en-ca/HT204416'
+
+    if !@state.dismissBrowserWarning &&
+       (browser.name == 'ie' && browser.version < 10) ||
+       (browser.name == 'firefox' && browser.version < 40) ||
+       (browser.name == 'chrome' && browser.version < 40)
+       (browser.name == 'safari' && browser.version < 9)
+      <div className="browser-warning">
+        <p>{@t('errors.old_browser.message')}</p>
+
+        <a href={url}>{@t('errors.old_browser.upgrade')}</a>
+        <Button onClick={=> @setState(dismissBrowserWarning: true)} className="btn-close">&times;</Button>
+      </div>
+
   render: ->
     <LayeredNavigation ref="layeredNavigation" className="app #{@props.page}" id="app">
       {@renderLayerGroup()}
       {@renderHeader()}
+      {@renderBrowserWarning()}
       <div id="page-content">
         <ReactCSSTransitionGroup transitionName="page" component="div">
           {@renderPage()}

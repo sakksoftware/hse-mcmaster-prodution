@@ -70,6 +70,29 @@
     }
   }
 
+  .browser-warning {
+    position: relative;
+    background-color: $warn-color;
+    padding: $small-size;
+    @include desktop {
+      margin-top: $xx-large-size;
+      margin-right: -304px;
+    }
+
+    .btn-close {
+      position: absolute;
+      right: $tiny-size;
+      top: $tiny-size;
+      background: darken($warn-color, 20%);
+      border-radius: 50px;
+      // padding: $x-tiny-size;
+      text-align: center;
+      width: 20px;
+      height: 20px;
+      color: black;
+    }
+  }
+
   footer {
     text-align: center;
     margin-bottom: $desktop-large-size;
@@ -117,11 +140,16 @@
       position: fixed;
       left: 0;
       right: 0;
+      top: 0;
     }
 
     #page-content {
       max-width: $desktop-max-page-width;
       padding-top: $xx-large-size + $xx-large-size;
+    }
+
+    .browser-warning + #page-content {
+      padding-top: $x-small-size;
     }
 
     .layer-toggle-main {

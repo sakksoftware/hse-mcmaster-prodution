@@ -26,6 +26,12 @@
     position: relative;
     padding-top: $xx-large-size;
   }
+
+  .browser-warning {
+    position: absolute;
+    margin-right: 0;
+    width: 100%;
+  }
 }
 
 .home-page {
