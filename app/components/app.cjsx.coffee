@@ -251,10 +251,10 @@ module.exports = React.createClass
       url = 'https://support.apple.com/en-ca/HT204416'
 
     if !@state.dismissBrowserWarning &&
-       (browser.name == 'ie' && browser.version < 10) ||
-       (browser.name == 'firefox' && browser.version < 40) ||
-       (browser.name == 'chrome' && browser.version < 40)
-       (browser.name == 'safari' && browser.version < 9)
+        (browser.name == 'ie' && browser.version < 10) ||
+        (browser.name == 'firefox' && browser.version < 40) ||
+        (browser.name == 'chrome' && browser.version < 40) ||
+        (browser.name == 'safari' && browser.version < 9)
       <div className="browser-warning">
         <p>{@t('errors.old_browser.message')}</p>
 
