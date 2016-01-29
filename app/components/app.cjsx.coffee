@@ -46,13 +46,17 @@ TranslationHelper = require('mixins/translation_helper')
 UrlActions = require('actions/url_actions')
 UrlStore = require('stores/url_store')
 UserActions = require('actions/user_actions')
+NotificationActions = require('actions/notification_actions')
 UserStore = require('stores/user_store')
 NotificationStore = require('stores/notification_store')
+
 
 ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
 params = require('lib/url').params()
 Util = require('lib/util')
+
+Button = require('components/shared/button')
 
 module.exports = React.createClass
   displayName: 'App'
@@ -236,9 +240,19 @@ module.exports = React.createClass
     if @state.dialogs.length > 0
       <div key="dialog-backdrop" className="modal-backdrop fade in" />
 
+  renderNotification: ->
+    if @state.notifications.length > 0
+      notification = _.last(@state.notifications)
+      type = notification.type || 'success'
+      type = 'danger' if type == 'error'
+
+      <div className="alert alert-#{type} alert-dismissible" role="alert">
+        <span>{notification.message}</span>
+        <Button onClick={=> NotificationActions.dismissNotifications()} className="btn-close">&times;</Button>
+      </div>
+
   renderBrowserWarning: ->
     browser = require('lib/browser')
-    Button = require('components/shared/button')
 
     url = ''
     if browser.name == 'ie'
@@ -267,6 +281,7 @@ module.exports = React.createClass
       {@renderLayerGroup()}
       {@renderHeader()}
       {@renderBrowserWarning()}
+      {@renderNotification()}
       <div id="page-content">
         <ReactCSSTransitionGroup transitionName="page" component="div">
           {@renderPage()}

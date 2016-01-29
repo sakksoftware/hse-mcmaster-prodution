@@ -9,10 +9,13 @@ module.exports = Reflux.createStore
     dialogs: []
     notifications: []
 
-  onNotify: (notification) ->
+  onNotify: (type, message) ->
     notifications = _.clone(@state.notifications)
-    notifications.push(notification)
+    notifications.push({type: type, message: message})
     @setState(notifications: notifications)
+
+  onDismissNotifications: ->
+    @setState(notifications: [])
 
   onCloseDialog: ->
     @setState(dialogs: @state.dialogs[0..-2])

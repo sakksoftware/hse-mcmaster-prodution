@@ -102,17 +102,31 @@ label {
 .alert {
   position: fixed;
   width: 100%;
-  z-index: 1000;
-  min-height: 40px;
+  z-index: 100;
 
   @include desktop {
     top: $xx-large-size;
   }
 }
 
-.alert-dismissible .close {
-  top: -8px;
-  height: $small-size;
+.alert.alert-success {
+  color: $success-text-color;
+  background-color: $success-color;
+  padding: $tiny-size;
+  border: none;
+}
+
+.alert-dismissible .btn-close {
+  height: $medium-size;
+  width: $medium-size;
+  color: black;
+  background-color: darken($success-color, 20%);
+  border-radius: $medium-size;
+  display: block;
+  text-align: center;
+  position: absolute;
+  right: $tiny-size;
+  top: $tiny-size;
 }
 
 .checkmark {
