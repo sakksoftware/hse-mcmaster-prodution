@@ -261,8 +261,11 @@
     "passwords_must_match": "密码必须匹配",
     "invalid": "无效",
     "signup_to_increase_limit": "您已超出我们的记录允许，如果想要获取更多文件，请登陆或注册免费账号。",
-    "old_browser": "CN_You are attempting to access Health Systems Evidence with a very old version of your web browser. You may lose some functionality as a result. We suggest that you upgrade your web browser before continuing."
+    "old_browser": {
+      "message": "您正在访问卫生系统证据，但浏览器版本过旧，可能会导致一些功能无法使用。我们建议您在继续之前更新您的浏览器。",
+      "upgrade": "CN_Upgrade to new version of your web browser"
+    }
   },
-  "clear": "CN_Clear",
-  "contact_us": "CN_Contact us"
+  "clear": "清除",
+  "contact_us": "联系我们"
 }

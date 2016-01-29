@@ -261,8 +261,11 @@
     "passwords_must_match": "As senhas devem coincidir",
     "invalid": "Não é válido",
     "signup_to_increase_limit": "Você excedeu nosso limite máximo. Inicie sessão (ou crie uma conta gratuita) se desejar acessar mais documentos.",
-    "old_browser": "PT_You are attempting to access Health Systems Evidence with a very old version of your web browser. You may lose some functionality as a result. We suggest that you upgrade your web browser before continuing."
+    "old_browser": {
+      "message": "Você está tentando acessar o Health Systems Evidence usando uma versão muito antiga de seu navegador web. Poderá perder algumas funcionalidades por causa disso. Sugerimos que você atualize seu navegador web antes de continuar.​",
+      "upgrade": "PT_Upgrade to new version of your web browser"
+    }
   },
-  "clear": "PT_Clear",
-  "contact_us": "PT_Contact us"
+  "clear": "Limpar​",
+  "contact_us": "Entre em contato​"
 }
