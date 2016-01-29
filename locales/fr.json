@@ -263,7 +263,7 @@
     "signup_to_increase_limit": "Vous avez dépassé la limite de sauvegarde. Veuillez vous connecter (ou créer un compte gratuitement) si vous souhaitez accéder à plus de documents.",
     "old_browser": {
       "message": "FR_You are attempting to access Health Systems Evidence with a very old version of your web browser. You may lose some functionality as a result. We suggest that you upgrade your web browser before continuing.",
-      "upgrade": "FR_Upgrade to new version of your web browser"
+      "upgrade": "FR_Upgrade to a new version of your web browser"
     }
   },
   "clear": "Effacer",

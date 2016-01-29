@@ -263,7 +263,7 @@
     "signup_to_increase_limit": "Você excedeu nosso limite máximo. Inicie sessão (ou crie uma conta gratuita) se desejar acessar mais documentos.",
     "old_browser": {
       "message": "Você está tentando acessar o Health Systems Evidence usando uma versão muito antiga de seu navegador web. Poderá perder algumas funcionalidades por causa disso. Sugerimos que você atualize seu navegador web antes de continuar.​",
-      "upgrade": "PT_Upgrade to new version of your web browser"
+      "upgrade": "PT_Upgrade to a new version of your web browser"
     }
   },
   "clear": "Limpar​",
