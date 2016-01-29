@@ -1,0 +1,126 @@
+.tour-indicator {
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  z-index: 2000;
+
+  background-color: $link-color;
+  cursor: pointer;
+
+  /* Animate */
+  animation-name: pulse;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+
+/* WebKit/Safari and Chrome */
+@-webkit-keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  80% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+/* Gecko/Firefox */
+@-moz-keyframes pulse {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.5;
+  }
+
+  80% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+/* Presto/Opera */
+@-o-keyframes pulse {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.5;
+  }
+
+  80% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+/* Standard */
+@keyframes pulse {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.5;
+  }
+
+  80% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.tour-backdrop {
+  z-index: 998; /* one below z-index of tour-toolip (999) */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  text-align: center;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.tour-tooltip {
+  z-index: 999;
+  width: 250px;
+  background-color: #ffffff;
+  color: #545454;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  padding: 5px;
+  box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
+}
+
+  .tour-tooltip p {
+    margin: 5px 3px;
+  }
+
+  .tour-tooltip .tour-btn.close {
+    cursor: pointer;
+    display: block;
+    width: auto;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    padding: 3px;
+    text-align: center;
+  }
+
+    .tour-tooltip .tour-btn.close:hover {
+      border-color: #3f94d0;
+      color: #3f94d0;
+    }
