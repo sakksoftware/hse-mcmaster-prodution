@@ -25,8 +25,13 @@ module.exports = (settings, done) ->
       @setState
         xPos: -1000
         yPos: -1000
-      React.render @renderCurrentStep(), @_target
-      @calculatePlacement()
+
+      if element = @renderCurrentStep()
+        React.render element, @_target
+        @calculatePlacement()
+      else
+        @nextStep()
+
       return
     _unrenderLayer: ->
       React.unmountComponentAtNode @_target
@@ -137,13 +142,16 @@ module.exports = (settings, done) ->
       step = @settings.steps[@state.currentIndex]
       step.afterStep?()
 
-    closeTooltip: (evt) ->
-      evt.preventDefault()
+    nextStep: ->
       @afterStep()
       @setState {
         showTooltip: false
         currentIndex: @state.currentIndex + 1
       }, => @scrollToNextStep()
+
+    closeTooltip: (evt) ->
+      evt.preventDefault()
+      @nextStep()
       return
     scrollToNextStep: ->
       $nextIndicator = $('.tour-indicator')
@@ -174,7 +182,7 @@ module.exports = (settings, done) ->
           );
 
       if !element
-        throw new Error("Cannot find element with selector #{currentStep.element}")
+        console.warn("Cannot find element with selector #{currentStep.element}")
 
       return element
 
