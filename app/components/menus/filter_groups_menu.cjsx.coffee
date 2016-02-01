@@ -24,13 +24,6 @@ module.exports = React.createClass
     @onShowFilterGroup = @props.context.onShowFilterGroup
     @unsubscribe = SearchStore.listen(@onSearchUpdated)
 
-  componentDidMount: ->
-    TourActions.addStep
-      text: 'Narrow your search so that you retrieve documents that address the domains you’re most interested in, focus on the country or region you work in, and retrieve particular types of documents. Your results can be narrowed by combining filter types (e.g., system arrangements and diseases), and expanded by selecting more than one filter within a type (e.g. cancer and HIV/AIDS).'
-      element: '.filter-groups-menu'
-      position: 'top left'
-      afterStep: => #alert('hello world')
-
   componentWillUnmount: ->
     @unsubscribe()
 

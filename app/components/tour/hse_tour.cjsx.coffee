@@ -72,13 +72,18 @@ module.exports = _.extend({}, Tour, {
         @addTourStepSelectResultItem()
 
   addTourStepAdvancedFilters: ->
-    TourActions.addSteps
+    TourActions.addStep
       text: 'Explore the full list of search filters available on Health Systems Evidence, which you can then apply to narrow your search.'
       element: '.advanced-search'
       position: 'bottom'
 
   addTourStepSelectResultItem: ->
     TourActions.addSteps [
+      {
+        text: 'Narrow your search so that you retrieve documents that address the domains you’re most interested in, focus on the country or region you work in, and retrieve particular types of documents. Your results can be narrowed by combining filter types (e.g., system arrangements and diseases), and expanded by selecting more than one filter within a type (e.g. cancer and HIV/AIDS).'
+        element: '.filter-groups-menu'
+        position: 'top left'
+      }
       {
         text: 'Select an article to save, export or view later'
         element: '.result-item:first-child .result-item-select'
@@ -99,6 +104,11 @@ module.exports = _.extend({}, Tour, {
         text: 'View the list of documents you have saved from previous searches. Your saved documents can also be managed (i.e., retained on or deleted from your profile) on this page. '
         element: '.saved-articles-actions .icon-view-saved-articles'
         position: 'top'
+        afterStep: ->
+          # event = document.createEvent("HTMLEvents")
+          # event.initEvent("click", true, true)
+          # target = $('.saved-articles-actions .icon-view-saved-articles')[0]
+          # target.dispatchEvent(event)
       }
       {
         text: 'Save your search strategy - including keywords and filters – and use it at any time, by clicking the ‘Save search’ icon. You can manage your list of saved searches by clicking the ‘Saved searches’ option from the account profile dropdown menu.'
