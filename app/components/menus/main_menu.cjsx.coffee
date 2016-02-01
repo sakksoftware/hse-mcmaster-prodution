@@ -5,29 +5,13 @@ AccountMenu = require('components/menus/account_menu')
 LanguagesMenu = require('components/menus/languages_menu')
 UserActions = require('actions/user_actions')
 UserStore = require('stores/user_store')
-TourMixin = require ('components/shared/tour/mixin')
 
 Toggle = ReactToggle
-
-tour =
-  startIndex: 0,
-  scrollToSteps: true,
-  steps: [
-    {
-      text: 'Use this to select your language',
-      element: '.menu-item-language',
-      position: 'bottom',
-      closeButtonText: 'Next'
-    }
-  ]
-
-cb = ->
-  console.log('User has completed tour!')
 
 module.exports = React.createClass
   displayName: 'MainMenu'
 
-  mixins: [TranslationHelper, TourMixin(tour, cb)]
+  mixins: [TranslationHelper]
   baseTranslation: 'main_menu'
 
   propTypes:

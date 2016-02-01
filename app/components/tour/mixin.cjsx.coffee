@@ -132,12 +132,18 @@ module.exports = (settings, done) ->
       evt.preventDefault()
       @setState showTooltip: true
       return
+
+    afterStep: ->
+      step = @settings.steps[@state.currentIndex]
+      step.afterStep?()
+
     closeTooltip: (evt) ->
       evt.preventDefault()
+      @afterStep()
       @setState {
         showTooltip: false
         currentIndex: @state.currentIndex + 1
-      }, @scrollToNextStep
+      }, => @scrollToNextStep()
       return
     scrollToNextStep: ->
       $nextIndicator = $('.tour-indicator')
@@ -166,6 +172,9 @@ module.exports = (settings, done) ->
                       yPos={this.state.yPos}
                       handleIndicatorClick={this.handleIndicatorClick} />
           );
+
+      if !element
+        throw new Error("Cannot find element with selector #{currentStep.element}")
 
       return element
 

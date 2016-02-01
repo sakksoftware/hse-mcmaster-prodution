@@ -97,9 +97,8 @@
   z-index: 999;
   width: 250px;
   background-color: #ffffff;
-  color: #545454;
+  color: $primary-text-color;
   border: 1px solid #dddddd;
-  border-radius: 4px;
   padding: 5px;
   box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
 }
@@ -108,19 +107,13 @@
     margin: 5px 3px;
   }
 
-  .tour-tooltip .tour-btn.close {
+  .tour-tooltip .tour-btn {
+    @extend .btn;
+    @extend .btn-primary;
     cursor: pointer;
     display: block;
     width: auto;
     margin: 0 auto;
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    border-radius: 4px;
-    padding: 3px;
     text-align: center;
+    float: right;
   }
-
-    .tour-tooltip .tour-btn.close:hover {
-      border-color: #3f94d0;
-      color: #3f94d0;
-    }

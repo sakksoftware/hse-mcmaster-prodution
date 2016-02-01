@@ -40,6 +40,7 @@ LanguagesMenu = require('components/menus/languages_menu')
 AccountMenu = require('components/menus/account_menu')
 
 Dialog = require('components/shared/dialog')
+HSETour = require('components/tour/hse_tour')
 
 TranslationHelper = require('mixins/translation_helper')
 
@@ -49,7 +50,6 @@ UserActions = require('actions/user_actions')
 NotificationActions = require('actions/notification_actions')
 UserStore = require('stores/user_store')
 NotificationStore = require('stores/notification_store')
-
 
 ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
@@ -61,7 +61,7 @@ Button = require('components/shared/button')
 module.exports = React.createClass
   displayName: 'App'
 
-  mixins: [TranslationHelper]
+  mixins: [TranslationHelper, HSETour]
   baseTranslation: ''
 
   propTypes:
@@ -124,6 +124,7 @@ module.exports = React.createClass
         onLogout={@logout}
         onLinkClick={@dismissMenu}
         onSelectLanguage={@selectLanguage}
+        page={@props.page}
       />
     </nav>
 

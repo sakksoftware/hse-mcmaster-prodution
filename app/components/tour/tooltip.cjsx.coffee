@@ -30,7 +30,7 @@ Tooltip = React.createClass
      <div className="tour-backdrop" onClick={this.props.closeTooltip} />
      <div className="tour-tooltip" style={styles}>
        <p>{this.props.text || ''}</p>
-       <div className="tour-btn close" onClick={this.props.closeTooltip}>
+       <div className="tour-btn" onClick={this.props.closeTooltip}>
          {this.props.closeButtonText || 'Close'}
        </div>
      </div>
