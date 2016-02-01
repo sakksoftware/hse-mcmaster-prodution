@@ -13,4 +13,5 @@ module.exports = Reflux.createStore
 
   onAddSteps: (steps) ->
     steps = @state.steps.concat(steps)
+    steps = steps.sort (a, b) -> a.order - b.order
     @setState(steps: steps)
