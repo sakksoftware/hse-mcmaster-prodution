@@ -135,8 +135,13 @@ module.exports = (settings, done) ->
       return
     handleIndicatorClick: (evt) ->
       evt.preventDefault()
+      @beforeStep()
       @setState showTooltip: true
       return
+
+    beforeStep: ->
+      step = @settings.steps[@state.currentIndex]
+      step.beforeStep?()
 
     afterStep: ->
       step = @settings.steps[@state.currentIndex]
@@ -161,6 +166,7 @@ module.exports = (settings, done) ->
     renderCurrentStep: ->
       element = null
       currentStep = @settings.steps[@state.currentIndex]
+
       $target = if currentStep and currentStep.element then $(currentStep.element) else null
       cssPosition = if $target then $target.css('position') else null
       if $target and $target.length

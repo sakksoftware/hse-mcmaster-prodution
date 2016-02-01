@@ -89,7 +89,7 @@
 
     vertical-align: middle;
   }
-  ul li:hover {
+  ul li:hover, ul li.hover {
     position: relative;
     z-index: $flyout-menu-zindex;
     cursor: auto;
@@ -108,7 +108,7 @@
     top: 0px;
     left: 99%;
   }
-  ul li:hover > ul {
+  ul li:hover > ul, ul li.hover > ul {
     visibility: visible; /* show sub menu */
   }
 }

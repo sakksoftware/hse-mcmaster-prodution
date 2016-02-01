@@ -28,12 +28,15 @@ module.exports = _.extend({}, Tour, {
         element: '.menu-item-language'
         position: 'bottom'
         closeButtonText: 'Next'
+        beforeStep: -> $('.menu-item-language').addClass('hover')
+        afterStep: -> $('.menu-item-language').removeClass('hover')
       }
       {
         text: 'Get assistance in applying the filters available on Health Systems Evidence to narrow your search by responding to these plain-language questions. The guided search can be turned off or on (indicated by the toggle at the top of the screen) and can be expanded or hidden on a mobile device.'
         element: '.menu-item-guided-search'
         position: 'bottom'
         closeButtonText: 'Next'
+        afterStep: -> $('.menu-item-account').addClass('hover')
       }
     ]
 
@@ -53,15 +56,14 @@ module.exports = _.extend({}, Tour, {
       TourActions.addSteps [
         {
           text: 'Change your account information (e.g., email, password, name, role) by clicking on ‘profile’ and then the ‘edit’ button within each section.'
-          element: '.menu-item-account'
-          position: 'bottom'
-          closeButtonText: 'Next'
+          element: '.menu-item-account .menu-item-profile'
+          position: 'middle'
         }
         {
           text: 'Enable or disable your access to complementary content contained'
-          element: '.menu-item-account'
-          closeButtonText: 'Next'
-          position: 'bottom'
+          element: '.menu-item-account .menu-item-complementary-content'
+          position: 'middle'
+          afterStep: -> $('.menu-item-account').removeClass('hover')
         }
       ]
 
@@ -118,11 +120,6 @@ module.exports = _.extend({}, Tour, {
       {
         text: 'Save your search strategy and subscribe to receive a monthly email containing links to any documents that have been newly added to Health Systems Evidence and meet your search parameters. Your subscriptions can be managed on the ‘Saved searches’ page, where you can also subscribe to past searches you have saved, as well as to any of the suggested ‘Curated searches’ prepared by the Health Systems Evidence team.'
         element: '.btn-save-and-subscribe'
-        position: 'bottom'
-      }
-      {
-        text: 'Enable or disable your access to complementary content contained'
-        element: '.menu-item-account'
         position: 'bottom'
       }
     ]
