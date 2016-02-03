@@ -65,6 +65,9 @@ module.exports = React.createClass
     @props.onLoadMore?(page)
 
   hasMore: ->
+    # no more if there are no results to begin with (in case of discrepancy between resultCount)
+    # should always start with a non-empty array of results before we can request more
+    return false if @props.results.length <= 0
     @props.resultsCount > 0 and @props.resultsCount > @props.results.length
 
   hasSelectedItems: ->
