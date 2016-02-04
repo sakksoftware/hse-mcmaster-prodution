@@ -79,13 +79,18 @@
       margin-right: -304px;
     }
 
+    a {
+      color: darken($link-color, 10%);
+      text-decoration: underline;
+    }
+
     .btn-close {
       position: absolute;
       right: $tiny-size;
       top: $tiny-size;
       background: darken($warn-color, 20%);
       border-radius: 50px;
-      // padding: $x-tiny-size;
+      text-decoration: none;
       text-align: center;
       width: 20px;
       height: 20px;

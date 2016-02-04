@@ -265,6 +265,7 @@ module.exports = React.createClass
       url = 'https://support.apple.com/en-ca/HT204416'
 
     if !@state.dismissBrowserWarning &&
+        params.browser_warning ||
         (browser.name == 'ie' && parseInt(browser.version, 10) < 10) ||
         (browser.name == 'firefox' && parseInt(browser.version, 10) < 40) ||
         (browser.name == 'chrome' && parseInt(browser.version, 10) < 40) ||
