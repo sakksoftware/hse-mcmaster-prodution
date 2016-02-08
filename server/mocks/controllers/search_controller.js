@@ -78,6 +78,7 @@ var searchData = {
   "results": [
     {
       "id": "TBD",
+      "last_year_literature_searched": 2015,
       "traversal": "tencharacters",
       "title": "All <B>fields</B> Filled & Visible",
       "created_at": "2014-09-20 11:33:00Z",
@@ -88,6 +89,7 @@ var searchData = {
       "country_groupings": "<B>USA</B> (26); UK (2); Australia (1); Turkey (1)"
     }, {
       "id": "TBD",
+      "last_year_literature_searched": 2015,
       "traversal": "tencharacters",
       "title": "All optional fields are emtpy & visible",
       "created_at": "2013-08-20 11:33:00Z",
@@ -98,6 +100,7 @@ var searchData = {
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     }, {
       "id": "TBD",
+      "last_year_literature_searched": 2015,
       "traversal": "tencharacters",
       "title": "All fields are hidden",
       "created_at": "2013-08-20 11:33:00Z",
@@ -108,6 +111,7 @@ var searchData = {
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     }, {
       "id": "TBD",
+      "last_year_literature_searched": 2015,
       "traversal": "tencharacters",
       "title": "Article D",
       "created_at": "2013-08-20 11:33:00Z",
@@ -118,6 +122,7 @@ var searchData = {
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     }, {
       "id": "TBD",
+      "last_year_literature_searched": 2015,
       "traversal": "tencharacters",
       "title": "Article E",
       "created_at": "2013-08-20 11:33:00Z",
@@ -128,6 +133,7 @@ var searchData = {
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     }, {
       "id": "TBD",
+      "last_year_literature_searched": 2015,
       "traversal": "tencharacters",
       "title": "Article F",
       "created_at": "2013-08-20 11:33:00Z",
@@ -138,6 +144,7 @@ var searchData = {
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     }, {
       "id": "TBD",
+      "last_year_literature_searched": 2015,
       "traversal": "tencharacters",
       "title": "Article G",
       "created_at": "2013-08-20 11:33:00Z",
@@ -148,6 +155,7 @@ var searchData = {
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     }, {
       "id": "TBD",
+      "last_year_literature_searched": 2015,
       "traversal": "tencharacters",
       "title": "Article H",
       "created_at": "2013-08-20 11:33:00Z",
@@ -158,6 +166,7 @@ var searchData = {
       "country_groupings": "USA (26); UK (2); Australia (1); Turkey (1)"
     }, {
       "id": "TBD",
+      "last_year_literature_searched": 2015,
       "traversal": "tencharacters",
       "title": "Article I",
       "created_at": "2013-08-20 11:33:00Z",
@@ -168,6 +177,7 @@ var searchData = {
       "country_groupings": null
     }, {
       "id": "TBD",
+      "last_year_literature_searched": 2015,
       "traversal": "tencharacters",
       "title": "Article J",
       "created_at": "2013-08-20 11:33:00Z",
