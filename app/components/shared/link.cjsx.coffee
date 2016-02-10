@@ -44,10 +44,16 @@ module.exports = React.createClass
 
   handleClick: (e) ->
     e.preventDefault()
-    router = require('lib/router')
+
     if @props.to == 'back'
       UrlActions.back()
     else
+      # support for using `cmd + click` or `ctrl + click` to open new tabs
+      if e.ctrlKey || e.metaKey
+        window.open @url()
+        @props.onClick?()
+        return
+
       UrlActions.navigateTo(@path(), @params())
 
     @props.onClick?()

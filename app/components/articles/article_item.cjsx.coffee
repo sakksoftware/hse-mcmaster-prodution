@@ -200,9 +200,9 @@ module.exports = React.createClass
 
         <div className="desktop-sidebar">
           <div className="section">
-            <ArticleField visible={article.summary_visible}>
-              <h2>{article.label_summary}</h2>
-              {@ifNotEmpty @renderLinksList('summary-link', article.summary_links), @t('no_summary_links')}
+            <ArticleField visible={article.user_friendly_summary_visible}>
+              <h2>{article.label_user_friendly_summary}</h2>
+              {@ifNotEmpty @renderLinksList('summary-link', article.user_friendly_summary_links), @t('no_summary_links')}
             </ArticleField>
 
             <ArticleField visible={article.scientific_abstract_visible}>

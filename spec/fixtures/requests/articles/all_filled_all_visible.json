@@ -100,7 +100,7 @@
         }
     ]}
   ],
-  "summary_links": [
+  "user_friendly_summary_links": [
     {
       "title": "Australasian Cochrane Centre Policy Liaison Initiative",
       "url": "https://www.healthsystemsevidence.org/r.aspx?x=CcS1L1E5tWvzZNlsh7CCLn0whNVxKssNCp6F22Iwhq5Pv_Zj5EP_5ekHefVpoFoqsiO9WKEQ_tFlf1UmEHQcMttIrrjBM2Ka-wFFUm4NwZ4V7i2irAymdN_WAdclsJ5IgYkZBExiAaYpnsZPA6qQWpk5q8Lrt5dhXvXleM-OXIpuB0f2QgMNEziCezIcWThmAfMngixnJIHedNjf6wFjUkwzmStP9XkFj_gKnBnCzlii_hi2YJ-sfnpYDi19cF_5"
@@ -138,7 +138,7 @@
   "label_registry_record": "Registry record",
   "label_related_documents": "Related documents",
   "label_scientific_abstract": "Scientific abstract",
-  "label_summary": "User Friendly Summary",
+  "label_user_friendly_summary": "User Friendly Summary",
   "label_title": "Title",
   "label_user_friendly_summary": "User-friendly summary",
   "label_year_published": "Last year literature searched or year published",
