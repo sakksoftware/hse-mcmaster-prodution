@@ -13,6 +13,19 @@ run `npm start`
 
 ## Development
 
+### Vagrant
+
+A Vagrant config file is included in the project.
+If Vagrant with VirtualBox provider are used on Windows host, to enable symlinks run Vagrant as Administrator.
+
+1. `vagrant up` in the project directory to run and setup the virtual environment.
+2. `vagrant ssh` or `ssh vagrant@localhost:2222` - Login to Vagrant virtual machine.
+username: vagrant
+password: vagrant
+
+3. Inside the virtual machine `/vagrant` is the project directory
+4. Go ahead with steps 2 and 3 of Installation section
+
 - `brunch watch --server` — watches the project with continuous rebuild. This will also launch HTTP server with [pushState](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history).
 - `brunch build --production` — builds minified project for production
 - `public/` dir is fully auto-generated and served by HTTP server.  Write your code in `app/` dir.
