@@ -19,11 +19,14 @@ module.exports = Reflux.createStore
     @setState(@getInitialState())
 
   updateStateFromUrl: ->
-    @setState(search: @deserializeSearchUrl())
+    search = @deserializeSearchUrl()
+    # keep the filters around until we get the results back
+    if search.filters.length == 0
+      search.filters = _.deepClone(@state.search.filters)
+    @setState(search: search)
 
   getInitialState: ->
     search: @deserializeSearchUrl()
-    errors: null
     loaded: false
 
   ################
@@ -70,11 +73,9 @@ module.exports = Reflux.createStore
   ################
   onUserStoreUpdated: (state) ->
     if state.loaded
-      # TODO: should I start using constant for errors instead of strings?
-      errors = _.without(@state.errors, 'reached_search_limit')
       search = _.clone(@state.search)
       search.page = 1
-      @setState(search: search, errors: errors)
+      @setState(search: search)
 
   onSearch: (search) ->
     @setState(loaded: false)
@@ -87,7 +88,7 @@ module.exports = Reflux.createStore
 
     # TODO: remove once server does proper serialization
     search.applied_filters = SearchSerializationService.serializeAppliedFilters(search.filters).join(';')
-    @setState(search: search, errors: null, loaded: true)
+    @setState(search: search, loaded: true)
 
     @_trackSearch(search)
 
@@ -171,7 +172,7 @@ module.exports = Reflux.createStore
       @onAddFilter(filter)
 
   onLoadFiltersCompleted: (search) ->
-    @setState(search: search, errors: null, loaded: true)
+    @setState(search: search, loaded: true)
 
   onClearRelatedArticle: ->
     search = _.clone(@state.search)

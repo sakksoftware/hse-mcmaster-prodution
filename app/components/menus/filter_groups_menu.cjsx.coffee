@@ -28,8 +28,9 @@ module.exports = React.createClass
     @unsubscribe()
 
   onSearchUpdated: (state) ->
-    @setState(filters: state.search.filters)
-    @setOverlayContent(state)
+    if state.loaded
+      @setState(filters: state.search.filters)
+      @setOverlayContent(state)
 
   # TODO: can probably rewrite this whole thing by using css to move the SearchBox.renderResultCountFooter
   # as this is for desktop only

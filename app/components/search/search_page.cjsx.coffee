@@ -36,7 +36,7 @@ module.exports = React.createClass
   # searching
   # results
   getInitialState: ->
-    search: SearchStore.state.search
+    search: SearchStore.state.search || {}
     filtersLoaded: false
     step: 'results'
     guidedSearch: UserStore.state.guidedSearch
@@ -48,7 +48,18 @@ module.exports = React.createClass
     @unsubscribeUser = UserStore.listen(@userStoreUpdated)
     @unsubscribeSearch = SearchStore.listen(@searchStoreUpdated)
 
+    console.log('component will mount!')
     @fetchResults()
+
+  componentDidUpdate: (prevProps, prevState) ->
+    # only perform another search if we are in the results view and user goes back
+    # using the back button. Won't happen when user perform a search it will enter the "searching" state
+    return if @state.step != "results"
+
+    # state of search change?
+    if !@_isPendingSearch(prevState.search) && @_isNewSearch(prevState.search, @state.search)
+      console.log('component did update!')
+      @fetchResults()
 
   componentWillUnmount: ->
     @unsubscribeUser()
@@ -59,23 +70,31 @@ module.exports = React.createClass
 
   searchStoreUpdated: (state) ->
     step = @state.step
-    search = state.search
+    search = _.deepClone(state.search)
 
-    if _.isEmpty(search.query.trim()) && _.isEmpty(search.applied_filters) && _.isEmpty(search.related_article)
+    # keep the filters around until we get the results back
+    if search.filters.length == 0
+      search.filters = _.deepClone(@state.search.filters)
+
+    if @_isPendingSearch(search)
       step = 'pending_search'
+    else if !state.loaded
+      step = "searching"
     else if search.results != null
       step = 'results'
 
-    @setState(search: state.search, step: step, errors: state.errors, filtersLoaded: true)
+    @setState(search: search, step: step, filtersLoaded: true)
 
   fetchResults: ->
-    @setState(step: 'searching')
+    @setState(step: 'searching') if @state.step != 'searching'
     document.title = "#{@state.search.query} | #{@t('/site_name')}"
     SearchActions.search(@state.search)
 
   handleSearch: (query) ->
-    @state.search.query = query
-    @state.search.page = 1
+    search = _.clone(@state.search)
+    search.query = query
+    search.page = 1
+    @setState(search: search, step: 'searching')
     @fetchResults()
 
   handleLoadMore: (page) ->
@@ -99,6 +118,14 @@ module.exports = React.createClass
   confirmSubscriptionToggle: ->
     base = '/saved_search_page.dialog.'
     NotificationActions.showDialog(message: @t("#{base}message"), cancelText: @t("#{base}cancel"), confirmText: @t("#{base}confirm"), onConfirm: @toggleSubscription)
+
+  _isPendingSearch: (search) ->
+    _.isEmpty(search.query.trim()) && _.isEmpty(search.applied_filters) && _.isEmpty(search.related_article)
+
+  _isNewSearch: (prevSearch, currSearch) ->
+    prevSearch.query != currSearch.query ||
+      !_.isEqual(prevSearch.applied_filters, currSearch.applied_filters) ||
+      prevSearch.related_article_id != currSearch.related_article_id
 
   renderDesktopFiltersMenu: ->
     if @state.filtersLoaded
