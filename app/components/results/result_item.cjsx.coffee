@@ -42,7 +42,11 @@ module.exports = React.createClass
     year
 
   getStudiesConductedIn: ->
-    @props.result.studies_conducted_in.countries.map((c) -> "#{c.name_abbreviation} (#{c.conducted_count})").join('; ')
+    @props.result.studies_conducted_in.countries.map((c) ->
+      name = c.name_abbreviation
+      name = c.title if _.isEmpty(name)
+      "#{c.name_abbreviation} (#{c.conducted_count})"
+    ).join('; ')
 
   render: ->
     <SelectableItem {...@props} showSelect={false} className="result-item">
