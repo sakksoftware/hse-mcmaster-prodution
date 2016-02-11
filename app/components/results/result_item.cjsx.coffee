@@ -45,7 +45,7 @@ module.exports = React.createClass
     @props.result.studies_conducted_in.countries.map((c) ->
       name = c.name_abbreviation
       name = c.title if _.isEmpty(name)
-      "#{c.name_abbreviation} (#{c.conducted_count})"
+      "#{name} (#{c.conducted_count})"
     ).join('; ')
 
   render: ->
