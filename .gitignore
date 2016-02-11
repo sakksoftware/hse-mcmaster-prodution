@@ -34,3 +34,6 @@ bower_components/
 # Private keys (certs)
 .keys
 /.vagrant/
+
+# Private developer config, force write if changes are required
+app/config.coffee

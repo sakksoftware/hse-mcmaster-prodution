@@ -1,8 +1,7 @@
 config =
   development:
-  	# apiBase: '//localhost:3000'
-    apiBase: 'https://api.healthsystemsevidence.org'
-    useMocks: false
+    apiBase: '//localhost:3000'
+    useMocks: true
     mockResponseTime: 500
     localesUrl: '/locales/'
     recaptchaKey: '6LdQsAwTAAAAALZ8cZ2TOCW_BQ_faBRoL_Ffc3I1'
