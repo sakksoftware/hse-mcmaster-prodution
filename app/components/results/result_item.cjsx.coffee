@@ -41,6 +41,9 @@ module.exports = React.createClass
 
     year
 
+  getStudiesConductedIn: ->
+    @props.result.studies_conducted_in.countries.map((c) -> "#{c.name_abbreviation} (#{c.conducted_count})").join('; ')
+
   render: ->
     <SelectableItem {...@props} showSelect={false} className="result-item">
       <header className="result-item-header">
@@ -72,8 +75,8 @@ module.exports = React.createClass
               <HighlightFormat>{@props.result.category}</HighlightFormat>
           }
           {
-            if @props.result.country_groupings
-              <HighlightFormat>{@props.result.country_groupings}</HighlightFormat>
+            if @props.result.studies_conducted_in
+              <HighlightFormat>{@getStudiesConductedIn()}</HighlightFormat>
           }
         </div>
         <HighlightFormat>{@ellipsis(@props.result.description, 250)}</HighlightFormat>
