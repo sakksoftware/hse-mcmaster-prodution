@@ -30,6 +30,17 @@ module.exports = React.createClass
     else
       @t('not_available')
 
+  getYear: ->
+    # TODO: workaround to avoid displaying weird data
+    year = @props.result.last_year_literature_searched
+    if year == "-1" or year == "1" or year == "2" or year == "3"
+      year = @props.result.year_pub
+
+    if !year
+      year = @t('/articles_page.no_last_year_literature_searched')
+
+    year
+
   render: ->
     <SelectableItem {...@props} showSelect={false} className="result-item">
       <header className="result-item-header">
@@ -37,7 +48,7 @@ module.exports = React.createClass
           <span className="result-item-number">{@props.resultNumber}.</span>
           <div className="field result-item-published">
             <span className="field-name">{@t('year')}</span>
-            <span className="field-value">{@props.result.last_year_literature_searched}</span>
+            <span className="field-value">{@getYear()}</span>
           </div>
           <div className="field result-item-quality">
             <span className="field-name">{@t('quality')}</span>
