@@ -34,7 +34,7 @@ module.exports = React.createClass
     # TODO: workaround to avoid displaying weird data
     year = @props.result.last_year_literature_searched
     if year == "-1" or year == "1" or year == "2" or year == "3"
-      year = @props.result.year_pub
+      year = @props.result.pub_year
 
     if !year
       year = @t('/articles_page.no_last_year_literature_searched')
