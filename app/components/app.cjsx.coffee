@@ -61,7 +61,9 @@ Button = require('components/shared/button')
 module.exports = React.createClass
   displayName: 'App'
 
-  mixins: [TranslationHelper, HSETour]
+  mixins: [TranslationHelper]
+  # TODO: uncomment the tour when it is ready for prime-time
+  # mixins: [TranslationHelper, HSETour]
   baseTranslation: ''
 
   propTypes:
