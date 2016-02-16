@@ -116,8 +116,8 @@
   },
   "search_page": {
     "search_box": {
-      "view_results_count": "查看 %{count} 结果",
-      "view_results_count_plural": "查看 %{count} 结果",
+      "view_results_count": "点击此处查看 %{count} 结果",
+      "view_results_count_plural": "点击此处查看 %{count} 结果",
       "tips": "如何实现更有效检索",
       "filters": "限定项",
       "placeholder": "检索……",

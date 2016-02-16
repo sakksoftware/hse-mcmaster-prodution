@@ -116,8 +116,8 @@
   },
   "search_page": {
     "search_box": {
-      "view_results_count": "View %{count} result",
-      "view_results_count_plural": "View %{count} results",
+      "view_results_count": "Click here to view %{count} result",
+      "view_results_count_plural": "Click here to view %{count} results",
       "tips": "Search tips",
       "filters": "Filters",
       "placeholder": "Search...",

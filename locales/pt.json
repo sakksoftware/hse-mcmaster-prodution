@@ -116,8 +116,8 @@
   },
   "search_page": {
     "search_box": {
-      "view_results_count": "Exibir %{count} resultados",
-      "view_results_count_plural": "Exibir %{count} resultados",
+      "view_results_count": "Clique aqui %{count} para ver os resultados",
+      "view_results_count_plural": "Clique aqui %{count} para ver os resultados",
       "tips": "Dicas para uma pesquisa mais eficaz",
       "filters": "Filtros",
       "placeholder": "Pesquisar...",
