@@ -83,7 +83,8 @@ module.exports = React.createClass
       @setState(showSignupPrompt: true)
       return
 
-    SearchActions.loadMore(page)
+    promise = SearchActions.loadMore(page)
+    promise
 
   handleSortChange: (sortBy) ->
     SearchActions.sortBy(sortBy)

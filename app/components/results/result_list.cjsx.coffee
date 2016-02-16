@@ -22,6 +22,9 @@ module.exports = React.createClass
   getDefaultProps: ->
     onLoadMore: ->
 
+  componentWillUnmount: ->
+    @unsubscribeToLoadMore?()
+
   saveArticles: ->
     selected = @getSelected()
     UserActions.saveArticles(selected).then =>
@@ -62,7 +65,7 @@ module.exports = React.createClass
     @refs.selectableList.clearSelected()
 
   loadMore: (page) ->
-    @props.onLoadMore?(page)
+    @unsubscribeToLoadMore = @props.onLoadMore?(page)
 
   hasMore: ->
     # no more if there are no results to begin with (in case of discrepancy between resultCount)
