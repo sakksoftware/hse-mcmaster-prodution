@@ -35,9 +35,10 @@ module.exports = class API
       url = apiBase + "/api#{url}"
 
     headers = {}
+    headers['Content-Type'] = 'application/json; charset=UTF-8' # always send json to the server
+
     if token = Cookies.get('token')
       headers['Authorization'] = token
-      headers['Content-Type'] = 'application/json; charset=UTF-8' # always send json to the server
 
     options = _.extend {
       method: method
