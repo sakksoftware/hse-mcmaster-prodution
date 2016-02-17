@@ -38,7 +38,7 @@ module.exports = React.createClass
 
   onSearchUpdated: (state) ->
     search = state.search
-    if !_.isEmpty(search.filters)
+    if !_.isEmpty(search.filters) && @filterGroup
       filterGroup = SearchStore.findFilter(@filterGroup)
       return unless filterGroup
 
