@@ -45,7 +45,7 @@ module.exports = React.createClass
     @props.result.studies_conducted_in.countries.map((c) ->
       name = c.name_abbreviation
       name = c.title if _.isEmpty(name)
-      if c.conducted_count
+      if c.conducted_count && c.conducted_count != "0" && c.conducted_count != "null"
         "#{name} (#{c.conducted_count})"
       else
         name
