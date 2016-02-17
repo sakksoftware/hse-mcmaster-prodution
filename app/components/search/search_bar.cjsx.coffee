@@ -21,6 +21,10 @@ module.exports = React.createClass
     # HACK: to clear the autosuggest state
     count: 0
 
+  # TODO: option 1: listen to the popstate and handle directly
+  # TODO: option 2: define a single responsibility service
+  #         * update the url for every search and listener will update the rest
+  #         * or update the state of the search_store and let listeners
   dismissKeyboard: -> document.activeElement.blur()
   handleSubmit: (e) ->
     e.preventDefault()
