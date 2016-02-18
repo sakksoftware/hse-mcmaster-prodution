@@ -67,6 +67,7 @@ module.exports = React.createClass
   renderCountries: ->
     _.map @state.countries, (f) =>
       filter = SearchStore.findFilter(f)
+      return unless filter
       <MenuFilterItem filter={filter} key="filter-#{filter.id}" onToggle={@onToggleFilter} />
 
   renderPredicates: ->

@@ -20,7 +20,7 @@ module.exports = React.createClass
     answer = @props.answer
     filterGroup = SearchStore.findFilter(answer.filterGroup)
 
-    filterGroup.filters
+    filterGroup?.filters || []
 
   render: ->
     answer = @props.answer

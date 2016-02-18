@@ -71,7 +71,7 @@ module.exports = React.createClass
             title={item.title}
             context={
               filterGroup: item
-              filters: SearchStore.findFilter(item).filters
+              filters: SearchStore.findFilter(item)?.filters || []
             }
             onToggle={@onShowFilterGroup}
             style={
