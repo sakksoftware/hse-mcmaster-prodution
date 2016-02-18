@@ -102,6 +102,7 @@ module.exports = (settings, done) ->
       value
     calculatePlacement: ->
       step = @settings.steps[@state.currentIndex]
+      return unless step
       $target = $(step.element)
       offset = $target.offset()
       targetWidth = $target.outerWidth()
