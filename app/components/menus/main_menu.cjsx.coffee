@@ -41,7 +41,7 @@ module.exports = React.createClass
             {@fullName() || @props.currentUser.email}
           </LayerToggle>
 
-          <a className="desktop-menu-link menu-item-text" href="#">{@fullName() || @props.currentUser.email}</a>
+          <a className="desktop-menu-link menu-item-text" href="#" onClick={(e) -> e.preventDefault()}>{@fullName() || @props.currentUser.email}</a>
           <AccountMenu />
         </li>
         <li key="menu-item-logout" className="menu-item menu-item-logout">
@@ -78,7 +78,7 @@ module.exports = React.createClass
         <span className="menu-item-icon"></span>
         <LayerToggle className="menu-item-text" menu="languages" onToggle={@props.onSubMenuClick}>{@t('select_language')}</LayerToggle>
 
-        <a className="desktop-menu-link menu-item-text" href="#">{@t('select_language')}</a>
+        <a className="desktop-menu-link menu-item-text" href="#" onClick={(e) -> e.preventDefault()}>{@t('select_language')}</a>
         <LanguagesMenu />
       </li>
       <li className="menu-item menu-item-guided-search">
