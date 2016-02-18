@@ -60,6 +60,15 @@ module.exports = _.extend({}, Tour, {
           order: 5
           afterStep: -> $('.menu-item-account').removeClass('hover')
         }
+      ]
+
+      if @props.page == 'home' #&& prevProps.page != @props.page
+        @addTourStepAdvancedFilters()
+
+      if @props.page == 'search' #&& prevProps.page != @props.page
+        @addTourStepSelectResultItem()
+
+      TourActions.addSteps [
         {
           key: 'complementary_content'
           element: '.menu-item-account .menu-item-complementary-content'
@@ -68,12 +77,6 @@ module.exports = _.extend({}, Tour, {
           afterStep: -> $('.menu-item-account').removeClass('hover')
         }
       ]
-
-      if @props.page == 'home' #&& prevProps.page != @props.page
-        @addTourStepAdvancedFilters()
-
-      if @props.page == 'search' #&& prevProps.page != @props.page
-        @addTourStepSelectResultItem()
 
   addTourStepAdvancedFilters: ->
     TourActions.addStep
@@ -87,7 +90,7 @@ module.exports = _.extend({}, Tour, {
     TourActions.addSteps [
       {
         key: 'filters_menu'
-        element: '.filter-groups-menu'
+        element: '.filter-groups-menu-wrapper'
         position: 'top left'
         order: 4
         afterStep: -> $('.menu-item-account').addClass('hover')
@@ -150,5 +153,5 @@ module.exports = _.extend({}, Tour, {
         oldAfterStep?.call(@)
       s
 
-    @setTourSteps(steps)
+    @setTourSteps(steps) unless _.isEmpty(steps)
 })

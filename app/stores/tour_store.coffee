@@ -26,3 +26,6 @@ module.exports = Reflux.createStore
 
   getCompletedSteps: ->
     (Cookies.get('completed_tour_steps') || '').split(';')
+
+  onResetSteps: ->
+    @setState(steps: [])

@@ -48,7 +48,9 @@ module.exports = (settings, done) ->
       else if hasSteps and hasNewIndex and !hasNewStep
         @completionCallback()
         @_unrenderLayer()
+
       return
+
     componentDidMount: ->
       # Appending to the body is easier than managing the z-index of everything on the page.
       # It's also better for accessibility and makes stacking a snap (since components will stack
@@ -85,17 +87,17 @@ module.exports = (settings, done) ->
       docHeight = parseInt($(document).height())
       if axis.toLowerCase() == 'x'
         if value + elWidth > winWidth
-          console.log 'right overflow. value:', value, 'elWidth:', elWidth
+          # console.log 'right overflow. value:', value, 'elWidth:', elWidth
           value = winWidth - elWidth
         else if value < 0
-          console.log 'left overflow. value:', value, 'elWidth:', elWidth
+          # console.log 'left overflow. value:', value, 'elWidth:', elWidth
           value = 0
       else if axis.toLowerCase() == 'y'
         if value + elHeight > docHeight
-          console.log 'bottom overflow. value:', value, 'elHeight:', elHeight
+          # console.log 'bottom overflow. value:', value, 'elHeight:', elHeight
           value = docHeight - elHeight
         else if value < 0
-          console.log 'top overflow. value:', value, 'elHeight:', elHeight
+          # console.log 'top overflow. value:', value, 'elHeight:', elHeight
           value = 0
       value
     calculatePlacement: ->
@@ -180,6 +182,7 @@ module.exports = (settings, done) ->
                      closeButtonText={currentStep.closeButtonText} />
           );
         else
+
           element = (
            <Indicator cssPosition={cssPosition}
                       xPos={this.state.xPos}
@@ -188,6 +191,7 @@ module.exports = (settings, done) ->
           );
 
       if !element
+
         console.warn("Cannot find element with selector #{currentStep.element}")
 
       return element
