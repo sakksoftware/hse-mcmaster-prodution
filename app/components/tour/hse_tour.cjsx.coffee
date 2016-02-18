@@ -24,19 +24,17 @@ module.exports = _.extend({}, Tour, {
 
     TourActions.addSteps [
       {
-        text: 'Select the language you prefer when using Health Systems Evidence.'
+        key: 'language'
         element: '.menu-item-language'
         position: 'bottom'
-        closeButtonText: 'Next'
         order: 1
         beforeStep: -> $('.menu-item-language').addClass('hover')
         afterStep: -> $('.menu-item-language').removeClass('hover')
       }
       {
-        text: 'Get assistance in applying the filters available on Health Systems Evidence to narrow your search by responding to these plain-language questions. The guided search can be turned off or on (indicated by the toggle at the top of the screen) and can be expanded or hidden on a mobile device.'
-        element: '.menu-item-guided-search'
+        key: 'guided_search'
+        element: '.guided-questions-box'
         position: 'bottom'
-        closeButtonText: 'Next'
         order: 2
       }
     ]
@@ -56,14 +54,14 @@ module.exports = _.extend({}, Tour, {
 
       TourActions.addSteps [
         {
-          text: 'Change your account information (e.g., email, password, name, role) by clicking on ‘profile’ and then the ‘edit’ button within each section.'
+          key: 'profile'
           element: '.menu-item-account .menu-item-profile'
           position: 'middle'
           order: 5
           afterStep: -> $('.menu-item-account').removeClass('hover')
         }
         {
-          text: 'Enable or disable your access to complementary content contained'
+          key: 'complementary_content'
           element: '.menu-item-account .menu-item-complementary-content'
           position: 'middle'
           order: 12
@@ -79,7 +77,7 @@ module.exports = _.extend({}, Tour, {
 
   addTourStepAdvancedFilters: ->
     TourActions.addStep
-      text: 'Explore the full list of search filters available on Health Systems Evidence, which you can then apply to narrow your search.'
+      key: 'advanced_search'
       element: '.advanced-search'
       position: 'bottom'
       order: 3
@@ -88,33 +86,33 @@ module.exports = _.extend({}, Tour, {
   addTourStepSelectResultItem: ->
     TourActions.addSteps [
       {
-        text: 'Narrow your search so that you retrieve documents that address the domains you’re most interested in, focus on the country or region you work in, and retrieve particular types of documents. Your results can be narrowed by combining filter types (e.g., system arrangements and diseases), and expanded by selecting more than one filter within a type (e.g. cancer and HIV/AIDS).'
+        key: 'filters_menu'
         element: '.filter-groups-menu'
         position: 'top left'
         order: 4
         afterStep: -> $('.menu-item-account').addClass('hover')
       }
       {
-        text: 'Select an article to save, export or view later'
+        key: 'select_article'
         element: '.result-item:first-child .result-item-select'
         position: 'top-right'
         order: 6
         afterStep: -> $('.result-item:first-child .result-item-select input').click()
       }
       {
-        text: 'Send the list of documents selected from your search results by email to yourself or others.'
+        key: 'email_articles'
         element: '.saved-articles-actions .icon-email'
         position: 'top'
         order: 7
       }
       {
-        text: 'Save the list of documents selected from your search results directly to your personal ‘Saved documents’ clipboard.'
+        key: 'save_articles'
         element: '.saved-articles-actions .icon-save-article'
         position: 'top'
         order: 8
       }
       {
-        text: 'View the list of documents you have saved from previous searches. Your saved documents can also be managed (i.e., retained on or deleted from your profile) on this page. '
+        key: 'view_saved_articles'
         element: '.saved-articles-actions .icon-view-saved-articles'
         position: 'top'
         order: 9
@@ -125,13 +123,13 @@ module.exports = _.extend({}, Tour, {
           # target.dispatchEvent(event)
       }
       {
-        text: 'Save your search strategy - including keywords and filters – and use it at any time, by clicking the ‘Save search’ icon. You can manage your list of saved searches by clicking the ‘Saved searches’ option from the account profile dropdown menu.'
+        key: 'save_search'
         element: '.btn-save'
         position: 'bottom'
         order: 10
       }
       {
-        text: 'Save your search strategy and subscribe to receive a monthly email containing links to any documents that have been newly added to Health Systems Evidence and meet your search parameters. Your subscriptions can be managed on the ‘Saved searches’ page, where you can also subscribe to past searches you have saved, as well as to any of the suggested ‘Curated searches’ prepared by the Health Systems Evidence team.'
+        key: 'save_and_subscribe'
         element: '.btn-save-and-subscribe'
         position: 'bottom'
         order: 11
@@ -140,12 +138,17 @@ module.exports = _.extend({}, Tour, {
     ]
 
   tourStoreUpdated: (state) ->
-    steps = state.steps
-    steps = _.map state.steps, (s) ->
-      s = _.clone(s);
-      s.closeButtonText = 'Next'
+    steps = _.deepClone(state.steps)
+    steps = _.map state.steps, (s) =>
+      s = _.clone(s)
+      s.text = @t("/tour.steps.#{s.key}")
+      s.closeButtonText = @t('/tour.got_it')
+
+      oldAfterStep = s.afterStep
+      s.afterStep = =>
+        TourActions.markStepCompleted(s)
+        oldAfterStep?.call(@)
       s
 
-    steps[steps.length - 1].closeButtonText = 'Close'
     @setTourSteps(steps)
 })
