@@ -30,17 +30,6 @@ module.exports = React.createClass
     else
       @t('not_available')
 
-  getYear: ->
-    # TODO: workaround to avoid displaying weird data
-    year = @props.result.last_year_literature_searched
-    if year == "-1" or year == "1" or year == "2" or year == "3"
-      year = @props.result.pub_year
-
-    if !year
-      year = @t('/articles_page.no_last_year_literature_searched')
-
-    year
-
   getStudiesConductedIn: ->
     @props.result.studies_conducted_in.countries.map((c) ->
       name = c.name_abbreviation
@@ -58,7 +47,7 @@ module.exports = React.createClass
           <span className="result-item-number">{@props.resultNumber}.</span>
           <div className="field result-item-published">
             <span className="field-name">{@t('year')}</span>
-            <span className="field-value">{@getYear()}</span>
+            <span className="field-value">{@props.result.year}</span>
           </div>
           <div className="field result-item-quality">
             <span className="field-name">{@t('quality')}</span>
