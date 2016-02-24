@@ -48,19 +48,6 @@ module.exports = React.createClass
     @unsubscribeUser = UserStore.listen(@userStoreUpdated)
     @unsubscribeSearch = SearchStore.listen(@searchStoreUpdated)
 
-    console.log('component will mount!')
-    @fetchResults()
-
-  componentDidUpdate: (prevProps, prevState) ->
-    # only perform another search if we are in the results view and user goes back
-    # using the back button. Won't happen when user perform a search it will enter the "searching" state
-    return if @state.step != "results"
-
-    # state of search change?
-    if !@_isPendingSearch(prevState.search) && @_isNewSearch(prevState.search, @state.search)
-      console.log('component did update!')
-      @fetchResults()
-
   componentWillUnmount: ->
     @unsubscribeUser()
     @unsubscribeSearch()
@@ -71,11 +58,7 @@ module.exports = React.createClass
   searchStoreUpdated: (state) ->
     step = @state.step
     search = _.deepClone(state.search)
-
-    # keep the filters around until we get the results back
-    if search.filters.length == 0
-      search.filters = _.deepClone(@state.search.filters)
-
+    
     if @_isPendingSearch(search)
       step = 'pending_search'
     else if !state.loaded
@@ -94,8 +77,8 @@ module.exports = React.createClass
     search = _.clone(@state.search)
     search.query = query
     search.page = 1
-    @setState(search: search, step: 'searching')
-    @fetchResults()
+    @setState { search: search, step: 'searching' }, =>
+      @fetchResults()
 
   handleLoadMore: (page) ->
     if UserStore.state.user == null && page > 2
@@ -121,11 +104,6 @@ module.exports = React.createClass
 
   _isPendingSearch: (search) ->
     _.isEmpty(search.query.trim()) && _.isEmpty(search.applied_filters) && _.isEmpty(search.related_article)
-
-  _isNewSearch: (prevSearch, currSearch) ->
-    prevSearch.query != currSearch.query ||
-      !_.isEqual(prevSearch.applied_filters, currSearch.applied_filters) ||
-      prevSearch.related_article_id != currSearch.related_article_id
 
   renderDesktopFiltersMenu: ->
     if @state.filtersLoaded

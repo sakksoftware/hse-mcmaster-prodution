@@ -42,7 +42,6 @@ module.exports = Reflux.createStore
     params = _.clone(@state.params)
     delete params[param]
     @setState(params: params)
-    console.log('unset', params)
 
   onNavigateTo: (to, params = {}) ->
     defaultParams = {lang: @state.params.lang}
@@ -54,4 +53,4 @@ module.exports = Reflux.createStore
   # Helpers
   ##
   router: -> router = require('lib/router')
-  updateUrl: -> @router().update(@serializeParams())
+  updateUrl: -> @router().update("#{window.location.pathname}#{@serializeParams()}")

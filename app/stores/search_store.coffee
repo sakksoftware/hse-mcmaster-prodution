@@ -20,10 +20,7 @@ module.exports = Reflux.createStore
 
   updateStateFromUrl: ->
     search = @deserializeSearchUrl()
-    # keep the filters around until we get the results back
-    if search.filters.length == 0
-      search.filters = _.deepClone(@state.search.filters)
-    @setState(search: search)
+    SearchActions.search(search)
 
   getInitialState: ->
     search: @deserializeSearchUrl()
@@ -78,7 +75,11 @@ module.exports = Reflux.createStore
       @setState(search: search)
 
   onSearch: (search) ->
-    @setState(loaded: false)
+    # keep old search filters around until we get a new list of them (with proper aggregate counts)
+    if search.filters.length == 0
+      search.filters = _.deepClone(@state.search.filters)
+
+    @setState(loaded: false, search: search)
     @_updateUrl()
 
   onSearchCompleted: (search) ->
