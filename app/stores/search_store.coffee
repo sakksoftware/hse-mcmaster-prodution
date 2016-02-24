@@ -103,7 +103,6 @@ module.exports = Reflux.createStore
     search.sort_by = sortBy
     search.page = 1
     @setState(search: search)
-    @_updateUrl()
     SearchActions.search(@state.search)
 
   onAddFilter: (filter) ->
@@ -121,7 +120,6 @@ module.exports = Reflux.createStore
     search = _.clone(@state.search)
     search.page = 1
     @setState(search: search)
-    @_updateUrl()
     SearchActions.search(@state.search)
 
   onChangeParentFilterValue: (parentFilter, value) ->
@@ -130,7 +128,6 @@ module.exports = Reflux.createStore
     search = _.clone(@state.search)
     search.page = 1
     @setState(search: search)
-    @_updateUrl()
     SearchActions.search(@state.search)
 
   onToggleNestedFilter: (filter) ->
@@ -159,7 +156,6 @@ module.exports = Reflux.createStore
     @setState(search: @state.search)
     search = _.clone(@state.search)
     search.page = 1
-    @_updateUrl()
     SearchActions.search(@state.search)
 
   onToggleDateRangeFilter: (filter, start, end) ->
