@@ -11,6 +11,10 @@ cb = ->
 
 Tour = TourMixin(tour, cb)
 
+#
+# create mixin to let component check if any of the steps apply to it
+# add the mixin only to the components that can have steps
+# 
 module.exports = _.extend({}, Tour, {
   componentWillMount: ->
     @unsubscribeTourStore = TourStore.listen(@tourStoreUpdated)
