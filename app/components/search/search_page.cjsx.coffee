@@ -58,18 +58,17 @@ module.exports = React.createClass
   searchStoreUpdated: (state) ->
     step = @state.step
     search = _.deepClone(state.search)
-    
+
     if @_isPendingSearch(search)
       step = 'pending_search'
-    else if !state.loaded
-      step = "searching"
+    # else if !state.loaded
+    #   step = "searching"
     else if search.results != null
       step = 'results'
 
     @setState(search: search, step: step, filtersLoaded: true)
 
   fetchResults: ->
-    @setState(step: 'searching') if @state.step != 'searching'
     document.title = "#{@state.search.query} | #{@t('/site_name')}"
     SearchActions.search(@state.search)
 
@@ -77,7 +76,7 @@ module.exports = React.createClass
     search = _.clone(@state.search)
     search.query = query
     search.page = 1
-    @setState { search: search, step: 'searching' }, =>
+    @setState { search: search }, =>
       @fetchResults()
 
   handleLoadMore: (page) ->
