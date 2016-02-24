@@ -36,7 +36,7 @@ module.exports = React.createClass
   # searching
   # results
   getInitialState: ->
-    search: SearchStore.state.search
+    search: SearchStore.state.search || {}
     filtersLoaded: false
     step: 'results'
     guidedSearch: UserStore.state.guidedSearch
@@ -48,8 +48,6 @@ module.exports = React.createClass
     @unsubscribeUser = UserStore.listen(@userStoreUpdated)
     @unsubscribeSearch = SearchStore.listen(@searchStoreUpdated)
 
-    @fetchResults()
-
   componentWillUnmount: ->
     @unsubscribeUser()
     @unsubscribeSearch()
@@ -59,24 +57,28 @@ module.exports = React.createClass
 
   searchStoreUpdated: (state) ->
     step = @state.step
-    search = state.search
-
-    if _.isEmpty(search.query.trim()) && _.isEmpty(search.applied_filters) && _.isEmpty(search.related_article)
+    search = _.deepClone(state.search)
+    
+    if @_isPendingSearch(search)
       step = 'pending_search'
+    else if !state.loaded
+      step = "searching"
     else if search.results != null
       step = 'results'
 
-    @setState(search: state.search, step: step, errors: state.errors, filtersLoaded: true)
+    @setState(search: search, step: step, filtersLoaded: true)
 
   fetchResults: ->
-    @setState(step: 'searching')
+    @setState(step: 'searching') if @state.step != 'searching'
     document.title = "#{@state.search.query} | #{@t('/site_name')}"
     SearchActions.search(@state.search)
 
   handleSearch: (query) ->
-    @state.search.query = query
-    @state.search.page = 1
-    @fetchResults()
+    search = _.clone(@state.search)
+    search.query = query
+    search.page = 1
+    @setState { search: search, step: 'searching' }, =>
+      @fetchResults()
 
   handleLoadMore: (page) ->
     if UserStore.state.user == null && page > 2
@@ -99,6 +101,9 @@ module.exports = React.createClass
   confirmSubscriptionToggle: ->
     base = '/saved_search_page.dialog.'
     NotificationActions.showDialog(message: @t("#{base}message"), cancelText: @t("#{base}cancel"), confirmText: @t("#{base}confirm"), onConfirm: @toggleSubscription)
+
+  _isPendingSearch: (search) ->
+    _.isEmpty(search.query.trim()) && _.isEmpty(search.applied_filters) && _.isEmpty(search.related_article)
 
   renderDesktopFiltersMenu: ->
     if @state.filtersLoaded

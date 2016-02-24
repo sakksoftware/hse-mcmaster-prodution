@@ -101,10 +101,14 @@ class Router
 
   update: (url) ->
     if window.history?.pushState?
-      @history.push(window.location.pathname + window.location.search)
+      oldUrl = window.location.pathname + window.location.search
+      return if url == oldUrl
+      @history.push(oldUrl)
       window.history.pushState(null, "HSE", url)
     else
-      @history.push(@_getHash())
+      oldUrl = @_getHash()
+      return if url == oldUrl
+      @history.push(oldUrl)
       url = '/' + url if url[0] != '/'
       window.location.hash = '!' + url
 

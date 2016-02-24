@@ -21,10 +21,9 @@ module.exports = React.createClass
     # HACK: to clear the autosuggest state
     count: 0
 
-  # TODO: option 1: listen to the popstate and handle directly
-  # TODO: option 2: define a single responsibility service
-  #         * update the url for every search and listener will update the rest
-  #         * or update the state of the search_store and let listeners
+  componentWillReceiveProps: (nextProps) ->
+    @setState(query: nextProps.search.query, count: @state.count + 1)
+
   dismissKeyboard: -> document.activeElement.blur()
   handleSubmit: (e) ->
     e.preventDefault()
@@ -45,11 +44,7 @@ module.exports = React.createClass
     suggestion.query
 
   clearInput: ->
-    @setState(query: '', count: ++@state.count)
-    router = require('lib/router')
-    router.visit('/')
-    UrlActions.unsetParam('related_article_id')
-    SearchStore.resetState()
+    @onSearch('')
 
   renderSuggestion: (suggestion, input) ->
     index = suggestion.query.toLowerCase().indexOf(input.toLowerCase())
