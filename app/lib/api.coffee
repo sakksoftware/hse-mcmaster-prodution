@@ -1,5 +1,7 @@
 config = require('config')
 
+window.xhrRequests = []
+
 module.exports = class API
   @read: (url, options = {}) ->
     @send(url, "GET", {}, options)
@@ -50,9 +52,12 @@ module.exports = class API
       options.data = JSON.stringify(data)
 
     xhr = $.ajax options
+    window.xhrRequests.push(xhr)
     xhr
 
   @onSuccess: (res, status) ->
+    window.xhrRequests.pop()
+
     if ENV is 'production'
       return
 
@@ -60,6 +65,8 @@ module.exports = class API
 
   @onError: (errorsToSkip = []) ->
     (res, errorTypeText) =>
+      window.xhrRequests.pop()
+
       errorsToSkip = [errorsToSkip] unless _.isArray(errorsToSkip)
       return if errorsToSkip.indexOf(res.status) >= 0
 

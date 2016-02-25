@@ -49,17 +49,26 @@ module.exports = class API
     if options.method != 'GET'
       options.body = JSON.stringify(data)
 
-    fetch(url, options)
+    promise = fetch(url, options)
       .then(@_checkStatus(options.skipErrorHandlingFor))
       .then(@_parseJSON)
+      .then(@onSuccess)
 
-  @onSuccess: (res, status) ->
+    window.xhrRequests.push(promise)
+    promise
+
+  @onSuccess: (res) ->
+    window.xhrRequests.pop()
+
     if ENV is 'production'
-      return
+      return res
 
     console.debug "[API] Successfully got: ", res
+    res
 
   @onError: (res, errorTypeText, errorsToSkip = []) =>
+    window.xhrRequests.pop()
+
     errorsToSkip = [errorsToSkip] unless _.isArray(errorsToSkip)
     return if errorsToSkip.indexOf(res.status) >= 0
 
