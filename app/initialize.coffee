@@ -1,3 +1,5 @@
+window.reactAppLoaded = false
+
 require('lib/extensions/underscore')
 params = require('lib/url').params()
 
