@@ -51,6 +51,10 @@ module.exports = (settings, done) ->
 
       return
 
+    componentWillReceiveProps: ->
+      console.log('recalcualte placemetn')
+      @calculatePlacement()
+
     componentDidMount: ->
       # Appending to the body is easier than managing the z-index of everything on the page.
       # It's also better for accessibility and makes stacking a snap (since components will stack
@@ -132,6 +136,10 @@ module.exports = (settings, done) ->
         placement.y = offset.top + targetHeight - (elHeight / 2)
       else
         placement.y = offset.top + targetHeight / 2 - (elHeight / 2)
+
+      if step.cssPosition == 'fixed'
+        placement.y -= window.scrollY
+
       @setState
         xPos: @preventWindowOverflow(placement.x, 'x', elWidth, elHeight)
         yPos: @preventWindowOverflow(placement.y, 'y', elWidth, elHeight)
@@ -171,7 +179,8 @@ module.exports = (settings, done) ->
       currentStep = @settings.steps[@state.currentIndex]
 
       $target = if currentStep and currentStep.element then $(currentStep.element) else null
-      cssPosition = if $target then $target.css('position') else null
+      cssPosition = currentStep.cssPosition
+      cssPosition ||= if $target then $target.css('position') else null
       if $target and $target.length
         if @state.showTooltip
           element = (
