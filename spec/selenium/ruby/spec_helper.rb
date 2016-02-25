@@ -1,4 +1,6 @@
 require "dotenv"
+Dotenv.load
+
 require "rspec"
 include RSpec::Expectations
 require "selenium-webdriver"
@@ -19,7 +21,7 @@ RSpec.configure do |config|
   config.before(:each) do
     if ENV['REMOTE']
       @driver = Selenium::WebDriver.for(:remote,
-        :url => ENV['BROWSER_STACK_LINK'],
+        :url => ENV['BROWSER_STACK_URL'],
         :desired_capabilities => caps)
     else
       @driver = Selenium::WebDriver.for(:chrome)
