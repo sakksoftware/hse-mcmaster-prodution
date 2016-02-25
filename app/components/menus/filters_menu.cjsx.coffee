@@ -123,8 +123,8 @@ module.exports = React.createClass
     title = @filterGroup.title
     if title != 'LMICs'
       title = title.toLowerCase()
-    if title?.toUpperCase() == "CANADA'S HEALTH SYSTEM DOCUMENTS"
-      title = "Canadian health system document"
+    if title?.toUpperCase() == "CANADA'S HEALTH SYSTEMS DOCUMENTS"
+      title = "Canadian health systems document"
     if title?.toUpperCase() == "ONTARIO'S HEALTH SYSTEM DOCUMENTS"
       title = "Ontario health system document"
     @anyFilter.title = @t('any_filters', filter_title: pluralize(title, 1))

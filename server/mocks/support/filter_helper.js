@@ -7554,7 +7554,7 @@ filterData = [
         ],
         "id": "0_18",
         "parent_id": 5,
-        "title": "CANADA'S HEALTH SYSTEM DOCUMENTS",
+        "title": "CANADA'S HEALTH SYSTEMS DOCUMENTS",
         "type": "complementary_2"
       }, {
         "applied": 0,
