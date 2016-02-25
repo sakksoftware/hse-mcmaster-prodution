@@ -67,13 +67,15 @@ module.exports = class API
 
     if res.status >= 500 && res.status <= 599
       router.render('/5xx')
+    else if res.status == 401
+      router.visit('/login')
     else if res.status == 403
       UserStore = require('stores/user_store')
       if UserStore.state.user
-        Rollbar.error('Quota Exceeded Error (guest user)', res)
+        Rollbar.error('Quota Exceeded Error (registered user)', res)
         router.render('/403')
       else
-        Rollbar.error('Quota Exceeded Error (registered user)', res)
+        Rollbar.error('Quota Exceeded Error (guest user)', res)
 
         TranslationHelper = require('mixins/translation_helper')
         helper = _.extend({baseTranslation: 'errors'}, TranslationHelper)
