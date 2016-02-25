@@ -7,6 +7,7 @@ Button = require('components/shared/button')
 Link = require('components/shared/link')
 
 UserStore = require('stores/user_store')
+TourActions = require('actions/tour_actions')
 
 module.exports = React.createClass
   displayName: 'ResultBox'
@@ -32,7 +33,22 @@ module.exports = React.createClass
 
   toggleSelect: (selected) ->
     allSelected = selected.length > 0 && selected.length == @props.search.results.length
-    @setState(hasSelected: selected.length > 0, allSelected: allSelected)
+    @setState { hasSelected: selected.length > 0, allSelected: allSelected }, =>
+      if @state.hasSelected
+        TourActions.addSteps [
+          {
+            key: 'email_articles'
+            element: '.saved-articles-actions .icon-email'
+            position: 'top'
+            order: 7
+          }
+          {
+            key: 'save_articles'
+            element: '.saved-articles-actions .icon-save-article'
+            position: 'top'
+            order: 8
+          }
+        ]
 
   toggleSelectAll: ->
     @refs.resultList.toggleSelectAll()
