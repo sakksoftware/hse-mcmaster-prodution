@@ -1,5 +1,7 @@
 config = require('config')
 
+window.xhrRequests = []
+
 module.exports = class API
   @read: (url, options = {}) ->
     @send(url, "GET", {}, options)
@@ -39,6 +41,7 @@ module.exports = class API
       dataType: options.dataType || 'json' # always recieve json back from the server
       timeout: 30 * 1000
       beforeSend: (xhr) =>
+        xhr.url = url
         if token = Cookies.get('token')
           xhr.setRequestHeader('Authorization', token)
       success: [options.success || (->), @onSuccess]
@@ -48,9 +51,13 @@ module.exports = class API
     if options.method != 'GET'
       options.data = JSON.stringify(data)
 
-    $.ajax options
+    xhr = $.ajax options
+    window.xhrRequests.push(xhr)
+    xhr
 
   @onSuccess: (res, status) ->
+    window.xhrRequests.pop()
+
     if ENV is 'production'
       return
 
@@ -58,6 +65,8 @@ module.exports = class API
 
   @onError: (errorsToSkip = []) ->
     (res, errorTypeText) =>
+      window.xhrRequests.pop()
+
       errorsToSkip = [errorsToSkip] unless _.isArray(errorsToSkip)
       return if errorsToSkip.indexOf(res.status) >= 0
 
@@ -82,9 +91,20 @@ module.exports = class API
           router.visit('/signup')
       else if res.status == 404
         router.render('/404')
-      else if (res.status >= 400 && res.status <= 499 && res.status != 422) || (res.status == 0 && errorTypeText == 'error')
+      else if res.status >= 400 && res.status <= 499 && res.status != 422
         Rollbar.error('Application Error', res)
         router.render('/4xx')
+      else if res.status == 0 && errorTypeText == 'error'
+        res.retried = 0 if !res.retried
+        res.retried += 1
+        Rollbar.error('Unknown Application Error (retrying)', res)
+        if res.retried <= 5
+          console.log('retrying...', res.retried)
+          _.defer => $.ajax(res).abort() # retry
+        else
+          console.log('out!')
+          Rollbar.error('Unknown Application Error (out of retries)', res)
+          router.render('/4xx')
       else if errorTypeText == 'parsererror'
         Rollbar.error('parse error', res)
         router.render('/5xx')

@@ -84,6 +84,9 @@ module.exports = React.createClass
     @unsubscribeUserStore()
     @unsubscribeNotificationStore()
 
+  componentDidMount: ->
+    window.reactAppLoaded = true
+
   updateUser: (state) ->
     @setState(currentUser: state.user)
 
