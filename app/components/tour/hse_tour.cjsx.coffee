@@ -11,6 +11,10 @@ cb = ->
 
 Tour = TourMixin(tour, cb)
 
+# disable on mobile
+if window.innerWidth < 1024
+  return module.exports = {}
+
 #
 # create mixin to let component check if any of the steps apply to it
 # add the mixin only to the components that can have steps
