@@ -35,6 +35,7 @@ module.exports = _.extend({}, Tour, {
 
   componentWillReceiveProps: (nextProps) ->
     # page changed or user logged in
+    console.log('reset steps')
     TourActions.resetSteps()
 
   componentDidUpdate: (prevProps, prevState) ->
@@ -51,29 +52,8 @@ module.exports = _.extend({}, Tour, {
       @addTourStepsForSearchPage()
 
     if @state.currentUser && prevState.currentUser != @state.currentUser
-      TourActions.addSteps [
-        {
-          key: 'profile'
-          element: '.menu-item-account'
-          position: 'bottom'
-          cssPosition: 'fixed'
-          order: 5
-          beforeStep: -> $('.menu-item-account').addClass('hover')
-          afterStep: -> $('.menu-item-account').removeClass('hover')
-        }
-      ]
-
-      TourActions.addSteps [
-        {
-          key: 'complementary_content'
-          element: '.menu-item-account'
-          position: 'bottom'
-          cssPosition: 'fixed'
-          order: 12
-          beforeStep: -> $('.menu-item-account').addClass('hover')
-          afterStep: -> $('.menu-item-account').removeClass('hover')
-        }
-      ]
+      @addTourStepsForSearchPage() if @props.page == 'search'
+      @addTourStepsForMainMenu()
 
   addTourStepsForMainMenu: ->
     TourActions.addSteps [
@@ -87,10 +67,33 @@ module.exports = _.extend({}, Tour, {
       }
     ]
 
+    if @state.currentUser
+      TourActions.addSteps [
+        {
+          key: 'profile'
+          element: '.menu-item-account'
+          position: 'bottom'
+          cssPosition: if @props.page == 'search' then 'fixed' else 'absolute'
+          order: 5
+          beforeStep: -> $('.menu-item-account').addClass('hover')
+          afterStep: -> $('.menu-item-account').removeClass('hover')
+        }
+      ]
+
+      TourActions.addSteps [
+        {
+          key: 'complementary_content'
+          element: '.menu-item-account'
+          position: 'bottom'
+          cssPosition: if @props.page == 'search' then 'fixed' else 'absolute'
+          order: 12
+          beforeStep: -> $('.menu-item-account').addClass('hover')
+          afterStep: -> $('.menu-item-account').removeClass('hover')
+        }
+      ]
+
   addTourStepAdvancedFilters: ->
     TourActions.addStep
-
-    addTourStepsForMainMenu:
       key: 'advanced_search'
       element: '.advanced-search'
       position: 'bottom'
@@ -120,24 +123,18 @@ module.exports = _.extend({}, Tour, {
           element: '.saved-articles-actions .icon-view-saved-articles'
           position: 'top'
           order: 9
-          afterStep: ->
-            # event = document.createEvent("HTMLEvents")
-            # event.initEvent("click", true, true)
-            # target = $('.saved-articles-actions .icon-view-saved-articles')[0]
-            # target.dispatchEvent(event)
         }
         {
           key: 'save_search'
           element: '.btn-save'
-          position: 'bottom'
+          position: 'bottom-left'
           order: 10
         }
         {
           key: 'save_and_subscribe'
           element: '.btn-save-and-subscribe'
-          position: 'bottom'
+          position: 'bottom-middle'
           order: 11
-          afterStep: -> $('.menu-item-account').addClass('hover')
         }
       ]
 
@@ -155,5 +152,15 @@ module.exports = _.extend({}, Tour, {
       s
 
     @setTourSteps(steps)
-    @calculatePlacement()
+
+    # adjust placement
+    if steps.length > 0
+      @calculatePlacement()
+    else
+      @_unrenderLayer()
+
+    # special cases (SUPER HACKY...)
+    if steps?[0]?.key == 'save_search' || steps?[0]?.key == 'save_and_subscribe'
+      _.delay (=> @calculatePlacement()), 600 # until the css animation finishes
+
 })
