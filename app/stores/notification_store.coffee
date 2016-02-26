@@ -13,6 +13,7 @@ module.exports = Reflux.createStore
     notifications = _.clone(@state.notifications)
     notifications.push({type: type, message: message})
     @setState(notifications: notifications)
+    setTimeout (=> @setState(notifications: notifications[0..-2])), 3000
 
   onDismissNotifications: ->
     @setState(notifications: [])

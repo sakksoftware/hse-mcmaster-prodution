@@ -51,7 +51,7 @@ NotificationActions = require('actions/notification_actions')
 UserStore = require('stores/user_store')
 NotificationStore = require('stores/notification_store')
 
-ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
+Transition = React.addons.CSSTransitionGroup
 
 params = require('lib/url').params()
 Util = require('lib/util')
@@ -245,15 +245,19 @@ module.exports = React.createClass
       <div key="dialog-backdrop" className="modal-backdrop fade in" />
 
   renderNotification: ->
-    if @state.notifications.length > 0
-      notification = _.last(@state.notifications)
-      type = notification.type || 'success'
-      type = 'danger' if type == 'error'
+    <Transition transitionName="notification-fadeout" component="div">
+      {
+        if @state.notifications.length > 0
+          notification = _.last(@state.notifications)
+          type = notification.type || 'success'
+          type = 'danger' if type == 'error'
 
-      <div className="alert alert-#{type} alert-dismissible" role="alert">
-        <span>{notification.message}</span>
-        <Button onClick={=> NotificationActions.dismissNotifications()} className="btn-close">&times;</Button>
-      </div>
+          <div className="alert alert-#{type} alert-dismissible" role="alert">
+            <span>{notification.message}</span>
+            <Button onClick={=> NotificationActions.dismissNotifications()} className="btn-close">&times;</Button>
+          </div>
+      }
+    </Transition>
 
   renderBrowserWarning: ->
     browser = require('lib/browser')
@@ -288,9 +292,9 @@ module.exports = React.createClass
       {@renderBrowserWarning()}
       {@renderNotification()}
       <div id="page-content">
-        <ReactCSSTransitionGroup transitionName="page" component="div">
+        <Transition transitionName="page" component="div">
           {@renderPage()}
-        </ReactCSSTransitionGroup>
+        </Transition>
       </div>
       <footer>
         <div className="logo-wrapper">

@@ -188,3 +188,23 @@ form {
   bottom: 0;
   font-weight: 300;
 }
+
+.notification-fadeout-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+  display: block;
+}
+
+.notification-fadeout-enter.notification-fadeout-enter-active {
+  opacity: 1;
+  display: block;
+}
+
+.notification-fadeout-leave {
+  opacity: 1;
+  transition: opacity .2s ease-out;
+}
+
+.notification-fadeout-leave.notification-fadeout-leave-active {
+  opacity: 0.01;
+}
