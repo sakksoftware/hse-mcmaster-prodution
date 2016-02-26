@@ -19,6 +19,13 @@ module.exports = (settings, done) ->
         yPos: -1000
       }
     _renderLayer: ->
+      # Appending to the body is easier than managing the z-index of everything on the page.
+      # It's also better for accessibility and makes stacking a snap (since components will stack
+      # in mount order).
+      if !@_target
+        @_target = document.createElement('div')
+        document.body.appendChild @_target
+
       # By calling this method in componentDidMount() and componentDidUpdate(), you're effectively
       # creating a "wormhole" that funnels React's hierarchical updates through to a DOM node on an
       # entirely different part of the page.
@@ -34,7 +41,8 @@ module.exports = (settings, done) ->
 
       return
     _unrenderLayer: ->
-      React.unmountComponentAtNode @_target
+      if @_target
+        React.unmountComponentAtNode @_target
       return
     componentDidUpdate: (prevProps, prevState) ->
       hasNewIndex = @state.currentIndex != prevState.currentIndex
@@ -56,11 +64,6 @@ module.exports = (settings, done) ->
       @calculatePlacement()
 
     componentDidMount: ->
-      # Appending to the body is easier than managing the z-index of everything on the page.
-      # It's also better for accessibility and makes stacking a snap (since components will stack
-      # in mount order).
-      @_target = document.createElement('div')
-      document.body.appendChild @_target
       if @settings.steps[@state.currentIndex]
         @_renderLayer()
       $(window).on 'resize', @calculatePlacement
@@ -68,6 +71,7 @@ module.exports = (settings, done) ->
     componentWillUnmount: ->
       @_unrenderLayer()
       document.body.removeChild @_target
+      @_target = null
       $(window).off 'resize', @calculatePlacement
       return
     setTourSteps: (steps, cb) ->
@@ -76,7 +80,7 @@ module.exports = (settings, done) ->
       cb = cb or ->
       @settings.steps = steps
       @setState {
-        currentIndex: if @state.currentIndex < 0 then 0 else @state.currentIndex
+        currentIndex: 0
         setTourSteps: steps.length
       }, cb
       return
