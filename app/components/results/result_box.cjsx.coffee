@@ -59,11 +59,11 @@ module.exports = React.createClass
         {
           if @state.hasSelected
             [
-              <Button key="icon-email" className="icon icon-email" onClick={@emailArticles}>Email</Button>
-              <Button key="icon-save-article" className="icon icon-save-article" onClick={@saveArticles}>Save</Button>
+              <Button key="icon-email" className="icon icon-email" onClick={@emailArticles}>{@t('email')}</Button>
+              <Button key="icon-save-article" className="icon icon-save-article" onClick={@saveArticles}>{@t('save')}</Button>
             ]
         }
-        <Link className="icon icon-view-saved-articles button" to="/user/articles">View saved</Link>
+        <Link className="icon icon-view-saved-articles button" to="/user/articles">{@t('view_saved')}</Link>
         <label className="select-all-action action">{@t('/select_all')}<input type="checkbox" checked={@state.allSelected} onChange={@toggleSelectAll} /></label>
       </div>
 

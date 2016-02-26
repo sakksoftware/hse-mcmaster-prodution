@@ -133,7 +133,10 @@
     },
     "result_box": {
       "results": "results",
-      "pending_search": "Perform a search by entering a keyword above or selecting the appropriate filters from the list on the right."
+      "pending_search": "Perform a search by entering a keyword above or selecting the appropriate filters from the list on the right.",
+      "view_saved": "View saved",
+      "save": "Save",
+      "email": "Email"
     },
     "result_list": {
       "no_results": "No results found.",
