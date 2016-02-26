@@ -19,7 +19,7 @@ serializeAppliedFilters = (filters) ->
 serializeSearchParams = (search, language, options = {}) ->
   options = _.extend({includePage: false}, options)
   query = search.query || ""
-  sortBy = search.sort_by || "relevance"
+  sortBy = search.sort_by || ""
   applied_filters = serializeAppliedFilters(search.filters).join(';')
   related_article_id = search.related_article?.id
 

@@ -25,7 +25,7 @@ module.exports =
 
     {
       query: if params.q? then params.q else ''
-      sort_by: params.sort_by || 'relevance'
+      sort_by: params.sort_by || ''
       results: []
       results_count: 0
       applied_filters: applied_filters || []
