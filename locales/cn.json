@@ -112,7 +112,7 @@
     "no_who_links": "无法获取",
     "no_related_documents": "无法获取",
     "no_last_year_literature_searched": "无法获取",
-    "related_documents": "CN_View more documents like this one"
+    "related_documents": "查看更多相似文件"
   },
   "search_page": {
     "search_box": {
@@ -124,7 +124,7 @@
       "save": "保存检索",
       "save_and_subscribe": "保存并订阅",
       "advanced_search": "高级检索",
-      "related_article": "CN_You are viewing documents similar to"
+      "related_article": "您正在查看类似……的文件"
     },
     "result_item": {
       "year": "年份：",
@@ -133,7 +133,10 @@
     },
     "result_box": {
       "results": "结果",
-      "pending_search": "输入上方关键词或在右侧菜单选择恰当的限定项进行检索"
+      "pending_search": "输入上方关键词或在右侧菜单选择恰当的限定项进行检索",
+      "view_saved": "CN_View saved",
+      "save": "CN_Save",
+      "email": "CN_Email"
     },
     "result_list": {
       "no_results": "未找到相应结果。",
@@ -263,7 +266,7 @@
     "signup_to_increase_limit": "您已超出我们的记录允许，如果想要获取更多文件，请登陆或注册免费账号。",
     "old_browser": {
       "message": "您正在访问卫生系统证据，但浏览器版本过旧，可能会导致一些功能无法使用。我们建议您在继续之前更新您的浏览器。",
-      "upgrade": "CN_Upgrade to a new version of your web browser"
+      "upgrade": "升级您的浏览器至最新版"
     }
   },
   "clear": "清除",
@@ -283,6 +286,6 @@
       "save_and_subscribe": "CN_Save your search strategy and subscribe to receive a monthly email containing links to any documents that have been newly added to Health Systems Evidence and meet your search parameters. Your subscriptions can be managed on the ‘Saved searches’ page, where you can also subscribe to past searches you have saved, as well as to any of the suggested ‘Curated searches’ prepared by the Health Systems Evidence team.",
       "complementary_content": "CN_Enable or disable your access to complementary content contained"
     },
-    "got_it": "CN_Got it"
+    "got_it": "明白"
   }
 }

@@ -112,7 +112,7 @@
     "no_who_links": "Não disponível",
     "no_related_documents": "Não disponível",
     "no_last_year_literature_searched": "Não disponível",
-    "related_documents": "PT_View more documents like this one"
+    "related_documents": "Exibir mais documentos como ese"
   },
   "search_page": {
     "search_box": {
@@ -124,7 +124,7 @@
       "save": "Pesquisas salvadas",
       "save_and_subscribe": "Salvar e assinar",
       "advanced_search": "Pesquisa avançada",
-      "related_article": "PT_You are viewing documents similar to"
+      "related_article": "Você está exibindo documentos semelhantes a"
     },
     "result_item": {
       "year": "Ano:",
@@ -133,7 +133,10 @@
     },
     "result_box": {
       "results": "Resultados",
-      "pending_search": "Realize uma pesquisa inserindo uma palavra-chave acima ou selecionando os filtros adequados na lista exibida do lado direito."
+      "pending_search": "Realize uma pesquisa inserindo uma palavra-chave acima ou selecionando os filtros adequados na lista exibida do lado direito.",
+      "view_saved": "PT_View saved",
+      "save": "PT_Save",
+      "email": "PT_Email"
     },
     "result_list": {
       "no_results": "Nenhum resultado encontrado.",
@@ -263,7 +266,7 @@
     "signup_to_increase_limit": "Você excedeu nosso limite máximo. Inicie sessão (ou crie uma conta gratuita) se desejar acessar mais documentos.",
     "old_browser": {
       "message": "Você está tentando acessar o Health Systems Evidence usando uma versão muito antiga de seu navegador web. Poderá perder algumas funcionalidades por causa disso. Sugerimos que você atualize seu navegador web antes de continuar.​",
-      "upgrade": "PT_Upgrade to a new version of your web browser"
+      "upgrade": "Atualizar para uma nova versão do seu navegador web"
     }
   },
   "clear": "Limpar​",
@@ -283,6 +286,6 @@
       "save_and_subscribe": "PT_Save your search strategy and subscribe to receive a monthly email containing links to any documents that have been newly added to Health Systems Evidence and meet your search parameters. Your subscriptions can be managed on the ‘Saved searches’ page, where you can also subscribe to past searches you have saved, as well as to any of the suggested ‘Curated searches’ prepared by the Health Systems Evidence team.",
       "complementary_content": "PT_Enable or disable your access to complementary content contained"
     },
-    "got_it": "PT_Got it"
+    "got_it": "Já está"
   }
 }

@@ -112,7 +112,7 @@
     "no_who_links": "Non disponible",
     "no_related_documents": "Non disponible",
     "no_last_year_literature_searched": "Non disponible",
-    "related_documents": "FR_View more documents like this one"
+    "related_documents": "Voir d'autres documents comme celui-ci"
   },
   "search_page": {
     "search_box": {
@@ -124,7 +124,7 @@
       "save": "Recherches sauvegardées",
       "save_and_subscribe": "Sauvegarder et s'abonner",
       "advanced_search": "Recherche avancée",
-      "related_article": "FR_You are viewing documents similar to"
+      "related_article": "Vous regardez des documents similaires à"
     },
     "result_item": {
       "year": "Année:",
@@ -133,7 +133,10 @@
     },
     "result_box": {
       "results": "Résultats",
-      "pending_search": "Effectuez une recherche en inscrivant un mot clé ci-dessus ou en sélectionnant les filtres appropriés à partir de la liste à droite."
+      "pending_search": "Effectuez une recherche en inscrivant un mot clé ci-dessus ou en sélectionnant les filtres appropriés à partir de la liste à droite.",
+      "view_saved": "FR_View saved",
+      "save": "FR_Save",
+      "email": "FR_Email"
     },
     "result_list": {
       "no_results": "Aucun résultat trouvé.",
@@ -262,8 +265,8 @@
     "invalid": "Invalide",
     "signup_to_increase_limit": "Vous avez dépassé la limite de sauvegarde. Veuillez vous connecter (ou créer un compte gratuitement) si vous souhaitez accéder à plus de documents.",
     "old_browser": {
-      "message": "FR_You are attempting to access Health Systems Evidence with a very old version of your web browser. You may lose some functionality as a result. We suggest that you upgrade your web browser before continuing.",
-      "upgrade": "FR_Upgrade to a new version of your web browser"
+      "message": "Vous tentez d'accéder à Health Systems Evidence à l’aide d’une version désuète de votre navigateur Web. Si vous continuez avec cette version, vous risquez de perdre certaines fonctionnalités. Nous vous suggérons de mettre à jour votre navigateur Web avant de poursuivre.",
+      "upgrade": "Faites une mise à jour de votre navigateur Web"
     }
   },
   "clear": "Effacer",
@@ -283,6 +286,6 @@
       "save_and_subscribe": "FR_Save your search strategy and subscribe to receive a monthly email containing links to any documents that have been newly added to Health Systems Evidence and meet your search parameters. Your subscriptions can be managed on the ‘Saved searches’ page, where you can also subscribe to past searches you have saved, as well as to any of the suggested ‘Curated searches’ prepared by the Health Systems Evidence team.",
       "complementary_content": "FR_Enable or disable your access to complementary content contained"
     },
-    "got_it": "FR_Got it"
+    "got_it": "Bien reçu"
   }
 }
