@@ -50,6 +50,7 @@ module.exports = Reflux.createStore
     @setState(user: user, loaded: true, errors: null, language: language)
 
     @_markIfStaff(user)
+    @_setRollbarPerson(user)
 
   onLoadUserFailed: (xhr, statusCode, responseText) ->
     @setState(errors: responseText, loaded: true)
@@ -101,6 +102,7 @@ module.exports = Reflux.createStore
     Cookies.set('token', user.token)
 
     @_markIfStaff(user)
+    @_setRollbarPerson(user)
 
   onLoginUserFailed: (xhr) ->
     errors = ['unknown_error']
@@ -195,3 +197,11 @@ module.exports = Reflux.createStore
   _markIfStaff: (user) ->
     if user.user_type == 'Staff'
       ga('set', 'dimension1', 'staff');
+
+  _setRollbarPerson: (user) ->
+    Rollbar.configure
+      payload:
+        person:
+          id: user.id
+          username: "#{user.first_name} #{user.last_name}"
+          email: user.email
