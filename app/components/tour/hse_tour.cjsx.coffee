@@ -65,6 +65,7 @@ module.exports = _.extend({}, Tour, {
         key: 'language'
         element: '.menu-item-language'
         position: 'bottom'
+        cssPosition: if @props.page == 'search' then 'fixed' else 'absolute'
         order: 1
         beforeStep: -> $('.menu-item-language').addClass('hover')
         afterStep: -> $('.menu-item-language').removeClass('hover')
