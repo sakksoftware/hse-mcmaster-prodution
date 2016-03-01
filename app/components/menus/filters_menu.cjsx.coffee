@@ -26,6 +26,7 @@ module.exports = React.createClass
 
   getInitialState: ->
     filters: @props.context.filters
+    anyFilterToggled: true
 
   componentWillMount: ->
     @filterGroup = @props.context.filterGroup
@@ -57,6 +58,12 @@ module.exports = React.createClass
 
   hasApplied: (filter) ->
     SearchStore.hasAppliedFiltersFor(filter)
+
+  onToggleAnyFilter: (filter) ->
+    @setState(anyFilterToggled: !@state.anyFilterToggled)
+    filter.applied = !@state.anyFilterToggled
+    @onToggleFilter(filter)
+
 
   renderSystemArrangements: (items) ->
     results = []
@@ -111,7 +118,7 @@ module.exports = React.createClass
     return if @state.filters.length <= 1
     result =
       <MenuFilterItem className="any-filters" key="any-filter-#{@filterGroup.id}" indicatorColor={@currentColor()}
-        filter={@anyFilter} onToggle={@onToggleFilter} />
+        filter={@anyFilter} onToggle={@onToggleAnyFilter} />
 
     @nextColor()
 
