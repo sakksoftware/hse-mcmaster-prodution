@@ -56,7 +56,7 @@ module.exports = React.createClass
     if _.isEmpty(query)
       countries = @filters
     else
-      countries = _(@state.countries).filter (country) ->
+      countries = _(@filters).filter (country) ->
         country.title.toLowerCase().indexOf(query.toLowerCase()) >= 0
     @setState(countries: countries)
 
