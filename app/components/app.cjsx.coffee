@@ -239,7 +239,7 @@ module.exports = React.createClass
 
   renderDialog: ->
     for dialog, i in @state.dialogs
-      <Dialog key={"dialog-#{i}"} title={dialog.title} message={dialog.message} onConfirm={dialog.onConfirm} />
+      <Dialog key={"dialog-#{i}"} {...dialog} />
 
   renderDialogBackDrop: ->
     if @state.dialogs.length > 0

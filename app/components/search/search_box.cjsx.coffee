@@ -117,7 +117,7 @@ module.exports = React.createClass
         <div className="advanced-search-wrapper">
           {
             if @state.showHotspot
-              <Hotspot key="advanced_search" text={@t("/tour.steps.advanced_search")} />
+              <Hotspot tourKey="advanced_search" text={@t("/tour.steps.advanced_search")} />
           }
           <Link to="/search" className="advanced-search">{@t('advanced_search')}</Link>
         </div>

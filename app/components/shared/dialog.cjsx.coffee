@@ -11,6 +11,7 @@ module.exports = React.createClass
   getDefaultProps: ->
     cancelText: 'Cancel'
     confirmText: 'Confirm'
+    displayCancel: true
     onConfirm: ->
 
   onConfirm: ->
@@ -31,7 +32,10 @@ module.exports = React.createClass
             <p>{@props.message}</p>
           </div>
           <div className="modal-footer">
-            <button type="button" className="btn btn-default" data-dismiss="modal" onClick={@closeDialog}>{@props.cancelText}</button>
+            {
+              if @props.displayCancel
+                <button type="button" className="btn btn-default" data-dismiss="modal" onClick={@closeDialog}>{@props.cancelText}</button>
+            }
             <button type="button" className="btn btn-primary" onClick={@onConfirm}>{@props.confirmText}</button>
           </div>
         </div>

@@ -2,6 +2,8 @@ Button = require('components/shared/button')
 TranslationHelper = require('mixins/translation_helper')
 TourActions = require('actions/tour_actions')
 
+NotificationActions = require('actions/notification_actions')
+
 module.exports = React.createClass
   displayName: 'Hotspot'
 
@@ -9,7 +11,7 @@ module.exports = React.createClass
   baseTranslation: ''
 
   propTypes:
-    key: React.PropTypes.string.isRequired
+    tourKey: React.PropTypes.string.isRequired
     text: React.PropTypes.string.isRequired
 
   getInitialState: ->
@@ -27,18 +29,15 @@ module.exports = React.createClass
     else
       'none'
 
+  onHotspotClick: ->
+    NotificationActions.showDialog(title: 'Hotspot', message: @props.text, onConfirm: @dismiss, confirmText: @t('/tour.got_it'), displayCancel: false)
+
   dismiss: ->
-    TourActions.markStepCompleted(key: @props.key)
+    TourActions.markStepCompleted(key: @props.tourKey)
 
   render: ->
     <div className="hotspot">
-      <div className="hotspot-indicator-wrapper" onClick={=> @setState(showInfo: true)}>
+      <div className="hotspot-indicator-wrapper" onClick={@onHotspotClick}>
         <div className="hotspot-indicator"></div>
-      </div>
-      <div className="hotspot-info" style={display: @showInfo()}>
-        {@props.text}
-        <div className="actions">
-          <Button className="btn btn-primary" onClick={@dismiss}>{@t('/tour.got_it')}</Button>
-        </div>
       </div>
     </div>
