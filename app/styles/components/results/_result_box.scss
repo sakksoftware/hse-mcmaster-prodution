@@ -1,6 +1,6 @@
 .result-box {
   .result-box-header {
-    overflow: auto;
+    overflow: hidden;
     border-bottom: 1px solid $border-color;
     padding-bottom: $x-tiny-size;
     margin-bottom: $tiny-size;
