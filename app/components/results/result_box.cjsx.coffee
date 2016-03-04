@@ -88,6 +88,9 @@ module.exports = React.createClass
         {@renderSavedArticlesButtons()}
       </div>
       <SavedSearchButtons search={@props.search} toggleSelectAll={@toggleSelectAll} onSaveAndSubscribe={@props.onSaveAndSubscribe} />
-      <Hotspot tourKey="select_article" />
+      {
+        if UserStore.isLoggedIn()
+          <Hotspot tourKey="select_article" />
+      }
       <ResultList ref="resultList" results={@props.search.results} resultsCount={@props.search.results_count} onLoadMore={@props.onLoadMore} toggleSelect={@toggleSelect} />
     </div>
