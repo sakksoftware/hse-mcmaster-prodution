@@ -24,6 +24,9 @@ module.exports = Reflux.createStore
     completedSteps.push(step.key) unless completedSteps.indexOf(step.key) >= 0
     Cookies.set('completed_tour_steps', completedSteps.join(';'))
 
+    console.log('steps', @state.steps.filter (s) -> completedSteps.indexOf(s.key) > 0)
+    @setState(steps: @state.steps.filter (s) -> completedSteps.indexOf(s.key) > 0)
+
   getCompletedSteps: ->
     (Cookies.get('completed_tour_steps') || '').split(';')
 
