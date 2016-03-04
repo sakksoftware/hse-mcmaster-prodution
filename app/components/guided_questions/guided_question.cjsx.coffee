@@ -1,5 +1,7 @@
 AnswerList = require('components/guided_questions/answer_list')
 UserStore = require('stores/user_store')
+TourActions = require('actions/tour_actions')
+Hotspot = require('components/tour/hotspot')
 
 module.exports = React.createClass
   displayName: 'GuidedQuestion'
@@ -8,6 +10,13 @@ module.exports = React.createClass
     onShowMenu: React.PropTypes.func.isRequired
     onHideMenu: React.PropTypes.func.isRequired
     expanded: React.PropTypes.bool
+
+  componentWillMount: ->
+    TourActions.addStep
+      key: 'guided_search'
+      element: '.guided-questions-box'
+      position: 'middle'
+      order: 2
 
   getInitialState: ->
     expanded: @props.expanded || false
@@ -38,6 +47,7 @@ module.exports = React.createClass
       <div className="guided-question-text">
         {@getQuestion().text}
         <a className="btn-toggle" href="#" onClick={@toggle}></a>
+        <Hotspot tourKey="guided_search" />
       </div>
       <AnswerList answers={@getQuestion().answers} onShowMenu={@props.onShowMenu} onHideMenu={@props.onHideMenu} />
     </div>

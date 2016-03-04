@@ -59,8 +59,13 @@
     }
 
     .hotspot {
-      top: -11px;
-      left: -12px;
+      top: -12px;
+      left: -28px;
+
+      @include desktop {
+        top: -11px;
+        left: -12px;
+      }
     }
   }
 
@@ -78,8 +83,13 @@
     }
 
     .hotspot {
-      top: -10px;
-      left: -5px;
+      top: -12px;
+      left: -18px;
+
+      @include desktop {
+        top: -10px;
+        left: -5px;
+      }
     }
   }
 }

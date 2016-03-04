@@ -61,6 +61,11 @@
       text-decoration: none;
     }
 
+    .hotspot {
+      left: -11px;
+      top: -4px;
+    }
+
     @include desktop {
       display: none;
     }

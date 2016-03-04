@@ -93,6 +93,16 @@
     }
   }
 
+  & > .hotspot {
+    right: 26px;
+    top: 77px;
+
+    @include desktop {
+      right: 68px;
+      top: 81px;
+    }
+  }
+
   .result-list {
     margin: $large-size 0;
   }

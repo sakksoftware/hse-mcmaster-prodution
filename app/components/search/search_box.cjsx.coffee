@@ -96,6 +96,7 @@ module.exports = React.createClass
           }
           onToggle={@handleClickFiltersButton}
         >
+          <Hotspot tourKey="filters_menu" />
           {@t('filters')}
           {@renderFilterCount()}
         </LayerToggle>
