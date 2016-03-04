@@ -3,8 +3,12 @@ LayerToggle = require('components/layered_navigation/layer_toggle')
 TranslationHelper = require('mixins/translation_helper')
 AccountMenu = require('components/menus/account_menu')
 LanguagesMenu = require('components/menus/languages_menu')
+Hotspot = require('components/tour/hotspot')
+
 UserActions = require('actions/user_actions')
 UserStore = require('stores/user_store')
+TourActions = require('actions/tour_actions')
+TourStore = require('stores/tour_store')
 
 Toggle = ReactToggle
 
@@ -24,6 +28,27 @@ module.exports = React.createClass
     user = @props.currentUser
     if user.first_name and user.last_name
       user.first_name + " " + user.last_name
+
+  componentWillMount: ->
+    @unsubscribeTourStore = TourStore.listen(@tourStoreUpdated)
+    TourActions.addSteps [
+      {
+        key: 'language'
+        order: 1
+      }
+    ]
+
+  componentWillUnmount: ->
+    @unsubscribeTourStore()
+
+  getInitialState: ->
+    displayLanguageHotspot: false
+
+  tourStoreUpdated: (state) ->
+    if _.find(state.steps, (s) -> s.key == 'language')
+      @setState(displayLanguageHotspot: true)
+    else
+      @setState(displayLanguageHotspot: false)
 
   handleLogout: (e) ->
     e.preventDefault()
@@ -75,6 +100,10 @@ module.exports = React.createClass
         <Link className="menu-item-text" onClick={@props.onLinkClick} to="/about">{@t('about')}</Link>
       </li>
       <li className="menu-item menu-item-language">
+        {
+          if @state.displayLanguageHotspot
+            <Hotspot tourKey="language" text={@t('/tour.steps.language')} />
+        }
         <span className="menu-item-icon"></span>
         <LayerToggle className="menu-item-text" menu="languages" onToggle={@props.onSubMenuClick}>{@t('select_language')}</LayerToggle>
 

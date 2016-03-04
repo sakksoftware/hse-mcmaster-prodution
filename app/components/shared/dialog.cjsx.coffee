@@ -22,7 +22,7 @@ module.exports = React.createClass
     NotificationActions.closeDialog()
 
   render: ->
-    <div className="modal fade">
+    <div className="modal fade" onClick={=> @closeDialog()}>
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">

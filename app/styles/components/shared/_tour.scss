@@ -17,6 +17,7 @@
 $hotspot-size: 10px;
 
 .hotspot {
+  position: absolute;
   min-width: $hotspot-size;
   min-height: $hotspot-size;
 }
@@ -54,21 +55,6 @@ $hotspot-size: 10px;
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-out;
-  }
-}
-
-.hotspot-info {
-  position: absolute;
-  background: white;
-  width: 350px;
-  padding: $tiny-size;
-  line-height: 1.5em;
-  border: 1px solid #BBB;
-  left: 35px;
-  box-shadow: 1px 1px 2px #A6A6A6;
-
-  .btn-primary {
-    float: right;
   }
 }
 
