@@ -8,10 +8,8 @@ Button = require('components/shared/button')
 Hotspot = require('components/tour/hotspot')
 
 SearchActions = require('actions/search_actions')
-UserStore = require('stores/user_store')
-TourStore = require('stores/tour_store')
-
 TourActions = require('actions/tour_actions')
+UserStore = require('stores/user_store')
 
 module.exports = React.createClass
   displayName: 'SearchBox'
@@ -30,25 +28,13 @@ module.exports = React.createClass
 
   getInitialState: ->
     showingFiltersMenu: false
-    showHotspot: false
-    hotspotText: ""
 
   componentWillMount: ->
-    @unsubscribeTourStore = TourStore.listen(@tourStoreUpdated)
     TourActions.addStep
       key: 'advanced_search'
       element: '.advanced-search'
       position: 'bottom'
       order: 3
-
-  componentWillUnmount: ->
-    @unsubscribeTourStore()
-
-  tourStoreUpdated: (state) ->
-    if step = _.find(state.steps, (s) -> s.key == 'advanced_search')
-      @setState(showHotspot: true, hotspotText: @t("/tour.steps.advanced_search"))
-    else
-      @setState(showHotspot: false, hotspotText: "")
 
   getAppliedFilters: ->
     filters = @getFiltersArray(@props.search.filters || [])
@@ -115,10 +101,7 @@ module.exports = React.createClass
         </LayerToggle>
         {@renderSavedSearchButtons()}
         <div className="advanced-search-wrapper">
-          {
-            if @state.showHotspot
-              <Hotspot tourKey="advanced_search" text={@t("/tour.steps.advanced_search")} />
-          }
+          <Hotspot tourKey="advanced_search" />
           <Link to="/search" className="advanced-search">{@t('advanced_search')}</Link>
         </div>
       </div>

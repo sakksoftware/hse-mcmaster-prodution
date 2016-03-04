@@ -5,6 +5,7 @@ TranslationHelper = require('mixins/translation_helper')
 SavedSearchButtons = require('components/search/saved_search_buttons')
 Button = require('components/shared/button')
 Link = require('components/shared/link')
+Hotspot = require('components/tour/hotspot')
 
 UserStore = require('stores/user_store')
 TourActions = require('actions/tour_actions')
@@ -24,6 +25,12 @@ module.exports = React.createClass
   getInitialState: ->
     hasSelected: false
     allSelected: false
+
+  componentWillMount: ->
+    TourActions.addStep
+      key: 'select_article'
+      order: 6
+      afterStep: -> $('.result-item:first-child .result-item-select input').click()
 
   saveArticles: ->
     @refs.resultList.saveArticles()
@@ -59,8 +66,14 @@ module.exports = React.createClass
         {
           if @state.hasSelected
             [
-              <Button key="icon-email" className="icon icon-email" onClick={@emailArticles}>{@t('email')}</Button>
-              <Button key="icon-save-article" className="icon icon-save-article" onClick={@saveArticles}>{@t('save')}</Button>
+              <Button key="icon-email" className="icon icon-email" onClick={@emailArticles}>
+                <Hotspot tourKey="email_articles" />
+                {@t('email')}
+              </Button>
+              <Button key="icon-save-article" className="icon icon-save-article" onClick={@saveArticles}>
+                <Hotspot tourKey="save_articles" />
+                {@t('save')}
+              </Button>
             ]
         }
         <Link className="icon icon-view-saved-articles button" to="/user/articles">{@t('view_saved')}</Link>
@@ -75,5 +88,6 @@ module.exports = React.createClass
         {@renderSavedArticlesButtons()}
       </div>
       <SavedSearchButtons search={@props.search} toggleSelectAll={@toggleSelectAll} onSaveAndSubscribe={@props.onSaveAndSubscribe} />
+      <Hotspot tourKey="select_article" />
       <ResultList ref="resultList" results={@props.search.results} resultsCount={@props.search.results_count} onLoadMore={@props.onLoadMore} toggleSelect={@toggleSelect} />
     </div>

@@ -6,11 +6,13 @@ ResultBox = require('components/results/result_box')
 GuidedQuestionsBox = require('components/guided_questions/guided_questions_box')
 FilterGroupsMenu = require('components/menus/filter_groups_menu')
 SignupPrompt = require('components/search/signup_prompt')
+Hotspot = require('components/tour/hotspot')
 
 FilterNormalizationService = require('services/filter_normalization_service')
 SearchSerializationService = require('services/search_serialization_service')
 
 UserActions = require('actions/user_actions')
+TourActions = require('actions/tour_actions')
 
 UserStore = require('stores/user_store')
 SearchStore = require('stores/search_store')
@@ -47,6 +49,15 @@ module.exports = React.createClass
 
     @unsubscribeUser = UserStore.listen(@userStoreUpdated)
     @unsubscribeSearch = SearchStore.listen(@searchStoreUpdated)
+
+    TourActions.addSteps [
+      {
+        key: 'filters_menu'
+        element: '.filter-groups-menu-wrapper'
+        position: 'top left'
+        order: 4
+      }
+    ]
 
   componentWillUnmount: ->
     @unsubscribeUser()
@@ -109,6 +120,7 @@ module.exports = React.createClass
       <div className="filter-groups-menu-wrapper">
         <div className="filter-groups-menu-title">
           {@t('menus.filter_groups.title')}
+          <Hotspot tourKey="filters_menu" />
         </div>
         <FilterGroupsMenu context={
           onShowFilterGroup: @props.onShowMenu

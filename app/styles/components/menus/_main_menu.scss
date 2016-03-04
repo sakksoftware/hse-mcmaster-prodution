@@ -42,6 +42,15 @@
     .languages-menu {
       display: none;
     }
+
+    .hotspot {
+      top: -2px;
+      left: 14px;
+      @include desktop {
+        left: -12px;
+        top: 4px;
+      }
+    }
   }
 
   .menu-item-account {

@@ -1,5 +1,8 @@
 Link = require('components/shared/link')
+Hotspot = require('components/tour/hotspot')
 TranslationHelper = require('mixins/translation_helper')
+
+TourActions = require('actions/tour_actions')
 
 module.exports = React.createClass
   displayName: 'AccountMenu'
@@ -11,12 +14,27 @@ module.exports = React.createClass
     context: React.PropTypes.object
 
   componentWillMount: ->
-    @onLinkClick = =>
-      # dismiss menu on mobile
-      # call twice since we are in a second leve menu
-      if @props.context?.onLinkClick
-        @props.context.onLinkClick()
-        _.defer => @props.context.onLinkClick()
+    TourActions.addSteps [
+      {
+        key: 'profile'
+        order: 5
+        beforeStep: -> $('.menu-item-account').addClass('hover')
+        afterStep: -> $('.menu-item-account').removeClass('hover')
+      }
+      {
+        key: 'complementary_content'
+        order: 12
+        beforeStep: -> $('.menu-item-account').addClass('hover')
+        afterStep: -> $('.menu-item-account').removeClass('hover')
+      }
+    ]
+
+  onLinkClick: ->
+    # dismiss menu on mobile
+    # call twice since we are in a second leve menu
+    if @props.context?.onLinkClick
+      @props.context.onLinkClick()
+      _.defer => @props.context.onLinkClick()
 
   render: ->
     # TODO: need to consolidate styles to use the same approach to icons, either use the icon
@@ -24,6 +42,7 @@ module.exports = React.createClass
     <ul className="account-menu main-menu menu-list">
       <li className="menu-item menu-item-profile">
         <span className="menu-item-icon"></span>
+        <Hotspot tourKey="profile" />
         <Link className="menu-item-text" onClick={@onLinkClick} to="/profile">{@t('profile')}</Link>
       </li>
       <li className="menu-item menu-item-saved-articles">
@@ -36,6 +55,7 @@ module.exports = React.createClass
       </li>
       <li className="menu-item menu-item-complementary-content">
         <span className="menu-item-icon"></span>
+        <Hotspot tourKey="complementary_content" />
         <Link className="menu-item-text" onClick={@onLinkClick} to="/complementary_content">{@t('complementary_content')}</Link>
       </li>
     </ul>

@@ -31,3 +31,9 @@ module.exports = Reflux.createStore
 
   onResetSteps: ->
     @setState(steps: [])
+
+  ##
+  # Accessors
+  ##
+  getStep: (key) ->
+    _(@state.steps).find (s) -> s.key == key

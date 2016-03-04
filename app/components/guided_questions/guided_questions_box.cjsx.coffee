@@ -5,9 +5,15 @@ UserActions = require('actions/user_actions')
 TourActions = require('actions/tour_actions')
 SearchStore = require('stores/search_store')
 QuestionStore = require('stores/question_store')
+Hotspot = require('components/tour/hotspot')
+
+TranslationHelper = require('mixins/translation_helper')
 
 module.exports = React.createClass
   displayName: 'GuidedQuestionsBox'
+
+  mixins: [TranslationHelper]
+  baseTranslation: ''
 
   propTypes:
     onShowMenu: React.PropTypes.func.isRequired
@@ -103,5 +109,6 @@ module.exports = React.createClass
         <Loader loaded={false} />
 
     <div className="guided-questions-box" tabIndex={1} onKeyDown={@handleKeyDown}>
+      <Hotspot tourKey="guided_search" />
       {body}
     </div>
