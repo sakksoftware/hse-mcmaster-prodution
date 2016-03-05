@@ -14,27 +14,15 @@ module.exports = React.createClass
     context: React.PropTypes.object
 
   componentWillMount: ->
-    TourActions.addSteps [
-      {
-        key: 'profile'
-        order: 5
-        beforeStep: -> $('.menu-item-account').addClass('hover')
-        afterStep: -> $('.menu-item-account').removeClass('hover')
-      }
-      {
-        key: 'complementary_content'
-        order: 12
-        beforeStep: -> $('.menu-item-account').addClass('hover')
-        afterStep: -> $('.menu-item-account').removeClass('hover')
-      }
-    ]
+
 
   componentWillUnmount: ->
-    TourActions.removeSteps ['profile', 'complementary_content']
+    # don't remove, because when we unmount the
+    # TourActions.removeSteps ['profile', 'complementary_content']
 
   onLinkClick: ->
     # dismiss menu on mobile
-    # call twice since we are in a second leve menu
+    # call twice since we are in a second level menu
     if @props.context?.onLinkClick
       @props.context.onLinkClick()
       _.defer => @props.context.onLinkClick()

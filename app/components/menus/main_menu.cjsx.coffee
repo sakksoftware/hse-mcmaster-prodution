@@ -33,12 +33,35 @@ module.exports = React.createClass
       key: 'language'
       order: 1
 
+    @addUserSteps(@props)
+
   componentWillUnmount: ->
-    TourActions.removeStep 'language'
+    TourActions.removeSteps ['language', 'profile', 'complementary_content']
+
+  componentWillReceiveProps: (nextProps) ->
+    @addUserSteps(nextProps)
 
   handleLogout: (e) ->
     e.preventDefault()
     @props.onLogout()
+
+  addUserSteps: (props) ->
+    return unless props.currentUser
+
+    TourActions.addSteps [
+      {
+        key: 'profile'
+        order: 5
+        beforeStep: -> $('.menu-item-account').addClass('hover')
+        afterStep: -> $('.menu-item-account').removeClass('hover')
+      }
+      {
+        key: 'complementary_content'
+        order: 12
+        beforeStep: -> $('.menu-item-account').addClass('hover')
+        afterStep: -> $('.menu-item-account').removeClass('hover')
+      }
+    ]
 
   toggleGuidedSearch: ->
     UserActions.toggleGuidedSearch()
@@ -47,6 +70,8 @@ module.exports = React.createClass
     if @props.currentUser
       [
         <li key="menu-item-account" className="menu-item menu-item-account">
+          <Hotspot tourKey="profile" />
+          <Hotspot tourKey="complementary_content" />
           <span className="menu-item-icon"></span>
           <LayerToggle className="menu-item-text" menu="account" onToggle={@props.onSubMenuClick} context={onLinkClick: @props.onLinkClick}>
             {@fullName() || @props.currentUser.email}

@@ -55,6 +55,12 @@
   }
 
   .menu-item-account {
+    & > .hotspot {
+      top: 3px;
+      left: 0px;
+      z-index: 1000;
+    }
+
     .account-menu {
       display: none;
     }

@@ -46,6 +46,7 @@ module.exports = React.createClass
     NotificationActions.showDialog(title: 'Hotspot', message: @t("/tour.steps.#{@props.tourKey}"), onConfirm: @dismiss, confirmText: @t('/tour.got_it'), displayCancel: false)
 
   dismiss: ->
+    TourStore.getStep(@props.tourKey).afterStep?()
     TourActions.markStepCompleted(key: @props.tourKey)
 
   render: ->

@@ -27,6 +27,7 @@ LayerToggle = require('components/layered_navigation/layer_toggle')
 LayeredNavigation = require('components/layered_navigation/layered_navigation')
 
 Link = require('components/shared/link')
+Hotspot = require('components/tour/hotspot')
 
 MainMenu = require('components/menus/main_menu')
 HelpMenu = require('components/menus/help_menu')
@@ -119,6 +120,9 @@ module.exports = React.createClass
     <nav className="top-nav">
       <h1><Link to="/">Health Systems Evidence</Link></h1>
       <LayerToggle menu="main" onToggle={@toggleMenu}>
+        <Hotspot tourKey="language" />
+        <Hotspot tourKey="profile" />
+        <Hotspot tourKey="complementary_content" />
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>

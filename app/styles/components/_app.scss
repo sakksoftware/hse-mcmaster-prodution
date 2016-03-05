@@ -65,6 +65,12 @@
       }
     }
 
+    // for mobile humberger menu
+    .layer-toggle-main > .hotspot {
+      top: -14px;
+      left: -40px;
+    }
+
     @include desktop {
       @include flyout-menu($primary-color);
     }
@@ -96,6 +102,7 @@
       height: 20px;
       color: black;
     }
+
   }
 
   footer {
