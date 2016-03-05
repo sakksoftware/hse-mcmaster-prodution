@@ -63,6 +63,8 @@ module.exports = React.createClass
     @unsubscribeUser()
     @unsubscribeSearch()
 
+    TourActions.removeStep 'filters_menu'
+
   userStoreUpdated: (state) ->
     @setState(guidedSearch: state.guidedSearch)
 

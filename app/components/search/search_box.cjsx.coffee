@@ -29,13 +29,6 @@ module.exports = React.createClass
   getInitialState: ->
     showingFiltersMenu: false
 
-  componentWillMount: ->
-    TourActions.addStep
-      key: 'advanced_search'
-      element: '.advanced-search'
-      position: 'bottom'
-      order: 3
-
   getAppliedFilters: ->
     filters = @getFiltersArray(@props.search.filters || [])
     filters = filters.filter((e) => e.applied)

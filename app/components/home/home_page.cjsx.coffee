@@ -1,5 +1,7 @@
 SearchActions = require('actions/search_actions')
 UrlActions = require('actions/url_actions')
+TourActions = require('actions/tour_actions')
+
 SearchStore = require('stores/search_store')
 UserStore = require('stores/user_store')
 
@@ -27,8 +29,13 @@ module.exports = React.createClass
     @search.query = ''
     @fetchFilters()
 
+    TourActions.addStep
+      key: 'advanced_search'
+      order: 3
+
   componentWillUnmount: ->
     @unsubscribeUser()
+    TourActions.removeStep 'advanced_search'
 
   componentDidMount: ->
     document.title = "#{@t('/site_name')}"

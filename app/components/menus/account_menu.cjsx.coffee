@@ -29,6 +29,9 @@ module.exports = React.createClass
       }
     ]
 
+  componentWillUnmount: ->
+    TourActions.removeSteps ['profile', 'complementary_content']
+
   onLinkClick: ->
     # dismiss menu on mobile
     # call twice since we are in a second leve menu

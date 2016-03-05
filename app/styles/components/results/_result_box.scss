@@ -65,6 +65,13 @@
       }
     }
 
+    .icon-view-saved-articles {
+      .hotspot {
+        top: -12px;
+        left: -8px;
+      }
+    }
+
     @include desktop {
       position: static;
       background-color: transparent;

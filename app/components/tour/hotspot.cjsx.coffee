@@ -15,7 +15,8 @@ module.exports = React.createClass
     tourKey: React.PropTypes.string.isRequired
 
   getInitialState: ->
-    show: TourStore.getStep(@props.tourKey)
+    # show: TourStore.getStep(@props.tourKey)
+    show: TourStore.state.steps[0]?.key == @props.tourKey
 
   componentWillMount: ->
     @unsubscribeTour = TourStore.listen(@tourStoreUpdated)
@@ -27,8 +28,8 @@ module.exports = React.createClass
     step = _(state.steps).find (s) => s.key == @props.tourKey
 
     # one step at a time approach
-    # if state.steps[0]?.key == @props.tourKey
-    if step
+    # if step
+    if state.steps[0]?.key == @props.tourKey
       @setState(show: true)
     else
       @setState(show: false)

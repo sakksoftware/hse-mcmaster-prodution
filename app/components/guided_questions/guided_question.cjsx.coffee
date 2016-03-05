@@ -18,6 +18,9 @@ module.exports = React.createClass
       position: 'middle'
       order: 2
 
+  componentWillUnmount: ->
+    TourActions.removeStep 'guided_search'
+
   getInitialState: ->
     expanded: @props.expanded || false
 

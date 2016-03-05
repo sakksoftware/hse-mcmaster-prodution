@@ -21,24 +21,17 @@ module.exports = React.createClass
   componentWillMount: ->
     TourActions.addSteps [
       {
-        key: 'view_saved_articles'
-        element: '.saved-articles-actions .icon-view-saved-articles'
-        position: 'top'
-        order: 9
-      }
-      {
         key: 'save_search'
-        element: '.btn-save'
-        position: 'bottom-left'
         order: 10
       }
       {
         key: 'save_and_subscribe'
-        element: '.btn-save-and-subscribe'
-        position: 'bottom-middle'
         order: 11
       }
     ]
+
+  componentWillUnmount: ->
+    TourActions.removeSteps ['save_search', 'save_and_subscribe']
 
   saveSearch: ->
     search = @props.search

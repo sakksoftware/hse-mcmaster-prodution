@@ -27,10 +27,20 @@ module.exports = React.createClass
     allSelected: false
 
   componentWillMount: ->
-    TourActions.addStep
-      key: 'select_article'
-      order: 6
-      afterStep: -> $('.result-item:first-child .result-item-select input').click()
+    TourActions.addSteps [
+      {
+        key: 'select_article'
+        order: 6
+        afterStep: -> $('.result-item:first-child .result-item-select input').click()
+      }
+      {
+        key: 'view_saved_articles'
+        order: 9
+      }
+    ]
+
+  componentWillUnmount: ->
+    TourActions.removeSteps ['select_article', 'email_articles', 'save_articles']
 
   saveArticles: ->
     @refs.resultList.saveArticles()
@@ -76,7 +86,10 @@ module.exports = React.createClass
               </Button>
             ]
         }
-        <Link className="icon icon-view-saved-articles button" to="/user/articles">{@t('view_saved')}</Link>
+        <Link className="icon icon-view-saved-articles button" to="/user/articles">
+          <Hotspot tourKey="view_saved_articles" />
+          {@t('view_saved')}
+        </Link>
         <label className="select-all-action action">{@t('/select_all')}<input type="checkbox" checked={@state.allSelected} onChange={@toggleSelectAll} /></label>
       </div>
 

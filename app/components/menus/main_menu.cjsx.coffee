@@ -29,12 +29,12 @@ module.exports = React.createClass
       user.first_name + " " + user.last_name
 
   componentWillMount: ->
-    TourActions.addSteps [
-      {
-        key: 'language'
-        order: 1
-      }
-    ]
+    TourActions.addSteps
+      key: 'language'
+      order: 1
+
+  componentWillUnmount: ->
+    TourActions.removeStep 'language'
 
   handleLogout: (e) ->
     e.preventDefault()
