@@ -282,8 +282,6 @@ module.exports = React.createClass
         (browser.name == 'safari' && parseInt(browser.version, 10) < 9)
       <div className="browser-warning">
         <p>{@t('errors.old_browser.message')}</p>
-        <p>You are running {browser.name} on {browser.version}</p>
-
         <a href={url}>{@t('errors.old_browser.upgrade')}</a>
         <Button onClick={=> @setState(dismissBrowserWarning: true)} className="btn-close">&times;</Button>
       </div>
