@@ -46,6 +46,8 @@
   }
 
   .btn-save {
+    position: relative;
+
     &.btn-save-on {
       &:before {
         background-image: url('/images/save_search_on.svg');
@@ -55,9 +57,21 @@
     &:before {
       background-image: url('/images/save_search_off.svg');
     }
+
+    .hotspot {
+      top: -12px;
+      left: -28px;
+
+      @include desktop {
+        top: -11px;
+        left: -12px;
+      }
+    }
   }
 
   .btn-save-and-subscribe {
+    position: relative;
+
     &.btn-save-and-subscribe-on {
       &:before {
         background-image: url('/images/m_subscribed_search_on.svg');
@@ -66,6 +80,16 @@
 
     &:before {
       background-image: url('/images/m_subscribed_search_off.svg');
+    }
+
+    .hotspot {
+      top: -12px;
+      left: -18px;
+
+      @include desktop {
+        top: -10px;
+        left: -5px;
+      }
     }
   }
 }

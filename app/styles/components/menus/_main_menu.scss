@@ -42,11 +42,49 @@
     .languages-menu {
       display: none;
     }
+
+    .hotspot {
+      z-index: 1000;
+      top: -3px;
+      left: 0px;
+      @include desktop {
+        top: 4px;
+        left: -12px;
+      }
+    }
   }
 
   .menu-item-account {
+    & > .hotspot {
+      top: 3px;
+      left: 0px;
+      z-index: 1000;
+    }
+
     .account-menu {
       display: none;
+    }
+  }
+
+  .menu-item-profile {
+    .hotspot {
+      top: -3px;
+      left: 0px;
+
+      @include desktop {
+        top: 5px;
+      }
+    }
+  }
+
+  .menu-item-complementary-content {
+    .hotspot {
+      top: -3px;
+      left: 0px;
+
+      @include desktop {
+        top: 2px;
+      }
     }
   }
 

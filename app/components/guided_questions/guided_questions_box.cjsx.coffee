@@ -2,12 +2,16 @@ GuidedQuestion = require('components/guided_questions/guided_question')
 CarouselIndicators = require('components/shared/carousel_indicators')
 QuestionActions = require('actions/question_actions')
 UserActions = require('actions/user_actions')
-TourActions = require('actions/tour_actions')
 SearchStore = require('stores/search_store')
 QuestionStore = require('stores/question_store')
 
+TranslationHelper = require('mixins/translation_helper')
+
 module.exports = React.createClass
   displayName: 'GuidedQuestionsBox'
+
+  mixins: [TranslationHelper]
+  baseTranslation: ''
 
   propTypes:
     onShowMenu: React.PropTypes.func.isRequired
@@ -24,21 +28,8 @@ module.exports = React.createClass
     UserActions.loadRegion()
     @unsubscribeSearch = SearchStore.listen(@handleSearchLoaded)
 
-    @addTourStep() if @state.questionsLoaded
-
   componentWillUnmount: ->
     @unsubscribeSearch()
-
-  componentDidUpdate: (prevProps, prevState) ->
-    if prevState.questionsLoaded != @state.questionsLoaded && @state.questionsLoaded
-      @addTourStep()
-
-  addTourStep: ->
-    TourActions.addStep
-      key: 'guided_search'
-      element: '.guided-questions-box'
-      position: 'middle'
-      order: 2
 
   handleQuestionsLoaded: (questions) ->
     @setState(questions: questions, questionIndex: 0, questionsLoaded: true)

@@ -5,6 +5,7 @@ TranslationHelper = require('mixins/translation_helper')
 SavedSearchButtons = require('components/search/saved_search_buttons')
 Button = require('components/shared/button')
 Link = require('components/shared/link')
+Hotspot = require('components/tour/hotspot')
 
 UserStore = require('stores/user_store')
 TourActions = require('actions/tour_actions')
@@ -24,6 +25,22 @@ module.exports = React.createClass
   getInitialState: ->
     hasSelected: false
     allSelected: false
+
+  componentWillMount: ->
+    TourActions.addSteps [
+      {
+        key: 'select_article'
+        order: 6
+        afterStep: -> $('.result-item:first-child .result-item-select input').click()
+      }
+      {
+        key: 'view_saved_articles'
+        order: 9
+      }
+    ]
+
+  componentWillUnmount: ->
+    TourActions.removeSteps ['select_article', 'email_articles', 'save_articles']
 
   saveArticles: ->
     @refs.resultList.saveArticles()
@@ -59,11 +76,20 @@ module.exports = React.createClass
         {
           if @state.hasSelected
             [
-              <Button key="icon-email" className="icon icon-email" onClick={@emailArticles}>{@t('email')}</Button>
-              <Button key="icon-save-article" className="icon icon-save-article" onClick={@saveArticles}>{@t('save')}</Button>
+              <Button key="icon-email" className="icon icon-email" onClick={@emailArticles}>
+                <Hotspot tourKey="email_articles" />
+                {@t('email')}
+              </Button>
+              <Button key="icon-save-article" className="icon icon-save-article" onClick={@saveArticles}>
+                <Hotspot tourKey="save_articles" />
+                {@t('save')}
+              </Button>
             ]
         }
-        <Link className="icon icon-view-saved-articles button" to="/user/articles">{@t('view_saved')}</Link>
+        <Link className="icon icon-view-saved-articles button" to="/user/articles">
+          <Hotspot tourKey="view_saved_articles" />
+          {@t('view_saved')}
+        </Link>
         <label className="select-all-action action">{@t('/select_all')}<input type="checkbox" checked={@state.allSelected} onChange={@toggleSelectAll} /></label>
       </div>
 

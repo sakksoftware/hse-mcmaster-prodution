@@ -14,6 +14,50 @@
   animation-timing-function: ease-out;
 }
 
+$hotspot-size: 10px;
+
+.hotspot {
+  position: absolute;
+  min-width: $hotspot-size;
+  min-height: $hotspot-size;
+}
+
+.hotspot-indicator-wrapper {
+  width: 32px;
+  height: 32px;
+}
+
+.hotspot-indicator {
+  position: absolute;
+  height: $hotspot-size;
+  width: $hotspot-size;
+  left: 15px;
+  top: 15px;
+
+  background-color: $link-color;
+  cursor: pointer;
+  border-radius: 100%;
+
+  &:after {
+    position: absolute;
+    content: " ";
+    height: 30px;
+    width: 30px;
+    left: -$hotspot-size;
+    top: -$hotspot-size;
+    border-radius: 100%;
+
+    background-color: $link-color;
+    cursor: pointer;
+
+    /* Animate */
+    animation-name: pulse;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+  }
+}
+
 @keyframes pulse {
   0% {
     transform: scale(0.3);

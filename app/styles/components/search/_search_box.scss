@@ -36,7 +36,7 @@
     }
   }
 
-  .advanced-search {
+  .advanced-search-wrapper {
     display: none;
   }
 
@@ -59,6 +59,11 @@
 
     &:hover {
       text-decoration: none;
+    }
+
+    .hotspot {
+      left: -11px;
+      top: -4px;
     }
 
     @include desktop {

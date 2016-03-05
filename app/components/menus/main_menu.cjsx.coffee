@@ -3,8 +3,11 @@ LayerToggle = require('components/layered_navigation/layer_toggle')
 TranslationHelper = require('mixins/translation_helper')
 AccountMenu = require('components/menus/account_menu')
 LanguagesMenu = require('components/menus/languages_menu')
+Hotspot = require('components/tour/hotspot')
+
 UserActions = require('actions/user_actions')
 UserStore = require('stores/user_store')
+TourActions = require('actions/tour_actions')
 
 Toggle = ReactToggle
 
@@ -25,9 +28,40 @@ module.exports = React.createClass
     if user.first_name and user.last_name
       user.first_name + " " + user.last_name
 
+  componentWillMount: ->
+    TourActions.addSteps
+      key: 'language'
+      order: 1
+
+    @addUserSteps(@props)
+
+  componentWillUnmount: ->
+    TourActions.removeSteps ['language', 'profile', 'complementary_content']
+
+  componentWillReceiveProps: (nextProps) ->
+    @addUserSteps(nextProps)
+
   handleLogout: (e) ->
     e.preventDefault()
     @props.onLogout()
+
+  addUserSteps: (props) ->
+    return unless props.currentUser
+
+    TourActions.addSteps [
+      {
+        key: 'profile'
+        order: 5
+        beforeStep: -> $('.menu-item-account').addClass('hover')
+        afterStep: -> $('.menu-item-account').removeClass('hover')
+      }
+      {
+        key: 'complementary_content'
+        order: 12
+        beforeStep: -> $('.menu-item-account').addClass('hover')
+        afterStep: -> $('.menu-item-account').removeClass('hover')
+      }
+    ]
 
   toggleGuidedSearch: ->
     UserActions.toggleGuidedSearch()
@@ -36,6 +70,8 @@ module.exports = React.createClass
     if @props.currentUser
       [
         <li key="menu-item-account" className="menu-item menu-item-account">
+          <Hotspot tourKey="profile" />
+          <Hotspot tourKey="complementary_content" />
           <span className="menu-item-icon"></span>
           <LayerToggle className="menu-item-text" menu="account" onToggle={@props.onSubMenuClick} context={onLinkClick: @props.onLinkClick}>
             {@fullName() || @props.currentUser.email}
@@ -75,6 +111,7 @@ module.exports = React.createClass
         <Link className="menu-item-text" onClick={@props.onLinkClick} to="/about">{@t('about')}</Link>
       </li>
       <li className="menu-item menu-item-language">
+        <Hotspot tourKey="language" />
         <span className="menu-item-icon"></span>
         <LayerToggle className="menu-item-text" menu="languages" onToggle={@props.onSubMenuClick}>{@t('select_language')}</LayerToggle>
 

@@ -1,6 +1,7 @@
 Link = require('components/shared/link')
 HighlightFormat = require('components/shared/highlight_format')
 SelectableItem = require('components/shared/selectable_item')
+Hotspot = require('components/tour/hotspot')
 
 ApplicationHelper = require('mixins/application_helper')
 TranslationHelper = require('mixins/translation_helper')
@@ -57,7 +58,14 @@ module.exports = React.createClass
         <div className="result-item-header-right action">
           {
             if UserStore.isLoggedIn()
-              <label className="result-item-select">{@t('/select')}<input type="checkbox" onChange={=> @props.toggleSelect(@)} checked={@props.selected} /></label>
+              <label className="result-item-select">
+                {
+                  if @props.resultNumber == 1
+                    <Hotspot tourKey="select_article" />
+                }
+                {@t('/select')}
+                <input type="checkbox" onChange={=> @props.toggleSelect(@)} checked={@props.selected} />
+              </label>
           }
         </div>
       </header>

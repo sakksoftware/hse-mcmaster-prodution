@@ -5,8 +5,10 @@ LayerToggle = require('components/layered_navigation/layer_toggle')
 FilterNormalizationService = require('services/filter_normalization_service')
 TranslationHelper = require('mixins/translation_helper')
 Button = require('components/shared/button')
+Hotspot = require('components/tour/hotspot')
 
 SearchActions = require('actions/search_actions')
+TourActions = require('actions/tour_actions')
 UserStore = require('stores/user_store')
 
 module.exports = React.createClass
@@ -87,11 +89,15 @@ module.exports = React.createClass
           }
           onToggle={@handleClickFiltersButton}
         >
+          <Hotspot tourKey="filters_menu" />
           {@t('filters')}
           {@renderFilterCount()}
         </LayerToggle>
         {@renderSavedSearchButtons()}
-        <Link to="/search" className="advanced-search">{@t('advanced_search')}</Link>
+        <div className="advanced-search-wrapper">
+          <Hotspot tourKey="advanced_search" />
+          <Link to="/search" className="advanced-search">{@t('advanced_search')}</Link>
+        </div>
       </div>
       {@renderResultCountFooter()}
       {@renderRelatedArticle()}

@@ -27,6 +27,7 @@ LayerToggle = require('components/layered_navigation/layer_toggle')
 LayeredNavigation = require('components/layered_navigation/layered_navigation')
 
 Link = require('components/shared/link')
+Hotspot = require('components/tour/hotspot')
 
 MainMenu = require('components/menus/main_menu')
 HelpMenu = require('components/menus/help_menu')
@@ -40,8 +41,6 @@ LanguagesMenu = require('components/menus/languages_menu')
 AccountMenu = require('components/menus/account_menu')
 
 Dialog = require('components/shared/dialog')
-HSETour = require('components/tour/hse_tour')
-
 TranslationHelper = require('mixins/translation_helper')
 
 UrlActions = require('actions/url_actions')
@@ -61,7 +60,6 @@ Button = require('components/shared/button')
 module.exports = React.createClass
   displayName: 'App'
 
-  # mixins: [TranslationHelper, HSETour]
   mixins: [TranslationHelper]
   baseTranslation: ''
 
@@ -119,6 +117,9 @@ module.exports = React.createClass
     <nav className="top-nav">
       <h1><Link to="/">Health Systems Evidence</Link></h1>
       <LayerToggle menu="main" onToggle={@toggleMenu}>
+        <Hotspot tourKey="language" />
+        <Hotspot tourKey="profile" />
+        <Hotspot tourKey="complementary_content" />
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>
@@ -239,7 +240,7 @@ module.exports = React.createClass
 
   renderDialog: ->
     for dialog, i in @state.dialogs
-      <Dialog key={"dialog-#{i}"} title={dialog.title} message={dialog.message} onConfirm={dialog.onConfirm} />
+      <Dialog key={"dialog-#{i}"} {...dialog} />
 
   renderDialogBackDrop: ->
     if @state.dialogs.length > 0

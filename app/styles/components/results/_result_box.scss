@@ -1,6 +1,6 @@
 .result-box {
   .result-box-header {
-    overflow: auto;
+    overflow: hidden;
     border-bottom: 1px solid $border-color;
     padding-bottom: $x-tiny-size;
     margin-bottom: $tiny-size;
@@ -38,12 +38,37 @@
     text-align: center;
     margin-left: -100%;
     width: 300%;
+    overflow: visible;
+    z-index: 1000;
 
     .icon {
       // cheat to move things left a little to center on mobile
+      position: relative;
       left: -5%;
       @include desktop {
         left: 0;
+      }
+    }
+
+
+    .icon-email {
+      .hotspot {
+        left: -11px;
+        top: -12px;
+      }
+    }
+
+    .icon-save-article {
+      .hotspot {
+        top: -11px;
+        left: -12px;
+      }
+    }
+
+    .icon-view-saved-articles {
+      .hotspot {
+        top: -12px;
+        left: -8px;
       }
     }
 

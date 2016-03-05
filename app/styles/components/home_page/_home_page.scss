@@ -132,10 +132,26 @@
     }
   }
 
-  .layer-toggles .advanced-search {
+  .layer-toggles .advanced-search-wrapper {
     display: inline-block;
     float: right;
-    color: white;
     line-height: $large-size;
+    position: relative;
+
+    .hotspot {
+      position: absolute;
+      left: -30px;
+      top: -5px;
+    }
+
+    .hotspot-info {
+      left: auto;
+      right: 30px;
+      top: -35px;
+    }
+  }
+
+  .layer-toggles .advanced-search {
+    color: white;
   }
 }

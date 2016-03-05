@@ -50,6 +50,11 @@
       padding-bottom: $small-size;
       color: $primary-color;
       font-size: $small-size;
+
+      .hotspot {
+        top: -10px;
+        left: -34px;
+      }
     }
 
     li {
