@@ -134,9 +134,9 @@
     "result_box": {
       "results": "Resultados",
       "pending_search": "Realice una búsqueda ingresando una palabra clave arriba o seleccionando los filtros adecuados de la lista a la derecha.",
-      "view_saved": "ES_View saved",
-      "save": "ES_Save",
-      "email": "ES_Email"
+      "view_saved": "Ver guardados",
+      "save": "Guardar",
+      "email": "Correo electrónico"
     },
     "result_list": {
       "no_results": "No se encontraron resultados.",
@@ -273,18 +273,18 @@
   "contact_us": "Póngase en contacto con nosotros",
   "tour": {
     "steps": {
-      "language": "ES_Select the language you prefer when using Health Systems Evidence.",
-      "guided_search": "ES_Get assistance in applying the filters available on Health Systems Evidence to narrow your search by responding to these plain-language questions. The guided search can be turned off or on (indicated by the toggle at the top of the screen) and can be expanded or hidden on a mobile device.",
-      "advanced_search": "ES_Explore the full list of search filters available on Health Systems Evidence, which you can then apply to narrow your search.",
-      "filters_menu": "ES_Narrow your search so that you retrieve documents that address the domains you’re most interested in, focus on the country or region you work in, and retrieve particular types of documents. Your results can be narrowed by combining filter types (e.g., system arrangements and diseases), and expanded by selecting more than one filter within a type (e.g. cancer and HIV/AIDS).",
-      "profile": "ES_Change your account information (e.g., email, password, name, role) by clicking on ‘profile’ and then the ‘edit’ button within each section.",
-      "select_article": "ES_Select an article to save, export or view later",
-      "email_articles": "ES_Send the list of documents selected from your search results by email to yourself or others.",
-      "save_articles": "ES_Save the list of documents selected from your search results directly to your personal ‘Saved documents’ clipboard.",
-      "view_saved_articles": "ES_View the list of documents you have saved from previous searches. Your saved documents can also be managed (i.e., retained on or deleted from your profile) on this page.",
-      "save_search": "ES_Save your search strategy - including keywords and filters – and use it at any time, by clicking the ‘Save search’ icon. You can manage your list of saved searches by clicking the ‘Saved searches’ option from the account profile dropdown menu.",
-      "save_and_subscribe": "ES_Save your search strategy and subscribe to receive a monthly email containing links to any documents that have been newly added to Health Systems Evidence and meet your search parameters. Your subscriptions can be managed on the ‘Saved searches’ page, where you can also subscribe to past searches you have saved, as well as to any of the suggested ‘Curated searches’ prepared by the Health Systems Evidence team.",
-      "complementary_content": "ES_Enable or disable your access to complementary content contained"
+      "language": "Seleccione el idioma que prefiere para usar Health Systems Evidence.",
+      "guided_search": "Obtenga ayuda para aplicar los filtros disponibles en Health Systems Evidence y así reducir su búsqueda al responder a estas preguntas en lenguaje sencillo. La búsqueda guiada se puede activar o desactivar (use el indicador en la parte superior de la pantalla) y se puede ampliar u ocultar en un dispositivo móvil.",
+      "advanced_search": "Investigue la lista completa de filtros de búsqueda disponibles en Health Systems Evidence que puede aplicar para limitar la búsqueda.",
+      "filters_menu": "Limite la búsqueda para poder recuperar los documentos relacionados a los dominios en los que está más interesado, centrarse en el país o en la región en los que trabaja y recuperar tipos de documentos específicos. Los resultados se pueden acotar al combinar diferentes tipos de filtros (por ejemplo, organización de los sistemas y enfermedades), y se pueden ampliar al seleccionar más de un filtro dentro de un tipo (por ejemplo, cáncer y VIH/SIDA).",
+      "profile": "Cambie la información de su cuenta (por ejemplo, correo electrónico, contraseña, nombre, función) al hacer clic en “perfil” y luego en el botón “editar” en cada sección.",
+      "select_article": "Seleccione un artículo para guardar, exportar o consultar más tarde.",
+      "email_articles": "Envíe la lista de documentos seleccionados de sus resultados de búsqueda por correo electrónico a usted mismo o a terceros.",
+      "save_articles": "Guarde la lista de documentos seleccionados de sus resultados de búsqueda directamente en el portapapeles personal de “Documentos guardados”.",
+      "view_saved_articles": "Examine la lista de documentos que ha guardado de búsquedas anteriores. Sus documentos guardados también se pueden administrar (es decir, guardar o eliminar de su perfil) en esta página.",
+      "save_search": "Guarde su estrategia de búsqueda, incluso las palabras claves y los filtros, y úsela en cualquier momento al hacer clic en el ícono “Guardar búsqueda”. Puede administrar la lista personal de búsquedas guardadas al hacer clic en la opción \"Búsquedas guardadas\" del menú desplegable en el perfil de la cuenta.",
+      "save_and_subscribe": "Guarde su estrategia de búsqueda y suscríbase para recibir un correo electrónico mensual con vínculos a cualquier documento que se haya agregado recientemente a Health Systems Evidence y que cumpla con sus parámetros de búsqueda. Sus suscripciones se pueden administrar en la página de “Búsquedas guardadas”, donde también se puede suscribir a búsquedas anteriores que ha guardado y a cualquiera de las “Búsquedas protegidas” sugeridas y preparadas por el equipo de Health Systems Evidence.",
+      "complementary_content": "Habilite o deshabilite su acceso al contenido complementario."
     },
     "got_it": "Entendido"
   }

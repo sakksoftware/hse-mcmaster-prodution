@@ -134,9 +134,9 @@
     "result_box": {
       "results": "结果",
       "pending_search": "输入上方关键词或在右侧菜单选择恰当的限定项进行检索",
-      "view_saved": "CN_View saved",
-      "save": "CN_Save",
-      "email": "CN_Email"
+      "view_saved": "查看保存",
+      "save": "保存",
+      "email": "电子邮件"
     },
     "result_list": {
       "no_results": "未找到相应结果。",
