@@ -13,13 +13,6 @@ module.exports = React.createClass
   propTypes:
     context: React.PropTypes.object
 
-  componentWillMount: ->
-
-
-  componentWillUnmount: ->
-    # don't remove, because when we unmount the
-    # TourActions.removeSteps ['profile', 'complementary_content']
-
   onLinkClick: ->
     # dismiss menu on mobile
     # call twice since we are in a second level menu

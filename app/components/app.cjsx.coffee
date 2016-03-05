@@ -41,8 +41,6 @@ LanguagesMenu = require('components/menus/languages_menu')
 AccountMenu = require('components/menus/account_menu')
 
 Dialog = require('components/shared/dialog')
-HSETour = require('components/tour/hse_tour')
-
 TranslationHelper = require('mixins/translation_helper')
 
 UrlActions = require('actions/url_actions')
@@ -62,7 +60,6 @@ Button = require('components/shared/button')
 module.exports = React.createClass
   displayName: 'App'
 
-  # mixins: [TranslationHelper, HSETour]
   mixins: [TranslationHelper]
   baseTranslation: ''
 
