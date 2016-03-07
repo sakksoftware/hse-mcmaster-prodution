@@ -4,12 +4,19 @@ serializeParams = url.serializeParams
 UrlActions = require('actions/url_actions')
 RefluxStateMixin = require('lib/reflux_state_mixin')(Reflux)
 
+SUPPORTED_LANGUAGES = ['cn', 'en', 'es', 'fr', 'pt']
+
 module.exports = Reflux.createStore
   listenables: [UrlActions]
   mixins: [RefluxStateMixin]
 
   getInitialState: ->
-    params: url.params()
+    params = url.params()
+    if params.lang && SUPPORTED_LANGUAGES.indexOf(params.lang) < 0
+      params.lang = 'en'
+      _.defer @updateUrl
+
+    params: params
 
   resetState: ->
     @setState(@getInitialState())
