@@ -30,9 +30,9 @@ module.exports = React.createClass
     UserActions.saveArticles(selected).then =>
       flash('success', @t('on_save', count: selected.length))
 
-  openNewWindow: (csvContent) ->
+  open: (csvContent) ->
     encodedUri = encodeURI(csvContent)
-    window.open(encodedUri)
+    window.location = encodedUri
 
   getSelected: ->
     @refs.selectableList.getSelected().map (child) ->
@@ -43,7 +43,7 @@ module.exports = React.createClass
     ids = _.pluck(@getSelected(), 'id')
     FetchAPI.create('/user/articles/export.csv', ids).then (data) =>
       url = config.apiBase + data.file
-      @openNewWindow(url)
+      @open(url)
 
   removeUserArticles: ->
     selected = @getSelected()
