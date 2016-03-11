@@ -54,7 +54,7 @@ module.exports = React.createClass
 
   getMenuName: (filterGroup) ->
     menu = "filters"
-    menu = "countries" if filterGroup.type.match(/countries_/) && filterGroup.type != 'countries_lmics'
+    menu = "countries" if filterGroup.type == 'countries_countries'
     menu = "dateRange" if filterGroup.type == "date_range"
     menu
 
