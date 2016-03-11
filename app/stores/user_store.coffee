@@ -87,7 +87,7 @@ module.exports = Reflux.createStore
 
   onCreateUserCompleted: (user) ->
     @setState(user: user, loaded: true, language: user.language)
-    Cookies.set('token', user.token)
+    Cookies.set('token', user.token, expires: 365)
 
   onCreateUserFailed: (xhr, statusCode, responseText) ->
     @setState(errors: responseText, loaded: true)
@@ -99,7 +99,7 @@ module.exports = Reflux.createStore
       _.defer -> window.location.reload()
 
     @setState(user: user, loaded: true, language: user.language)
-    Cookies.set('token', user.token)
+    Cookies.set('token', user.token, expires: 365)
 
     @_markIfStaff(user)
     @_setRollbarPerson(user)
