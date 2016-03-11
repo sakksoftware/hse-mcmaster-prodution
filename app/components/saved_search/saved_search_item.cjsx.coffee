@@ -67,7 +67,7 @@ module.exports = React.createClass
       <div className="saved-search-item-header clearfix">
         <h2>
           <Link to={['/search', @serializeSearchParams(@props.search)]}>
-            {@props.search.query}
+            {@props.search.name || @props.search.query}
           </Link>
         </h2>
         {

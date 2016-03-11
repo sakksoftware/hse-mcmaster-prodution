@@ -17,6 +17,22 @@ module.exports = function(app) {
         "saved": false,
         "subscribed": false,
         "userid": 0
+      },
+      {
+        "applied_filters": ["22_31"],
+        "filters": [
+          {
+            "applied": true,
+            "id": "22_31",
+            "title": "Aboriginal health"
+          },
+        ],
+        "id": 1,
+        "query": "HIV Positive",
+        "name": "Name Search",
+        "saved": false,
+        "subscribed": false,
+        "userid": 0
       }
     ];
 
