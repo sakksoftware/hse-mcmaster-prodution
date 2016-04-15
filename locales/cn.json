@@ -273,18 +273,18 @@
   "contact_us": "联系我们",
   "tour": {
     "steps": {
-      "language": "CN_Select the language you prefer when using Health Systems Evidence.",
-      "guided_search": "CN_Get assistance in applying the filters available on Health Systems Evidence to narrow your search by responding to these plain-language questions. The guided search can be turned off or on (indicated by the toggle at the top of the screen) and can be expanded or hidden on a mobile device.",
-      "advanced_search": "CN_Explore the full list of search filters available on Health Systems Evidence, which you can then apply to narrow your search.",
-      "filters_menu": "CN_Narrow your search so that you retrieve documents that address the domains you’re most interested in, focus on the country or region you work in, and retrieve particular types of documents. Your results can be narrowed by combining filter types (e.g., system arrangements and diseases), and expanded by selecting more than one filter within a type (e.g. cancer and HIV/AIDS).",
-      "profile": "CN_Change your account information (e.g., email, password, name, role) by clicking on ‘profile’ and then the ‘edit’ button within each section.",
-      "select_article": "CN_Select an article to save, export or view later",
-      "email_articles": "CN_Send the list of documents selected from your search results by email to yourself or others.",
-      "save_articles": "CN_Save the list of documents selected from your search results directly to your personal ‘Saved documents’ clipboard.",
-      "view_saved_articles": "CN_View the list of documents you have saved from previous searches. Your saved documents can also be managed (i.e., retained on or deleted from your profile) on this page.",
-      "save_search": "CN_Save your search strategy - including keywords and filters – and use it at any time, by clicking the ‘Save search’ icon. You can manage your list of saved searches by clicking the ‘Saved searches’ option from the account profile dropdown menu.",
-      "save_and_subscribe": "CN_Save your search strategy and subscribe to receive a monthly email containing links to any documents that have been newly added to Health Systems Evidence and meet your search parameters. Your subscriptions can be managed on the ‘Saved searches’ page, where you can also subscribe to past searches you have saved, as well as to any of the suggested ‘Curated searches’ prepared by the Health Systems Evidence team.",
-      "complementary_content": "CN_Enable or disable your access to complementary content contained"
+      "language": "使用卫生系统证据时选择你喜欢的语言",
+      "guided_search": "您可应用卫生系统证据中的限定项可帮助您通过回答那些通俗的问题缩小检索范围。还可以打开或关闭检索指导功能（通过屏幕顶部的按钮切换），在移动设备中也可以扩展或隐藏。",
+      "advanced_search": "您可以研究卫生系统证据中的所有的限定项列表，可以使用它们缩小检索范围。",
+      "filters_menu": "缩小您的检索范围可以使您检索出来的文件集中在您最感兴趣的领域,以及您工作的国家或地区,并可检索到特殊类型的文件。您可以通过组合不同类型的限定项以缩小检索结果(如系统安排和疾病)，及通过选择同一类型的多个限定项以扩展结果(例如癌症和艾滋病病毒/艾滋病)。",
+      "profile": "点击“文件”及每部分的“编辑”按钮，改变您账户的信息(如电子邮件、密码、姓名、职业)。",
+      "select_article": "选择一篇文章保存、导出或之后浏览。",
+      "email_articles": "向自己或他人通过电子邮件发送您检索结果中部分文件列表。",
+      "save_articles": "直接保存您检索结果中部分文件列表到您个人的“保存文件”剪贴板。",
+      "view_saved_articles": "查看您之前检索保存的文件列表。您也可以在这个页面管理（即从您的文件包中保留或删除）保存的文件。",
+      "save_search": "保存您的检索策略——包括关键词和限定项，通过单击“保存检索”图标使用它们。您可以通过点击账户配置下拉菜单中的“保存检索”选项管理您保存的检索列表。",
+      "save_and_subscribe": "保存您的搜索策略并每月订阅接收包含任何卫生系统证据的新增文件链接的电子邮件，以完善您的搜索参数。您可在“保存检索”页面管理订阅，您也可以订阅过去保存的检索,以及任何由卫生系统证据团队准备的“策划检索”。",
+      "complementary_content": "启用或禁用您对补充内容的访问"
     },
     "got_it": "明白"
   }
