@@ -70,6 +70,9 @@ module.exports = React.createClass
   toggleSelectAll: ->
     @refs.resultList.toggleSelectAll()
 
+  clearSelected: ->
+    @refs.resultList.clearSelected()
+
   renderSavedArticlesButtons: ->
     if UserStore.isLoggedIn()
       <div className="saved-articles-actions">

@@ -74,10 +74,11 @@ module.exports = React.createClass
 
     if @_isPendingSearch(search)
       step = 'pending_search'
-    # else if !state.loaded
-    #   step = "searching"
     else if search.results != null
       step = 'results'
+
+    if @_searchChanged(@state.search, search)
+      @refs.resultBox?.clearSelected()
 
     @setState(search: search, step: step, filtersLoaded: true)
 
@@ -90,6 +91,7 @@ module.exports = React.createClass
     search.query = query
     search.page = 1
     @setState { search: search }, =>
+      @refs.resultBox?.clearSelected()
       @fetchResults()
 
   handleLoadMore: (page) ->
@@ -117,6 +119,11 @@ module.exports = React.createClass
   _isPendingSearch: (search) ->
     _.isEmpty(search.query.trim()) && _.isEmpty(search.applied_filters) && _.isEmpty(search.related_article)
 
+  _searchChanged: (prev, next) ->
+    return true if prev.query != next.query
+    return true if !_.isEqual(prev.filters, next.filters)
+    return false
+
   renderDesktopFiltersMenu: ->
     if @state.filtersLoaded
       <div className="filter-groups-menu-wrapper">
@@ -143,7 +150,9 @@ module.exports = React.createClass
         {@t('search_page.result_box.pending_search')}
       </div>
     else if @state.step == 'results'
-      <ResultBox sortBy={@state.search.sort_by}
+      <ResultBox
+        ref="resultBox"
+        sortBy={@state.search.sort_by}
         search={@state.search}
         onSortChange={@handleSortChange}
         onLoadMore={@handleLoadMore}
