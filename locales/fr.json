@@ -227,7 +227,7 @@
     "subscribe": "S'abonner à la recherche",
     "dialog": {
       "cancel": "Annuler",
-      "confirm": "Nouvelle recherche",
+      "confirm": "Oui",
       "message": "En vous inscrivant à cette recherche, vous recevrez automatiquement un condensé des nouveaux articles ajoutés à ce service. Êtes-vous certain que c’est ce que vous désirez?"
     },
     "on_remove": "Les %{count} documents ont été supprimés avec succès",

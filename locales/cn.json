@@ -227,7 +227,7 @@
     "subscribe": "订阅检索",
     "dialog": {
       "cancel": "取消",
-      "confirm": "新的检索",
+      "confirm": "是",
       "message": "订阅此检索，您将会收到添加到服务的新文献的邮件摘要。 您确定要这样做吗？"
     },
     "on_remove": "成功删除%{count}个搜索",

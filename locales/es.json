@@ -227,7 +227,7 @@
     "subscribe": "Suscribirse a la búsqueda",
     "dialog": {
       "cancel": "Cancelar",
-      "confirm": "Nueva búsqueda",
+      "confirm": "Sí",
       "message": "Al suscribirse en esta búsqueda se le enviará un resumen por correo electrónico de los artículos nuevos agregados al servicio. ¿Está seguro de que desea hacer esto?"
     },
     "on_remove": "Se quitaron %{count} documentos con éxito",

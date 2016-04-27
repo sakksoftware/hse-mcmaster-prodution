@@ -227,7 +227,7 @@
     "subscribe": "Assinar pesquisa",
     "dialog": {
       "cancel": "Cancelar",
-      "confirm": "Nova pesquisa",
+      "confirm": "Sim",
       "message": "Assinar esta pesquisa enviará para você ​​um digest de email​ dos novos artigos adicionados ao serviço. Tem certeza que deseja fazer isso?"
     },
     "on_remove": "Removeu com êxito %{count} documentos",
