@@ -107,6 +107,6 @@ module.exports = React.createClass
         <div className="result-box-count">{@props.search.results_count} {@t('results')}</div>
         {@renderSavedArticlesButtons()}
       </div>
-      <SavedSearchButtons search={@props.search} toggleSelectAll={@toggleSelectAll} onSaveAndSubscribe={@props.onSaveAndSubscribe} />
+      <SavedSearchButtons search={@props.search} toggleSelectAll={@toggleSelectAll} onSaveAndSubscribe={@props.onSaveAndSubscribe} allSelected={@state.allSelected} hasSelected={@state.hasSelected} />
       <ResultList ref="resultList" results={@props.search.results} resultsCount={@props.search.results_count} onLoadMore={@props.onLoadMore} toggleSelect={@toggleSelect} />
     </div>

@@ -23,6 +23,10 @@
   .select-all-action {
     float: right;
 
+    .checkbox {
+      margin-left: $tiny-size;
+    }
+
     @include desktop {
       display: none;
     }

@@ -3,7 +3,7 @@ Hotspot = require('components/tour/hotspot')
 UserActions = require('actions/user_actions')
 TourActions = require('actions/tour_actions')
 TranslationHelper = require('mixins/translation_helper')
-
+Checkbox = require('components/shared/checkbox')
 
 module.exports = React.createClass
   display: 'SavedSearchButtons'
@@ -13,6 +13,8 @@ module.exports = React.createClass
   propTypes:
     search: React.PropTypes.object.isRequired
     onSaveAndSubscribe: React.PropTypes.func
+    hasSelected: React.PropTypes.boolean
+    allSelected: React.PropTypes.boolean
 
   getDefaultProps: ->
     onSaveAndSubscribe: ->
@@ -55,5 +57,8 @@ module.exports = React.createClass
         <Hotspot tourKey="save_and_subscribe" />
         {@t('save_and_subscribe')}
       </Button>
-      <label className="select-all-action action">{@t('/select_all')}<input type="checkbox" onChange={@props.toggleSelectAll} name="search_to_delete"/></label>
+      <label className="select-all-action action">
+        {@t('/select_all')}
+        <Checkbox checked={@props.allSelected} onChange={@props.toggleSelectAll} showMinus={@props.hasSelected} name="search_to_delete"/>
+      </label>
     </div>
