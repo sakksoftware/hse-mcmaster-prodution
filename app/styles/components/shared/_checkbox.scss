@@ -1,0 +1,21 @@
+.checkbox {
+  background: url('/images/check_empty_square_o.svg');
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  margin: 0;
+
+  input {
+    display: none;
+  }
+
+  &.checkbox-checked {
+    background: url('/images/check_square_o.svg');
+    width: 15px;
+    margin-right: -3px !important;
+  }
+
+  &.checkbox-deselect {
+    background: url('/images/check_minus_square_o.svg');
+  }
+}

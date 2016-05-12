@@ -2,6 +2,7 @@ Link = require('components/shared/link')
 HighlightFormat = require('components/shared/highlight_format')
 SelectableItem = require('components/shared/selectable_item')
 Hotspot = require('components/tour/hotspot')
+Checkbox = require('components/shared/checkbox')
 
 ApplicationHelper = require('mixins/application_helper')
 TranslationHelper = require('mixins/translation_helper')
@@ -64,7 +65,7 @@ module.exports = React.createClass
                     <Hotspot tourKey="select_article" />
                 }
                 {@t('/select')}
-                <input type="checkbox" onChange={=> @props.toggleSelect(@)} checked={@props.selected} />
+                <Checkbox onChange={=> @props.toggleSelect(@)} checked={@props.selected} />
               </label>
           }
         </div>

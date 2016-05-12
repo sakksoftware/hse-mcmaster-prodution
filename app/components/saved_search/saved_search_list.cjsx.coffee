@@ -3,6 +3,7 @@ Button = require('components/shared/button')
 SelectableList = require('components/shared/selectable_list')
 UserActions = require('actions/user_actions')
 TranslationHelper = require('mixins/translation_helper')
+Checkbox = require('components/shared/checkbox')
 
 module.exports = React.createClass
   displayName: 'SavedSearchList'
@@ -68,7 +69,7 @@ module.exports = React.createClass
           <li className="action">
             <label>
               {@t('/select_all')}
-              <input type="checkbox" checked={@state.allSelected} onChange={@toggleSelectAll} name="search_to_delete"/>
+              <Checkbox checked={@state.allSelected} onChange={@toggleSelectAll} showMinus={@state.hasSelected} name="search_to_delete"/>
             </label>
           </li>
         </ul>

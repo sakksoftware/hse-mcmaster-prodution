@@ -7,6 +7,7 @@ TranslationHelper = require('mixins/translation_helper')
 SelectableItem = require('components/shared/selectable_item')
 SearchStore = require('stores/search_store')
 FilterNormalizationService = require('services/filter_normalization_service')
+Checkbox = require('components/shared/checkbox')
 
 module.exports = React.createClass
   displayName: 'SavedSearchItem'
@@ -74,7 +75,7 @@ module.exports = React.createClass
           if @props.showSelect
             <label className="saved-search-select action">
               <span>{@t('/select')}</span>
-              <input type="checkbox" onChange={=> @props.toggleSelect(@)} defaultChecked={@props.selected} />
+              <Checkbox onChange={=> @props.toggleSelect(@)} checked={@props.selected} />
             </label>
         }
       </div>

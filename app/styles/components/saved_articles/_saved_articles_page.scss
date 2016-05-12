@@ -37,6 +37,10 @@
     border-bottom: 1px solid $border-color;
     padding-bottom: $x-tiny-size;
 
+    .checkbox {
+      margin-left: $tiny-size;
+    }
+
     @include desktop {
       margin-top: $x-large-size;
     }

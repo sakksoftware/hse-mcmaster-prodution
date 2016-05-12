@@ -87,6 +87,11 @@
       display: none;
       margin-left: $tiny-size;
 
+      .checkbox {
+        margin-left: $tiny-size;
+        margin-right: 0;
+      }
+
       &:before {
         content: "|";
         margin-right: $tiny-size;

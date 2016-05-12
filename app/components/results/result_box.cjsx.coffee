@@ -6,6 +6,7 @@ SavedSearchButtons = require('components/search/saved_search_buttons')
 Button = require('components/shared/button')
 Link = require('components/shared/link')
 Hotspot = require('components/tour/hotspot')
+Checkbox = require('components/shared/checkbox')
 
 UserStore = require('stores/user_store')
 TourActions = require('actions/tour_actions')
@@ -93,7 +94,10 @@ module.exports = React.createClass
           <Hotspot tourKey="view_saved_articles" />
           {@t('view_saved')}
         </Link>
-        <label className="select-all-action action">{@t('/select_all')}<input type="checkbox" checked={@state.allSelected} onChange={@toggleSelectAll} /></label>
+        <label className="select-all-action action">
+          {@t('/select_all')}
+          <Checkbox checked={@state.allSelected} onChange={@toggleSelectAll} showMinus={@state.hasSelected} />
+        </label>
       </div>
 
   render: ->

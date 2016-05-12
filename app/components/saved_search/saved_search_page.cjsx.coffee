@@ -1,6 +1,7 @@
 API = require('lib/api')
 SavedSearchList = require('components/saved_search/saved_search_list')
 TranslationHelper = require('mixins/translation_helper')
+Checkbox = require('components/shared/checkbox')
 
 UserActions = require('actions/user_actions')
 UserStore = require('stores/user_store')
@@ -56,7 +57,10 @@ module.exports = React.createClass
       <div className="saved-searches">
         <div className="saved-search-header clearfix">
           <h1>{@t('title')}</h1>
-          <label className="saved-search-subscribed-only action">{@t('subscribed_only')}<input type="checkbox" onClick={@toggleSubscribedOnly} /></label>
+          <label className="saved-search-subscribed-only action">
+            {@t('subscribed_only')}
+            <Checkbox type="checkbox" checked={@state.subscribedOnly} onChange={@toggleSubscribedOnly} />
+          </label>
         </div>
         {
           if @state.searches.length > 0

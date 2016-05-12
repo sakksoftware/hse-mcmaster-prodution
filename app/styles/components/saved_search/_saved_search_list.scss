@@ -10,6 +10,11 @@
 
   .saved-search-list-header {
     overflow: auto;
+
+    .checkbox {
+      margin-left: $tiny-size;
+      margin-bottom: -1px;
+    }
   }
 
   .list-item:first-child {

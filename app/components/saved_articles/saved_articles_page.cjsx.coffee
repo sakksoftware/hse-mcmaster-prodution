@@ -2,6 +2,7 @@ API = require('lib/api')
 ResultList = require('components/results/result_list')
 Button = require('components/shared/button')
 TranslationHelper = require('mixins/translation_helper')
+Checkbox = require('components/shared/checkbox')
 
 UserActions = require('actions/user_actions')
 UserStore = require('stores/user_store')
@@ -63,7 +64,9 @@ module.exports = React.createClass
       {
         if @state.articles.length > 0
           <li className="action">
-            <label>{@t('/select_all')}<input type="checkbox" onChange={@toggleSelectAll} checked={@state.allSelected} name="search_to_delete"/></label>
+            <label>{@t('/select_all')}
+              <Checkbox onChange={@toggleSelectAll} checked={@state.allSelected} showMinus={@state.hasSelected} name="search_to_delete"/>
+            </label>
           </li>
       }
     </ul>

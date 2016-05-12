@@ -1,4 +1,5 @@
 TranslationHelper = require('mixins/translation_helper')
+Checkbox = require('components/shared/checkbox')
 
 module.exports = React.createClass
   displayName: 'SelectableList'
@@ -71,7 +72,7 @@ module.exports = React.createClass
         if @props.showSelectAll
           <label>
             {@t('/select_all')}
-            <input type="checkbox" checked={@allSelected()} onChange={@toggleSelectAll} name="search_to_delete"/>
+            <Checkbox checked={@allSelected()} onChange={@toggleSelectAll} showMinus={@hasSelectedItems()} name="search_to_delete" />
           </label>
       }
       {@renderListItems()}

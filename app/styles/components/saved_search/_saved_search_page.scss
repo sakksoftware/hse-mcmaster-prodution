@@ -21,6 +21,11 @@
       margin-bottom: $tiny-size;
       padding-right: $tiny-size;
 
+      .checkbox {
+        margin-left: $tiny-size;
+        margin-bottom: -1px;
+      }
+
       @include desktop {
         float: right;
         border-bottom: none;

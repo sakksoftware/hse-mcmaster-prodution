@@ -91,6 +91,11 @@ $result-header-text-color: #666666;
         display: inline;
       }
     }
+
+    .checkbox {
+      margin-left: $tiny-size;
+      margin-bottom: -1px;
+    }
   }
 
   .hotspot {

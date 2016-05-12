@@ -12,6 +12,11 @@
   .saved-search-select {
     float: right;
     padding-right: $tiny-size;
+
+    .checkbox {
+      margin-left: $tiny-size;
+      margin-bottom: -1px;
+    }
   }
 
   .saved-search-control {
