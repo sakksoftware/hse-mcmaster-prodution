@@ -18,12 +18,30 @@ module.exports = React.createClass
     resultsCount: React.PropTypes.number.isRequired
     onLoadMore: React.PropTypes.func
     toggleSelect: React.PropTypes.func
+    onAllowUserToFetchMorePages: React.PropTypes.func
 
   getDefaultProps: ->
     onLoadMore: ->
+    onAllowUserToFetchMorePages: ->
+
+  componentWillMount: ->
+    @userLoggedIn = !!UserStore.state.user
+    @unsubscribeUser = UserStore.listen(@onUserStoreUpdated)
 
   componentWillUnmount: ->
     @unsubscribeToLoadMore?()
+    @unsubscribeUser()
+
+  onUserStoreUpdated: (state) ->
+    loggedIn = !!state.user
+    if loggedIn && !@userLoggedIn
+      @userLoggedIn = true
+      @attachScrollListener()
+      # guest users are allowed only 2 results pages, but since it tried fetching 3
+      # (when we show the signup prompt) we need to bring it back down to 2 so it fetches the
+      # 3rd page again (instead of the 4th page)
+      if @page == 3
+        @page = 2
 
   saveArticles: ->
     selected = @getSelected()
