@@ -22,11 +22,13 @@ if config.useMocks
 
 initialize = ->
   language = stores.UrlStore.state.params.lang || 'en'
+  language = 'zh' if language == 'cn'
+  console.log('locales', localesUrl)
   $.i18n.init
-    lng: language
-    fallbackLng: 'en'
-    resGetPath: "#{localesUrl}%{lng}.json?cacheBuster=#{Math.random()}"
-    interpolationPrefix: '%{'
+    lng: language,
+    fallbackLng: 'en',
+    resGetPath: localesUrl,
+    interpolationPrefix: '%{',
     interpolationSuffix: '}',
     ->
       # Start application

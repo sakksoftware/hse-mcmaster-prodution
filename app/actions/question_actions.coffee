@@ -8,7 +8,7 @@ QuestionActions = Reflux.createActions
 QuestionActions.loadQuestions.listen ->
   language = UrlStore.state.params.lang || 'en'
 
-  $.getJSON("#{config.localesUrl}questions/#{language}.json").
+  $.getJSON("/locales/questions/#{language}.json").
     done(@completed).
     fail =>
       API.onError().apply(@failed, arguments)

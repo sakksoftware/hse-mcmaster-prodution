@@ -44,7 +44,7 @@ module.exports = React.createClass
     SearchActions.removeFilterGroup(filter)
 
   getTitle: (section, filterGroup) ->
-    title = @t('menus.filters.title', section_title: section.title, filter_group_title: filterGroup.title)
+    title = @t('menus.filters.title', section_title: @t("/filters.#{section.id}"), filter_group_title: @t("/filters.#{filterGroup.id}"))
     Util.sentenceCase(title)
 
   getMenuContext: (filterGroup) ->
@@ -78,7 +78,7 @@ module.exports = React.createClass
       title={@getTitle(section, filterGroup)}
       context={@getMenuContext(filterGroup)}
       onToggle={@onShowFilterGroup}>
-      {filterGroup.title}
+      {@t("/filters.#{filterGroup.id}")}
     </LayerToggle>
 
   renderSection: (section) ->
@@ -93,7 +93,7 @@ module.exports = React.createClass
           </li>
 
     [
-      <h2>{section.title}</h2>
+      <h2>{@t("/filters.#{section.id}")}</h2>
       <ul className="menu-list">
         {menuItems}
       </ul>

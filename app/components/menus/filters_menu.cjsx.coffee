@@ -68,7 +68,7 @@ module.exports = React.createClass
           <LayerToggle
             className="menu-item-text"
             menu="filters"
-            title={item.title}
+            title={@t("/filters.#{item.id}")}
             context={
               filterGroup: item
               filters: SearchStore.findFilter(item)?.filters || []
@@ -80,7 +80,7 @@ module.exports = React.createClass
               borderLeftStyle: "solid"
             }
             >
-            {item.title}
+            {@t("/filters.#{item.id}")}
           </LayerToggle>
         </li>
 
@@ -120,7 +120,7 @@ module.exports = React.createClass
   render: ->
     @currentColorIndex = 0
     @anyFilter = _.clone(@filterGroup)
-    title = @filterGroup.title
+    title = @t("/filters.#{@filterGroup.id}")
     if title != 'LMICs'
       title = title.toLowerCase()
     if title?.toUpperCase() == "CANADA'S HEALTH SYSTEMS DOCUMENTS"

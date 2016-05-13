@@ -61,26 +61,22 @@ See wiki page for [API documentation](https://github.com/func-i/hse-frontend/wik
 
 ## Localization
 
-Locale files live on s3 and used by translators, however there is a local copy for development and it will need to be synced withgreatpower
-the remote copy.
+Locale files are cached locally and managed by PhraseApp in the cloud by the client. Production pull directly from the API
+allowing the client to modify things on their own. You can sync with the production files by using the PhraseApp CLI tool.
 
-First download the locales:
+All translation are stored as a key-value pairs including some dynamic database content that is makred by the id
+of items.
 
-```
-cd locales/
-aws s3 sync s3://my-hse-staging/locales/hse .
-```
+You can grab strings from the database for filters by copying and pasting the below code snippet in your browser
+when you have the proper language selected. This is how the files in `locales/filtes/<language_name>.json` are generated.
 
-Then upload them
+    let FilterNormalizationService = require('services/filter_normalization_service');
+    let SearchStore = require('stores/search_store');
+    let filterTranslations = {filters: {}};
 
-```
-aws s3 sync . s3://my-hse-staging/locales/hse
-```
-
-NOTE: please upload the S3 files to the proper folder based on the branch you are on.
-For master it will be uploaded to hse, and for phcpi to phcpi. The reason we elected
-not to use this file structure locally is so we can more easily merge text changes
-from master to phcpi when adding new features to hse.
+    let filters = FilterNormalizationService.getFiltersArray(SearchStore.state.search.filters);
+    filters.forEach((f) => filterTranslations.filters[f.id] = f.title);
+    copy(filterTranslations);
 
 ## Troubleshooting
 
