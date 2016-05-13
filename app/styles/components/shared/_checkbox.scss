@@ -19,3 +19,18 @@
     background: url('/images/check_minus_square_o.svg');
   }
 }
+
+// HACK! reset CSS for checkboxes used as part of bootstrap
+// e.g. signup
+.form-group {
+  .checkbox {
+    height: auto;
+    width: auto;
+    background: none;
+    display: inherit;
+
+    input {
+      display: inherit;
+    }
+  }
+}
