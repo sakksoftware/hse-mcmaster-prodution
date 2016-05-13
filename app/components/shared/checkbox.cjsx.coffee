@@ -2,8 +2,8 @@ module.exports = React.createClass
   displayName: 'Checkbox'
   propTypes:
     name: React.PropTypes.string
-    checked: React.PropTypes.boolean
-    showMinus: React.PropTypes.boolean
+    checked: React.PropTypes.bool
+    showMinus: React.PropTypes.bool
     onChange: React.PropTypes.func
 
   getDefaultProps: ->

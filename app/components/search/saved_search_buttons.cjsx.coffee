@@ -13,8 +13,8 @@ module.exports = React.createClass
   propTypes:
     search: React.PropTypes.object.isRequired
     onSaveAndSubscribe: React.PropTypes.func
-    hasSelected: React.PropTypes.boolean
-    allSelected: React.PropTypes.boolean
+    hasSelected: React.PropTypes.bool
+    allSelected: React.PropTypes.bool
 
   getDefaultProps: ->
     onSaveAndSubscribe: ->
