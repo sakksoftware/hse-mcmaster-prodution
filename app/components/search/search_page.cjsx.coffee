@@ -66,7 +66,12 @@ module.exports = React.createClass
     TourActions.removeStep 'filters_menu'
 
   userStoreUpdated: (state) ->
-    @setState(guidedSearch: state.guidedSearch)
+    newState = { guidedSearch: state.guidedSearch }
+
+    if state.user && @state.showSignupPrompt
+      newState.showSignupPrompt = false;
+      
+    @setState(newState)
 
   searchStoreUpdated: (state) ->
     step = @state.step
