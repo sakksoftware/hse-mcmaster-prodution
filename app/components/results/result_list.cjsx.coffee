@@ -5,6 +5,7 @@ InfiniteScroll = require('mixins/infinite_scroll')
 
 UserActions = require('actions/user_actions')
 UserStore = require('stores/user_store')
+SearchStore = require('stores/search_store')
 config = require('config')
 
 module.exports = React.createClass
@@ -27,10 +28,12 @@ module.exports = React.createClass
   componentWillMount: ->
     @userLoggedIn = !!UserStore.state.user
     @unsubscribeUser = UserStore.listen(@onUserStoreUpdated)
+    @unsubscribeSearch = SearchStore.listen(@onSearchStoreUpdated)
 
   componentWillUnmount: ->
     @unsubscribeToLoadMore?()
     @unsubscribeUser()
+    @unsubscribeSearch()
 
   onUserStoreUpdated: (state) ->
     loggedIn = !!state.user
@@ -42,6 +45,9 @@ module.exports = React.createClass
       # 3rd page again (instead of the 4th page)
       if @page == 3
         @page = 2
+
+  onSearchStoreUpdated: (state) ->
+    @page = state.search.page
 
   saveArticles: ->
     selected = @getSelected()
