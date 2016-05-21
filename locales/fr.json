@@ -868,5 +868,14 @@
     "26_69": "Communiqué intergouvernemental",
     "26_70": "Accord intergouvernemental",
     "26_71": "Accord entre le gouvernement et un tiers"
+  },
+  "phcpi": {
+    "site_name": "Données probantes SSP",
+    "main_menu": {
+      "about": "À propos de PHC"
+    },
+    "home_page": {
+      "intro": "Accédez aux meilleures données probantes afin de renforcer les systèmes de soins de santé primaires grâce à Health Systems Evidence."
+    }
   }
 }

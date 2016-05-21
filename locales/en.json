@@ -865,5 +865,14 @@
     "26_69": "Intergovernmental communiqué  ",
     "26_70": "Intergovernmental accord",
     "26_71": "Government/third party accord"
+  },
+  "phcpi": {
+    "site_name": "PHC Evidence",
+    "main_menu": {
+      "about": "About PHC Evidence"
+    },
+    "home_page": {
+      "intro": "Access the best available research evidence for strengthening primary health care systems"
+    }
   }
 }

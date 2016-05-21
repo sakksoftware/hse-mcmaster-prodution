@@ -865,5 +865,14 @@
     "26_69": "Intergovernmental communiqué  ",
     "26_70": "Intergovernmental accord",
     "26_71": "Government/third party accord"
+  },
+  "phcpi": {
+    "site_name": "初级卫生保健（PHC）证据",
+    "main_menu": {
+      "about": "初级卫生保健（PHC）证据"
+    },
+    "home_page": {
+      "intro": "可获取当前旨在加强初级卫生保健系统的最佳研究证据，由卫生系统证据提供服务支持。"
+    }
   }
 }

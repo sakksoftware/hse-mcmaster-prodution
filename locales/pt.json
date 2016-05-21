@@ -865,5 +865,14 @@
     "26_69": "Intergovernmental communiqué  ",
     "26_70": "Intergovernmental accord",
     "26_71": "Government/third party accord"
+  },
+  "phcpi": {
+    "site_name": "PHC Evidence",
+    "main_menu": {
+      "about": "Sobre o PHC"
+    },
+    "home_page": {
+      "intro": "Acesse a melhor evidência de pesquisa disponível para reforçar sistemas de cuidados de saúde primários, patrocinada pelo Health Systems Evidence."
+    }
   }
 }

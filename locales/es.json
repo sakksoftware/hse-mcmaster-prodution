@@ -865,5 +865,14 @@
     "26_69": "Intergovernmental communiqué  ",
     "26_70": "Intergovernmental accord",
     "26_71": "Government/third party accord"
+  },
+  "phcpi": {
+    "site_name": "Evidencia sobre APS",
+    "main_menu": {
+      "about": "¿Qué es PHC?"
+    },
+    "home_page": {
+      "intro": "Acceda a la mejor evidencia en investigación disponible para fortalecer los sistemas de atención primaria de salud respaldados por Health Systems Evidence."
+    }
   }
 }
