@@ -19,7 +19,7 @@
   "scripts": {
     "start": "brunch build && node server.js",
     "test": "brunch test",
-    "postinstall": "bower install && brunch build --production && gem install switch-cli"
+    "postinstall": "bower install && brunch build --production"
   },
   "dependencies": {
     "assetsmanager-brunch": "^1.8.1",
