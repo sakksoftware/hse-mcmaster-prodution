@@ -1,6 +1,6 @@
 var exec = require('child_process').exec;
 
-child = exec('switch csv2json hse.csv ./tmp/locales', function(error, stdout, stderror) {
+child = exec('switch csv2json hse.csv ./tmp/locales', function(error, stdout, stderr) {
   console.log('stdout: ' + stdout);
   console.log('stderr: ' + stderr);
 
