@@ -61,8 +61,17 @@ See wiki page for [API documentation](https://github.com/func-i/hse-frontend/wik
 
 ## Localization
 
-Locale files are cached locally and managed by PhraseApp in the cloud by the client. Production pull directly from the API
-allowing the client to modify things on their own. You can sync with the production files by using the PhraseApp CLI tool.
+Locale files are cached locally and managed by a Google Spreadsheet in the cloud by the client. Production pull directly from an S3 buckete contianing a nested json key/value pair files represeting the spreadsheet.
+
+You can sync development with the spreadsheet by running:
+
+   $ ruby switch_sync.rb
+
+ You can also force sync production by running
+
+   $ heroku run ruby switch_sync.rb
+
+However, this task runs on heroku by the heroku scheduler every 10 minutes or so.
 
 All translation are stored as a key-value pairs including some dynamic database content that is makred by the id
 of items.
