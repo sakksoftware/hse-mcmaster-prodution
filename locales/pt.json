@@ -704,7 +704,7 @@
     "10_9": "Descrições de sistemas de saúde",
     "10_11": "Documentos da organização intergovernamental",
     "10_10": "Canada's health systems documents",
-    "10_12": "PT_Ontario's health system documents",
+    "10_12": "Documentos de sistemas de saúde do Ontário",
     "0_11": "Texto completo livre",
     "0_27": "Limite para registros com link de texto completo livre",
     "0_12": "Intervalo de datas de publicação",
@@ -868,6 +868,7 @@
   },
   "phcpi": {
     "site_name": "PHC Evidence",
+    "powered_by": "PATROCINADO PELO HEALTH SYSTEMS EVIDENCE",
     "main_menu": {
       "about": "Sobre o PHC"
     },

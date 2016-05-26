@@ -307,7 +307,7 @@
     "2_1031": "Requisitos de licenciamiento e inscripción",
     "2_1032": "Patentes y lucro",
     "2_1033": "Precios y compra",
-    "2_1034": "Marketing",
+    "2_1034": "Márketing",
     "2_1035": "Ventas y distribución",
     "2_1036": "Compromiso-obligación comercial",
     "2_1008": "Autoridad profesional",
@@ -704,7 +704,7 @@
     "10_9": "Descripciones de sistemas de salud",
     "10_11": "Documentos de organizaciones intergubernamentales",
     "10_10": "Canada's health systems documents",
-    "10_12": "ES_Ontario's health system documents",
+    "10_12": "Documentos de sistemas de salud de Ontario",
     "0_11": "Texto completo gratuito",
     "0_27": "ES_Limit to records with free full-text link",
     "0_12": "Intervalo de fechas de publicación",
@@ -868,6 +868,7 @@
   },
   "phcpi": {
     "site_name": "Evidencia sobre APS",
+    "powered_by": "RESPALDO DE HEALTH SYSTEMS EVIDENCE",
     "main_menu": {
       "about": "¿Qué es PHC?"
     },

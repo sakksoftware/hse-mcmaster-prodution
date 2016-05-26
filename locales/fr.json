@@ -707,7 +707,7 @@
     "10_9": "Descriptions des systèmes de santé",
     "10_11": "Documents d'organisations intergouvernementales",
     "10_10": "Canada's health systems documents",
-    "10_12": "FR_Ontario's health system documents",
+    "10_12": "Documents sur les systèmes de santé d'Ontario",
     "0_11": "Texte intégral gratuit",
     "0_27": "FR_Limit to records with free full-text link",
     "0_12": "Période de publication",
@@ -871,6 +871,7 @@
   },
   "phcpi": {
     "site_name": "Données probantes SSP",
+    "powered_by": "Optimisé par Health Systems Evidence",
     "main_menu": {
       "about": "À propos de PHC"
     },

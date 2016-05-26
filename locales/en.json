@@ -868,6 +868,7 @@
   },
   "phcpi": {
     "site_name": "PHC Evidence",
+    "powered_by": "POWERED BY HEALTH SYSTEMS EVIDENCE",
     "main_menu": {
       "about": "About PHC Evidence"
     },
