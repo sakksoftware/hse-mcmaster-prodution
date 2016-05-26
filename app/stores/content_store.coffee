@@ -6,6 +6,6 @@ module.exports = Reflux.createStore
 
   loadMarkdownFile: (fileName, success, error) ->
     language = $.i18n.lng()
-    $.get("#{config.localesUrl}markdowns/#{fileName}/#{language}.md")
+    $.get("/locales/markdowns/#{fileName}/#{language}.md")
       .done(success)
       .fail(error)
