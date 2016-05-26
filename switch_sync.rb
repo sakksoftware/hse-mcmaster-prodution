@@ -3,7 +3,8 @@
 require 'aws-sdk'
 
 dest_path = ENV['NODE_ENV'] == 'production' || ENV['NODE_ENV'] == 'staging' ? '/tmp/locales' : './locales'
-result = `mkdir -p #{dest_path} && switch csv2json hse.csv #{dest_path}`
+spreadsheet_key = "1One43VL0g3hP-FwHcq7GhqdSsQLzBZe-m-du_uUvZ7M"
+result = `mkdir -p #{dest_path} && switch csv2json #{spreadsheet_key} #{dest_path}`
 puts 'Successfully downloaded locale files'
 
 exit 0 unless ENV['NODE_ENV'] == 'production' || ENV['NODE_ENV'] == 'staging'
