@@ -69,7 +69,7 @@ module.exports = React.createClass
     newState = { guidedSearch: state.guidedSearch }
 
     if state.user && @state.showSignupPrompt
-      newState.showSignupPrompt = false;
+      newState.showSignupPrompt = false
       
     @setState(newState)
 
@@ -91,13 +91,21 @@ module.exports = React.createClass
     document.title = "#{@state.search.query} | #{@t('/site_name')}"
     SearchActions.search(@state.search)
 
-  handleSearch: (query) ->
+  handleSearch: (suggestion) ->
     search = _.clone(@state.search)
-    search.query = query
+    if suggestion.type == "filter"
+      search.query = ""
+    else
+      search.query = suggestion.query
+
     search.page = 1
     @setState { search: search }, =>
       @refs.resultBox?.clearSelected()
-      @fetchResults()
+      # toggling the filter will cause results to be fetched already
+      if suggestion.type == "filter"
+        SearchActions.toggleFilter({id: suggestion.filter_id})
+      else
+        @fetchResults()
 
   handleLoadMore: (page) ->
     if UserStore.state.user == null && page > 2

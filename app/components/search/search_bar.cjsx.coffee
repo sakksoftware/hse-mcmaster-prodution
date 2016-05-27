@@ -21,22 +21,32 @@ module.exports = React.createClass
     # HACK: to clear the autosuggest state
     count: 0
 
+  componentWillMount: ->
+    @lastSuggestions = []
+    @searchSubmitted = false
+
   componentWillReceiveProps: (nextProps) ->
+    @lastSuggestions = []
+    @searchSubmitted = false
     @setState(query: nextProps.search.query, count: @state.count + 1)
 
   dismissKeyboard: -> document.activeElement.blur()
   handleSubmit: (e) ->
     e.preventDefault()
-    @onSearch(document.getElementById('search').value)
+    query = document.getElementById('search').value
+    if query == @lastSuggestions[0]?.query
+      @onSearch(@lastSuggestions[0])
+    else
+      @onSearch({query: query})
 
-  onSearch: (query) ->
-    @props.onSearch?(query)
+  onSearch: (suggestion) ->
+    @props.onSearch?(suggestion)
     @dismissKeyboard()
 
   fetchSuggestions: (query, callback) ->
-    handleLoadSuggestions = (suggestions) ->
-      suggestions = _.clone(suggestions)
-      callback(null, suggestions)
+    handleLoadSuggestions = (suggestions) =>
+      @lastSuggestions = _.clone(suggestions)
+      callback(null, @lastSuggestions)
     @props.search.query = query
     SuggestionActions.suggestions(@props.search, UserStore.state.language).then(handleLoadSuggestions)
 
@@ -85,7 +95,7 @@ module.exports = React.createClass
         inputAttributes={inputAttributes}
         # delay transitioning to the new page to prevent odd scroll bug when users
         # clicks on a suggestion (mouse click) it will scroll to bottom of the page.
-        onSuggestionSelected={(suggestion) => _.delay((=> @onSearch(suggestion.query)), 10)}
+        onSuggestionSelected={(suggestion) => _.delay((=> @onSearch(suggestion)), 10)}
         cache={false}
       />
       <Button className="btn-clear" onClick={@clearInput}>&#x00D7;</Button>

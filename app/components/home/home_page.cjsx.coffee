@@ -51,8 +51,11 @@ module.exports = React.createClass
     router.visit('/search')
     @props.onShowMenu.apply(@, arguments)
 
-  redirectToSearch: (query) ->
-    UrlActions.navigateTo("/search", q: query)
+  redirectToSearch: (suggestion) ->
+    if suggestion.type == 'filter'
+      UrlActions.navigateTo("/search", applied_filters: suggestion.filter_id, q: "")
+    else
+      UrlActions.navigateTo("/search", q: suggestion.query)
 
   isMobile: ->
     if window.innerWidth < 1024
