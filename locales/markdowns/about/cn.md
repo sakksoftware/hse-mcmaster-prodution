@@ -25,7 +25,7 @@
   [加拿大Cochrane中心](http://ccc.cochrane.org/) 及其 政策联络处 （帮助卫生系统决策者和参与者使用证据综合尤其是卫生系统证据）</p>
 
   <p class="text-center">**通过麦 克马斯特大学卫生论坛 和以下三个合作伙伴的协作，实现了将 卫生系统证据 译成除英语和法语外的其他语言:**  
-  [McMaster Health Forum](https://www.mcmasterhealthforum.org) （法国和一些葡萄牙语和西班牙语的内容） 
+  [McMaster Health Forum](https://www.mcmasterhealthforum.org) （法国和一些葡萄牙语和西班牙语的内容）
   兰州大学 [循证医学中心](http://ebm.lzu.edu.cn/sysIndex!index.do), （中文）  
   [泛美卫生组织](http://www.paho.org/hq/) （葡萄牙语和西班牙语）</p>
 
@@ -45,4 +45,4 @@
   [生殖健康图书馆](http://apps.who.int/rhl/en/)  
   SUPPORT 协作组  </p>
 
-  <p class="text-center">**卫生系统证据将感谢在其早期开发阶段提供帮助的以下组织：**    [Rx for Change](https://www.cadth.ca/rx-change)    (确认并编码了实施策略方面的系统评价，并提供了我们链接到的用户友好型总结)    [Centre for Reviews and Dissemination](http://www.york.ac.uk/crd/)    (确认关注效果的系统评价、计划中的系统评价（即在PROSPERO中注册的题目）及经济学评价，并提供了我们链接到的用户友好型总结)</p></footer>
+  <p class="text-center">**卫生系统证据真诚地感谢以下为卫生系统证据早期发展做出贡献的团队：**    [评价和传播中心](http://www.york.ac.uk/crd/)    (确认关注效果的系统评价、计划中的系统评价（即在PROSPERO中注册的题目）及经济学评价，并提供了我们可以链接到的用户友好型总结    [知证卫生保健更新（EIHR）圆桌会议](http://www.cihr-irsc.gc.ca/e/43628.html)   （一个由麦克马斯特卫生论坛和加拿大卫生研究院协作管理的组织，支持加拿大卫生系统文件的确认和编码）    [改变之道项目](https://www.cadth.ca/rx-change)    （确认并编码了实施策略方面的系统评价，并提供了我们可以链接到的用户友好型总结）  </p></footer>
