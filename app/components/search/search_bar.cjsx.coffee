@@ -95,7 +95,7 @@ module.exports = React.createClass
     <form ref="searchForm" action="#" onSubmit={@handleSubmit} className="search-bar">
       <Autosuggest
         key={"autosuggest-#{@state.count}"}
-        suggestions={@fetchSuggestions}
+        suggestions={_.debounce(@fetchSuggestions, 200)}
         suggestionValue={@getSuggestionValue}
         suggestionRenderer={@renderSuggestion}
         inputAttributes={inputAttributes}
