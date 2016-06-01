@@ -22,7 +22,6 @@ if config.useMocks
 
 initialize = ->
   language = stores.UrlStore.state.params.lang || 'en'
-  language = 'zh' if language == 'cn'
   console.log('locales', localesUrl)
   $.i18n.init
     lng: language,
