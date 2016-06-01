@@ -6,6 +6,9 @@ UserStore = require('stores/user_store')
 SearchStore = require('stores/search_store')
 Button = require('components/shared/button')
 
+API = require('lib/api')
+SearchSerializationService = require('services/search_serialization_service')
+
 module.exports = React.createClass
   displayName: 'SearchBar'
 
@@ -47,8 +50,11 @@ module.exports = React.createClass
     handleLoadSuggestions = (suggestions) =>
       @lastSuggestions = _.clone(suggestions)
       callback(null, @lastSuggestions)
+
     @props.search.query = query
-    SuggestionActions.suggestions(@props.search, UserStore.state.language).then(handleLoadSuggestions)
+    query = SearchSerializationService.serializeSearchUrl(@props.search, UserStore.state.language)
+    @request?.abort()
+    @request = API.read("search/suggestions#{query}").done(handleLoadSuggestions)
 
   getSuggestionValue: (suggestion, input) ->
     suggestion.query
