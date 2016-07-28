@@ -48,4 +48,13 @@
       padding-right: $tiny-size;
     }
   }
+
+  .saved-search-keywords-label {
+    font-weight: 600;
+  }
+
+  .saved-search-keywords {
+    margin-top: -$tiny-size;
+    margin-bottom: $tiny-size;
+  }
 }

@@ -29,7 +29,7 @@ module.exports = function(app) {
         ],
         "id": 1,
         "query": "HIV Positive",
-        "name": "Name Search",
+        "name": "Named search",
         "saved": false,
         "subscribed": false,
         "userid": 0

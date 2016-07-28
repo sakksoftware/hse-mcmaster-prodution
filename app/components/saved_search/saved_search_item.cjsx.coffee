@@ -63,6 +63,22 @@ module.exports = React.createClass
       }
     </ul>
 
+  renderKeywords: ->
+    return unless @props.search.name
+
+    <div className="saved-search-keywords">
+      <span className="saved-search-keywords-label">Keywords: </span>
+      <span className="saved-search-keywords-value">{@props.search.query}</span>
+    </div>
+
+  renderSelect: ->
+    return unless @props.showSelect
+
+    <label className="saved-search-select action">
+      <span>{@t('/select')}</span>
+      <Checkbox onChange={=> @props.toggleSelect(@)} checked={@props.selected} />
+    </label>
+
   render: ->
     <SelectableItem {...@props} showSelect={false} className="saved-search-item list-item">
       <div className="saved-search-item-header clearfix">
@@ -71,14 +87,9 @@ module.exports = React.createClass
             {@props.search.name || @props.search.query}
           </Link>
         </h2>
-        {
-          if @props.showSelect
-            <label className="saved-search-select action">
-              <span>{@t('/select')}</span>
-              <Checkbox onChange={=> @props.toggleSelect(@)} checked={@props.selected} />
-            </label>
-        }
+        {@renderSelect()}
       </div>
+      {@renderKeywords()}
       {@renderAppliedFilters()}
       <label className="saved-search-control">
         <span>{@t('subscribe')}</span>
