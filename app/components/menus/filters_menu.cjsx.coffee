@@ -107,11 +107,11 @@ module.exports = React.createClass
 
     results
 
-  renderAnyFilter: ->
+  renderAnyFilter: (anyFilter) ->
     return if @state.filters.length <= 1
     result =
       <MenuFilterItem className="any-filters" key="any-filter-#{@filterGroup.id}" indicatorColor={@currentColor()}
-        filter={@anyFilter} onToggle={@onToggleFilter} />
+        filter={anyFilter} onToggle={@onToggleFilter} />
 
     @nextColor()
 
@@ -119,7 +119,8 @@ module.exports = React.createClass
 
   render: ->
     @currentColorIndex = 0
-    @anyFilter = _.clone(@filterGroup)
+    anyFilter = _.clone(@filterGroup)
+    anyFilter.any = true
     title = @t("/filters.#{@filterGroup.id}")
     if title != 'LMICs'
       title = title.toLowerCase()
@@ -127,11 +128,11 @@ module.exports = React.createClass
       title = "Canadian health systems document"
     if title?.toUpperCase() == "ONTARIO'S HEALTH SYSTEM DOCUMENTS"
       title = "Ontario health system document"
-    @anyFilter.title = @t('any_filters', filter_title: pluralize(title, 1))
+    anyFilter.title = @t('any_filters', filter_title: pluralize(title, 1))
 
     <div className="filters-menu nested-menu">
       <ul className="menu-list">
-        {@renderAnyFilter()}
+        {@renderAnyFilter(anyFilter)}
         {@renderItems(@state.filters)}
       </ul>
     </div>

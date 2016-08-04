@@ -14,6 +14,12 @@ module.exports = React.createClass
     e.preventDefault()
     @props.onToggle(@props.filter)
 
+  getFilterTitle: ->
+    filter = @props.filter
+    return filter.title if filter.any
+
+    @t("/filters.#{filter.id}")
+
   renderCheckMark: (filter) ->
     if filter.applied
       <i className="checkmark"></i>
@@ -28,6 +34,6 @@ module.exports = React.createClass
         borderLeftStyle: "solid"
 
     <li className="menu-item menu-filter-item #{@props.className}" style={style}>
-      <a className="menu-item-text" href="#" onClick={@handleToggle}>{@t("/filters.#{filter.id}")}</a>
+      <a className="menu-item-text" href="#" onClick={@handleToggle}>{@getFilterTitle()}</a>
       {@renderCheckMark(filter)}
     </li>
