@@ -1,8 +1,10 @@
+TranslationHelper = require('mixins/translation_helper')
 FilterNormalizationService = require('services/filter_normalization_service')
 
 module.exports = React.createClass
   displayName: 'AppliedFiltersItem'
-  mixins: [FilterNormalizationService]
+  mixins: [FilterNormalizationService, TranslationHelper]
+  baseTranslation: 'menus.filters'
   propTypes:
     filter: React.PropTypes.object.isRequired
     section: React.PropTypes.object.isRequired
@@ -11,9 +13,9 @@ module.exports = React.createClass
 
   getChildFiltersText: ->
     if @props.filter.filters
-      _(@getFiltersArray(@props.filter.filters)).pluck('title').join(', ').substring(0, 50)
+      _(@getFiltersArray(@props.filter.filters)).map((f) => @t('/filters.' + f.id)).join(', ').substring(0, 50)
     else if @props.filter.type == 'date_range'
-      "#{@props.filter.title}: #{@props.filter.attributes?[0] || ''}-#{@props.filter.attributes?[1] || ''}"
+      "#{@t('/filters.' + @props.filter.id)} : #{@props.filter.attributes?[0] || ''}-#{@props.filter.attributes?[1] || ''}"
 
   handleShowFilterGroup: (e) ->
     e.preventDefault()

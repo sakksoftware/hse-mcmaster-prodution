@@ -1,5 +1,9 @@
+TranslationHelper = require('mixins/translation_helper')
+
 module.exports = React.createClass
   displayName: 'MenuFilterItem'
+  mixins: [TranslationHelper]
+  baseTranslation: 'menus.filters'
   propTypes:
     filter: React.PropTypes.object.isRequired
     onToggle: React.PropTypes.func.isRequired
@@ -24,6 +28,6 @@ module.exports = React.createClass
         borderLeftStyle: "solid"
 
     <li className="menu-item menu-filter-item #{@props.className}" style={style}>
-      <a className="menu-item-text" href="#" onClick={@handleToggle}>{filter.title}</a>
+      <a className="menu-item-text" href="#" onClick={@handleToggle}>{@t("/filters.#{filter.id}")}</a>
       {@renderCheckMark(filter)}
     </li>
