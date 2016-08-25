@@ -128,7 +128,7 @@ module.exports = React.createClass
       title = "Canadian health systems document"
     if title?.toUpperCase() == "ONTARIO'S HEALTH SYSTEM DOCUMENTS"
       title = "Ontario health system document"
-    anyFilter.title = @t('any_filters', filter_title: pluralize(title, 1))
+    anyFilter.title = @t("/filters.#{@filterGroup.id}_any")
 
     <div className="filters-menu nested-menu">
       <ul className="menu-list">
