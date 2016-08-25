@@ -56,18 +56,21 @@ module.exports = React.createClass
     filters = filters.filter((e) -> e.applied)
     return if !filters || filters.length <= 0
 
-    <ul className="applied-filters">
-      {
-        for filter, i in filters
-          @renderAppliedFilter(filter, i)
-      }
-    </ul>
+    <div className="applied-filters-wrapper">
+      <span className="saved-search-filters-label">{@t('filters')}</span>
+      <ul className="applied-filters">
+        {
+          for filter, i in filters
+            @renderAppliedFilter(filter, i)
+        }
+      </ul>
+    </div>
 
   renderKeywords: ->
     return unless @props.search.name
 
     <div className="saved-search-keywords">
-      <span className="saved-search-keywords-label">Keywords: </span>
+      <span className="saved-search-keywords-label">{@t('keywords')}</span>
       <span className="saved-search-keywords-value">{@props.search.query}</span>
     </div>
 
