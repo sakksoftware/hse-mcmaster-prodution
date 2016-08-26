@@ -233,7 +233,10 @@
     "on_remove": "Se quitaron %{count} documentos con éxito",
     "on_remove_plural": "Se quitaron %{count} documentos con éxito",
     "curated_searches": "Búsquedas protegidas",
-    "no_saved_searches": "No hay búsquedas guardadas. Para crear una nueva búsqueda guardada vaya a la página Búsqueda y haga clic en el ícono de estrella debajo de la barra de búsqueda."
+    "no_saved_searches": "No hay búsquedas guardadas. Para crear una nueva búsqueda guardada vaya a la página Búsqueda y haga clic en el ícono de estrella debajo de la barra de búsqueda.",
+    "filters": "Filtros:",
+    "keywords": "Palabras clave:",
+    "default_title": "Buscar"
   },
   "saved_articles_page": {
     "title": "Documentos guardados",

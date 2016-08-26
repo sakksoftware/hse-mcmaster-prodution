@@ -233,7 +233,10 @@
     "on_remove": "成功删除%{count}个搜索",
     "on_remove_plural": "成功删除%{count}个搜索",
     "curated_searches": "策划检索",
-    "no_saved_searches": "没有保存的检索。若想生成新的检索，请您在检索页面点击检索栏下方的星形图标。"
+    "no_saved_searches": "没有保存的检索。若想生成新的检索，请您在检索页面点击检索栏下方的星形图标。",
+    "filters": "限定项:",
+    "keywords": "关键词:",
+    "default_title": "检索"
   },
   "saved_articles_page": {
     "title": "已保存文件",

@@ -233,7 +233,10 @@
     "on_remove": "Removeu com êxito %{count} documentos",
     "on_remove_plural": "Removeu com êxito %{count} documentos",
     "curated_searches": "Pesquisas compiladas",
-    "no_saved_searches": "Não existem pesquisas salvadas.​ Para criar uma nova pesquisa salvada vá para a página de pesquisa e clique no ícone de estrela por baixo da barra de pesquisa."
+    "no_saved_searches": "Não existem pesquisas salvadas.​ Para criar uma nova pesquisa salvada vá para a página de pesquisa e clique no ícone de estrela por baixo da barra de pesquisa.",
+    "filters": "Filtros:",
+    "keywords": "Palavras-chave:",
+    "default_title": "Pesquisar"
   },
   "saved_articles_page": {
     "title": "Documentos salvados",

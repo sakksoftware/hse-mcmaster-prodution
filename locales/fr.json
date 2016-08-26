@@ -233,7 +233,10 @@
     "on_remove": "Les %{count} documents ont été supprimés avec succès",
     "on_remove_plural": "Les %{count} documents ont été supprimés avec succès",
     "curated_searches": "Recherches organisées",
-    "no_saved_searches": "Il n’y a pas de recherche sauvegardée. Pour créer une nouvelle recherche sauvegardée, allez à la page Recherche et cliquez sur l’icône étoilée sous la barre de recherche."
+    "no_saved_searches": "Il n’y a pas de recherche sauvegardée. Pour créer une nouvelle recherche sauvegardée, allez à la page Recherche et cliquez sur l’icône étoilée sous la barre de recherche.",
+    "filters": "Filtres:",
+    "keywords": "Mots-clés:",
+    "default_title": "Recherche"
   },
   "saved_articles_page": {
     "title": "Documents sauvegardés",
