@@ -20,6 +20,7 @@
   }
 
   .saved-search-control {
+    margin-top: $small-size;
     line-height: $large-size;
 
     .react-toggle {
@@ -62,6 +63,6 @@
 
   .saved-search-keywords {
     margin-top: -$tiny-size;
-    margin-bottom: $x-small-size;
+    margin-bottom: $x-tiny-size;
   }
 }

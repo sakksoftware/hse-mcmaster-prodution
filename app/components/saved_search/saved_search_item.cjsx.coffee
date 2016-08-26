@@ -67,7 +67,7 @@ module.exports = React.createClass
     </div>
 
   renderKeywords: ->
-    return unless @props.search.name
+    return unless @props.search.query
 
     <div className="saved-search-keywords">
       <span className="saved-search-keywords-label">{@t('keywords')}</span>

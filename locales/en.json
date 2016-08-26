@@ -235,7 +235,8 @@
     "curated_searches": "Curated searches",
     "no_saved_searches": "There are no saved searches. To create a new saved search go to the search page and click on the star icon below the search bar.",
     "filters": "Filters:",
-    "keywords": "Keywords:"
+    "keywords": "Keywords:",
+    "default_title": "Search"
   },
   "saved_articles_page": {
     "title": "Saved documents",
