@@ -111,3 +111,26 @@ npm ERR! There is likely additional logging output above.
 This probably means one of the scss or coffeescript files failed to compile. Check out and try running it locally again.
 
 ## Known Issues
+
+### Switch Sync doesn't work!
+
+Switch sync can fail if the google token has expired, you will get an error that looks like this:
+
+    I, [2016-09-02T22:26:21.803598]  INFO -- : Connecting to google drive
+    /app/vendor/bundle/ruby/2.3.0/gems/signet-0.7.3/lib/signet/oauth_2/client.rb:981:in `fetch_access_token': Authorization failed.  Server message: (Signet::AuthorizationError)
+    {
+      "error" : "invalid_grant"
+    }
+           	from /app/vendor/bundle/ruby/2.3.0/gems/signet-0.7.3/lib/signet/oauth_2/client.rb:998:in `fetch_access_token!'
+           	from /app/vendor/bundle/ruby/2.3.0/gems/google_drive-1.0.6/lib/google_drive.rb:165:in `saved_session'
+           	from /app/vendor/bundle/ruby/2.3.0/gems/switch-cli-0.0.7/lib/switch/cloud_sync.rb:5:in `initialize'
+           	from /app/vendor/bundle/ruby/2.3.0/gems/switch-cli-0.0.7/lib/switch.rb:65:in `new'
+           	from /app/vendor/bundle/ruby/2.3.0/gems/switch-cli-0.0.7/lib/switch.rb:65:in `run'
+           	from /app/bin/switch:4:in `<main>'
+
+You need a new token. Simply remove the old token and run the following command
+
+    $ rm .googledrivesecret
+    $ switch csv2json 1One43VL0g3hP-FwHcq7GhqdSsQLzBZe-m-du_uUvZ7M /tmp/locales
+    $ git commit -am "new google token"
+    $ ./deploy
