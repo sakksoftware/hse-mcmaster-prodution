@@ -25,7 +25,7 @@ exports.config =
         .replace(/\.cjsx/, '')
 
   paths:
-    watched: ['app', 'vendor']
+    watched: ['app', 'locales', 'vendor']
 
   plugins:
     # react:
