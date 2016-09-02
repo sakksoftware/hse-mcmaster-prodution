@@ -38,3 +38,5 @@ bower_components/
 
 # Private developer config, force write if changes are required
 app/config.coffee
+
+vendor/ruby
