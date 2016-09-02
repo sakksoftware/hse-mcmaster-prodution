@@ -20,6 +20,7 @@
   }
 
   .saved-search-control {
+    margin-top: $small-size;
     line-height: $large-size;
 
     .react-toggle {
@@ -30,10 +31,10 @@
   }
 
   .applied-filters {
+    display: inline;
     padding-left: 0;
     margin-top: -$tiny-size;
     clear: both;
-    display: block;
     overflow: hidden;
     margin-bottom: $large-size;
   }
@@ -49,12 +50,19 @@
     }
   }
 
-  .saved-search-keywords-label {
+  .saved-search-keywords-label, .saved-search-filters-label {
     font-weight: 600;
+    margin-right: $x-tiny-size;
+  }
+
+  .saved-search-filters-label {
+    margin-top: $x-small-size;
+    margin-right: $tiny-size;
+    float: left;
   }
 
   .saved-search-keywords {
     margin-top: -$tiny-size;
-    margin-bottom: $x-small-size;
+    margin-bottom: $x-tiny-size;
   }
 }
