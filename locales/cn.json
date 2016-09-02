@@ -869,9 +869,9 @@
     "26_70": "政府间协议",
     "26_71": "政府/第三方协议",
     "2_-1_any": "任何系统安排",
-    "2_1001_any": "CN_Any governance arrangement",
-    "2_1002_any": "CN_Any financial arrangement",
-    "2_1003_any": "CN_Any delivery arrangement",
+    "2_1001_any": "任何行政管理",
+    "2_1002_any": "任何财务管理",
+    "2_1003_any": "任何供给管理",
     "2_1004_any": "任何实施策略",
     "2_1_any": "任何疾病",
     "2_2_any": "任何技术",
@@ -886,7 +886,7 @@
     "0_15_any": "任何主题",
     "0_17_any": "任何政府间组织的卫生系统文件",
     "0_18_any": "任何加拿大卫生系统的文件",
-    "0_19_any": "CN_Any ontario's health system document"
+    "0_19_any": "任何安大略卫生系统文件"
   },
   "phcpi": {
     "site_name": "初级卫生保健（PHC）证据",

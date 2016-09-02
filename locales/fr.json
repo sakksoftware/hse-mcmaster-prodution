@@ -872,9 +872,9 @@
     "26_70": "Accord intergouvernemental",
     "26_71": "Accord entre le gouvernement et un tiers",
     "2_-1_any": "Tous les arrangements des systemes",
-    "2_1001_any": "FR_Any governance arrangement",
-    "2_1002_any": "FR_Any financial arrangement",
-    "2_1003_any": "FR_Any delivery arrangement",
+    "2_1001_any": "Tout arrangement de gouvernance",
+    "2_1002_any": "Tout arrangement financier",
+    "2_1003_any": "Tout arrangement relatif à la prestation de services",
     "2_1004_any": "Toutes les strategies de mise en oeuvre",
     "2_1_any": "Toutes les maladies",
     "2_2_any": "Toutes les technologies",
@@ -889,7 +889,7 @@
     "0_15_any": "Tous les themes",
     "0_17_any": "Tous les documents d’organisations intergouvernementales",
     "0_18_any": "Tous les documents sur les systemes de sante au Canada",
-    "0_19_any": "FR_Any ontario's health system document"
+    "0_19_any": "Tout document lié au système de santé de l'Ontario"
   },
   "phcpi": {
     "site_name": "Données probantes SSP",

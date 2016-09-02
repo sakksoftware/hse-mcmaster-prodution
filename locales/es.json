@@ -236,7 +236,7 @@
     "no_saved_searches": "No hay búsquedas guardadas. Para crear una nueva búsqueda guardada vaya a la página Búsqueda y haga clic en el ícono de estrella debajo de la barra de búsqueda.",
     "filters": "Filtros:",
     "keywords": "Palabras clave:",
-    "default_title": "Buscar"
+    "default_title": "Búsqueda"
   },
   "saved_articles_page": {
     "title": "Documentos guardados",
@@ -869,9 +869,9 @@
     "26_70": "Acuerdo intergubernamental",
     "26_71": "Acuerdo con el gobierno/las partes interesadas",
     "2_-1_any": "Cualquier convenio de sistemas",
-    "2_1001_any": "ES_Any governance arrangement",
-    "2_1002_any": "ES_Any financial arrangement",
-    "2_1003_any": "ES_Any delivery arrangement",
+    "2_1001_any": "Cualquier convenio de gobernanza",
+    "2_1002_any": "Cualquier convenio financier",
+    "2_1003_any": "Cualquier convenio de prestaciones",
     "2_1004_any": "Cualquier estrategia de implementación",
     "2_1_any": "Cualquier enfermedad",
     "2_2_any": "Cualquier tecnología",
@@ -886,7 +886,7 @@
     "0_15_any": "Cualquier tema",
     "0_17_any": "Cualquier documento de organismos intergubernamentales sobre los sistemas de salud",
     "0_18_any": "Cualquier documento del Sistema de Salud canadiense",
-    "0_19_any": "ES_Any ontario's health system document"
+    "0_19_any": "Cualquier documento del Sistema de Salud de Ontario"
   },
   "phcpi": {
     "site_name": "Evidencia sobre APS",

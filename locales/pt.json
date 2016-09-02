@@ -236,7 +236,7 @@
     "no_saved_searches": "Não existem pesquisas salvadas.​ Para criar uma nova pesquisa salvada vá para a página de pesquisa e clique no ícone de estrela por baixo da barra de pesquisa.",
     "filters": "Filtros:",
     "keywords": "Palavras-chave:",
-    "default_title": "Pesquisar"
+    "default_title": "Busca"
   },
   "saved_articles_page": {
     "title": "Documentos salvados",
@@ -869,9 +869,9 @@
     "26_70": "Acordo intergovernamental",
     "26_71": "Acordo entre governo/terceiros",
     "2_-1_any": "Todos os acordos dos sistemas",
-    "2_1001_any": "PT_Any governance arrangement",
-    "2_1002_any": "PT_Any financial arrangement",
-    "2_1003_any": "PT_Any delivery arrangement",
+    "2_1001_any": "Todos os acordos de governança",
+    "2_1002_any": "Todos os acordos financeiros",
+    "2_1003_any": "Todos os acordos de prestação",
     "2_1004_any": "Todas as estratégias de implementação",
     "2_1_any": "Todas as doenças",
     "2_2_any": "Todas as tecnologias",
@@ -886,7 +886,7 @@
     "0_15_any": "Todos os tópicos",
     "0_17_any": "Todos os documentos sobre os sistemas de saúde de organizações intergovernamentais",
     "0_18_any": "Todos os documentos sobre os sistemas de saúde canadenses",
-    "0_19_any": "PT_Any ontario's health system document"
+    "0_19_any": "Todos os documentos do sistema de saúde do Ontário"
   },
   "phcpi": {
     "site_name": "PHC Evidence",
