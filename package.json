@@ -5,8 +5,8 @@
   "version": "0.0.1",
   "private": true,
   "engines": {
-    "node": "~0.12.1",
-    "npm": "~2.5.1"
+    "node": "^6.7.0",
+    "npm": "^3.6.0"
   },
   "cacheDirectories": [
     "node_modules",
@@ -27,7 +27,7 @@
     "autoprefixer-brunch": "^1.8.5",
     "basic-auth-connect": "^1.0.0",
     "body-parser": "^1.14.2",
-    "bower": "^1.4.1",
+    "bower": "^1.7.9",
     "brunch": "^1.8.3",
     "cjsx-react-brunch": "0.0.2",
     "clean-css-brunch": ">= 1.0 < 1.8",
@@ -39,7 +39,7 @@
     "express": "^4.13.3",
     "javascript-brunch": ">= 1.0 < 1.8",
     "morgan": "^1.6.1",
-    "node-sass": "^3.2.0",
+    "node-sass": "^3.10.1",
     "rollbar": "^0.5.8",
     "sass-brunch": "^1.8.10",
     "uglify-js-brunch": ">= 1.0 < 1.8",
