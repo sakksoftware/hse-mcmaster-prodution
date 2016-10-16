@@ -39,9 +39,11 @@
     "express": "^4.13.3",
     "javascript-brunch": ">= 1.0 < 1.8",
     "morgan": "^1.6.1",
+    "node-fetch": "^1.6.3",
     "node-sass": "^3.10.1",
     "rollbar": "^0.5.8",
     "sass-brunch": "^1.8.10",
+    "slug": "^0.9.1",
     "uglify-js-brunch": ">= 1.0 < 1.8",
     "underscore": "^1.8.3"
   }

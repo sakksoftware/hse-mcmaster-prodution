@@ -10,3 +10,8 @@ module.exports =
       cookieEnabled = if document.cookie.indexOf('testcookie') != -1 then true else false
 
     cookieEnabled
+
+  # duplicate logic in server.js (ES5 vs Coffee issue)
+  slug: (str) ->
+    str = str.toLowerCase().replace('<b>', '').replace('</b>', '')
+    window.slug(str)

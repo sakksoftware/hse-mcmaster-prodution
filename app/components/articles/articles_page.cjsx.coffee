@@ -5,6 +5,7 @@ TranslationHelper = require('mixins/translation_helper')
 UserStore = require('stores/user_store')
 PageNotFound = require('components/error_pages/page_not_found')
 UrlStore = require('stores/url_store')
+slug = require('lib/util').slug
 
 module.exports = React.createClass
   displayName: 'ArticlePage'
@@ -20,13 +21,22 @@ module.exports = React.createClass
     errors: null
 
   componentWillMount: ->
-    params = require('lib/url').params()
+    @router = require('lib/router')
+    @params = require('lib/url').params()
     lang = UserStore.state.language
-    title = params.t # 10 character of the title to protect against scrapping
-    ArticleActions.loadArticle(@props.id, title, lang).then(@handleLoad)
+    title = @params.t # 10 character of the title to protect against scrapping
+    id = parseInt(@props.id, 10)
+    ArticleActions.loadArticle(id, title, lang).then(@handleLoad)
 
   handleLoad: (article) ->
     @setState(article: article)
+
+    # redirect
+    # new id contains a number + title, therefore parsing it should result in a difference
+    id = parseInt(@props.id, 10)
+    if id.toString() == @props.id.toString() && !isNaN(id)
+      @router.update("/articles/#{id}-#{slug(article.title)}?t=#{@params.t}&source=#{@params.source}")
+
     document.title = "#{article.title} | #{@t('/site_name')}"
 
   backText: ->
@@ -43,8 +53,7 @@ module.exports = React.createClass
         @t('back_to_results')
 
   backLink: ->
-    router = require('lib/router')
-    if router.hasHistory()
+    if @router.hasHistory()
       <Link to="back" className="btn-back">{@backText()}</Link>
 
   render: ->

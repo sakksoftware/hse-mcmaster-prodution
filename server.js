@@ -6,7 +6,15 @@ var crypto = require('crypto');
 var rollbar = require('rollbar');
 var compression = require('compression');
 var logger = require('morgan');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var nodeSlug = require('slug');
+var fetch = require('node-fetch');
+
+// duplicate logic in app/lib/util
+function slug (str) {
+  str = str.toLowerCase().replace('<b>', '').replace('</b>', '');
+  return nodeSlug(str);
+}
 
 var NODE_ENV = process.env.NODE_ENV || 'development';
 var AES_KEY = process.env.AES_KEY || '';
@@ -93,6 +101,39 @@ app.get('/rollbar-error-test', function(req, res) {
   rollbar.reportMessage("Testing rollbars from node server", "error");
   res.send('testing rollbars');
 });
+
+if (NODE_ENV === 'production' || NODE_ENV == 'staging') {
+  app.get('/articles/:id', function(req, res, next) {
+    // we are using old url if there is only a number id without the title, so we check that
+    var api = NODE_ENV === 'staging' ? 'staging-api' : 'api'
+    api = 'https://' + api + '.healthsystemsevidence.org/api/'
+
+    var params = req.params;
+    var id = parseInt(params.id, 10);
+    if (id == params.id && !isNaN(id)) {
+      var url = api + 'articles/' + id + '?t=' + req.query.t;
+      console.info('fetching', url);
+      fetch(url, { headers: { "Referer": 'https://www.healthsystemsevidence.org' }})
+      .then(function(res) {
+        return res.json();
+      }, function(error) {
+        console.error('Failed trying to redirect', error);
+        next();
+      })
+      .then(function(article) {
+        var source = req.query.source ? '&source=' + req.query.source : '';
+        var url = '/articles/' + id + '-' + slug(article.title) + '?t=' + req.query.t + source;
+        console.info('redirecting to', url);
+        res.redirect(301, url);
+      }, function(error) {
+        console.error('Failed trying to redirect', error);
+        next();
+      })
+    } else {
+      next();
+    }
+  });
+}
 
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname,'public/index.html'));

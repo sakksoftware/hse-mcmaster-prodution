@@ -9,6 +9,8 @@ TranslationHelper = require('mixins/translation_helper')
 
 UserStore = require('stores/user_store')
 
+slug = require('lib/util').slug
+
 module.exports = React.createClass
   displayName: 'ResultItem'
 
@@ -72,7 +74,7 @@ module.exports = React.createClass
       </header>
       <section className="result-item-description">
         <h2 className="result-item-title">
-          <Link to={["/articles/#{@props.result.id}", t: @props.result.traversal, source: @props.source]}><HighlightFormat>{@props.result.title}</HighlightFormat></Link>
+          <Link to={["/articles/#{@props.result.id}-#{slug(@props.result.title)}", t: @props.result.traversal, source: @props.source]}><HighlightFormat>{@props.result.title}</HighlightFormat></Link>
         </h2>
         <div className="result-item-categories">
           {

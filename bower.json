@@ -22,7 +22,8 @@
     "pluralize": "~1.2.1",
     "papaparse": "~4.1.2",
     "console-polyfill": "~0.2.2",
-    "fetch": "~0.10.1"
+    "fetch": "~0.10.1",
+    "slug": "^0.9.1"
   },
   "overrides": {
     "react": {
