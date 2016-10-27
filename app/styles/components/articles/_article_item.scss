@@ -116,6 +116,12 @@
       margin-left: $sidebar-width + $large-size;
     }
 
+    .abstract-section .article-field {
+      border-bottom: 2px solid $border-color;
+      padding-bottom: $large-size;
+      margin-bottom: $large-size;
+    }
+
     .article-field:nth-child(6n) {
       padding-bottom: $large-size;
       margin-bottom: $large-size;

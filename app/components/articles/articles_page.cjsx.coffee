@@ -28,6 +28,9 @@ module.exports = React.createClass
     id = parseInt(@props.id, 10)
     ArticleActions.loadArticle(id, title, lang).then(@handleLoad)
 
+  setMetaDescription: (description) ->
+    $('meta[name="description"]').attr('content', description)
+
   handleLoad: (article) ->
     @setState(article: article)
 
@@ -37,6 +40,7 @@ module.exports = React.createClass
     if id.toString() == @props.id.toString() && !isNaN(id)
       @router.update("/articles/#{id}-#{slug(article.title)}?t=#{@params.t}&source=#{@params.source}")
 
+    @setMetaDescription(article.abstract)
     document.title = "#{article.title} | #{@t('/site_name')}"
 
   backText: ->

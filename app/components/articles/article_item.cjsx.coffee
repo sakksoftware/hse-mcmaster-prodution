@@ -117,6 +117,12 @@ module.exports = React.createClass
       <h1>{article.title}</h1>
 
       <div className="article-item-body">
+        <div className="section abstract-section">
+          <ArticleField>
+            <h2>{article.label_abstract}</h2>
+            <p>{article.abstract}</p>
+          </ArticleField>
+        </div>
         <div className="section">
           <ArticleField>
             <h2>{article.label_document_type}</h2>
