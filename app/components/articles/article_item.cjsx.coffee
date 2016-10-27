@@ -99,7 +99,10 @@ module.exports = React.createClass
       <div className="article-item-targets">{@joinList(_.pluck(@props.article.targets, 'title'))}</div>
 
   renderCountries: (countries) ->
-    @joinList(_.compact(_.map(countries, (country) -> "#{country.title} (#{country.conducted_count})")))
+    @joinList(_.compact(_.map(countries, (country) ->
+      conductedCount = if parseInt(country.conducted_count, 10) > 0 then " (#{country.conducted_count})" else ""
+      "#{country.title}#{conductedCount}"
+    )))
 
   renderRelatedArticlesLink: ->
     article = @props.article
