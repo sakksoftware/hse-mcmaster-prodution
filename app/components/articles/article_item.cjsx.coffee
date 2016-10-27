@@ -123,7 +123,7 @@ module.exports = React.createClass
         <div className="section abstract-section">
           <ArticleField>
             <h2>{article.label_abstract}</h2>
-            <p>{article.abstract}</p>
+            <p>{@ifNotEmpty article.abstract, @t('no_topics')}</p>
           </ArticleField>
         </div>
         <div className="section">
