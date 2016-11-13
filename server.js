@@ -135,14 +135,16 @@ if (NODE_ENV === 'production' || NODE_ENV == 'staging') {
   });
 }
 
-app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname,'public/index.html'));
-});
-
 app.get('/sitemap.xml', function(req, res) {
   var api = NODE_ENV === 'staging' ? 'staging-api' : 'api';
   api = 'https://' + api + '.healthsystemsevidence.org/';
-  res.redirect(api + 'sitemap.xml');
+  var url = api + 'sitemap.xml';
+  console.log('Redirecting to sitemap at ' + url);
+  res.redirect(302, url);
+});
+
+app.get('*', function(req, res) {
+  res.sendFile(path.join(__dirname,'public/index.html'));
 });
 
 var port = process.env.PORT || 3000
