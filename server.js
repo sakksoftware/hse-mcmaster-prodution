@@ -105,8 +105,8 @@ app.get('/rollbar-error-test', function(req, res) {
 if (NODE_ENV === 'production' || NODE_ENV == 'staging') {
   app.get('/articles/:id', function(req, res, next) {
     // we are using old url if there is only a number id without the title, so we check that
-    var api = NODE_ENV === 'staging' ? 'staging-api' : 'api'
-    api = 'https://' + api + '.healthsystemsevidence.org/api/'
+    var api = NODE_ENV === 'staging' ? 'staging-api' : 'api';
+    api = 'https://' + api + '.healthsystemsevidence.org/api/';
 
     var params = req.params;
     var id = parseInt(params.id, 10);
@@ -137,6 +137,12 @@ if (NODE_ENV === 'production' || NODE_ENV == 'staging') {
 
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname,'public/index.html'));
+});
+
+app.get('/sitemap.xml', function(req, res) {
+  var api = NODE_ENV === 'staging' ? 'staging-api' : 'api';
+  api = 'https://' + api + '.healthsystemsevidence.org/';
+  res.redirect(api + 'sitemap.xml');
 });
 
 var port = process.env.PORT || 3000
