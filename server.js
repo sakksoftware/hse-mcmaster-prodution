@@ -138,7 +138,7 @@ if (NODE_ENV === 'production' || NODE_ENV == 'staging') {
 app.get('/sitemap.xml', function(req, res) {
   var api = NODE_ENV === 'staging' ? 'staging-api' : 'api';
   api = 'https://' + api + '.healthsystemsevidence.org/';
-  var url = api + 'sitemap.xml';
+  var url = api + 'sitemap.aspx';
   console.log('Redirecting to sitemap at ' + url);
   res.redirect(302, url);
 });
