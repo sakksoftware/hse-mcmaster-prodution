@@ -120,12 +120,6 @@ module.exports = React.createClass
       <h1>{article.title}</h1>
 
       <div className="article-item-body">
-        <div className="section abstract-section">
-          <ArticleField>
-            <h2>{article.label_abstract}</h2>
-            <p>{@ifNotEmpty article.abstract, @t('no_topics')}</p>
-          </ArticleField>
-        </div>
         <div className="section">
           <ArticleField>
             <h2>{article.label_document_type}</h2>
@@ -153,6 +147,11 @@ module.exports = React.createClass
           <ArticleField visible={article.countries_in_which_studies_were_conducted_visible}>
             <h2>{article.label_studies_conducted_in}</h2>
             {@ifNotEmpty @renderStudiesConductedIn(), @t('no_studies_conducted_in')}
+          </ArticleField>
+
+          <ArticleField>
+            <h2>{article.label_abstract}</h2>
+            <p>{@ifNotEmpty article.abstract, @t('no_topics')}</p>
           </ArticleField>
 
           {@renderRelatedArticlesLink()}
