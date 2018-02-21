@@ -160,7 +160,7 @@ module.exports = React.createClass
       </div>
     else if @state.step == 'pending_search'
       <div className="result-box">
-        {@t('search_page.result_box.pending_search')}
+        
       </div>
     else if @state.step == 'results'
       <ResultBox
