@@ -19,7 +19,7 @@ config =
     apiBase: 'https://api.healthsystemsevidence.org'
     useMocks: false
     mockResponseTime: 500
-    localesUrl: 'https://s3.amazonaws.com/hse-production/locales/%{lng}.json'
+    localesUrl: 'https://s3.amazonaws.com/hsse-staging/locales/%{lng}.json'
     recaptchaKey: '6LcJ5xAUAAAAANuw9EYe3cZ4yQ_tmfIn-ZBC_x6x'
     siteUrl: 'https://www.healthsystemsevidence.org'
 
