@@ -16,7 +16,7 @@ config =
     siteUrl: 'https://staging.healthsystemsevidence.org'
 
   production:
-    apiBase: 'https://api.healthsystemsevidence.org'
+    apiBase: 'https://api2.healthsystemsevidence.org'
     useMocks: false
     mockResponseTime: 500
     localesUrl: 'https://s3.amazonaws.com/hsse-staging/locales/%{lng}.json'
